@@ -1,0 +1,48 @@
+{title: Titre du chant}
+{artist: Auteur / Artiste}
+{key: G}
+{tempo: 75}
+{themes: Adoration}
+{language: fr}
+{youtube: https://youtu.be/...}
+
+{start_of_verse: Couplet 1}
+[G]Paroles du couplet [C]avec accords
+[Em]Au-dessus du mot [D]exact
+{end_of_verse}
+
+{start_of_chorus: Refrain}
+[C]Paroles du re[G]frain
+[D]Deuxième ligne [Em]du refrain
+{end_of_chorus}
+
+{start_of_verse: Couplet 2}
+[G]Deuxième couplet
+[C]Avec sa mélodie
+{end_of_verse}
+
+{start_of_bridge: Pont}
+[Am]Paroles du pont
+[F]Pont deuxième ligne
+{end_of_bridge}
+
+---
+POUR UN CHANT CHINOIS (language: zh), utiliser ce format :
+
+{title: 标题}
+{title_pinyin: Biāotí}
+{artist: 作者}
+{key: C}
+{jianpu_key: 1=C}
+{language: zh}
+
+{start_of_verse: 第一节}
+{jianpu: 3 3 5 6 5 - -}
+[C]你好世界   nǐ hǎo shì jiè
+{end_of_verse}
+
+Règles :
+- Accords entre [crochets], juste avant la syllabe où ils tombent
+- Sections : start_of_verse / start_of_chorus / start_of_bridge / start_of_prechorus / start_of_intro / start_of_outro
+- Chinois : 3 espaces minimum entre caractères et pinyin sur la même ligne
+- Jianpu : ligne {jianpu: ...} juste au-dessus de la ligne de paroles correspondante

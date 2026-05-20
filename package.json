@@ -1,0 +1,43 @@
+{
+  "name": "gcc-louange",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm run build:index && next build",
+    "build:index": "tsx scripts/build-index.ts",
+    "start": "next start",
+    "lint": "next lint",
+    "validate": "tsx scripts/validate-songs.ts"
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^8.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "@react-pdf/renderer": "^4.1.6",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "firebase": "^12.13.0",
+    "fuse.js": "^7.0.0",
+    "lucide-react": "^0.511.0",
+    "next": "15.5.18",
+    "pinyin-pro": "^3.26.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-youtube": "^10.1.0",
+    "tailwind-merge": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.18",
+    "playwright": "^1.60.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.19.4",
+    "typescript": "^5"
+  }
+}

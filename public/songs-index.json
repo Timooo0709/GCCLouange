@@ -1,0 +1,136 @@
+{
+  "generatedAt": "2026-05-20T21:02:41.340Z",
+  "songs": [
+    {
+      "slug": "a-jamais-tu-es-saint",
+      "title": "À jamais Tu es saint",
+      "titlePinyin": null,
+      "artist": "Chris Tomlin",
+      "language": "fr",
+      "originalKey": "C#",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "saintete"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-3",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain 1",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-6",
+          "name": "Refrain 2",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "beni-soit-ton-nom",
+      "title": "Béni soit Ton Nom",
+      "titlePinyin": null,
+      "artist": "Matt Redman",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "action-de-grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-2",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "en-dian-zhi-lu",
+      "title": "恩典之路",
+      "titlePinyin": "Ēn diǎn zhī lù",
+      "artist": "曾祥怡",
+      "language": "zh",
+      "originalKey": "F",
+      "tempo": 72,
+      "themes": [
+        "grace",
+        "foi",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": true,
+      "jianpuKey": "1=F",
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "第一节",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "副歌",
+          "type": "chorus"
+        }
+      ]
+    }
+  ]
+}

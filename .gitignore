@@ -78,6 +78,12 @@ web_modules/
 .next
 out
 
+# macOS
+.DS_Store
+
+# Imports temporaires
+/imports/
+
 # Nuxt.js build / generate output
 .nuxt
 dist
@@ -141,3 +147,4 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+.claude/

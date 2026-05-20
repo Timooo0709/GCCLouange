@@ -1,0 +1,22 @@
+{
+  "themes": [
+    { "slug": "adoration", "name_fr": "Adoration", "name_zh": "敬拜" },
+    { "slug": "action-de-grace", "name_fr": "Action de grâce", "name_zh": "感恩" },
+    { "slug": "saintete", "name_fr": "Sainteté", "name_zh": "圣洁" },
+    { "slug": "grace", "name_fr": "Grâce", "name_zh": "恩典" },
+    { "slug": "salut", "name_fr": "Salut", "name_zh": "救恩" },
+    { "slug": "croix", "name_fr": "Croix", "name_zh": "十字架" },
+    { "slug": "resurrection", "name_fr": "Résurrection", "name_zh": "复活" },
+    { "slug": "saint-esprit", "name_fr": "Saint-Esprit", "name_zh": "圣灵" },
+    { "slug": "esperance", "name_fr": "Espérance", "name_zh": "盼望" },
+    { "slug": "foi", "name_fr": "Foi", "name_zh": "信心" },
+    { "slug": "engagement", "name_fr": "Engagement", "name_zh": "委身" },
+    { "slug": "repentance", "name_fr": "Repentance", "name_zh": "悔改" },
+    { "slug": "mission", "name_fr": "Mission", "name_zh": "宣教" },
+    { "slug": "famille-de-dieu", "name_fr": "Famille de Dieu", "name_zh": "神的家" },
+    { "slug": "royaume", "name_fr": "Royaume", "name_zh": "国度" },
+    { "slug": "noel", "name_fr": "Noël", "name_zh": "圣诞" },
+    { "slug": "paques", "name_fr": "Pâques", "name_zh": "复活节" },
+    { "slug": "pentecote", "name_fr": "Pentecôte", "name_zh": "五旬节" }
+  ]
+}
