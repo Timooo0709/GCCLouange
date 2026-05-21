@@ -1,11 +1,11 @@
 // Service Worker — GCC Louange
-// Stratégie : stale-while-revalidate pour les pages, cache-first pour les assets statiques.
-// Les appels Firebase et /api/* passent toujours par le réseau.
+// Cache-first pour les assets statiques, stale-while-revalidate pour les pages.
+// Fix : les réponses redirigées (res.redirected) sont renvoyées via Response.redirect()
+// pour éviter l'erreur "Response served by service worker has redirections" sur Safari/Chrome.
 
-const CACHE = "gcc-louange-v1";
+const CACHE = "gcc-louange-v2";
 
 const PRECACHE = [
-  "/songs",
   "/songs-index.json",
 ];
 
@@ -56,7 +56,7 @@ self.addEventListener("fetch", (event) => {
         (cached) =>
           cached ||
           fetch(request).then((res) => {
-            if (res.ok) {
+            if (res.ok && res.status === 200 && !res.redirected) {
               const clone = res.clone();
               caches.open(CACHE).then((c) => c.put(request, clone));
             }
@@ -73,12 +73,17 @@ self.addEventListener("fetch", (event) => {
       cache.match(request).then((cached) => {
         const fresh = fetch(request)
           .then((res) => {
+            // Safari et Chrome rejettent les réponses redirigées servies par un SW.
+            // On renvoie une redirection explicite pour que le browser suive lui-même.
+            if (res.redirected) {
+              return Response.redirect(res.url, 302);
+            }
             if (res.ok && res.status === 200) {
               cache.put(request, res.clone());
             }
             return res;
           })
-          .catch(() => cached); // réseau indisponible → retour au cache
+          .catch(() => cached);
 
         return cached || fresh;
       })
