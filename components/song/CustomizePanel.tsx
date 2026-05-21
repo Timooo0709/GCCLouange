@@ -171,14 +171,12 @@ export function CustomizePanel({
       showChords: false,
       showPinyin: isZh,
       useJianpu: false,
-      structure: sections
-        .filter((s) => s.type !== "intro" && s.type !== "bridge")
-        .map((s, i) => ({
-          uid: `${s.id}-${i}`,
-          sectionId: s.id,
-          name: s.name || s.type,
-          note: "",
-        })),
+      structure: sections.map((s, i) => ({
+        uid: `${s.id}-${i}`,
+        sectionId: s.id,
+        name: s.name || s.type,
+        note: "",
+      })),
     });
   }
 
