@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-20T21:02:41.340Z",
+  "generatedAt": "2026-05-21T11:10:34.452Z",
   "songs": [
     {
       "slug": "a-jamais-tu-es-saint",
@@ -52,6 +52,524 @@
       ]
     },
     {
+      "slug": "a-l-agneau",
+      "title": "À l'agneau",
+      "titlePinyin": null,
+      "artist": "Steve Thompson, Chris Christensen & Thierry Ostrini",
+      "language": "fr",
+      "originalKey": "Am",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "croix"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "chorus-1",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-3",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "a-la-croix",
+      "title": "À la croix",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "E",
+      "tempo": null,
+      "themes": [
+        "croix",
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont (x2)",
+          "type": "bridge"
+        },
+        {
+          "id": "verse-6",
+          "name": "Couplet 3",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "abba-pere",
+      "title": "Abba Père",
+      "titlePinyin": null,
+      "artist": "Samuel Olivier",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": null,
+      "themes": [
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro (x2)",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "intro-4",
+          "name": "Interlude",
+          "type": "intro"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-6",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "abrite-moi",
+      "title": "Abrite-moi",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "foi"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "amour-extravagant",
+      "title": "Amour extravagant",
+      "titlePinyin": null,
+      "artist": "Bethel Music",
+      "language": "fr",
+      "originalKey": "E",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro (x2)",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "amour-parfait",
+      "title": "Amour parfait",
+      "titlePinyin": null,
+      "artist": "Église Momentum",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "croix",
+        "grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "amour-sans-fin",
+      "title": "Amour sans fin",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-3",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "attache-a-la-croix",
+      "title": "Attaché à la croix",
+      "titlePinyin": null,
+      "artist": "Frederick A. Graves",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "croix",
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "au-dessus-de-tout",
+      "title": "Au dessus de tout",
+      "titlePinyin": null,
+      "artist": "Lenny Leblanc & Paul Baloche",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "croix"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "aucun-autre-nom",
+      "title": "Aucun autre nom",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "saintete"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-6",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "aucune-peur",
+      "title": "Aucune peur",
+      "titlePinyin": null,
+      "artist": "Maxime Jean-Louis, Tendry Rajaonson & David Roys-Dossou",
+      "language": "fr",
+      "originalKey": "B",
+      "tempo": 95,
+      "themes": [
+        "foi",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-2",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "aupres-de-dieu",
+      "title": "Auprès de Dieu",
+      "titlePinyin": null,
+      "artist": "Charly & Isabelle Siounath",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": null,
+      "themes": [
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "benediction",
+      "title": "Bénédiction",
+      "titlePinyin": null,
+      "artist": "François Reymond",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Bénédiction",
+          "type": "verse"
+        }
+      ]
+    },
+    {
       "slug": "beni-soit-ton-nom",
       "title": "Béni soit Ton Nom",
       "titlePinyin": null,
@@ -97,6 +615,6360 @@
       ]
     },
     {
+      "slug": "benis-l-eternel",
+      "title": "Bénis l'Éternel",
+      "titlePinyin": null,
+      "artist": "Chris Christensen & Thierry Ostrini",
+      "language": "fr",
+      "originalKey": "E",
+      "tempo": null,
+      "themes": [
+        "action-de-grace",
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "chorus-1",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "briser-les-chaines",
+      "title": "Briser les chaînes",
+      "titlePinyin": null,
+      "artist": "Tasha Cobbs Leonard",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "esperance",
+        "saint-esprit"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "chorus-1",
+          "name": "Refrain 1",
+          "type": "chorus"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-3",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "ce-nom-si-merveilleux",
+      "title": "Ce Nom si merveilleux",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "resurrection"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain 1",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont 1",
+          "type": "bridge"
+        },
+        {
+          "id": "bridge-6",
+          "name": "Pont 2",
+          "type": "bridge"
+        },
+        {
+          "id": "chorus-7",
+          "name": "Refrain 3",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "cet-amour",
+      "title": "Cet amour",
+      "titlePinyin": null,
+      "artist": "Paul Baloche",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": null,
+      "themes": [
+        "croix",
+        "grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "chaine-d-amour",
+      "title": "Chaîne d'amour",
+      "titlePinyin": null,
+      "artist": "Pat Berning",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": null,
+      "themes": [
+        "famille-de-dieu"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "chantons",
+      "title": "Chantons",
+      "titlePinyin": null,
+      "artist": "Ed Kerr & Paul Baloche",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "action-de-grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "chorus-1",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "cherchez-d-abord",
+      "title": "Cherchez d'abord",
+      "titlePinyin": null,
+      "artist": "Karen Lafferty",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "foi",
+        "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Alléluia",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Instrumental",
+          "type": "bridge"
+        },
+        {
+          "id": "outro-5",
+          "name": "Final",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "christ-est-la-lumiere",
+      "title": "Christ est la lumière",
+      "titlePinyin": null,
+      "artist": "Matthieu Marvane & Paul Baloche",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "saintete"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "outro-5",
+          "name": "Final",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "cieux-ouverts",
+      "title": "Cieux ouverts",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "saint-esprit",
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont 1",
+          "type": "bridge"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont 2",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "coeur-a-coeur",
+      "title": "Cœur à cœur",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain 1",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-6",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-7",
+          "name": "Pont 1",
+          "type": "bridge"
+        },
+        {
+          "id": "bridge-8",
+          "name": "Pont 2",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "collision",
+      "title": "Collision",
+      "titlePinyin": null,
+      "artist": "Maxime Jean-Louis & Victor Mitraud",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": 115,
+      "themes": [
+        "engagement",
+        "salut"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-3",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "combien-dieu-est-grand",
+      "title": "Combien Dieu est grand",
+      "titlePinyin": null,
+      "artist": "Chris Tomlin",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "compter-sur-toi",
+      "title": "Compter sur Toi",
+      "titlePinyin": null,
+      "artist": "Maxime Jean-Louis & Tendry Rajaonson",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": 154,
+      "themes": [
+        "foi",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "connais-tu-ce-jesus",
+      "title": "Connais-tu ce Jésus",
+      "titlePinyin": null,
+      "artist": "Maxime Jean-Louis",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": 80,
+      "themes": [
+        "adoration",
+        "salut"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "crier-a-toi",
+      "title": "Crier à Toi",
+      "titlePinyin": null,
+      "artist": "François Reymond",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-2",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 3",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "de-grace-en-grace",
+      "title": "De grâce en grâce",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": null,
+      "themes": [
+        "grace",
+        "croix"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-3",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-6",
+          "name": "Pré-Refrain 2",
+          "type": "prechorus"
+        },
+        {
+          "id": "bridge-7",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "de-tout-mon-etre",
+      "title": "De tout mon être",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-3",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "dieu-a-tant-aime",
+      "title": "Dieu a tant aimé",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "grace",
+        "salut",
+        "croix"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "dieu-de-l-impossible",
+      "title": "Dieu de l'impossible",
+      "titlePinyin": null,
+      "artist": "Marie-Laure N'Doumi",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "foi",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-3",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-6",
+          "name": "Pont 1",
+          "type": "bridge"
+        },
+        {
+          "id": "bridge-7",
+          "name": "Pont 2",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "dieu-est-parmi-nous",
+      "title": "Dieu est parmi nous",
+      "titlePinyin": null,
+      "artist": "Dan Luiten",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "action-de-grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "dieu-est-puissant",
+      "title": "Dieu est puissant",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "dieu-sauveur",
+      "title": "Dieu Sauveur",
+      "titlePinyin": null,
+      "artist": "Horizon Louange",
+      "language": "fr",
+      "originalKey": "Ab",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "saintete"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain 1",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "dieu-tout-puissant",
+      "title": "Dieu Tout-Puissant",
+      "titlePinyin": null,
+      "artist": "Carl Boberg",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "action-de-grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "digne-est-l-agneau",
+      "title": "Digne est l'Agneau",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "croix",
+        "saintete"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "digne-est-ton-nom",
+      "title": "Digne est Ton Nom",
+      "titlePinyin": null,
+      "artist": "Elevation Worship",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "donne-nous-des-mains-pures",
+      "title": "Donne-nous des mains pures",
+      "titlePinyin": null,
+      "artist": "Chris Tomlin",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "saintete",
+        "adoration",
+        "repentance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "ebloui",
+      "title": "Ébloui",
+      "titlePinyin": null,
+      "artist": "Dan Luiten",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "en-toi-je-sais-qui-je-suis",
+      "title": "En Toi je sais qui je suis",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "F",
+      "tempo": null,
+      "themes": [
+        "grace",
+        "foi"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain 1",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "en-verite",
+      "title": "En vérité",
+      "titlePinyin": null,
+      "artist": "Be Witness",
+      "language": "fr",
+      "originalKey": "E",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont 1",
+          "type": "bridge"
+        },
+        {
+          "id": "bridge-6",
+          "name": "Pont 2",
+          "type": "bridge"
+        },
+        {
+          "id": "outro-7",
+          "name": "Final",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "entends-mon-coeur",
+      "title": "Entends mon cœur",
+      "titlePinyin": null,
+      "artist": "Geoff Moore & Steven Curtis Chapman",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "action-de-grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain 1",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-5",
+          "name": "Refrain 2",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "eternel-notre-seigneur",
+      "title": "Éternel, Notre Seigneur",
+      "titlePinyin": null,
+      "artist": "Chris Christensen & Thierry Ostrini",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "saintete"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "chorus-1",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 3",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "fascine",
+      "title": "Fasciné",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "feu-du-fondeur",
+      "title": "Feu du fondeur",
+      "titlePinyin": null,
+      "artist": "Brian Doerksen",
+      "language": "fr",
+      "originalKey": "E",
+      "tempo": null,
+      "themes": [
+        "saintete",
+        "repentance",
+        "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "fidele-loyal",
+      "title": "Fidèle / Loyal",
+      "titlePinyin": null,
+      "artist": "Maxime Jean-Louis & Tendry Rajaonson",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "foi",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-2",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "gloire-a-son-nom",
+      "title": "Gloire à Son Nom",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "croix",
+        "resurrection"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "verse-6",
+          "name": "Couplet 4",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "grace-infinie",
+      "title": "Grâce infinie",
+      "titlePinyin": null,
+      "artist": "John Newton",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "grace",
+        "action-de-grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "havre-de-paix",
+      "title": "Havre de paix",
+      "titlePinyin": null,
+      "artist": "Maxime Jean-Louis, Raphaëlle Pierre & Tendry Rajaonson",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": 72,
+      "themes": [
+        "adoration",
+        "saintete"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "heritiers",
+      "title": "Héritiers",
+      "titlePinyin": null,
+      "artist": "Johnny Pilgrem, Adrian Price, Fiona Price & Naomi Pilgrem",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": null,
+      "themes": [
+        "grace",
+        "esperance",
+        "foi"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "homme-de-douleurs",
+      "title": "Homme de douleurs",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "croix",
+        "adoration",
+        "paques"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 3",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "hosanna",
+      "title": "Hosanna",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "saintete"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "hosanna-ostrini",
+      "title": "Hosanna (Ouvrons les portes)",
+      "titlePinyin": null,
+      "artist": "Thierry Ostrini & Chris Christensen",
+      "language": "fr",
+      "originalKey": "E",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "saintete"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "chorus-1",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 3",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "how-great-thou-art",
+      "title": "How Great Thou Art",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "en",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "saintete"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Verse 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Chorus",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Verse 2",
+          "type": "verse"
+        },
+        {
+          "id": "verse-4",
+          "name": "Verse 3",
+          "type": "verse"
+        },
+        {
+          "id": "verse-5",
+          "name": "Verse 4",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "il-est-la-vie",
+      "title": "Il est la vie",
+      "titlePinyin": null,
+      "artist": "Dan Luiten",
+      "language": "fr",
+      "originalKey": "E",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "foi"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 3",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "il-est-temps",
+      "title": "Il est temps",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "B",
+      "tempo": null,
+      "themes": [
+        "saint-esprit",
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "il-m-aime",
+      "title": "Il m'aime",
+      "titlePinyin": null,
+      "artist": "Judith Schnegg",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "grace",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "chorus-1",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "outro-4",
+          "name": "Final",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "inattendu",
+      "title": "Inattendu",
+      "titlePinyin": null,
+      "artist": "Maxime Jean-Louis, Raphaëlle Pierre & Tendry Rajaonson",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": 70,
+      "themes": [
+        "foi",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-2",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-5",
+          "name": "Pré-Refrain 2",
+          "type": "prechorus"
+        },
+        {
+          "id": "bridge-6",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "infiniment-grand",
+      "title": "Infiniment grand",
+      "titlePinyin": null,
+      "artist": "Impact",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "action-de-grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-2",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "invitation",
+      "title": "Invitation",
+      "titlePinyin": null,
+      "artist": "Maxime Jean-Louis, David Roys-Dossou & Tendry Rajaonson",
+      "language": "fr",
+      "originalKey": "F",
+      "tempo": 147,
+      "themes": [
+        "grace",
+        "esperance",
+        "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-6",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "bridge-7",
+          "name": "Pont 2",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "j-annoncerai",
+      "title": "J'annoncerai",
+      "titlePinyin": null,
+      "artist": "Be Witness",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "foi",
+        "action-de-grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "jamais-marche-seul",
+      "title": "Jamais marché seul",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "F",
+      "tempo": null,
+      "themes": [
+        "foi",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "je-celebrerai",
+      "title": "Je célèbrerai",
+      "titlePinyin": null,
+      "artist": "Sébastien Desmarais",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "action-de-grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "outro-3",
+          "name": "Final",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "je-flechis-le-genou",
+      "title": "Je fléchis le genou",
+      "titlePinyin": null,
+      "artist": "Nicolas Ternisien",
+      "language": "fr",
+      "originalKey": "Em",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "outro-2",
+          "name": "Final",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "je-loue-ton-nom-eternel",
+      "title": "Je loue Ton Nom, Éternel",
+      "titlePinyin": null,
+      "artist": "Rick Founds",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "action-de-grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "je-louerai-l-eternel",
+      "title": "Je louerai l'Éternel",
+      "titlePinyin": null,
+      "artist": "Claude Fraysse",
+      "language": "fr",
+      "originalKey": "E",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "action-de-grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "je-n-ai-rien-a-craindre",
+      "title": "Je n'ai rien à craindre",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "F",
+      "tempo": null,
+      "themes": [
+        "foi",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont 1",
+          "type": "bridge"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont 2",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "je-reviens-au-coeur",
+      "title": "Je reviens au cœur",
+      "titlePinyin": null,
+      "artist": "Matt Redman",
+      "language": "fr",
+      "originalKey": "Eb",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "saintete"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-2",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "je-te-donne-tout",
+      "title": "Je Te donne tout",
+      "titlePinyin": null,
+      "artist": "Luc Dumont",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "je-veux-proclamer-le-nom-de-jesus",
+      "title": "Je veux proclamer le Nom de Jésus",
+      "titlePinyin": null,
+      "artist": "Charity Gayle",
+      "language": "fr",
+      "originalKey": "E",
+      "tempo": null,
+      "themes": [
+        "mission",
+        "adoration",
+        "foi"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "jireh",
+      "title": "Jireh",
+      "titlePinyin": null,
+      "artist": "Elevation Worship",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "grace",
+        "foi"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont 1",
+          "type": "bridge"
+        },
+        {
+          "id": "bridge-6",
+          "name": "Pont 2",
+          "type": "bridge"
+        },
+        {
+          "id": "outro-7",
+          "name": "Final",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "joie-dans-le-monde",
+      "title": "Joie dans le monde",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "F",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "noël"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 3",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "jusqu-au-bout",
+      "title": "Jusqu'au bout",
+      "titlePinyin": null,
+      "artist": "Antydot",
+      "language": "fr",
+      "originalKey": "Eb",
+      "tempo": null,
+      "themes": [
+        "esperance",
+        "engagement",
+        "foi"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "outro-5",
+          "name": "Final",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "la-benediction",
+      "title": "La Bénédiction",
+      "titlePinyin": null,
+      "artist": "Kari Jobe",
+      "language": "fr",
+      "originalKey": "B",
+      "tempo": null,
+      "themes": [
+        "esperance",
+        "famille-de-dieu"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-3",
+          "name": "Pont 1",
+          "type": "bridge"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont 2",
+          "type": "bridge"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont 3",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "la-croix-seule-me-suffit",
+      "title": "La croix seule me suffit",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "F",
+      "tempo": null,
+      "themes": [
+        "croix",
+        "adoration",
+        "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 4",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "la-dans-le-feu",
+      "title": "Là dans le feu",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "foi",
+        "esperance",
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain 1",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "la-passion",
+      "title": "La passion",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "croix",
+        "adoration",
+        "resurrection"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "la-pour-toi",
+      "title": "Là pour Toi (Agis parmi nous)",
+      "titlePinyin": null,
+      "artist": "Maxime Jean-Louis & Tendry Rajaonson",
+      "language": "fr",
+      "originalKey": "B",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "engagement",
+        "saint-esprit"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain 1",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont 1",
+          "type": "bridge"
+        },
+        {
+          "id": "outro-6",
+          "name": "Tag",
+          "type": "outro"
+        },
+        {
+          "id": "bridge-7",
+          "name": "Pont 2",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "laissons-entrer",
+      "title": "Laissons entrer",
+      "titlePinyin": null,
+      "artist": "Dan Luiten & Jérémie Poulet",
+      "language": "fr",
+      "originalKey": "E",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "saintete"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "le-fils-de-dieu",
+      "title": "Le Fils de Dieu",
+      "titlePinyin": null,
+      "artist": "John Wimber",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "grace",
+        "saint-esprit"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "le-nom-de-jesus-plus-haut",
+      "title": "Le Nom de Jésus plus haut que tous les noms",
+      "titlePinyin": null,
+      "artist": "Sinach",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont 1",
+          "type": "bridge"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont 2",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "le-roi-est-ne",
+      "title": "Le Roi est né",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "E",
+      "tempo": null,
+      "themes": [
+        "noël",
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "libere",
+      "title": "Libéré",
+      "titlePinyin": null,
+      "artist": "Dan Luiten & Jérémie Poulet",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": null,
+      "themes": [
+        "grace",
+        "salut",
+        "resurrection"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "lumiere-du-monde",
+      "title": "Lumière du monde",
+      "titlePinyin": null,
+      "artist": "Tim Hughes",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "action-de-grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "ma-passion",
+      "title": "Ma passion",
+      "titlePinyin": null,
+      "artist": "Glorious",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "engagement",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-2",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "ma-raison-de-noel",
+      "title": "Ma raison de Noël",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "noël",
+        "adoration",
+        "grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-2",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "me-voici",
+      "title": "Me voici",
+      "titlePinyin": null,
+      "artist": "Sammy Zoccola",
+      "language": "fr",
+      "originalKey": "F",
+      "tempo": null,
+      "themes": [
+        "engagement",
+        "mission"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-3",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "merci",
+      "title": "Merci",
+      "titlePinyin": null,
+      "artist": "Henry Smith",
+      "language": "fr",
+      "originalKey": "F",
+      "tempo": null,
+      "themes": [
+        "action-de-grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "outro-3",
+          "name": "Final",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "moi-et-ma-maison",
+      "title": "Moi et ma maison",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "mon-ancre-et-ma-voile",
+      "title": "Mon ancre et ma voile",
+      "titlePinyin": null,
+      "artist": "David Durham",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "foi",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 3",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "mon-assurance-est-en-christ",
+      "title": "Mon assurance est en Christ",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "foi",
+        "grace",
+        "salut"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont 1",
+          "type": "bridge"
+        },
+        {
+          "id": "bridge-6",
+          "name": "Pont 2",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "mon-redempteur-vit",
+      "title": "Mon rédempteur vit",
+      "titlePinyin": null,
+      "artist": "Reuben Morgan",
+      "language": "fr",
+      "originalKey": "E",
+      "tempo": null,
+      "themes": [
+        "resurrection",
+        "adoration",
+        "foi"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-3",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "mon-secours-est-en-toi",
+      "title": "Mon secours est en Toi",
+      "titlePinyin": null,
+      "artist": "Impact",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "foi",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-2",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "mon-seul-souhait",
+      "title": "Mon seul souhait",
+      "titlePinyin": null,
+      "artist": "Pierre-Nicolas de Katow",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "naitre",
+      "title": "Naître",
+      "titlePinyin": null,
+      "artist": "Thierry Ostrini",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "salut",
+        "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "ne-pour-nous-donner-la-vie",
+      "title": "Né pour nous donner la vie",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": null,
+      "themes": [
+        "noël",
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "noel-est-arrive",
+      "title": "Noël est arrivé",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "F",
+      "tempo": null,
+      "themes": [
+        "noël"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain (Sol)",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-6",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "outro-7",
+          "name": "Final",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "nos-yeux-sont-sur-toi",
+      "title": "Nos yeux sont sur Toi",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-2",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "notre-pere",
+      "title": "Notre Père",
+      "titlePinyin": null,
+      "artist": "Collectif Cieux Ouverts",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": 127,
+      "themes": [
+        "adoration",
+        "saintete"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "chorus-1",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "nous-tiendrons",
+      "title": "Nous tiendrons",
+      "titlePinyin": null,
+      "artist": "Graham Kendrick",
+      "language": "fr",
+      "originalKey": "F",
+      "tempo": null,
+      "themes": [
+        "foi",
+        "esperance",
+        "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "chorus-1",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "nous-voulons-voir-jesus-eleve",
+      "title": "Nous voulons voir Jésus élevé",
+      "titlePinyin": null,
+      "artist": "Doug Horley",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "mission"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-3",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "o-jesus-mon-sauveur",
+      "title": "Ô Jésus mon Sauveur",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "action-de-grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "o-vois",
+      "title": "Ô vois (Mon âme chante)",
+      "titlePinyin": null,
+      "artist": "Joel Houston",
+      "language": "fr",
+      "originalKey": "B",
+      "tempo": 73,
+      "themes": [
+        "adoration",
+        "saintete"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-4",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-6",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "outro-7",
+          "name": "Final",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "oasis",
+      "title": "Oasis",
+      "titlePinyin": null,
+      "artist": "Maxime Jean-Louis, David Roys-Dossou & Victor Mitraud",
+      "language": "fr",
+      "originalKey": "C#m",
+      "tempo": 133,
+      "themes": [
+        "foi",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "oceans",
+      "title": "Océans",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "foi",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "oui-je-crois",
+      "title": "Oui je crois (Credo)",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "foi"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain 1",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "chorus-5",
+          "name": "Refrain 2",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "parfaitement-imparfait",
+      "title": "Parfaitement imparfait",
+      "titlePinyin": null,
+      "artist": "Maxime Jean-Louis & Tendry Rajaonson",
+      "language": "fr",
+      "originalKey": "Ab",
+      "tempo": 81,
+      "themes": [
+        "adoration",
+        "foi"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-3",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "personne",
+      "title": "Personne",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "pionnier",
+      "title": "Pionnier",
+      "titlePinyin": null,
+      "artist": "Maxime Jean-Louis",
+      "language": "fr",
+      "originalKey": "E",
+      "tempo": 80,
+      "themes": [
+        "foi",
+        "esperance",
+        "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "il-regnera",
+      "title": "Pour toujours Il règnera",
+      "titlePinyin": null,
+      "artist": "Chris Tomlin",
+      "language": "fr",
+      "originalKey": "Ab",
+      "tempo": null,
+      "themes": [
+        "noël",
+        "adoration",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "premiere-place",
+      "title": "Première place",
+      "titlePinyin": null,
+      "artist": "CrazyHope",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 3",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "prince-de-paix",
+      "title": "Prince de paix",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "esperance",
+        "foi"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "priorite",
+      "title": "Priorité",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "engagement",
+        "foi"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-3",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-6",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "promesses",
+      "title": "Promesses",
+      "titlePinyin": null,
+      "artist": "Maverick City Music",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "foi",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-2",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "quand-je-contemple",
+      "title": "Quand je contemple",
+      "titlePinyin": null,
+      "artist": "Wayne Perrin & Cathy Perrin",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "saintete"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-3",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "quand-tu-parles",
+      "title": "Quand Tu parles",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "saintete",
+        "creation"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain 1",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "verse-6",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-7",
+          "name": "Refrain 3",
+          "type": "chorus"
+        },
+        {
+          "id": "outro-8",
+          "name": "Final",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "que-nos-chants-soient-comme-un-signe",
+      "title": "Que nos chants soient comme un signe",
+      "titlePinyin": null,
+      "artist": "Matt Redman",
+      "language": "fr",
+      "originalKey": "F",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "saint-esprit"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "que-ton-nom-resonne-en-ce-lieu",
+      "title": "Que Ton Nom résonne en ce lieu",
+      "titlePinyin": null,
+      "artist": "Gauthier Kulula",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "saint-esprit"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-3",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "que-ton-regne-vienne",
+      "title": "Que Ton règne vienne",
+      "titlePinyin": null,
+      "artist": "Horizon Louange",
+      "language": "fr",
+      "originalKey": "E",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "saintete",
+        "royaume"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-3",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-6",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "que-tous-soient-un",
+      "title": "Que tous soient un",
+      "titlePinyin": null,
+      "artist": "Elvire Dieny",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "famille-de-dieu",
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 3",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "quelle-grace",
+      "title": "Quelle grâce",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "grace",
+        "adoration",
+        "famille-de-dieu"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "quelle-grace-incomparable",
+      "title": "Quelle grâce incomparable",
+      "titlePinyin": null,
+      "artist": "Phil Wickham",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "grace",
+        "adoration",
+        "royaume"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 4",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-6",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "recois-l-adoration",
+      "title": "Reçois l'adoration",
+      "titlePinyin": null,
+      "artist": "Chris Christensen & Thierry Ostrini",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "saintete"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "outro-4",
+          "name": "Final",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "recois-ma-vie",
+      "title": "Reçois ma vie",
+      "titlePinyin": null,
+      "artist": "Sylvain Freymond",
+      "language": "fr",
+      "originalKey": "Am",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "rejouis-toi-mon-ame",
+      "title": "Réjouis-toi mon âme",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "action-de-grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "outro-6",
+          "name": "Final",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "relever-le-faible",
+      "title": "Relever le faible",
+      "titlePinyin": null,
+      "artist": "Glorious",
+      "language": "fr",
+      "originalKey": "E",
+      "tempo": null,
+      "themes": [
+        "esperance",
+        "adoration",
+        "grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-2",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "rememoration",
+      "title": "Remémoration",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "B",
+      "tempo": null,
+      "themes": [
+        "croix",
+        "adoration",
+        "action-de-grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-5",
+          "name": "Refrain étendu",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-6",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "chorus-7",
+          "name": "Refrain final",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "remplis-moi-de-ta-presence",
+      "title": "Remplis-moi de Ta présence",
+      "titlePinyin": null,
+      "artist": "Luc Leblanc",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "saint-esprit",
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "rien-au-monde",
+      "title": "Rien au monde",
+      "titlePinyin": null,
+      "artist": "Cody Carnes",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "chorus-1",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "rien-n-est-perdu-d-avance",
+      "title": "Rien n'est perdu d'avance",
+      "titlePinyin": null,
+      "artist": "Maxime Jean-Louis, Tendry Rajaonson & Raphaëlle Pierre",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": 110,
+      "themes": [
+        "foi",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-2",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "risen",
+      "title": "Risen",
+      "titlePinyin": null,
+      "artist": "Israel Houghton",
+      "language": "en",
+      "originalKey": "E",
+      "tempo": 132,
+      "themes": [
+        "resurrection",
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Chorus",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Verse",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Interlude",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Bridge",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "roi-des-rois",
+      "title": "Roi des Rois",
+      "titlePinyin": null,
+      "artist": "Brooke Ligertwood, Scott Ligertwood & Jason Ingram",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": 68,
+      "themes": [
+        "adoration",
+        "noël",
+        "resurrection"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "verse-6",
+          "name": "Couplet 4",
+          "type": "verse"
+        },
+        {
+          "id": "outro-7",
+          "name": "Tag",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "saint-esprit",
+      "title": "Saint-Esprit",
+      "titlePinyin": null,
+      "artist": "Jesus Culture",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "saint-esprit",
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont 1",
+          "type": "bridge"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont 2",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "sans-rien-retenir",
+      "title": "Sans rien retenir",
+      "titlePinyin": null,
+      "artist": "Victor Mitraud & Maxime Jean-Louis",
+      "language": "fr",
+      "originalKey": "F#",
+      "tempo": 126,
+      "themes": [
+        "adoration",
+        "grace",
+        "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-2",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "sauve-avec-puissance",
+      "title": "Sauve avec puissance",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "salut",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "seigneur-par-la-clarte",
+      "title": "Seigneur, par la clarté",
+      "titlePinyin": null,
+      "artist": "Graham Kendrick",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "saint-esprit",
+        "saintete"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 3",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "solo-christo",
+      "title": "Solo Christo",
+      "titlePinyin": null,
+      "artist": "Impact",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "croix",
+        "resurrection"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 4",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "souffle",
+      "title": "Souffle",
+      "titlePinyin": null,
+      "artist": "Maxime Jean-Louis & Tendry Rajaonson",
+      "language": "fr",
+      "originalKey": "F",
+      "tempo": 92,
+      "themes": [
+        "adoration",
+        "saint-esprit",
+        "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-2",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "ta-parole",
+      "title": "Ta parole",
+      "titlePinyin": null,
+      "artist": "Pierre-Nicolas de Katow",
+      "language": "fr",
+      "originalKey": "F",
+      "tempo": null,
+      "themes": [
+        "foi",
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "outro-6",
+          "name": "Final",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "toi-et-moi",
+      "title": "Toi et moi",
+      "titlePinyin": null,
+      "artist": "EXO",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "chorus-1",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "toi-seul-es-digne",
+      "title": "Toi seul es digne",
+      "titlePinyin": null,
+      "artist": "Dan Luiten",
+      "language": "fr",
+      "originalKey": "E",
+      "tempo": null,
+      "themes": [
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "outro-6",
+          "name": "Final",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "ton-nom",
+      "title": "Ton Nom",
+      "titlePinyin": null,
+      "artist": "Paul Baloche",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "saintete"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "toujours-puissante",
+      "title": "Toujours puissante",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "croix",
+        "adoration",
+        "foi"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-6",
+          "name": "Pont 1",
+          "type": "bridge"
+        },
+        {
+          "id": "bridge-7",
+          "name": "Pont 2",
+          "type": "bridge"
+        },
+        {
+          "id": "outro-8",
+          "name": "Tag",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "tout-a-toi",
+      "title": "Tout à Toi",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": 126,
+      "themes": [
+        "adoration",
+        "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain 1",
+          "type": "chorus"
+        },
+        {
+          "id": "chorus-5",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-6",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "outro-7",
+          "name": "Outro",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "tout-puissant",
+      "title": "Tout puissant",
+      "titlePinyin": null,
+      "artist": "Dan Luiten",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "saintete"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "outro-5",
+          "name": "Final",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "toutes-choses-nouvelles",
+      "title": "Toutes choses nouvelles",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "tu-agiras",
+      "title": "Tu agiras",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "E",
+      "tempo": 128,
+      "themes": [
+        "foi",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "outro-6",
+          "name": "Tag",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "tu-es-bon",
+      "title": "Tu es bon",
+      "titlePinyin": null,
+      "artist": "Brian Johnson & Jeremy Riddle",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "action-de-grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "tu-es-la-vie",
+      "title": "Tu es la vie",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-2",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-5",
+          "name": "Post-Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-6",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "tu-es-le-chant",
+      "title": "Tu es le chant",
+      "titlePinyin": null,
+      "artist": "Tabitha Lemaire",
+      "language": "fr",
+      "originalKey": "E",
+      "tempo": null,
+      "themes": [
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-3",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "tu-es-notre-dieu",
+      "title": "Tu es notre Dieu",
+      "titlePinyin": null,
+      "artist": "Impact",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "tu-m-aimes",
+      "title": "Tu m'aimes",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "B",
+      "tempo": 77,
+      "themes": [
+        "grace",
+        "croix",
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-6",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-7",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "un-chant-nouveau-monte",
+      "title": "Un chant nouveau monte",
+      "titlePinyin": null,
+      "artist": "Pierre-Nicolas de Katow",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "action-de-grace"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-3",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "outro-4",
+          "name": "Final",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "un-vin-nouveau",
+      "title": "Un vin nouveau",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "saint-esprit",
+        "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-3",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "vases-d-argile",
+      "title": "Vases d'argile",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "G",
+      "tempo": null,
+      "themes": [
+        "grace",
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-3",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "viens-souffler-a-nouveau",
+      "title": "Viens Souffler à Nouveau",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [
+        "saint-esprit",
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "verse-6",
+          "name": "Couplet 4",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-7",
+          "name": "Refrain 2",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "viens-toucher-ma-vie",
+      "title": "Viens toucher ma vie",
+      "titlePinyin": null,
+      "artist": "Hillsong",
+      "language": "fr",
+      "originalKey": "A",
+      "tempo": null,
+      "themes": [
+        "saint-esprit",
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-2",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "voici-le-jour",
+      "title": "Voici le jour",
+      "titlePinyin": null,
+      "artist": "Lincoln Brewster & Paul Baloche",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "foi",
+        "esperance",
+        "adoration"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "outro-6",
+          "name": "Final",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "yahwe",
+      "title": "Yahwé",
+      "titlePinyin": null,
+      "artist": "Samuel Olivier",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "adoration",
+        "foi"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 3",
+          "type": "verse"
+        }
+      ]
+    },
+    {
       "slug": "en-dian-zhi-lu",
       "title": "恩典之路",
       "titlePinyin": "Ēn diǎn zhī lù",
@@ -122,12 +6994,12 @@
         },
         {
           "id": "verse-2",
-          "name": "第一节",
+          "name": "主歌/Couplet",
           "type": "verse"
         },
         {
           "id": "chorus-3",
-          "name": "副歌",
+          "name": "副歌/Refrain",
           "type": "chorus"
         }
       ]

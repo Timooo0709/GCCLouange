@@ -1,0 +1,28 @@
+{title: Tu es le chant}
+{artist: Tabitha Lemaire}
+{key: E}
+{language: fr}
+{themes: Adoration}
+
+{start_of_verse: Couplet 1}
+[E]Seigneur, Tu es la force,
+[B/D#][C#m][A]L'amour qui brûle en moi comme une flamme,
+[B/D#][A]Le soutien de mon âme.
+{end_of_verse}
+
+{start_of_verse: Couplet 2}
+[E]Seigneur, Tu es la joie
+[B/D#][C#m][A]Qui brille sur mon visage, Tu es ma gloire,
+[B/D#][A]Tu es tout pour moi.
+{end_of_verse}
+
+{start_of_prechorus: Pré-Refrain}
+[F#m]Et quand je contemple la grandeur de Ton amour,
+[D]Mon être entier veut T'a[Bsus4]dorer.
+{end_of_prechorus}
+
+{start_of_chorus: Refrain}
+[E/G#][A]Tu es le chant que je chante,
+[E/G#]Tu es la mélodie de mon cœur,
+[E][F#m][A][B]À jamais le sujet de mes louanges.
+{end_of_chorus}
