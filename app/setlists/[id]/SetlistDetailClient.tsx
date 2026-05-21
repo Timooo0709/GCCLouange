@@ -61,6 +61,16 @@ function ListView({
                 )}
               </div>
               {song?.artist && <p className="text-xs text-muted-foreground">{song.artist}</p>}
+              {song?.sections && song.sections.length > 0 && (() => {
+                const names = item.structureOverride
+                  ? item.structureOverride.map((id) => song.sections!.find((s) => s.id === id)?.name ?? id)
+                  : song.sections.map((s) => s.name);
+                return (
+                  <p className="text-[11px] text-muted-foreground/70 mt-0.5 leading-tight">
+                    {names.join(" · ")}
+                  </p>
+                );
+              })()}
               {item.notes && <p className="text-xs text-muted-foreground italic mt-0.5">{item.notes}</p>}
             </div>
             <div className="shrink-0 text-right">
