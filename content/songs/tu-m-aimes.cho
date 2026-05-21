@@ -7,56 +7,62 @@
 {ccli: 7147375}
 
 {start_of_intro: Intro}
-[E]  [F#]  [B]  [E]
+[G#m]   [F#]  [E]  
+[G#m]   [B]  [E]  
 {end_of_intro}
 
 {start_of_verse: Couplet 1}
-[G#m]J'ai chassé en vain les trésors de ce monde
-[G#m]L'âme vide, le cœur brisé
-[G#m]Tu m'as vu errant sur les routes de ma honte
-[F#]Mais Tu ne m'as pas laissé tomber [B/D#][E][F#][E]
+[G#m]J'ai chassé en va[F#]in les [E]trésors de ce monde
+[G#m]L'âme vide, le c[B]œur [E]brisé
+[G#m]Tu m'as vu erran[F#]t sur l[E]es routes de ma honte
+[F#]Mais Tu ne m'as pas lai[B/D#]ssé t[E]omber
 {end_of_verse}
 
 {start_of_verse: Couplet 2}
-[G#m]Quel amour a bien pu inciter Ton cœur
-[G#m]À courir après le mien
-[G#m]Et ma vie avait-elle autant de valeur
-[F#]Pour que les clous percent Tes mains
+[G#m]Quel amour a [F#]bien pu [E]inciter Ton cœur
+[G#m]À courir a[B]près [E]le mien
+[G#m]Et ma vie a[F#]vait-elle [E]autant de valeur
+[F#]Pour que les clous per[B/D#]cent [E]Tes mains
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[B]Tu m'aimes
-Malgré mes circonstances et mes offenses
-[F#]Tu m'aimes
-Au prix de Ta vie et sans répit
-[G#m]Tu m'aimes
-[F#]Tu T'es offert
-[E]Bras grands ouverts
+Tu [B]m'aimes, malgré mes circonstances et mes offenses,
+Tu [F#]m'aimes, au prix de Ta vie et sans répit,
+Tu [G#m]m'aimes, Tu T'es offe[F#]rt, bras grands ouve[E]rts,
 Ô mon Dieu Tu m'aimes
 {end_of_chorus}
 
+{start_of_intro: Intro}
+[G#m]   [F#]  [E]  
+[G#m]   [B]  [E]  
+{end_of_intro}
+
 {start_of_verse: Couplet 3}
-[G#m]Tu as fait preuve de tant de grâce à mon égard
-[G#m]Lorsque Tu as tout accompli
-[G#m]Mais Ta mort n'était pas la fin de l'histoire
-[F#]Tu es revenu à la vie
-[F#]Et Tu me ramènes à la vie
+[G#m]Tu as fait preuve de [F#]tant de [E]grâce à mon égard
+[G#m]Lorsque Tu as tout [B]a-[E]ccompli
+[G#m]Mais Ta mort n'é[F#]tait pas [E]la fin de l'histoire
+[F#]Tu es revenu [B/D#]à []la vie, [G#m]Et Tu me [B/D#]ramènes à [E]la vie. 
 {end_of_verse}
 
 {start_of_chorus: Refrain 2}
-[B]À en accepter d'être attaché sur le bois
-Et que le Ciel détourne Son regard de Toi
-[G#m]Tu T'es battu
-[F#]Pour moi Jésus
-[E]Ô mon Dieu Tu m'aimes
+[B]À en accepter d'être attaché sur le [F#]bois
+Et que le Ciel détourne Son regard de [G#m]Toi,
+Tu T'es batt[F#]u pour moi Jés[E]us
+Ô mon Dieu Tu m'[E]aimes  [B][F#]
 {end_of_chorus}
 
 {start_of_bridge: Pont}
-[E][B]Ni la mort ni la vie
-[F#][E]Le présent ou l'avenir
-[G#m][B]Ne peut dérober mon cœur
-[F#]De l'amour de mon Sauveur
-[B]Dans les hauts dans les bas
-[F#][E]Je le sais et je le crois
-[B][F#]Rien ne pourra m'éloigner de Toi
+Ni la m[E]ort ni la v[B]ie,
+Le prés[F#]ent ou l'avenir
+Ne peut [E]dérober mon cœu[B]r de l'a[G#m]mour de mon Sauveu[F#]r.
+Dans les h[E]auts dans les b[B]as,
+Je le s[F#]ais et je le crois
+Rien ne [E]pourra m'éloigne[B]r de T[F#]oi
 {end_of_bridge}
+
+{start_of_final: Final}
+[B] Je n'ai rien fait afin de mériter Ta [F#]grâce
+Dans laquelle mes péchés et mes hontes s'e[G#m]ffacent
+Depuis toujou[F#]rs et pour toujou[E]rs,
+Ô mon Dieu Tu m'[B]aimes
+{end_of_final}
