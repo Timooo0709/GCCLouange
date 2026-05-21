@@ -1,14 +1,5 @@
-import {
-  collection,
-  getDocs,
-  getDoc,
-  deleteDoc,
-  doc,
-  query,
-  orderBy,
-  Timestamp,
-} from "firebase/firestore";
-import { db, auth } from "./config";
+import { Timestamp } from "firebase/firestore";
+import { auth } from "./config";
 import type { SetlistItem } from "@/lib/types";
 
 // ─── Categories ───────────────────────────────────────────────────────────────
@@ -50,51 +41,11 @@ export interface FSSetlist {
   isDraft?: boolean;
 }
 
-// ─── CRUD reads (Firebase SDK) ────────────────────────────────────────────────
+// ─── Firestore REST API ───────────────────────────────────────────────────────
+// Using the REST API instead of the Firebase SDK to avoid WebChannel
+// connectivity issues in certain browser environments.
 
-export async function getSetlists(): Promise<FSSetlist[]> {
-  const q = query(collection(db, "setlists"), orderBy("createdAt", "desc"));
-  const snap = await getDocs(q);
-  return snap.docs.map((d) => ({ id: d.id, ...d.data() } as FSSetlist));
-}
-
-export async function getSetlist(id: string): Promise<FSSetlist | null> {
-  const snap = await getDoc(doc(db, "setlists", id));
-  if (!snap.exists()) return null;
-  return { id: snap.id, ...snap.data() } as FSSetlist;
-}
-
-export async function deleteSetlist(id: string): Promise<void> {
-  await deleteDoc(doc(db, "setlists", id));
-}
-
-// ─── REST API writes (bypasses WebChannel — works on all browsers/networks) ──
-
-const FS_REST = `https://firestore.googleapis.com/v1/projects/gcclouange/databases/(default)/documents`;
-
-function fsValue(v: unknown): unknown {
-  if (v === null || v === undefined) return { nullValue: null };
-  if (typeof v === "boolean") return { booleanValue: v };
-  if (typeof v === "number") {
-    return Number.isInteger(v) ? { integerValue: String(v) } : { doubleValue: v };
-  }
-  if (typeof v === "string") return { stringValue: v };
-  if (Array.isArray(v)) return { arrayValue: { values: v.map(fsValue) } };
-  if (typeof v === "object") {
-    return {
-      mapValue: {
-        fields: Object.fromEntries(
-          Object.entries(v as Record<string, unknown>).map(([k, val]) => [k, fsValue(val)])
-        ),
-      },
-    };
-  }
-  return { nullValue: null };
-}
-
-function fsFields(obj: Record<string, unknown>): Record<string, unknown> {
-  return Object.fromEntries(Object.entries(obj).map(([k, v]) => [k, fsValue(v)]));
-}
+const FS_BASE = "https://firestore.googleapis.com/v1/projects/gcclouange/databases/(default)/documents";
 
 async function authHeader(): Promise<Record<string, string>> {
   if (!auth.currentUser) return {};
@@ -102,11 +53,73 @@ async function authHeader(): Promise<Record<string, string>> {
   return { Authorization: `Bearer ${token}` };
 }
 
+// ─── Value conversion: JS → Firestore REST ────────────────────────────────────
+
+function toFsValue(v: unknown): unknown {
+  if (v === null || v === undefined) return { nullValue: null };
+  if (typeof v === "boolean") return { booleanValue: v };
+  if (typeof v === "number") {
+    return Number.isInteger(v) ? { integerValue: String(v) } : { doubleValue: v };
+  }
+  if (typeof v === "string") return { stringValue: v };
+  if (Array.isArray(v)) return { arrayValue: { values: v.map(toFsValue) } };
+  if (typeof v === "object") {
+    return {
+      mapValue: {
+        fields: Object.fromEntries(
+          Object.entries(v as Record<string, unknown>).map(([k, val]) => [k, toFsValue(val)])
+        ),
+      },
+    };
+  }
+  return { nullValue: null };
+}
+
+function toFsFields(obj: Record<string, unknown>): Record<string, unknown> {
+  return Object.fromEntries(Object.entries(obj).map(([k, v]) => [k, toFsValue(v)]));
+}
+
+// ─── Value conversion: Firestore REST → JS ────────────────────────────────────
+
+function fromFsValue(v: unknown): unknown {
+  if (typeof v !== "object" || v === null) return null;
+  const val = v as Record<string, unknown>;
+  if ("nullValue" in val) return null;
+  if ("booleanValue" in val) return val.booleanValue;
+  if ("integerValue" in val) return parseInt(val.integerValue as string, 10);
+  if ("doubleValue" in val) return val.doubleValue;
+  if ("stringValue" in val) return val.stringValue;
+  if ("timestampValue" in val) {
+    return Timestamp.fromDate(new Date(val.timestampValue as string));
+  }
+  if ("arrayValue" in val) {
+    const arr = val.arrayValue as { values?: unknown[] };
+    return (arr.values ?? []).map(fromFsValue);
+  }
+  if ("mapValue" in val) {
+    const map = val.mapValue as { fields?: Record<string, unknown> };
+    return Object.fromEntries(
+      Object.entries(map.fields ?? {}).map(([k, v2]) => [k, fromFsValue(v2)])
+    );
+  }
+  return null;
+}
+
+type RawDoc = { name: string; fields: Record<string, unknown> };
+
+function fromFsDoc(raw: RawDoc): FSSetlist {
+  const id = raw.name.split("/").pop()!;
+  const data = Object.fromEntries(
+    Object.entries(raw.fields).map(([k, v]) => [k, fromFsValue(v)])
+  );
+  return { id, ...data } as FSSetlist;
+}
+
 async function checkRest(res: Response): Promise<void> {
   if (!res.ok) {
     const json = await res.json().catch(() => ({}));
     throw new Error(
-      (json as { error?: { message?: string } }).error?.message ||
+      (json as { error?: { message?: string } }).error?.message ??
         `Erreur Firestore (HTTP ${res.status})`
     );
   }
@@ -115,10 +128,36 @@ async function checkRest(res: Response): Promise<void> {
 function withTimeout<T>(promise: Promise<T>, ms: number, message: string): Promise<T> {
   return Promise.race([
     promise,
-    new Promise<T>((_, reject) =>
-      setTimeout(() => reject(new Error(message)), ms)
-    ),
+    new Promise<T>((_, reject) => setTimeout(() => reject(new Error(message)), ms)),
   ]);
+}
+
+// ─── CRUD ─────────────────────────────────────────────────────────────────────
+
+export async function getSetlists(): Promise<FSSetlist[]> {
+  const headers = await authHeader();
+  const res = await fetch(`${FS_BASE}:runQuery`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...headers },
+    body: JSON.stringify({
+      structuredQuery: {
+        from: [{ collectionId: "setlists" }],
+        orderBy: [{ field: { fieldPath: "createdAt" }, direction: "DESCENDING" }],
+      },
+    }),
+  });
+  if (!res.ok) return [];
+  const rows = await res.json() as Array<{ document?: RawDoc }>;
+  return rows.filter((r) => r.document).map((r) => fromFsDoc(r.document!));
+}
+
+export async function getSetlist(id: string): Promise<FSSetlist | null> {
+  const headers = await authHeader();
+  const res = await fetch(`${FS_BASE}/setlists/${id}`, { headers });
+  if (res.status === 404) return null;
+  if (!res.ok) return null;
+  const raw = await res.json() as RawDoc;
+  return fromFsDoc(raw);
 }
 
 export async function createSetlist(
@@ -126,12 +165,12 @@ export async function createSetlist(
 ): Promise<string> {
   const headers = await authHeader();
   const fields = {
-    ...fsFields(data as Record<string, unknown>),
+    ...toFsFields(data as Record<string, unknown>),
     createdAt: { timestampValue: new Date().toISOString() },
   };
 
   const res = await withTimeout(
-    fetch(`${FS_REST}/setlists`, {
+    fetch(`${FS_BASE}/setlists`, {
       method: "POST",
       headers: { "Content-Type": "application/json", ...headers },
       body: JSON.stringify({ fields }),
@@ -141,7 +180,7 @@ export async function createSetlist(
   );
 
   await checkRest(res);
-  const doc = await res.json() as { name: string };
+  const doc = await res.json() as RawDoc;
   return doc.name.split("/").pop()!;
 }
 
@@ -150,14 +189,14 @@ export async function updateSetlist(
   data: Partial<Omit<FSSetlist, "id" | "createdAt">>
 ): Promise<void> {
   const headers = await authHeader();
-  const fields = fsFields(data as Record<string, unknown>);
+  const fields = toFsFields(data as Record<string, unknown>);
   const docName = `projects/gcclouange/databases/(default)/documents/setlists/${id}`;
   const mask = Object.keys(data)
     .map((f) => `updateMask.fieldPaths=${encodeURIComponent(f)}`)
     .join("&");
 
   const res = await withTimeout(
-    fetch(`${FS_REST}/setlists/${id}?${mask}`, {
+    fetch(`${FS_BASE}/setlists/${id}?${mask}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json", ...headers },
       body: JSON.stringify({ name: docName, fields }),
@@ -167,4 +206,9 @@ export async function updateSetlist(
   );
 
   await checkRest(res);
+}
+
+export async function deleteSetlist(id: string): Promise<void> {
+  const headers = await authHeader();
+  await fetch(`${FS_BASE}/setlists/${id}`, { method: "DELETE", headers });
 }
