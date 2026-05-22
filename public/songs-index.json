@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-21T12:44:03.960Z",
+  "generatedAt": "2026-05-22T22:42:16.256Z",
   "songs": [
     {
       "slug": "a-jamais-tu-es-saint",
@@ -380,13 +380,18 @@
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "verse-2",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
-          "name": "Couplet 2",
+          "id": "verse-4",
+          "name": "Couplet 3",
           "type": "verse"
         }
       ]
@@ -425,6 +430,22 @@
           "type": "chorus"
         }
       ]
+    },
+    {
+      "slug": "au-nom-de-jesus",
+      "title": "Au nom de Jésus",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": []
     },
     {
       "slug": "aucun-autre-nom",
@@ -611,6 +632,48 @@
           "id": "bridge-5",
           "name": "Pont",
           "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "benis-dieu-10000-raisons",
+      "title": "Bénis Dieu (10000 raisons)",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 3",
+          "type": "verse"
         }
       ]
     },
@@ -1078,7 +1141,12 @@
           "type": "chorus"
         },
         {
-          "id": "verse-5",
+          "id": "instrumental-5",
+          "name": "Instrumental",
+          "type": "other"
+        },
+        {
+          "id": "verse-6",
           "name": "Couplet 2",
           "type": "verse"
         }
@@ -1278,7 +1346,7 @@
         },
         {
           "id": "prechorus-3",
-          "name": "Pré-Refrain",
+          "name": "Pré-Refrain 1",
           "type": "prechorus"
         },
         {
@@ -1299,6 +1367,73 @@
         {
           "id": "bridge-7",
           "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "bridge-8",
+          "name": "Pont (Tag)",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "de-l-ombre-a-la-lumiere",
+      "title": "De l'ombre à la lumière",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": 116,
+      "themes": [],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain 1",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-5",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "intro-6",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "bridge-7",
+          "name": "Pont 1",
+          "type": "bridge"
+        },
+        {
+          "id": "chorus-8",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-9",
+          "name": "Pont 2",
           "type": "bridge"
         }
       ]
@@ -1342,9 +1477,19 @@
           "type": "verse"
         },
         {
-          "id": "bridge-5",
+          "id": "chorus-5",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-6",
           "name": "Pont",
           "type": "bridge"
+        },
+        {
+          "id": "final-7",
+          "name": "Final",
+          "type": "other"
         }
       ]
     },
@@ -1368,22 +1513,27 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "bridge-4",
+          "id": "bridge-5",
           "name": "Pont",
           "type": "bridge"
         }
@@ -1463,29 +1613,39 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "verse-2",
+          "id": "verse-3",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "chorus-3",
+          "id": "chorus-4",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-4",
+          "id": "verse-5",
           "name": "Couplet 3",
           "type": "verse"
         },
         {
-          "id": "bridge-5",
+          "id": "bridge-6",
           "name": "Pont",
           "type": "bridge"
+        },
+        {
+          "id": "verse-7",
+          "name": "Couplet 1",
+          "type": "verse"
         }
       ]
     },
@@ -1575,6 +1735,11 @@
           "id": "bridge-5",
           "name": "Pont",
           "type": "bridge"
+        },
+        {
+          "id": "verse-6",
+          "name": "Couplet 1",
+          "type": "verse"
         }
       ]
     },
@@ -1597,17 +1762,22 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
-          "name": "Refrain",
+          "id": "chorus-3",
+          "name": "Refrain 2",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         }
@@ -1633,12 +1803,17 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         }
@@ -1708,17 +1883,22 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "verse-2",
+          "id": "verse-3",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "chorus-3",
+          "id": "chorus-4",
           "name": "Refrain",
           "type": "chorus"
         }
@@ -1735,6 +1915,95 @@
       "themes": [
         "adoration"
       ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "echos",
+      "title": "Échos",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain 1",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "verse-6",
+          "name": "Couplet 1",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "eclipse",
+      "title": "Éclipse",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": 80,
+      "themes": [],
       "youtubeUrl": null,
       "spotifyUrl": null,
       "appleMusicUrl": null,
@@ -1787,27 +2056,32 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain 1",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "chorus-4",
+          "id": "chorus-5",
           "name": "Refrain 2",
           "type": "chorus"
         },
         {
-          "id": "bridge-5",
+          "id": "bridge-6",
           "name": "Pont",
           "type": "bridge"
         }
@@ -1837,34 +2111,14 @@
           "type": "intro"
         },
         {
-          "id": "verse-2",
+          "id": "bridge-2",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "verse-3",
           "name": "Couplet 1",
           "type": "verse"
-        },
-        {
-          "id": "chorus-3",
-          "name": "Refrain",
-          "type": "chorus"
-        },
-        {
-          "id": "verse-4",
-          "name": "Couplet 2",
-          "type": "verse"
-        },
-        {
-          "id": "bridge-5",
-          "name": "Pont 1",
-          "type": "bridge"
-        },
-        {
-          "id": "bridge-6",
-          "name": "Pont 2",
-          "type": "bridge"
-        },
-        {
-          "id": "outro-7",
-          "name": "Final",
-          "type": "outro"
         }
       ]
     },
@@ -1887,27 +2141,32 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain 1",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "verse-4",
+          "id": "verse-5",
           "name": "Couplet 3",
           "type": "verse"
         },
         {
-          "id": "chorus-5",
+          "id": "chorus-6",
           "name": "Refrain 2",
           "type": "chorus"
         }
@@ -1932,9 +2191,51 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "chorus-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "chorus-2",
           "name": "Refrain",
           "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 3",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "eveille-toi-mon-ame",
+      "title": "Éveille-toi mon âme",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
         },
         {
           "id": "verse-2",
@@ -1947,9 +2248,24 @@
           "type": "verse"
         },
         {
-          "id": "verse-4",
+          "id": "chorus-4",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-5",
           "name": "Couplet 3",
           "type": "verse"
+        },
+        {
+          "id": "bridge-6",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "bridge-7",
+          "name": "Pont",
+          "type": "bridge"
         }
       ]
     },
@@ -2020,16 +2336,6 @@
           "id": "verse-1",
           "name": "Couplet 1",
           "type": "verse"
-        },
-        {
-          "id": "chorus-2",
-          "name": "Refrain",
-          "type": "chorus"
-        },
-        {
-          "id": "verse-3",
-          "name": "Couplet 2",
-          "type": "verse"
         }
       ]
     },
@@ -2040,7 +2346,7 @@
       "artist": "Maxime Jean-Louis & Tendry Rajaonson",
       "language": "fr",
       "originalKey": "C",
-      "tempo": null,
+      "tempo": 83,
       "themes": [
         "adoration",
         "foi",
@@ -2131,6 +2437,58 @@
       ]
     },
     {
+      "slug": "grace-en-grace",
+      "title": "Grâce en grâce",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": 60,
+      "themes": [],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-2",
+          "name": "Pré-Refrain 1",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-5",
+          "name": "Pré-Refrain 2",
+          "type": "prechorus"
+        },
+        {
+          "id": "bridge-6",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "verse-7",
+          "name": "TAG",
+          "type": "verse"
+        }
+      ]
+    },
+    {
       "slug": "grace-infinie",
       "title": "Grâce infinie",
       "titlePinyin": null,
@@ -2149,19 +2507,66 @@
       "jianpuKey": null,
       "sections": [
         {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "grande-est-ta-fidelite",
+      "title": "Grande est Ta fidélité",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": 149,
+      "themes": [],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
           "id": "verse-1",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "prechorus-2",
+          "name": "Pré-Refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
         }
       ]
     },
@@ -2250,9 +2655,24 @@
           "type": "verse"
         },
         {
-          "id": "bridge-5",
+          "id": "chorus-5",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-6",
           "name": "Pont",
           "type": "bridge"
+        },
+        {
+          "id": "chorus-7",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "outro-8",
+          "name": "Outro",
+          "type": "outro"
         }
       ]
     },
@@ -2276,27 +2696,32 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "bridge-4",
+          "id": "bridge-5",
           "name": "Pont",
           "type": "bridge"
         },
         {
-          "id": "verse-5",
+          "id": "verse-6",
           "name": "Couplet 3",
           "type": "verse"
         }
@@ -2353,7 +2778,7 @@
       "titlePinyin": null,
       "artist": "Thierry Ostrini & Chris Christensen",
       "language": "fr",
-      "originalKey": "E",
+      "originalKey": "D",
       "tempo": null,
       "themes": [
         "adoration",
@@ -2392,7 +2817,7 @@
       "title": "How Great Thou Art",
       "titlePinyin": null,
       "artist": "Inconnu",
-      "language": "en",
+      "language": "fr",
       "originalKey": "G",
       "tempo": null,
       "themes": [
@@ -2406,29 +2831,9 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
-          "name": "Verse 1",
-          "type": "verse"
-        },
-        {
-          "id": "chorus-2",
-          "name": "Chorus",
-          "type": "chorus"
-        },
-        {
-          "id": "verse-3",
-          "name": "Verse 2",
-          "type": "verse"
-        },
-        {
-          "id": "verse-4",
-          "name": "Verse 3",
-          "type": "verse"
-        },
-        {
-          "id": "verse-5",
-          "name": "Verse 4",
-          "type": "verse"
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
         }
       ]
     },
@@ -2451,22 +2856,27 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "verse-2",
+          "id": "verse-3",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "chorus-3",
+          "id": "chorus-4",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-4",
+          "id": "verse-5",
           "name": "Couplet 3",
           "type": "verse"
         }
@@ -2537,24 +2947,29 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "chorus-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "chorus-2",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-2",
+          "id": "verse-3",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "outro-4",
+          "id": "final-5",
           "name": "Final",
-          "type": "outro"
+          "type": "other"
         }
       ]
     },
@@ -2583,7 +2998,7 @@
         },
         {
           "id": "prechorus-2",
-          "name": "Pré-Refrain",
+          "name": "Pré-Refrain 1",
           "type": "prechorus"
         },
         {
@@ -2627,27 +3042,32 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "prechorus-2",
+          "id": "prechorus-3",
           "name": "Pré-Refrain",
           "type": "prechorus"
         },
         {
-          "id": "chorus-3",
+          "id": "chorus-4",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-4",
+          "id": "verse-5",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "bridge-5",
+          "id": "bridge-6",
           "name": "Pont",
           "type": "bridge"
         }
@@ -2693,17 +3113,27 @@
           "type": "chorus"
         },
         {
-          "id": "verse-5",
+          "id": "intro-5",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-6",
           "name": "Couplet 3",
           "type": "verse"
         },
         {
-          "id": "bridge-6",
-          "name": "Pont",
+          "id": "instrumental-7",
+          "name": "Pont musical",
+          "type": "other"
+        },
+        {
+          "id": "bridge-8",
+          "name": "Pont 1",
           "type": "bridge"
         },
         {
-          "id": "bridge-7",
+          "id": "bridge-9",
           "name": "Pont 2",
           "type": "bridge"
         }
@@ -2729,27 +3159,37 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "verse-2",
+          "id": "verse-3",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "chorus-3",
+          "id": "chorus-4",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-4",
+          "id": "verse-5",
           "name": "Couplet 3",
           "type": "verse"
         },
         {
-          "id": "bridge-5",
+          "id": "chorus-6",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-7",
           "name": "Pont",
           "type": "bridge"
         }
@@ -2774,27 +3214,32 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "verse-2",
+          "id": "verse-3",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "chorus-3",
+          "id": "chorus-4",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-4",
+          "id": "verse-5",
           "name": "Couplet 3",
           "type": "verse"
         },
         {
-          "id": "bridge-5",
+          "id": "bridge-6",
           "name": "Pont",
           "type": "bridge"
         }
@@ -2819,19 +3264,24 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "outro-3",
+          "id": "final-4",
           "name": "Final",
-          "type": "outro"
+          "type": "other"
         }
       ]
     },
@@ -2854,14 +3304,14 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
-          "name": "Couplet",
-          "type": "verse"
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
         },
         {
-          "id": "outro-2",
+          "id": "final-2",
           "name": "Final",
-          "type": "outro"
+          "type": "other"
         }
       ]
     },
@@ -2884,12 +3334,17 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         }
@@ -2914,12 +3369,17 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "verse-2",
+          "id": "verse-3",
           "name": "Couplet 2",
           "type": "verse"
         }
@@ -2932,7 +3392,7 @@
       "artist": "Hillsong",
       "language": "fr",
       "originalKey": "F",
-      "tempo": null,
+      "tempo": 74,
       "themes": [
         "foi",
         "esperance"
@@ -2960,13 +3420,13 @@
         },
         {
           "id": "bridge-4",
-          "name": "Pont 1",
+          "name": "Pont",
           "type": "bridge"
         },
         {
-          "id": "bridge-5",
-          "name": "Pont 2",
-          "type": "bridge"
+          "id": "intro-5",
+          "name": "Interlude",
+          "type": "intro"
         }
       ]
     },
@@ -2989,22 +3449,27 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "prechorus-2",
+          "id": "prechorus-3",
           "name": "Pré-Refrain",
           "type": "prechorus"
         },
         {
-          "id": "chorus-3",
+          "id": "chorus-4",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-4",
+          "id": "verse-5",
           "name": "Couplet 2",
           "type": "verse"
         }
@@ -3027,18 +3492,7 @@
       "appleMusicUrl": null,
       "hasJianpu": false,
       "jianpuKey": null,
-      "sections": [
-        {
-          "id": "verse-1",
-          "name": "Couplet",
-          "type": "verse"
-        },
-        {
-          "id": "chorus-2",
-          "name": "Refrain",
-          "type": "chorus"
-        }
-      ]
+      "sections": []
     },
     {
       "slug": "je-veux-proclamer-le-nom-de-jesus",
@@ -3060,27 +3514,32 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "verse-2",
+          "id": "verse-3",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "chorus-3",
+          "id": "chorus-4",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-4",
+          "id": "verse-5",
           "name": "Couplet 3",
           "type": "verse"
         },
         {
-          "id": "bridge-5",
+          "id": "bridge-6",
           "name": "Pont",
           "type": "bridge"
         }
@@ -3111,34 +3570,29 @@
           "type": "intro"
         },
         {
-          "id": "verse-2",
+          "id": "intro-2",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "intro-3",
+          "name": "Interlude",
+          "type": "intro"
+        },
+        {
+          "id": "verse-4",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "verse-3",
-          "name": "Couplet 2",
+          "id": "intro-5",
+          "name": "Interlude",
+          "type": "intro"
+        },
+        {
+          "id": "verse-6",
+          "name": "Couplet 1",
           "type": "verse"
-        },
-        {
-          "id": "chorus-4",
-          "name": "Refrain",
-          "type": "chorus"
-        },
-        {
-          "id": "bridge-5",
-          "name": "Pont 1",
-          "type": "bridge"
-        },
-        {
-          "id": "bridge-6",
-          "name": "Pont 2",
-          "type": "bridge"
-        },
-        {
-          "id": "outro-7",
-          "name": "Final",
-          "type": "outro"
         }
       ]
     },
@@ -3149,7 +3603,7 @@
       "artist": "Hillsong",
       "language": "fr",
       "originalKey": "F",
-      "tempo": null,
+      "tempo": 96,
       "themes": [
         "adoration",
         "noël"
@@ -3167,7 +3621,7 @@
         },
         {
           "id": "chorus-2",
-          "name": "Refrain",
+          "name": "Refrain 1",
           "type": "chorus"
         },
         {
@@ -3176,7 +3630,17 @@
           "type": "verse"
         },
         {
-          "id": "verse-4",
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "chorus-5",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-6",
           "name": "Couplet 3",
           "type": "verse"
         }
@@ -3202,9 +3666,9 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
-          "name": "Couplet 1",
-          "type": "verse"
+          "id": "bridge-1",
+          "name": "Pont 1",
+          "type": "bridge"
         },
         {
           "id": "chorus-2",
@@ -3217,16 +3681,69 @@
           "type": "verse"
         },
         {
-          "id": "bridge-4",
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "l-amour-de-notre-pere",
+      "title": "L'amour de notre Père",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-3",
           "name": "Pont",
           "type": "bridge"
         },
         {
-          "id": "outro-5",
+          "id": "verse-4",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "final-5",
           "name": "Final",
-          "type": "outro"
+          "type": "other"
         }
       ]
+    },
+    {
+      "slug": "l-entre-deux",
+      "title": "L'entre-Deux",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": []
     },
     {
       "slug": "la-benediction",
@@ -3248,26 +3765,31 @@
       "sections": [
         {
           "id": "verse-1",
+          "name": "LA BÉNÉDICTION",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "bridge-3",
+          "id": "bridge-4",
           "name": "Pont 1",
           "type": "bridge"
         },
         {
-          "id": "bridge-4",
+          "id": "bridge-5",
           "name": "Pont 2",
           "type": "bridge"
         },
         {
-          "id": "bridge-5",
+          "id": "bridge-6",
           "name": "Pont 3",
           "type": "bridge"
         }
@@ -3293,27 +3815,32 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "verse-2",
+          "id": "verse-3",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "chorus-3",
+          "id": "chorus-4",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-4",
+          "id": "verse-5",
           "name": "Couplet 3",
           "type": "verse"
         },
         {
-          "id": "verse-5",
+          "id": "verse-6",
           "name": "Couplet 4",
           "type": "verse"
         }
@@ -3339,29 +3866,49 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain 1",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "chorus-4",
+          "id": "verse-5",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-6",
           "name": "Refrain 2",
           "type": "chorus"
         },
         {
-          "id": "bridge-5",
+          "id": "bridge-7",
           "name": "Pont",
           "type": "bridge"
+        },
+        {
+          "id": "verse-8",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-9",
+          "name": "Refrain 3",
+          "type": "chorus"
         }
       ]
     },
@@ -3413,7 +3960,7 @@
       "artist": "Maxime Jean-Louis & Tendry Rajaonson",
       "language": "fr",
       "originalKey": "B",
-      "tempo": null,
+      "tempo": 145,
       "themes": [
         "adoration",
         "engagement",
@@ -3441,22 +3988,27 @@
           "type": "chorus"
         },
         {
-          "id": "verse-4",
+          "id": "intro-4",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-5",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "bridge-5",
+          "id": "bridge-6",
           "name": "Pont 1",
           "type": "bridge"
         },
         {
-          "id": "outro-6",
-          "name": "Tag",
-          "type": "outro"
+          "id": "verse-7",
+          "name": "TAG",
+          "type": "verse"
         },
         {
-          "id": "bridge-7",
+          "id": "bridge-8",
           "name": "Pont 2",
           "type": "bridge"
         }
@@ -3527,19 +4079,66 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "le-nom-de-jesus",
+      "title": "Le Nom de Jésus",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
         }
       ]
     },
@@ -3559,33 +4158,23 @@
       "appleMusicUrl": null,
       "hasJianpu": false,
       "jianpuKey": null,
-      "sections": [
-        {
-          "id": "verse-1",
-          "name": "Couplet 1",
-          "type": "verse"
-        },
-        {
-          "id": "chorus-2",
-          "name": "Refrain",
-          "type": "chorus"
-        },
-        {
-          "id": "verse-3",
-          "name": "Couplet 2",
-          "type": "verse"
-        },
-        {
-          "id": "bridge-4",
-          "name": "Pont 1",
-          "type": "bridge"
-        },
-        {
-          "id": "bridge-5",
-          "name": "Pont 2",
-          "type": "bridge"
-        }
-      ]
+      "sections": []
+    },
+    {
+      "slug": "le-plus-grand",
+      "title": "Le plus Grand",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": []
     },
     {
       "slug": "le-roi-est-ne",
@@ -3606,17 +4195,22 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         }
@@ -3687,22 +4281,27 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "bridge-4",
+          "id": "bridge-5",
           "name": "Pont",
           "type": "bridge"
         }
@@ -3728,22 +4327,32 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "prechorus-2",
+          "id": "verse-3",
+          "name": "Quand les montagnes trembleront,",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-4",
           "name": "Pré-Refrain",
           "type": "prechorus"
         },
         {
-          "id": "chorus-3",
+          "id": "chorus-5",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-4",
+          "id": "verse-6",
           "name": "Couplet 2",
           "type": "verse"
         }
@@ -3853,19 +4462,24 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
-          "name": "Couplet",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "outro-3",
+          "id": "final-4",
           "name": "Final",
-          "type": "outro"
+          "type": "other"
         }
       ]
     },
@@ -3879,6 +4493,25 @@
       "tempo": null,
       "themes": [
         "engagement"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": []
+    },
+    {
+      "slug": "mon-ancre-et-ma-voile",
+      "title": "Mon ancre et ma voile",
+      "titlePinyin": null,
+      "artist": "David Durham",
+      "language": "fr",
+      "originalKey": "D",
+      "tempo": null,
+      "themes": [
+        "foi",
+        "esperance"
       ],
       "youtubeUrl": null,
       "spotifyUrl": null,
@@ -3905,44 +4538,9 @@
           "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
-        }
-      ]
-    },
-    {
-      "slug": "mon-ancre-et-ma-voile",
-      "title": "Mon ancre et ma voile",
-      "titlePinyin": null,
-      "artist": "David Durham",
-      "language": "fr",
-      "originalKey": "D",
-      "tempo": null,
-      "themes": [
-        "foi",
-        "esperance"
-      ],
-      "youtubeUrl": null,
-      "spotifyUrl": null,
-      "appleMusicUrl": null,
-      "hasJianpu": false,
-      "jianpuKey": null,
-      "sections": [
-        {
-          "id": "verse-1",
-          "name": "Couplet 1",
-          "type": "verse"
         },
         {
-          "id": "chorus-2",
-          "name": "Refrain",
-          "type": "chorus"
-        },
-        {
-          "id": "verse-3",
-          "name": "Couplet 2",
-          "type": "verse"
-        },
-        {
-          "id": "verse-4",
+          "id": "verse-5",
           "name": "Couplet 3",
           "type": "verse"
         }
@@ -4020,16 +4618,11 @@
       "sections": [
         {
           "id": "verse-1",
-          "name": "Couplet",
+          "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
-          "name": "Refrain",
-          "type": "chorus"
-        },
-        {
-          "id": "bridge-3",
+          "id": "bridge-2",
           "name": "Pont",
           "type": "bridge"
         }
@@ -4055,27 +4648,32 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "prechorus-2",
+          "id": "prechorus-3",
           "name": "Pré-Refrain",
           "type": "prechorus"
         },
         {
-          "id": "chorus-3",
+          "id": "chorus-4",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-4",
+          "id": "verse-5",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "bridge-5",
+          "id": "bridge-6",
           "name": "Pont",
           "type": "bridge"
         }
@@ -4100,17 +4698,22 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         }
@@ -4135,17 +4738,22 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         }
@@ -4188,6 +4796,16 @@
           "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
+        },
+        {
+          "id": "chorus-5",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-6",
+          "name": "Couplet 1",
+          "type": "verse"
         }
       ]
     },
@@ -4214,34 +4832,9 @@
           "type": "verse"
         },
         {
-          "id": "chorus-2",
-          "name": "Refrain",
-          "type": "chorus"
-        },
-        {
-          "id": "verse-3",
-          "name": "Couplet 2",
+          "id": "verse-2",
+          "name": "Couplet 1",
           "type": "verse"
-        },
-        {
-          "id": "chorus-4",
-          "name": "Refrain (Sol)",
-          "type": "chorus"
-        },
-        {
-          "id": "verse-5",
-          "name": "Couplet 3",
-          "type": "verse"
-        },
-        {
-          "id": "bridge-6",
-          "name": "Pont",
-          "type": "bridge"
-        },
-        {
-          "id": "outro-7",
-          "name": "Final",
-          "type": "outro"
         }
       ]
     },
@@ -4264,22 +4857,27 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "prechorus-2",
+          "id": "prechorus-3",
           "name": "Pré-Refrain",
           "type": "prechorus"
         },
         {
-          "id": "chorus-3",
+          "id": "chorus-4",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-4",
+          "id": "verse-5",
           "name": "Couplet 2",
           "type": "verse"
         }
@@ -4292,7 +4890,7 @@
       "artist": "Collectif Cieux Ouverts",
       "language": "fr",
       "originalKey": "C",
-      "tempo": 127,
+      "tempo": null,
       "themes": [
         "adoration",
         "saintete"
@@ -4327,6 +4925,11 @@
           "id": "bridge-5",
           "name": "Pont",
           "type": "bridge"
+        },
+        {
+          "id": "verse-6",
+          "name": "Couplet 1",
+          "type": "verse"
         }
       ]
     },
@@ -4350,17 +4953,22 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "chorus-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "chorus-2",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-2",
+          "id": "verse-3",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         }
@@ -4385,17 +4993,22 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
-          "name": "Couplet",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
-          "name": "Refrain",
+          "id": "chorus-3",
+          "name": "Refrain 2",
           "type": "chorus"
         },
         {
-          "id": "bridge-3",
+          "id": "bridge-4",
           "name": "Pont",
           "type": "bridge"
         }
@@ -4428,6 +5041,11 @@
           "id": "chorus-2",
           "name": "Refrain",
           "type": "chorus"
+        },
+        {
+          "id": "intro-3",
+          "name": "Intro",
+          "type": "intro"
         }
       ]
     },
@@ -4455,34 +5073,24 @@
           "type": "verse"
         },
         {
-          "id": "chorus-2",
-          "name": "Refrain",
-          "type": "chorus"
-        },
-        {
-          "id": "verse-3",
+          "id": "verse-2",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "prechorus-4",
+          "id": "prechorus-3",
           "name": "Pré-Refrain",
           "type": "prechorus"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
         },
         {
           "id": "verse-5",
           "name": "Couplet 3",
           "type": "verse"
-        },
-        {
-          "id": "bridge-6",
-          "name": "Pont",
-          "type": "bridge"
-        },
-        {
-          "id": "outro-7",
-          "name": "Final",
-          "type": "outro"
         }
       ]
     },
@@ -4515,14 +5123,29 @@
           "type": "verse"
         },
         {
-          "id": "chorus-3",
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-4",
-          "name": "Couplet 2",
+          "id": "verse-5",
+          "name": "Couplet 3",
           "type": "verse"
+        },
+        {
+          "id": "intro-6",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "bridge-7",
+          "name": "Pont",
+          "type": "bridge"
         }
       ]
     },
@@ -4545,22 +5168,27 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "bridge-4",
+          "id": "bridge-5",
           "name": "Pont",
           "type": "bridge"
         }
@@ -4584,19 +5212,66 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain 1",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "chorus-6",
+          "name": "Refrain 2",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "ouvre-les-yeux-de-mon-coeur",
+      "title": "Ouvre les yeux de mon cœur",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
         },
         {
           "id": "bridge-4",
@@ -4604,9 +5279,9 @@
           "type": "bridge"
         },
         {
-          "id": "chorus-5",
-          "name": "Refrain 2",
-          "type": "chorus"
+          "id": "final-5",
+          "name": "Final",
+          "type": "other"
         }
       ]
     },
@@ -4674,13 +5349,13 @@
       "sections": [
         {
           "id": "verse-1",
-          "name": "Couplet",
+          "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
-          "name": "Refrain",
-          "type": "chorus"
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
         }
       ]
     },
@@ -4709,14 +5384,14 @@
           "type": "verse"
         },
         {
-          "id": "chorus-2",
-          "name": "Refrain",
-          "type": "chorus"
-        },
-        {
-          "id": "verse-3",
+          "id": "verse-2",
           "name": "Couplet 2",
           "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
         },
         {
           "id": "verse-4",
@@ -4750,22 +5425,27 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "bridge-4",
+          "id": "bridge-5",
           "name": "Pont",
           "type": "bridge"
         }
@@ -4790,26 +5470,52 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
-          "name": "Refrain",
+          "id": "chorus-3",
+          "name": "Refrain 1",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "verse-4",
+          "id": "chorus-5",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-6",
           "name": "Couplet 3",
           "type": "verse"
         }
       ]
+    },
+    {
+      "slug": "pres-de-la-croix",
+      "title": "Près de la Croix",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": []
     },
     {
       "slug": "prince-de-paix",
@@ -4830,22 +5536,27 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "bridge-4",
+          "id": "bridge-5",
           "name": "Pont",
           "type": "bridge"
         }
@@ -4891,11 +5602,16 @@
         },
         {
           "id": "verse-5",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-6",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "bridge-6",
+          "id": "bridge-7",
           "name": "Pont",
           "type": "bridge"
         }
@@ -4920,27 +5636,32 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "prechorus-2",
+          "id": "prechorus-3",
           "name": "Pré-Refrain",
           "type": "prechorus"
         },
         {
-          "id": "chorus-3",
+          "id": "chorus-4",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-4",
+          "id": "verse-5",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "bridge-5",
+          "id": "bridge-6",
           "name": "Pont",
           "type": "bridge"
         }
@@ -4965,17 +5686,22 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "bridge-3",
+          "id": "bridge-4",
           "name": "Pont",
           "type": "bridge"
         }
@@ -5001,44 +5727,49 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain 1",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "chorus-4",
+          "id": "chorus-5",
           "name": "Refrain 2",
           "type": "chorus"
         },
         {
-          "id": "bridge-5",
+          "id": "bridge-6",
           "name": "Pont",
           "type": "bridge"
         },
         {
-          "id": "verse-6",
+          "id": "verse-7",
           "name": "Couplet 3",
           "type": "verse"
         },
         {
-          "id": "chorus-7",
+          "id": "chorus-8",
           "name": "Refrain 3",
           "type": "chorus"
         },
         {
-          "id": "outro-8",
+          "id": "final-9",
           "name": "Final",
-          "type": "outro"
+          "type": "other"
         }
       ]
     },
@@ -5061,22 +5792,27 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "bridge-4",
+          "id": "bridge-5",
           "name": "Pont",
           "type": "bridge"
         }
@@ -5102,18 +5838,28 @@
       "sections": [
         {
           "id": "verse-1",
-          "name": "Couplet",
+          "name": "Couplet 1",
           "type": "verse"
         },
         {
           "id": "chorus-2",
-          "name": "Refrain",
+          "name": "Refrain 1",
           "type": "chorus"
         },
         {
           "id": "bridge-3",
-          "name": "Pont",
+          "name": "Pont 1",
           "type": "bridge"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 1",
+          "type": "verse"
         }
       ]
     },
@@ -5187,22 +5933,27 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "verse-4",
+          "id": "verse-5",
           "name": "Couplet 3",
           "type": "verse"
         }
@@ -5228,22 +5979,27 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "bridge-4",
+          "id": "bridge-5",
           "name": "Pont",
           "type": "bridge"
         }
@@ -5269,32 +6025,37 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "verse-2",
+          "id": "verse-3",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "chorus-3",
+          "id": "chorus-4",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-4",
+          "id": "verse-5",
           "name": "Couplet 3",
           "type": "verse"
         },
         {
-          "id": "verse-5",
+          "id": "verse-6",
           "name": "Couplet 4",
           "type": "verse"
         },
         {
-          "id": "bridge-6",
+          "id": "bridge-7",
           "name": "Pont",
           "type": "bridge"
         }
@@ -5322,21 +6083,6 @@
           "id": "verse-1",
           "name": "Couplet 1",
           "type": "verse"
-        },
-        {
-          "id": "chorus-2",
-          "name": "Refrain",
-          "type": "chorus"
-        },
-        {
-          "id": "verse-3",
-          "name": "Couplet 2",
-          "type": "verse"
-        },
-        {
-          "id": "outro-4",
-          "name": "Final",
-          "type": "outro"
         }
       ]
     },
@@ -5360,7 +6106,7 @@
       "sections": [
         {
           "id": "verse-1",
-          "name": "Couplet",
+          "name": "Couplet 1",
           "type": "verse"
         }
       ]
@@ -5409,9 +6155,19 @@
           "type": "bridge"
         },
         {
-          "id": "outro-6",
+          "id": "final-6",
           "name": "Final",
-          "type": "outro"
+          "type": "other"
+        },
+        {
+          "id": "verse-7",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-8",
+          "name": "Couplet 1",
+          "type": "verse"
         }
       ]
     },
@@ -5435,22 +6191,27 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "prechorus-2",
+          "id": "prechorus-3",
           "name": "Pré-Refrain",
           "type": "prechorus"
         },
         {
-          "id": "chorus-3",
+          "id": "chorus-4",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-4",
+          "id": "verse-5",
           "name": "Couplet 2",
           "type": "verse"
         }
@@ -5476,38 +6237,43 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "verse-2",
+          "id": "verse-3",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "chorus-3",
-          "name": "Refrain",
+          "id": "chorus-4",
+          "name": "Refrain 1",
           "type": "chorus"
         },
         {
-          "id": "verse-4",
+          "id": "verse-5",
           "name": "Couplet 3",
           "type": "verse"
         },
         {
-          "id": "chorus-5",
-          "name": "Refrain étendu",
+          "id": "chorus-6",
+          "name": "Refrain 2",
           "type": "chorus"
         },
         {
-          "id": "bridge-6",
+          "id": "bridge-7",
           "name": "Pont",
           "type": "bridge"
         },
         {
-          "id": "chorus-7",
-          "name": "Refrain final",
+          "id": "chorus-8",
+          "name": "Refrain 3",
           "type": "chorus"
         }
       ]
@@ -5534,16 +6300,6 @@
           "id": "verse-1",
           "name": "Couplet 1",
           "type": "verse"
-        },
-        {
-          "id": "chorus-2",
-          "name": "Refrain",
-          "type": "chorus"
-        },
-        {
-          "id": "verse-3",
-          "name": "Couplet 2",
-          "type": "verse"
         }
       ]
     },
@@ -5566,22 +6322,27 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "chorus-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "chorus-2",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-2",
+          "id": "verse-3",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "bridge-4",
+          "id": "bridge-5",
           "name": "Pont",
           "type": "bridge"
         }
@@ -5632,7 +6393,7 @@
       "title": "Risen",
       "titlePinyin": null,
       "artist": "Israel Houghton",
-      "language": "en",
+      "language": "fr",
       "originalKey": "E",
       "tempo": 132,
       "themes": [
@@ -5651,24 +6412,49 @@
           "type": "intro"
         },
         {
-          "id": "chorus-2",
-          "name": "Chorus",
-          "type": "chorus"
-        },
-        {
-          "id": "verse-3",
-          "name": "Verse",
+          "id": "verse-2",
+          "name": "Couplet",
           "type": "verse"
         },
         {
-          "id": "chorus-4",
+          "id": "intro-3",
           "name": "Interlude",
+          "type": "intro"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "bridge-5",
-          "name": "Bridge",
+          "id": "verse-5",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "intro-6",
+          "name": "Interlude",
+          "type": "intro"
+        },
+        {
+          "id": "chorus-7",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-8",
+          "name": "Pont",
           "type": "bridge"
+        },
+        {
+          "id": "chorus-9",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "intro-10",
+          "name": "Interlude",
+          "type": "intro"
         }
       ]
     },
@@ -5703,7 +6489,7 @@
         },
         {
           "id": "chorus-3",
-          "name": "Refrain",
+          "name": "Refrain 1",
           "type": "chorus"
         },
         {
@@ -5712,19 +6498,29 @@
           "type": "verse"
         },
         {
-          "id": "verse-5",
+          "id": "chorus-5",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-6",
           "name": "Couplet 3",
           "type": "verse"
         },
         {
-          "id": "verse-6",
+          "id": "verse-7",
           "name": "Couplet 4",
           "type": "verse"
         },
         {
-          "id": "outro-7",
-          "name": "Tag",
-          "type": "outro"
+          "id": "chorus-8",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-9",
+          "name": "TAG",
+          "type": "verse"
         }
       ]
     },
@@ -5747,27 +6543,32 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "verse-2",
+          "id": "verse-3",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "chorus-3",
+          "id": "chorus-4",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "bridge-4",
+          "id": "bridge-5",
           "name": "Pont 1",
           "type": "bridge"
         },
         {
-          "id": "bridge-5",
+          "id": "bridge-6",
           "name": "Pont 2",
           "type": "bridge"
         }
@@ -5850,15 +6651,36 @@
         },
         {
           "id": "verse-4",
+          "name": "Sauveur, Il déplace les montagnes,",
+          "type": "verse"
+        },
+        {
+          "id": "verse-5",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "bridge-5",
+          "id": "bridge-6",
           "name": "Pont",
           "type": "bridge"
         }
       ]
+    },
+    {
+      "slug": "seigneur-je-veux-te-dire",
+      "title": "Seigneur, je veux Te dire",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": []
     },
     {
       "slug": "seigneur-par-la-clarte",
@@ -5880,22 +6702,27 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "verse-4",
+          "id": "verse-5",
           "name": "Couplet 3",
           "type": "verse"
         }
@@ -5921,27 +6748,32 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "verse-2",
+          "id": "verse-3",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "chorus-3",
+          "id": "chorus-4",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-4",
+          "id": "verse-5",
           "name": "Couplet 3",
           "type": "verse"
         },
         {
-          "id": "verse-5",
+          "id": "verse-6",
           "name": "Couplet 4",
           "type": "verse"
         }
@@ -6028,13 +6860,13 @@
         },
         {
           "id": "bridge-5",
-          "name": "Pont",
+          "name": "Pont 2",
           "type": "bridge"
         },
         {
-          "id": "outro-6",
+          "id": "final-6",
           "name": "Final",
-          "type": "outro"
+          "type": "other"
         }
       ]
     },
@@ -6057,17 +6889,22 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "chorus-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "chorus-2",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-2",
+          "id": "verse-3",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         }
@@ -6096,29 +6933,14 @@
           "type": "intro"
         },
         {
-          "id": "verse-2",
-          "name": "Couplet 1",
-          "type": "verse"
-        },
-        {
-          "id": "chorus-3",
-          "name": "Refrain",
-          "type": "chorus"
-        },
-        {
-          "id": "verse-4",
-          "name": "Couplet 2",
-          "type": "verse"
-        },
-        {
-          "id": "bridge-5",
+          "id": "bridge-2",
           "name": "Pont",
           "type": "bridge"
         },
         {
-          "id": "outro-6",
+          "id": "final-3",
           "name": "Final",
-          "type": "outro"
+          "type": "other"
         }
       ]
     },
@@ -6207,19 +7029,24 @@
           "type": "verse"
         },
         {
-          "id": "bridge-6",
+          "id": "intro-6",
+          "name": "Interlude",
+          "type": "intro"
+        },
+        {
+          "id": "bridge-7",
           "name": "Pont 1",
           "type": "bridge"
         },
         {
-          "id": "bridge-7",
+          "id": "bridge-8",
           "name": "Pont 2",
           "type": "bridge"
         },
         {
-          "id": "outro-8",
+          "id": "verse-9",
           "name": "Tag",
-          "type": "outro"
+          "type": "verse"
         }
       ]
     },
@@ -6230,7 +7057,7 @@
       "artist": "Hillsong",
       "language": "fr",
       "originalKey": "A",
-      "tempo": 126,
+      "tempo": null,
       "themes": [
         "adoration",
         "engagement"
@@ -6257,22 +7084,52 @@
           "type": "verse"
         },
         {
-          "id": "chorus-4",
+          "id": "verse-4",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-5",
           "name": "Refrain 1",
           "type": "chorus"
         },
         {
-          "id": "chorus-5",
+          "id": "chorus-6",
           "name": "Refrain 2",
           "type": "chorus"
         },
         {
-          "id": "verse-6",
+          "id": "verse-7",
           "name": "Couplet 3",
           "type": "verse"
         },
         {
-          "id": "outro-7",
+          "id": "chorus-8",
+          "name": "Refrain 1",
+          "type": "chorus"
+        },
+        {
+          "id": "chorus-9",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "intro-10",
+          "name": "Interlude",
+          "type": "intro"
+        },
+        {
+          "id": "chorus-11",
+          "name": "Refrain 1",
+          "type": "chorus"
+        },
+        {
+          "id": "chorus-12",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "outro-13",
           "name": "Outro",
           "type": "outro"
         }
@@ -6302,24 +7159,19 @@
           "type": "intro"
         },
         {
-          "id": "verse-2",
-          "name": "Couplet",
-          "type": "verse"
-        },
-        {
-          "id": "chorus-3",
-          "name": "Refrain",
-          "type": "chorus"
-        },
-        {
-          "id": "bridge-4",
+          "id": "bridge-2",
           "name": "Pont",
           "type": "bridge"
         },
         {
-          "id": "outro-5",
+          "id": "final-3",
           "name": "Final",
-          "type": "outro"
+          "type": "other"
+        },
+        {
+          "id": "intro-4",
+          "name": "Intro",
+          "type": "intro"
         }
       ]
     },
@@ -6342,22 +7194,27 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "bridge-4",
+          "id": "bridge-5",
           "name": "Pont",
           "type": "bridge"
         }
@@ -6407,9 +7264,9 @@
           "type": "bridge"
         },
         {
-          "id": "outro-6",
-          "name": "Tag",
-          "type": "outro"
+          "id": "verse-6",
+          "name": "TAG",
+          "type": "verse"
         }
       ]
     },
@@ -6425,6 +7282,48 @@
         "adoration",
         "action-de-grace"
       ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "tu-es-la-lumiere",
+      "title": "Tu es la lumière",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [],
       "youtubeUrl": null,
       "spotifyUrl": null,
       "appleMusicUrl": null,
@@ -6476,32 +7375,37 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "prechorus-2",
+          "id": "prechorus-3",
           "name": "Pré-Refrain",
           "type": "prechorus"
         },
         {
-          "id": "chorus-3",
+          "id": "chorus-4",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-4",
+          "id": "verse-5",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "chorus-5",
-          "name": "Post-Refrain",
+          "id": "chorus-6",
+          "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "bridge-6",
+          "id": "bridge-7",
           "name": "Pont",
           "type": "bridge"
         }
@@ -6525,22 +7429,27 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "verse-2",
+          "id": "verse-3",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "prechorus-3",
+          "id": "prechorus-4",
           "name": "Pré-Refrain",
           "type": "prechorus"
         },
         {
-          "id": "chorus-4",
+          "id": "chorus-5",
           "name": "Refrain",
           "type": "chorus"
         }
@@ -6565,22 +7474,27 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "bridge-4",
+          "id": "bridge-5",
           "name": "Pont",
           "type": "bridge"
         }
@@ -6626,19 +7540,29 @@
           "type": "chorus"
         },
         {
-          "id": "verse-5",
+          "id": "intro-5",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-6",
           "name": "Couplet 3",
           "type": "verse"
         },
         {
-          "id": "chorus-6",
+          "id": "chorus-7",
           "name": "Refrain 2",
           "type": "chorus"
         },
         {
-          "id": "bridge-7",
+          "id": "bridge-8",
           "name": "Pont",
           "type": "bridge"
+        },
+        {
+          "id": "final-9",
+          "name": "Final",
+          "type": "other"
         }
       ]
     },
@@ -6666,19 +7590,14 @@
           "type": "intro"
         },
         {
-          "id": "verse-2",
-          "name": "Couplet",
-          "type": "verse"
-        },
-        {
-          "id": "prechorus-3",
+          "id": "prechorus-2",
           "name": "Pré-Refrain",
           "type": "prechorus"
         },
         {
-          "id": "outro-4",
+          "id": "final-3",
           "name": "Final",
-          "type": "outro"
+          "type": "other"
         }
       ]
     },
@@ -6689,7 +7608,7 @@
       "artist": "Hillsong",
       "language": "fr",
       "originalKey": "C",
-      "tempo": null,
+      "tempo": 70,
       "themes": [
         "saint-esprit",
         "engagement"
@@ -6701,31 +7620,42 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "intro-1",
-          "name": "Intro",
-          "type": "intro"
-        },
-        {
-          "id": "verse-2",
+          "id": "verse-1",
           "name": "Couplet",
           "type": "verse"
         },
         {
-          "id": "prechorus-3",
+          "id": "prechorus-2",
           "name": "Pré-Refrain",
           "type": "prechorus"
         },
         {
-          "id": "chorus-4",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "bridge-5",
+          "id": "bridge-4",
           "name": "Pont",
           "type": "bridge"
         }
       ]
+    },
+    {
+      "slug": "une-flamme-en-moi",
+      "title": "Une flamme en moi",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": []
     },
     {
       "slug": "vases-d-argile",
@@ -6746,29 +7676,46 @@
       "jianpuKey": null,
       "sections": [
         {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-2",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
+      "slug": "venez-le-celebrer",
+      "title": "Venez Le célébrer",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
           "id": "intro-1",
           "name": "Intro",
           "type": "intro"
         },
         {
           "id": "verse-2",
-          "name": "Couplet 1",
+          "name": "Couplet",
           "type": "verse"
         },
         {
-          "id": "prechorus-3",
-          "name": "Pré-Refrain",
-          "type": "prechorus"
-        },
-        {
-          "id": "chorus-4",
-          "name": "Refrain",
+          "id": "chorus-3",
+          "name": "Refrain 2",
           "type": "chorus"
-        },
-        {
-          "id": "verse-5",
-          "name": "Couplet 2",
-          "type": "verse"
         }
       ]
     },
@@ -6807,23 +7754,83 @@
         },
         {
           "id": "chorus-4",
-          "name": "Refrain",
+          "name": "Refrain 1",
           "type": "chorus"
         },
         {
           "id": "verse-5",
-          "name": "Couplet 3",
+          "name": "Couplet",
           "type": "verse"
         },
         {
           "id": "verse-6",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "intro-7",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-8",
+          "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "verse-9",
           "name": "Couplet 4",
           "type": "verse"
         },
         {
-          "id": "chorus-7",
+          "id": "chorus-10",
           "name": "Refrain 2",
           "type": "chorus"
+        },
+        {
+          "id": "verse-11",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "verse-12",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "verse-13",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "verse-14",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-15",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-16",
+          "name": "Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-17",
+          "name": "Pont 2",
+          "type": "bridge"
+        },
+        {
+          "id": "chorus-18",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-19",
+          "name": "Couplet",
+          "type": "verse"
         }
       ]
     },
@@ -6834,7 +7841,7 @@
       "artist": "Hillsong",
       "language": "fr",
       "originalKey": "A",
-      "tempo": null,
+      "tempo": 135,
       "themes": [
         "saint-esprit",
         "adoration"
@@ -6897,29 +7904,24 @@
           "type": "intro"
         },
         {
-          "id": "verse-2",
-          "name": "Couplet 1",
-          "type": "verse"
-        },
-        {
-          "id": "chorus-3",
-          "name": "Refrain",
-          "type": "chorus"
-        },
-        {
-          "id": "verse-4",
-          "name": "Couplet 2",
-          "type": "verse"
-        },
-        {
-          "id": "bridge-5",
+          "id": "bridge-2",
           "name": "Pont",
           "type": "bridge"
         },
         {
-          "id": "outro-6",
+          "id": "final-3",
           "name": "Final",
-          "type": "outro"
+          "type": "other"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 1",
+          "type": "verse"
         }
       ]
     },
@@ -6942,34 +7944,44 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "Couplet 1",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "Refrain",
           "type": "chorus"
         },
         {
-          "id": "verse-3",
+          "id": "verse-4",
           "name": "Couplet 2",
           "type": "verse"
         },
         {
-          "id": "bridge-4",
+          "id": "bridge-5",
           "name": "Pont",
           "type": "bridge"
         },
         {
-          "id": "verse-5",
+          "id": "verse-6",
           "name": "Couplet 3",
+          "type": "verse"
+        },
+        {
+          "id": "verse-7",
+          "name": "Couplet 1",
           "type": "verse"
         }
       ]
     },
     {
-      "slug": "en-dian-zhi-lu",
+      "slug": "恩典之路",
       "title": "恩典之路",
       "titlePinyin": "Ēn diǎn zhī lù",
       "artist": "曾祥怡",
