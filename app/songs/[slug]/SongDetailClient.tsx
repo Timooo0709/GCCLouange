@@ -196,7 +196,7 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
         <CustomizePanel
           originalKey={originalKey}
           isZh={isZh}
-          hasJianpu={false /* jianpu mode disabled until rhythm/beaming is implemented */}
+          hasJianpu={hasJianpu}
           sections={ast.sections}
           state={customize}
           onChange={setCustomize}
