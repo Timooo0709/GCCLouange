@@ -4,30 +4,34 @@
 {language: fr}
 {themes: Foi, Espérance}
 
+{start_of_intro: Intro}
+[C]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
-[Am]Ô Dieu d'Abraham, Tu es le Dieu fidèle à l'alliance é[G]ternelle.
-[Am]Encore et encore, oui, Tu nous as prouvé que Ta Pa[G]role est [C]vraie.
+[Am]Ô Dieu d'Abra[F]ham, Tu es le Dieu f[C]idèle à l'alliance éter[G]nelle.
+[Am]Encore et en[F]core, oui, Tu nous as prou[C]vé que Ta Parole est [G]vraie.
 {end_of_verse}
 
 {start_of_prechorus: Pré-Refrain}
-[Am]Quand vient l'ouragan et soufflent les [F]vents, je ne trem[C]ble pas. [G]
-[Am]Maintenant je sais, ce que Tu pro[F]mets, oui, Tu le fe[C]ras. [G] [C/E]
+Quand vient [Am]l'ouragan et souf[F]flent les vents, je ne [C]tremble [G]pas.
+Mainte[Am]nant je sais, ce que [F]Tu promets, oui, Tu [C]le fe[G]ras.
 {end_of_prechorus}
 
 {start_of_chorus: Refrain}
-[Am]Tu es fidèle et [C/E]bon pour [C]moi. [F]
-[Am]Tu es fidèle et [C/E]bon pour [C]moi. [F]
-[F]Oui dans l'allégresse et dans la détresse
-[C]Je louerai Ton Nom.
-[Am]Tu es fidèle et [C/E]bon pour [C]moi. [F]
+[Am]Tu es f[C/E]idèle et [F]bon pour [C]moi.
+[Am]Tu es f[C/E]idèle et [F]bon pour [C]moi.
+Oui dans [Am]l'allégresse et dans [C/E]la détresse
+Je loue[F]rai Ton [C]Nom.
+[Am]Tu es f[C/E]idèle et [F]bon pour [C]moi.
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[Am]Dieu d'éternité, le monde peut passer, Ta pa[G]role est cer[C]taine.
-[Am]L'histoire en est témoin, Tu tiens tout dans Ta main, Tu es fidèle et [G]vrai.
+[Am]Dieu d'éterni[F]té, le monde peut pa[C]sser, Ta parole est cer[G]taine.
+[Am]L'histoire en est té[F]moin, Tu tiens tout dans Ta [C]main, Tu es fidèle et [G]vrai.
 {end_of_verse}
 
 {start_of_bridge: Pont}
-[F]Ma foi est en Toi Jésus, mon ancre et mon ro[C]cher.
-[Am]Oui, mon espoir, à jamais sur Toi je peux comp[G]ter.
+Ma [F]foi est en Toi [C]Jésus, mon [Am]ancre et mon ro[G]cher.
+Oui, [F]mon espoir, à [C]jamais sur [Am]Toi je peux compt[G]er.
 {end_of_bridge}

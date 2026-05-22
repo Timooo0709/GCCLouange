@@ -1,34 +1,46 @@
 {title: Je n'ai rien à craindre}
 {artist: Hillsong}
 {key: F}
+{tempo: 74}
 {language: fr}
 {themes: Foi, Espérance}
 
 {start_of_verse: Couplet 1}
-[F]Dieu est ma [Gm7]paix,
-[Dm7]Il tient toutes choses dans Sa [Bb]main.
-[Dm7]Toujours présent, Il fait fuir tous mes gé[Gm7]ants. [Bb]
+Dieu est[F]ma pa[Gm7]ix
+Il tient [Dm7]toutes choses dans Sa mai[Bb]n
+Toujour[F]s prése[Gm7]nt
+Il fait [Dm7]fuir tous mes géan[Bb]ts
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[F]Je n'ai rien à [Gm7]craindre, car Tu es là,
-[Dm7]Tu chasses toutes mes [Bb]peurs.
-[F]Je n'ai rien à [Gm7]craindre, car Tu me tiens,
-[Dm7]Mon cœur est dans la [Bb]paix,
-Je n'ai rien à craindre.
+Je n’ai rien [F]à craindre
+Car Tu es[Gm7]là
+[Dm7]Tu chasses toutes mes peur[Bb]s
+Je n’ai rien [F]à craindre
+Car Tu me[Gm7]tiens
+[Dm7]Mon cœur est dans la pa[Bb]ix
+Je n’ai rien [F]à craindre[Bb][Dm7][Gm7]
+Titre
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[F]Dieu est fi[Gm7]dèle,
-[Dm7]Tout ce qu'Il dit s'ac[Bb]complit.
-[Dm7]Dans Son repos, ma foi s'a[Gm7]ligne à Sa [Bb]grâce.
+Dieu est ﬁdèle
+Tout ce qu’Il dit s’accomplit
+Dans Son repos
+Ma foi s’aligne à Sa grâce
 {end_of_verse}
 
-{start_of_bridge: Pont 1}
-[F]Oui le bonheur et la grâce m'ac[Gm7]compagneront
-[Dm7]Toute ma vie, toute ma [Bb]vie.
+{start_of_bridge: Pont}
+Oui le bon[F]heur et la grâce
+M’ac[Gm7]compagneront
+Tout[Dm7]e ma vie
+Tout[Bb]e ma vie
 {end_of_bridge}
 
-{start_of_bridge: Pont 2}
-[F]Ton amour me [Gm7]suit, [Dm7]Ton amour me pour[Bb]suit.
-{end_of_bridge}
+{start_of_intro: Interlude}
+[F]  [Gm7]
+[Dm7]Ton amour me suit
+[Bb]Ton amour me poursuit
+original : Be Still
+: Jonathan Mercier
+{end_of_intro}

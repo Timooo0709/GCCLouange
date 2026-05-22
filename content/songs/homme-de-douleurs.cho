@@ -4,41 +4,45 @@
 {language: fr}
 {themes: Croix, Adoration, Pâques}
 
+{start_of_intro: Intro}
+[D]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
-[D]Homme de douleurs, Fils de Dieu,
-[G]Trahi par les siens.
-[Bm][G]Le fardeau de notre péché,
-[G][A][D]Sur Jésus fut posé.
-[D]C'est Lui qu'on a méprisé,
-[D][A]Faussement accusé,
-[G][Bm]Blessé, meurtri et humilié
-[Bm][G][A][D]D'épines couronné.
+[D]Homme de douleurs, [G]Fils de [D]Dieu,
+[G]Trahi [D]par les [A]siens.
+Le [Bm]fardeau de no[G]tre pé[Bm]ché,
+Sur [G]Jésus [A]fut p[D]osé.
+[D]C'est Lui qu'on a [G]mépri[D]sé,
+[G]Faussement [D]accu[A]sé,
+Ble[Bm]ssé, meurtri et [G]humil[Bm]ié
+D'é[G]pines [A]cour[D]onné.
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[Bm][G]Ô cette croix, [D]ma rédemption,
-[G]Où Ton sang coula pour moi.
-[Bm][A]Que mon âme s'écrie, allé[D]luia,
-[A][Bm][G][A][D]Gloire et honneur à Toi seul.
+Ô [Bm]cette [G]croix, ma ré[D]dempt[A]ion,
+Où Ton [Bm]sang cou[G]la pour [A]moi.
+Que mon [G]âme s'é[D]crie, allé[A]lui - [Bm]a,
+Gloire et [G]honneur [A]à Toi[D]seul.
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[D][G]Venu du Ciel sur la terre
-[D]Pour nous réconcilier,
-[G][A]Pour racheter et pardonner
-[G][Bm]Ceux qui l'ont crucifié.
+[D]Venu du Ciel [G]sur la [D]terre
+Pour [G]nous ré[D]concil[A]ier,
+Pour [Bm]racheter et [G]pardo[Bm]nner
+Ceux [G]qui l'ont [A]crucif[D]ié.
 {end_of_verse}
 
 {start_of_bridge: Pont}
-[Bm][G]Ma dette est payée, elle est ef[D][A]facée
-[Bm][G]Par le sang précieux que [D]Christ a versé.
-[Bm][G]Le péché est vaincu, son emprise n'est [D][A]plus,
-[D][A][Bm][G]Il m'a libéré pour l'éternité.
+Ma dette [Bm]est pa[G]yée, elle est [D]effa[A]cée
+Par le [Bm]sang pré[G]cieux que Christ [D]a ver[A]sé.
+Le pé[Bm]ché est vain[G]cu, son emp[D]rise n'est [A]plus,
+Il m'a [Bm]libé - [G]ré pour l'é[D]terni[A]té.
 {end_of_bridge}
 
 {start_of_verse: Couplet 3}
-[D][G]La pierre a été roulée,
-[D][G][A]Ô vois le tombeau vide.
-[G][Bm]Alléluia Dieu soit loué,
-[D][Bm][G][A]Il est ressuscité.
+[D]La pierre a é[G]té rou[D]lée,
+Ô [G]vois le [D]tombeau [A]vide.
+[Bm]Alléluia Dieu [G]soit lou[Bm]é,
+Il [G]est re[A]ssusci[D]té.
 {end_of_verse}

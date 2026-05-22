@@ -4,19 +4,23 @@
 {language: fr}
 {themes: Grâce, Action de grâce}
 
+{start_of_intro: Intro}
+[E]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
-[D]Grâce infi[D/F#]nie qui m'a [A/C#]sauvé, un pécheur tel que [D]moi.
-[D]J'étais perdu, [A/C#]Tu m'as sauvé, j'é[G]tais aveugle, je [D]vois.
+Grâce [E]infi - [E/G#]nie qui [A]m'a sau[E]vé, un [C#m7]pécheur [E/B]tel que[B][B/D#]moi.
+J'é[E]tais per[E/G#]du, Tu [A]m'as sau[E]vé, j'é[A]tais a[B]veugle, je[E][B/D#]vois.
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[G]Il m'a sauvé et li[D]béré,
-[G]Mon Dieu, mon Sau[A]veur, m'a rache[D]té,
-[G]Sa grâce coule [Gm]comme la [D]pluie, [A/C#]
-[A]Amour immense, grâce in[Em]finie. [D]
+Il m'a sau[A]vé et lib[E]éré,
+Mon Dieu, mon [A]Sauve[B]ur, m'a rach[E]eté,
+Sa grâce [A]coul[Am]e comme l[E]a pl[B/D#]uie,[C#]
+Amour [F#m]immense,[B]grâce infi[E]nie.
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[D]Quand j'ai trouvé l'a[D/F#]mour de Dieu, Sa grâce chasse ma [G]peine.
-[D]Oh, que ce jour fut glo[A/C#]rieux, et très lourd [Bm7]pour mon [D]cœur.
+Quand [E]j'ai trou[E/G#]vé l'[A]amour de [E]Dieu[B/D#], Sa [C#m7]grâce [E/B]chasse m[B]a peine.
+Oh, [E]que ce [E/G#]jour fut [A]glor[E]ieux,[B/D#]et [A]très lourd [B]pour m[E]on cœur.
 {end_of_verse}

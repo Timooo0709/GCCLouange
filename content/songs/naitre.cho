@@ -4,17 +4,21 @@
 {language: fr}
 {themes: Salut, Engagement}
 
+{start_of_intro: Intro}
+[C]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
-[Am]Être ou ne pas être, ô Père, celui qui T'appartient.
-[G]Faire ou ne pas [Am]faire, ô Maître, un pas vers ce chemin.
+[Am]Être ou ne pas êt[F]re, ô Père, cel[C]ui qui T'apparti[G]ent.
+[Am]Faire ou ne pas fa[F]ire, ô Maître, un [C]pas vers ce chemi[G]n.
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[Am]Envie de Te [F]suivre, de [C]vivre avec [G]Toi,
-[Am]D'envies et de [F]rires et du [C]son de Ta [G]voix.
+En[Am]vie de Te [F]suivre, de [C]vivre avec [G]Toi,
+D'en[Am]vies et de [F]rires et du [C]son de Ta [G]voix.
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[Am]Naître ou ne pas être là, sans ombre est la question.
-[G]Faire ou ne pas [Am]faire un choix, un oui plutôt qu'un non.
+[Am]Naître ou ne pas ê[F]tre là, sans [C]ombre est la questi[G]on.
+[Am]Faire ou ne pas fai[F]re un choix, un [C]oui plutôt qu'un n[G]on.
 {end_of_verse}

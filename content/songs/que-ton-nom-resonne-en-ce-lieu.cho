@@ -4,28 +4,58 @@
 {language: fr}
 {themes: Adoration, Saint-Esprit}
 
-{start_of_verse: Couplet}
-[C]Que Ton Nom ré[G]sonne en ce lieu
-[F]Que Ton Nom ré[G]sonne en ce [C]lieu
-[C]Que Ton Nom ré[G]sonne en ce lieu
-[F]Jésus que Ton Nom ré[G]sonne en ce [C]lieu
+{start_of_verse: Couplet 1}
+Scannez et Transposez
+Re La
+Que Ton Nom résonne en ce lieu
+Sol La Re
+Que Ton Nom résonne en ce lieu
+Re La
+Que Ton Nom résonne en ce lieu
+Sol La Re
+Jésus que Ton Nom résonne en ce lieu
 {end_of_verse}
 
-{start_of_chorus: Refrain}
-[F]Que les murs tremblent au son de nos louanges [C]
-[G]Alors que nos voix s'unissent à celles des anges [Am]
-[F]Répand sur nous Ton Esprit Ta Puissance [C]
-[G]Ô Jésus
+{start_of_chorus: Refrain 1}
+Sol Re
+Que les murs tremblent au son de nos louanges
+La Sim
+Alors que nos voix s’unissent à celles des anges
+Sol Re
+Répand sur nous Ton Esprit Ta Puissance
+La
+Ô Jésus
 {end_of_chorus}
 
-{start_of_bridge: Pont}
-[F]Jésus nous chantons Ton Nom en ce [C]lieu
-[G]Oui nous invoquons Ton Nom en ce [Am]lieu
-[F]Oui nous Te proclamons Roi en ce [C]lieu
-[G]Tu es Seigneur des seigneurs en ce [Am]lieu
-[F]Jésus nous chantons Ton Nom en ce [C]lieu
-[G]Oui nous invoquons Ton Nom en ce [Am]lieu
-[F]Oui nous Te proclamons Roi en ce [C]lieu
-[G]Tu es Seigneur des seigneurs [G]
+{start_of_bridge: Pont 1}
+Sol Re
+Jésus nous chantons Ton Nom en ce lieu
+La Sim
+Oui nous invoquons Ton Nom ce lieu
+Sol Re
+Oui nous Te proclamons Roi en ce lieu
+La Sim
+Page 1 sur 2
 {end_of_bridge}
 
+{start_of_verse: Couplet 1}
+Tu es Seigneur des
+Jésus nous chantons
+Oui nous invoquons
+Oui nous Te proclamons
+Tu es Seigneur des
+{end_of_verse}
+
+{start_of_verse: Couplet 1}
+seigneurs en ce lieu
+Sol Re
+Ton Nom en ce lieu
+La Sim
+Ton Nom ce lieu
+Sol Re
+Roi en ce lieu
+La La
+seigneurs
+26/02/2025 23:11
+Page 2 sur 2
+{end_of_verse}

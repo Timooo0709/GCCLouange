@@ -5,28 +5,26 @@
 {themes: Adoration, Action de grâce}
 
 {start_of_intro: Intro}
-[A/C#]  [D]  [A]  [E]  [A/C#]  [D]  [A]  [E]
+[A/C#]  [D]  [A]  [E]
+[A/C#]Un chant nouv [D]eau monte de la t [A]erre ent [E]ière
+[A/C#]Pour céléb [D]rer, acclamer l’ [A]Étern [E]el.
+[A/C#]Tous les p [D]euples et les nat [A]ions ento [E]nnent
+[A/C#]Un hymne [D]à la gloire du F [A]ils de l’h [E]omme.
 {end_of_intro}
 
-{start_of_verse: Couplet}
-[A/C#]Un chant nouveau monte de la terre en[D]tière
-[A/C#]Pour célébrer, acclamer l'É[E]ternel.
-[A/C#]Tous les peuples et les nations en[D]tonnent
-[A/C#]Un hymne à la gloire du Fils de l'[E]homme. [A]
-{end_of_verse}
-
 {start_of_prechorus: Pré-Refrain}
-[F#m]L'Éternel est bon, il fait de grandes [Bm]choses.
-[D][A/C#]L'Éternel est bon, oui, nous le chan[E]tons.
-[A]Son nom est le grand Je Suis, [E/G#]celui qui console et gué[A/C#]rit.
-[F#m]Nul ne peut se comparer à [D]lui.
-[A]Tout pouvoir lui est donné, [E/G#]il règne pour l'éter[A/C#]nité.
-[F#m]Rien ni personne ne peut l'é[D]galer. [A] [E]
+L’Éter [Bm]nel est b [A/C#]on, il [D]fait de grandes choses.
+[F#m]L’Étern [Bm]el est b [A/C#]on, [D]oui, nous le chant [E]ons.
+Son nom [A]est le grand Je S [E/G#]uis, celui qui [A/C#]console et guér [F#m]it.
+Nul ne [D]peut se [A]comparer à l [E]ui.
+Tout pou [A]voir lui est donn [E/G#]é, il règne [A/C#]pour l’éternit [F#m]é.
+Rien ni [D]personne [A]ne peut l’égal [E]er.
 {end_of_prechorus}
 
-{start_of_outro: Final}
-[A/C#]Ne peut l'égaler. [D](Oh oh, oh oh oh oh oh oh !) [F#m] [E]
-[A/C#]Ne peut l'égaler. [D](Oh oh, oh oh oh oh oh oh !) [F#m] [E]
-[A/C#]Nul n'est comme toi, [D](Oh oh, oh oh oh oh oh oh !) [F#m] [E]
-[A/C#]Ne peut t'égaler. [D](Oh oh, oh oh oh oh oh oh !) [F#m] [E]
-{end_of_outro}
+{start_of_final: Final}
+Ne peut l’égal [D]er. (Oh oh, o [F#m]h oh oh oh oh [E]oh !)
+Ne peut l’égal [D]er. (Oh oh, o [F#m]h oh oh oh oh [E]oh !)
+Nul n’est comme t [D/B]oi, (Oh oh, o [F#m]h oh oh oh oh [E]oh !)
+Ne peut t’égal [D]er. (Oh oh, o [F#m]h oh oh oh oh [E]oh !)
+[A/C#]  [D]  [A]  [E]
+{end_of_final}

@@ -4,39 +4,52 @@
 {language: fr}
 {themes: Adoration, Foi}
 
+{start_of_intro: Intro}
+[A]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
-[G]L'Éternel est mon ber[D]ger ; de rien, je ne man[Bm]querai.
-Ô mon âme, chante, mon âme.
-[G]Pas à pas Il me con[D]duit ; au bord des eaux calmes je Le [Bm]suis.
-Ô mon âme, chante mon [A]âme.
+[A]L'Éternel est mon berger ; [D]de rien, je ne manquerai[F#m].
+Ô mon [A]âme, chante, mon [E]âme.
+[A]Pas à pas Il me conduit ; au bord [D]des eaux calmes je Le sui[F#m]s.
+Ô mon [A]âme, chante mon [E]âme.
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[G]Oui, toujours, le bonheur et la grâce
-M'accompa[F#m]gneront devant Sa face.
-[G]Dans Sa présence, tellement de [F#m]joies, tellement de joies !
-[A]Et tant qu'Il se trouve auprès de [G]moi,
-Aucun mal, mon âme, tu ne crain[D]dras.
-Et, dans Son temple, je revien[A]drai, je revien[D]drai.
+Oui, tou[D]jours, le bonheur et la gr[A]âce
+M'accompagner[C#m]ont devant Sa f[F#m]ace.
+Dans Sa prés[D]ence, tellement de jo[A]ies, tellement de jo[E]ies !
+Et tant [D]qu'Il se trouve auprès de mo[A]i,
+Aucun mal, m[C#m]on âme, tu ne craindr[F#m]as.
+Et, dans Son t[D]emple, je reviendra[A]i, je reviendra[E]i.
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[G]Et si je traverse encore la val[D]lée de l'ombre de la [Bm]mort,
-Ô mon âme, chante, mon âme.
-[D]Puisqu'Il m'aime le pre[G]mier, non, rien ne pourra me sé[Bm]parer
-De Son amour, de Son a[A]mour.
+[A]Et si je traverse encore la val[D]lée de l'ombre de la mort[F#m],
+Ô mon [A]âme, chante, mon [E]âme.
+[A]Puisqu'Il m'aime le premier, non, rien [D]ne pourra me sépare[F#m]r
+De Son amou[A]r, de Son amou[E]r.
 {end_of_verse}
 
 {start_of_bridge: Pont}
-[D]Yahwé, Yahwé, Tu fais briller sur moi Ton so[G]leil.
-[D]Yahwé, Yahwé, Ta lumière chasse au loin les té[Bm]nèbres.
-[G]Yahwé, Yahwé, Ta parole éclaire mon sen[D]tier.
-[Bm]Yahwé, Yahwé, [G]Yahwé.
+Yahw[E]é, Yahw[F#m]é, Tu fais briller
+Yahw[E]é, Yahw[F#m]é, Ta lumière
+Yahw[E]é, Yahw[F#m]é, Ta parole [D]éclaire
+Yahw[E]é, Yahw[F#m]é, Yahw[D]é.
 {end_of_bridge}
 
 {start_of_verse: Couplet 3}
-[D]Bientôt, Il viendra me chercher et, dans Sa maison, j'habi[G]terai.
-Ô mon âme, chante, mon âme.
-[D]Sans cesse, jusqu'à Son retour, mon âme, chante Son [Bm]amour
-Tous les jours, tous les [A]jours.
+Bient[A]ôt, Il viendra me chercher
+Ô mon [A]âme, chante, mon [E]âme.
+Sans [A]cesse, jusqu'à Son retour,
+Tous les jo[A]urs, tous les jo[E]urs.
+{end_of_verse}
+
+{start_of_verse: Couplet 1}
+[D]sur moi Ton soleil[A].
+chas[D]se au loin les tén[A]èbres.
+mon senti[A]er.
+et, dans [D]Sa maison, j'habiterai[F#m].
+mon [D]âme, chante Son amou[F#m]r
+Page 2/2
 {end_of_verse}

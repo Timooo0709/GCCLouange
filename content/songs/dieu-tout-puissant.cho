@@ -4,22 +4,25 @@
 {language: fr}
 {themes: Adoration, Action de grâce}
 
+{start_of_intro: Intro}
+[G]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
-[G]Dieu Tout-Puissant, quand mon cœur considère
-[C]Tout l'univers créé par Ton pou[G]voir ;
-[G]Le ciel d'azur, les éclairs, le tonnerre,
-[G]Le clair matin ou les ombres du [D]soir.
+Dieu Tout-Pui[G]ssant, quand mon cœur consi[C]dère
+Tout l'un[G]ivers cré[D]é par Ton pouv[G]oir;
+Le ciel d'a[G]zur, les éclairs, le to[C]nnerre,
+Le clair mat[G]in ou [D]les ombres du [G]soir.
 {end_of_verse}
 
-{start_of_chorus: Refrain}
-[G]De tout mon être, alors, s'é[C]lève un chant :
-[G]Dieu Tout-Puis[C]sant, que Tu es [G]grand. [D/F#] [Em]
-[Am]Dieu Tout-Puis[D]sant, que Tu es [G]grand.
+{start_of_chorus: Refrain 2}
+De tout mon [G]être, a[C]lors, s'élève un [G]chant [D/F#]:[Em]
+Dieu Tout-Pui[Am]ssant,[D]que Tu e[G]s grand.
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[G]Quand mon Sauveur, éc[C]latant de lumière,
-[G]Se lèvera de Son trône é[D]ternel
-[C]Et que, laissant les douleurs de la [G]terre,
-[G]Je pourrai voir les splendeurs de Son [D]Ciel.
+Quand mon Sauv[G]eur, éclatant de lu[C]mière,
+Se lève[G]ra de [D]Son trône éter[G]nel
+Et que, la[G]issant les douleurs de la [C]terre,
+Je pourrai [G]voir les s[D]plendeurs de Son [G]Ciel.
 {end_of_verse}

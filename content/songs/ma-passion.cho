@@ -4,28 +4,35 @@
 {language: fr}
 {themes: Adoration, Engagement, Espérance}
 
+{start_of_intro: Intro}
+[G]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
-[G]Quand les montagnes trembleront, [D]
-[Em]Quand je serai é[C]prouvé,
-[Em]Et ma vie en plein dé[C]sert.
-[G]En attendant Ta lu[C2]mière, [D]
+[G]  [D]  [Em]  [C]
+{end_of_verse}
+
+{start_of_verse: Quand les montagnes trembleront,}
+[G]Quand je s[D]erai éprouv[Em]é,[C]
+[G]Et ma v[D]ie en plein dése[Em]rt.[C]
+[G]En at[D]tendant Ta lumi[C2]ère,
 {end_of_verse}
 
 {start_of_prechorus: Pré-Refrain}
-[C]Dans mon histoire, au cœur de mes larmes,
-[C]De mes nuits, je redi[Em]rai : [G] [D]
+[C]Dans mon his[D]toire, au cœur [G]de mes larmes,
+[Em]De mes nuits, [C]je redi[D]rai :
 {end_of_prechorus}
 
 {start_of_chorus: Refrain}
-[Em]Tu seras mon cri, Tu seras ma [G]voix,
-[C]Tu seras le battement de mon [D]cœur.
-[Em]Tu seras ma vie, Tu seras ma [G]joie,
-[C]Tu seras ma passion ô Sei[D]gneur.
+Tu seras mon [Em]cri, Tu seras ma [C]voix,
+Tu seras le [G]battement de mon c[D]œur.
+Tu seras ma [Em]vie, Tu seras ma [C]joie,
+Tu seras ma [G]passion ô Seig[D]neur.
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[G]Quand je ne sais où al[D]ler,
-[Em]Mon cœur seul a[C]bandonné.
-[Em]Quand je dois quitter ma [C]terre,
-[G]Pour découvrir Ta lu[C2]mière. [D]
+[G]Quand je n[D]e sais où all[Em]er,[C]
+[G]Mon cœur s[D]eul abandon[Em]né.[C]
+[G]Quand je d[D]ois quitter ma t[Em]erre,[C]
+[G]Pour déco[D]uvrir Ta lumi[C2]ère.
 {end_of_verse}

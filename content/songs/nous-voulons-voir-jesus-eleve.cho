@@ -4,22 +4,26 @@
 {language: fr}
 {themes: Adoration, Mission}
 
-{start_of_verse: Couplet}
-[G]Nous voulons voir Jésus élevé
-[C]Comme un étendard sur ce pays,
-[D]Pour montrer à tous la vé[Em]rité
-[G]Et le chemin vers le Ciel. [C]
+{start_of_intro: Intro}
+[G]
+{end_of_intro}
+
+{start_of_verse: Couplet 2}
+[G]Nous voulons voir J[D]ésus élev[Em]é
+Comme un étend[C]ard sur ce pay[G]s,
+Pour montrer à to[D]us la vérit[Em]é
+Et le chemi[C]n vers le Ciel.
 {end_of_verse}
 
-{start_of_chorus: Refrain}
-[G]Nous voulons voir, nous voulons voir,
-[C]Nous voulons voir Jé[Em]sus élevé. [G] [D]
+{start_of_chorus: Refrain 2}
+[G]Nous voulons voir, [D]nous voulons voir,[Em]
+Nous voulons voir J[C]ésus élev[G]é.
 {end_of_chorus}
 
 {start_of_bridge: Pont}
-[Em]Pas à pas allons de l'a[D]vant,
-[Em]Peu à peu gagnons du ter[D]rain.
-[Em]La prière est notre puis[D]sance,
-[Em]Les murailles s'écroulent à [D]terre,
-[C]À terre, à terre, à [D]terre.
+Pas à [D]pas allons de l[Em]'avant,
+Peu à [D]peu gagnons du te[Em]rrain.
+La pri[D]ère est notre p[Em]uissance,
+Les mur[C]ailles s'écroulent à te[D]rre,
+À te[D]rre, à terre, à terre.
 {end_of_bridge}

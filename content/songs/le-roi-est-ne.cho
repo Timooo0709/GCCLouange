@@ -4,23 +4,28 @@
 {language: fr}
 {themes: Noël, Adoration}
 
+{start_of_intro: Intro}
+[E]
+[E]  [A]  [E]  [A]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
-[E]Aujourd'hui nous est né un Sauveur,
-[B]Venu du Ciel pour naître dans l'é[E]table. [A] [B]
-[A]L'espoir du monde, la lumière pour toute la [B]terre, [E] [A] [B] [A]
-[E]Que chacun soit dans la joie [A] [B] [A]
-[E]Car c'est Noël. [A] [B] [A]
+[E]Aujourd'hui [A]nous est n[B]é un [A]Sauveur,[A][B][A][E]
+[E]Venu du [A]Ciel pour naî[B]tre dans [A]l'étable.[A][B][A][E]
+L'es[E]poir du monde, [A]la lumi[B]ère pour [A]toute la terre,[A][B][A][E]
+Que [E]chacun soit [A]dans la j[B]oie
+Car [A]c'est Noël.[A][B][A][E]
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[E]Donc élève Ta voix et chante Sa gloire, c'est Noël, [A]
-[B]Réjouis-Toi car le Roi est né, c'est Noël, [E]
-[E]Pousse un cri de joie, c'est Noël, [A]
-[B]Que Sa gloire résonne, c'est Noël. [E] [A] [B] [A]
+Donc [E]élève Ta voix et [A]chante Sa g[B]loire, c'est [A]Noël,
+[E]Réjouis-Toi car [A]le Roi est n[B]é, c'est [A]Noël,
+[E]Pousse un c[A]ri de jo[B]ie, c'est [A]Noël,
+[E]Que Sa gl[A]oire réso[B]nne, c'est [A]Noël.
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[E]Bienveillance sur la terre et paix di[A]vine, [B] [A]
-[E]Que chacun soit dans la joie [A] [B] [A]
-Car c'est Noël.
+[E]Bienveillance [A]sur la ter[B]re et [A]paix divine,[A][B][A][E]
+Que [E]chacun soit [A]dans la j[B]oie
+Car [A]c'est Noël.[A][B][A][E]
 {end_of_verse}

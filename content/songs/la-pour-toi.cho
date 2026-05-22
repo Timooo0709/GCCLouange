@@ -1,6 +1,7 @@
 {title: Là pour Toi (Agis parmi nous)}
 {artist: Maxime Jean-Louis & Tendry Rajaonson}
 {key: B}
+{tempo: 145}
 {language: fr}
 {themes: Adoration, Engagement, Saint-Esprit}
 
@@ -9,55 +10,63 @@
 {end_of_intro}
 
 {start_of_verse: Couplet 1}
-[B]L'horizon s'éclaircit,
-[G#m]Les ténèbres s'enfuient,
-[F#]Que l'avenir prenne place,
-[E]Nous Te laissons la place.
-[B]Nos chaînes sont brisées,
-[G#m]Nos péchés pardonnés,
-[F#]Le passé est passé.
-[E]
+[B]L’horizon s’éclaircit
+[G#m]Les ténèbres s’enfuient
+[F#]Que l’avenir prenne [E]place
+Nous Te laissons la place
+[B]Nos chaînes sont brisées
+[G#m]Nos péchés pardonnés
+[F#]Le passé est pas[E]sé
 {end_of_verse}
 
 {start_of_chorus: Refrain 1}
-[B]Nous sommes là pour Toi,
-[G#m]Nous sommes là pour Toi,
-[F#]Agis parmi nous Seigneur.
-[B]Fais Ta volonté,
-[G#m]Fais Ta volonté,
-[F#]Jésus trans[E]forme nos cœurs.
+[B]Nous sommes là pour Toi
+[G#m]Nous sommes là pour Toi
+[F#]Agis parmi [E]nous Seigneur
+[B]Fais Ta volonté
+[G#m]Fais Ta volonté
+[F#]Jésus transfo[E]rme nos cœurs
 {end_of_chorus}
 
+{start_of_intro: Intro}
+[B]  [G#m]  [F#]  [E]
+{end_of_intro}
+
 {start_of_verse: Couplet 2}
-[B]Ta puissance de vie
-[G#m]Règne en nous aujourd'hui,
-[F#]Le tombeau vide confirme
-[E]Que rien ne T'est impossible.
-[B]Comme dans la chambre haute,
-[G#m]Remplis-nous à nouveau,
-[F#]Tu es notre seul désir.
-[E]
+Ta puissance de vie
+Règne en nous aujourd’hui
+Le tombeau vide conﬁrme
+Que rien ne T’est impossible
+Comme dans la chambre haute
+Remplis-nous à nouveau
+Tu es notre seul désir
+INSTRUMENTAL 2 x2
+[E]  [B/D#]  [G#m]  [F#]
 {end_of_verse}
 
 {start_of_bridge: Pont 1}
-[E]Tout pouvoir T'est donné
-[B/D#]Sur la terre et dans le Ciel.
-[G#m]Jésus sois élevé,
-[F#]Que la gloire Te revienne.
+[E]Tout pouvoir T’est donné
+[B/D#]Sur la terre et dans le Ciel
+[G#m]Jésus sois élevé
+[F#]Que la gloire Te revienne
 {end_of_bridge}
 
-{start_of_outro: Tag}
-[E]Que la gloire Te re[B/D#]vienne,
-[G#m]Que la gloire Te re[F#]vienne. (x4)
-{end_of_outro}
+{start_of_verse: TAG}
+Que la gloire Te r[E]ev[B/D#]ienne
+Que la gloire Te re[G#m]vienne[F#]
+Que la gloire Te re[E]vi[B/D#]enne
+Que la gloire Te re[G#m]vienne[F#]
+INSTRUMENTAL 3
+[E]  [G#m]  [F#]  [C#m]
+{end_of_verse}
 
 {start_of_bridge: Pont 2}
-[E]Tu fais toutes choses nouvelles,
-[G#m]Tu fais toutes choses nouvelles,
-[F#]Les choses anciennes sont passées,
-[C#m]Tu fais toutes choses nouvelles.
-[E]Fais ce que Tu veux faire,
-[G#m]Fais ce que Tu veux faire,
-[F#]Nos cœurs Te sont consacrés,
-[C#m]Fais ce que Tu veux faire.
+Tu fais toutes choses nou[E]velles
+Tu fais toutes choses nou[G#m]velles
+Les choses anciennes sont [F#]passées
+Tu fais toutes choses nou[C#m]velles
+Fais ce que Tu veux [E]faire
+Fais ce que Tu veux [G#m]faire
+Nos cœurs Te sont cons[F#]acrés
+Fais ce que Tu veux [C#m]faire
 {end_of_bridge}

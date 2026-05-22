@@ -5,49 +5,54 @@
 {themes: Grâce, Croix}
 
 {start_of_intro: Intro}
-[A]  [E6]  [F#m]  [D]
+[A]
+[D]  [A]
 {end_of_intro}
 
 {start_of_verse: Couplet 1}
-[A]Si l'amour a souffert la croix,
-[F#m]Combien pré[A]cieux Son sang pour [E]moi.
-[A]La beauté des Cieux vêtue de ma honte,
-[A]Cet amour parfait mort à ma place.
+[A]Si l'amour a souf[E]fert l[F#m]a croix,[D]
+[A]Combien précieux Son [E]sang [F#m]pour moi.[D]
+[A]La beauté des Cieux vê[E]tue de m[F#m]a honte,[D]
+[A]Cet amour parfait mort [E]à [F#m]ma place.
 {end_of_verse}
 
-{start_of_prechorus: Pré-Refrain}
-[D]Si Ses plaies témoignent de Son amour,
-[A/C#]Quelle joie voyait-Il mou[D]rant pour moi,
-[D]Pour gagner mon cœur Il S'est offert.
+{start_of_prechorus: Pré-Refrain 1}
+[D]Si Ses plaies témoignent de [F#m]Son [E]amour,
+[D]Quelle joie voyait-Il mour[F#m]ant [E]pour moi,[A/C#]
+[D]Pour gagner mon cœur Il [F#m]S'est [E]offert.
 {end_of_prechorus}
 
 {start_of_chorus: Refrain}
-[A]Si mer[E]veilleux, si glo[F#m]rieux,
-Mon Sau[D]veur règne, victo[A]rieux.
-[C#m]Brisant mes chaînes, [D]Il prit ma place,
-[D]M'offrant la vie, de [A]grâce en [E]grâce.
+Si merv[A]eilleux, si [E]glor[F#m]ieux,
+Mon [D]Sauve[A]ur règne, vic[E]to - [F#m]rieux.
+Bri[C#m]sant m[D]es chaînes, Il [E]prit m[F#m]a place,
+M'of[D]frant l[A]a vie, de grâ[E]ce en grâce.
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[A]Si les Cieux ont vaincu ce tombeau,
-[F#m]Combien grand est l'es[A]poir en Ton [E]Nom.
-[A]Cette passion qui a dépouillé l'enfer,
-[A]Cette promesse qui a fait rouler la pierre.
+[A]  [E]  [F#m]  [D]  [A]  [E]  [F#m]  [D]
+[A]Si les Cieux ont vaincu [E]ce to[F#m]mbeau,[D]
+[A]Combien grand est l'espoir [E]en [F#m]Ton Nom.[D]
+[A]Cette passion qui a dé[E]pouillé l[F#m]'enfer,[D]
+[A]Cette promesse qui a fait [E]rouler l[F#m]a pierre.
 {end_of_verse}
 
 {start_of_prechorus: Pré-Refrain 2}
-[D]Si ma liberté valait Ta [A/C#]vie,
-[A/C#]Pour me pardonner ô quel grand [D]prix,
-[D]Oui par amour Tu as tout payé.
+[D]Si ma liberté val[F#m]ait [E]Ta vie,[A/C#]
+[D]Pour me pardonner ô [F#m]quel gr[E]and prix,[A/C#]
+[D]Oui par amour Tu as [F#m]tout p[E]ayé.
 {end_of_prechorus}
 
 {start_of_bridge: Pont}
-[D]Oui c'est par la croix que je suis libre,
-[F#m]Et c'est par Ta mort que j'ai la vie.
-[A]Jésus à jamais je veux chanter
-[A/C#]Les mer[D]veilles de Ta [E]grâce.
+[D]  [E]  [F#m]  [D]  [A]  [E]
+[D]Oui c'est par la croix que je [E]suis libre,
+[F#m]Et c'est par Ta mort que j'ai [D]la vie.
+[A]Jésus à jamais je veux chant[E]er
+Les merveilles d[A/C#]e Ta grâce.
+{end_of_bridge}
 
-[D]Ô mon âme veut chanter
-[F#m]Les merveilles de Ta [D]grâce,
-[A]Ô mon âme veut chanter.
+{start_of_bridge: Pont (Tag)}
+[D]Ô mon âme v[E]eut chant[F#m]er
+Les merveilles d[D]e Ta g[A]râce,
+Ô mon âme veut chant[E]er.
 {end_of_bridge}

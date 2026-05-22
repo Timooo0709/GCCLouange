@@ -4,31 +4,35 @@
 {language: fr}
 {themes: Adoration, Espérance}
 
+{start_of_intro: Intro}
+[C]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
-[F]Le salut transperce l'obscu[C]rité, [G]
-[C]Et le Royaume avance à la vitesse de la lu[G]mière. [F]
-[F]Liberté qui fait vibrer l'atmos[C]phère,
-[G]Chassant les ténèbres alors que le so[C]leil appa[G]raît. [F]
+Le s[F]alut tran[C]sperce l'obscurit[G]é
+Et le R[F]oyaume avance à l[C]a vitesse de la lumiè[G]re.
+Libe[F]rté q[C]ui fait vibrer l'atmosphè[G]re,
+Chassant le[F]s ténèbres alors q[C]ue le soleil apparaî[G]t.
 {end_of_verse}
 
 {start_of_prechorus: Pré-Refrain}
-[F]Venu des Cieux pour nous, [C]
-[G]Descendu par amour.
-[C]Il règne à tout ja[G]mais,
-[C]Jésus notre Dieu. [G]
+Venu des [F]Cieux pour no[C]us,
+Descendu [G]par amour.
+Il règne à [F]tout jamai[C]s,
+Jésus notr[G]e Dieu.
 {end_of_prechorus}
 
 {start_of_chorus: Refrain}
-[F]Ô nos yeux sont sur Toi,
-[C]Fils de Dieu, notre Sauveur.
-[F]Toi l'image de l'amour, [G]
-[G]Gloire à Ton Nom pour tou[C]jours, [F]
-[C]Ô nos yeux sont sur Toi. [G]
+Ô nos yeux sont s[F]ur Toi,
+[C]Fils de Dieu, notre [G]Sauveur.
+Toi l'image de l[F]'amour,
+[C]Gloire à Ton Nom pour [G]toujours,
+Ô nos yeux sont s[F]ur Toi.[G][C]
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[F]Toute la terre verra Son Royaume ve[C]nir,
-[C]L'espoir des Cieux brille comme l'aube du ma[G]tin. [F]
-[G]Car pour toujours, Il nous donne une vie nou[C]velle, [F]
-[G]Non plus aucune crainte, ni ténèbres dans Sa lumière sans [C]fin. [F] [G]
+Toute l[F]a terre v[C]erra Son Royaume venir[G],
+L'espoir d[F]es Cieux brille co[C]mme l'aube du mati[G]n.
+Car pour to[F]ujours, I[C]l nous donne une vie nouvel[G]le,
+Non plus a[F]ucune crainte, ni tén[C]èbres dans Sa lumière sans f[G]in.
 {end_of_verse}

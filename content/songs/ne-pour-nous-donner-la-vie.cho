@@ -4,28 +4,41 @@
 {themes: Noël, Adoration}
 
 {start_of_intro: Intro}
-[A]  [D]  [Esus]
 {end_of_intro}
 
 {start_of_verse: Couplet 1}
-[A]Aucune couronne, ni proclamation
-Pas même un lieu digne d'un roi
-[D]Mais l'astre dans les cieux, pré[A]sage mer[A/C#]veilleux
-[E]Proclame la venue du roi des [A/C#]rois [D] [E]
+Aucune couro[A]nne, ni proclamation[A/C#]
+Pas même un lieu d[D]igne d’un roi[E]
+Mais l’astre dans les cieux[A], présage
+merveill[A/C#]eux
+Proclame la venue du[D]rois des rois[E]
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[D]Joie dans le monde, le Sau[A/C#]veur est [Bm7]né [A/C#]
-[E]Par amour le Père nous [A]l'a donné
-[D]Fils de [C#7]Dieu, Fils de [A/C#]l'homme [Bm7]
-[F#m7]Né pour don[D]ner la vie
-[Bm7]Il est [D]né pour [E]nous [D]donner la [A]vie [Bm] [E]
+Joie d[D]ans le monde , [A/C#]le Sauv[Bm7]eur est
+[E]né
+[A]Par amou[A/C#]r le père no[D]us l’a donné[E]
+[D]Fils de Di[A/C#]eu , Fi[Bm7]ls de l’h[C#7]omme
+[F#m7]Né pour d[D]onner la vie[Bm7]
+Il est n[D]é pour no[A]us donner la vie[E][Bm]
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[A]Voici dans la crèche, le trône et la [A/C#]croix
-[D]Le glorieux destin nous est révélé [E]
-[A]Le Sauveur qui souffrira et de son sang [A/C#]vaincra
-[D]L'offense de tout homme et de toute [E]femme
+Voici dans la crèc[A]he, le trône et la croix[A/C#]
+Le glorieux dest[D]in nous est révélé[E]
+Le Sauveur qui souff[A]rira et de son
+sang v[A/C#]aincra
+L’offense de tout hom[D]me et de toute femme[E]
 {end_of_verse}
 
+{start_of_chorus: Refrain}
+[D]  [A/C#]  [Bm7]
+{end_of_chorus}
+
+{start_of_verse: Couplet 1}
+[E]né
+[A]Par amou[A/C#]r le père no[D]us l’a donné[E]
+[D]Fils de Di[A/C#]eu , Fi[Bm7]ls de l’h[C#7]omme
+[F#m7]Né pour d[D]onner la vie[Bm7]
+Il est n[D]é pour no[A]us donner la vie[E][Bm]
+{end_of_verse}

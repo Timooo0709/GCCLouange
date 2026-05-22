@@ -4,25 +4,29 @@
 {language: fr}
 {themes: Adoration, Action de grâce}
 
+{start_of_intro: Intro}
+[C]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
-[C]Quand je sonde l'u[Am7]ni[G]vers, les as[F2]tres que Tu as cré[G]és,
-[C]Les o[Am]céans, les [G]mers, tout me ré[F2]vèle Ta ma[G]jesté.
+Quand je [C]sonde l[Am7]'uni - v[G]ers, les as[F2]tres que Tu as cré[G]és,
+Les [C]océa[Am]ns, les me[G]rs, tout me ré[F2]vèle Ta majest[G]é.
 {end_of_verse}
 
 {start_of_prechorus: Pré-Refrain}
-[Dm7]Alors mon âme veut s'é[C/E]crier, de tout mon cœur je veux chan[F9]ter :
+Alors mon â[Dm7]me veut s'écrie[C/E]r, de tout mon c[F9]œur je veux chant[G]er :
 {end_of_prechorus}
 
 {start_of_chorus: Refrain}
-[C]Ô Dieu, Tu es in[F2]finiment grand, é[Am7]ternel puis[G]sant, Roi ma[Gsus4]jes[G]tueux.
-[C]Ô Dieu, Tu es in[F2]finiment grand, é[Am7]ternel puis[G]sant, Roi ma[Gsus4]jes[G]tueux.
+Ô Dieu, Tu e[C]s infiniment gr[F2]and, éternel puis[Am7]sant, Roi majest[G]ueux.
+Ô Dieu, Tu e[C]s infiniment gr[F2]and, éternel puis[Am7]sant, Roi majest[Gsus4]ueux.[G]
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[G]Quand je songe que Tu m'as [Am7]fait, que Tu T'es ré[F2]vélé à [G]moi,
-[C]Que pour moi Tu as tout cré[Am7]é, tout me ré[G]vèle Ta bon[F2]té. [G]
+Quand je [C]songe que T[Am7]u m'as f[G]ait, que Tu [F2]T'es révélé à mo[G]i,
+Que pour [C]moi Tu as t[Am7]out cré[G]é, tout me ré[F2]vèle Ta bont[G]é.
 {end_of_verse}
 
 {start_of_bridge: Pont}
-[Am]Al - [Am9]lé - [F9]luia, al - lé - lui - a. [C9] [C] [Gsus4] [G]
+[Am]Al - [Am9]lé - [F9]luia, al - [C9]lé - [C]lui - [Gsus4]a. (x4)[G]
 {end_of_bridge}

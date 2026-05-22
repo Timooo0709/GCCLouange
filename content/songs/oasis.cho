@@ -6,32 +6,61 @@
 {themes: Foi, Espérance}
 
 {start_of_intro: Intro}
-[C#m]  [B]  [A]  (x2)
+[C#m]  [B]  [A]
 {end_of_intro}
 
 {start_of_verse: Couplet 1}
-[C#m]Quand je me sens seul et dé[B]semparé
-[C#m]Dans la vallée des ossements des[B]séchés
-[C#m]Je m'accrocherai à Ta Pa[B]role
+[C#m]Quand je me [B]sens seul et dé[A]semparé
+[C#m]Dans la val[B]lée des ossements [A]desséchés
+[C#m]Je m’accrocher[B]ai à Ta Parole
 [A]Ton Esprit sera la boussole
-[C#m]Qui me conduit sur ce che[B]min [A]
+[C#m]Qui me cond[B]uit sur ce ch[A]emin
+INSTRUMENTAL x2
+[C#m]  [B]  [A]
+{end_of_verse}
+
+{start_of_verse: Couplet 2}
+Je ne retournerai pas en arrière
+La route est longue mais mon cœur
+persévère
+Car Tu es sans cesse à mes côtés
+Ta grâce inonde mes pensées
+Tu m’aides à faire un pas de plus
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[A]Toi mon oasis de grâce
-[C#m]Et ma source en plein désert [B]
-Je trouve un refuge en Toi
-[F#m]Dans le cœur d'amour du Père
-[A]Ici je suis à ma place
-[C#m]Pas besoin de changer d'air [B]
-Je trouve un refuge en Toi
-[F#m]Dans le cœur d'amour du Père
+[A]Toi mon oasis de [C#m]grâce
+Et ma source en plein dés[B]ert
+Je trouve un refuge en [F#m9]Toi
+Dans le cœur d’amour du Père
+[A]Ici je suis à ma [C#m]place
+Pas besoin de changer [B]d’air
+Je trouve un refuge en [F#m9]Toi
+Dans le cœur d’amour du Père
+INSTRUMENTAL x2
+[C#m]  [B]  [A]
 {end_of_chorus}
 
-{start_of_verse: Couplet 2}
-[C#m]Pourquoi me contenterais-je d'un mi[B]rage
-[C#m]Si Tu me guides au long de ce voy[B]age
-[C#m]Je sais que tous Tes plans sont par[B]faits
-[A]Je lâche prise car Dieu Tu es
-[C#m]Le Chemin, la Vérité, la [B]Vie [A]
+{start_of_verse: Couplet 3}
+Pourquoi me contenterais-je d’un mirage
+Si Tu me guides au long de ce voyage
+Je sais que tous Tes plans sont parfaits
+Je lâche prise car Dieu Tu es
+Le Chemin, la Vérité, la Vie
+Le Chemin, la Vérité, la Vie
 {end_of_verse}
+
+{start_of_intro: Intro}
+[A]  [C#m]  [B]  [F#m]
+{end_of_intro}
+
+{start_of_bridge: Pont}
+Que les [A]terres arides
+Se changent en [C#m]océans de vie
+Dans le Nom de [B]Jésus
+Dans le Nom de [F#m]Jésus
+Que les [A]cœurs brisés
+Dès mainte[C#m]nant soient restaurés
+Dans le Nom de [B]Jésus
+Dans le Nom de [F#m]Jésus
+{end_of_bridge}

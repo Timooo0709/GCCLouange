@@ -4,20 +4,25 @@
 {language: fr}
 {themes: Adoration, Action de grâce}
 
+{start_of_intro: Intro}
+[C]
+{end_of_intro}
+
 {start_of_verse: Couplet}
-[F/C]Je me ré[C]jouis dans le Nom du Seigneur.
-[F/C]Je me con[C]fie dans le Nom du Seigneur.
-[Am7]Je lève les mains dans le Nom du Seigneur.
-[F/C]Je danse de joie dans le Nom du Sei[G]gneur.
+[C]Je me ré[F/C]jouis dans le Nom du Sei[C]gneur.[F/C]
+[C]Je me conf[F]ie dans le Nom du Sei[G]gneur.[F]
+[C]Je lève les [F]mains dans le Nom du Sei[C]gneur.[F/C]
+[C]Je danse de [F]joie dans le [Am7]Nom du Sei[G]gneur.
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[C]Je célèbrerai le Nom de Celui que mon cœur [G]aime.
-[C]Oui, je bé[F]nirai le [Am]Nom de mon Sau[F]veur. [G]
-[F]Je cé[G]lèbrerai le [C]Nom de Celui que mon cœur aime.
-[G]Oui, je [C]bénirai le [F]Nom du Sei[G]gneur.
+Je cé[C]lèbrerai le N[F]om de Cel[G]ui que mon cœur a[C]ime.
+Oui, je [Am]bénirai le N[F]om de mon Sauv[G]eur.
+[F]Je [G]cé - [C]lèbrerai le N[F]om de Cel[G]ui que mon cœur a[C]ime.
+G Am F G C F Am G C F Am G
+Oui, je bénirai le Nom du Seigneur.
 {end_of_chorus}
 
-{start_of_outro: Final}
-[C]Je célèbrerai le Nom du Seigneur. (x4)
-{end_of_outro}
+{start_of_final: Final}
+[C]Je célè[F]brerai [Am]le Nom du [G]Seigneur. (x4)
+{end_of_final}

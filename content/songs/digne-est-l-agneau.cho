@@ -4,21 +4,25 @@
 {language: fr}
 {themes: Adoration, Croix, Sainteté}
 
+{start_of_intro: Intro}
+[G]
+{end_of_intro}
+
 {start_of_verse: Couplet}
-[A]Merci pour la croix Sei[A/C#]gneur,
-[D]Merci pour le prix pa[D]yé. [E] [A]
-[E]Tu portas tous mes pé[F#m]chés,
-[Bm7]Tu es venu m'é[A/C#]tonner par Ta [D]grâce. [E]
-[A]Merci pour l'a[A/C#]mour Seigneur,
-[D]Merci pour Tes mains per[D]cées. [E] [A]
-[E]Tu m'as lavé dans Ton [F#m]fleuve,
-[Bm7]Et j'ai com[A/C#]pris Ton par[E4]don et Ton a[E]mour.
+[G]Merci pour la [C]croix Sei[G/B]gneur,
+Merci pour le [C]prix [D]pa - [G]yé.
+Tu portas tous [D]mes péch[Em]és,
+Tu [D]es ven[C]u m'é[Am7]tonner p[G/B]ar Ta g[D]râce.
+[G/B]Merci pour l'[C]amour Sei[G/B]gneur,
+Merci pour Tes [C]mains [D]per[G]cées.
+Tu m'as lavé [D]dans Ton f[Em]leuve,
+Et [D]j'ai compr[C]is Ton par[Am7]don et T[G/B]on amo[D4]ur.[D]
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[A]Digne est l'Agneau as[E/G#]sis sur le [Bm7]trône, [A/C#]
-[D]Couronné de mille cou[A/C#]ronnes, Tu es vic[E/D]to[D]rieux. [E]
-[A]Saint et é[E/G#]levé, Jé[Bm7]sus Fils de [A/C#]Dieu, [D]
-[A/C#]Le trésor des Cieux fut cru[E/D]ci[D]fié, [E4]
-[Bm7]Digne est l'A[A/C#]gneau, digne est l'A[D]gneau. [Bm7] [A/C#] [E]
+[G]Digne est l'Agn[D/F#]eau [Am7]assis s[G/B]ur le t[C]rône,
+[D]Couronn[D/C]é de mi[G/B]lle couro[C]nnes, Tu [Am7]es vict[G]orie[D]ux.
+[G]Saint et élev[D/F#]é, [Am7]Jésus Fi[G/B]ls de Di[C]eu,
+Le [D]trésor des C[D/C]ieux fut c[G/B]ruci - f[C]ié,[D4]
+Digne est l'[Am7]Agneau, [C]digne est [G/B]l'[Am7]Agneau.[D][G/B]
 {end_of_chorus}

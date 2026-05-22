@@ -4,31 +4,35 @@
 {language: fr}
 {themes: Adoration, Saint-Esprit}
 
+{start_of_intro: Intro}
+[C]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
-[F]Que nos chants soient comme un signe, nos louanges un accueil.
-Nous sommes là pour Toi, nous sommes là pour [BbM9]Toi.
-[F]Que Ton souffle vienne des Cieux nous remplir de Ta vie,
-Nous sommes là pour Toi, nous sommes là pour [BbM9]Toi.
+Que nos [C]chants soient comme un signe, nos louanges un accueil.
+Nous sommes là pour [FM9]Toi, nous sommes là pour [C]Toi.
+Que Ton [C]souffle vienne des Cieux nous remplir de Ta vie,
+Nous sommes là pour [FM9]Toi, nous sommes là pour [C]Toi.
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[Bb]Nos cœurs sont ouverts au [C]tien, nous ne Te cachons rien.
-[F/A]Nous avons soif de Toi.
-[Bb]Car Tu es le Dieu saint, [C/E]tout autre dieu est [Gm7]vain.
-[F/A]Oh, que Ton feu descende !
+Nos [F2]cœurs sont ouverts au tien, [G]nous ne Te cachons rien.
+[C/E]Nous avons soif de [F2]Toi.
+[Dm7]Car Tu es le Dieu saint, [G/B]tout autre dieu est vain.
+[C/E]Oh, que Ton feu de[F2]scende !
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[F]Que nos cris soient comme un hymne, que Ton Nom retentisse !
-Nous sommes là pour Toi, nous sommes là pour [BbM9]Toi.
-[F]Avec force, dis un seul mot, et les morts revivront.
-Nous sommes là pour Toi, nous sommes là pour [BbM9]Toi.
+Que nos [C]cris soient comme un hymne, que Ton Nom retentisse !
+Nous sommes là pour [FM9]Toi, nous sommes là pour [C]Toi.
+Avec [C]force, dis un seul mot, et les morts revivront.
+Nous sommes là pour [FM9]Toi, nous sommes là pour [C]Toi.
 {end_of_verse}
 
 {start_of_bridge: Pont}
-[F]Seigneur, nous T'accueillons ; Seigneur, nous T'ac[Dm7]cueillons,
-Ô Roi et Dieu d'amour, Tu es le bienvenu.
-[F]Que notre cœur T'adore et toute âme s'é[Dm7]veille !
-[Bb]Ô Roi et Dieu d'amour, Tu es le bienvenu.
+Sei[C]gneur, nous T'accueillons ; Seigneur, nous T'accueillons,
+Ô [Am7]Roi et Dieu d'amour, Tu [F2]es le bienvenu.
+(x2)
+Que [C]notre cœur T'adore et toute âme s'éveille !
+Ô [Am7]Roi et Dieu d'amour, Tu [F2]es le bienvenu.
 {end_of_bridge}
-

@@ -4,34 +4,37 @@
 {language: fr}
 {themes: Adoration, Saint-Esprit, Sainteté}
 
+{start_of_intro: Intro}
+[A]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
-[A]Seigneur, par la clarté de Ton amour,
-[A]Chasse l'obscurité qui nous entoure.
-[D]Jésus, Toi, la lumière qui nous éclaires,
-[D]Vérité qui nous guides et qui nous li[E/D]bères.
-[C#m]Brille sur moi, [F#m]brille sur [E4]moi. [E] [G]
+[A]Seigneur, [A4]par la clar[A]té de [E/A]Ton amour,
+[A]Chasse [A4]l'obscuri[A]té qui [E/A]nous entoure.
+[D]Jésus, [E/D]Toi, la lu[C#m]mière qui [F#m]nous éclaires,
+[D]Véri[E/D]té qui nous [C#m]guides et qui [F#m]nous libères.
+[G]Brille sur [E4]moi, [G]brille sur [E4][E]moi.[E]
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[Bm]Brille, ô Jésus, couvre ce pays de Ta [D]gloire. [A]
-[A]Brûle, Esprit saint, embrase nos cœurs,
-[A]Coule en torrent, de Ta grâce remplis les nations.
-[Bm]Parle, Seigneur, que la lu[E7]mière soit ! [A]
+[A]Brille, ô Jés[D]us, couvre [Bm]ce pays [E4]de Ta [E]gloire.
+[A]Brûle, Esprit s[D]aint, embra[Bm]se nos [G]cœur[E]s,
+[A]Coule en torr[D]ent, de Ta [Bm]grâce remp[E4]lis les [E]nations.
+[A]Parle, Seig[D]neur, que la [Bm]lu - [E7]mière [A]soit !
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[A]Seigneur, Tu me conduis dans Ta présence,
-[A]De la nuit dans l'éclat de Ta puissance.
-[D]Par Ton sang je prends part à Ta sainteté,
-[D]Sonde-moi, mes ténèbres, consume-[E/D]les.
-[C#m]Brille sur moi, [F#m]brille sur [E4]moi. [E] [G]
+[A]Seigneur, [A4]Tu me con[A]duis dans [E/A]Ta présence,
+[A]De la [A4]nuit dans l'é[A]clat de [E/A]Ta puissance.
+[D]Par Ton [E/D]sang je prends [C#m]part à Ta [F#m]sainteté,
+[D]Sonde-[E/D]moi, mes té[C#m]nèbres, con[F#m]sume-les.
+[G]Brille sur [E4]moi, [G]brille sur [E4][E]moi.[E]
 {end_of_verse}
 
 {start_of_verse: Couplet 3}
-[A]Et quand nous contemplons Ta royauté,
-[A]Nos visages reflètent Ta beauté.
-[D]Et transformés sans cesse de gloire en gloire,
-[D]Que sans fin notre vie dise Ton his[E/D]toire.
-[C#m]Brille sur moi, [F#m]brille sur [E4]moi. [E] [G]
+[A]Et quand [A4]nous contem[A]plons Ta [E/A]royauté,
+[A]Nos v[A4]isages re[A]flètent [E/A]Ta beauté.
+[D]Et trans[E/D]formés sans [C#m]cesse de [F#m]gloire en gloire,
+[D]Que sans [E/D]fin notre [C#m]vie dise [F#m]Ton histoire.
+[G]Brille sur [E4]moi, [G]brille sur [E4][E]moi.[E]
 {end_of_verse}
-

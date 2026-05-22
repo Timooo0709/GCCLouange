@@ -4,33 +4,37 @@
 {language: fr}
 {themes: Adoration, Engagement}
 
+{start_of_intro: Intro}
+[D]
+{end_of_intro}
+
 {start_of_chorus: Refrain}
-[Em7]Captivé par Ta présence,
-[G2]Je veux demeurer là, à Tes [D]pieds.
-[Em7]Captivé par Ta sainte présence,
-[G2]Je veux m'abandonner. [D]
-[Em7]Je ne cherche pas Ta main,
-[G2]Tu ne me dois rien, Tu m'as [D]comblé.
-Au-delà de ce que Tu peux faire,
-[Em7]Je veux Ton cœur. [G2]
+Captivé par Ta [Em7]présence,[G2]
+Je veux demeur[D]er là, à Tes pieds.
+Captivé par Ta [Em7]sainte présence,[G2]
+Je veux m'abandonne[D]r.[D][Dsus]
+Je ne cherche pas [Em7]Ta main,[G2]
+Tu ne me dois [D]rien, Tu m'as comblé.
+Au-delà de ce [Em7]que Tu peux faire,[G2]
+Je veux Ton c[D]œur.
 {end_of_chorus}
 
 {start_of_verse: Couplet 1}
-[G2]Pardonne-moi, quand tout n'est qu'une habitude,
-[D/F#]Pardonne-moi, quand j'oublie pour qui je chante.
-[G2]Je veux tout recommencer,
-J'ouvre à nouveau mon cœur à Toi. [D]
+Pard[G2]onne-moi, quand tout n'est qu'une habitude,
+Pard[D/F#]onne-moi, quand j'oublie pour qui je chante.
+Je veux t[G2]out recommencer,
+J'ouvre à nouveau mon cœur à T[D]oi.[D][Dsus]
 {end_of_verse}
 
 {start_of_verse: Couplet 2}
-[G2]Pardonne moi, quand je ne pensais qu'à moi seul,
-[D/F#]Pardonne moi, lorsque Toi seul ne suffis pas.
-[G2]Je veux tout recommencer,
-J'ouvre à nouveau mon cœur à Toi. [D]
+Pard[G2]onne moi, quand je ne pensais qu'à moi seul,
+Pard[D/F#]onne moi, lorsque Toi seul ne suffis pas.
+Je veux t[G2]out recommencer,
+J'ouvre à nouveau mon cœur à T[D]oi.[D][Dsus]
 {end_of_verse}
 
 {start_of_bridge: Pont}
-[Em7]Je veux Ton cœur,
-[G2]Rien au monde, rien au monde
-[Bm7]Ne peut me com[A]bler.
+Je veux Ton c[Em7]œur,
+Rien au monde,[G2]rien au monde
+[Bm7]Ne peut me combl[A]er.
 {end_of_bridge}

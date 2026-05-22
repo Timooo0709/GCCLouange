@@ -2,30 +2,76 @@
 {artist: Israel Houghton}
 {key: E}
 {tempo: 132}
-{language: en}
+{language: fr}
 {themes: Résurrection, Adoration}
 
 {start_of_intro: Intro}
-[E/G#]  [A]  [C#m]  [B]  [E/G#]  [A]  [C#m]  [B]
+CHORUS E/G# 1[A]C#[B]m E/[A]G# [B]C#m
+Ri- E/G# se[A]n, He's C#m ri- se[B]n, for- E/G# e- ver [A]gloriﬁed C#m[B]
+Ri- s[A]en, He's ri- se[B]n, King Je- s[A]us, King Je- sus [B]is alive
+INTERLUDE E/G# 1 C#m E/G# C#m
+[A]  [B]  [A]  [B]
+[E/G#]  [C#m]  [E/G#]  [C#m]
+Oh[A], oh, halle[B]lujah, oh[A], oh, hallel[B]ujah
+(Repeat two times)
 {end_of_intro}
 
-{start_of_chorus: Chorus}
-[E/G#]Ri-sen, He's ri-[A]sen, fore-ver glo-ri[C#m]fied [B]
-[E/G#]Ri-sen, He's ri-[A]sen, King Je-sus, [C#m]King Je-sus is a[B]live
-{end_of_chorus}
-
-{start_of_verse: Verse}
-[C#m]Grave where are you [E/G#]now, you've been o-ver[A]powered
-[C#m]Death where is your [B/D#]sting, con-quered by the [A]King [E/G#][B]
-[C#m]Re-sur-rec-ted [E/G#]one, shi-ning like the [A]sun
-[C#m]Brea-king through the [B/D#]fear, [E]vic-to-ry is [A]here, vic-to-ry is [E/G#]here [B]
+{start_of_verse: Couplet}
+Grave C#m where B/D# are you [A]now, you've been [E]over[B]powered E/G#
+Death C#m E/G# where is [E]your [A]sting, conquered by the K[B]ing
+Resur-rected C#m B/D# [A]one, shining [E]like the [B]sun E/G#
+Breaking through [E]the [A]fear, victory is here, v[B]ictory is here
 {end_of_verse}
 
-{start_of_chorus: Interlude}
+{start_of_intro: Interlude}
 [E]Oh, oh, hallelujah, oh, oh, hallelujah
 [A]Jesus be lifted higher, we serve a risen savior
+{end_of_intro}
+
+{start_of_chorus: Refrain}
+INTERLUDE E/G# 3 C#m E/G# C#m
+Oh[A], oh, halle[B]lujah, Oh[A], oh, hallel[B]ujah[A]
+[E/G#]  [C#m]  [B/D#]
+[A]4fr.[E]
 {end_of_chorus}
 
-{start_of_bridge: Bridge}
-[A]  [B]  [C#m]  [A]  [B]  [C#m]
+{start_of_verse: Couplet}
+Resur-rected C#m B/D# [A]one, shining [E]like the [B]sun E/G#
+Breaking through [E]the [A]fear, victory is here, v[B]ictory is here
+{end_of_verse}
+
+{start_of_intro: Interlude}
+{end_of_intro}
+
+{start_of_chorus: Refrain}
+Ri- E/G# se[A]n, He's C#m ri- se[B]n, for- E/G# e- ver [A]gloriﬁed C#m[B]
+Ri- s[A]en, He's ri- se[B]n, King Je- s[A]us, King Je- sus [B]is
+[E/G#]  [C#m]  [E/G#]  [C#m]
+Ri- E/G# se[A]n, He's C#m ri- se[B]n, for- E/G# e- ver [A]gloriﬁed C#m C#m [B]C#m
+Ri- s[A]en, He's ri- se[B]n, King Je- s[A]us, King Je- sus [B]is a[A]live[B][A][B]
+{end_of_chorus}
+
+{start_of_bridge: Pont}
+[A]The same power,[B]the same power that crushed the enemy
+[A]The same power, the same power,[E]the same power lives in [B]me
+(Repeat two times)
 {end_of_bridge}
+
+{start_of_chorus: Refrain}
+N.C.
+Risen, He's risen, fore-ver gloriﬁed
+Risen, He's risen, King Jesus, King Jesus is
+[E/G#]  [C#m]  [E/G#]  [C#m]
+Ri- E/G# se[A]n, He's C#m ri- se[B]n, for- E/G# e- ver [A]gloriﬁed C#m[B]
+Ri- s[A]en, He's ri- se[B]n, King Je- s[A]us, King Je- sus [B]is alive
+{end_of_chorus}
+
+{start_of_intro: Interlude}
+[A]  [B]
+[E/G#]  [C#m]
+[A]  [B]
+[E/G#]  [C#m]
+[A]  [B]
+[E/G#]  [C#m]
+Je- sus,[A]King Je- sus [B]is a[E]live, hallelujah!
+{end_of_intro}

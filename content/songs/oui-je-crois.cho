@@ -4,31 +4,35 @@
 {language: fr}
 {themes: Foi}
 
+{start_of_intro: Intro}
+[C]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
-[C/E]Notre Père Éter[F]nel, Toi qui a tout créé, Dieu Tout-Puissant.
-[F]C'est par Ton Saint-Esprit que Jésus fut con[Am]çu, Christ notre Sau[G]veur.
+[F]Notre Père É[Am]ter - n[G]el, Toi qui a [C/E]tout créé,[F]Dieu Tout-Pu[G]issant.[C/E]
+[F]C'est par Ton Saint[Am]-Esp - r[G]it que Jésus fut c[C/E]on - çu,[F]Christ notre S[G]auveur.
 {end_of_verse}
 
 {start_of_chorus: Refrain 1}
-[F]Oui je crois en Dieu notre [C]Père, oui je crois en Christ Son Fils,
-[F]Oui je crois en Ton Saint-Esprit, ô Tri[Am]nité di[G]vine.
-[F]Oui je crois à la résurrec[C]tion, que nous vivrons à jamais
-[Am]Car oui je crois dans le [Dm]Nom de Jé[G]sus.
+[C]Oui je crois en Dieu no[Dm]tre Père,[F]oui je crois en Christ Son [G]Fils,
+[Am]Oui je crois en Ton Saint-Esprit,[F]ô Trinité divine.
+[C]Oui je crois à la résur[Dm]rection,[F]que nous vivrons à ja[G]mais
+[Am]Car oui je crois dans le [F]Nom de [G]Jésus.
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[C/E]Notre Juge et Défen[F]seur, Tu souffris à la croix, le pardon est en Toi.
-[F]Descendu jusqu'aux té[Am]nèbres, Tu es res[G]suscité, à jamais élevé.
+[F]Notre Juge et Dé[Am]fen - s[G]eur, Tu souffris à l[C/E]a croix,[F]le pardon est en T[G]oi.[C/E]
+[F]Descendu jusqu'aux [Am]té - n[G]èbres, Tu es ressus[C/E]cité, [F]à jamais él[G]evé.
 {end_of_verse}
 
 {start_of_bridge: Pont}
-[F]Oui je crois en [C]Lui, oui je crois qu'Il est vivant,
-[G]Oui je crois que Jé[C/E]sus est Sei[F]gneur. [Am] [G] [C] [F] [Dm]
+[C]Oui [F]je crois[Am]en L[G]ui, [C/E]oui [F]je crois qu'Il e[Am]st viv[G]ant,
+[C/E]Oui [F]je crois que J[G]ésus est Seig[C]neur.
 {end_of_bridge}
 
 {start_of_chorus: Refrain 2}
-[C]Oui je crois à la vie éternelle, je crois que d'une vierge Il est né.
-[Am]Je crois à la communion des saints, et en Ta sainte Église.
-[F]Oui je crois à la résurrec[C]tion, quand Jésus reviendra,
-[Am]Car oui je crois dans le [Dm]Nom de Jé[G]sus.
+[C]Oui je crois à la vie é[Dm]ternelle,[F]je crois que d'une vierge Il est [G]né.
+[Am]  [F]
+[C]Oui je crois à la résur[Dm]rection,[F]quand Jésus revien[G]dra,
+[Am]Car oui je crois dans le [F]Nom de [G]Jésus.
 {end_of_chorus}

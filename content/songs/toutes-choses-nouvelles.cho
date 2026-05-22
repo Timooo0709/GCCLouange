@@ -4,30 +4,33 @@
 {language: fr}
 {themes: Adoration, Espérance}
 
+{start_of_intro: Intro}
+[A]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
-[D][E][A]Ta grâce fait toutes choses nouvelles,
-[D][Bm]Tes œuvres pour nous sont parfaites.
-[F#m][E]Pour les choses de ce monde, un espoir surgit
-[F#m][E]Dans la vie trouvée en Ton Nom.
+Ta grâ[D]ce fait toutes cho[A]ses nouvel[E]les,
+Tes œu[D]vres pour nous s[A]ont parfai[E]tes.
+Pour les [D]choses de ce [A]monde, un es[F#m]poir surgi[E]t
+Dans la [Bm]vie trouvée [F#m]en Ton N[E]om.
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[D][A]Tu fais toutes choses nouvelles,
-[D][A]Tu fais toutes choses nouvelles,
-[A/C#][D][E]Aujourd'hui et à jamais, Ton amour est sans fin,
-[F#m][E][D][A/C#][D]Cet espoir est certain, alléluia.
+Tu fa[D]is toutes cho[A]ses nouvel[E]les, (x2)
+Aujourd'[A/C#]hui et à [D]jamais, Ton [F#m]amour est san[E]s fin,
+Cet [A/C#]espoir est cer[D]tain, a - llélu[E]i - [D][F#m]a.
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[D][A][E]Ma foi est dans l'invisible,
-[D][A]Tu es Celui qui donne la vie.
-[F#m][A][D][E]Par Ta voix, Tu fais naître ce qui n'est pas,
-[F#m][Bm][E]Je suis vivant en Toi.
+Ma [D]foi est dans [A]l'invis[E]ible,
+Tu est [D]Celui qui [A]donne la v[E]ie.
+Par Ta [D]voix, Tu fais [A]naître ce [F#m]qui n'est p[E]as,
+J[Bm]e suis viv[F#m]ant en T[E]oi.
 {end_of_verse}
 
 {start_of_bridge: Pont}
-[A][E]Oui Tu as tout accompli, je sais que je suis choisi,
-[F#m]Je suis vivant en Toi, je suis vivant en Toi,
-[D][E]Seigneur Tu restaures, toutes choses pour Ta gloire,
-[F#m]Je suis vivant en Toi, je suis vivant en Toi.
+Oui Tu as tout a[F#m]ccompli, je sais que [E]je suis [D]choisi,
+Je suis vivant [A]en Toi, [F#m]je suis vivant e[E]n Toi,
+Seigneur Tu res[F#m]taures, toutes choses [E]pour Ta [D]gloire,
+Je suis vivant [A]en Toi, [F#m]je suis vivant [E]en Toi,
 {end_of_bridge}

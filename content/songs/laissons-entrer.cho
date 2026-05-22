@@ -5,27 +5,29 @@
 {themes: Adoration, Sainteté}
 
 {start_of_intro: Intro}
-[E]  [A/C#]  [B/D#]  (x2)
+[E]
+[E]  [A/C#]  [B/D#]  [E]  [A/C#]  [B/D#]
 {end_of_intro}
 
 {start_of_verse: Couplet 1}
-[E]Nous venons célébrer Dieu, nous voulons L'a[B/D#]dorer.
-[E]Devant Lui, nous nous courbons pour é[A/C#]lever Son [A]Nom.
+[E]Nous venons célébrer Dieu,[A/C#]nous voulons [B/D#]L'adorer.
+[E]Devant Lui, nous nous courbons[A/C#]pour élever S[A]on Nom.
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[A]Laissons entrer le Roi de gloire, acclamons le Dieu de victoire.
-[B]Il est vain[E/G#]queur, fai[A]sons-Lui place, Il est Roi, Il est Roi et Seigneur.
+Laissons ent[E]rer le Roi de gl[B]oire, acclamons l[E/G#]e Dieu de victo[A]ire.
+Il est vainq[C#m]ueur, faisons-Lui pl[B/D#]ace, Il est Ro[A]i, Il est R[A]oi et Seig[A]neur.
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[E]Dieu est là, Il nous at[B/D#]tend, Il entend nos prières.
-[A/C#]Sa parole est éter[E]nelle, elle est notre es[F#m]sentiel.
+[E]Dieu est là, Il nous attend,[A/C#]Il entend [B/D#]nos prières.
+[E]Sa parole est éternelle,[A/C#]elle est notre esse[A]ntiel.
 {end_of_verse}
 
 {start_of_bridge: Pont}
-[C#m]Accueillons notre [E]Dieu, Il est le mer[E/G#]veilleux,
-[A]Glo[F#m]rieux, majes[C#m]tueux.
-[C#m]Accueillons notre [E]Dieu, Il est le mer[E/G#]veilleux,
-[A]Glo[F#m]rieux, majes[C#m]tueux.
+[C#m]  [E]  [E/G#]  [A]  [F#m]  [C#m]  [E]  [E/G#]  [A]  [F#m]
+[C#m]Accueillons [E]notre Dieu,[A]Il est le [F#m]merveilleux,
+[C#m]Glorieux,[E]majestu[A]eux.[F#m]
+[C#m]Accueillons [E]notre Dieu,[A]Il est le [F#m]merveilleux,
+[C#m]Glorieux,[E]majestu[A]eux.[A]
 {end_of_bridge}

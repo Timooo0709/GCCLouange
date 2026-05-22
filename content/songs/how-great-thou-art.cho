@@ -1,39 +1,28 @@
 {title: How Great Thou Art}
 {key: G}
-{language: en}
+{language: fr}
 {themes: Adoration, Sainteté}
 
-{start_of_verse: Verse 1}
-[G]O Lord my God, when I in awesome wonder
-[C]Consider all the worlds Thy hands have [G]made
-[G]I see the stars, I hear the rolling [C]thunder
-Thy pow'r throughout the [G]universe dis[D]played
-{end_of_verse}
-
-{start_of_chorus: Chorus}
-Then sings my soul, my [G]Savior God to [C]Thee,
-[G]"How great thou [Am][D]art! How great thou [G]art!"
-Then sings my soul, my [G]Savior God to [C]Thee,
-[G]"How great thou [Am][D]art! How great thou [G]art!"
-{end_of_chorus}
-
-{start_of_verse: Verse 2}
-[G]When thro' the woods and forest glades I wander
-[C]And hear the birds sing sweetly in the [G]trees,
-[G]When I look down from lofty mountain [C]grandeur,
-And hear the brook and [G]feel the gentle [D]breeze
-{end_of_verse}
-
-{start_of_verse: Verse 3}
-[G]And when I think that God, His Son not sparing,
-[C]Sent Him to die, I scarce can take it [G]in.
-[G]That on the cross, my burden gladly [C]bearing,
-He bled and died to [G]take away my [D]sin.
-{end_of_verse}
-
-{start_of_verse: Verse 4}
-[G]When Christ shall come with shout of acclamation
-[C]And take me home, what joy shall fill my [G]heart!
-[G]Then I shall bow in humble ado[C]ration,
-And there proclaim, my [G]God, how great Thou [D]art!
-{end_of_verse}
+{start_of_intro: Intro}
+[G]  [D]
+O Lord my G[G]od, when I in awesome [C]wonder
+Consider [G]all the [D]worlds Thy hands have [G]made[D]
+I see the [G]stars, I hear the rolling t[C]hunder
+Thy pow’r througho[G]ut the u[D]niverse disp[G]layed[D]
+Then sings my [G]soul, my S[C]avior God to [G]Thee,
+“How great thou [Am]art! [D]How great thou a[G]rt!”[D]
+Then sings my [G]soul, my S[C]avior God to [G]Thee,
+“How great thou [Am]art! How great thou [G][D]art!”
+When thro’ the woods and forestglades I wander
+And hear the birds sing sweetly in the trees,
+When I look down from lofty mountain grandeur,
+And hear the brook and feel the gentle breeze
+And when I think that God, His Son not sparing,
+Sent Him to die, I scarce can take it in.
+That on the cross, my burden gladly bearing,
+He bled and died to take away my sin.
+When Christ shall come with shout of acclamation
+And take me home, what joy shall fill my heart!
+Then I shall bow in humble adoration,
+And there proclaim, my God, how great Thou art!
+{end_of_intro}

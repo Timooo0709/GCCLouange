@@ -4,19 +4,25 @@
 {language: fr}
 {themes: Sainteté, Adoration, Repentance}
 
+{start_of_intro: Intro}
+[G]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
-[G]Incline nos cœurs, fléchis nos genoux,
-[C2]Ô Saint-Esprit rends-nous humbles. [G] [D]
+[G]Incline nos cœurs,[D]fléchis nos genoux,
+[C2]Ô Saint-Esprit rends-nous humb[G]les.
 {end_of_verse}
 
 {start_of_verse: Couplet 2}
-[G]Tourne nos regards des choses mauvaises,
-[C2]Nous renversons toutes nos idoles. [D]
+[G]Tourne nos regards[D]des choses mauvaises,
+[C2]Nous renversons toutes nos idoles.
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[G]Donne-nous des mains pures, puri[D]fie nos cœurs,
-[Em]Fais que nous a[D]dorons seule[C]ment Ton Nom. (x2)
-[G]Ô Dieu fais de nous une géné[D]ration qui cherche,
-[Em]Qui cherche Ta [D]face, ô Dieu de Ja[C]cob. (x2)
+Donne-nous des mains p[G]ures, purifie nos cœur[D]s,
+Fais que n[Em]ous adorio[D]ns seulement T[C]on Nom.
+(x2)
+Ô Dieu fais de n[G]ous une génération qui che[D]rche,
+Qui cherche Ta f[Em]ace, ô [D]Dieu de J[C]acob.
+(x2)
 {end_of_chorus}

@@ -4,31 +4,35 @@
 {language: fr}
 {themes: Adoration, Foi, Espérance}
 
+{start_of_intro: Intro}
+[D]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
-[C]Si la lune me glace et le soleil men[G]ace,
-[C]Créateur des é[Am]toiles, mon secours est en [F]Toi.
-[C]Si mes larmes ruissellent et que mon pas chan[G]celle,
-[C]Créateur de la [Am]terre, mon secours est en [F]Toi. [G]
+Si la lune me [D]glace et le soleil me[A]nace,
+Créateur des é[Bm]toiles, mon [G]secours est en [D]Toi.
+Si mes larmes rui[D]ssellent et que mon pas ch[A]ancelle,
+Créateur de la [Bm]terre, mon [G]secours est en [D]Toi.
 {end_of_verse}
 
 {start_of_prechorus: Pré-Refrain}
-[F]Je lève les yeux vers les hauts som[Am]mets. [C]
-[F]Toi seul es mon Dieu, je pro[Am]clamerai : [C] [G]
+[G]Je lève les ye[Bm]ux [D]vers les hauts somme[A]ts.
+[G]Toi seul es mon Di[Bm]eu, [D/F#]je proclamer[A]ai :
 {end_of_prechorus}
 
 {start_of_chorus: Refrain}
-[C]Toi seul es ma force, Toi seul me res[G]taures,
-[Am]Mon secours est en [F]Toi. [C]
-[G]Toujours Tu me portes, jamais Tu ne dors,
-[C]Mon secours est en [Am]Toi. [F] [C]
+[D]Toi seul es ma force, [A]Toi seul me restaures,
+Mon [Bm]secours est [G]en T[D]oi.
+[D]Toujours Tu me portes, [A]jamais Tu ne dors,
+Mon [Bm]secours est [G]en T[D]oi.
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[C]Si la peur m'envahit et mon âme cha[G]vire,
-[F]Créateur de la vie, mon secours est en [Am]Toi. [C]
+Si la peur m'envah[D]it et mon âme ch[A]avire,
+Créateur de la [Bm]vie, mon [G]secours est en [D]Toi.
 {end_of_verse}
 
 {start_of_bridge: Pont}
-[C]Ta victoire, mon espoir ; Ton che[F]min, mon destin ;
-[Am]Ton salut, mon re[F]fuge ; tout est en Toi.
+Ta [D]victoire, mon espoir ; Ton [G]chemin, mon destin ;
+Ton [Bm]salut, mon refuge ; [G]tout est en Toi.
 {end_of_bridge}

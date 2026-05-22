@@ -5,41 +5,55 @@
 {themes: Adoration, Action de grâce}
 
 {start_of_intro: Intro}
+[G]
 [Bm]  [G]  [D]
 {end_of_intro}
 
 {start_of_verse: Couplet 1}
-[D]Dieu est proche de tous les cœurs brisés.
-[Bm]Aucune larme ver[G]sée ne Lui é[D]chappe.
-[D]Son amour suffit pour con[Bm]soler.
-[G]L'espoir que j'attendais est en[D]fin là.
+[D]Dieu est proche de tous les [Bm]cœurs [G]bris[D]és.
+Aucune [G]larme [Bm]ver - [G]sée ne Lui é[D]chappe.
+[D]Son amour suffit pour [Bm]con - [G]so - [D]ler.
+L'espoir que [G]j'a[Bm]ttendais est enfin l[D]à.
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[D]Réjouis-toi [Bm]mon âme.
-[G]Réjouis-toi [D]mon âme.
+Réjouis-toi mon [D]âme.[Bm]
+Réjouis-toi mon [G]âme.[D]
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[D]Que ma vie parle de Ses bien[Bm]faits,
-[G]Car Il est celui qui a com[D]blé mon cœur.
-[D]Rien sur terre ne pourra m'ar[Bm]racher,
-[G]De l'amour in[D]fini de mon Sauveur.
+[D]Que ma vie parle de [Bm]Ses [G]bienf[D]aits,
+Car Il est [G]celui [Bm]qui a [G]comblé mon [D]cœur.
+[D]Rien sur terre ne pourra [Bm]m'ar - [G]ra - [D]cher,
+De l'amour [G]in - [Bm]fini de mon Sauv[D]eur.
 {end_of_verse}
 
 {start_of_bridge: Pont}
-[D]Danse tel un enfant en Sa pré[D/F#]sence.
-[Em]Laisse chacune de tes chaînes.
-[G]Lève les yeux, a[D]dore Ton [Em]Dieu.
-[D/F#]Ne perds pas cet [G]instant.
+[D]Danse tel un en[Em]fant en Sa pré[D/F#]sence.
+Laisse chac[G]une de tes [D]chaînes.
+Lève les [Em]yeux, adore Ton [D/F#]Dieu.
+Ne perds pas [G]cet instant.
 {end_of_bridge}
 
-{start_of_outro: Final}
-[D]Réjouis-toi mon âme, en plein cœur de Sa présence.
-[D]Réjouis-toi mon âme, en dépit des circonstances.
-[D]Réjouis-toi mon âme, et n'oublie aucun de Ses bienfaits.
-[D]Réjouis-toi mon âme, oui réjouis-toi.
-[D]Réjouis-toi mon âme, choisis encore la louange.
-[D]Réjouis-toi mon âme, oui réjouis-toi.
-[G/B]Réjouis-toi, Oui ré[G]jouis-toi mon âme.
-{end_of_outro}
+{start_of_final: Final}
+[D]Réjouis-toi mon âme, [Dsus4]en plein cœur de Sa présence.
+[D]Réjouis-toi mon âme, [Dsus4]en dépit des circonstances.
+{end_of_final}
+
+{start_of_verse: Couplet 1}
+[D]Réjouis-toi mon âme,
+[D]Réjouis-toi mon âme,
+[D]Réjouis-toi mon âme,
+[D]Réjouis-toi mon âme,
+[D]Réjouis-toi mon âme,
+[D/A]Réjouis-toi, [G]Oui réjouis-toi
+{end_of_verse}
+
+{start_of_verse: Couplet 1}
+[Dsus4]et n'oublie aucun de Ses bienfaits.
+[Dsus4]oui réjouis-toi.
+[Dsus4]choisis encore la louange.
+[Dsus4]oui réjouis-toi.
+[G/B]en plein cœur de Sa présence.
+mon âme.
+{end_of_verse}

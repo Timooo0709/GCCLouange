@@ -4,39 +4,42 @@
 {language: fr}
 {themes: Mission, Adoration, Foi}
 
+{start_of_intro: Intro}
+[E]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
 [E]Je veux proclamer le Nom de Jésus
 [C#m7]Sur nos cœurs et sur chaque pensée,
-[A]Car je sais que la paix est dans Ta présence,
-[E]En Toi Jésus. [Esus] [E]
+Car [A2]je sais que la paix est dans Ta présence,
+En Toi J[E]ésus.[E][E][Esus]
 {end_of_verse}
 
 {start_of_verse: Couplet 2}
 [E]Je veux proclamer le Nom de Jésus
-[C#m7]Jusqu'à ce que les chaînes soient brisées.
-[A]Je crois que l'espoir et la liberté
-[E]Sont en Jésus. [Esus] [E]
+Jus[C#m7]qu'à ce que les chaînes soient brisées.
+Je [A2]crois que l'espoir et la liberté
+Sont en J[E]ésus.[E][E][Esus]
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[B]Ton Nom est puis[A]sant
-Et Ton Nom [E/G#]guérit, Ton Nom est [E]vie.
-[B]Tu brises les chaînes,
-[E/G#]Tu perces la nuit, con[A]sumes tout. [E] [Esus] [E]
+Ton Nom est [B]puissant
+Et [E/G#]Ton Nom [A2]guérit, Ton Nom[E]est vie.
+Tu brises [B]les chaînes,
+Tu [E/G#]perces [A]la nuit, cons[E]umes tout.[E][E][Esus]
 {end_of_chorus}
 
 {start_of_verse: Couplet 3}
 [E]Je veux proclamer le Nom de Jésus
 [C#m7]Sur nos peurs et sur notre anxiété,
-[A]Sur les cœurs affligés par la dépression,
-[E]Brille ô Jésus. [Esus] [E]
+Sur [A2]les cœurs affligés par la dépression,
+Brille ô J[E]ésus.[E][E][Esus]
 {end_of_verse}
 
 {start_of_bridge: Pont}
-[E]Déclarons-le sur les monts,
-Jésus dans nos rues,
+Déc[E]larons-le sur les monts,
+[E]Jésus dans nos rues,
 [C#m]Jésus dans les ténèbres et sur tous nos ennemis,
 [A]Jésus sur nos familles,
-Proclamons Son Saint Nom : [E]Jésus !
+Pro[A]clamons Son Saint Nom : J[E]ésus !
 {end_of_bridge}
-

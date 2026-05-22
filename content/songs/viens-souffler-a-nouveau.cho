@@ -4,45 +4,97 @@
 {themes: Saint-Esprit, Adoration}
 
 {start_of_intro: Intro}
-[F]  [C]  [G]  [Am]
+F / C / I G / Am / I F / C / I G / / / I
 {end_of_intro}
 
 {start_of_verse: Couplet 1}
-[F]Son du ciel, vent vio[C]lent
-[G]Feu de Dieu dé[Am]ferlant
-[F]Saint-Esprit, souffle sur nos [C]vies [G]
+[F]Son du ciel, [C]vent violent
+[G]Feu de Dieu [Am]déferlant
+[F]Saint-Esprit, [C]souffle sur nos [G]vies
 {end_of_verse}
 
 {start_of_verse: Couplet 2}
-[F]Renonçant à notre pé[C]ché
-[G]Les braises du réveil at[Am]tisées
-[F]Souffle de Dieu, ranime la [C]flamme [G]
+[F]Renonçant à [C]notre péché
+Les [G]braises du ré[Am]veil attisées
+[F]Souffle de Dieu, [C]ranime la [G]flamme
 {end_of_verse}
 
-{start_of_chorus: Refrain}
-[C/E]Viens souffler à nou[F]veau
+{start_of_chorus: Refrain 1}
+[C/E]Viens souffler à [F]nouveau
 Le doux parfum des [Am]cieux
-Déverse Ton Es[C]prit
-Déverse Ton Es[G]prit
+[C]
 {end_of_chorus}
 
+{start_of_verse: Couplet}
+[G]
+{end_of_verse}
+
+{start_of_verse: Couplet}
+Oh oh ohhh
+{end_of_verse}
+
+{start_of_intro: Intro}
+{end_of_intro}
+
 {start_of_verse: Couplet 3}
-[F]Nos cœurs marqués d'une sainte [C]crainte
-[G]Nos œuvres éprouvées par la [Am]foi
-[F]Feu du Fondeur, fortifie ce qui [C]reste [G]
+[F]Nos cœurs marqués d'une [C]sainte crainte
+[G]Nos œuvres éprouvées [Am]par la foi
+[F]Feu du Fondeur, [C]fortifie ce qui [G]reste
 {end_of_verse}
 
 {start_of_verse: Couplet 4}
-[F]Donc, nous l'Église de la [C]Terre
-[G]Rayonnant Ta lu[Am]mière
-[F]Pour Ton retour et Ton règne, nous [C]prions [G]
+[F]  [C]
+[G]Rayonnant Ta [Am]lumière
+[F]Pour Ton retour et [C]Ton règne, nous [G]prions
 {end_of_verse}
 
 {start_of_chorus: Refrain 2}
-[C/E]Viens souffler à nou[F]veau
+[C/E]Viens souffler à [F]nouveau
 Le doux parfum des [Am]cieux
-Déverse Ton Es[C]prit
-Déverse Ton Es[G]prit
-[C/E]Ton onction sur nos [F]vies
-Ta puissante pré[Am]sence
+[C]
 {end_of_chorus}
+
+{start_of_verse: Couplet}
+[G]
+{end_of_verse}
+
+{start_of_verse: Couplet}
+[C/E]Ton onction sur [F]nos vies
+Ta puissante [Am]présence
+[C]
+{end_of_verse}
+
+{start_of_verse: Couplet}
+[G]
+{end_of_verse}
+
+{start_of_verse: Couplet}
+{end_of_verse}
+
+{start_of_chorus: Refrain 2}
+Oui déverse[C/E]ton Esprit ([F]déverse Ton Esprit)
+Déverse [G]Ton Esprit ([Am]déverse Ton Esprit)
+Déverse [G/B]Ton Esprit ([C]déverse Ton Esprit)
+[C/E]  [F]
+{end_of_chorus}
+
+{start_of_verse: Couplet}
+{end_of_verse}
+
+{start_of_bridge: Pont 2}
+[F]Que tous les rachetés
+[Am]Prophétisent et chantent
+[C]Nous entendons le vent souffler
+[G]Souffler, [C/E]souffler
+[F]Agis parmi nous (nous T'adorons)
+[Am]Tes enfants te louent (nous déclarons)
+[C]Nous entendons le vent souffl[G]er, souffler
+{end_of_bridge}
+
+{start_of_chorus: Refrain 2}
+Fin
+[C/E]  [F]
+{end_of_chorus}
+
+{start_of_verse: Couplet}
+{end_of_verse}

@@ -1,51 +1,64 @@
 {title: Notre Père}
 {artist: Collectif Cieux Ouverts}
 {key: C}
-{tempo: 127}
 {language: fr}
 {themes: Adoration, Sainteté}
 
 {start_of_chorus: Refrain}
 Notre [F]Père
-[Am]Toi qui es dans [G]les cieux [C]
-Que ton [F]nom soit sancti[Am]fié [G]
-Que ton règne [F]vienne [Am] [G]
-Que ta volon[Dm]té soit faite [C]
-Sur toute la terre [G]
-Comme dans le ciel [F] [C]
+Toi qui es dans [C]les cieux
+Que ton [Am]nom
+Soit sanctiﬁé[G]
+Que ton règne [F]vienne
+Que ta volont [Am]é soit faite
+Sur toute [Dm]la terre[G]
+Comme dans le [C]ciel
 {end_of_chorus}
 
 {start_of_verse: Couplet 1}
-[Dm]C'est toi qui as [C]formé nos corps,
-[Am]En toi nous ne [G]manquons de rien.
-[Dm]Donne-nous au[C]jourd'hui encore
-[Am]Le pain dont nous [G]avons besoin.
-[Dm]Puisque tout don par[C/E]fait vient de ta main,
-Nous pro[F]cla\mons : Père, prends soin de [G]nous.
+[Dm]C’est toi qui as [C]formé nos corps
+[Am]En toi nous ne [G]manquons de rien
+[Dm]Donne-nous au [C]jourd’hui encore
+[Am]Le pain dont nous [G]avons besoin
+Puisque [Dm]tout don parfait
+Nous pro [C/E]vient de ta main
+[F]Père, prends soin de [G]nous
+Page 1
 {end_of_verse}
 
 {start_of_verse: Couplet 2}
-[Dm]Ne te souviens [C]pas de nos fautes,
-[Am]Jette-les au [G]fond de la mer.
-[Dm]Et lorsque nous [C]blessons les autres,
-[Am]Conduis-nous au [G]pied du Calvaire.
-[Dm]Comme nous par[C/E]donnons à ceux qui nous offensent,
-[F]Père, par[G]donne-nous.
+[Dm]Ne te souviens [C]pas de nos fautes
+[Am]Jette-les au [G]fond de la mer
+[Dm]Et lorsque nous [C]blessons les autres
+[Am]Conduis-nous au [G]pied du Calvaire
+Comme [Dm]nous pardonnons
+A ceux [C/E]qui nous offensent
+[F]Père, pardonne- [G]nous
 {end_of_verse}
 
 {start_of_verse: Couplet 3}
-[Dm]Si l'obscurité [C]nous inonde,
-[Am]Préserve-nous [G]d'être tentés.
-[Dm]Quand tu vois nos [C]cœurs qui succombent,
-[Am]Puissamment viens [G]nous délivrer.
-[Dm]Et veut nous dé[C/E]vorer l'ennemi rôde,
-[F]Père, pro[G]tège-nous.
+[Dm]Si l’obscuri [C]té nous inonde
+[Am]Préserve-nous [G]d’être tentés
+[Dm]Quand tu vois nos [C]coeurs qui succombent
+[Am]Puissamment viens [G]nous délivrer
+Puisque [Dm]l’ennemi rôde
+Et veut [C/E]nous dévorer
+[F]Père, protège- [G]nous
 {end_of_verse}
 
 {start_of_bridge: Pont}
-[F]Car c'est à toi qu'appar[Am]tiennent
-[G]La puissance et le règne
-[C]Et la louange et la [G/B]gloire.
-Pour les siècles des [G]siècles.
-[F]Amen ! [Am]Amen ! [G]Amen ! [C]Amen !
+Car c’est à toi qu’appar [F]tiennent
+La puis [G]sance et le [Am]règne
+La lou [G/B]ange et la [C]gloire
+Page 2
 {end_of_bridge}
+
+{start_of_verse: Couplet 1}
+Pour les siècles des [G]siècles
+Coda:
+Am [F]en !
+[G]A [Am]men !
+[G/B]A [C]men !
+A [G]men !
+Page 3
+{end_of_verse}

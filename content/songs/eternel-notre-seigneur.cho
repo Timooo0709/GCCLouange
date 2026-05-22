@@ -4,23 +4,26 @@
 {language: fr}
 {themes: Adoration, Sainteté}
 
+{start_of_intro: Intro}
+[G]
+{end_of_intro}
+
 {start_of_chorus: Refrain}
-[Em]Éternel, notre Sei[G]gneur, que Ton Nom est magnifique.
-[Em]Éternel, notre Sei[D]gneur, que Ton Nom soit glo[C]rifié.
+[G]Éternel, n[Em]otre Seigneur,[C]que Ton Nom est [D]magnifique.
+[G]Éternel, n[Em]otre Seigneur,[C]que Ton Nom soit [D]glorifié.
 {end_of_chorus}
 
 {start_of_verse: Couplet 1}
-[Bm7]Par la bouche des petits, Tu déploies Ta ma[Bm7]jesté.
-[C]Tu confonds Tes enne[Am7]mis par Ta force et Ta bon[Em7]té. [D]
+[Bm7]Par la bouche [Em7]des petits,[Bm7]Tu déploies Ta [Em7]majesté.
+[Am7]Tu confonds Tes [Em7]ennemis[C]par Ta force et [D]Ta bonté.
 {end_of_verse}
 
 {start_of_verse: Couplet 2}
-[Bm7]Quand je regarde le ciel, la beauté de l'univers,
-[C]Qu'est donc l'homme, ô É[Em7]ternel, pour que Tu le con[Am7]sidères ? [Em7] [D]
+[Bm7]Quand je regar[Em7]de le ciel,[Bm7]la beauté de [Em7]l'univers,
+[Am7]Qu'est donc l'homme, ô [Em7]Éternel,[C]pour que Tu le [D]considères ?
 {end_of_verse}
 
 {start_of_verse: Couplet 3}
-[Bm7]Façonnés à Ton image, de Ta gloire cou[Bm7]ronnés,
-[C]Tu nous donnes en héri[Am7]tage tout ce que Tu as cré[Em7]é. [D]
+[Bm7]Façonnés à [Em7]Ton image,[Bm7]de Ta gloire [Em7]couronnés,
+[Am7]Tu nous donnes en [Em7]héritage[C]tout ce que Tu [D]as créé.
 {end_of_verse}
-

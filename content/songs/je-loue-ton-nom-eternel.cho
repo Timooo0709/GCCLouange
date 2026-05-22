@@ -4,16 +4,20 @@
 {language: fr}
 {themes: Adoration, Action de grâce}
 
+{start_of_intro: Intro}
+[G]
+{end_of_intro}
+
 {start_of_verse: Couplet}
-[G]Je loue Ton Nom, É[C]ternel, [D] [C]
-[G]Seigneur, je cé[C]lèbre Ta [G]bonté.
-[G]Quelle joie, Tu vis en moi,
-[G]Quelle joie, Tu viens pour nous sau[D]ver. [C]
+[G]Je loue [C]Ton Nom, Éter[D]nel,[C]
+[G]Seigneur, [C]je célèbre [D]Ta bonté.[C]
+[G]Quelle [C]joie, Tu vis en [D]moi,[C]
+[G]Quelle [C]joie, Tu viens pour [D]nous sauver.[C]
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[G]Tu viens du Ciel sur la terre mon[C]trer la [G]voie,
-[G]De la terre à la croix payer pour [C]moi, [D]
-[B7]De la croix jusqu'au tombeau, et du tombeau jusqu'au [Em]Ciel.
-[Am7]Je loue Ton Nom, É[D]ternel. [G]
+[G]Tu viens du [C]Ciel sur la ter[D]re mont[C]rer la voie,
+[G]De la [C]terre à la cr[D]oix pa[C]yer pour [G]moi,
+De la [C]croix jusqu'au tomb[D]eau, et du tom[B7]beau jusqu'au Ci[Em]el.
+Je loue [Am7]Ton Nom, [D]Éter[G]nel.[D][G][C]
 {end_of_chorus}

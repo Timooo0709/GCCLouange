@@ -4,25 +4,29 @@
 {language: fr}
 {themes: Adoration}
 
+{start_of_intro: Intro}
+[E]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
-[E]Seigneur, Tu es la force,
-[B/D#][C#m][A]L'amour qui brûle en moi comme une flamme,
-[B/D#][A]Le soutien de mon âme.
+[E]Seigneur, Tu [B/D#]es la force,
+L'a[C#m]mour qui brûle en [A]moi comme une [E]flamme,
+Le souti[B/D#]en de m[A]on âme.
 {end_of_verse}
 
 {start_of_verse: Couplet 2}
-[E]Seigneur, Tu es la joie
-[B/D#][C#m][A]Qui brille sur mon visage, Tu es ma gloire,
-[B/D#][A]Tu es tout pour moi.
+[E]Seigneur, Tu [B/D#]es la joie
+Qui [C#m]brille sur mon vi[A]sage, Tu es ma [E]gloire,
+Tu [B/D#]es tout p[A]our moi.
 {end_of_verse}
 
 {start_of_prechorus: Pré-Refrain}
-[F#m]Et quand je contemple la grandeur de Ton amour,
-[D]Mon être entier veut T'a[Bsus4]dorer.
+[F#m]Et quand je c[E/G#]ontemple la gran[G#m]deur de Ton a[C#m]mour,
+[D]Mon être entier veut T'ador[Bsus4]er.
 {end_of_prechorus}
 
 {start_of_chorus: Refrain}
-[E/G#][A]Tu es le chant que je chante,
-[E/G#]Tu es la mélodie de mon cœur,
-[E][F#m][A][B]À jamais le sujet de mes louanges.
+Tu es le c[F#m]hant que je ch[E/G#]ante,
+Tu es la mé[Am]lodie de mo[E/G#]n cœur,
+À [F#m]jamais le su[B]jet de mes lou[A]anges.[E]
 {end_of_chorus}

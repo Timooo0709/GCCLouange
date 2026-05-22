@@ -1,42 +1,52 @@
 {title: Joie dans le monde}
 {artist: Hillsong}
 {key: F}
+{tempo: 96}
 {language: fr}
 {themes: Adoration, Noël}
-{ccli: 712094}
 
 {start_of_verse: Couplet 1}
 [F]Joie dans le monde
 Le Seigneur vient
-[Bb]La Terre accueille son Roi
-[Dm]Que tous les cœurs
+La [Bb]Terre accueille son Roi
+Que [Dm]tous les cœurs
 Lui préparent une place
-[Bb]La Terre et le Ciel chantent
-[F/A][Bb]La Terre et le Ciel chantent
+La [Bb]Terre et le Ciel chantent
+La [F/A]Terre et le Ciel ch[Bb]antent
 {end_of_verse}
 
-{start_of_chorus: Refrain}
-[F][Bb]Nous chanterons joie
-[Bb]Nous chanterons joie
-[Dm]Nous chanterons joie
-[Bb]Joie dans le monde
+{start_of_chorus: Refrain 1}
+Nous chanterons [F]joie[Bb]
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[F]Joie dans le monde
+Joie dans le monde
 Le Sauveur règne
-[Bb]Entonnons ce refrain
-[Dm]Les champs et les fleuves
-Les collines et les plaines
-[Bb]Proclament en chœur ce chant
-Proclament en chœur ce chant
 {end_of_verse}
 
+{start_of_chorus: Refrain}
+Les champs et les ﬂeuves
+Les collines et les plaines
+Proclament en chœur ce chant
+Proclament en chœur ce chant
+Titre
+Adaptation
+{end_of_chorus}
+
+{start_of_chorus: Refrain 2}
+Nous chanterons j[F]oie
+Nous chanterons [Bb]joie
+Nous chanterons [Dm]joie
+Joie dans le mo[Bb]nde
+{end_of_chorus}
+
 {start_of_verse: Couplet 3}
-[F]Il tient le monde entre Ses mains
-[Bb]Et fait connaître aux peuples
-[Dm]Les grandes merveilles
+Il tient le monde entre Ses mains
+Et fait connaître aux peuples
+Les grandes merveilles
 De Sa justice
-[Bb]La gloire de Son amour
 La gloire de Son amour
+La gloire de Son amour
+original : Joy To The World
+: Jonathan Mercier
 {end_of_verse}

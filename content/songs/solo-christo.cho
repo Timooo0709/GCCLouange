@@ -4,30 +4,33 @@
 {language: fr}
 {themes: Adoration, Croix, Résurrection}
 
+{start_of_intro: Intro}
+[C]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
-[A]Fils de Dieu, splendeur des Cieux, cou[A/C#]ronné de l'univers,
-[D]Fils de l'homme, Sau[F#m]veur précieux, dé[Bm7]pouillé pour révéler l'amour du [D]Père. [E] [A]
+Fils de [C]Dieu, splendeur [Dm7]des [C]Cieux, couro[F]nné de l'u[Am]ni - [G]vers,
+Fils de [C/E]l'homme, Sauveur [F]pré[Am]cieux, dépouil[Dm7]lé pour révé[F]ler l'amour [G]du [C]Père.
 {end_of_verse}
 
 {start_of_verse: Couplet 2}
-[A]Sur la croix, meurtri bri[A/C#]sé, cou[D]ronné de nos péchés,
-[D]Par nos mains Son sang ver[F#m]sé, cruci[Bm7]fié pour révéler l'amour du [D]Père. [E] [A]
+Sur la [C]croix, meurtri [Dm7]bri - [C]sé, couro[F]nné de nos [Am]pé - [G]chés,
+Par nos [C/E]mains Son sang [F]ver[Am]sé, cruci[Dm7]fié pour révé[F]ler l'amour [G]du [C]Père.
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[A]Jésus seul, mer[F#m]veilleux Sauveur, Jésus seul di[D]vin rédempteur,
-[F#m]De tous nos cœurs nous pro[D]cla[A/C#]me[E]rons :
-[D]Le salut est en Jé[E]sus seul. [A]
+[Am]Jésus [F]seul, [C]merveilleux [G]Sauveur, [Am]Jésus [F]seul [C/E]divin rédempt[G]eur,
+De [F]tous [G]nos [Am]cœurs [F/A]nous [G/B]procla - [Csus4]me - [C]rons :
+Le [F]salut est en [G]Jésus [C]seul.
 {end_of_chorus}
 
 {start_of_verse: Couplet 3}
-[A]De la mort Il se re[A/C#]lève, cou[D]ronné d'éternité,
-[D]Par Sa vie, Il nous li[F#m]bère, ressus[Bm7]cité à jamais, Il est vi[D]vant.
-[D]Ô mort où est Ta vic[A/C#]toire, Christ est vi[E]vant. [A]
+De la [C]mort Il se [Dm7]re - [C]lève, couro[F]nné d'éter[Am]ni - [G]té,
+Par Sa [C/E]vie, Il nous [F]li - [Am]bère, ressu[Dm7]scité à ja[F]mais, Il est [G]vi - [C]vant.
+Ô mort [F]où est Ta vic[C/E]toire, Christ est [G]vi -[C]vant.
 {end_of_verse}
 
 {start_of_verse: Couplet 4}
-[A]Élevé parmi les [A/C#]anges, cou[D]ronné de nos louanges.
-[D]Nous l'église enton[F#m]nerons l'hymne saint des rac[Bm7]hetés pour l'é[D]ternité. [E] [A]
+Éle[C]vé parmi [Dm7]les [C]anges, couro[F]nné de nos [Am]lou - [G]anges.
+[C/E]  [F]  [Am]  [Dm7]  [F]  [G]  [C]
 {end_of_verse}
-

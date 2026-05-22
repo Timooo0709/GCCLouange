@@ -5,32 +5,37 @@
 {themes: Adoration, Salut, Espérance}
 
 {start_of_intro: Intro}
+[A]
 [D]  [A]  [F#m]  [E]
 {end_of_intro}
 
 {start_of_verse: Couplet 1}
-[D]Tous ont besoin d'être aimés d'un amour sans li[F#m]mite,
-[A]Que Ta grâce coule en [E]moi.
-[D]Tous ont besoin de pardon, de la bonté d'un Sauveur, l'es[F#m]poir des nations. [A] [E]
+[D]Tous ont besoin d'être a[A]imés d'un amour sans [F#m]limite,
+Que [E]Ta grâce coule en moi.
+[D]Tous ont besoin de p[A]ardon, de la bonté d'un S[F#m]auveur, l'es[E]poir des nations.
+[D]  [E]  [D]  [E]
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[A]Sauveur, Il déplace les montagnes,
-[E]Mon Dieu sauve avec puis[A]sance, Il sauve avec puissance.
-[F#m]Pour toujours créateur du sa[D]lut,
-[A]Jésus a vaincu la mort, Il a vaincu la [E]mort. [A]
+[A]  [E]
 {end_of_chorus}
 
+{start_of_verse: Sauveur, Il déplace les montagnes,}
+Mon Dieu sauve [D]avec puissan[A]ce, Il sauve [F#m]avec puissan[E]ce.
+Pour [A]toujours créateur du [E]salut,
+Jésus a [D]vaincu la mor[A]t, Il a [F#m]vaincu la mor[E]t.
+{end_of_verse}
+
 {start_of_verse: Couplet 2}
-[D]Prends-moi tel que je suis, mes peurs et mes é[F#m]checs.
-[E]Viens remplir ma [A]vie.
-[D]Je donne ma vie pour Te suivre, dans tout ce que je crois, et je me sou[F#m]mets. [E]
+[D]Prends-moi tel que j[A]e suis, mes peurs et mes é[F#m]checs.
+[E]Viens remplir ma vie.
+[D]Je donne ma vie pour T[A]e suivre, dans tout ce que j[F#m]e crois, et [E]je me soumets.
+[D]  [E]  [D]  [E]
 {end_of_verse}
 
 {start_of_bridge: Pont}
-[D]Resplendis pour que le monde voi[A]e,
-Nous chantons pour la gloire du Roi ressus[E]cité, Jésus.
-[D]Resplendis pour que le monde voi[A]e,
-Nous chantons pour la gloire du Roi ressus[E]cité.
+[D]Resplendis po[A]ur que le mond[E]e voie,
+Nous [F#m]chantons[D]pour la gloire d[A]u Roi ressusci[E]té, [F#m]Jésus.
+[D]Resplendis po[A]ur que le mond[E]e voie,
+Nous [F#m]chantons[D]pour la gloire d[A]u Roi ressusci[E]té.
 {end_of_bridge}
-

@@ -4,26 +4,29 @@
 {language: fr}
 {themes: Adoration, Sainteté}
 
+{start_of_intro: Intro}
+[C]
+{end_of_intro}
+
 {start_of_verse: Couplet}
-[D]Quand je contemple Ta sain[Gmaj7]teté
-[G]Et quand je contemple Ta [D]beauté,
-[D]Et quand toutes les choses pâlissent à Ta lu[F#m7]mière.
-[Gmaj7]Quand j'ai trouvé la joie près de Ton cœur,
-[D]Quand je m'enveloppe de Ton a[G]mour,
-[D]Et quand toutes les choses pâlissent à Ta lu[F#m7]mière. [G] [A]
+[FM7/G]Quand je [C2]contemple Ta sainte[F]té
+Et quand [C]je contemple Ta beaut[F]é,
+Et quand [C2]toutes les [Em7]choses pâl[F]issent à Ta lu[F/G]mière.[G]
+[FM7/G]Quand j'ai [C2]trouvé la joie près de [F]Ton cœur,
+Quand je [C]m'enveloppe de Ton a[F]mour,
+Et quand [C2]toutes les [Em7]choses pâl[F]issent à Ta lu[F/G]miè - [G]re.
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[Gmaj7]Oh ! Je T'a[A/G]dore, oui, je T'a[F#m7]dore. [Bm]
-[Em]Si je vis, Seigneur, c'est pour T'a[A]dorer.
-[Gmaj7]Oh ! Je T'a[A/G]dore, oui, je T'a[F#m7]dore. [Bm]
-[Em]Si je vis, Seigneur, c'est pour T'a[A]dorer. [D]
+Oh ! Je T'a[FM7]do - [G/F]re, oui, je T'a[Em7]do - [Am]re.
+Si [Dm]je vis, Seigneur,[Dm/G]c'est pour [G]T'ador[CM7]er.[Em7][Dm]
+Oh ! Je T'a[FM7]do - [G/F]re, oui, je T'a[Em7]do - [Am]re.
+Si [Dm]je vis, Seigneur,[Dm7/G]c'est pour [G]T'ador[C]er.
 {end_of_chorus}
 
 {start_of_bridge: Pont}
-C'est la raison pour laquelle je vis,
-C'est la raison pour laquelle je vis,
-[A/G]C'est la raison pour laquelle je vis,
-[Gmaj7]Pour T'a[F#m7]dorer mon [Em]Roi. [A] [D]
+C'est la [FM7]raison pour laquelle je v[G/F]is,
+C'est la [Em7]raison pour laquelle je v[Am]is,
+C'est la [Dm]raison pour laquelle je v[Dm/G]is,
+Pour [G]T'adorer mon [C]Roi.[Em7][Dm]
 {end_of_bridge}
-

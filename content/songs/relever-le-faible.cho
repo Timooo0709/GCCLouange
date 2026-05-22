@@ -4,30 +4,33 @@
 {language: fr}
 {themes: Espérance, Adoration, Grâce}
 
+{start_of_intro: Intro}
+[E]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
-[E]Au-delà des océans,
-[A]Tu es venu me chercher.
-[E]Au-delà de mes tourments,
-[C#m]Ton amour a [A]triomphé. [G#m] [B]
+[E]Au-delà des océan[G#m]s,
+[A]Tu es ve[C#m]nu me cherch[B]er.
+[E]Au-delà de mes tourmen[G#m]ts,
+[A]Ton amour [C#m]a triomp[B]hé.
 {end_of_verse}
 
 {start_of_prechorus: Pré-Refrain}
-[A]Montre-moi la splendeur et la beauté qu'il y a
-[F#m]À T'obéir de tout cœur, à se confier à Ta [B]voix !
+[A]Montre-moi [E]la splendeur et la [F#m]beauté qu'il y a[B]
+À [A]T'obéir [E]de tout cœur, à se [F#m]confier à Ta [B]voix !
 {end_of_prechorus}
 
 {start_of_chorus: Refrain}
-[E]Tu viens relever le faible, Tu le prends dans Tes [B]bras.
-[C#m]Tu le conduis vers Ton Père, qui le console [G#m]ici-bas.
-[A]Entends le cri de ma prière, sois mon secours et ma [F#m]joie !
-[B]Passé de l'ombre à Ta lumière, j'ai mis mon espoir en [E]Toi !
-[G#m] [A] [C#m] [B]
+Tu viens relever le [E]faible, Tu le [B]prends dans Tes [C#m]bras.
+Tu le [G#m]conduis vers Ton [A]Père, qui le [F#m]console ici[B]-bas.
+Entends le cri de ma pri[E]ère, sois mon [B]secours et ma [C#m]joie !
+Passé de [G#m]l'ombre à Ta lu[A]mière, j'ai mis [B]mon espoir en [E]Toi !
+[G#m]  [A]  [C#m]  [B]
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[E]Puisque ma vie passera,
-[A]En Toi, je veux demeurer.
-[E]Puisque Tu triompheras,
-[C#m]Mon cœur en Toi [A]veut s'ancrer. [G#m] [B]
+[E]Puisque ma vie passer[G#m]a,
+[A]En Toi, je [C#m]veux demeurer[B].
+[E]Puisque Tu triomphera[G#m]s,
+[A]Mon cœur en [C#m]Toi veut s'ancr[B]er.
 {end_of_verse}
-

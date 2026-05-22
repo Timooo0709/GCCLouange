@@ -4,24 +4,22 @@
 {language: fr}
 {themes: Résurrection, Adoration, Foi}
 
-{start_of_verse: Couplet}
-[E7]Je sais qu'il m'a se[A]couru,
-[E7]Son sang a couvert mes [A]fautes,
-[E7]Je le crois, [A]oui je crois. [E7] [A]
-[E7]Il a enlevé ma [A]honte,
-[E7]Je suis guéri en son [A]nom,
-[E7]Je le crois, [A]oui je crois.
-[B]Je veux pro[A]clamer : Jésus a vaincu la mort.
+{start_of_verse: Couplet 1}
+[E7]Je sais qu’il [A]m’a secouru,
+[E7]Son sang a [A]couvert mes fautes,
+Je le crois, [A]oui je [E7]crois.[A][E7]
+[E7]Il a en[A]levé ma honte,
+[E7]Je suis guér[A]i en son nom,
+Je le crois, [A]oui je [E7]crois.[A][E7]
+[B]Je veux proclamer : [A]Jésus a [A/B]vaincu la mort.
+Mon ré[E]dempteur vit,[A]mon ré[C#m7]dempteur vit ![B]
+Mon ré[E]dempteur vit,[A]mon ré[C#m7]dempteur vit ![B]
+Mon ré[E]dempteur vit,[A]mon ré[C#m7]dempteur vit ![E][B]
 {end_of_verse}
 
-{start_of_chorus: Refrain}
-[E]Mon rédemp[C#m7]teur vit, mon ré[A]dempteur vit !
-[C#m7]Mon rédemp[E]teur vit, mon ré[A]dempteur vit ! [B]
-[C#m7]Mon rédemp[E]teur vit, mon ré[A]dempteur vit ! [B] [E]
-{end_of_chorus}
-
 {start_of_bridge: Pont}
-[A]Tu prends mon far[A7]deau et tu l'em[D]portes. [A/C#]
-[E/B]Alors je danse sur les som[F#m7]mets,
-[E/G#]Je vois venir ton règ[B4]ne. [B]
+[A]  [A7]  [A]
+[D]Tu prends mon fardeau [A/C#]et tu l’emportes.
+Al[E/B]ors je danse sur les [F#m7]sommets,
+Je [E/G#]vois venir ton règne.[B][B4]
 {end_of_bridge}

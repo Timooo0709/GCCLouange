@@ -4,39 +4,53 @@
 {language: fr}
 {themes: Adoration, Foi, Action de grâce}
 
+{start_of_intro: Intro}
+[F#m]  [D]  [A2]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
-[F#m]Tes promesses de vie, ne s'é[D]puisent pas,
-[F#m]Ce que ta bouche a dit, tu l'ac[A]compliras.
-[Bm7]Tu es fidèle à cha[F#m]cun de mes [E]pas,
-[Bm7]Tu me re[F#m]lèves. [E]
+[F#m]Tes prom[D]esses de vi[A2]e, ne s’épuisent pas
+[F#m]Ce que [D]ta bouche à d[A2]it, tu l’accompliras
+[Bm7]Tu [F#m]es fi[E]dèle à chacun de mes pas
+[Bm7]Tu [F#m]me rel[E]èves
 {end_of_verse}
 
 {start_of_verse: Couplet 2}
-[F#m]Ta bonté me pour[A]suit, elle ne faillit [D]pas,
-[F#m]Tu réponds à mon cri, t'abaissant vers moi.
-[Bm7]Tu es fidèle, tu ne chan[F#m]geras [E]pas,
-[Bm7]Dieu é[F#m]ternel. [E]
+[F#m]Ta bonté[D]me poursui[A2]t, elle ne faillit pas
+[F#m]Tu répon[D]ds à mon cr[A2]i, t’abaissant vers moi
+[Bm7]Tu [F#m]es fi[E]dèle, tu ne changeras pas
+[Bm7]Dieu [F#m]éterne[E]l
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[A]J'annoncerai ta fi[D]délité
-[E]Tout au long de mes jours,
-[A]Tout au long de mes jours.
-[E]Tu m'as ai[F#m]mé d'un amour in[D]fini,
-[E]Dieu de ma [F#m]vie, [D]
-[A]Dieu de ma vie.
+J’annoncer[A2]ai ta fidéli[D]té
+Tout au long de mes j[E]ours
+Tout au long de mes j[A2]ours
+Tu m’as [E]aim[F#m]é d’un amour infin[D]i
+Dieu de ma vie[E]
+Dieu de ma vie[A2][D][F#m]
 {end_of_chorus}
 
 {start_of_verse: Couplet 3}
-[F#m]À jamais fait pleu[D]voir, ta bénédiction,
-[F#m]Et le souffle puis[A]sant, de ta guérison.
-[Bm7]Tu es fidèle, j'ai confiance en tes [F#m]voies, [E]
-[Bm7]Mon chant s'é[F#m]lève. [E]
+[F#m]À jama[D]is fait pleuvoir[A2], ta bénédiction
+[F#m]Et le s[D]ouffle puissant[A2], de ta guérison
+[Bm7]Tu [F#m]es fi[E]dèle, j’ai confiance en tes voies
+[Bm7]Mon [F#m]chant s’é[E]lève
 {end_of_verse}
 
+{start_of_chorus: Refrain 2}
+J’annoncer[A2]ai ta fidéli[D]té
+Tout au long de mes j[E]ours
+Tout au long de mes j[A2]ours
+Tu m’as [E]aim[F#m]é d’un amour infin[D]i
+Dieu de ma vie[E]
+Dieu de ma vie[A2]
+Instrumental : D A E F#m x2
+{end_of_chorus}
+
 {start_of_bridge: Pont}
-[D]Il n'y a rien sur cette Terre [F#m]
-[D]Qui peut arrêter ton amour.
-[A]Il n'y a rien que je puisse faire, [E]
-[F#m]Dieu tu m'ai[D]meras toujours.
+[D]Il n’y a [A2]rien sur cette [E]Terre
+Qui peut arrêter[F#m]ton amour[D]
+Il n’y a r[A2]ien que je puisse f[E]aire
+Dieu tu m’aime[F#m]ras toujours[D]
 {end_of_bridge}

@@ -4,50 +4,53 @@
 {language: fr}
 {themes: Croix, Adoration, Action de grâce}
 
+{start_of_intro: Intro}
+[E]
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
-[B]Tu es le Pain de Vie, rompu pour mes péchés.
-[E]Ton corps sur cette croix, meur[G#m]tri pour me sau[F#]ver. [C#m] [E]
+[E]Tu es le [F#m]Pain de [A]Vie,[C#m]rompu pour [B]mes pé[A]chés.
+[E]Ton corps sur [F#m]cette [A]croix,[C#m]meurtri pour [B]me sau[A]ver.
 {end_of_verse}
 
 {start_of_verse: Couplet 2}
-[B]Je me rappelle la coupe déversée par amour.
-[E]Cette alliance par Ton sang me re[G#m]donne la [F#]vie. [E]
+[E]Je me ra[F#m]ppelle la [A]coupe[C#m]déversée [B]par a[A]mour.
+[E]Cette alliance [F#m]par Ton [A]sang[C#m]me redo[B]nne la [A]vie.
 {end_of_verse}
 
-{start_of_chorus: Refrain}
-[E]Alléluia, je me remé[B]more Ton amour pour [F#]moi.
-[E]Alléluia, Tes pro[B]messes je n'ou[F#]blie pas.
+{start_of_chorus: Refrain 1}
+Allé[A]luia, je [E]me remémore Ton amou[B]r pour moi.
+Allé[A]luia, Tes [E]promesses je n'oublie p[B]as.
 {end_of_chorus}
 
 {start_of_verse: Couplet 3}
-[B]Je mets en œuvre mon salut avec crainte et respect.
-[E]Et marchant dans Tes voies, Jé[G#m]sus Tu règnes en [C#m]moi. [F#] [E]
+[E]Je mets en œuvre [F#m]mon sa[A]lut[C#m]avec crainte [B]et res[A]pect.
+[E]Et marchant [F#m]dans Tes [A]voies,[C#m]Jésus Tu [B]règnes en [A]moi.
 {end_of_verse}
 
-{start_of_chorus: Refrain étendu}
-[E]Alléluia, je me remé[B]more Ton amour pour [F#]moi.
-[E]Alléluia, Tes pro[B]messes je n'ou[F#]blie pas.
-[E]Si jamais je m'éloigne de Toi,
-[F#]Si jamais je renie Ta grâce,
-[G#m]Rappelle-moi le prix pa[B/D#]yé. [E]
-[C#m]Alléluia, je me remé[F#]more Ta [B]vie.
+{start_of_chorus: Refrain 2}
+Allé[A]luia, je [E]me remémore Ton amou[B]r pour moi.
+Allé[A]luia, Tes [E]promesses je n'oublie p[B]as.
+Si [A]jamais je m'éloigne de Toi,
+Si [B]jamais je renie Ta grâce,
+Rap[C#m]pelle-moi le prix [E/G#]pa - y[A]é.
+Allé[F#m]luia, je [B]me remémore Ta v[E]ie.
 {end_of_chorus}
 
 {start_of_bridge: Pont}
-[B]Tu es bon, si bon pour [G#m]moi,
-Tu es bon, si bon pour moi.
-[F#]Qu'en serait-il de ma vie [E]
-[G#m]Sans Toi Seigneur, sans Toi Seigneur ?
+Tu es [E]bon, si bon pour mo[B]i,
+Tu es [C#m]bon, si bon pour mo[A]i.
+Qu'en ser[E]ait-il de ma v[B]ie
+Sans Toi Sei[C#m]gneur, sans [B]Toi Sei[A]gneur ?
 {end_of_bridge}
 
-{start_of_chorus: Refrain final}
-[E]Du haut des Cieux jusqu'à la terre [F#]
-Et traversant tout l'univers,
-[G#m]Ta grâce est venue jus[B/D#]qu'à moi. [E]
-[E]Jusqu'au moment de Ton retour [F#]
-Et jusqu'à la fin de ma course,
-[G#m]Montre-moi que Tu œuvres en [B/D#]moi. [E]
-[C#m]Alléluia, allé[F#]luia, allé[C#m]luia, [F#]
-Je me remé[C#m]more Ta [F#]vie. [B]
+{start_of_chorus: Refrain 3}
+Du [A]haut des Cieux jusqu'à la terre
+Et [B]traversant tout l'univers,
+Ta [C#m]grâce est venue jus[E/G#]qu'à mo[A]i.
+Jus[A]qu'au moment de Ton retour
+Et [B]jusqu'à la fin de ma course,
+Mont[C#m]re-moi que Tu œuvres [E/G#]en mo[A]i.
+Allé[F#m]luia, [B]allé[F#m]luia, [B]allé[F#m]luia,
+Je [B]me remémore Ta v[E]ie.
 {end_of_chorus}
-

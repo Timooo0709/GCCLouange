@@ -4,28 +4,33 @@
 {language: fr}
 {themes: Adoration, Grâce, Espérance}
 
+{start_of_intro: Intro}
+[G]
+{end_of_intro}
+
 {start_of_chorus: Refrain}
-[G]Il m'aime, Il m'a tant don[CM7]né,
-[G]Je choisis de suivre Celui qui me fait [Am7]vivre.
-[G]Je ne reste pas seul dans la nuit,
-[CM7]Je prends Sa main et [D4]marche, [D]
-[Am7]Jamais ne la relâche. [C] [D] [Em]
+[G]Il [CM7]m'aime, I[Am7]l m'a tant do[D]nné,
+J[G]e choisis de [C]suivre Cel[Am7]ui qui me fait [D]vivre.
+[G]Je ne [CM7]reste p[Am7]as seul dans la [D]nuit,
+Je [Em7]prends Sa main et [C]marche,
+Jama[Am7]is ne la re[D4]lâ - [D]che.
+[C]  [D]  [Em]  [C]  [D]  [Em]
 {end_of_chorus}
 
 {start_of_verse: Couplet 1}
-[C]Il se tient tout près de moi quand je dis : Viens vivre en moi,
-[Am7]Prends ma vie entière, fais-moi vivre à Ta lu[Bm7]mière. [CM7]
-[C]Je ne sais plus où aller, Il est là pour me gui[Em]der,
-[Am7]Et dans mes déserts je connais le cœur du [Bm7]Père. [CM7]
+[C]Il se tient [D]tout près de mo[Em]i [C]quand je dis : [D]Viens vivre en mo[Em]i,
+[Am7]Prends ma vie enti[Bm7]ère, [CM7]fais-moi vivre à [D4]Ta lu[D]mière.
+[C]Je ne sais [D]plus où all[Em]er, [C]Il est là [D]pour me guid[Em]er,
+[Am7]Et dans mes dés[Bm7]erts [CM7]je connais le c[C/D]œur du [D]Père.
 {end_of_verse}
 
 {start_of_verse: Couplet 2}
-[Em]Il me dit : Viens et suis-[C]Moi, Je ne te quitterai pas,
-[Am7]Ni tes peurs, tes doutes ne détourneront ta [Bm7]route. [CM7]
-[Em]Je connais le fond de toi, car Je vois bien au de[C]là,
-[Am7]Jusqu'au bout des jours, rien ne changera Mon a[Bm7]mour. [CM7]
+[C]Il me dit: [D]Viens et suis-Mo[Em]i, [C]Je ne te [D]quitterai p[Em]as,
+[Am7]Ni tes peurs, tes d[Bm7]outes [CM7]ne détourner[D4]ont ta [D]route.
+[C]Je connais [D]le fond de t[Em]oi, [C]car Je vois [D]bien au del[Em]à,
+[Am7]Jusqu'au bout des j[Bm7]ours, [CM7]rien ne changer[C/D]a Mon [D]amour.
 {end_of_verse}
 
-{start_of_outro: Final}
+{start_of_final: Final}
 [G]Il m'aime.
-{end_of_outro}
+{end_of_final}

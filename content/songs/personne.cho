@@ -3,16 +3,42 @@
 {language: fr}
 {themes: Adoration}
 
-{start_of_verse: Couplet}
-[G]Il n'y a personne qui soit comme Jésus
-[G]Il n'y a personne qui soit comme Jésus
-[G]Il n'y a personne qui soit comme Jésus
-[D]Il n'y a personne qui soit comme [G]Lui
+{start_of_verse: Couplet 1}
+Sol
+Il n’y a personne
+Sol
+Il n’y a personne
+Sol
+Il n’y a personne
+Sol
+Il n’y a personne
+Sol
+J’ai cherché,
+Sol
+J’ai fouillé,
+Sol
+J’ai tourné,
+Sol
+Il n’y a vraiment
 {end_of_verse}
 
-{start_of_chorus: Refrain}
-[C]J'ai cherché, cherché : personne, personne
-[D][G]J'ai fouillé, fouillé : personne, personne
-[C]J'ai tourné, tourné…
-[G][D]Il n'y a vraiment personne comme [G]Lui !
-{end_of_chorus}
+{start_of_verse: Couplet 1}
+PERSONNE
+Do
+qui soit comme Jésus
+Ré
+qui soit comme Jésus
+Do
+qui soit comme Jésus
+Ré Sol
+qui soit comme Lui
+Do
+cherché : personne, personne
+Ré
+fouillé : personne, personne
+Do
+tourné…
+Ré Sol
+personne comme Lui !
+68
+{end_of_verse}

@@ -5,29 +5,38 @@
 {themes: Adoration, Engagement}
 
 {start_of_intro: Intro}
-[A]  [E6]  [F#m]  [D]
+[E]
+[E]  [B6]  [C#m]  [A]  [E]  [B6]  [C#m]  [A]
 {end_of_intro}
 
 {start_of_verse: Couplet 1}
-[A]Ouvre nos yeux afin de voir ce qui touche Ton cœur,
-[F#m]Pour être l'é[E6]glise que Tu dé[A]sires, la lu[E6]mière du [F#m]monde. [D]
-[A]Brise notre orgueil et les murs que nous avons bâtis.
-[F#m]Nous abandonnons tous nos dé[E6]sirs ici à Tes pieds.
+[E]Ouvre nos yeux a[B6]fin de voir ce [C#m]qui touche Ton cœur,
+[A]  [E]  [B6]  [C#m]  [A]
+[E]Brise notre orgueil et [B6]les murs que nous [C#m]avons bâtis.
+Nous [A]abandonnons [E]tous nos désirs i[B6]ci à T[C#m]es pieds[A].
 {end_of_verse}
 
 {start_of_prechorus: Pré-Refrain}
-[A]L'espoir vient, les ténèbres fuient devant Ta lu[F#m]mière.
-[Bm]Et tout œil verra que Jé[D]sus est Dieu, grand et digne d'être loué.
+L'es[C#m]poir [A]vient,[E]les té[B]nèbres fuient devant [C#m]Ta lu - [A]mière[E].
+Et tout œil [B]verra que [A]Jésus e[C#m]st Dieu, [B]grand et [F#m]digne d'êtr[A]e loué[B].
 {end_of_prechorus}
 
 {start_of_verse: Couplet 2}
-[A]Dieu éternel, glo[E6]rieux dans toutes Tes [F#m]voies, [D]
-[A]La majesté, la splendeur, la grâce, la lu[E6]mière de Ton [F#m]Nom. [D]
+[E]Dieu éternel, [B6]glorieux dans [C#m]toutes Tes voies,
+La [A]majesté, la s[E]plendeur, la grâce, la lu[B6]mière de T[C#m]on Nom.[A]
 {end_of_verse}
 
+{start_of_chorus: Refrain}
+[A]  [C#m]  [E]  [B]
+De t[A]out mon être, de t[C#m]out mon être, je vais [E]chanter Ta lo[B]uange.
+De t[A]out mon être, de t[C#m]out mon être, je vais [E]chanter T[B]a gloire.
+{end_of_chorus}
+
 {start_of_bridge: Pont}
-[D]De tout mon être, [A]de tout mon être, je vais chan[E]ter Ta louange.
-[D]De tout mon être, [A]de tout mon être, je vais chan[E]ter Ta gloire.
-[F#m]Mon cœur s'écrie : sois glo[A]rifié, sois élevé par dessus [F#m]tout.
-Pour Toi, mon [A]Roi, de tout mon être je vais chan[E]ter Ta gloire.
+Mon c[A]œur s'écrie : sois gl[C#m]orifié, sois é[E]levé par dess[B]us tout.
+Pour T[A]oi, mon Roi, de t[C#m]out mon être je vais [E]chanter T[B]a gloire.
 {end_of_bridge}
+
+{start_of_final: Final}
+Woa[A]h, Woa[C#m7]h, Woa[E]h, Woa[B]h.
+{end_of_final}

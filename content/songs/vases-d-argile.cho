@@ -4,33 +4,26 @@
 {language: fr}
 {themes: Grâce, Adoration}
 
-{start_of_intro: Intro}
-[Em]  [G]  [Em]  [G]
-{end_of_intro}
-
 {start_of_verse: Couplet 1}
-[Em][G]J'étais brisé, vide et sans espoir,
-[Em][G]Ta grâce m'a trouvé, m'a restauré.
-[Em][G]Je n'ai rien à moi mais tel que je suis,
-[D][Em][D]Tu me libères, Tu me libères.
+J’étais [Em]brisé, vide et sans [G]espoir.
+Ta grâce m’a [Em]trouvé, m’a rest [G]auré.
+Je n’ai rien [Em]à moi mais, tel que [G]je suis,
+Tu me l [D]ibères, tu me l [Em]ib [D]ères.
+Grâce [C]infinie de [D]notre dieu
+Qui [Em]un jour m’a sauv [C]é.
+J’al [C]lais errant de [D]lieu en lieu
+Quand [Em]tu m’as retrouv [C]é.
+Et maintenant je [G]vois,[D]
+Je vois l’amour, la [Em]grâce dans tes y [C]eux,
+Donnant ta vie pour [G]moi,[D]
+Me ramenant de la [Em]mort à la v [C]ie.
+[Em]  [G]  [Em]  [G]
+Tu prends nos [Em]échecs, tu prends nos [G]faiblesses.
+Tu places ton [Em]trésor dans des vases d’a [G]rgile.
+Oh, prends mon [Em]cœur, Père ! Je veux te [G]servir
+Pour que t [D]ous voient ta vie e [Em]n m [D]oi.
 {end_of_verse}
 
-{start_of_prechorus: Pré-Refrain}
-[D][C]Grâce infinie de notre Dieu
-[Em][C]Qui un jour m'a sauvé.
-[C][D]J'allais errant, de lieu en lieu
-[Em][C]Quand Tu m'as retrouvé.
-{end_of_prechorus}
-
-{start_of_chorus: Refrain}
-Et maintenant je vois,
-[G][D][Em][C]Je vois l'amour, la grâce dans Tes yeux.
-[G][D][Em][C]Donnant Ta vie pour moi, me ramenant de la mort à la vie.
-{end_of_chorus}
-
-{start_of_verse: Couplet 2}
-[G][Em]Tu prends nos échecs, Tu prends nos faiblesses,
-[G][Em]Tu places Ton trésor dans des vases d'argile.
-[G][Em]Ô prends mon cœur Père, je veux Te servir
-[D][Em][D]Pour que tous voient Ta vie en moi.
-{end_of_verse}
+{start_of_bridge: Pont}
+[G]O [D]h ! [Em]O [C]h ! (× 2)
+{end_of_bridge}
