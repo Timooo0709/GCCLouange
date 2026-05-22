@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-22T22:42:16.256Z",
+  "generatedAt": "2026-05-22T22:44:40.698Z",
   "songs": [
     {
       "slug": "a-jamais-tu-es-saint",
@@ -439,7 +439,10 @@
       "language": "fr",
       "originalKey": "D",
       "tempo": null,
-      "themes": [],
+      "themes": [
+        "adoration",
+        "foi"
+      ],
       "youtubeUrl": null,
       "spotifyUrl": null,
       "appleMusicUrl": null,
@@ -643,7 +646,10 @@
       "language": "fr",
       "originalKey": "D",
       "tempo": null,
-      "themes": [],
+      "themes": [
+        "adoration",
+        "action-de-grace"
+      ],
       "youtubeUrl": null,
       "spotifyUrl": null,
       "appleMusicUrl": null,
@@ -1384,7 +1390,11 @@
       "language": "fr",
       "originalKey": "C",
       "tempo": 116,
-      "themes": [],
+      "themes": [
+        "salut",
+        "resurrection",
+        "adoration"
+      ],
       "youtubeUrl": null,
       "spotifyUrl": null,
       "appleMusicUrl": null,
@@ -1956,7 +1966,11 @@
       "language": "fr",
       "originalKey": "C",
       "tempo": null,
-      "themes": [],
+      "themes": [
+        "adoration",
+        "foi",
+        "esperance"
+      ],
       "youtubeUrl": null,
       "spotifyUrl": null,
       "appleMusicUrl": null,
@@ -2003,7 +2017,10 @@
       "language": "fr",
       "originalKey": "C",
       "tempo": 80,
-      "themes": [],
+      "themes": [
+        "adoration",
+        "saintete"
+      ],
       "youtubeUrl": null,
       "spotifyUrl": null,
       "appleMusicUrl": null,
@@ -2225,7 +2242,10 @@
       "language": "fr",
       "originalKey": "C",
       "tempo": null,
-      "themes": [],
+      "themes": [
+        "adoration",
+        "saint-esprit"
+      ],
       "youtubeUrl": null,
       "spotifyUrl": null,
       "appleMusicUrl": null,
@@ -2444,7 +2464,11 @@
       "language": "fr",
       "originalKey": "C",
       "tempo": 60,
-      "themes": [],
+      "themes": [
+        "croix",
+        "grace",
+        "adoration"
+      ],
       "youtubeUrl": null,
       "spotifyUrl": null,
       "appleMusicUrl": null,
@@ -2536,7 +2560,11 @@
       "language": "fr",
       "originalKey": "C",
       "tempo": 149,
-      "themes": [],
+      "themes": [
+        "adoration",
+        "foi",
+        "esperance"
+      ],
       "youtubeUrl": null,
       "spotifyUrl": null,
       "appleMusicUrl": null,
@@ -3695,7 +3723,10 @@
       "language": "fr",
       "originalKey": "C",
       "tempo": null,
-      "themes": [],
+      "themes": [
+        "grace",
+        "adoration"
+      ],
       "youtubeUrl": null,
       "spotifyUrl": null,
       "appleMusicUrl": null,
@@ -3737,7 +3768,10 @@
       "language": "fr",
       "originalKey": "C",
       "tempo": null,
-      "themes": [],
+      "themes": [
+        "foi",
+        "esperance"
+      ],
       "youtubeUrl": null,
       "spotifyUrl": null,
       "appleMusicUrl": null,
@@ -4108,7 +4142,10 @@
       "language": "fr",
       "originalKey": "C",
       "tempo": null,
-      "themes": [],
+      "themes": [
+        "adoration",
+        "saintete"
+      ],
       "youtubeUrl": null,
       "spotifyUrl": null,
       "appleMusicUrl": null,
@@ -4168,7 +4205,10 @@
       "language": "fr",
       "originalKey": "C",
       "tempo": null,
-      "themes": [],
+      "themes": [
+        "adoration",
+        "saintete"
+      ],
       "youtubeUrl": null,
       "spotifyUrl": null,
       "appleMusicUrl": null,
@@ -5251,7 +5291,10 @@
       "language": "fr",
       "originalKey": "C",
       "tempo": null,
-      "themes": [],
+      "themes": [
+        "adoration",
+        "saintete"
+      ],
       "youtubeUrl": null,
       "spotifyUrl": null,
       "appleMusicUrl": null,
@@ -5509,7 +5552,10 @@
       "language": "fr",
       "originalKey": "C",
       "tempo": null,
-      "themes": [],
+      "themes": [
+        "croix",
+        "adoration"
+      ],
       "youtubeUrl": null,
       "spotifyUrl": null,
       "appleMusicUrl": null,
@@ -6674,7 +6720,10 @@
       "language": "fr",
       "originalKey": "C",
       "tempo": null,
-      "themes": [],
+      "themes": [
+        "engagement",
+        "foi"
+      ],
       "youtubeUrl": null,
       "spotifyUrl": null,
       "appleMusicUrl": null,
@@ -7323,7 +7372,11 @@
       "language": "fr",
       "originalKey": "C",
       "tempo": null,
-      "themes": [],
+      "themes": [
+        "adoration",
+        "foi",
+        "esperance"
+      ],
       "youtubeUrl": null,
       "spotifyUrl": null,
       "appleMusicUrl": null,
@@ -7649,7 +7702,10 @@
       "language": "fr",
       "originalKey": "C",
       "tempo": null,
-      "themes": [],
+      "themes": [
+        "saint-esprit",
+        "adoration"
+      ],
       "youtubeUrl": null,
       "spotifyUrl": null,
       "appleMusicUrl": null,
@@ -7695,7 +7751,10 @@
       "language": "fr",
       "originalKey": "C",
       "tempo": null,
-      "themes": [],
+      "themes": [
+        "adoration",
+        "action-de-grace"
+      ],
       "youtubeUrl": null,
       "spotifyUrl": null,
       "appleMusicUrl": null,
