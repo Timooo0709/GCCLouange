@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-22T22:44:40.698Z",
+  "generatedAt": "2026-05-23T22:03:53.146Z",
   "songs": [
     {
       "slug": "a-jamais-tu-es-saint",
@@ -8040,6 +8040,256 @@
       ]
     },
     {
+      "slug": "一切歌颂赞美",
+      "title": "一切歌颂赞美",
+      "titlePinyin": "Yī qiè gē sòng zàn měi",
+      "artist": "Niko Njotorahardjo / 蒋忠译",
+      "language": "zh",
+      "originalKey": "E",
+      "tempo": 92,
+      "themes": [
+        "赞美",
+        "颂赞"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "主歌/Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "副歌/Refrain",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "一切都更新",
+      "title": "一切都更新",
+      "titlePinyin": "Yī qiè dōu gēng xīn",
+      "artist": "Sidney Mohede / 潘都芸译",
+      "language": "zh",
+      "originalKey": "C",
+      "tempo": 137,
+      "themes": [
+        "信心",
+        "赞美",
+        "更新"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "主歌/Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-2",
+          "name": "导歌/Pré-refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-3",
+          "name": "副歌/Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "outro-4",
+          "name": "结尾/Outro",
+          "type": "outro"
+        }
+      ]
+    },
+    {
+      "slug": "一同齐声宣扬",
+      "title": "一同齐声宣扬",
+      "titlePinyin": "Yī tóng qí shēng xuān yáng",
+      "artist": "游智婷词 / 陈麟安曲",
+      "language": "zh",
+      "originalKey": "A",
+      "tempo": 126,
+      "themes": [
+        "圣诞",
+        "赞美",
+        "颂赞"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "前奏/Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "主歌/Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-3",
+          "name": "过渡/Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "chorus-4",
+          "name": "副歌/Refrain",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "一生敬拜你",
+      "title": "一生敬拜你",
+      "titlePinyin": "Yī shēng jìng bài nǐ",
+      "artist": "游智婷词 / 郑梓怡曲",
+      "language": "zh",
+      "originalKey": "C",
+      "tempo": 66,
+      "themes": [
+        "敬拜",
+        "奉献"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "主歌/Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "prechorus-2",
+          "name": "导歌/Pré-refrain",
+          "type": "prechorus"
+        },
+        {
+          "id": "chorus-3",
+          "name": "副歌/Refrain",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "一生爱你",
+      "title": "一生爱你",
+      "titlePinyin": "Yī shēng ài nǐ",
+      "artist": "曾祥怡词 / 游智婷曲",
+      "language": "zh",
+      "originalKey": "E",
+      "tempo": 65,
+      "themes": [
+        "爱慕",
+        "敬拜",
+        "跟随"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "前奏/Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "主歌/Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "副歌/Refrain",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "一生跟随",
+      "title": "一生跟随",
+      "titlePinyin": "Yī shēng gēn suí",
+      "artist": "Anlan 凡口草",
+      "language": "zh",
+      "originalKey": "F",
+      "tempo": 80,
+      "themes": [
+        "奉献",
+        "跟随",
+        "敬拜"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "主歌/Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "副歌/Refrain",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "一粒麦子",
+      "title": "一粒麦子",
+      "titlePinyin": "Yī lì mài zi",
+      "artist": "林婉容",
+      "language": "zh",
+      "originalKey": "F",
+      "tempo": 75,
+      "themes": [
+        "奉献",
+        "舍己",
+        "信心"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "主歌/Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "副歌/Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-3",
+          "name": "桥段/Pont",
+          "type": "bridge"
+        }
+      ]
+    },
+    {
       "slug": "恩典之路",
       "title": "恩典之路",
       "titlePinyin": "Ēn diǎn zhī lù",
@@ -8055,12 +8305,12 @@
       "youtubeUrl": null,
       "spotifyUrl": null,
       "appleMusicUrl": null,
-      "hasJianpu": true,
-      "jianpuKey": "1=F",
+      "hasJianpu": false,
+      "jianpuKey": null,
       "sections": [
         {
           "id": "intro-1",
-          "name": "Intro",
+          "name": "前奏/Intro",
           "type": "intro"
         },
         {
