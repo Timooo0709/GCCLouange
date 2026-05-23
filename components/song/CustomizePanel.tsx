@@ -260,17 +260,6 @@ export function CustomizePanel({
                   Afficher le pinyin
                 </label>
               )}
-              {isZh && hasJianpu && (
-                <label className="flex items-center gap-2 text-sm cursor-pointer select-none">
-                  <input
-                    type="checkbox"
-                    checked={state.useJianpu}
-                    onChange={(e) => update({ useJianpu: e.target.checked })}
-                    className="rounded"
-                  />
-                  Mode 简谱 (numérique)
-                </label>
-              )}
             </div>
           </section>
 

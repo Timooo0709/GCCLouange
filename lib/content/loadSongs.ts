@@ -25,7 +25,8 @@ export function getSongSlugs(): string[] {
 }
 
 export function loadSong(slug: string): Song {
-  const filePath = path.join(SONGS_DIR, `${slug}.cho`);
+  const decoded = decodeURIComponent(slug);
+  const filePath = path.join(SONGS_DIR, `${decoded}.cho`);
   const source = fs.readFileSync(filePath, "utf-8");
   const ast = parseChordPro(source);
   const m = ast.metadata;

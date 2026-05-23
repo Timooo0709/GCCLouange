@@ -43,7 +43,7 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
   const [customize, setCustomize] = useState<CustomizeState>({
     semitones: 0,
     currentKey: originalKey,
-    showChords: false,
+    showChords: true,
     showPinyin: isZh,
     useJianpu: false,
     structure: buildDefaultStructure(ast.sections),
