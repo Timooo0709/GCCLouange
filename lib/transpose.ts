@@ -69,7 +69,7 @@ export function getTransposedKey(originalKey: string, semitones: number): string
 
 /** All 12 keys in display order for the selector */
 export const ALL_KEYS = [
-  "C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B",
+  "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B",
 ];
 
 /**
