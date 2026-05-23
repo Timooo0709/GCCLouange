@@ -46,6 +46,7 @@ export function ChordLine({ tokens, showChords = true, fontSize = 0.95 }: ChordL
         fontSize: `${fontSize}rem`,
         paddingTop: hasAnyChord ? "1.5em" : "0.15em",
         paddingBottom: "0.15em",
+        lineHeight: segments.every(s => !s.lyric?.trim()) ? "0" : undefined,
       }}
     >
       {segments.map((seg, i) => {
@@ -55,7 +56,6 @@ export function ChordLine({ tokens, showChords = true, fontSize = 0.95 }: ChordL
           hasAnyChord && chordLen > lyricLen
             ? `${chordLen + 0.5}ch`
             : undefined;
-
         return (
           <span
             key={i}
@@ -64,7 +64,7 @@ export function ChordLine({ tokens, showChords = true, fontSize = 0.95 }: ChordL
           >
             {showChords && seg.chord && (
               <span
-                className="absolute left-0 whitespace-nowrap font-bold font-chord text-chord dark:text-blue-400"
+                className="absolute left-0 whitespace-nowrap font-bold font-chord"
                 style={{
                   bottom: "100%",
                   paddingBottom: "2px",
@@ -77,8 +77,10 @@ export function ChordLine({ tokens, showChords = true, fontSize = 0.95 }: ChordL
             )}
 
             {/* whitespace-pre preserves trailing spaces so words don't merge at chord boundaries */}
-            <span className="text-foreground whitespace-pre">
-              {seg.lyric || (seg.chord && showChords ? "  " : "")}
+            <span 
+              className="text-foreground whitespace-pre"
+            >
+              {(showChords ? seg.lyric : seg.lyric?.trim()) || (seg.chord && showChords ? "  " : "")}
             </span>
           </span>
         );
