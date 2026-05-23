@@ -2,14 +2,18 @@
 const SHARPS = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 const FLATS  = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"];
 
+// Enharmonic equivalents not in the standard arrays
+const EXTRAS: Record<string, number> = { "E#": 5, "Fb": 4, "B#": 0, "Cb": 11 };
+
 // Keys that prefer flats
-const FLAT_KEYS = new Set(["F", "Bb", "Eb", "Ab", "Db", "Gb", "Cb"]);
+const FLAT_KEYS = new Set(["F", "Bb", "Eb", "Ab", "Db", "Gb", "Cb", "Fb"]);
 
 function noteToIndex(note: string): number {
   const i = SHARPS.indexOf(note);
   if (i !== -1) return i;
   const j = FLATS.indexOf(note);
   if (j !== -1) return j;
+  if (note in EXTRAS) return EXTRAS[note];
   return -1;
 }
 
@@ -59,17 +63,16 @@ export function getTransposedKey(originalKey: string, semitones: number): string
   const idx = noteToIndex(originalKey);
   if (idx === -1) return originalKey;
   const newIdx = ((idx + semitones) % 12 + 12) % 12;
-  // Prefer flat notation if the resulting key is a flat key
   const sharpVersion = SHARPS[newIdx];
   const flatVersion  = FLATS[newIdx];
-  // Check both — if flat version is a flat key, use it
   const key = FLAT_KEYS.has(flatVersion) ? flatVersion : sharpVersion;
   return key;
 }
 
-/** All 12 keys in display order for the selector */
+/** All keys in display order for the selector */
 export const ALL_KEYS = [
-  "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B",
+  "C", "C#", "Db", "D", "D#", "Eb", "E", "E#", "Fb", "F", "F#", "Gb",
+  "G", "G#", "Ab", "A", "A#", "Bb", "B",
 ];
 
 /**
