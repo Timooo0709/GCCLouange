@@ -5,25 +5,19 @@
 {language: zh}
 
 {start_of_verse: 主歌/Couplet}
-和散那（赞美之泉）（D调）   hé sàn nà zàn měi zhī quán D tiáo
-•=68［敬拜专辑版共6张：级数。赞美之泉《恢复敬拜》（2023）   jìng bài zhuān jí bǎn gòng zhāng jí shù zàn měi zhī quán huī fù jìng bài
-1=D会原敬版拜专（辑F->版G调共）1米、：GF/F调/E1/D调、（路2:14，赛7:14，可11:9）郑懋柔、游游智智婷婷曲词   D huì yuán jìng bǎn bài zhuān jí F bǎn G tiáo gòng mǐ GF F tiáo E D tiáo lù sài kě zhèng mào róu yóu yóu zhì zhì tíng tíng qǔ cí
 [D]
+凡有气[D]息，[F#]荣耀敬拜[Bm]你。地上平   fán yǒu qì xī róng yào jìng bài nǐ dì shàng píng
+[G]心[D/F]心1[Em]4332[A]2512[D]3[F#]2432   xīn xīn
+安归与他喜悦的人。以马内利，神与我们   ān guī yǔ tā xǐ yuè de rén yǐ mǎ nèi lì shén yǔ wǒ men
+[Bm]同[G#]在。耶[D/A]稣，以恩[G/A]典代替咒诅。和   tóng zài yē sū yǐ ēn diǎn dài tì zhòu zǔ hé
+[D]散那！和[F#m]散那！和[G]平君[D/F]王与我[Em]们同[A]住。和   sàn nà hé sàn nà hé píng jūn wáng yǔ wǒ men tóng zhù hé
+[D]散那！和[F#m]散那！哈[G]利路[D/F]亚！荣耀[Em]归与[G/A]至高真   sàn nà hé sàn nà hā lì lù yà róng yào guī yǔ zhì gāo zhēn
 {end_of_verse}
 
 {start_of_bridge: 桥段/Pont}
-凡有气息，荣耀敬拜你。地上平   fán yǒu qì xī róng yào jìng bài nǐ dì shàng píng
-[G]  [D/F#]  [Em]  [A]  [D]
-[G]心[D/F#]心1[Em]4332[A]2512[D]32432   xīn xīn
-[G]安归[D/F#]与他[Em]喜悦的[A]人。以马内[D]利，神与我们   ān guī yǔ tā xǐ yuè de rén yǐ mǎ nèi lì shén yǔ wǒ men
+神。天使天军，齐声赞美。哈利路亚！   shén tiān shǐ tiān jūn qí shēng zàn měi hā lì lù yà
 {end_of_bridge}
 
-{start_of_bridge: 桥段/Pont}
-同在。耶稣，以恩典代替咒诅。和   tóng zài yē sū yǐ ēn diǎn dài tì zhòu zǔ hé
-散那！和散那！和平君王与我们同住。和   sàn nà hé sàn nà hé píng jūn wáng yǔ wǒ men tóng zhù hé
-[D]  [F#m]  [G]  [D/F#]  [Em]  [G/A]
-[D]散那！和[F#m]散那！哈[G]利路[D/F#]亚！荣耀[Em]归与[G/A]至高真   sàn nà hé sàn nà hā lì lù yà róng yào guī yǔ zhì gāo zhēn
-神。天使天军，齐声赞美。哈利路亚！   shén tiān shǐ tiān jūn qí shēng zàn měi hā lì lù yà
-[G]  [D/F#]  [G]  [A]  [To]  [Chorus]
-[G]天使天军，[D/F#]齐声赞美。[G]哈利路[A]亚！[To][Chorus]和   tiān shǐ tiān jūn qí shēng zàn měi hā lì lù yà hé
-{end_of_bridge}
+{start_of_chorus: 副歌/Refrain}
+天使天军，齐声赞美。哈利路亚！和   tiān shǐ tiān jūn qí shēng zàn měi hā lì lù yà hé
+{end_of_chorus}
