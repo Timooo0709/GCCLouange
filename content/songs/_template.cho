@@ -33,11 +33,9 @@ POUR UN CHANT CHINOIS (language: zh), utiliser ce format :
 {title_pinyin: Biāotí}
 {artist: 作者}
 {key: C}
-{jianpu_key: 1=C}
 {language: zh}
 
 {start_of_verse: 第一节}
-{jianpu: 3 3 5 6 5 - -}
 [C]你好世界   nǐ hǎo shì jiè
 {end_of_verse}
 
@@ -45,4 +43,3 @@ Règles :
 - Accords entre [crochets], juste avant la syllabe où ils tombent
 - Sections : start_of_verse / start_of_chorus / start_of_bridge / start_of_prechorus / start_of_intro / start_of_outro
 - Chinois : 3 espaces minimum entre caractères et pinyin sur la même ligne
-- Jianpu : ligne {jianpu: ...} juste au-dessus de la ligne de paroles correspondante

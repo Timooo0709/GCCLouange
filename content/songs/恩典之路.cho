@@ -2,28 +2,22 @@
 {title_pinyin: Ēn diǎn zhī lù}
 {artist: 曾祥怡}
 {key: F}
-{jianpu_key: 1=F}
 {tempo: 72}
 {language: zh}
 {themes: Grâce, Foi, Espérance}
 
-{start_of_intro: Intro}
+{start_of_intro: 前奏/Intro}
 [F]  [C/E]  [Bb/D]  [D/F#]  [Gm]  [F/A]  [Bb]  [Bdim]  [Bb/C]
 [F]  [C/E]  [Bb/D]  [D/F#]  [Gm]  [F/A]  [Bb]  [C7]  [F]
 {end_of_intro}
 
 {start_of_verse: 主歌/Couplet}
-{jianpu: 5 3 3 5 2. 2 7 1 1 7 6 5 6 4 4 6 3}
 [F]祢是[C/E]我的主，[Bb/D]引我走正[F/C]義路。[Bb]高山或[F/A]低谷，都   nǐ shì wǒ de zhǔ yǐn wǒ zǒu zhèng yì lù gāo shān huò dī gǔ dōu
-{jianpu: 3 6. 1 3 2 5 3 3 5 2. 2 7 1 1 2 4}
 [Gm]是祢[C]在保[F]護。萬人中[C/E]唯獨，[Bb/D]祢愛我認識我，   shì nǐ zài bǎo hù wàn rén zhōng wéi dú nǐ ài wǒ rèn shí wǒ
-{jianpu: 6 4 4 5 3 2 1 1. 3 3 2 2 2 2}
 [Gm]永遠不變的[F/A]應許，[Bb]這一[Bdim]生都是祝[Bb/C]福。   yǒng yuǎn bù biàn de yìng xǔ zhè yī shēng dōu shì zhù fú
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-{jianpu: 1 5 5 3 2. 2 1 1 5 5 3 2 1 3 6. 3 5. 5 3 4 5}
-[F]一步又一[C/E]步，這是恩典[Bb/D]之路，[F/C]祢愛、[Bb]祢手，[F/A]將我緊[Gm]緊抓[C]住。   yī bù yòu yī bù zhè shì ēn diǎn zhī lù nǐ ài nǐ shǒu jiāng wǒ jǐn jǐn zhuā zhù
-{jianpu: 1 5 5 3 2. 2 1 1 5 5 3 2 1 3 6. 3 5. 5 3 4 5 6 1}
+[F]一步又一[C/E]步，這是恩典[Bb/D]之路，[F/C]祢愛、[Bb]祢手，[F/A]將我紧[Gm]紧抓[C]住。   yī bù yòu yī bù zhè shì ēn diǎn zhī lù nǐ ài nǐ shǒu jiāng wǒ jǐn jǐn zhuā zhù
 [F]一步又一[C/E]步，這是盼望[Bb/D]之路，[F/C]祢愛、[Bb]祢手，[F/A]牽引我[Gm]走這人[Bb/C]生路。[F]   yī bù yòu yī bù zhè shì pàn wàng zhī lù nǐ ài nǐ shǒu qiān yǐn wǒ zǒu zhè rén shēng lù
 {end_of_chorus}
