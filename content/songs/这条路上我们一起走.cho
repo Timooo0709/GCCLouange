@@ -4,18 +4,17 @@
 {tempo: 80}
 {language: zh}
 
-{start_of_chorus: 副歌/Refrain}
-{end_of_chorus}
-
-{start_of_chorus: 副歌/Refrain}
-1=E条最后一句   E tiáo zuì hòu yī jù
+{start_of_verse: 主歌/Couplet}
+这条路上我们一起走   zhè tiáo lù shàng wǒ men yī qǐ zǒu
+最后一句   zuì hòu yī jù
 这条路上我们一起走，这条路上我们手拉   zhè tiáo lù shàng wǒ men yī qǐ zǒu zhè tiáo lù shàng wǒ men shǒu lā
 手，这条路上我们共患难，这条   shǒu zhè tiáo lù shàng wǒ men gòng huàn nán zhè tiáo
 2222321呵|1心--：56iii1653   hē xīn iii
 路上我们决不能回头！我们同心走向锡安大   lù shàng wǒ men jué bù néng huí tóu wǒ men tóng xīn zǒu xiàng xī ān dà
 道，我们带上中国的丝绸复兴的   dào wǒ men dài shàng zhōng guó de sī chóu fù xīng de
 号角已在全地吹响，我们要迎来大的丰收。我们   hào jiǎo yǐ zài quán dì chuī xiǎng wǒ men yào yíng lái dà de fēng shōu wǒ men
+iii2653--35is6i767⑥5
 同心走向锡安大道，我们带上中国的丝   tóng xīn zǒu xiàng xī ān dà dào wǒ men dài shàng zhōng guó de sī
 绸。得胜的1号角已在全地吹响，我们   chóu dé shèng de hào jiǎo yǐ zài quán dì chuī xiǎng wǒ men
 要迎来大的丰收，我们要迎来大的丰收   yào yíng lái dà de fēng shōu wǒ men yào yíng lái dà de fēng shōu
-{end_of_chorus}
+{end_of_verse}
