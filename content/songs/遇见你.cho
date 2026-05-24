@@ -4,19 +4,27 @@
 {tempo: 80}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-遇见你   yù jiàn nǐ
-幸福感恩地生命河灵粮堂打谱：心的归回文   xìng fú gǎn ēn dì shēng mìng hé líng liáng táng dǎ pǔ xīn de guī huí wén
-Shekinah荣耀同在专辑   Shekinah róng yào tóng zài zhuān jí
+{start_of_verse: 主歌 1/Couplet 1}
+[D]当我遇见你 使我[A/C#]夜间歌唱   dāng wǒ yù jiàn nǐ shǐ wǒ yè jiān gē chàng
+[Bm7]超越一切环境 看见[G]你的同在   chāo yuè yī qiè huán jìng kàn jiàn nǐ de tóng zài
+[Em7]我的心[A/C#]欢喜 我的[F#m7]灵快乐[Bm7]   wǒ de xīn huān xǐ wǒ de líng kuài lè
+[Gmaj7]我全人[Em7]安然居[A]住   wǒ quán rén ān rán jū zhù
 {end_of_verse}
 
-{start_of_verse: 主歌/Couplet}
-当我遇见你使我夜间歌唱超越一切环境看见你的同在   dāng wǒ yù jiàn nǐ shǐ wǒ yè jiān gē chàng chāo yuè yī qiè huán jìng kàn jiàn nǐ de tóng zài
-我的心[Em7]欢喜[A/C]我的[F#m7]灵快乐[Bm7]我全人[Gmaj7]安[Em7]然居住你是我   wǒ de xīn huān xǐ wǒ de líng kuài lè wǒ quán rén ān rán jū zhù nǐ shì wǒ
-[D]至宝我最深的喜[A/C]悦全心仰[Bm7]望倚靠我便不致[G]动你与   zhì bǎo wǒ zuì shēn de xǐ yuè quán xīn yǎng wàng yǐ kào wǒ biàn bù zhì dòng nǐ yǔ
-[Em7]我同行[A/C]你爱我[F#m7]到底[Bm7]这一生[Gmaj7]有[Em7]你真[A]好在你   wǒ tóng xíng nǐ ài wǒ dào dǐ zhè yī shēng yǒu nǐ zhēn hǎo zài nǐ
-面前有满[A/C]足的喜[Bm7]乐在你右[Gmaj7]手中有永远的福[D]乐[D/F]量给   miàn qián yǒu mǎn zú de xǐ lè zài nǐ yòu shǒu zhōng yǒu yǒng yuǎn de fú lè liáng gěi
-[G]我的地界坐落[Bm7]佳美之处[Gmaj7]我的[Em7]产[Gmaj7]：在美好[A]在你   wǒ de dì jiè zuò luò jiā měi zhī chù wǒ de chǎn zài měi hǎo zài nǐ
-面前有满[A/C]足的喜[Bm7]乐在你右[Gmaj7]手中有[A]永远的福[D]乐[D/F]你是   miàn qián yǒu mǎn zú de xǐ lè zài nǐ yòu shǒu zhōng yǒu yǒng yuǎn de fú lè nǐ shì
-[G]我的主好处[Bm7]不在你以外[Gmaj7]遇见[Em7]你我就遇见幸[D]福   wǒ de zhǔ hǎo chù bù zài nǐ yǐ wài yù jiàn nǐ wǒ jiù yù jiàn xìng fú
+{start_of_verse: 主歌 2/Couplet 2}
+[D]你是我至宝 我最[A/C#]深的喜悦   nǐ shì wǒ zhì bǎo wǒ zuì shēn de xǐ yuè
+[Bm7]全心仰望倚靠 我便[G]不致动摇   quán xīn yǎng wàng yǐ kào wǒ biàn bù zhì dòng yáo
+[Em7]你与我[A/C#]同行 你[F#m7]爱我到[Bm7]底   nǐ yǔ wǒ tóng xíng nǐ ài wǒ dào dǐ
+[Gmaj7]这一生[Em7]有你真[A]好   zhè yī shēng yǒu nǐ zhēn hǎo
 {end_of_verse}
+
+{start_of_chorus: 副歌/Chorus}
+在你[D]面前有[A/C#]满足的喜[Bm7]乐   zài nǐ miàn qián yǒu mǎn zú de xǐ lè
+在你[Gmaj7]右手中[A]有永远的[D]福乐[D/F#]   zài nǐ yòu shǒu zhōng yǒu yǒng yuǎn de fú lè
+量给[G]我的地界 坐落[Bm7]佳美之处   liáng gěi wǒ de dì jiè zuò luò jiā měi zhī chù
+[Gmaj7]我的[Em7]产业实[A]在美好   wǒ de chǎn yè shí zài měi hǎo
+在你[D]面前有[A/C#]满足的喜[Bm7]乐   zài nǐ miàn qián yǒu mǎn zú de xǐ lè
+在你[Gmaj7]右手中[A]有永远的[D]福乐[D/F#]   zài nǐ yòu shǒu zhōng yǒu yǒng yuǎn de fú lè
+你是[G]我的主 好处[Bm7]不在你以外   nǐ shì wǒ de zhǔ hǎo chù bù zài nǐ yǐ wài
+[Gmaj7]遇见[Em7]你我就[A]遇见幸[D]福   yù jiàn nǐ wǒ jiù yù jiàn xìng fú
+{end_of_chorus}

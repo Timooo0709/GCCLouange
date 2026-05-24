@@ -1,14 +1,21 @@
 {title: 赞美之泉}
 {title_pinyin: Zàn měi zhī quán}
-{key: C}
+{artist: 万美兰词 / 游智婷曲}
+{key: D}
 {tempo: 80}
 {language: zh}
+{themes: 赞美, 恩典, 感谢}
 
 {start_of_verse: 主歌/Couplet}
-作曲：遊智   zuò qǔ yóu zhì
-1[D]05I[A/C]l01-[Bm]001[D/A]1.怕一1四怕[D/F]心•11[Em]3432-|   Il pà yī sì pà xīn
-从天父而来的爱和恩典把我们冰冷的心溶解   cóng tiān fù ér lái de ài hé ēn diǎn bǎ wǒ men bīng lěng de xīn róng jiě
-[D]  [A/C]  [Bm]  [D/A]  [A]  [D]
-让我[D]们张开口举起手向[G]永生之主称谢   ràng wǒ men zhāng kāi kǒu jǔ qǐ shǒu xiàng yǒng shēng zhī zhǔ chēng xiè
-[G]  [F#m]  [Bm]  [Em]  [D]
+[D]从天父而[A]来的爱和[Bm]恩典，[D/A]   cóng tiān fù ér lái de ài hé ēn diǎn
+[G]把我们冰[D/F#]冷的心溶[Em]解；[A]   bǎ wǒ men bīng lěng de xīn róng jiě
+[D]让我们献[A]出每个音[Bm]符，[D/A]   ràng wǒ men xiàn chū měi gè yīn fú
+[G]把它化为[A]赞美之[D]泉。   bǎ tā huà wéi zàn měi zhī quán
 {end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+让[D]我们张开[A]口，举起[Bm]手，[F#m]   ràng wǒ men zhāng kāi kǒu jǔ qǐ shǒu
+向[G]永生之[A]主称[D]谢；   xiàng yǒng shēng zhī zhǔ chēng xiè
+使[G]赞美之[A]泉流[Bm]入，[F#m]   shǐ zàn měi zhī quán liú rù
+[Em]每个人的[A]心[D]间。   měi gè rén de xīn jiān
+{end_of_chorus}

@@ -1,46 +1,22 @@
 {title: 向我的神献上感谢}
 {title_pinyin: Xiàng wǒ de shén xiàn shàng gǎn xiè}
+{artist: 游智婷}
 {key: C}
-{tempo: 80}
+{tempo: 170}
 {language: zh}
+{themes: 赞美, 感恩}
 
 {start_of_verse: 主歌/Couplet}
-以向我的神獻上感謝   yǐ xiàng wǒ de shén xiàn shàng gǎn xiè
-讚SheamofTPaaiseP美之泉IGiveMyThanksToYou,MyGod   zàn SheamofTPaaiseP měi zhī quán IGiveMyThanksToYou MyGod
-［錄音版本副歌升調至D大調］-出自專輯【深愛耶穌】-（詩59:16-17〕詞、曲：游智婷   lù yīn bǎn běn fù gē shēng diào zhì D dà diào chū zì zhuān jí shēn ài yē sū shī cí qǔ yóu zhì tíng
-EnglishTranslation:SOPSandyYu
-•=170敬拜地、宣告地   jìng bài dì xuān gào dì
-{end_of_verse}
-
-{start_of_verse: 主歌/Couplet}
-[C]今天早[G]晨[Am]要歌[Em]頌[F]祢的力   jīn tiān zǎo chén yào gē sòng mí de lì
-Thismorn-ing，Lord，singofYou.Yourmight-y
-量、祢的慈愛。就是現在，我要獻   liáng mí de cí ài jiù shì xiàn zài wǒ yào xiàn
-strength，Yourfaith-fullove.Hereinthisplace，will—give
-[Em]上我的感[C]謝，要被[G]世界聽[C]到。   shàng wǒ de gǎn xiè yào bèi shì jiè tīng dào
-thanks.mypraise，worldhear-itnow.
+[C]今天早[G]晨，[Am]我要歌[Em]颂，[F]祢的力[C]量、[F]祢的[G]慈[C]爱。   jīn tiān zǎo chén wǒ yào gē sòng nǐ de lì liàng nǐ de cí ài
+[C]就是现[G]在，[Am]我要献[Em]上[F]我的感[C]谢，[G]要被世界听[C]到。   jiù shì xiàn zài wǒ yào xiàn shàng wǒ de gǎn xiè yào bèi shì jiè tīng dào
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-喔喔[G]喔喔！[Am]哈利路[Em]亞！[F]向我的   wō wō wō wō hā lì lù yā xiàng wǒ de
-Woah-oh！—Woah-oh！—Hal•lelu-jah！-give—my
-[C]神獻上[F]感[G]謝。[C]喔喔[G]喔喔！[Am]哈利路   shén xiàn shàng gǎn xiè wō wō wō wō hā lì lù
-thankstoYou，myGod.Woah-oh！|Woah-oh！—Hal-le-心u-   thankstoYou myGod Woah oh Woah oh Hal le xīn u
-[Em]亞！[F]向我的[C]神獻上[G]讚[C]美。   yā xiàng wǒ de shén xiàn shàng zàn měi
-jah！一give—mypraisetomyLord，myGod.   jah yī give mypraisetomyLord myGod
-向我的神獻上感謝-2   xiàng wǒ de shén xiàn shàng gǎn xiè
-SreamofFraisePlor
-讚美之泉   zàn měi zhī quán
+[C]喔 喔 [G]喔 喔！[Am]哈利路[Em]亚！[F]向我的[C]神献上[F]感[G]谢。   wō wō wō wō hā lì lù yā xiàng wǒ de shén xiàn shàng gǎn xiè
+[C]喔 喔 [G]喔 喔！[Am]哈利路[Em]亚！[F]向我的[C]神献上[G]赞[C]美。   wō wō wō wō hā lì lù yā xiàng wǒ de shén xiàn shàng zàn měi
 {end_of_chorus}
 
 {start_of_bridge: 桥段/Pont}
-我的力量[F]啊，我要歌頌祢[C/E]。感恩與讚美[Dm7]，是   wǒ de lì liáng a wǒ yào gē sòng mí gǎn ēn yǔ zàn měi shì
-Lord，Youaremystrength.willpraiseYourname.Thanks-giv-ingandpraiseare
-[F/G]我爭戰武[C]器。我的力量[F]啊，我要歌頌[C/E]祢。   wǒ zhēng zhàn wǔ qì wǒ de lì liáng a wǒ yào gē sòng mí
-weap-onsofmyfaith.Lord,Youaremystrength.-willpraiseYourname.
+[F]我的力量啊，我要歌颂[C/E]祢。感恩与赞美，[Dm7]是我[F/G]争战武[C]器。   wǒ de lì liáng a wǒ yào gē sòng nǐ gǎn ēn yǔ zàn měi shì wǒ zhēng zhàn wǔ qì
+[F]我的力量啊，我要歌颂[C/E]祢。[D]感恩与赞美，[G]是我争战武器。   wǒ de lì liáng a wǒ yào gē sòng nǐ gǎn ēn yǔ zàn měi shì wǒ zhēng zhàn wǔ qì
 {end_of_bridge}
-
-{start_of_chorus: 副歌/Refrain 46}
-感恩與讚美，是我爭戰武器。   gǎn ēn yǔ zàn měi shì wǒ zhēng zhàn wǔ qì
-Thanks-giv-ingandpraiseareweap-onsofmyfaith.
-{end_of_chorus}

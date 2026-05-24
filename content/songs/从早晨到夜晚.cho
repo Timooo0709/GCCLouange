@@ -1,28 +1,29 @@
 {title: 从早晨到夜晚}
 {title_pinyin: Cóng zǎo chén dào yè wǎn}
-{key: C}
+{artist: 郑懋柔词 / 游智婷曲}
+{key: F}
 {tempo: 80}
 {language: zh}
+{themes: 敬拜, 宣告, 称谢}
 
-{start_of_verse: 主歌/Couplet}
-1.早晨睜開眼睛，渴望聆聽祢聲音，祢我   zǎo chén zhēng kāi yǎn jīng kě wàng líng tīng mí shēng yīn mí wǒ
-2.夜晚仍要歌唱，向祢闡明我心意，   yè wǎn réng yào gē chàng xiàng mí chǎn míng wǒ xīn yì
-1.Morn-ing，2.|singwithStars-peninthemyeyeS.Sky.MyToLord，You，my一heartlongforop-ensYourvoice.wide.   Morn ing singwithStars peninthemyeyeS Sky MyToLord You my yī heartlongforop ensYourvoice wide
+{start_of_verse: 主歌 1/Couplet 1}
+[F]早晨我睁开[Bb/F]眼睛，[F]渴望聆听祢[Bb/F]声音，   zǎo chén wǒ zhēng kāi yǎn jīng kě wàng líng tīng mí shēng yīn
+[Gm]心中思想祢[C]的好，[Gm]更多[C]与祢来[F]亲近。   xīn zhōng sī xiǎng mí de hǎo gèng duō yǔ mí lái qīn jìn
+{end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+[F]夜晚我仍要[Bb/F]歌唱，[F]向祢阐明我[Bb/F]心意，   yè wǎn wǒ réng yào gē chàng xiàng mí chǎn míng wǒ xīn yì
+[Gm]敬拜化成[C]一首歌，[Gm]单单[C]要唱给[F]祢听。   jìng bài huà chéng yī shǒu gē dān dān yào chàng gěi mí tīng
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-心中思想祢的好，更多與祢來親近。從早   xīn zhōng sī xiǎng mí de hǎo gèng duō yǔ mí lái qīn jìn cóng zǎo
-敬：拜化成一首歌，單單要唱給祢聽。   jìng bài huà chéng yī shǒu gē dān dān yào chàng gěi mí tīng
-Count-ingBring-ingYourmygood-nessloveinforsong，me.drawwor-shipneartOtoYou—You__a-lone.-a-lone.-Fromthe
-[F]晨到夜晚，從曠野[F]到高山，親[F]愛主，我要稱頌祢美   chén dào yè wǎn cóng kuàng yě dào gāo shān qīn ài zhǔ wǒ yào chēng sòng mí měi
-morningthroughthenight，fromtheval-leytotheheights，for-ev-er，一willliftYournameon   morningthroughthenight fromtheval leytotheheights for ev er yī willliftYournameon
-[C]名。從早[F]晨到夜晚，祢愛永[B/F]不止息，親[F]愛主，一生[C]緊緊跟隨   míng cóng zǎo chén dào yè wǎn mí ài yǒng bù zhǐ xī qīn ài zhǔ yī shēng jǐn jǐn gēn suí
-high.Fromthemorningthroughthenight，Yourloveformecar-rieson，for-ev-er，willfol-lowaf-ter
+从[F]早晨到夜[Bb]晚，从[F]旷野到高[C]山，   cóng zǎo chén dào yè wǎn cóng kuàng yě dào gāo shān
+亲[F]爱主，我要[Bb]称颂[F]祢[C]美[F]名。   qīn ài zhǔ wǒ yào chēng sòng mí měi míng
+从[F]早晨到夜[Bb]晚，祢[F]爱永不止[C]息，   cóng zǎo chén dào yè wǎn mí ài yǒng bù zhǐ xī
+亲[F]爱主，一生[Bb]紧紧[F]跟[C]随[F]祢。   qīn ài zhǔ yī shēng jǐn jǐn gēn suí mí
 {end_of_chorus}
 
 {start_of_bridge: 桥段/Pont}
-祢。我的主，我愛祢，我要誇祢的愛無止   mí wǒ de zhǔ wǒ ài mí wǒ yào kuā mí de ài wú zhǐ
-You.willsingofYourlove，willsingofYourun-end-ing
-[C]盡。我的[F]主，我愛[Bb]祢，我要[F]誇祢的愛[C]無止[F]盡。   jìn wǒ de zhǔ wǒ ài mí wǒ yào kuā mí de ài wú zhǐ jìn
-love.一willsingofYourlove，willsingofYourun-end-inglove.   love yī willsingofYourlove willsingofYourun end inglove
+我的[F]主，我爱[Bb]祢，我要[F]夸祢的爱[C]无止[F]尽。   wǒ de zhǔ wǒ ài mí wǒ yào kuā mí de ài wú zhǐ jìn
+我的[F]主，我爱[Bb]祢，我要[F]夸祢的爱[C]无止[F]尽。   wǒ de zhǔ wǒ ài mí wǒ yào kuā mí de ài wú zhǐ jìn
 {end_of_bridge}

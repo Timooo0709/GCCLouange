@@ -1,34 +1,27 @@
 {title: 哦十字架}
 {title_pinyin: Ò shí zì jià}
-{key: C}
+{artist: 游智婷}
+{key: F}
 {tempo: 80}
 {language: zh}
+{themes: 十字架, 宣告, 盼望}
 
-{start_of_verse: 主歌/Couplet}
-喔！十字架   wō shí zì jià
-IntheCross
-EnglishTranslation:JeffNelson,KevinCheng詞、曲：游智婷   EnglishTranslation JeffNelson KevinCheng cí qǔ yóu zhì tíng
-•-100宣告地、有盼望地SandyYu   xuān gào dì yǒu pàn wàng dì SandyYu
+{start_of_verse: 主歌 1/Couplet 1}
+[F]十字架是我的[Bb/F]荣耀，[F]十字架是我的[C]盼望，   shí zì jià shì wǒ de róng yào shí zì jià shì wǒ de pàn wàng
+[F]十字架使我[Bb]能面对明天，[F]哦[C]十字[F]架。   shí zì jià shǐ wǒ néng miàn duì míng tiān ò shí zì jià
 {end_of_verse}
 
-{start_of_intro: 前奏/Intro}
-[F]1.十字架是我[B/F]的榮耀，十•子架是我的盼望。   shí zì jià shì wǒ de róng yào shí zǐ jià shì wǒ de pàn wàng
-2.十字架使我得救贖，十字架使我得醫治。   shí zì jià shǐ wǒ dé jiù shú shí zì jià shǐ wǒ dé yī zhì
-IninthetheCross，Cross.mybyhopeYourstripesimandmylife.-healec.
-{end_of_intro}
+{start_of_verse: 主歌 2/Couplet 2}
+[F]十字架使我[Bb/F]得救赎，[F]十字架使我得[C]医治，   shí zì jià shǐ wǒ dé jiù shú shí zì jià shǐ wǒ dé yī zhì
+[F]十字架使我[Bb]不再蒙羞愧，[F]哦[C]十字[F]架。   shí zì jià shǐ wǒ bù zài méng xiū kuì ò shí zì jià
+{end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-十字架使我能面再對明天，喔十字是祢   shí zì jià shǐ wǒ néng miàn zài duì míng tiān wō shí zì shì mí
-十字架使我不蒙羞愧，喔十字架。   shí zì jià shǐ wǒ bù méng xiū kuì wō shí zì jià
-IntheCross，，mysirengtht0facet0-morTOW.—HereintheCrossFOrYou
-IntheCross，--there'snomoreshameup-on_me.—HereintheCross
-[F]愛了我，在我[C]愛祢之[F]前。称為   ài liǎo wǒ zài wǒ ài mí zhī qián chēng wéi
-firstlovedme：Iongbe-fore-lovedYou.Youhave
-[F/A]我死在十[B]架，耶[F/C]穌，耶[C]穌称好愛[F]我。耶   wǒ sǐ zài shí jià yē sū yē sū chēng hǎo ài wǒ yē
-diedup-ontheCross.YougaveYourbloodtosetmefree.You
+[F]是祢先[Bb]爱了我，在[C]我爱祢之[F]前，   shì nǐ xiān ài le wǒ zài wǒ ài nǐ zhī qián
+祢[F/A]为我死[Bb]在十架，[F/C]耶稣，[C]耶稣祢好[F]爱我。   nǐ wéi wǒ sǐ zài shí jià yē sū yē sū nǐ hǎo ài wǒ
 {end_of_chorus}
 
 {start_of_bridge: 桥段/Pont}
-穌祢愛我，祢真的好我，祢好我。耶   sū mí ài wǒ mí zhēn de hǎo wǒ mí hǎo wǒ yē
-lovemeveSUS.Yourlovewillsetmefree.YoulovedmE.You
+[Bb]耶稣祢[C/Bb]爱我，祢[F/A]真的好[Dm]爱我，祢[Gm]好[C]爱[F]我！   yē sū nǐ ài wǒ nǐ zhēn de hǎo ài wǒ nǐ hǎo ài wǒ
+[Bb]耶稣祢[C/Bb]爱我，祢[F/A]真的好[Dm]爱我，祢[Gm]好[C]爱[F]我！   yē sū nǐ ài wǒ nǐ zhēn de hǎo ài wǒ nǐ hǎo ài wǒ
 {end_of_bridge}

@@ -1,44 +1,31 @@
 {title: 为爱而生}
 {title_pinyin: Wèi ài ér shēng}
-{key: C}
-{tempo: 80}
+{artist: 郑懋柔词 / 游智婷曲}
+{key: E}
+{tempo: 75}
 {language: zh}
 
+{start_of_intro: 前奏/Intro}
+[E]  [F#m]  [E/G#]  [A]  [Bsus4]  [B]  [E]  [F#m7]  [G#m]  [G#/C]  [C#m]  [F#m]  [A/B]
+{end_of_intro}
+
 {start_of_verse: 主歌/Couplet}
-為愛而生   wéi ài ér shēng
-SteanofFPraiseP
-BorntoLove
-〔2016年愛生關懷協會主題曲〕   nián ài shēng guān huái xié huì zhǔ tí qǔ
-EnglishTranslation:TinaWu,SOP〔太5:13-16,25:33-40〕詞：鄭懋柔TiffanyM.Cheng   EnglishTranslation TinaWu SOP tài cí zhèng mào róu TiffanyM Cheng
-•=75充滿愛地、盼望地曲：游智婷SandyYu   chōng mǎn ài dì pàn wàng dì qǔ yóu zhì tíng SandyYu
-[E]  [F#m]  [E/G]  [Bsus4]  [B]  [E]  [C#m]  [F]
-[A/B]有一[E]個夢想在[F#m]我心頭，一路[B/D]上不該有人獨[A/E]自停留[E]，只[B/D]要   yǒu yī gè mèng xiǎng zài wǒ xīn tóu yī lù shàng bù gāi yǒu rén dú zì tíng liú zhī yào
-Thereisonedreamthatisonmythatnoonewouldwalkonthisjour-neya-lone.—Allyou
+[A/B]有一[E]个梦想在[F#m]我心头，一路上[B/D#]不该有人独[A/E]自停[E]留，只[B/D#]要   yǒu yí gè mèng xiǎng zài wǒ xīn tóu yí lù shàng bù gāi yǒu rén dú zì tíng liú zhǐ yào
+[C#m]你愿意，[F#m]小小亮光能在[B7]黑暗里照[E]亮。   nǐ yuàn yì xiǎo xiǎo liàng guāng néng zài hēi àn lǐ zhào liàng
 {end_of_verse}
 
-{start_of_chorus: 副歌/Refrain}
-[C#m]小[F#m]小门[B7]门[E][B/D]！   xiǎo xiǎo mén mén
-你願意，小小亮光能在黑暗裡照亮。為所愛的發出聲   nǐ yuàn yì xiǎo xiǎo liàng guāng néng zài hēi àn lǐ zhào liàng wéi suǒ ài de fā chū shēng
-havetodoisshineyourlight,itwilldis-si-patedark.Bethevoice—ofthevoice-
-[C#m]音，[A]唱一首歌讓世界傾[B]聽，[E]手握著手[B/D]就有溫暖，   yīn chàng yī shǒu gē ràng shì jiè qīng tīng shǒu wò zhù shǒu jiù yǒu wēn nuǎn
-lesS.Singasongofloveforallto|hear.Handin|hand,we'llfeelthewarmthoflove.
-{end_of_chorus}
+{start_of_prechorus: 预备/Pre-Chorus}
+[E]为所爱[B/D#]的发出声[C#m]音，[E/B] [A]唱一首[B]歌让世界倾[E]听，   wèi suǒ ài de fā chū shēng yīn chàng yì shǒu gē ràng shì jiè qīng tīng
+手[B/D#]握着[C#m7]手就[E/B]有温[A]暖，活得精[B]彩都是因为[E]爱。[A/B]为爱而   shǒu wò zhe shǒu jiù yǒu wēn nuǎn huó de jīng cǎi dōu shì yīn wéi ài wéi ài ér
+{end_of_prechorus}
 
 {start_of_chorus: 副歌/Refrain}
-活得精彩[B]都是因為[E]愛。[A/B]為愛而[E]生，[B/D]為愛而[C#m]活，為愛去   huó dé jīng cǎi dōu shì yīn wéi ài wéi ài ér shēng wéi ài ér huó wéi ài qù
-Lifeisworthallbe-causelove.We'reborntolove_andtobeloved.Forlovewe"l
-[A]付出擁抱不放手[B]，[A/B]為愛流[E]淚，[B/D]為愛而笑，為愛我[A]願意一路同   fù chū yōng bào bù fàng shǒu wéi ài liú lèi wéi ài ér xiào wéi ài wǒ yuàn yì yī lù tóng
-giveall,nev-erlet-tinggo.—Forlove,wecry，—forlove,wesmile.Forlove|'mwill-ingtowalkwith
-SteamofTPraiseP
-讚之泉   zàn zhī quán
-•愛黑無裡沒濕煮有烈孤。熱單，：沒復煮有細懼怕，放下自己多走[E/B]一里路，   ài hēi wú lǐ méi shī zhǔ yǒu liè gū rè dān méi fù zhǔ yǒu xì jù pà fàng xià zì jǐ duō zǒu yī lǐ lù
-nomoresad-ness，ifwe'rewill-ingtolayourlivesdown.
+[E]生，[B/D#]为爱而[C#m7]活，[E/B] [A]为爱去付出拥抱不放[B]手。[A/B]为爱流   wéi ài ér shēng wéi ài ér huó wéi ài qù fù chū yōng bào bú fàng shǒu wéi ài liú
+[E]泪，[B/D#]为爱而[C#m7]笑，[E/B]为爱我[A]愿意一路同[B]行。爱里   wéi ài liú lèi wéi ài ér xiào wéi ài wǒ yuàn yì yí lù tóng xíng ài lǐ
+[E]没有孤[B/D#]单，没有[C#m7]惧怕，[E/B]放下自[A]己多走一里[E/G#]路，   ài lǐ méi yǒu gū dān méi yǒu jù pà fàng xià zì jǐ duō zǒu yì lǐ lù
+[F#m]单单相[A/B]信没有保[E]留，因为[A/B]爱里满有奇[E]迹。   dān dān xiāng xìn méi yǒu bǎo liú yīn wèi ài lǐ mǎn yǒu qí jì
 {end_of_chorus}
 
 {start_of_bridge: 桥段/Pont}
-單單相信沒有保留，因為愛裡滿有奇蹟。愛將不可能變   dān dān xiāng xìn méi yǒu bǎo liú yīn wéi ài lǐ mǎn yǒu qí jì ài jiāng bù kě néng biàn
-Fulloffaith,we'llloveeachoth-er，'causeourlovecanbringmir-a-cles.Lovewillmakeaway—_when
-為可能，能傳遞愛，為愛活過，就是值得。為愛而   wéi kě néng néng chuán dì ài wéi ài huó guò jiù shì zhí dé wéi ài ér
-there'sno_way.—knowthatlife—isworthliv-ing—ifhaveloved.—Welrebornto
-〔我要看見〕   wǒ yào kàn jiàn
+[A]爱将不可能变[E/G#]为可能，[F#m]能传递爱，为[E/G#]爱活过，就[A]是值得。[A/B]为爱而   ài jiāng bù kě néng biàn wéi kě néng néng chuán dì ài wéi ài huó guò jiù shì zhí dé wéi ài ér
 {end_of_bridge}

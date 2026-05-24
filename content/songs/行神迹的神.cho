@@ -1,37 +1,24 @@
 {title: 行神迹的神}
 {title_pinyin: Xíng shén jì de shén}
-{key: C}
-{tempo: 80}
+{artist: 曾祥怡词 / 陈麒安曲}
+{key: F}
+{tempo: 158}
 {language: zh}
+{themes: 宣告, 赞美, 得胜}
 
-{start_of_verse: 主歌/Couplet}
-香港流行鋼琴協會   xiāng gǎng liú xíng gāng qín xié huì
-詩歌-行神蹟的神   shī gē xíng shén jì de shén
-www.poppiano.org
-EnglishTranslation:SOP〔雅1:17；林後1:20〕詞：胃祥怡GraceTseng   EnglishTranslation SOP yǎ lín hòu cí wèi xiáng yí GraceTseng
-•=158曲：陳麒安：AndyChen   qǔ chén qí ān AndyChen
-歡慶地、信心宣告地   huān qìng dì xìn xīn xuān gào dì
-Rhythmcontinues
+{start_of_verse: 主歌 1/Couplet 1}
+[F]祢是行神迹的[Dm]神，绝望中赐下[Bb]盼望。   mí shì xíng shén jì de shén jué wàng zhōng cì xià pàn wàng
+[Bb]瞎眼看见，疾病[F/A]都医治，在[Gm7]祢没有不可[C]能的[F]事。   xiā yǎn kàn jiàn jí bìng dōu yī zhì zài mí méi yǒu bù kě néng de shì
 {end_of_verse}
 
-{start_of_intro: 前奏/Intro}
-1.祢是行神蹟的神，絕望中賜下盼望。   mí shì xíng shén jì de shén jué wàng zhōng cì xià pàn wàng
-2.祢是行神蹟的神，絕望中賜下盼望。   mí shì xíng shén jì de shén jué wàng zhōng cì xià pàn wàng
-1.You'retheGodofmira-Cles.Yougivehopewhenthere'snohope.
-2.You'retheGodofmira-CesYougivehopewhenthere'snohope.
-瞎看見疾病都醫治，[C]在祢沒有不可能的」畢。   xiā kàn jiàn jí bìng dōu yī zhì zài mí méi yǒu bù kě néng de bì
-在祢沒有動的影兒，每個應許都實在阿們。   zài mí méi yǒu dòng de yǐng ér měi gè yīng xū dōu shí zài ā mén
-sickandcausemeblindsee.Youan-y-thingpossi-be
-YoufaithYoudo.一AllYourprom-isareYes，a-men.-   YoufaithYoudo yī AllYourprom isareYes a men
-{end_of_intro}
+{start_of_verse: 主歌 2/Couplet 2}
+[F]祢是行神迹的[Dm]神，绝望中赐下[Bb]盼望。   mí shì xíng shén jì de shén jué wàng zhōng cì xià pàn wàng
+在[Bb]祢没有转动[F/A]的影儿，每个[Gm7]应许都实在[C]阿[F]们。   zài mí méi yǒu zhuàn dòng de yǐng ér měi gè yīng xǔ dōu shí zài ā mén
+{end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-所以[F]我要，要[C/E]歡呼，[Dm]一遍一遍不停   suǒ yǐ wǒ yào yào huān hū yī biàn yī biàn bù tíng
-So—willshoutout，a-gainanda-gain1will
-來歡呼，直到[Bb]耶利哥的城牆，[Gm]一片片倒塌   lái huān hū zhí dào yē lì gē de chéng qiáng yī piàn piàn dǎo tā
-Cryout.-iallcometum-blingdown.
-所以我要，[C/E]要相信，一[Dm]遍一遍不停來宣告，直到   suǒ yǐ wǒ yào yào xiāng xìn yī biàn yī biàn bù tíng lái xuān gào zhí dào
-So—will—shoutitout，—a-gainanda-gain！willcryitout—un-til
-每個大能應許[Gm]都完全成就，成[F]就！   měi gè dà néng yīng xū dōu wán quán chéng jiù chéng jiù
-[A]
+所以[F]我要，要[C/E]欢呼，一[Dm]遍一遍不停[F/C]来欢呼，   suǒ yǐ wǒ yào yào huān hū yī biàn yī biàn bù tíng lái huān hū
+直[Bb]到耶利哥的[F/A]城墙，一[Gm7]片片倒[C]塌。   zhí dào yē lì gē de chéng qiáng yī piàn piàn dǎo tā
+所以[F]我要，要[C/E]相信，一[Dm]遍一遍不停[F/C]来宣告，   suǒ yǐ wǒ yào yào xiāng xìn yī biàn yī biàn bù tíng lái xuān gào
+直[Bb]到每个大能[F/A]应许，都[Gm7]完全成[C]就，成[F]就！   zhí dào měi gè dà néng yīng xǔ dōu wán quán chéng jiù chéng jiù
 {end_of_chorus}

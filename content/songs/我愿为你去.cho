@@ -1,18 +1,35 @@
 {title: 我愿为你去}
 {title_pinyin: Wǒ yuàn wèi nǐ qù}
-{key: C}
+{artist: 林婉容}
+{key: D}
 {tempo: 80}
 {language: zh}
+{themes: 敬拜, 呼召, 奉献}
 
-{start_of_verse: 主歌/Couplet}
-我願為你去   wǒ yuàn wéi nǐ qù
-1.用聖[D]签與火篇我施洗，[Bm/A]讓我[G]充滿天[D/F]上的   yòng shèng qiān yǔ huǒ piān wǒ shī xǐ ràng wǒ chōng mǎn tiān shàng de
-2.（成為）我的異象榮耀救主，讓萬國的榮華盡都   chéng wéi wǒ de yì xiàng róng yào jiù zhǔ ràng wàn guó de róng huá jìn dōu
-[Em7]能力；[A7]讓聖[D]炎燒盡那[F#7/C]情和點[Bm]熱顧熱：：[Bm/A][G]e[A7]你去。   néng lì ràng shèng yán shāo jìn nà qíng hé diǎn rè gù rè e nǐ qù
-失色物找男取』你去。   shī sè wù zhǎo nán qǔ nǐ qù
-成篇釘痕手引我前行，我只願合你心意，看萬   chéng piān dīng hén shǒu yǐn wǒ qián xíng wǒ zhī yuàn hé nǐ xīn yì kàn wàn
-[G]事爲損[D/F]失，受苦為小[Bm]事，[G]靠你的恩典站立[A]。[A7]釘痕   shì wéi sǔn shī shòu kǔ wéi xiǎo shì kào nǐ de ēn diǎn zhàn lì dīng hén
-1|[Em7]02¢12[A]322121[D]1--Fine[D]11-04121[D]3-[A]2.51[Bm]3i•1123|
-菲怀的恩典站立。神聖的愛，融化我！神聖的   fēi huái de ēn diǎn zhàn lì shén shèng de ài róng huà wǒ shén shèng de
-[G]火，[D]熬煉我！神[D7/F]聖的[G]使命，佔有我！神聖的靈，引領我！釘痕   huǒ áo liàn wǒ shén shèng de shǐ mìng zhàn yǒu wǒ shén shèng de líng yǐn lǐng wǒ dīng hén
+{start_of_verse: 主歌 1/Couplet 1}
+[D]用圣灵[A/C#]与火为我施[Bm]洗，[Bm/A]   yòng shèng líng yǔ huǒ wèi wǒ shī xǐ
+让[G]我充满[D/F#]天上的能[Em7]力；[A]   ràng wǒ chōng mǎn tiān shàng de néng lì
+让[D]圣火烧[F#7/C#]尽邪情和[Bm]私欲，[Bm/A]   ràng shèng huǒ shāo jìn xié qíng hé sī yù
+因[G]为我愿[A7]为你[D]去。   yīn wèi wǒ yuàn wèi nǐ qù
 {end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+[D]成为我[A/C#]的异象，荣耀[Bm]救主，[Bm/A]   chéng wéi wǒ de yì xiàng róng yào jiù zhǔ
+让[G]万国的[D/F#]荣华尽都[Em7]失色；[A]   ràng wàn guó de róng huá jìn dōu shī sè
+赐[D]我勇敢[F#7/C#]的心一无[Bm]畏惧，[Bm/A]   cì wǒ yǒng gǎn de xīn yī wú wèi jù
+因[G]为我愿[A7]为你[D]去。   yīn wèi wǒ yuàn wèi nǐ qù
+{end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+[D]钉痕手[F#7]引我前[Bm]行，[Bm/A]   dīng hén shǒu yǐn wǒ qián xíng
+我[G]只愿[D/F#]合你心[Em7]意；[A7]   wǒ zhī yuàn hé nǐ xīn yì
+看[G]万事为[D/F#]损失，受苦[Bm]为小[Bm/A]事，   kàn wàn shì wéi sǔn shī shòu kǔ wéi xiǎo shì
+靠[G]你的恩[A7]典站[D]立。   kào nǐ de ēn diǎn zhàn lì
+{end_of_chorus}
+
+{start_of_bridge: 桥段/Pont}
+[D]神圣的[A]爱，融化[G]我！   shén shèng de ài róng huà wǒ
+[D]神圣的[A]火，熬炼[G]我！   shén shèng de huǒ áo liàn wǒ
+[D]神圣的[A]使命，占有[G]我！   shén shèng de shǐ mìng zhàn yǒu wǒ
+[D]神圣的[A]灵，引领[G]我！   shén shèng de líng yǐn lǐng wǒ
+{end_of_bridge}

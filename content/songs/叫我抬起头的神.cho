@@ -1,17 +1,21 @@
 {title: 叫我抬起头的神}
 {title_pinyin: Jiào wǒ tái qǐ tóu de shén}
+{artist: 余盈盈}
 {key: E}
 {tempo: 80}
 {language: zh}
+{themes: 赞美, 宣告, 得胜}
 
 {start_of_verse: 主歌/Couplet}
-叫我抬起头的神   jiào wǒ tái qǐ tóu de shén
-J=142赞美、宣告地   J zàn měi xuān gào dì
-[A]  [E/G]  [F#m7]  [B]
-耶和华是[B/D]我的主，[C#m7]必不致动摇。有耶和华的   yē hé huá shì wǒ de zhǔ bì bù zhì dòng yáo yǒu yē hé huá de
-[E/G]帮助，[F#m7]还要惧谁呢？耶和华是[B/D]我牧者，   bāng zhù hái yào jù shuí ne yē hé huá shì wǒ mù zhě
-[C#m7]必不致缺乏。有耶和华做我[E/G]辉旗，[F#m7]必全然得胜！   bì bù zhì quē fá yǒu yē hé huá zuò wǒ huī qí bì quán rán dé shèng
-[A/B]耶和[E]华是我四[B/D]围的盾牌，[C#m7]是我的荣[E/B]耀，又是   yē hé huá shì wǒ sì wéi de dùn pái shì wǒ de róng yào yòu shì
-[A]叫我抬起[B]头的[E]神。一宿[C#m7]虽然有哭泣，早晨   jiào wǒ tái qǐ tóu de shén yī sù suī rán yǒu kū qì zǎo chén
-[G#m7]我们必欢呼！祢是[A]我的磐石，[B]我的帮[E]助。   wǒ men bì huān hū mí shì wǒ de pán shí wǒ de bāng zhù
+[E]耶和华是[B/D#]我的主，[C#m7]必不致动[E/B]摇，   yē hé huá shì wǒ de zhǔ bì bù zhì dòng yáo
+有[A]耶和华的[E/G#]帮助，[F#m7]还要惧谁[B]呢？   yǒu yē hé huá de bāng zhù hái yào jù shuí ne
+[E]耶和华是[B/D#]我牧者，[C#m7]必不致缺[E/B]乏，   yē hé huá shì wǒ mù zhě bì bù zhì quē fá
+有[A]耶和华作[E/G#]我旌旗，[F#m7]必全[B]然得[E]胜。   yǒu yē hé huá zuò wǒ jīng qí bì quán rán dé shèng
 {end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+[E]耶和华是[B/D#]我四围的[C#m7]盾牌，是[E/B]我的荣耀，   yē hé huá shì wǒ sì wéi de dùn pái shì wǒ de róng yào
+[A]又是叫我[B]抬起头[E]的神。   yòu-shì jiào wǒ tái qǐ tóu de shén
+[C#m7]一宿虽然有[G#m7]哭泣，早晨我们必欢呼，   yī sù suī rán yǒu kū qì zǎo chén wǒ men bì huān hū
+[A]祢是我的[B]磐石，我的帮[E]助。   mí shì wǒ de pán shí wǒ de bāng zhù
+{end_of_chorus}

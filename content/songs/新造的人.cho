@@ -1,47 +1,24 @@
 {title: 新造的人}
 {title_pinyin: Xīn zào de rén}
-{key: C}
+{key: G}
 {tempo: 80}
 {language: zh}
 
 {start_of_verse: 主歌/Couplet}
-新造的人   xīn zào de rén
-[A]［林後5:17］   lín hòu
-EnglishTranslation:SOP詞：洪啟元、萬美蘭   EnglishTranslation SOP cí hóng qǐ yuán wàn měi lán
-=165熱情地ChuckHong,MarleneWan   rè qíng dì ChuckHong MarleneWan
-曲：游智婷SandyYu   qǔ yóu zhì tíng SandyYu
+[G]飞越时空的领域，[C/G]聆听灵魂的呐喊，   fēi yuè shí kōng de lǐng yù líng tīng líng hún de nà hǎn
+[D7/G]穿过天之涯，[G]越过地之极。   chuān guò tiān zhī yá yuè guò dì zhī jí
+[G]卸下飘泊的心情，[C/G]奔向永恒的生命，   xiè xià piāo bó de xīn qíng bēn xiàng yǒng héng de shēng mìng
+[D7/G]真理在我心，[G]哦真爱在我心。   zhēn lǐ zài wǒ xīn ò zhēn ài zài wǒ xīn
 {end_of_verse}
 
-{start_of_intro: 前奏/Intro}
-[G]啊[G]啊[D][G]啊   a a a
-{end_of_intro}
+{start_of_bridge: 前副歌/Pre-Chorus}
+将[Em]展开崭新的[Bm]航行，   jiāng zhǎn kāi zhǎn xīn de háng xíng
+[C]主的权能将是[D7]我双翼。   zhǔ de quán néng jiāng shì wǒ shuāng yì
+{end_of_bridge}
 
-{start_of_verse: 主歌/Couplet}
-飛越時空的領域，聆聽靈魂的吶喊，   fēi yuè shí kōng de lǐng yù líng tīng líng hún de nà hǎn
-Lord,Youlookdownfromhea-ven，hearthecriesofYourchil-dren.
-[D/G]穿過天之涯，[G]越過地之極。   chuān guò tiān zhī yá yuè guò dì zhī jí
-InYourlightandgraceIfeelYourem-brace._
-卸下漂泊的心情，奔[C/G]向永恆的生命。   xiè xià piāo bó de xīn qíng bēn xiàng yǒng héng de shēng mìng
-Laydowntherest-less—feel-ingFixmyeyesonYourpro-mise.
-{end_of_verse}
-
-{start_of_chorus: 副歌/Refrain}
-真理在我心，哦真愛在我心。將展開嶄新的   zhēn lǐ zài wǒ xīn ò zhēn ài zài wǒ xīn jiāng zhǎn kāi zhǎn xīn de
-You'rethewayandthetruth,Je-sus，Iwillfol-lowYou.Thisisthedaythat-
-SieendfSPwaeP
-{end_of_chorus}
-
-{start_of_chorus: 副歌/Refrain}
-航行，主的權能將是我雙翼。看哪！看   háng xíng zhǔ de quán néng jiāng shì wǒ shuāng yì kàn nǎ kàn
-Godhasmade.InYourpow-erT'llsoarabovethestorm.InJe-sus'
-哪！一切都更新，聽哪！聽哪！天使為我歡   nǎ yī qiè dōu gèng xīn tīng nǎ tīng nǎ tiān shǐ wéi wǒ huān
-nameIcanstarta-new.InJe-sus'myheart'sfilled—with
-呼。真理帶我進入那自由之地，從今   hū zhēn lǐ dài wǒ jìn rù nà zì yóu zhī dì cóng jīn
-JOY.I'vebeensetfree，nowthetruth—livesinme.Iwill
-天起，從此刻起，我是新造，我是新造的   tiān qǐ cóng cǐ kè qǐ wǒ shì xīn zào wǒ shì xīn zào de
-seekYou.willloveYou.I'vebeenmadenew，Tvebeenmadenew
-「若有人在基督裡，他就是新造的人，   ruò yǒu rén zài jī dū lǐ tā jiù shì xīn zào de rén
-舊事已過，都變成新的了。」   jiù shì yǐ guò dōu biàn chéng xīn de liǎo
-歌林多後書5:17   gē lín duō hòu shū
-［新造的人］   xīn zào de rén
+{start_of_chorus: 副歌/Chorus}
+[G]看哪看哪，[C/G]一切都更新，   kàn nǎ kàn nǎ yī qiè dōu gèng xīn
+[D7/G]听哪听哪，[G]天使为我欢呼。   tīng nǎ tīng nǎ tiān shǐ wéi wǒ huān hū
+[Em]真理带我进入那自由之地，   zhēn lǐ dài wǒ jìn rù nà zì yóu zhī dì
+从今[C]天起，从此[D7]刻起，我是[G]新造，我是新造的人。   cóng jīn tiān qǐ cóng cǐ kè qǐ wǒ shì xīn zào wǒ shì xīn zào de rén
 {end_of_chorus}

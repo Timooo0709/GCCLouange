@@ -1,32 +1,23 @@
-{title: 你是我的平安}
+{title: 祢是我的平安}
 {title_pinyin: Nǐ shì wǒ de píng ān}
-{key: C}
-{tempo: 80}
+{key: D}
+{tempo: 68}
 {language: zh}
 
 {start_of_verse: 主歌/Couplet}
-（KUAGLOBAL祢是我的平安   KUAGLOBAL mí shì wǒ de píng ān
-YouAreMyPeace
-•=68帶著確信地［詩17:8；29:10-11;46:1；約14:271詞/曲：蔡佳靈CharisChua   dài zhù què xìn dì shī yuē cí qǔ cài jiā líng CharisChua
+[D]是我的平安，[G]风浪中祢掌管，[Em7]祢与[Asus4]我同[D]在，喔主[G/A]耶稣，   shì wǒ de píng ān fēng làng zhōng nǐ zhǎng guǎn nǐ yǔ wǒ tóng zài wō zhǔ yē sū
+[D]是我的盼望，[G]生命中的光，[Em7]祢永[Asus4]不离[D]开。祢是磐石，   shì wǒ de pàn wàng shēng mìng zhōng de guāng nǐ yǒng bù lí kāi nǐ shì pán shí
 {end_of_verse}
 
-{start_of_intro: 前奏/Intro 1}
-[D][D]喔主耶穌，   wō zhǔ yē sū
-{end_of_intro}
-
-{start_of_verse: 主歌/Couplet}
-[D]是我的平安[G]，風浪中祢掌管[Em]，祢與我同[D]在，喔主[G/A]耶穌，   shì wǒ de píng ān fēng làng zhōng mí zhǎng guǎn mí yǔ wǒ tóng zài wō zhǔ yē sū
-[D]是我的盼望[G]，生命中的光[Em]，祢永不離[D]開。祢是磐石，   shì wǒ de pàn wàng shēng mìng zhōng de guāng mí yǒng bù lí kāi mí shì pán shí
-{end_of_verse}
-
-{start_of_chorus: 副歌/Refrain}
-[F#m]祢是我救贖[Bm]，祢是我[Em7]患難中隨時的幫助[D]，將我隱藏，   mí shì wǒ jiù shú mí shì wǒ huàn nán zhōng suí shí de bāng zhù jiāng wǒ yǐn cáng
-[F#m]在祢翅膀蔭下[Bm]，我要全心[Em]來敬拜祢，喔主耶穌。   zài mí chì bǎng yīn xià wǒ yào quán xīn lái jìng bài mí wō zhǔ yē sū
-[D]喔主耶穌，Fin[Bm][D][A]e   wō zhǔ yē sū Fine
+{start_of_chorus: 副歌/Chorus}
+[F#m7]祢是我救赎，[Bm7]祢是我[Em7]患难中[Asus4]随时的帮[D]助，将我隐藏，   nǐ shì wǒ jiù shú nǐ shì wǒ huàn nán zhōng suí shí de bāng zhù jiāng wǒ yǐn cáng
+[F#m7]在祢翅膀荫[Bm7]下，我要[Em7]全心来敬拜[Asus4]祢，喔主耶稣。   zài nǐ chì bǎng yīn xià wǒ yào quán xīn lái jìng bài nǐ wō zhǔ yē sū
 {end_of_chorus}
 
-{start_of_bridge: 桥段/Pont}
-我心裡不恐懼，不難過不愁煩，祢給我的平安，不像世界給的，   wǒ xīn lǐ bù kǒng jù bù nán guò bù chóu fán mí gěi wǒ de píng ān bù xiàng shì jiè gěi de
-我心裡不恐懼，不難過不愁煩，祢給我的平安，不像世界給的，   wǒ xīn lǐ bù kǒng jù bù nán guò bù chóu fán mí gěi wǒ de píng ān bù xiàng shì jiè gěi de
-不像世界給的[Bm]，不像世界給的[D]，（Wooh[A]Oh）祢是磐石，   bù xiàng shì jiè gěi de bù xiàng shì jiè gěi de WoohOh mí shì pán shí
+{start_of_bridge: 桥段/Bridge}
+[Gadd9]我心里不恐[Bm7]惧，不难过不愁[D]烦，   wǒ xīn lǐ bù kǒng jù bù nán guò bù chóu fán
+祢给我的平[A]安，不像世界给的，   nǐ gěi wǒ de píng ān bù xiàng shì jiè gěi de
+[Gadd9]我心里不恐[Bm7]惧，不难过不愁[D]烦，   wǒ xīn lǐ bù kǒng jù bù nán guò bù chóu fán
+祢给我的平[A]安，不像世界给的，   nǐ gěi wǒ de píng ān bù xiàng shì jiè gěi de
+[Gadd9]不像世界给[Bm7]的，不像世界给[D]的，(Wo oh [A]Oh) 祢是磐石。   bù xiàng shì jiè gěi de bù xiàng shì jiè gěi de Wo oh Oh nǐ shì pán shí
 {end_of_bridge}
