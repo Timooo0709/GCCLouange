@@ -5,25 +5,23 @@
 {language: zh}
 
 {start_of_verse: 主歌/Couplet}
-J=160明亮晨星（赞美之泉）   J míng liàng chén xīng zàn měi zhī quán
-赞美之泉2024年圣诞特辑   zàn měi zhī quán nián shèng dàn tè jí
-1=Fa（太1:23，2:9-11）郑懋柔词/游智婷曲   Fa tài zhèng mào róu cí yóu zhì tíng qǔ
-[F]  [c]  [Dm]  [Am]  [Bb]
-[c]  [Db]  [Eb]  [F]
-[13553]  [2---]  [12331？---]  [F]  [C]  [Dm]  [Am]  [Bb]  [F]
-[13553][F]抬头仰[C][2---]望[Dm]明亮[12331？---]的晨[Am]星；[Bb]神爱我[F]们，   tái tóu yǎng wàng míng liàng de chén xīng shén ài wǒ men
-[13553][F]耶稣基[C][2---]督[Dm]神爱[12331？---]的证[Am]明；[Bb]每一颗[F]心，   yē sū jī dū shén ài de zhèng míng měi yī kē xīn
-[Gm]  [C]  [Gm]  [F/C]  [C]  [F]
+[F]  [Dm]  [Am]  [Bb]
+[Db]  [Eb]  [F]
+[F]抬头仰[C]望[Dm]明亮的晨[Am]星；[Bb]神爱我[F]们，   tái tóu yǎng wàng míng liàng de chén xīng shén ài wǒ men
+耶稣基督神爱的证明；每一颗心，   yē sū jī dū shén ài de zhèng míng měi yī kē xīn
 [Gm]成就了应许[C]。[Gm]都期待奇[F/C]迹[C]来[F]临。   chéng jiù liǎo yìng xǔ dōu qī dài qí jì lái lín
-[G]  [先D后D/F#]  [Em]  [Bm]  [c]  [G/B]
-[G]F【Chorus】[先D后D/F#]先C后C/E[Em]Dm[Bm]Am[c]Bb[G/B]F/A   F Chorus xiān C hòu C EDmAmBbF A
-[G]明亮[先D后D/F#]晨星[Em]照耀[Bm]我心。[c]以马[G/B]内利   míng liàng chén xīng zhào yào wǒ xīn yǐ mǎ nèi lì
+[G]  [D]  [D/F]  [Em]  [Bm]  [G/B]
+[F]明亮晨[C][C/E]星[Dm]照耀[Am]我心。[Bb]以马[F/A]内利   míng liàng chén xīng zhào yào wǒ xīn yǐ mǎ nèi lì
 道路、真理、生命的主，我们欢庆   dào lù zhēn lǐ shēng mìng de zhǔ wǒ men huān qìng
 [Am]  [D]  [Am]  [G/D]  [D]  [G]
-[Gm]  [C]  [Gm]  [F/C]  [C]  [F]
 [Gm]与我们同[C]住。[Gm]爱子耶稣[F/C]的[C]降[F]临。Fine   yǔ wǒ men tóng zhù ài zǐ yē sū de jiàng lín Fine
+{end_of_verse}
+
+{start_of_bridge: 桥段/Pont}
 哈利路亚，一起来赞美。信靠他的   hā lì lù yà yī qǐ lái zàn měi xìn kào tā de
 爱是盼望，爱没有惧怕。爱使我们   ài shì pàn wàng ài méi yǒu jù pà ài shǐ wǒ men
 [C]  [C]
-有永生盼[C]望。相聚在一[C]起。ToChorus   yǒu yǒng shēng pàn wàng xiāng jù zài yī qǐ ToChorus
-{end_of_verse}
+{end_of_bridge}
+
+{start_of_chorus: 副歌/Refrain}
+{end_of_chorus}
