@@ -1,0 +1,41 @@
+{title: 圣诞节耶稣为你而来}
+{title_pinyin: Shèng dàn jié yē sū wèi nǐ ér lái}
+{key: C}
+{tempo: 80}
+{language: zh}
+
+{start_of_verse: 主歌/Couplet}
+聖誕節耶穌為你而來   shèng dàn jié yē sū wéi nǐ ér lái
+[Key]  [A/bpm]  [134]
+{end_of_verse}
+
+{start_of_intro: 前奏/Intro}
+{end_of_intro}
+
+{start_of_verse: 主歌/Couplet}
+[A---|]  [C#m7]  [---]  [#Fm---一D---]
+[A---|]又到十[C#m7]二月[---]又[#Fm---一D---]到我最期待的季節   yòu dào shí èr yuè yòu dào wǒ zuì qī dài de jì jié
+[A---|]聖誕的[C#m7]鈴聲[---]呼[#Fm---一D---]喚著我   shèng dàn de líng shēng hū huàn zhù wǒ
+{end_of_verse}
+
+{start_of_verse: 主歌/Couplet}
+[A---]  [|]  [C#m7---]  [|#Fm---]  [|D---]
+[A---]耶穌[|]告[C#m7---]訴我我[|#Fm---]是祂最珍貴[|D---]的寶貝   yē sū gào sù wǒ wǒ shì tā zuì zhēn guì de bǎo bèi
+[A---]  [|]  [C#m7---]  [|D---一----]
+[A---]所以[|]祂[C#m7---]願意為我而[|D---一----]來   suǒ yǐ tā yuàn yì wéi wǒ ér lái
+[Pre-Chorus]  [Bm7---|]  [A/C#---]  [ID.--|F#m7---]
+[Pre-Chorus][Bm7---|]祂放棄了[A/C#---]一切[ID.--|F#m7---]用愛挽回一切   tā fàng qì liǎo yī qiè yòng ài wǎn huí yī qiè
+[Bm7---|]  [A/C#---]  [一E---一----]
+[Bm7---|]為我們捨[A/C#---]生命耶[一E---一----]穌   wéi wǒ mén shě shēng mìng yē sū
+{end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+聖誕節耶穌為你而來聖誕節耶穌為我而來   shèng dàn jié yē sū wéi nǐ ér lái shèng dàn jié yē sū wéi wǒ ér lái
+我們要大聲歡呼讚美祂   wǒ mén yào dà shēng huān hū zàn měi tā
+{end_of_chorus}
+
+{start_of_bridge: 桥段/Pont}
+欸欸大聲歡呼讚美欸欸大聲歡呼讚美   ǎi ǎi dà shēng huān hū zàn měi ǎi ǎi dà shēng huān hū zàn měi
+A--E—----一D---一----   A E yī D yī
+欸欸大聲歡呼讚美祂   ǎi ǎi dà shēng huān hū zàn měi tā
+{end_of_bridge}
