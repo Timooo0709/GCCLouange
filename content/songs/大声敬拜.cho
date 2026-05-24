@@ -6,25 +6,24 @@
 
 {start_of_verse: 主歌/Couplet}
 J=140大声敬拜（G原调）   J dà shēng jìng bài G yuán tiáo
-［敬拜专辑G调、赞美之泉《我能给你什么》（2024）   jìng bài zhuān jí G tiáo zàn měi zhī quán wǒ néng gěi nǐ shén me
-1=G儿童专辑E调1（诗47:1）苏子献词曲   G ér tóng zhuān jí E tiáo shī sū zǐ xiàn cí qǔ
-[C]  [G]  [Em]  [D]  [112]  [D]
-[C]  [G]  [Em]  [D]  [c]  [早]
-[C]晨夜[G]晚，[Em]听你声[D]音，[c]敬[早]的   chén yè wǎn tīng nǐ shēng yīn jìng de
-[C]论得[G]时，[Em]或不得[D]时，我[c]要[早]敬   lùn dé shí huò bù dé shí wǒ yào jìng
+[C]  [G]  [Em]  [D]  [D]
+[C]晨夜[G]晚，[Em]听你声[D]音，敬的   chén yè wǎn tīng nǐ shēng yīn jìng de
+论得时，或不得时，我要敬   lùn dé shí huò bù dé shí wǒ yào jìng
+{end_of_verse}
+
+{start_of_chorus: 副歌/Refrain 77}
 歌唱给你听。不拜。大声敬拜，   gē chàng gěi nǐ tīng bù bài dà shēng jìng bài
 拜，我要敬   bài wǒ yào jìng
-[C]  [G]  [Em]  [D]
 [C]woo[G]h自由跳舞[Em]，WOo[D]h宣告你是   wooh zì yóu tiào wǔ WOoh xuān gào nǐ shì
-[C]woo[G]h我的拯救[Em]，WOo[D]h一生一世   wooh wǒ de zhěng jiù WOoh yī shēng yī shì
-[C]  [G]  [Em]  [D]
+wooh我的拯救，WOoh一生一世   wooh wǒ de zhěng jiù WOoh yī shēng yī shì
 [C]我[G]的最爱[Em]。[D]我的诗歌   wǒ de zuì ài wǒ de shī gē
-{end_of_verse}
+{end_of_chorus}
 
 {start_of_outro: 结尾/Outro}
 离不开你同在，你同在。Fine   lí bù kāi nǐ tóng zài nǐ tóng zài Fine
-四D前麥接Brids【eBridge】JAmG/BCD   sì D qián mài jiē Brids eBridge JAmG BCD
-从日出之地到日落之处，诸天   cóng rì chū zhī dì dào rì luò zhī chù zhū tiān
-[Am]  [G/B]  [C]  [D]  [To]  [Chorus]
-[Am]要赞美[G/B]，众山[C]要欢呼[D][To][Chorus]！   yào zàn měi zhòng shān yào huān hū
+[D]从日[Am]出之[G/B]地到日[C]落之处[D]，诸天   cóng rì chū zhī dì dào rì luò zhī chù zhū tiān
 {end_of_outro}
+
+{start_of_chorus: 副歌/Refrain}
+要赞美，众山要欢呼！   yào zàn měi zhòng shān yào huān hū
+{end_of_chorus}
