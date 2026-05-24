@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-24T05:54:51.019Z",
+  "generatedAt": "2026-05-24T10:57:14.337Z",
   "songs": [
     {
       "slug": "a-jamais-tu-es-saint",
@@ -8365,17 +8365,17 @@
         },
         {
           "id": "chorus-2",
-          "name": "副歌/Refrain",
+          "name": "副歌/Refrain 25",
           "type": "chorus"
         },
         {
           "id": "bridge-3",
-          "name": "桥段/Pont",
+          "name": "桥段/Pont 37",
           "type": "bridge"
         },
         {
           "id": "chorus-4",
-          "name": "副歌/Refrain",
+          "name": "副歌/Refrain 53",
           "type": "chorus"
         }
       ]
@@ -8465,12 +8465,27 @@
           "type": "verse"
         },
         {
-          "id": "bridge-4",
+          "id": "verse-4",
+          "name": "主歌/Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-5",
+          "name": "副歌/Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-6",
+          "name": "主歌/Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-7",
           "name": "桥段/Pont",
           "type": "bridge"
         },
         {
-          "id": "chorus-5",
+          "id": "chorus-8",
           "name": "副歌/Refrain",
           "type": "chorus"
         }
@@ -8497,12 +8512,17 @@
           "type": "verse"
         },
         {
-          "id": "bridge-2",
-          "name": "桥段/Pont",
-          "type": "bridge"
+          "id": "chorus-2",
+          "name": "副歌/Refrain",
+          "type": "chorus"
         },
         {
-          "id": "bridge-3",
+          "id": "chorus-3",
+          "name": "副歌/Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-4",
           "name": "桥段/Pont",
           "type": "bridge"
         }
@@ -8562,7 +8582,7 @@
         },
         {
           "id": "chorus-2",
-          "name": "副歌/Refrain",
+          "name": "副歌/Refrain 1",
           "type": "chorus"
         },
         {
@@ -8591,16 +8611,6 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
-        },
-        {
-          "id": "outro-2",
-          "name": "结尾/Outro",
-          "type": "outro"
-        },
-        {
-          "id": "bridge-3",
-          "name": "桥段/Pont",
-          "type": "bridge"
         }
       ]
     },
@@ -8691,12 +8701,22 @@
           "type": "verse"
         },
         {
-          "id": "verse-2",
+          "id": "intro-2",
+          "name": "前奏/Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-3",
           "name": "主歌/Couplet",
           "type": "verse"
         },
         {
-          "id": "chorus-3",
+          "id": "chorus-4",
+          "name": "副歌/Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "chorus-5",
           "name": "副歌/Refrain",
           "type": "chorus"
         }
@@ -8760,13 +8780,18 @@
           "type": "intro"
         },
         {
-          "id": "bridge-3",
+          "id": "chorus-3",
+          "name": "副歌/Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-4",
           "name": "桥段/Pont",
           "type": "bridge"
         },
         {
-          "id": "chorus-4",
-          "name": "副歌/Refrain",
+          "id": "chorus-5",
+          "name": "副歌/Refrain 4",
           "type": "chorus"
         }
       ]
@@ -8834,6 +8859,11 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
+        },
+        {
+          "id": "verse-2",
+          "name": "主歌/Couplet",
+          "type": "verse"
         }
       ]
     },
@@ -8883,11 +8913,6 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
-        },
-        {
-          "id": "chorus-2",
-          "name": "副歌/Refrain",
-          "type": "chorus"
         }
       ]
     },
@@ -9028,7 +9053,7 @@
         },
         {
           "id": "intro-2",
-          "name": "前奏/Intro",
+          "name": "前奏/Intro 1",
           "type": "intro"
         },
         {
@@ -9091,19 +9116,19 @@
           "type": "verse"
         },
         {
-          "id": "verse-2",
+          "id": "intro-2",
+          "name": "前奏/Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-3",
           "name": "主歌/Couplet",
           "type": "verse"
         },
         {
-          "id": "bridge-3",
+          "id": "bridge-4",
           "name": "桥段/Pont",
           "type": "bridge"
-        },
-        {
-          "id": "chorus-4",
-          "name": "副歌/Refrain",
-          "type": "chorus"
         },
         {
           "id": "chorus-5",
@@ -9111,7 +9136,12 @@
           "type": "chorus"
         },
         {
-          "id": "bridge-6",
+          "id": "chorus-6",
+          "name": "副歌/Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-7",
           "name": "桥段/Pont",
           "type": "bridge"
         }
@@ -9138,22 +9168,17 @@
           "type": "verse"
         },
         {
-          "id": "bridge-2",
-          "name": "桥段/Pont",
-          "type": "bridge"
-        },
-        {
-          "id": "chorus-3",
+          "id": "chorus-2",
           "name": "副歌/Refrain",
           "type": "chorus"
         },
         {
-          "id": "bridge-4",
+          "id": "bridge-3",
           "name": "桥段/Pont",
           "type": "bridge"
         },
         {
-          "id": "chorus-5",
+          "id": "chorus-4",
           "name": "副歌/Refrain",
           "type": "chorus"
         }
@@ -9178,16 +9203,6 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
-        },
-        {
-          "id": "bridge-2",
-          "name": "桥段/Pont",
-          "type": "bridge"
-        },
-        {
-          "id": "bridge-3",
-          "name": "桥段/Pont",
-          "type": "bridge"
         }
       ]
     },
@@ -9254,6 +9269,11 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "副歌/Refrain",
+          "type": "chorus"
         }
       ]
     },
@@ -9306,7 +9326,7 @@
         },
         {
           "id": "intro-2",
-          "name": "前奏/Intro",
+          "name": "前奏/Intro 7",
           "type": "intro"
         },
         {
@@ -9355,6 +9375,11 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "副歌/Refrain 7",
+          "type": "chorus"
         }
       ]
     },
@@ -9380,7 +9405,7 @@
         },
         {
           "id": "chorus-2",
-          "name": "副歌/Refrain",
+          "name": "副歌/Refrain 7",
           "type": "chorus"
         }
       ]
@@ -9436,11 +9461,6 @@
           "id": "chorus-2",
           "name": "副歌/Refrain",
           "type": "chorus"
-        },
-        {
-          "id": "intro-3",
-          "name": "前奏/Intro",
-          "type": "intro"
         }
       ]
     },
@@ -9463,11 +9483,6 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
-        },
-        {
-          "id": "intro-2",
-          "name": "前奏/Intro",
-          "type": "intro"
         }
       ]
     },
@@ -9630,11 +9645,6 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
-        },
-        {
-          "id": "intro-2",
-          "name": "前奏/Intro",
-          "type": "intro"
         }
       ]
     },
@@ -9657,11 +9667,6 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
-        },
-        {
-          "id": "intro-2",
-          "name": "前奏/Intro",
-          "type": "intro"
         }
       ]
     },
@@ -9809,6 +9814,11 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
+        },
+        {
+          "id": "intro-2",
+          "name": "前奏/Intro 7",
+          "type": "intro"
         }
       ]
     },
@@ -9839,12 +9849,12 @@
         },
         {
           "id": "chorus-3",
-          "name": "副歌/Refrain",
+          "name": "副歌/Refrain 18",
           "type": "chorus"
         },
         {
           "id": "bridge-4",
-          "name": "桥段/Pont",
+          "name": "桥段/Pont 30",
           "type": "bridge"
         },
         {
@@ -9891,7 +9901,7 @@
         },
         {
           "id": "chorus-5",
-          "name": "副歌/Refrain",
+          "name": "副歌/Refrain 46",
           "type": "chorus"
         }
       ]
@@ -9918,7 +9928,7 @@
         },
         {
           "id": "chorus-2",
-          "name": "副歌/Refrain",
+          "name": "副歌/Refrain 6",
           "type": "chorus"
         }
       ]
@@ -9949,9 +9959,9 @@
           "type": "bridge"
         },
         {
-          "id": "bridge-3",
-          "name": "桥段/Pont",
-          "type": "bridge"
+          "id": "chorus-3",
+          "name": "副歌/Refrain",
+          "type": "chorus"
         }
       ]
     },
@@ -9981,9 +9991,9 @@
           "type": "bridge"
         },
         {
-          "id": "bridge-3",
-          "name": "桥段/Pont",
-          "type": "bridge"
+          "id": "chorus-3",
+          "name": "副歌/Refrain",
+          "type": "chorus"
         }
       ]
     },
@@ -10080,6 +10090,16 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "副歌/Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-3",
+          "name": "桥段/Pont",
+          "type": "bridge"
         }
       ]
     },
@@ -10126,7 +10146,12 @@
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "verse-2",
+          "name": "主歌/Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
           "name": "副歌/Refrain",
           "type": "chorus"
         }
@@ -10205,11 +10230,6 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
-        },
-        {
-          "id": "bridge-2",
-          "name": "桥段/Pont",
-          "type": "bridge"
         }
       ]
     },
@@ -10240,12 +10260,12 @@
         },
         {
           "id": "verse-3",
-          "name": "主歌/Couplet",
+          "name": "主歌/Couplet 1",
           "type": "verse"
         },
         {
           "id": "verse-4",
-          "name": "主歌/Couplet",
+          "name": "主歌/Couplet 2",
           "type": "verse"
         },
         {
@@ -10254,9 +10274,19 @@
           "type": "chorus"
         },
         {
-          "id": "bridge-6",
+          "id": "chorus-6",
+          "name": "副歌/Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-7",
           "name": "桥段/Pont",
           "type": "bridge"
+        },
+        {
+          "id": "verse-8",
+          "name": "主歌/Couplet",
+          "type": "verse"
         }
       ]
     },
@@ -10281,8 +10311,13 @@
           "type": "verse"
         },
         {
-          "id": "chorus-2",
-          "name": "副歌/Refrain",
+          "id": "intro-2",
+          "name": "前奏/Intro",
+          "type": "intro"
+        },
+        {
+          "id": "chorus-3",
+          "name": "副歌/Refrain 1",
           "type": "chorus"
         }
       ]
@@ -10306,11 +10341,6 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
-        },
-        {
-          "id": "intro-2",
-          "name": "前奏/Intro",
-          "type": "intro"
         }
       ]
     },
@@ -10355,6 +10385,16 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "副歌/Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-3",
+          "name": "桥段/Pont",
+          "type": "bridge"
         }
       ]
     },
@@ -10401,9 +10441,9 @@
           "type": "verse"
         },
         {
-          "id": "bridge-2",
-          "name": "桥段/Pont",
-          "type": "bridge"
+          "id": "chorus-2",
+          "name": "副歌/Refrain",
+          "type": "chorus"
         }
       ]
     },
@@ -10428,9 +10468,19 @@
           "type": "verse"
         },
         {
-          "id": "outro-2",
+          "id": "chorus-2",
+          "name": "副歌/Refrain 77",
+          "type": "chorus"
+        },
+        {
+          "id": "outro-3",
           "name": "结尾/Outro",
           "type": "outro"
+        },
+        {
+          "id": "chorus-4",
+          "name": "副歌/Refrain",
+          "type": "chorus"
         }
       ]
     },
@@ -10460,12 +10510,22 @@
           "type": "intro"
         },
         {
-          "id": "bridge-3",
+          "id": "verse-3",
+          "name": "主歌/Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "副歌/Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-5",
           "name": "桥段/Pont",
           "type": "bridge"
         },
         {
-          "id": "bridge-4",
+          "id": "bridge-6",
           "name": "桥段/Pont",
           "type": "bridge"
         }
@@ -10498,11 +10558,21 @@
         },
         {
           "id": "verse-3",
-          "name": "主歌/Couplet",
+          "name": "主歌/Couplet 2",
           "type": "verse"
         },
         {
           "id": "chorus-4",
+          "name": "副歌/Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-5",
+          "name": "桥段/Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "chorus-6",
           "name": "副歌/Refrain",
           "type": "chorus"
         }
@@ -10551,12 +10621,7 @@
           "type": "verse"
         },
         {
-          "id": "bridge-2",
-          "name": "桥段/Pont",
-          "type": "bridge"
-        },
-        {
-          "id": "chorus-3",
+          "id": "chorus-2",
           "name": "副歌/Refrain",
           "type": "chorus"
         }
@@ -10615,19 +10680,9 @@
           "type": "verse"
         },
         {
-          "id": "bridge-2",
-          "name": "桥段/Pont",
-          "type": "bridge"
-        },
-        {
-          "id": "chorus-3",
+          "id": "chorus-2",
           "name": "副歌/Refrain",
           "type": "chorus"
-        },
-        {
-          "id": "bridge-4",
-          "name": "桥段/Pont",
-          "type": "bridge"
         }
       ]
     },
@@ -10652,7 +10707,12 @@
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "intro-2",
+          "name": "前奏/Intro",
+          "type": "intro"
+        },
+        {
+          "id": "chorus-3",
           "name": "副歌/Refrain",
           "type": "chorus"
         }
@@ -10679,9 +10739,9 @@
           "type": "verse"
         },
         {
-          "id": "intro-2",
-          "name": "前奏/Intro",
-          "type": "intro"
+          "id": "chorus-2",
+          "name": "副歌/Refrain",
+          "type": "chorus"
         }
       ]
     },
@@ -10790,6 +10850,16 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
+        },
+        {
+          "id": "verse-2",
+          "name": "主歌/Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "主歌/Couplet",
+          "type": "verse"
         }
       ]
     },
@@ -10817,11 +10887,6 @@
           "id": "chorus-2",
           "name": "副歌/Refrain",
           "type": "chorus"
-        },
-        {
-          "id": "intro-3",
-          "name": "前奏/Intro",
-          "type": "intro"
         }
       ]
     },
@@ -10844,11 +10909,6 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
-        },
-        {
-          "id": "bridge-2",
-          "name": "桥段/Pont",
-          "type": "bridge"
         }
       ]
     },
@@ -10895,27 +10955,32 @@
           "type": "verse"
         },
         {
-          "id": "verse-2",
+          "id": "intro-2",
+          "name": "前奏/Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-3",
           "name": "主歌/Couplet",
           "type": "verse"
         },
         {
-          "id": "chorus-3",
-          "name": "副歌/Refrain",
+          "id": "chorus-4",
+          "name": "副歌/Refrain 21",
           "type": "chorus"
         },
         {
-          "id": "bridge-4",
-          "name": "桥段/Pont",
-          "type": "bridge"
-        },
-        {
           "id": "bridge-5",
-          "name": "桥段/Pont",
+          "name": "桥段/Pont 2",
           "type": "bridge"
         },
         {
-          "id": "chorus-6",
+          "id": "bridge-6",
+          "name": "桥段/Pont 3",
+          "type": "bridge"
+        },
+        {
+          "id": "chorus-7",
           "name": "副歌/Refrain",
           "type": "chorus"
         }
@@ -11103,14 +11168,14 @@
           "type": "verse"
         },
         {
-          "id": "bridge-2",
-          "name": "桥段/Pont",
-          "type": "bridge"
+          "id": "intro-2",
+          "name": "前奏/Intro",
+          "type": "intro"
         },
         {
-          "id": "bridge-3",
-          "name": "桥段/Pont",
-          "type": "bridge"
+          "id": "chorus-3",
+          "name": "副歌/Refrain 7",
+          "type": "chorus"
         }
       ]
     },
@@ -11160,6 +11225,11 @@
           "id": "verse-2",
           "name": "主歌/Couplet",
           "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "副歌/Refrain",
+          "type": "chorus"
         }
       ]
     },
@@ -11182,6 +11252,16 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
+        },
+        {
+          "id": "bridge-2",
+          "name": "桥段/Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "chorus-3",
+          "name": "副歌/Refrain 4",
+          "type": "chorus"
         }
       ]
     },
@@ -11251,6 +11331,16 @@
           "id": "chorus-2",
           "name": "副歌/Refrain",
           "type": "chorus"
+        },
+        {
+          "id": "bridge-3",
+          "name": "桥段/Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "chorus-4",
+          "name": "副歌/Refrain",
+          "type": "chorus"
         }
       ]
     },
@@ -11271,6 +11361,11 @@
       "sections": [
         {
           "id": "verse-1",
+          "name": "主歌/Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
           "name": "主歌/Couplet",
           "type": "verse"
         }
@@ -11395,7 +11490,12 @@
           "type": "verse"
         },
         {
-          "id": "chorus-4",
+          "id": "bridge-4",
+          "name": "桥段/Pont 43",
+          "type": "bridge"
+        },
+        {
+          "id": "chorus-5",
           "name": "副歌/Refrain",
           "type": "chorus"
         }
@@ -11469,16 +11569,6 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
-        },
-        {
-          "id": "intro-2",
-          "name": "前奏/Intro",
-          "type": "intro"
-        },
-        {
-          "id": "intro-3",
-          "name": "前奏/Intro",
-          "type": "intro"
         }
       ]
     },
@@ -11504,17 +11594,17 @@
         },
         {
           "id": "verse-2",
-          "name": "主歌/Couplet",
+          "name": "主歌/Couplet 1",
           "type": "verse"
         },
         {
           "id": "bridge-3",
-          "name": "桥段/Pont",
+          "name": "桥段/Pont 2",
           "type": "bridge"
         },
         {
           "id": "bridge-4",
-          "name": "桥段/Pont",
+          "name": "桥段/Pont 2",
           "type": "bridge"
         },
         {
@@ -11590,6 +11680,11 @@
           "id": "bridge-6",
           "name": "桥段/Pont",
           "type": "bridge"
+        },
+        {
+          "id": "chorus-7",
+          "name": "副歌/Refrain 4",
+          "type": "chorus"
         }
       ]
     },
@@ -11612,11 +11707,6 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
-        },
-        {
-          "id": "bridge-2",
-          "name": "桥段/Pont",
-          "type": "bridge"
         }
       ]
     },
@@ -11641,19 +11731,14 @@
           "type": "verse"
         },
         {
-          "id": "verse-2",
+          "id": "intro-2",
+          "name": "前奏/Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-3",
           "name": "主歌/Couplet",
           "type": "verse"
-        },
-        {
-          "id": "chorus-3",
-          "name": "副歌/Refrain",
-          "type": "chorus"
-        },
-        {
-          "id": "chorus-4",
-          "name": "副歌/Refrain",
-          "type": "chorus"
         }
       ]
     },
@@ -11740,6 +11825,11 @@
           "id": "verse-2",
           "name": "主歌/Couplet",
           "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "副歌/Refrain",
+          "type": "chorus"
         }
       ]
     },
@@ -11762,11 +11852,6 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
-        },
-        {
-          "id": "chorus-2",
-          "name": "副歌/Refrain",
-          "type": "chorus"
         }
       ]
     },
@@ -11791,9 +11876,9 @@
           "type": "verse"
         },
         {
-          "id": "bridge-2",
-          "name": "桥段/Pont",
-          "type": "bridge"
+          "id": "chorus-2",
+          "name": "副歌/Refrain 7",
+          "type": "chorus"
         }
       ]
     },
@@ -11823,9 +11908,19 @@
           "type": "intro"
         },
         {
-          "id": "chorus-3",
+          "id": "verse-3",
+          "name": "主歌/Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
           "name": "副歌/Refrain",
           "type": "chorus"
+        },
+        {
+          "id": "verse-5",
+          "name": "主歌/Couplet",
+          "type": "verse"
         }
       ]
     },
@@ -11851,7 +11946,7 @@
         },
         {
           "id": "chorus-2",
-          "name": "副歌/Refrain",
+          "name": "副歌/Refrain 7",
           "type": "chorus"
         }
       ]
@@ -11875,11 +11970,6 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
-        },
-        {
-          "id": "intro-2",
-          "name": "前奏/Intro",
-          "type": "intro"
         }
       ]
     },
@@ -11934,11 +12024,6 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
-        },
-        {
-          "id": "bridge-2",
-          "name": "桥段/Pont",
-          "type": "bridge"
         }
       ]
     },
@@ -12044,7 +12129,17 @@
           "type": "intro"
         },
         {
-          "id": "chorus-3",
+          "id": "verse-3",
+          "name": "主歌/Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "副歌/Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "chorus-5",
           "name": "副歌/Refrain",
           "type": "chorus"
         }
@@ -12094,18 +12189,13 @@
         },
         {
           "id": "outro-2",
-          "name": "结尾/Outro",
+          "name": "结尾/Outro 2",
           "type": "outro"
         },
         {
           "id": "chorus-3",
           "name": "副歌/Refrain",
           "type": "chorus"
-        },
-        {
-          "id": "intro-4",
-          "name": "前奏/Intro",
-          "type": "intro"
         }
       ]
     },
@@ -12187,6 +12277,16 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
+        },
+        {
+          "id": "bridge-2",
+          "name": "桥段/Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "chorus-3",
+          "name": "副歌/Refrain",
+          "type": "chorus"
         }
       ]
     },
@@ -12211,12 +12311,7 @@
           "type": "verse"
         },
         {
-          "id": "chorus-2",
-          "name": "副歌/Refrain",
-          "type": "chorus"
-        },
-        {
-          "id": "bridge-3",
+          "id": "bridge-2",
           "name": "桥段/Pont",
           "type": "bridge"
         }
@@ -12241,11 +12336,6 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
-        },
-        {
-          "id": "intro-2",
-          "name": "前奏/Intro",
-          "type": "intro"
         }
       ]
     },
@@ -12275,27 +12365,22 @@
           "type": "intro"
         },
         {
-          "id": "intro-3",
-          "name": "前奏/Intro",
-          "type": "intro"
-        },
-        {
-          "id": "verse-4",
+          "id": "verse-3",
           "name": "主歌/Couplet",
           "type": "verse"
         },
         {
-          "id": "bridge-5",
+          "id": "bridge-4",
           "name": "桥段/Pont",
           "type": "bridge"
         },
         {
-          "id": "chorus-6",
-          "name": "副歌/Refrain",
+          "id": "chorus-5",
+          "name": "副歌/Refrain 54",
           "type": "chorus"
         },
         {
-          "id": "chorus-7",
+          "id": "chorus-6",
           "name": "副歌/Refrain",
           "type": "chorus"
         }
@@ -12462,6 +12547,11 @@
           "id": "verse-3",
           "name": "主歌/Couplet",
           "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "副歌/Refrain",
+          "type": "chorus"
         }
       ]
     },
@@ -12482,6 +12572,16 @@
       "sections": [
         {
           "id": "verse-1",
+          "name": "主歌/Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "副歌/Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
           "name": "主歌/Couplet",
           "type": "verse"
         }
@@ -12553,7 +12653,7 @@
         },
         {
           "id": "chorus-2",
-          "name": "副歌/Refrain",
+          "name": "副歌/Refrain 7",
           "type": "chorus"
         }
       ]
@@ -12632,7 +12732,7 @@
         },
         {
           "id": "chorus-4",
-          "name": "副歌/Refrain",
+          "name": "副歌/Refrain 4",
           "type": "chorus"
         }
       ]
@@ -12766,12 +12866,17 @@
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "verse-2",
+          "name": "主歌/Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
           "name": "副歌/Refrain",
           "type": "chorus"
         },
         {
-          "id": "bridge-3",
+          "id": "bridge-4",
           "name": "桥段/Pont",
           "type": "bridge"
         }
@@ -12796,6 +12901,11 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "副歌/Refrain",
+          "type": "chorus"
         }
       ]
     },
@@ -12837,9 +12947,9 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "outro-1",
-          "name": "结尾/Outro",
-          "type": "outro"
+          "id": "verse-1",
+          "name": "主歌/Couplet",
+          "type": "verse"
         },
         {
           "id": "verse-2",
@@ -12897,8 +13007,13 @@
         },
         {
           "id": "chorus-2",
-          "name": "副歌/Refrain",
+          "name": "副歌/Refrain 2",
           "type": "chorus"
+        },
+        {
+          "id": "bridge-3",
+          "name": "桥段/Pont",
+          "type": "bridge"
         }
       ]
     },
@@ -12924,7 +13039,7 @@
         },
         {
           "id": "chorus-2",
-          "name": "副歌/Refrain",
+          "name": "副歌/Refrain 7",
           "type": "chorus"
         }
       ]
@@ -12948,11 +13063,6 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
-        },
-        {
-          "id": "intro-2",
-          "name": "前奏/Intro",
-          "type": "intro"
         }
       ]
     },
@@ -13027,7 +13137,7 @@
         },
         {
           "id": "verse-2",
-          "name": "主歌/Couplet",
+          "name": "主歌/Couplet 2",
           "type": "verse"
         },
         {
@@ -13078,6 +13188,11 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "副歌/Refrain",
+          "type": "chorus"
         }
       ]
     },
@@ -13190,7 +13305,17 @@
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "verse-2",
+          "name": "主歌/Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-3",
+          "name": "桥段/Pont 2",
+          "type": "bridge"
+        },
+        {
+          "id": "chorus-4",
           "name": "副歌/Refrain",
           "type": "chorus"
         }
@@ -13215,16 +13340,6 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
-        },
-        {
-          "id": "intro-2",
-          "name": "前奏/Intro",
-          "type": "intro"
-        },
-        {
-          "id": "intro-3",
-          "name": "前奏/Intro",
-          "type": "intro"
         }
       ]
     },
@@ -13249,17 +13364,12 @@
           "type": "verse"
         },
         {
-          "id": "bridge-2",
-          "name": "桥段/Pont",
-          "type": "bridge"
+          "id": "chorus-2",
+          "name": "副歌/Refrain 7",
+          "type": "chorus"
         },
         {
           "id": "bridge-3",
-          "name": "桥段/Pont",
-          "type": "bridge"
-        },
-        {
-          "id": "bridge-4",
           "name": "桥段/Pont",
           "type": "bridge"
         }
@@ -13338,16 +13448,6 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
-        },
-        {
-          "id": "chorus-2",
-          "name": "副歌/Refrain",
-          "type": "chorus"
-        },
-        {
-          "id": "intro-3",
-          "name": "前奏/Intro",
-          "type": "intro"
         }
       ]
     },
@@ -13372,7 +13472,12 @@
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "verse-2",
+          "name": "主歌/Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
           "name": "副歌/Refrain",
           "type": "chorus"
         }
@@ -13399,12 +13504,7 @@
           "type": "verse"
         },
         {
-          "id": "bridge-2",
-          "name": "桥段/Pont",
-          "type": "bridge"
-        },
-        {
-          "id": "chorus-3",
+          "id": "chorus-2",
           "name": "副歌/Refrain",
           "type": "chorus"
         }
@@ -13429,11 +13529,6 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
-        },
-        {
-          "id": "intro-2",
-          "name": "前奏/Intro",
-          "type": "intro"
         }
       ]
     },
@@ -13525,6 +13620,11 @@
           "id": "bridge-5",
           "name": "桥段/Pont",
           "type": "bridge"
+        },
+        {
+          "id": "chorus-6",
+          "name": "副歌/Refrain 45",
+          "type": "chorus"
         }
       ]
     },
@@ -13579,6 +13679,11 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "副歌/Refrain",
+          "type": "chorus"
         }
       ]
     },
@@ -13608,7 +13713,12 @@
           "type": "verse"
         },
         {
-          "id": "bridge-3",
+          "id": "chorus-3",
+          "name": "副歌/Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-4",
           "name": "桥段/Pont",
           "type": "bridge"
         }
@@ -13635,13 +13745,18 @@
           "type": "verse"
         },
         {
-          "id": "verse-2",
+          "id": "intro-2",
+          "name": "前奏/Intro 2",
+          "type": "intro"
+        },
+        {
+          "id": "verse-3",
           "name": "主歌/Couplet",
           "type": "verse"
         },
         {
-          "id": "chorus-3",
-          "name": "副歌/Refrain",
+          "id": "chorus-4",
+          "name": "副歌/Refrain 23",
           "type": "chorus"
         }
       ]
@@ -13674,6 +13789,11 @@
         {
           "id": "chorus-3",
           "name": "副歌/Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "chorus-4",
+          "name": "副歌/Refrain 8",
           "type": "chorus"
         }
       ]
@@ -13864,11 +13984,6 @@
           "id": "chorus-2",
           "name": "副歌/Refrain",
           "type": "chorus"
-        },
-        {
-          "id": "bridge-3",
-          "name": "桥段/Pont",
-          "type": "bridge"
         }
       ]
     },
@@ -13888,14 +14003,9 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "chorus-1",
-          "name": "副歌/Refrain",
-          "type": "chorus"
-        },
-        {
-          "id": "chorus-2",
-          "name": "副歌/Refrain",
-          "type": "chorus"
+          "id": "verse-1",
+          "name": "主歌/Couplet",
+          "type": "verse"
         }
       ]
     },
@@ -13918,6 +14028,11 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "副歌/Refrain",
+          "type": "chorus"
         }
       ]
     },
@@ -13940,6 +14055,11 @@
           "id": "verse-1",
           "name": "主歌/Couplet",
           "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "副歌/Refrain",
+          "type": "chorus"
         }
       ]
     },
@@ -13960,6 +14080,11 @@
       "sections": [
         {
           "id": "verse-1",
+          "name": "主歌/Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
           "name": "主歌/Couplet",
           "type": "verse"
         }
