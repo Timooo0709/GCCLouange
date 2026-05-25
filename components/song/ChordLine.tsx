@@ -56,7 +56,6 @@ export function ChordLine({ tokens, showChords = true, fontSize = 0.95 }: ChordL
           hasAnyChord && chordLen > lyricLen
             ? `${chordLen + 0.5}ch`
             : undefined;
-        console.log('segment', { chord: seg.chord, lyric: seg.lyric, chordLen, lyricLen, minWidth });
         return (
           <span
             key={i}
