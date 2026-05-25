@@ -80,7 +80,7 @@ export function ChordLine({ tokens, showChords = true, fontSize = 0.95 }: ChordL
             <span 
               className="text-foreground whitespace-pre"
             >
-              {(showChords ? seg.lyric : seg.lyric?.trim()) || (seg.chord && showChords ? "  " : "")}
+              {(showChords ? seg.lyric : seg.lyric?.trimStart()) || (seg.chord && showChords ? "  " : "")}
             </span>
           </span>
         );
