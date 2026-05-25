@@ -76,49 +76,40 @@ export default function SetlistsPage() {
     <div className="min-h-screen bg-background">
       <div className="max-w-2xl mx-auto px-4 py-6">
         {/* Nav */}
-        <div className="flex items-center gap-4 mb-6">
-          <span className="font-bold text-foreground text-lg">GCC Louange</span>
+        <div className="flex flex-col gap-3 mb-6 sm:flex-row sm:items-center sm:gap-4">
+          {/* Ligne 1 : logo + actions */}
+          <div className="flex items-center gap-4">
+            <span className="font-bold text-foreground text-lg">GCC Louange</span>
+            <div className="ml-auto flex items-center gap-3 sm:hidden">
+              <DarkModeToggle />
+              <a href="/setlists/new" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium">
+                <Plus className="h-4 w-4" />
+                Nouvelle
+              </a>
+            </div>
+          </div>
+
+          {/* Ligne 2 : nav */}
           <nav className="flex gap-1">
-            <a
-              href="/songs"
-              className="px-3 py-1.5 rounded text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-            >
-              Chants
-            </a>
-            <a
-              href="/setlists"
-              className="px-3 py-1.5 rounded text-sm font-medium bg-muted text-foreground"
-            >
-              Setlists
-            </a>
+            <a href="/songs" className="px-3 py-1.5 rounded text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-colors">Chants</a>
+            <a href="/setlists" className="px-3 py-1.5 rounded text-sm font-medium bg-muted text-foreground">Setlists</a>
           </nav>
 
-          <div className="ml-auto flex items-center gap-3">
+          {/* Actions desktop */}
+          <div className="hidden sm:flex ml-auto items-center gap-3">
             <DarkModeToggle />
-            {!authLoading && (
-              user ? (
-                <button
-                  onClick={() => logOut()}
-                  className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground"
-                  title="Se déconnecter"
-                >
-                  <LogOut className="h-3.5 w-3.5" />
-                  Déconnexion
-                </button>
-              ) : (
-                <a
-                  href="/login?from=/setlists"
-                  className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground"
-                >
-                  <LogIn className="h-3.5 w-3.5" />
-                  Connexion
-                </a>
-              )
-            )}
-            <a
-              href="/setlists/new"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
-            >
+            {!authLoading && (user ? (
+              <button onClick={() => logOut()} className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground">
+                <LogOut className="h-3.5 w-3.5" />
+                Déconnexion
+              </button>
+            ) : (
+              <a href="/login?from=/setlists" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground">
+                <LogIn className="h-3.5 w-3.5" />
+                Connexion
+              </a>
+            ))}
+            <a href="/setlists/new" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium">
               <Plus className="h-4 w-4" />
               Nouvelle
             </a>
