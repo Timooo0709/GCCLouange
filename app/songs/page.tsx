@@ -5,12 +5,15 @@ import { SongListClient } from "./SongListClient";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
 import type { SongIndexEntry, Theme } from "@/lib/types";
 
-export default function SongsPage() {
+export const dynamic = "force-static";
+
+export default async  function SongsPage() {
   const slugs = getSongSlugs();
   const songs: SongIndexEntry[] = slugs.map((slug) => {
     const { chordProSource: _, ...entry } = loadSong(slug);
     return entry;
   });
+
 
   const themesPath = path.join(process.cwd(), "content", "themes.json");
   const themes: Theme[] = JSON.parse(fs.readFileSync(themesPath, "utf-8")).themes;

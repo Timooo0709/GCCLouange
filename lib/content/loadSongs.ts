@@ -21,7 +21,8 @@ export function getSongSlugs(): string[] {
   return fs
     .readdirSync(SONGS_DIR)
     .filter((f) => f.endsWith(".cho") && !f.startsWith("_"))
-    .map((f) => f.replace(/\.cho$/, ""));
+    .map((f) => f.replace(/\.cho$/, ""))
+    .sort();
 }
 
 export function loadSong(slug: string): Song {
