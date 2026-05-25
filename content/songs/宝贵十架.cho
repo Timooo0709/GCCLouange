@@ -1,27 +1,20 @@
 {title: 宝贵十架}
 {title_pinyin: Bǎo guì shí jià}
-{key: C}
+{key: A}
 {tempo: 80}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-寶貴十架   bǎo guì shí jià
-PreciousCross
-〔林前11:24-25：西1:13：彼前29〕   lín qián xī bǐ qián
-EnglishTranslation:KevinCheng.JeffNelson，詞：曾祥怡、游智婷   EnglishTranslation KevinCheng JeffNelson cí céng xiáng yí yóu zhì tíng
-JeanLoGraceTseng,SandyYu
-•-72感恩地、敬拜地曲：曾祥怡GraceTseng   gǎn ēn dì jìng bài dì qǔ céng xiáng yí GraceTseng
-[F#m][D][B7][Esus4]主耶   zhǔ yē
-ThankYou
-[A]穌，我感謝你，[A7/E]祢的身[D]體，[D/E]為我而[A]捨。帶我出   sū wǒ gǎn xiè nǐ mí de shēn tǐ wéi wǒ ér shě dài wǒ chū
-Lord，—Youdiedforme.—Withlove,Yougave-YourlileforBroughtmefrom
-[D]黑暗[D/E]，進入光[A]明[E/G]國度[Fm]，[Bm]使我再[B]次能看見[E]。   hēi àn jìn rù guāng míng guó dù shǐ wǒ zài cì néng kàn jiàn
-dark-ness__in-totheworidoi-Ight，o-penecmyeyes—tosee—PraiseYouLord,Yourlovefor
-祢，[A7/E]你的寶[D]血，[D/E]為我而[A]流。寶貴十[D]架上[D/E]，醫治恩[A]典[E]湧流，   mí nǐ de bǎo xuè wéi wǒ ér liú bǎo guì shí jià shàng yī zhì ēn diǎn yǒng liú
-me.Yourbloodofgraceflowso-verme.Yourtend-ermer-cypoursdownfromCal-va-ry
-[Bm]使我完全得[E][A][D][Bm][B]自   shǐ wǒ wán quán dé zì
-Yourlovehassetmeso__free.Thepre-ciousCross,byitspow'rIamsetfree.WihmyallIwor-shipatYour—
-称。寶貴十架的救[A]恩，是称[D]所立的[B7]約，称[A/E]的愛永遠[E7]不會改[A]變。   chēng bǎo guì shí jià de jiù ēn shì chēng suǒ lì de yuē chēng de ài yǒng yuǎn bù huì gǎi biàn
-leet.Yoursav-inggrace,sose-cureinthispror-iseItsYourloveun-chang-ing-fonTE.
-Copynght2006StreamorPraiseMuSIC.CCLl#4702485
+{start_of_verse: 主歌 1/Couplet 1}
+[A]主耶稣，我感谢[A7/E]你，你的身[D]体，[D/E]为我而[A]舍。[E/G#]   zhǔ yē sū wǒ gǎn xiè nǐ nǐ de shēn tǐ wéi wǒ ér shě
+[F#m]带我出[C#/F]黑暗，[A/E]进入光明[F#m]国度，[Bm]使我再[B]次能看[E]见。   dài wǒ chū hēi àn jìn rù guāng míng guó dù shǐ wǒ zài cì néng kàn jiàn
 {end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+[A]主耶稣，我感谢[A7/E]你，你的宝[D]血，[D/E]为我而[A]流。[E/G#]   zhǔ yē sū wǒ gǎn xiè nǐ nǐ de bǎo xuè wéi wǒ ér liú
+[F#m]宝贵十[C#/F]架上，[A/E]医治恩[E]典涌流，[Bm]使我完[E]全得自[A]由。   bǎo guì shí jià shàng yī zhì ēn diǎn yǒng liú shǐ wǒ wán quán dé zì yóu
+{end_of_verse}
+
+{start_of_chorus: 副歌/Chorus}
+宝贵十架的[A/C#]大能[D]赐我生命，[Bm]主耶稣[B]我俯伏敬[E]拜祢。   bǎo guì shí jià de dà néng cì wǒ shēng mìng zhǔ yē sū wǒ fǔ fú jìng bài nǐ
+宝贵十架的救[A]恩，是祢[D]所立的[B7]约，[A/E]祢的爱永[E7]远不会改[A]变。   bǎo guì shí jià de jiù ēn shì nǐ suǒ lì de yuē nǐ de ài yǒng yuǎn bù huì gǎi biàn
+{end_of_chorus}

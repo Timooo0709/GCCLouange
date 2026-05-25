@@ -1,35 +1,21 @@
 {title: 主你是我力量}
 {title_pinyin: Zhǔ nǐ shì wǒ lì liàng}
-{key: C}
+{artist: 赞美之泉}
+{key: G}
 {tempo: 80}
 {language: zh}
+{themes: 力量, 磐石, 避难所}
 
 {start_of_verse: 主歌/Couplet}
-主祢是我力量   zhǔ mí shì wǒ lì liáng
-StreamofPraiss泉YouAreMyStrength   StreamofPraiss quán YouAreMyStrength
-EnglishTranslation:JeffNelson,KevinCheng
-•=80宣告地、敬拜地詞、曲：曾祥怡   xuān gào dì jìng bài dì cí qǔ céng xiáng yí
-GraceTseng
-{end_of_verse}
-
-{start_of_verse: 主歌/Couplet}
-[G][D][Em][G][D][Em][C]我的詩   wǒ de shī
-Youaremy
-歌，我的拯救，祢是我患難：中隨時的幫   gē wǒ de zhěng jiù mí shì wǒ huàn nán zhōng suí shí de bāng
-life，YouaremysongYou'remysal-va-tion，whenallmyhopeis
-[G]助。眾山怎樣圍繞耶路撒冷，祢   zhù zhòng shān zěn yàng wéi rào yē lù sā lěng mí
-gone.Asthemoun-tainssur-roundJe-ru-sa-lem，Your
+[G]我的诗[D]歌，我[Em]的拯[C]救，   wǒ de shī gē wǒ de zhěng jiù
+祢是[G]我患难[Em]中随时[C]的帮[D]助；   nǐ shì wǒ huàn nán zhōng suí shí de bāng zhù
+[G]众山怎样[C]围绕耶路撒冷，   zhòng shān zěn yàng wéi rào yē lù sā lěng
+祢[G/B]必围[Em]绕[Am]我到永[C/D]远。   nǐ bì wéi rào wǒ dào yǒng yuǎn
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-必圍繞我到永遠。主祢是我力量主祢是   bì wéi rào wǒ dào yǒng yuǎn zhǔ mí shì wǒ lì liáng zhǔ mí shì
-pres-encesur-roundsmethesame..Youaremystrength,oh—Lord,Youaremy
-我高臺，堅磐白我信靠祢必   wǒ gāo tái jiān pán bái wǒ xìn kào mí bì
-shield，mysong.—Mysol-idrock，—onYouIstand，I
-SeeamofTPraiseP讚美之泉   SeeamofTPraiseP zàn měi zhī quán
-不搖。主祢是我力量，主祢是   bù yáo zhǔ mí shì wǒ lì liáng zhǔ mí shì
-trustin.You.mystrength,ohLord，my
-避難所，我的盼望只在祢。   bì nán suǒ wǒ de pàn wàng zhī zài mí
-hid-ing—place.—Youaremyhope—Itrustin—You.
-［讚美的孩子最喜樂］   zàn měi de hái zǐ zuì xǐ lè
+主[G]祢是[C/D]我力[G]量，主[D]祢是[Em]我高[G]台，   zhǔ nǐ shì wǒ lì liáng zhǔ nǐ shì wǒ gāo tái
+[C]坚固[Am]磐石我[Dsus]信靠[D]祢，必[G]不动[D]摇；   jiān gù pán shí wǒ xìn kào nǐ bì bù dòng yáo
+主[G]祢是[D]我力[Em]量，主[G]祢是[C]我避[D]难所，   zhǔ nǐ shì wǒ lì liáng zhǔ nǐ shì wǒ bì nán suǒ
+我的[Em]盼望[G]只在[C]乎[D]祢[G]。   wǒ de pàn wàng zhī zài hū nǐ
 {end_of_chorus}

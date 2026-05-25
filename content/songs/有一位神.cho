@@ -1,21 +1,26 @@
 {title: 有一位神}
 {title_pinyin: Yǒu yí wèi shén}
-{key: C}
-{tempo: 80}
+{artist: 万美兰词 / 游智婷曲}
+{key: D}
+{tempo: 76}
 {language: zh}
+{themes: 创造, 宣告, 独一真神}
 
-{start_of_verse: 主歌/Couplet}
-有一位神   yǒu yī wèi shén
-詞：萬美蘭主内微信号/0Q:277[A]7622620转载整理   cí wàn měi lán zhǔ nèi wēi xìn hào Q zhuǎn zǎi zhěng lǐ
-曲：游智婷   qǔ yóu zhì tíng
-MarleneWan•=76溫柔有感情的SandyYu   MarleneWan wēn róu yǒu gǎn qíng de SandyYu
-[D]  [Fm]
-[A7]1.有[D]位物，也有   yǒu wèi wù yě yǒu
-2.有位物7，也有   yǒu wèi wù yě yǒu
-溫柔雙[A][A7][D]o   wēn róu shuāng o
-溫柔剥—   wēn róu bāo
-[F#m]審判一切惡，也有慈悲體貼的軟弱[A7]。有一位   shěn pàn yī qiè è yě yǒu cí bēi tǐ tiē de ruǎn ruò yǒu yī wèi
-榮耀，卻死在十架救人墮落。   róng yào què sǐ zài shí jià jiù rén duò luò
-[D]神我們的神*唯一的[G]神，名叫[A7]耶和華。有   shén wǒ mén de shén wéi yī de shén míng jiào yē hé huá yǒu
-[G]權威榮光，有恩典慈愛，是[Em]昔在今在永在的[D]神。   quán wēi róng guāng yǒu ēn diǎn cí ài shì xī zài jīn zài yǒng zài de shén
+{start_of_verse: 主歌 1/Couplet 1}
+[D]有一位神，有[F#m]权能创造宇宙万物，   yǒu yī wèi shén yǒu quán néng chuàng zào yǔ zhòu wàn wù
+[G]也有温柔双手，安[A]慰受伤灵[A7]魂；   yě yǒu wēn róu shuāng shǒu ān wèi shòu shāng líng hún
+[D]有一位神，有[F#m]权柄审判一切罪恶，   yǒu yī wèi shén yǒu quán bǐng shěn pàn yī qiè zuì è
+[G]也有慈悲，体贴[A7]人的软弱。   yě yǒu cí bēi tǐ tiē rén de ruǎn ruò
 {end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+[D]有一位神，有[F#m]权能创造宇宙万物，   yǒu yī wèi shén yǒu quán néng chuàng zào yǔ zhòu wàn wù
+[G]也有温柔双手，安[A]慰受伤灵[A7]魂；   yě yǒu wēn róu shuāng shǒu ān wèi shòu shāng líng hún
+[D]有一位神，高[F#m]坐在荣耀的宝座，   yǒu yī wèi shén gāo zuò zài róng yào de bǎo zuò
+[G]却死在十架，挽[A7]救人堕落。   què sǐ zài shí jià wǎn jiù rén duò luò
+{end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+[D]有一位神，我[F#m]们的神，[G]唯一的神，名叫[A7]耶和华；   yǒu yī wèi shén wǒ men de shén wéi yī de shén míng jiào yē hé huá
+[G]有权威荣光，有[F#m]恩典慈爱，是[Em]昔在今在[A7]永在的[D]神。   yǒu quán wēi róng guāng yǒu ēn diǎn cí ài shì xī zài jīn zài yǒng zài de shén
+{end_of_chorus}

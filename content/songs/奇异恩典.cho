@@ -1,28 +1,32 @@
 {title: 奇异恩典}
 {title_pinyin: Qí yì ēn diǎn}
+{artist: John Newton / Chris Tomlin}
 {key: E}
 {tempo: 80}
 {language: zh}
+{themes: 恩典, 释放, 救赎}
 
-{start_of_verse: 主歌/Couplet}
-奇异恩典（不再有捆绑）   qí yì ēn diǎn bù zài yǒu kǔn bǎng
-AmazingGrace（MyChainsAreGone）
-（所有*后面的歌词都可以挪到*处，唱歌词本身的音）传统美国旋律   suǒ yǒu hòu miàn de gē cí dōu kě yǐ nuó dào chù chàng gē cí běn shēn de yīn chuán tǒng měi guó xuán lǜ
-（副歌非每段都唱，可自行安排）JohnNewton（1779）&E.O.Excell（1900）词   fù gē fēi měi duàn dōu chàng kě zì xíng ān pái JohnNewton E O Excell cí
-（中文版5，英文版1）   zhōng wén bǎn yīng wén bǎn
-奇异恩典，何*等甘甜，我[E]罪已得赦*[B/E]免，   qí yì ēn diǎn hé děng gān tián wǒ zuì yǐ dé shè miǎn
-如此恩典，使*我敬畏，使我心得安*慰，   rú cǐ ēn diǎn shǐ wǒ jìng wèi shǐ wǒ xīn dé ān wèi
-我主应许•美*好无比，盼望永不失*去，   wǒ zhǔ yìng xǔ měi hǎo wú bǐ pàn wàng yǒng bù shī qù
-天地都会渐*渐废去，但我主永长*存，   tiān dì dōu huì jiàn jiàn fèi qù dàn wǒ zhǔ yǒng cháng cún
-[E/G]  [F#m]  [B7]
-前*我丧[G]，今被寻回，瞎眼今[B/E]得看*见[A/E]。   qián wǒ sàng jīn bèi xún huí xiā yǎn jīn dé kàn jiàn
-初*信之时，即蒙恩惠，真是何等宝*贵。   chū xìn zhī shí jí méng ēn huì zhēn shì hé děng bǎo guì
-有*主作为盾福分，我心不再畏*惧。   yǒu zhǔ zuò wèi dùn fú fēn wǒ xīn bù zài wèi jù
-我*的生命有主看顾，我永远属于*你。   wǒ de shēng mìng yǒu zhǔ kàn gù wǒ yǒng yuǎn shǔ yú nǐ
+{start_of_verse: 主歌 1/Couplet 1}
+[E]奇异恩典，[A/E]何等甘[E]甜，我罪[E]已得赦[B/E]免；   qí yì ēn diǎn hé děng gān tián wǒ zuì yǐ dé shè miǎn
+前[E]我失丧，[A/E]今被寻[E]回，瞎眼[E/B]今[B]得看[E]见。   qián wǒ shī sāng jīn bèi xún huí xiā yǎn jīn dé kàn jiàn
+{end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+如[E]此恩典，[A/E]使我敬[E]畏，使我[E]心得安[B/E]慰；   rú cǐ ēn diǎn shǐ wǒ jìng wèi shǐ wǒ xīn dé ān wéi
+初[E]信之时，[A/E]即蒙恩[E]惠，真是[E/B]何[B]等宝[E]贵。   chū xìn zhī shí jí méng ēn huì zhēn shì hé děng bǎo guì
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-[E]不再[E/G]有捆*绑，我已得释*放[G]，我救主[A/C]耶稣，已付代[E]*价，   bù zài yǒu kǔn bǎng wǒ yǐ dé shì fàng wǒ jiù zhǔ yē sū yǐ fù dài jià
-[E/G]丰富恩*典，今充满*[G]我，永恒*[F#m]爱，[Bsus4]奇异恩[E]*典。   fēng fù ēn diǎn jīn chōng mǎn wǒ yǒng héng ài qí yì ēn diǎn
-灵栖清泉制谱团队对照原版歌谱马音频制作   líng qī qīng quán zhì pǔ tuán duì duì zhào yuán bǎn gē pǔ mǎ yīn pín zhì zuò
+不再[E]有捆[A/E]绑，我已得释[E]放，我救[E/G#]主耶稣，已[A]付代价；[E/B]   bù zài yǒu kǔn bǎng wǒ yǐ dé shì fàng wǒ jiù zhǔ yē sū yǐ fù dài jià
+丰富[E/G#]恩典，今[A]充满我，[C#m7]永恒的[B7]爱，奇异[E]恩典。   fēng fù ēn diǎn jīn chōng mǎn wǒ yǒng héng de ài qí yì ēn diǎn
 {end_of_chorus}
+
+{start_of_verse: 主歌 3/Couplet 3}
+我[E]主应许，[A/E]美好无[E]比，盼望[E]永不失[B/E]去；   wǒ zhǔ yìng xǔ měi hǎo wú bǐ pàn wàng yǒng bù shī qù
+主[E]作我盾[A/E]牌，作我[E]福分，一生[E/B]与[B]我同[E]在。   zhǔ zuò wǒ dùn pái zuò wǒ fú fēn yī shēng yǔ wǒ tóng zài
+{end_of_verse}
+
+{start_of_verse: 主歌 4/Couplet 4}
+天[E]地都会[A/E]渐渐废[E]去，太阳[E]也将熄[B/E]灭；   tiān dì dōu huì jiàn jiàn fèi qù tài yáng yě jiāng xī miè
+但[E]神召我，[A/E]永远同[E]在，我永[E/B]远[B]属于[E]祢。   dàn shén zhào wǒ yǒng yuǎn tóng zài wǒ yǒng yuǎn shǔ yú nǐ
+{end_of_verse}

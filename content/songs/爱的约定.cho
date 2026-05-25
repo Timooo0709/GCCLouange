@@ -1,28 +1,29 @@
 {title: 爱的约定}
 {title_pinyin: Ài de yuē dìng}
+{artist: 周巽倩}
 {key: C}
-{tempo: 80}
+{tempo: 64}
 {language: zh}
+{themes: 圣诞, 恩典, 盼望}
 
-{start_of_verse: 主歌/Couplet}
-愛的約定   ài de yuē dìng
-SreamofTaiseP
-讚美之泉ThePromiseOfLove   zàn měi zhī quán ThePromiseOfLove
-中文譯詞：鄭懋柔詞、曲：周巽倩   zhōng wén yì cí zhèng mào róu cí qǔ zhōu xùn qiàn
-•=64感恩地、喜樂地MaryChikagamiLee   gǎn ēn dì xǐ lè dì MaryChikagamiLee
-[D5][E7][G7]1.兩千年前的夜晚[G/B]，耶穌降   liǎng qiān nián qián de yè wǎn yē sū jiàng
-2.在這浩瀚宇宙中，充滿神   zài zhè hào hàn yǔ zhòu zhōng chōng mǎn shén
-生在伯利恆。美好計畫中，神[Em]已定下[Dm7]永恆的[G]約。天父多麼愛世人，[G/B]賜下獨   shēng zài bó lì héng měi hǎo jì huà zhōng shén yǐ dìng xià yǒng héng de yuē tiān fù duō mó ài shì rén cì xià dú
-美麗的創造。未出生以前，神的愛已環繞我們。平安的聖誕，歡慶耶穌帶   měi lí de chuàng zào wèi chū shēng yǐ qián shén de ài yǐ huán rào wǒ mén píng ān de shèng dàn huān qìng yē sū dài
-生愛子耶穌[C/G]，使[F]愛和恩典[F/G]被彰顯[C]。   shēng ài zǐ yē sū shǐ ài hé ēn diǎn bèi zhāng xiǎn
-來永生盼望，為我們預備永恆的家。   lái yǒng shēng pàn wàng wéi wǒ mén yù bèi yǒng héng de jiā
+{start_of_verse: 主歌 1/Couplet 1}
+[C]两千年前的[C/E]夜晚，[F]耶稣降生在[G/B]伯利恒。   liǎng qiān nián qián de yè wǎn yē sū jiàng shēng zài bó lì héng
+[Am7]美好计划[Em7]中，神[Dm7]已定下永恒的[G]约。   měi hǎo jì huà zhōng shén yǐ dìng xià yǒng héng de yuē
+[C]天父多么爱[C/E]世人，[F]赐下独生[G/B]爱子耶稣，   tiān fù duō mó ài shì rén cì xià dú shēng ài zǐ yē sū
+[Am7]使爱和[Dm7]恩典[F/G]被彰[G]显。[C]   shǐ ài hé ēn diǎn bèi zhāng xiǎn
 {end_of_verse}
 
-{start_of_chorus: 副歌/Refrain 7}
-小小的嬰孩為愛來到世上，讓你我看見愛的約定被實現。   xiǎo xiǎo de yīng hái wéi ài lái dào shì shàng ràng nǐ wǒ kàn jiàn ài de yuē dìng bèi shí xiàn
-愛的約定-2以   ài de yuē dìng yǐ
-SoeamofTPraiseP讚美之泉   SoeamofTPraiseP zàn měi zhī quán
-困惑的人找到路[G/F]，[E7]不再迷惑和失望。耶穌為你我降生，為愛走   kùn huò de rén zhǎo dào lù bù zài mí huò hé shī wàng yē sū wéi nǐ wǒ jiàng shēng wéi ài zǒu
-向十架[F/G]。是否願打開心門，接受[F/Bb]這份愛到永遠。   xiàng shí jià shì fǒu yuàn dǎ kāi xīn mén jiē shòu zhè fèn ài dào yǒng yuǎn
-遠[F/A]。[Fm/Ab]到永[C/G]遠[F#][Dm7]，[Dm7][G]到永遠。   yuǎn dào yǒng yuǎn dào yǒng yuǎn
+{start_of_verse: 主歌 2/Couplet 2}
+[C]在这浩瀚[C/E]宇宙中，[F]充满神美丽[G/B]的创造。   zài zhè hào hàn yǔ zhòu zhōng chōng mǎn shén měi lì de chuàng zào
+[Am7]未出生以[Em7]前，神[Dm7]的爱已环绕我[G]们。   wèi chū shēng yǐ qián shén de ài yǐ huán rào wǒ men
+[C]平安的圣[C/E]诞，欢[F]庆耶稣带来[G/B]永生盼望，   píng ān de shèng dàn huān qìng yē sū dài lái yǒng shēng pàn wàng
+[Am7]为我们[Dm7]预备[F/G]永恒的[G]家。[C]   wéi wǒ men yù bèi yǒng héng de jiā
+{end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+小小的[F]婴孩为[G/F]爱来到世上，[Em7]让你我看[Am7]见爱的约定被实现。   xiǎo xiǎo de yīng hái wéi ài lái dào shì shàng ràng nǐ wǒ kàn jiàn ài de yuē dìng bèi shí xiàn
+[Dm7]困惑的人找[G]到路，[C]不再迷[C7]惑和失望。   kùn huò de rén zhǎo dào lù bù zài mí huò hé shī wàng
+[F]耶稣为你我降[G/F]生，为[Em7]爱走向十[Am7]架，   yē sū wèi nǐ wǒ jiàng shēng wéi ài zǒu xiàng shí jià
+是否愿[Dm7]打开心门，[F/G]接受这份[G]爱到永[C]远。   shì fǒu yuàn dǎ kāi xīn mén jiē shòu zhè fèn ài dào yǒng yuǎn
+[Dm7]到永[F/G]远，[Em7]到永[Am7]远，[Dm7]到永[F/G]远。[C]   dào yǒng yuǎn dào yǒng yuǎn dào yǒng yuǎn
 {end_of_chorus}

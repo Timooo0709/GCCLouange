@@ -7,27 +7,17 @@
 {youtube: https://youtu.be/...}
 
 {start_of_verse: Couplet 1}
-[G]Paroles du couplet [C]avec accords
-[Em]Au-dessus du mot [D]exact
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[C]Paroles du re[G]frain
-[D]Deuxième ligne [Em]du refrain
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[G]Deuxième couplet
-[C]Avec sa mélodie
 {end_of_verse}
 
 {start_of_bridge: Pont}
-[Am]Paroles du pont
-[F]Pont deuxième ligne
 {end_of_bridge}
 
----
-POUR UN CHANT CHINOIS (language: zh), utiliser ce format :
 
 {title: 标题}
 {title_pinyin: Biāotí}
@@ -39,7 +29,3 @@ POUR UN CHANT CHINOIS (language: zh), utiliser ce format :
 [C]你好世界   nǐ hǎo shì jiè
 {end_of_verse}
 
-Règles :
-- Accords entre [crochets], juste avant la syllabe où ils tombent
-- Sections : start_of_verse / start_of_chorus / start_of_bridge / start_of_prechorus / start_of_intro / start_of_outro
-- Chinois : 3 espaces minimum entre caractères et pinyin sur la même ligne

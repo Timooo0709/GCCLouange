@@ -1,16 +1,21 @@
 {title: 云上太阳}
 {title_pinyin: Yún shàng tài yáng}
-{key: C}
+{artist: 泥土音乐}
+{key: D}
 {tempo: 80}
 {language: zh}
+{themes: 盼望, 信心, 保护}
 
 {start_of_verse: 主歌/Couplet}
-云上太阳   yún shàng tài yáng
-吴幸肃词   wú xìng sù cí
-[D]无论是住[A/C]在[Bm]美丽的高山[D/A]，[G]或是躺卧[D/F]在[Em]阴暗的幽[A7]谷。   wú lùn shì zhù zài měi lì de gāo shān huò shì tǎng wò zài yīn àn de yōu gǔ
-[D]当你抬起头[A/C]，[Bm]你将会发现[D/A]，[G]主已为你[A]我而预[D]备。云上   dāng nǐ tái qǐ tóu nǐ jiāng huì fā xiàn zhǔ yǐ wèi nǐ wǒ ér yù bèi yún shàng
-[D]太[A/C]阳已总！[Bm]不改变[D/A]，虽然[G]小雨[A]酒在脸[D]上。云上   tài yáng yǐ zǒng bù gǎi biàn suī rán xiǎo yǔ jiǔ zài liǎn shàng yún shàng
-[G#]  [D/A]  [Asus4]  [A7]
-[D]太[A/C]阳它总[Bm]不改变！哈[D/A]！[D/F]它[A7]不改[D]变。   tài yáng tā zǒng bù gǎi biàn hā tā bù gǎi biàn
-灵栖清泉制谱团队参照原版音频I歌谱制作，无商业用途，请勿翻印   líng qī qīng quán zhì pǔ tuán duì cān zhào yuán bǎn yīn pín I gē pǔ zhì zuò wú shāng yè yòng tú qǐng wù fān yìn
+无论是[D]住在[A/C#]美丽的[Bm7]高山，[D/A]   wú lùn  shì zhù zài měi lì de gāo shān
+或是[G]躺卧在[D/F#]阴暗的[Em7]幽谷；[A7]   huò  shì tǎng wò zài yīn àn de yōu gǔ
+当你[D]抬起头，[A/C#]你将会[Bm7]发现，[D/A]   dāng nǐ  tái qǐ tóu nǐ jiāng huì fā xiàn
+主[G]已为你[A7]我而预[D]备。   zhǔ  yǐ wèi nǐ wǒ ér yù bèi
 {end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+云上太[D]阳它[A/C#]总不改[Bm7]变，[D/A]   yún  shàng tài yáng tā zǒng bù gǎi biàn
+虽然[G]小雨[A7]洒在脸[D]上；   suī  rán xiǎo yǔ sǎ zài liǎn shàng
+云上太[D]阳它[A/C#]总不改[Bm7]变，[D/A]   yún  shàng tài yáng tā zǒng bù gǎi biàn
+哈！[G]它[A7]总不改[D]变。   hā  tā zǒng bù gǎi biàn
+{end_of_chorus}

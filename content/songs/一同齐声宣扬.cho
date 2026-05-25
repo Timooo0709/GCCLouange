@@ -7,22 +7,36 @@
 {themes: 圣诞, 赞美, 颂赞}
 
 {start_of_intro: 前奏/Intro}
-[A]  [D/A]  [A]  [D/A]  [A]
+[A]  [D/A]  [A]  [D/A]
 {end_of_intro}
 
-{start_of_verse: 主歌/Couplet}
-[A]  [A]  [D/A]  [D/A]
-[A]耶稣降生，耶稣降生，   yē sū jiàng shēng yē sū jiàng shēng
-普[E]天庆典，天国庆典，[D]千年前，两千年前，[A]为你，为你，   pǔ tiān qìng diǎn tiān guó qìng diǎn qiān nián qián liǎng qiān nián qián wèi nǐ wèi nǐ
-为你，为你，[A]小君王，小君王，[E]在马槽里，在马槽里，   wèi nǐ wèi nǐ xiǎo jūn wáng xiǎo jūn wáng zài mǎ cáo lǐ zài mǎ cáo lǐ
+{start_of_verse: 主歌 1/Couplet 1}
+[A]耶稣降生，[A]耶稣降生，   yē sū jiàng shēng yē sū jiàng shēng
+[E]普天同庆，[E]普天同庆，   pǔ tiān tóng qìng pǔ tiān tóng qìng
+[D]两千年前，[D]两千年前，   liǎng qiān nián qián liǎng qiān nián qián
+[A]为你为我，[A]为你为我。   wèi nǐ wèi wǒ wèi nǐ wèi wǒ
+[A]小小君王，[A]小小君王，   xiǎo xiǎo jūn wáng xiǎo xiǎo jūn wáng
+[E]在马槽里，[E]在马槽里，   zài mǎ cáo lǐ zài mǎ cáo lǐ
+[D]天使天军，[D]天使天军，   tiān shǐ tiān jūn tiān shǐ tiān jūn
+[A]报好消息，[A]报好消息。   bào hǎo xiāo xi bào hǎo xiāo xi
 {end_of_verse}
 
-{start_of_bridge: 过渡/Pont}
-[D]天使天军，天使天[A]军，报好消息，让我们   tiān shǐ tiān jūn tiān shǐ tiān jūn bào hǎo xiāo xi ràng wǒ men
-{end_of_bridge}
+{start_of_verse: 主歌 2/Couplet 2}
+[A]耶稣降生，[A]耶稣降生，   yē sū jiàng shēng yē sū jiàng shēng
+[E]普天同庆，[E]普天同庆，   pǔ tiān tóng qìng pǔ tiān tóng qìng
+[D]两千年前，[D]两千年前，   liǎng qiān nián qián liǎng qiān nián qián
+[A]为你为我，[A]为你为我。   wèi nǐ wèi wǒ wèi nǐ wèi wǒ
+[A]小小君王，[A]小小君王，   xiǎo xiǎo jūn wáng xiǎo xiǎo jūn wáng
+[E]在马槽里，[E]在马槽里，   zài mǎ cáo lǐ zài mǎ cáo lǐ
+[D]天使天军，[D]天使天军，   tiān shǐ tiān jūn tiān shǐ tiān jūn
+[E]让我们   ràng wǒ men
+{end_of_verse}
 
-{start_of_chorus: 副歌/Refrain}
-[A]一同齐声宣扬，传报[D]大好的消[A]息，耶稣降生在世上，   yī tóng qí shēng xuān yáng chuán bào dà hǎo de xiāo xi yē sū jiàng shēng zài shì shàng
-[A]让你我有盼望，[F#m]重新中充满祝福，[D]中充满祝福，   ràng nǐ wǒ yǒu pàn wàng chóng xīn zhōng chōng mǎn zhù fú zhōng chōng mǎn zhù fú
-[D]Mer-ry [A]Christ-[E]mas to-[A]day！
+{start_of_chorus: 副歌 1/Refrain 1}
+[A]一同齐声宣扬，传报[D]大好的消[A]息。耶稣   yī tóng qí shēng xuān yáng chuán bào dà hǎo de xiāo xi yē sū
+[D]降生在世上，使你[C#]我有盼望，[F#m]黑暗[D]中充满亮[E]光。让我们   jiàng shēng zài shì shàng shǐ nǐ wǒ yǒu pàn wàng hēi àn zhōng chōng mǎn liàng guāng ràng wǒ men
+{end_of_chorus}
+
+{start_of_chorus: 副歌 2/Refrain 2}
+[A]一同齐声赞美，名叫[D]平安的君[A]王。耶稣   yī tóng qí shēng zàn měi míng jiào píng ān de jūn wáng yē sū
 {end_of_chorus}

@@ -1,34 +1,39 @@
 {title: 活出爱}
 {title_pinyin: Huó chū ài}
+{artist: 盛晓玫}
 {key: C}
 {tempo: 80}
 {language: zh}
+{themes: 门徒, 宣教, 爱}
 
-{start_of_verse: 主歌/Couplet}
-活出愛   huó chū ài
-AmySand
+{start_of_verse: 主歌 1/Couplet 1 (Key of C)}
+有一份[C]爱从天而[G/B]来，比[Am]山高，比[Em]海深，   yǒu yī fèn ài cóng tiān ér lái bǐ shān gāo bǐ hǎi shēn
+测不[F]透，摸不[C/E]着，却看[Dm7]得[G]见；   cè bù tòu mō bù zháo què kàn de jiàn
+因为有[C]你，因为有[G/B]我，甘[Am]心给，用心[Em]爱，   yīn wéi yǒu nǐ yīn wéi yǒu wǒ gān xīn gěi yòng xīn ài
+把[F]心中这一份[G]爱活出[C]来。   bǎ xīn zhōng zhè yī fèn ài huó chū lái
 {end_of_verse}
 
-{start_of_verse: 主歌/Couplet}
-有一份[C]愛從天而[G]來，[F]海[C]深。測不   yǒu yī fèn ài cóng tiān ér lái hǎi shēn cè bù
-[F]透、摸不[C/E]著、卻看得[Dm]見[G]。因為有[C]你，因為有[G]我，甘心   tòu mō bù zhù què kàn dé jiàn yīn wéi yǒu nǐ yīn wéi yǒu wǒ gān xīn
-{end_of_verse}
-
-{start_of_chorus: 副歌/Refrain}
-給，用心愛。把心中這一份愛活比來。耶穌的   gěi yòng xīn ài bǎ xīn zhōng zhè yī fèn ài huó bǐ lái yē sū de
-[F]愛激勵[G]我，敞開[Em]我的生[Am]命。讓自[F]己成為[G]別祝   ài jī lì wǒ chǎng kāi wǒ de shēng mìng ràng zì jǐ chéng wéi bié zhù
-福。耶穌的[F]愛點燃[G]我，心中[Em]熊熊愛[Am]火。我們—   fú yē sū de ài diǎn rán wǒ xīn zhōng xióng xióng ài huǒ wǒ mén
-[Dm]起向世[G]界活愛[C]中.。中愛.[Ab][C][G#/B][F#/A][A]。   qǐ xiàng shì jiè huó ài zhōng zhōng ài
+{start_of_chorus: 副歌 1/Refrain 1 (Key of C)}
+耶稣的[F]爱激励[G]我，敞开[Em]我的生[Am]命，   yē sū de ài jī lì wǒ chǎng kāi wǒ de shēng mìng
+让自[F]己成为[G]别人的祝[C]福；[C7]   ràng zì jǐ chéng wéi bié rén de zhù fú
+耶稣的[F]爱点燃[G]我，心中[Em]熊熊爱[Am]火，   yē sū de ài diǎn rán wǒ xīn zhōng xióng xióng ài huǒ
+我们[Dm7]一起向世[G]界活出[C]爱。   wǒ men yī qǐ xiàng shì jiè huó chū ài
 {end_of_chorus}
 
-{start_of_verse: 主歌/Couplet}
-有一份愛從天而來•比山高•比海深。測不   yǒu yī fèn ài cóng tiān ér lái bǐ shān gāo bǐ hǎi shēn cè bù
-[G]透、摸不[D/F]著、卻看得[Em]見[A]。因為有[D]你，因為有[A]我．甘心   tòu mō bù zhù què kàn dé jiàn yīn wéi yǒu nǐ yīn wéi yǒu wǒ gān xīn
+{start_of_verse: 主歌 2/Couplet 2 (Key of D)}
+有一份[D]爱从天而[A/C#]来，比[Bm]山高，比[F#m]海深，   yǒu yī fèn ài cóng tiān ér lái bǐ shān gāo bǐ hǎi shēn
+测不[G]透，摸不[D/F#]着，却看[Em7]得[A]见；   cè bù tòu mō bù zháo què kàn de jiàn
+因为有[D]你，因为有[A/C#]我，甘[Bm]心给，用心[F#m]爱，   yīn wéi yǒu nǐ yīn wéi yǒu wǒ gān xīn gěi yòng xīn ài
+把[G]心中这一份[A]爱活出[D]来。   bǎ xīn zhōng zhè yī fèn ài huó chū lái
 {end_of_verse}
 
-{start_of_chorus: 副歌/Refrain}
-給，用心愛。把心中這一份愛活出來。耶穌的   gěi yòng xīn ài bǎ xīn zhōng zhè yī fèn ài huó chū lái yē sū de
-[G]愛激勵[A]我，敞開[F#m]我的生[Bm]命。讓[G]自成為[A]別人祝   ài jī lì wǒ chǎng kāi wǒ de shēng mìng ràng zì chéng wéi bié rén zhù
-[D]福。耶穌的[G]愛點燃[A]我，心中   fú yē sū de ài diǎn rán wǒ xīn zhōng
-熊態愛[Bm]火。我們一[Em]起向世[Asus4]界[A]活愛[D]0•。   xióng tài ài huǒ wǒ mén yī qǐ xiàng shì jiè huó ài
+{start_of_chorus: 副歌 2/Refrain 2 (Key of D)}
+耶稣的[G]爱激励[A]我，敞开[F#m]我的生[Bm]命，   yē sū de ài jī lì wǒ chǎng kāi wǒ de shēng mìng
+让自[G]己成为[A]别人的祝[D]福；[D7]   ràng zì jǐ chéng wéi bié rén de zhù fú
+耶稣的[G]爱点燃[A]我，心中[F#m]熊熊爱[Bm]火，   yē sū de ài diǎn rán wǒ xīn zhōng xióng xióng ài huǒ
+我们[Em7]一起向世[A]界活出[D]爱。   wǒ men yī qǐ xiàng shì jiè huó chū ài
+{end_of_chorus}
+
+{start_of_chorus: 尾声/Coda}
+我们[Em7]一起向世[A]界活出[D]爱。   wǒ men yī qǐ xiàng shì jiè huó chū ài
 {end_of_chorus}

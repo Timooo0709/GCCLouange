@@ -1,32 +1,27 @@
 {title: 在你宝座前}
 {title_pinyin: Zài nǐ bǎo zuò qián}
-{key: C}
-{tempo: 80}
+{artist: 游智婷词 / 曾祥怡曲}
+{key: A}
+{tempo: 146}
 {language: zh}
+{themes: 敬拜, 赞美, 宝座}
 
-{start_of_verse: 主歌/Couplet}
-在称寶座前   zài chēng bǎo zuò qián
-BeforeYourThrone
-〔啟7:9-17：啟19:1）   qǐ qǐ
-EnglishTranslation:SOP,TinaWu詞：游智婷SandyYu   EnglishTranslation SOP TinaWu cí yóu zhì tíng SandyYu
-J-146熱情讚美地曲：曾祥怡GraceTseng   J rè qíng zàn měi dì qǔ céng xiáng yí GraceTseng
+{start_of_verse: 主歌 1/Couplet 1}
+[A]在你宝座[E/G#]前，我[D/F#]献上我的敬[E/G#]拜，   zài nǐ bǎo zuò qián wǒ xiàn shàng wǒ de jìng bài
+我[D2]高举双手，[A/C#]扬声敬拜，   wǒ gāo jǔ shuāng shǒu yáng shēng jìng bài
+愿[D]救恩[Bm7]归于宝座上的[E4]神。[E7]   yuàn jiù ēn guī yú bǎo zuò shàng de shén
 {end_of_verse}
 
-{start_of_intro: 前奏/Intro}
-1.在[A]称寶座[A/G]前，我[F#m]獻上我[A/E]的敬[A]拜；我高[A/G]舉雙[F#m]手揚聲[A/E]敬拜，願   zài chēng bǎo zuò qián wǒ xiàn shàng wǒ de jìng bài wǒ gāo jǔ shuāng shǒu yáng shēng jìng bài yuàn
-2.在称寶座前，眾天使俯伏拜；讓萬國萬邦B在天上說，願   zài chēng bǎo zuò qián zhòng tiān shǐ fǔ fú bài ràng wàn guó wàn bāng B zài tiān shàng shuō yuàn
-1.Standbe-fore2.Standbe-foreYourYourthrone，throne.anggiveYouan-gelsbowwOrworship.ship.LetliftallYourmyhanasandna-tionsshoutYourglo-ry.singun-toYou.Sal-Sal-
-{end_of_intro}
+{start_of_verse: 主歌 2/Couplet 2}
+[A]在你宝座[E/G#]前，众[D/F#]天使俯伏敬[E/G#]拜，   zài nǐ bǎo zuò qián zhòng tiān shǐ fǔ fú jìng bài
+让[D2]万国万邦，[A/C#]在天上说，   ràng wàn guó wàn bāng zài tiān shàng shuō
+愿[D]救恩[Bm7]归于宝座上的[E4]神。[E7]   yuàn jiù ēn guī yú bǎo zuò shàng de shén
+{end_of_verse}
 
-{start_of_chorus: 副歌/Refrain 1}
-恩與寶座上的神。神。哈利路亞，   ēn yǔ bǎo zuò shàng de shén shén hā lì lù yā
-恩歸寶座   ēn guī bǎo zuò
-va-tiont0theOne—onthethrone.Hal-le•wu-jah，—
-va-tiontotheOneonthethrone.
-哈利路亞，哈利路亞，哈利路亞！救恩、榮耀，都   hā lì lù yā hā lì lù yā hā lì lù yā jiù ēn róng yào dōu
-—Hal-le-lu-jah，-Hal-le-lu-jah，—-Hal-le-uu-jahl_Salva-tion，-glo-ry，be-
-歸與我們的神。哈利路亞，哈利路亞，哈利路亞，哈利路亞！   guī yǔ wǒ mén de shén hā lì lù yā hā lì lù yā hā lì lù yā hā lì lù yā
-longtoYouonthethrone.Hal-le-lu-jah，—Hal-le-lu-jah，—Hal-le-lu-jah，Hal-le-lu-jah！—
-頌讚、權能，都歸與們的神，直到永永遠遠。   sòng zàn quán néng dōu guī yǔ mén de shén zhí dào yǒng yǒng yuǎn yuǎn
-[A]
+{start_of_chorus: 副歌/Refrain}
+哈利路[A2]亚！哈利路[E/G#]亚！哈利路[F#m]亚！哈利路[A/E]亚！   hā lì lù yà hā lì lù yà hā lì lù yà hā lì lù yà
+[D2]救恩荣[A/C#]耀，都[Bm7]归于我们的[E]神。   jiù ēn róng yào dōu guī yú wǒ men de shén
+哈利路[A2]亚！哈利路[E/G#]亚！哈利路[F#m]亚！哈利路[A/E]亚！   hā lì lù yà hā lì lù yà hā lì lù yà hā lì lù yà
+[D2]颂赞权[A/C#]能，都[Bm7]归于我们的[E]神，   sòng zàn quán néng dōu guī yú wǒ men de shén
+直到永永远[A2]远。   zhí dào yǒng yǒng yuǎn yuǎn
 {end_of_chorus}

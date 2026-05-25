@@ -1,40 +1,26 @@
 {title: 从这代到那代}
 {title_pinyin: Cóng zhè dài dào nà dài}
-{key: C}
-{tempo: 80}
+{key: E}
+{tempo: 68}
 {language: zh}
 
 {start_of_verse: 主歌/Couplet}
-從這代到那代   cóng zhè dài dào nà dài
-SteanofSPaiseP
-FromNowtillEvermore讚美之泉   FromNowtillEvermore zàn měi zhī quán
-〔詩29:1-2,24:7,145:4；該2:9〕   shī gāi
-EnglishTranslation:SOP詞、曲：曾祥怡、游智婷   EnglishTranslation SOP cí qǔ céng xiáng yí yóu zhì tíng
-•=68敬拜地、高舉神地GraceTseng,SandyYu   jìng bài dì gāo jǔ shén dì GraceTseng SandyYu
+[E]要将荣耀能[C#m]力，归给耶和[F#m]华。   yào jiāng róng yào néng lì guī gěi yē hé huá
+祂[F#m]名所当得的，荣耀[Bsus4]归给[B]祂。   tā míng suǒ dāng dé de róng yào guī gěi tā
+不分[E]种族国[C#m]家，齐声来颂[F#m]扬，   bù fēn zhǒng zú guó jiā qí shēng lái sòng yáng
+在宝[B]座前，高举[A/B]双[B]手。   zài bǎo zuò qián gāo jǔ shuāng shǒu
 {end_of_verse}
 
-{start_of_intro: 前奏/Intro}
-要將榮耀能力，   yào jiāng róng yào néng lì
-VerseAllglo-ryandpow-er
-歸給耶和華。祂[F#m]名所當得的，榮耀歸給祂。不[E]分種族國家，   guī gěi yē hé huá tā míng suǒ dāng dé de róng yào guī gěi tā bù fēn zhǒng zú guó jiā
-un-toYou,myking,Yournameo-verallnames,wor-thy•ofallpraise.AIltribes,tongues,andnations
-{end_of_intro}
-
-{start_of_chorus: 副歌/Refrain}
-齊聲來頌揚，在寶座前，高舉雙手。從這代到那   qí shēng lái sòng yáng zài bǎo zuò qián gāo jǔ shuāng shǒu cóng zhè dài dào nà
-glo-ri-fyYourname.Be-foreYourthrone，-weliftOurhands.FromnOWtillev-er-
-代，萬民不停[B/D]頌讚[C#m]，從地極到地極，萬民歡然獻祭，從列國到列邦，齊尊崇祢[B/D]為   dài wàn mín bù tíng sòng zàn cóng dì jí dào dì jí wàn mín huān rán xiàn jì cóng liè guó dào liè bāng qí zūn chóng mí wéi
-more,un-ceas-ingpraiseweraise.Welaydownallourcrowns,allglo-ryun-toYou.Allna-tionsjoinasone,ex-altYournameon
+{start_of_chorus: 副歌/Chorus}
+从这代到那[E]代，万民不停[B/D#]颂[C#m]赞，   cóng zhè dài dào nà dài wàn mín bù tíng sòng zàn
+从地极到地[A]极，万民欢然[B]献祭，   cóng dì jí dào dì jí wàn mín huān rán xiàn jì
+从列国到列[E]邦，齐尊崇祢[B/D#]为[C#m]王，   cóng liè guó dào liè bāng qí zūn chóng nǐ wéi wáng
+高唱哈[F#m]利路[A/B]亚，齐[E]敬拜弥赛亚。   gāo chàng hā lì lù yà qí jìng bài mí sài yà
 {end_of_chorus}
 
-{start_of_bridge: 桥段/Pont}
-王，高唱哈利路亞，齊敬拜彌賽亞。眾城門，抬起頭，榮耀   wáng gāo chàng hā lì lù yā qí jìng bài mí sài yā zhòng chéng mén tái qǐ tóu róng yào
-high.Wesing"Hal-le-lu-jah”，wepraisetheris-enking.O-penwide，allyougates,andthe
-君王將要進來，末後的榮耀大過先前的。眾城門，抬起頭，榮耀   jūn wáng jiāng yào jìn lái mò hòu de róng yào dà guò xiān qián de zhòng chéng mén tái qǐ tóu róng yào
-glo-riouskingshallcomeHisglo-rywill-begreat-erthanbe-fore.O-penwide,an-cientgates,andthe
+{start_of_bridge: 桥段/Bridge}
+[A]众城门，抬起头，荣耀[E/G#]君王将要进[F#m]来，   zhòng chéng mén tái qǐ tóu róng yào jūn wáng jiāng yào jìn lái
+末后的荣[A/B]耀大过先前[E]的。   mò hòu de róng yào dà guò xiān qián de
+[A]众城门，抬起头，荣耀[E/G#]君王将要进[F#m]来，   zhòng chéng mén tái qǐ tóu róng yào jūn wáng jiāng yào jìn lái
+万国敬[Bsus4]拜如众[B]水的声音。   wàn guó jìng bài rú zhòng shuǐ de shēng yīn
 {end_of_bridge}
-
-{start_of_chorus: 副歌/Refrain 4}
-君王將要進來，萬國敬拜如眾水的聲音。從這代到那   jūn wáng jiāng yào jìn lái wàn guó jìng bài rú zhòng shuǐ de shēng yīn cóng zhè dài dào nà
-glo-riouskingshallcome_in.Hislightandglo-rycov-eralltheearth..Fromnowtillev-er
-{end_of_chorus}
