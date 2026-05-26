@@ -13,10 +13,13 @@ interface SongContent {
 export function SetlistFullPDF({
   setlist,
   contents,
+  language = "fr",
 }: {
   setlist: FSSetlist;
   contents: Record<string, SongContent>;
+  language?: string;
 }) {
+  const toggle = false; // Unused but kept to align structure
   const sorted = [...setlist.items]
     .sort((a, b) => a.position - b.position)
     .filter((item) => !!contents[item.songSlug]);
@@ -38,6 +41,7 @@ export function SetlistFullPDF({
             useJianpu={false}
             structureOverride={item.structureOverride}
             sectionNotes={item.sectionNotes ?? {}}
+            language={language}
           />
         );
       })}

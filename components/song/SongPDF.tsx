@@ -2,6 +2,8 @@ import {
   Document, Page, Text, View, StyleSheet, Font,
 } from "@react-pdf/renderer";
 import type { ChordProAST, ChordProSection, Token } from "@/lib/types";
+import frTranslations from "@/locales/fr.json";
+import zhTranslations from "@/locales/zh-CN.json";
 
 // ─── Fonts ───────────────────────────────────────────────────────────────────
 
@@ -85,10 +87,7 @@ function isCJK(ch: string) {
   return (cp >= 0x4e00 && cp <= 0x9fff) || (cp >= 0x3400 && cp <= 0x4dbf);
 }
 
-const SECTION_LABELS: Record<string, string> = {
-  verse: "Couplet", chorus: "Refrain", bridge: "Pont",
-  intro: "Intro", outro: "Outro", prechorus: "Pré-refrain", other: "Section",
-};
+// Section labels are loaded dynamically from translation resource files
 
 // ─── French line ──────────────────────────────────────────────────────────────
 
@@ -225,15 +224,18 @@ function JianpuPDFLine({ tokens, jianpu, pinyin, showChords, showPinyin }: {
 
 // ─── Section ──────────────────────────────────────────────────────────────────
 
-function SectionView({ section, isZh, useJianpu, showChords, showPinyin, note }: {
+function SectionView({ section, isZh, useJianpu, showChords, showPinyin, note, language = "fr" }: {
   section: ChordProSection;
   isZh: boolean;
   useJianpu: boolean;
   showChords: boolean;
   showPinyin: boolean;
   note?: string;
+  language?: string;
 }) {
-  const label = section.name || SECTION_LABELS[section.type] || section.type;
+  const locales: Record<string, any> = language === "zh-CN" ? zhTranslations : frTranslations;
+  const sectionsObj = locales.songs?.sections ?? {};
+  const label = section.name || sectionsObj[section.type] || section.type;
   return (
     <View style={s.section} wrap={false}>
       <Text style={s.sectionLabel}>{label.toUpperCase()}</Text>
@@ -278,6 +280,7 @@ export interface SongPDFProps {
   useJianpu?: boolean;
   structureOverride?: string[] | null;
   sectionNotes?: Record<string, string>;
+  language?: string;
 }
 
 export function SongPDFPage({
@@ -287,6 +290,7 @@ export function SongPDFPage({
   useJianpu = false,
   structureOverride = null,
   sectionNotes = {},
+  language = "fr",
 }: SongPDFProps) {
   const isZh = ast.metadata.language === "zh";
   const canUseJianpu = isZh && useJianpu;
@@ -319,6 +323,7 @@ export function SongPDFPage({
           showChords={showChords}
           showPinyin={isZh ? showPinyin : false}
           note={sectionNotes[section.id]}
+          language={language}
         />
       ))}
 

@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import Fuse from "fuse.js";
 import { Search, X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import type { SongIndexEntry, Theme } from "@/lib/types";
 
 interface SongListClientProps {
@@ -12,6 +13,10 @@ interface SongListClientProps {
 }
 
 export function SongListClient({ songs, themes }: SongListClientProps) {
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const isZhLocale = currentLang === "zh-CN";
+
   const [query, setQuery] = useState("");
   const [langFilter, setLangFilter] = useState<"all" | "fr" | "zh">("all");
   const [themeFilter, setThemeFilter] = useState("");
@@ -67,7 +72,7 @@ export function SongListClient({ songs, themes }: SongListClientProps) {
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
         <input
           type="search"
-          placeholder="Rechercher un chant ou un artiste…"
+          placeholder={t("songs.list.searchPlaceholder")}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className="w-full pl-9 pr-8 py-2 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"
@@ -75,7 +80,7 @@ export function SongListClient({ songs, themes }: SongListClientProps) {
         {query && (
           <button
             onClick={() => setQuery("")}
-            aria-label="Effacer la recherche"
+            aria-label={t("songs.list.clearSearch")}
             className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
           >
             <X className="h-4 w-4" />
@@ -97,7 +102,7 @@ export function SongListClient({ songs, themes }: SongListClientProps) {
                   : "bg-muted text-muted-foreground hover:bg-muted/70"
               }`}
             >
-              {lang === "all" ? "Tous" : lang === "fr" ? "FR" : "中文"}
+              {lang === "all" ? t("songs.list.allLanguages") : lang === "fr" ? "FR" : "中文"}
             </button>
           ))}
         </div>
@@ -108,10 +113,10 @@ export function SongListClient({ songs, themes }: SongListClientProps) {
           onChange={(e) => setThemeFilter(e.target.value)}
           className="px-2.5 py-1 rounded text-xs bg-muted text-foreground border border-border focus:outline-none focus:ring-2 focus:ring-primary/30 cursor-pointer"
         >
-          <option value="">Tous les thèmes</option>
-          {availableThemes.map((t) => (
-            <option key={t.slug} value={t.slug}>
-              {t.name_fr}
+          <option value="">{t("songs.list.filterTheme")}</option>
+          {availableThemes.map((themeItem) => (
+            <option key={themeItem.slug} value={themeItem.slug}>
+              {isZhLocale ? themeItem.name_zh : themeItem.name_fr}
             </option>
           ))}
         </select>
@@ -121,7 +126,7 @@ export function SongListClient({ songs, themes }: SongListClientProps) {
             onClick={reset}
             className="px-2.5 py-1 rounded text-xs text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2"
           >
-            Réinitialiser
+            {t("common.buttons.reset")}
           </button>
         )}
       </div>
@@ -129,14 +134,14 @@ export function SongListClient({ songs, themes }: SongListClientProps) {
       {/* Compteur */}
       <p className="text-xs text-muted-foreground mb-3">
         {filtered.length === songs.length
-          ? `${songs.length} chant${songs.length > 1 ? "s" : ""}`
-          : `${filtered.length} résultat${filtered.length !== 1 ? "s" : ""} sur ${songs.length}`}
+          ? t("songs.list.counter", { count: songs.length })
+          : t("songs.list.counterFiltered", { count: filtered.length, filteredCount: filtered.length, totalCount: songs.length })}
       </p>
 
       {/* Liste */}
       {filtered.length === 0 ? (
         <p className="text-sm text-muted-foreground text-center py-10">
-          Aucun chant trouvé.
+          {t("songs.list.noSongsFound")}
         </p>
       ) : (
         <ul className="space-y-2">
@@ -159,13 +164,13 @@ export function SongListClient({ songs, themes }: SongListClientProps) {
                   {song.themes.length > 0 && (
                     <div className="flex flex-wrap gap-1 mt-1.5">
                       {song.themes.slice(0, 3).map((slug) => {
-                        const theme = availableThemes.find((t) => t.slug === slug);
+                        const theme = availableThemes.find((themeObj) => themeObj.slug === slug);
                         return (
                           <span
                             key={slug}
                             className="text-xs text-muted-foreground bg-muted px-1.5 py-0.5 rounded"
                           >
-                            {theme?.name_fr ?? slug}
+                            {(isZhLocale ? theme?.name_zh : theme?.name_fr) ?? slug}
                           </span>
                         );
                       })}

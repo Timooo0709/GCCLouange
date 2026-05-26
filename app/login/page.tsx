@@ -3,8 +3,10 @@
 import { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { signIn } from "@/lib/firebase/auth";
+import { useTranslation } from "react-i18next";
 
 function LoginForm() {
+  const { t } = useTranslation();
   const router = useRouter();
   const params = useSearchParams();
   const from = params.get("from") ?? "/setlists";
@@ -22,7 +24,7 @@ function LoginForm() {
       await signIn(email, password);
       router.push(from);
     } catch {
-      setError("Identifiants incorrects. Vérifie l'email et le mot de passe.");
+      setError(t("login.errorInvalid"));
     } finally {
       setLoading(false);
     }
@@ -32,16 +34,16 @@ function LoginForm() {
     <div className="min-h-screen bg-background flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <div className="mb-8 text-center">
-          <h1 className="text-xl font-bold text-foreground">GCC Louange</h1>
+          <h1 className="text-xl font-bold text-foreground">{t("login.title")}</h1>
           <p className="text-sm text-muted-foreground mt-1">
-            Connexion présidents de séance
+            {t("login.subtitle")}
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-foreground mb-1">
-              Email
+              {t("login.emailLabel")}
             </label>
             <input
               type="email"
@@ -50,13 +52,13 @@ function LoginForm() {
               required
               autoComplete="email"
               className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"
-              placeholder="email@example.com"
+              placeholder={t("login.emailPlaceholder")}
             />
           </div>
 
           <div>
             <label className="block text-sm font-medium text-foreground mb-1">
-              Mot de passe
+              {t("login.passwordLabel")}
             </label>
             <input
               type="password"
@@ -65,7 +67,7 @@ function LoginForm() {
               required
               autoComplete="current-password"
               className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"
-              placeholder="••••••••"
+              placeholder={t("login.passwordPlaceholder")}
             />
           </div>
 
@@ -80,13 +82,13 @@ function LoginForm() {
             disabled={loading}
             className="w-full py-2 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-colors disabled:opacity-50"
           >
-            {loading ? "Connexion…" : "Se connecter"}
+            {loading ? t("login.submitLoading") : t("login.submit")}
           </button>
         </form>
 
         <div className="mt-6 text-center">
           <a href="/setlists" className="text-sm text-muted-foreground hover:text-foreground">
-            ← Retour aux setlists
+            {t("login.backToSetlists")}
           </a>
         </div>
       </div>

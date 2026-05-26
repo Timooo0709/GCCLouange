@@ -27,6 +27,7 @@ import {
   updateSetlist,
 } from "@/lib/firebase/setlists";
 import { useAuth } from "@/lib/firebase/auth";
+import { useTranslation } from "react-i18next";
 import type { SongIndexEntry, SectionSummary, SetlistItem } from "@/lib/types";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -89,6 +90,7 @@ function SortableSectionRow({
   onRemove: () => void;
   onNoteChange: (note: string) => void;
 }) {
+  const { t } = useTranslation();
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } =
     useSortable({ id: item.uid });
 
@@ -112,7 +114,7 @@ function SortableSectionRow({
         <div className="font-medium text-foreground">{item.name}</div>
         <input
           type="text"
-          placeholder="Note (optionnel)…"
+          placeholder={t("setlists.form.songNotePlaceholder")}
           value={item.note}
           onChange={(e) => onNoteChange(e.target.value)}
           className="mt-1 w-full text-[11px] px-1.5 py-0.5 border border-border rounded bg-muted/50 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-1 focus:ring-primary/30"
@@ -136,6 +138,7 @@ function SectionStructureEditor({
   sectionItems: FormSectionItem[];
   onChange: (items: FormSectionItem[]) => void;
 }) {
+  const { t } = useTranslation();
   const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 5 } }));
 
   function handleDragEnd(e: DragEndEvent) {
@@ -148,7 +151,7 @@ function SectionStructureEditor({
 
   return (
     <div className="border-t border-border pt-2 px-3 pb-2 space-y-2">
-      <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Structure</p>
+      <p className="text-[10px] uppercase tracking-widest text-muted-foreground">{t("setlists.form.structure")}</p>
       <div className="flex flex-wrap gap-1">
         {allSections.map((s) => (
           <button
@@ -182,7 +185,7 @@ function SectionStructureEditor({
       </DndContext>
       {sectionItems.length === 0 && (
         <p className="text-[11px] text-muted-foreground text-center py-1">
-          Aucune section — ajoute en cliquant sur les boutons.
+          {t("setlists.form.emptySections")}
         </p>
       )}
     </div>
@@ -204,6 +207,7 @@ function SongRow({
   onNoteChange: (note: string) => void;
   onSectionItemsChange: (items: FormSectionItem[]) => void;
 }) {
+  const { t } = useTranslation();
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } =
     useSortable({ id: item.uid });
   const [showStructure, setShowStructure] = useState(false);
@@ -238,13 +242,13 @@ function SongRow({
               <span className="text-xs text-muted-foreground">{item.song.titlePinyin}</span>
             )}
             {item.song.language === "zh" && (
-              <span className="text-[10px] text-muted-foreground bg-muted px-1 rounded">中文</span>
+              <span className="text-[10px] text-muted-foreground bg-muted px-1 rounded">{t("common.languages.zh")}</span>
             )}
           </div>
           {item.song.artist && <p className="text-xs text-muted-foreground">{item.song.artist}</p>}
           <input
             type="text"
-            placeholder="Note (optionnel)…"
+            placeholder={t("setlists.form.songNotePlaceholder")}
             value={item.notes}
             onChange={(e) => onNoteChange(e.target.value)}
             className="mt-1.5 w-full text-xs px-2 py-1 border border-border rounded bg-muted/50 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-1 focus:ring-primary/30"
@@ -256,7 +260,7 @@ function SongRow({
             onChange={(e) => onKeyChange(e.target.value || null)}
             className="text-xs px-1.5 py-1 border border-border rounded bg-background text-foreground font-mono font-bold focus:outline-none focus:ring-1 focus:ring-primary/30"
           >
-            <option value="">{item.song.originalKey} (orig.)</option>
+            <option value="">{t("setlists.form.songOriginalKey", { key: item.song.originalKey })}</option>
             {ALL_KEYS.map((k) => <option key={k} value={k}>{k}</option>)}
           </select>
           {originalCount > 1 && (
@@ -270,7 +274,7 @@ function SongRow({
               }`}
             >
               {showStructure ? <ChevronUp className="h-2.5 w-2.5" /> : <ChevronDown className="h-2.5 w-2.5" />}
-              Structure
+              {t("setlists.form.structure")}
               {isModified && ` ${currentCount}/${originalCount}`}
             </button>
           )}
@@ -297,6 +301,7 @@ function SongRow({
 // ─── Main form ─────────────────────────────────────────────────────────────────
 
 export function EditSetlistClient() {
+  const { t } = useTranslation();
   const params = useParams();
   const id = params.id as string;
   const router = useRouter();
@@ -368,9 +373,9 @@ export function EditSetlistClient() {
 
   async function doUpdate(publishDraft: boolean) {
     setError("");
-    if (!title.trim()) { setError("Le titre est obligatoire."); return; }
-    if (!leader.trim()) { setError("Ton prénom est obligatoire."); return; }
-    if (!category) { setError("Choisis une catégorie."); return; }
+    if (!title.trim()) { setError(t("setlists.form.titleRequired")); return; }
+    if (!leader.trim()) { setError(t("setlists.form.leaderRequired")); return; }
+    if (!category) { setError(t("setlists.form.categoryRequired")); return; }
     if (isRestricted(category) && !user) {
       router.push(`/login?from=/setlists/${id}/edit`);
       return;
@@ -416,7 +421,7 @@ export function EditSetlistClient() {
       router.push(`/setlists/${id}`);
     } catch (err) {
       console.error(err);
-      setError(err instanceof Error ? err.message : "Erreur lors de la sauvegarde. Réessaie.");
+      setError(err instanceof Error ? err.message : t("setlists.form.errorSaveDefault"));
       publishDraft ? setPublishing(false) : setSaving(false);
     }
   }
@@ -432,7 +437,7 @@ export function EditSetlistClient() {
   if (loadingData) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
-        <p className="text-sm text-muted-foreground">Chargement…</p>
+        <p className="text-sm text-muted-foreground">{t("common.loading")}</p>
       </div>
     );
   }
@@ -441,13 +446,13 @@ export function EditSetlistClient() {
     <div className="min-h-screen bg-background">
       <div className="sticky top-0 z-10 bg-background/95 backdrop-blur border-b border-border px-4 py-2 flex items-center gap-3">
         <a href={`/setlists/${id}`} className="text-sm text-muted-foreground hover:text-foreground">
-          ← Setlist
+          {t("setlists.detail.back")}
         </a>
         <h1 className="font-semibold text-foreground">
-          Modifier la setlist
+          {t("setlists.form.titleEdit")}
           {isDraft && (
             <span className="ml-2 text-xs px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 font-medium border border-amber-200 dark:border-amber-800">
-              Brouillon
+              {t("setlists.list.draft")}
             </span>
           )}
         </h1>
@@ -458,12 +463,12 @@ export function EditSetlistClient() {
         {/* ── Info ── */}
         <section className="space-y-3">
           <h2 className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
-            Informations
+            {t("setlists.form.infoSection")}
           </h2>
 
           <div>
             <label className="block text-sm font-medium text-foreground mb-1">
-              Titre <span className="text-destructive">*</span>
+              {t("setlists.form.titleLabel")} <span className="text-destructive">*</span>
             </label>
             <input
               type="text"
@@ -475,7 +480,7 @@ export function EditSetlistClient() {
 
           <div>
             <label className="block text-sm font-medium text-foreground mb-1">
-              Ton prénom <span className="text-destructive">*</span>
+              {t("setlists.form.leaderLabel")} <span className="text-destructive">*</span>
             </label>
             <input
               type="text"
@@ -487,22 +492,22 @@ export function EditSetlistClient() {
 
           <div>
             <label className="block text-sm font-medium text-foreground mb-1">
-              Catégorie <span className="text-destructive">*</span>
+              {t("setlists.form.categoryLabel")} <span className="text-destructive">*</span>
             </label>
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
               className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"
             >
-              <option value="">Choisir une catégorie…</option>
-              <optgroup label="Réunions principales (connexion requise)">
+              <option value="">{t("setlists.form.categoryPlaceholder")}</option>
+              <optgroup label={t("setlists.form.categoryGroupRestricted")}>
                 {RESTRICTED_CATEGORIES.map((c) => (
-                  <option key={c} value={c}>{c}</option>
+                  <option key={c} value={c}>{t("categories." + c, { defaultValue: c })}</option>
                 ))}
               </optgroup>
-              <optgroup label="Groupes">
+              <optgroup label={t("setlists.form.categoryGroupFree")}>
                 {["Groupe Paix", "Groupe Fidélité", "Groupe Bonté", "中班", "大班", "高班"].map((c) => (
-                  <option key={c} value={c}>{c}</option>
+                  <option key={c} value={c}>{t("categories." + c, { defaultValue: c })}</option>
                 ))}
               </optgroup>
             </select>
@@ -511,9 +516,9 @@ export function EditSetlistClient() {
               <div className="mt-2 flex items-start gap-2 text-sm text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950 px-3 py-2 rounded-lg border border-amber-200 dark:border-amber-800">
                 <AlertTriangle className="h-4 w-4 shrink-0 mt-0.5" />
                 <span>
-                  Cette catégorie nécessite une connexion.{" "}
+                  {t("setlists.form.categoryRestrictedAuthWarning")}{" "}
                   <a href={`/login?from=/setlists/${id}/edit`} className="underline font-medium">
-                    Se connecter
+                    {t("common.header.login")}
                   </a>
                 </span>
               </div>
@@ -522,7 +527,7 @@ export function EditSetlistClient() {
 
           <div>
             <label className="block text-sm font-medium text-foreground mb-1">
-              Notes (optionnel)
+              {t("setlists.form.notesLabel")}
             </label>
             <textarea
               value={notes}
@@ -536,7 +541,7 @@ export function EditSetlistClient() {
         {/* ── Chants ── */}
         <section className="space-y-3">
           <h2 className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
-            Chants
+            {t("common.header.songs")}
           </h2>
 
           <div className="relative">
@@ -545,7 +550,7 @@ export function EditSetlistClient() {
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Chercher un chant à ajouter…"
+              placeholder={t("setlists.form.searchSongsPlaceholder")}
               className="w-full pl-9 pr-8 py-2 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"
             />
             {query && (
@@ -562,9 +567,9 @@ export function EditSetlistClient() {
                 <button key={song.slug} type="button" onClick={() => addSong(song)}
                   className="w-full flex items-center gap-3 px-3 py-2.5 text-left hover:bg-muted/50 transition-colors">
                   <span className="text-sm font-medium text-foreground flex-1 truncate">{song.title}</span>
-                  {song.language === "zh" && <span className="text-[10px] text-muted-foreground">中文</span>}
+                  {song.language === "zh" && <span className="text-[10px] text-muted-foreground">{t("common.languages.zh")}</span>}
                   <span className="font-mono text-xs text-muted-foreground">{song.originalKey}</span>
-                  <span className="text-primary text-xs font-medium">+ Ajouter</span>
+                  <span className="text-primary text-xs font-medium">{t("common.buttons.add")}</span>
                 </button>
               ))}
             </div>
@@ -572,7 +577,7 @@ export function EditSetlistClient() {
 
           {songs.length > 0 && availableSongs.length === 0 && (
             <p className="text-xs text-muted-foreground text-center py-2">
-              Tous les chants ont été ajoutés.
+              {t("setlists.form.allSongsAdded")}
             </p>
           )}
 
@@ -597,7 +602,7 @@ export function EditSetlistClient() {
 
           {items.length === 0 && (
             <p className="text-xs text-muted-foreground text-center py-4 border border-dashed border-border rounded-lg">
-              Aucun chant — utilise la recherche ci-dessus pour en ajouter.
+              {t("setlists.form.emptySongs")}
             </p>
           )}
         </section>
@@ -615,7 +620,7 @@ export function EditSetlistClient() {
               disabled={busy}
               className="flex-1 py-2.5 rounded-lg bg-green-600 text-white font-semibold text-sm hover:bg-green-700 transition-colors disabled:opacity-50"
             >
-              {publishing ? "Publication…" : "Valider la setlist"}
+              {publishing ? t("setlists.form.publishing") : t("setlists.form.publishButton")}
             </button>
           )}
           {/* Enregistrer (brouillon → reste brouillon, publiée → reste publiée) */}
@@ -625,10 +630,10 @@ export function EditSetlistClient() {
             className={`py-2.5 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors disabled:opacity-50 ${isDraft ? "flex-1" : "w-full"}`}
           >
             {saving
-              ? "Enregistrement…"
+              ? t("setlists.form.saving")
               : isDraft
-              ? "Enregistrer en brouillon"
-              : "Enregistrer les modifications"}
+              ? t("setlists.form.saveDraftButton")
+              : t("setlists.form.saveButton")}
           </button>
         </div>
       </form>

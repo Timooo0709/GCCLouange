@@ -19,6 +19,7 @@ import { CSS } from "@dnd-kit/utilities";
 import { X, GripVertical, Plus, Trash2, RotateCcw } from "lucide-react";
 import { ALL_KEYS, semitonesTo, getTransposedKey } from "@/lib/transpose";
 import type { ChordProSection } from "@/lib/types";
+import { useTranslation } from "react-i18next";
 
 // --- Types ---
 
@@ -59,6 +60,7 @@ function SortableRow({
   onRemove: () => void;
   onNoteChange: (note: string) => void;
 }) {
+  const { t } = useTranslation();
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } =
     useSortable({ id: item.uid });
 
@@ -76,7 +78,7 @@ function SortableRow({
         {...attributes}
         {...listeners}
         className="mt-0.5 text-muted-foreground hover:text-foreground cursor-grab active:cursor-grabbing shrink-0"
-        aria-label="Réordonner"
+        aria-label={t("setlists.form.reorderLabel")}
       >
         <GripVertical className="h-4 w-4" />
       </button>
@@ -85,7 +87,7 @@ function SortableRow({
         <div className="text-sm font-medium text-foreground">{item.name}</div>
         <input
           type="text"
-          placeholder="Note (optionnel)…"
+          placeholder={t("setlists.form.songNotePlaceholder")}
           value={item.note}
           onChange={(e) => onNoteChange(e.target.value)}
           className="mt-1 w-full text-xs px-2 py-1 border border-border rounded bg-muted/50 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-1 focus:ring-primary/30"
@@ -95,7 +97,7 @@ function SortableRow({
       <button
         onClick={onRemove}
         className="mt-0.5 text-muted-foreground hover:text-destructive shrink-0"
-        aria-label="Retirer"
+        aria-label={t("setlists.form.removeLabel")}
       >
         <Trash2 className="h-4 w-4" />
       </button>
@@ -114,6 +116,7 @@ export function CustomizePanel({
   onChange,
   onClose,
 }: CustomizePanelProps) {
+  const { t } = useTranslation();
   const [instanceCounter, setInstanceCounter] = useState(100);
 
   const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 5 } }));
@@ -189,7 +192,7 @@ export function CustomizePanel({
       <div className="relative w-full max-w-sm h-full bg-background border-l border-border flex flex-col shadow-xl overflow-hidden">
         {/* Header */}
         <div className="flex items-center justify-between px-4 py-3 border-b border-border shrink-0">
-          <h2 className="font-semibold text-foreground">Personnaliser</h2>
+          <h2 className="font-semibold text-foreground">{t("customize.panel.title")}</h2>
           <button onClick={onClose} className="text-muted-foreground hover:text-foreground">
             <X className="h-5 w-5" />
           </button>
@@ -199,7 +202,7 @@ export function CustomizePanel({
           {/* --- Tonalité --- */}
           <section>
             <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-2">
-              Tonalité
+              {t("customize.panel.key")}
             </h3>
             <div className="flex items-center gap-2">
               <button
@@ -216,7 +219,7 @@ export function CustomizePanel({
                 {ALL_KEYS.map((k) => (
                   <option key={k} value={k}>
                     {k}
-                    {k === originalKey ? " (original)" : ""}
+                    {k === originalKey ? " " + t("customize.panel.keyOriginal") : ""}
                   </option>
                 ))}
               </select>
@@ -229,7 +232,7 @@ export function CustomizePanel({
             </div>
             {state.semitones !== 0 && (
               <p className="text-xs text-muted-foreground mt-1">
-                {state.semitones > 0 ? "+" : ""}{state.semitones} demi-ton{Math.abs(state.semitones) > 1 ? "s" : ""}
+                {state.semitones > 0 ? "+" : ""}{t("customize.panel.keyShift", { count: state.semitones })}
               </p>
             )}
           </section>
@@ -237,7 +240,7 @@ export function CustomizePanel({
           {/* --- Affichage --- */}
           <section>
             <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-2">
-              Affichage
+              {t("customize.panel.display")}
             </h3>
             <div className="space-y-2">
               <label className="flex items-center gap-2 text-sm cursor-pointer select-none">
@@ -247,7 +250,7 @@ export function CustomizePanel({
                   onChange={(e) => update({ showChords: e.target.checked })}
                   className="rounded"
                 />
-                Afficher les accords
+                {t("customize.panel.showChords")}
               </label>
               {isZh && (
                 <label className="flex items-center gap-2 text-sm cursor-pointer select-none">
@@ -257,7 +260,7 @@ export function CustomizePanel({
                     onChange={(e) => update({ showPinyin: e.target.checked })}
                     className="rounded"
                   />
-                  Afficher le pinyin
+                  {t("customize.panel.showPinyin")}
                 </label>
               )}
             </div>
@@ -266,12 +269,12 @@ export function CustomizePanel({
           {/* --- Structure --- */}
           <section>
             <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-2">
-              Structure
+              {t("customize.panel.structure")}
             </h3>
 
             {state.useJianpu ? (
               <p className="text-xs text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950 px-3 py-2 rounded">
-                La structure n&apos;est pas modifiable en mode 简谱 — le chant s&apos;affiche dans son intégralité.
+                {t("customize.panel.jianpuStructureWarning")}
               </p>
             ) : (
               <>
@@ -314,7 +317,7 @@ export function CustomizePanel({
 
                 {state.structure.length === 0 && (
                   <p className="text-xs text-muted-foreground text-center py-4">
-                    Aucune section — ajoute en cliquant sur les boutons ci-dessus.
+                    {t("customize.panel.emptySections")}
                   </p>
                 )}
               </>
@@ -329,13 +332,13 @@ export function CustomizePanel({
             className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"
           >
             <RotateCcw className="h-4 w-4" />
-            Réinitialiser
+            {t("common.buttons.reset")}
           </button>
           <button
             onClick={onClose}
             className="ml-auto px-4 py-1.5 rounded bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
           >
-            Fermer
+            {t("common.buttons.close")}
           </button>
         </div>
       </div>

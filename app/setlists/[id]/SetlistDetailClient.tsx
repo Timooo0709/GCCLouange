@@ -10,6 +10,7 @@ import { transposeAST } from "@/lib/transposeAST";
 import { semitonesTo } from "@/lib/transpose";
 import { SongView } from "@/components/song/SongView";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
+import { useTranslation } from "react-i18next";
 import type { SongIndexEntry, SetlistItem } from "@/lib/types";
 import type { ChordProAST } from "@/lib/types";
 
@@ -22,13 +23,12 @@ interface SongContent {
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-function formatDate(iso: string): string {
-  return new Intl.DateTimeFormat("fr-FR", {
+function formatDate(iso: string, language: string): string {
+  const locale = language === "zh-CN" ? "zh-CN" : "fr-FR";
+  return new Intl.DateTimeFormat(locale, {
     weekday: "long", day: "numeric", month: "long", year: "numeric",
   }).format(new Date(iso + "T12:00:00"));
 }
-
-const LANG_LABEL: Record<string, string> = { fr: "Français", zh: "中文", mixed: "FR / 中文" };
 
 // ─── Vue Liste ────────────────────────────────────────────────────────────────
 
@@ -39,6 +39,7 @@ function ListView({
   items: SetlistItem[];
   songsMap: Record<string, SongIndexEntry>;
 }) {
+  const { t } = useTranslation();
   return (
     <ol className="space-y-3">
       {[...items].sort((a, b) => a.position - b.position).map((item, idx) => {
@@ -80,7 +81,7 @@ function ListView({
                 {displayKey}
               </span>
               {song?.language === "zh" && (
-                <p className="text-[10px] text-muted-foreground mt-0.5">中文</p>
+                <p className="text-[10px] text-muted-foreground mt-0.5">{t("common.languages.zh")}</p>
               )}
             </div>
           </li>
@@ -101,10 +102,11 @@ function PartitionsView({
   contents: Record<string, SongContent>;
   loading: boolean;
 }) {
+  const { t } = useTranslation();
   if (loading) {
     return (
       <div className="text-sm text-muted-foreground text-center py-16">
-        Chargement des partitions…
+        {t("setlists.detail.loadingCharts")}
       </div>
     );
   }
@@ -150,6 +152,7 @@ function PartitionsView({
 // ─── Main component ───────────────────────────────────────────────────────────
 
 export function SetlistDetailClient() {
+  const { t, i18n } = useTranslation();
   const params = useParams();
   const router = useRouter();
   const { user } = useAuth();
@@ -210,7 +213,7 @@ export function SetlistDetailClient() {
       if (view === "liste") {
         const { SetlistOverviewPDF } = await import("@/components/song/SetlistOverviewPDF");
         const blob = await pdf(
-          <SetlistOverviewPDF setlist={setlist} songsMap={songsMap} />
+          <SetlistOverviewPDF setlist={setlist} songsMap={songsMap} language={i18n.language} />
         ).toBlob();
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
@@ -236,7 +239,7 @@ export function SetlistDetailClient() {
         setContents(allContents);
         const { SetlistFullPDF } = await import("@/components/song/SetlistFullPDF");
         const blob = await pdf(
-          <SetlistFullPDF setlist={setlist} contents={allContents} />
+          <SetlistFullPDF setlist={setlist} contents={allContents} language={i18n.language} />
         ).toBlob();
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
@@ -265,7 +268,7 @@ export function SetlistDetailClient() {
   if (loadingSetlist) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
-        <p className="text-sm text-muted-foreground">Chargement…</p>
+        <p className="text-sm text-muted-foreground">{t("common.loading")}</p>
       </div>
     );
   }
@@ -273,8 +276,8 @@ export function SetlistDetailClient() {
   if (!setlist) {
     return (
       <div className="min-h-screen bg-background flex flex-col items-center justify-center gap-3">
-        <p className="text-sm text-muted-foreground">Setlist introuvable.</p>
-        <a href="/setlists" className="text-sm text-primary hover:underline">← Retour</a>
+        <p className="text-sm text-muted-foreground">{t("setlists.detail.notFound")}</p>
+        <a href="/setlists" className="text-sm text-primary hover:underline">{t("setlists.detail.back")}</a>
       </div>
     );
   }
@@ -286,7 +289,7 @@ export function SetlistDetailClient() {
       {/* Top bar */}
       <div className="print:hidden sticky top-0 z-10 bg-background/95 backdrop-blur border-b border-border px-4 py-2 flex items-center gap-3">
         <a href="/setlists" className="text-sm text-muted-foreground hover:text-foreground">
-          ← Setlists
+          {t("setlists.detail.backToAll")}
         </a>
 
         {/* Vue toggle */}
@@ -298,7 +301,7 @@ export function SetlistDetailClient() {
             }`}
           >
             <List className="h-3.5 w-3.5" />
-            Liste
+            {t("setlists.detail.tabList")}
           </button>
           <button
             onClick={switchToPartitions}
@@ -307,7 +310,7 @@ export function SetlistDetailClient() {
             }`}
           >
             <Music className="h-3.5 w-3.5" />
-            Partitions
+            {t("setlists.detail.tabCharts")}
           </button>
         </div>
 
@@ -318,32 +321,32 @@ export function SetlistDetailClient() {
             className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
           >
             <Pencil className="h-3.5 w-3.5" />
-            Modifier
+            {t("setlists.detail.editButton")}
           </a>
           <button
             onClick={handleDownload}
             disabled={downloading}
             className="text-sm text-muted-foreground hover:text-foreground disabled:opacity-50"
           >
-            {downloading ? "…" : "⬇ PDF"}
+            {downloading ? "…" : "⬇ " + t("songs.detail.downloadPdf")}
           </button>
           {canDelete && !confirmDelete && (
             <button onClick={() => setConfirmDelete(true)}
               className="flex items-center gap-1 text-sm text-muted-foreground hover:text-destructive">
               <Trash2 className="h-3.5 w-3.5" />
-              Supprimer
+              {t("setlists.detail.deleteButton")}
             </button>
           )}
           {confirmDelete && (
             <div className="flex items-center gap-2">
-              <span className="text-xs text-muted-foreground">Confirmer ?</span>
+              <span className="text-xs text-muted-foreground">{t("setlists.detail.deleteConfirm")}</span>
               <button onClick={handleDelete} disabled={deleting}
                 className="text-xs font-medium text-destructive hover:underline disabled:opacity-50">
-                {deleting ? "…" : "Oui, supprimer"}
+                {deleting ? "…" : t("setlists.detail.deleteYes")}
               </button>
               <button onClick={() => setConfirmDelete(false)}
                 className="text-xs text-muted-foreground hover:text-foreground">
-                Annuler
+                {t("setlists.detail.deleteCancel")}
               </button>
             </div>
           )}
@@ -359,24 +362,24 @@ export function SetlistDetailClient() {
                 <h1 className="text-2xl font-bold text-foreground">{setlist.title}</h1>
                 {setlist.isDraft && (
                   <span className="text-xs px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 font-medium border border-amber-200 dark:border-amber-800">
-                    Brouillon
+                    {t("setlists.list.draft")}
                   </span>
                 )}
               </div>
               <p className="text-muted-foreground capitalize mt-1 text-sm">
-                {formatDate(setlist.date)}
+                {formatDate(setlist.date, i18n.language)}
               </p>
             </div>
             <span className="text-xs px-2 py-0.5 rounded border border-border text-muted-foreground shrink-0 mt-1">
-              {LANG_LABEL[setlist.language] ?? setlist.language}
+              {t("common.languages." + setlist.language, { defaultValue: setlist.language })}
             </span>
           </div>
           <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
             <span className="px-2 py-0.5 rounded bg-muted text-foreground text-xs">
-              {setlist.category}
+              {t("categories." + setlist.category, { defaultValue: setlist.category })}
             </span>
             {setlist.leader && (
-              <span>Responsable : <span className="text-foreground">{setlist.leader}</span></span>
+              <span>{t("setlists.detail.leaderLabel")} <span className="text-foreground">{setlist.leader}</span></span>
             )}
           </div>
           {setlist.notes && (

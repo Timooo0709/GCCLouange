@@ -4,18 +4,7 @@ import { ChordLine } from "@/components/song/ChordLine";
 import { JianpuLine } from "@/components/song/JianpuLine";
 import { resolvePinyin, extractChinese } from "@/lib/pinyin";
 import type { ChordProAST, ChordProSection } from "@/lib/types";
-
-// --- Libellés de section traduits ---
-
-const SECTION_LABELS: Record<string, string> = {
-  verse: "Couplet",
-  chorus: "Refrain",
-  bridge: "Pont",
-  intro: "Intro",
-  outro: "Outro",
-  prechorus: "Pré-refrain",
-  other: "Section",
-};
+import { useTranslation } from "react-i18next";
 
 // --- Composant section ---
 
@@ -29,8 +18,9 @@ interface SectionViewProps {
 }
 
 function SectionView({ section, language, showChords, showPinyin, useJianpu, note }: SectionViewProps) {
+  const { t } = useTranslation();
   const isZh = language === "zh";
-  const label = section.name || SECTION_LABELS[section.type] || section.type;
+  const label = section.name || t(`songs.sections.${section.type}`, { defaultValue: section.type });
 
   return (
     <div className="mb-5 print:mb-4" style={{ breakInside: "avoid" }}>
@@ -114,6 +104,7 @@ export function SongView({
   structureOverride = null,
   sectionNotes = {},
 }: SongViewProps) {
+  const { t } = useTranslation();
   const isZh = ast.metadata.language === "zh";
   const canUseJianpu = isZh && useJianpu;
 
@@ -156,7 +147,7 @@ export function SongView({
         {/* Avertissement structure désactivée en mode 简谱 */}
         {canUseJianpu && structureOverride && (
           <p className="mt-2 text-xs text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950 px-2 py-1 rounded">
-            La structure n&apos;est pas modifiable en mode 简谱 (chant affiché dans son intégralité).
+            {t("songs.view.jianpuWarning")}
           </p>
         )}
       </div>

@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 import { Plus, LogIn, LogOut } from "lucide-react";
 import { getSetlists, ALL_CATEGORIES, type FSSetlist } from "@/lib/firebase/setlists";
 import { useAuth, logOut } from "@/lib/firebase/auth";
-import { DarkModeToggle } from "@/components/DarkModeToggle";
+import { Header } from "@/components/Header";
+import { useTranslation } from "react-i18next";
 
-function formatDate(iso: string): string {
-  return new Intl.DateTimeFormat("fr-FR", {
+function formatDate(iso: string, language: string): string {
+  const locale = language === "zh-CN" ? "zh-CN" : "fr-FR";
+  return new Intl.DateTimeFormat(locale, {
     weekday: "long",
     day: "numeric",
     month: "long",
@@ -15,9 +17,8 @@ function formatDate(iso: string): string {
   }).format(new Date(iso + "T12:00:00"));
 }
 
-const LANG_LABEL: Record<string, string> = { fr: "FR", zh: "中文", mixed: "FR / 中文" };
-
 function SetlistCard({ setlist }: { setlist: FSSetlist }) {
+  const { t, i18n } = useTranslation();
   return (
     <a
       href={`/setlists/${setlist.id}`}
@@ -31,24 +32,24 @@ function SetlistCard({ setlist }: { setlist: FSSetlist }) {
             </h2>
             {setlist.isDraft && (
               <span className="shrink-0 text-[10px] px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 font-medium border border-amber-200 dark:border-amber-800">
-                Brouillon
+                {t("setlists.list.draft")}
               </span>
             )}
           </div>
           <p className="text-xs text-muted-foreground capitalize mt-0.5">
-            {formatDate(setlist.date)}
+            {formatDate(setlist.date, i18n.language)}
           </p>
         </div>
         <span className="shrink-0 text-[10px] px-1.5 py-0.5 rounded border border-border text-muted-foreground">
-          {LANG_LABEL[setlist.language] ?? setlist.language}
+          {t("common.languages." + setlist.language, { defaultValue: setlist.language })}
         </span>
       </div>
 
       <div className="mt-2 flex flex-wrap gap-2 text-xs text-muted-foreground">
         <span className="px-2 py-0.5 rounded bg-muted text-foreground text-[10px]">
-          {setlist.category}
+          {t("categories." + setlist.category, { defaultValue: setlist.category })}
         </span>
-        <span>{setlist.items.length} chant{setlist.items.length > 1 ? "s" : ""}</span>
+        <span>{t("setlists.list.songCounter", { count: setlist.items.length })}</span>
         {setlist.leader && <span>— {setlist.leader}</span>}
       </div>
     </a>
@@ -56,6 +57,7 @@ function SetlistCard({ setlist }: { setlist: FSSetlist }) {
 }
 
 export default function SetlistsPage() {
+  const { t } = useTranslation();
   const { user, loading: authLoading } = useAuth();
   const [setlists, setSetlists] = useState<FSSetlist[]>([]);
   const [loading, setLoading] = useState(true);
@@ -74,44 +76,44 @@ export default function SetlistsPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <Header activeTab="setlists" />
       <div className="max-w-2xl mx-auto px-4 py-6">
-        {/* Nav */}
-        <div className="flex flex-col gap-3 mb-6 sm:flex-row sm:items-center sm:gap-4">
-          {/* Ligne 1 : logo + actions */}
-          <div className="flex items-center gap-4">
-            <span className="font-bold text-foreground text-lg">GCC Louange</span>
-            <div className="ml-auto flex items-center gap-3 sm:hidden">
-              <DarkModeToggle />
-              <a href="/setlists/new" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium">
-                <Plus className="h-4 w-4" />
-                Nouvelle
-              </a>
-            </div>
-          </div>
-
-          {/* Ligne 2 : nav */}
-          <nav className="flex gap-1">
-            <a href="/songs" className="px-3 py-1.5 rounded text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-colors">Chants</a>
-            <a href="/setlists" className="px-3 py-1.5 rounded text-sm font-medium bg-muted text-foreground">Setlists</a>
-          </nav>
-
-          {/* Actions desktop */}
-          <div className="hidden sm:flex ml-auto items-center gap-3">
-            <DarkModeToggle />
+        {/* Nav header replacement with mobile create action line */}
+        <div className="flex flex-col gap-3 mb-6 sm:flex-row sm:items-center sm:gap-4 justify-between">
+          <div className="flex items-center gap-3 sm:hidden ml-auto">
             {!authLoading && (user ? (
               <button onClick={() => logOut()} className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground">
                 <LogOut className="h-3.5 w-3.5" />
-                Déconnexion
+                {t("common.header.logout")}
               </button>
             ) : (
               <a href="/login?from=/setlists" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground">
                 <LogIn className="h-3.5 w-3.5" />
-                Connexion
+                {t("common.header.login")}
               </a>
             ))}
             <a href="/setlists/new" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium">
               <Plus className="h-4 w-4" />
-              Nouvelle
+              {t("setlists.list.newButton")}
+            </a>
+          </div>
+
+          {/* Actions desktop */}
+          <div className="hidden sm:flex ml-auto items-center gap-3">
+            {!authLoading && (user ? (
+              <button onClick={() => logOut()} className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground">
+                <LogOut className="h-3.5 w-3.5" />
+                {t("common.header.logout")}
+              </button>
+            ) : (
+              <a href="/login?from=/setlists" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground">
+                <LogIn className="h-3.5 w-3.5" />
+                {t("common.header.login")}
+              </a>
+            ))}
+            <a href="/setlists/new" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium">
+              <Plus className="h-4 w-4" />
+              {t("setlists.list.newButton")}
             </a>
           </div>
         </div>
@@ -128,7 +130,7 @@ export default function SetlistsPage() {
                   : "bg-muted text-muted-foreground hover:bg-muted/70"
               }`}
             >
-              {cat}
+              {cat === "Toutes" ? t("setlists.list.allCategories") : t("categories." + cat, { defaultValue: cat })}
             </button>
           ))}
         </div>
@@ -136,13 +138,13 @@ export default function SetlistsPage() {
         {/* Liste */}
         {loading ? (
           <div className="text-sm text-muted-foreground text-center py-16">
-            Chargement…
+            {t("common.loading")}
           </div>
         ) : filtered.length === 0 ? (
           <div className="text-sm text-muted-foreground text-center py-16">
             {setlists.length === 0
-              ? "Aucune setlist pour l'instant."
-              : "Aucune setlist dans cette catégorie."}
+              ? t("setlists.list.empty")
+              : t("setlists.list.emptyCategory")}
           </div>
         ) : (
           <div className="space-y-2.5">

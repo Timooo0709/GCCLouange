@@ -3,6 +3,8 @@ import {
 } from "@react-pdf/renderer";
 import type { FSSetlist } from "@/lib/firebase/setlists";
 import type { SongIndexEntry } from "@/lib/types";
+import frTranslations from "@/locales/fr.json";
+import zhTranslations from "@/locales/zh-CN.json";
 
 Font.register({
   family: "NotoSans",
@@ -45,8 +47,9 @@ const s = StyleSheet.create({
   footerText:   { fontSize: 7, color: GRAY, fontFamily: "NotoSans" },
 });
 
-function formatDate(iso: string): string {
-  return new Intl.DateTimeFormat("fr-FR", {
+function formatDate(iso: string, language: string): string {
+  const locale = language === "zh-CN" ? "zh-CN" : "fr-FR";
+  return new Intl.DateTimeFormat(locale, {
     weekday: "long", day: "numeric", month: "long", year: "numeric",
   }).format(new Date(iso + "T12:00:00"));
 }
@@ -54,11 +57,15 @@ function formatDate(iso: string): string {
 export function SetlistOverviewPDF({
   setlist,
   songsMap,
+  language = "fr",
 }: {
   setlist: FSSetlist;
   songsMap: Record<string, SongIndexEntry>;
+  language?: string;
 }) {
   const sorted = [...setlist.items].sort((a, b) => a.position - b.position);
+  const locales: Record<string, any> = language === "zh-CN" ? zhTranslations : frTranslations;
+  const songsLabel = locales.common?.header?.songs ?? "Chants";
 
   return (
     <Document title={setlist.title}>
@@ -66,16 +73,16 @@ export function SetlistOverviewPDF({
         {/* En-tête */}
         <View style={s.header}>
           <Text style={s.title}>{setlist.title}</Text>
-          <Text style={s.subtitle}>{formatDate(setlist.date)}</Text>
+          <Text style={s.subtitle}>{formatDate(setlist.date, language)}</Text>
           <View style={s.metaRow}>
-            <Text style={s.metaChip}>{setlist.category}</Text>
+            <Text style={s.metaChip}>{locales.categories?.[setlist.category] ?? setlist.category}</Text>
             {setlist.leader ? <Text style={s.metaChip}>— {setlist.leader}</Text> : null}
             {setlist.notes  ? <Text style={s.metaChip}>{setlist.notes}</Text>  : null}
           </View>
         </View>
 
         {/* Liste des chants */}
-        <Text style={s.sectionLabel}>Chants</Text>
+        <Text style={s.sectionLabel}>{songsLabel}</Text>
         {sorted.map((item, idx) => {
           const song = songsMap[item.songSlug];
           const displayKey = item.keyOverride ?? song?.originalKey ?? "?";

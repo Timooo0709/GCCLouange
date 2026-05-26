@@ -9,6 +9,7 @@ import type { Song } from "@/lib/types";
 import { Settings } from "lucide-react";
 import { getTransposedKey } from "@/lib/transpose";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
+import { useTranslation } from "react-i18next";
 
 function extractYouTubeId(url: string): string | null {
   const m = url.match(/(?:youtu\.be\/|[?&]v=)([A-Za-z0-9_-]{11})/);
@@ -29,6 +30,7 @@ interface SongDetailClientProps {
 }
 
 export function SongDetailClient({ song }: SongDetailClientProps) {
+  const { t, i18n } = useTranslation();
   const ast = useMemo(() => parseChordPro(song.chordProSource), [song.chordProSource]);
   const isZh = song.language === "zh";
   const originalKey = ast.metadata.key;
@@ -76,6 +78,7 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
           sectionNotes={Object.fromEntries(
             customize.structure.map((s) => [s.sectionId, s.note]).filter(([, n]) => n)
           )}
+          language={i18n.language}
         />
       ).toBlob();
       const url = URL.createObjectURL(blob);
@@ -94,7 +97,7 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
       {/* Barre de contrôles */}
       <div className="print:hidden sticky top-0 z-10 bg-background/95 backdrop-blur border-b border-border px-4 py-2 flex flex-wrap gap-3 items-center">
         <a href="/songs" className="text-sm text-muted-foreground hover:text-foreground mr-2">
-          ← Tous les chants
+          {t("songs.detail.backToAll")}
         </a>
 
         {/* Transposition rapide */}
@@ -133,7 +136,7 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
               onClick={() => setShowVideo((v) => !v)}
               className="text-sm text-muted-foreground hover:text-foreground"
             >
-              {showVideo ? "✕ Vidéo" : "▶ Vidéo"}
+              {showVideo ? "✕ " + t("songs.detail.video") : "▶ " + t("songs.detail.video")}
             </button>
           )}
           {song.spotifyUrl && (
@@ -153,11 +156,11 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
             className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
           >
             <Settings className="h-4 w-4" />
-            Personnaliser
+            {t("songs.detail.customize")}
           </button>
           <button onClick={handleDownload} disabled={downloading}
             className="text-sm text-muted-foreground hover:text-foreground disabled:opacity-50">
-            {downloading ? "…" : "⬇ PDF"}
+            {downloading ? "…" : "⬇ " + t("songs.detail.downloadPdf")}
           </button>
         </div>
       </div>
