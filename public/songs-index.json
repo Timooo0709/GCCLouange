@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-26T22:07:35.623Z",
+  "generatedAt": "2026-05-26T22:15:24.794Z",
   "songs": [
     {
       "slug": "a-jamais-tu-es-saint",
@@ -163,9 +163,8 @@
       "sections": [
         {
           "id": "intro-1",
-          "name": "Intro (x2)",
-          "type": "intro",
-          "suffix": "(x2)"
+          "name": "Intro",
+          "type": "intro"
         },
         {
           "id": "verse-2",
@@ -202,7 +201,7 @@
       "titlePinyin": null,
       "artist": "Hillsong",
       "language": "fr",
-      "originalKey": "F",
+      "originalKey": "C",
       "tempo": null,
       "themes": [
         "adoration",
@@ -258,9 +257,8 @@
       "sections": [
         {
           "id": "intro-1",
-          "name": "Intro (x2)",
-          "type": "intro",
-          "suffix": "(x2)"
+          "name": "Intro",
+          "type": "intro"
         },
         {
           "id": "verse-2",
@@ -460,7 +458,7 @@
       "slug": "au-nom-de-jesus",
       "title": "Au nom de Jésus",
       "titlePinyin": null,
-      "artist": "Inconnu",
+      "artist": "Sinach",
       "language": "fr",
       "originalKey": "D",
       "tempo": null,
@@ -475,7 +473,6 @@
       "jianpuKey": null,
       "sections": [
         {
-<<<<<<< HEAD
           "id": "intro-1",
           "name": "Intro",
           "type": "intro"
@@ -525,15 +522,6 @@
           "id": "verse-9",
           "name": "Fin",
           "type": "verse"
-=======
-          "id": "verse-1",
-          "name": "Couplet 1",
-          "type": "verse"
-        },
-        {"id": "chorus-2",
-          "name": "Refrain 1",
-          "type": "chorus"
->>>>>>> f0ffbdf ([FIX] first 15 french sosng)
         }
       ]
     },
@@ -736,7 +724,7 @@
       "slug": "benis-dieu-10000-raisons",
       "title": "Bénis Dieu (10000 raisons)",
       "titlePinyin": null,
-      "artist": "Inconnu",
+      "artist": "Matt Redman",
       "language": "fr",
       "originalKey": "D",
       "tempo": null,
