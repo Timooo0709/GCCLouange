@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-26T21:23:43.138Z",
+  "generatedAt": "2026-05-26T21:26:42.767Z",
   "songs": [
     {
       "slug": "a-jamais-tu-es-saint",
@@ -5370,6 +5370,43 @@
           "id": "verse-5",
           "name": "Couplet 2",
           "type": "verse"
+        }
+      ]
+    },
+    {
+      "slug": "test",
+      "title": "pdf_to_test",
+      "titlePinyin": null,
+      "artist": "Inconnu",
+      "language": "fr",
+      "originalKey": "C",
+      "tempo": null,
+      "themes": [],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Verse 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
+          "name": "Verse 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Chorus 1",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Bridge 1",
+          "type": "bridge"
         }
       ]
     },
