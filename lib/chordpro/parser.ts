@@ -66,6 +66,126 @@ function sectionType(key: string): ChordProSection["type"] {
   return SECTION_TYPE_MAP[key] ?? "other";
 }
 
+export function parseSectionHeader(typeKey: string, value: string) {
+  let type: ChordProSection["type"] = sectionType(typeKey);
+  let number: string | undefined = undefined;
+  let suffix: string | undefined = undefined;
+
+  const label = value.trim() || typeKey;
+
+  // Extract all parenthesized text (e.g. "(Key G)" or "(吉他/键盘升G调)")
+  const parenMatches = Array.from(label.matchAll(/\(([^)]+)\)/g)).map((m) => m[1].trim());
+  if (parenMatches.length > 0) {
+    suffix = parenMatches.map((m) => `(${m})`).join(" ");
+  }
+
+  // Remove the parenthesized parts to parse the rest
+  const cleanLabel = label.replace(/\s*\([^)]+\)\s*/g, " ").trim();
+
+  // Split by '/' if it exists (for bilingual labels like '主歌 1/Couplet 1')
+  const parts = cleanLabel.split("/").map((p) => p.trim());
+
+  // Look for a number in any part
+  for (const part of parts) {
+    const numMatch = part.match(/\d+/);
+    if (numMatch) {
+      number = numMatch[0];
+      break;
+    }
+  }
+
+  // Refine the type if generic or based on standard labels in the name
+  const lowerLabel = label.toLowerCase();
+  if (type === "other" || type === "verse") {
+    if (lowerLabel.includes("couplet") || lowerLabel.includes("verse") || lowerLabel.includes("主歌")) {
+      type = "verse";
+    } else if (lowerLabel.includes("refrain") || lowerLabel.includes("chorus") || lowerLabel.includes("副歌")) {
+      type = "chorus";
+    } else if (lowerLabel.includes("pont") || lowerLabel.includes("bridge") || lowerLabel.includes("桥段")) {
+      type = "bridge";
+    } else if (lowerLabel.includes("intro") || lowerLabel.includes("前奏")) {
+      type = "intro";
+    } else if (lowerLabel.includes("outro") || lowerLabel.includes("尾声") || lowerLabel.includes("coda")) {
+      type = "outro";
+    } else if (lowerLabel.includes("pre-chorus") || lowerLabel.includes("prechorus") || lowerLabel.includes("pré-refrain") || lowerLabel.includes("副歌前奏")) {
+      type = "prechorus";
+    } else if (lowerLabel.includes("tag")) {
+      type = "other";
+      suffix = suffix ? `TAG ${suffix}` : "TAG";
+    } else if (lowerLabel.includes("interlude") || lowerLabel.includes("inter") || lowerLabel.includes("间奏")) {
+      type = "other";
+      suffix = suffix ? `Interlude ${suffix}` : "Interlude";
+    } else if (lowerLabel.includes("solo") || lowerLabel.includes("instrumental")) {
+      type = "other";
+      suffix = suffix ? `Instrumental ${suffix}` : "Instrumental";
+    }
+  }
+
+  return {
+    type,
+    number,
+    suffix,
+    name: label,
+  };
+}
+
+export function formatSectionName(
+  section: { type: string; name?: string; number?: string; suffix?: string },
+  tOrTranslations: ((key: string, options?: any) => string) | Record<string, any>
+): string {
+  const getTranslation = (key: string, fallback: string): string => {
+    if (typeof tOrTranslations === "function") {
+      return tOrTranslations(key, { defaultValue: fallback });
+    }
+    const parts = key.split(".");
+    let current: any = tOrTranslations;
+    for (const part of parts) {
+      if (current && typeof current === "object" && part in current) {
+        current = current[part];
+      } else {
+        return fallback;
+      }
+    }
+    return typeof current === "string" ? current : fallback;
+  };
+
+  let baseName = "";
+  
+  // 1. If it's a standard type (other than "other"), translate the type
+  if (section.type && section.type !== "other") {
+    baseName = getTranslation(`songs.sections.${section.type}`, "");
+  }
+
+  // 2. If it's "other" or translation was not found, try translating the name itself (lower-cased)
+  if (!baseName && section.name) {
+    const cleanName = section.name.replace(/\d+/g, "").replace(/\s*\([^)]+\)\s*/g, " ").trim().toLowerCase();
+    
+    let lookupKey = cleanName;
+    if (cleanName === "pont" || cleanName === "bridge" || cleanName === "桥段") lookupKey = "bridge";
+    else if (cleanName === "couplet" || cleanName === "verse" || cleanName === "主歌") lookupKey = "verse";
+    else if (cleanName === "refrain" || cleanName === "chorus" || cleanName === "副歌") lookupKey = "chorus";
+    else if (cleanName === "intro" || cleanName === "前奏") lookupKey = "intro";
+    else if (cleanName === "outro" || cleanName === "尾声" || cleanName === "ending") lookupKey = "outro";
+    else if (cleanName === "pre-chorus" || cleanName === "prechorus" || cleanName === "pré-refrain" || cleanName === "副歌前奏") lookupKey = "prechorus";
+    else if (cleanName === "coda") lookupKey = "coda";
+    else if (cleanName === "tag") lookupKey = "tag";
+    else if (cleanName === "interlude" || cleanName === "inter" || cleanName === "间奏") lookupKey = "interlude";
+    else if (cleanName === "solo" || cleanName === "instrumental" || cleanName === "器乐") lookupKey = "instrumental";
+    
+    baseName = getTranslation(`songs.sections.${lookupKey}`, "");
+  }
+
+  // 3. Fallback to name, type or translated "other"
+  if (!baseName) {
+    baseName = section.name || getTranslation(`songs.sections.${section.type}`, section.type);
+  }
+
+  const numberStr = section.number ? ` ${section.number}` : "";
+  const suffixStr = section.suffix ? ` ${section.suffix}` : "";
+
+  return `${baseName}${numberStr}${suffixStr}`;
+}
+
 // --- Parser principal ---
 
 export function parseChordPro(source: string): ChordProAST {
@@ -109,10 +229,13 @@ export function parseChordPro(source: string): ChordProAST {
       if (key.startsWith("start_of_")) {
         const typeKey = key.replace("start_of_", "");
         sectionCounter++;
+        const parsedHeader = parseSectionHeader(typeKey, value);
         currentSection = {
-          type: sectionType(typeKey),
+          type: parsedHeader.type,
           id: `${typeKey}-${sectionCounter}`,
-          name: value || typeKey,
+          name: parsedHeader.name,
+          number: parsedHeader.number,
+          suffix: parsedHeader.suffix,
           lines: [],
         };
         continue;

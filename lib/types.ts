@@ -21,6 +21,8 @@ export type SectionSummary = {
   id: string;
   name: string;
   type: string;
+  number?: string;
+  suffix?: string;
 };
 
 export type SongIndexEntry = Omit<Song, "chordProSource"> & {
@@ -86,6 +88,8 @@ export type ChordProSection = {
   type: "verse" | "chorus" | "bridge" | "intro" | "outro" | "prechorus" | "other";
   id: string;
   name: string;
+  number?: string;
+  suffix?: string;
   lines: ChordProLine[];
 };
 

@@ -5,7 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import { Trash2, List, Music, Pencil } from "lucide-react";
 import { getSetlist, deleteSetlist, isRestricted, type FSSetlist } from "@/lib/firebase/setlists";
 import { useAuth } from "@/lib/firebase/auth";
-import { parseChordPro } from "@/lib/chordpro/parser";
+import { parseChordPro, formatSectionName } from "@/lib/chordpro/parser";
 import { transposeAST } from "@/lib/transposeAST";
 import { semitonesTo } from "@/lib/transpose";
 import { SongView } from "@/components/song/SongView";
@@ -64,8 +64,11 @@ function ListView({
               {song?.artist && <p className="text-xs text-muted-foreground">{song.artist}</p>}
               {song?.sections && song.sections.length > 0 && (() => {
                 const names = item.structureOverride
-                  ? item.structureOverride.map((id) => song.sections!.find((s) => s.id === id)?.name ?? id)
-                  : song.sections.map((s) => s.name);
+                  ? item.structureOverride.map((id) => {
+                      const s = song.sections!.find((sec) => sec.id === id);
+                      return s ? formatSectionName(s, t) : id;
+                    })
+                  : song.sections.map((s) => formatSectionName(s, t));
                 return (
                   <p className="text-[11px] text-muted-foreground/70 mt-0.5 leading-tight">
                     {names.join(" · ")}

@@ -2,6 +2,7 @@ import {
   Document, Page, Text, View, StyleSheet, Font,
 } from "@react-pdf/renderer";
 import type { ChordProAST, ChordProSection, Token } from "@/lib/types";
+import { formatSectionName } from "@/lib/chordpro/parser";
 import frTranslations from "@/locales/fr.json";
 import zhTranslations from "@/locales/zh-CN.json";
 
@@ -234,8 +235,7 @@ function SectionView({ section, isZh, useJianpu, showChords, showPinyin, note, l
   language?: string;
 }) {
   const locales: Record<string, any> = language === "zh-CN" ? zhTranslations : frTranslations;
-  const sectionsObj = locales.songs?.sections ?? {};
-  const label = section.name || sectionsObj[section.type] || section.type;
+  const label = formatSectionName(section, locales);
   return (
     <View style={s.section} wrap={false}>
       <Text style={s.sectionLabel}>{label.toUpperCase()}</Text>

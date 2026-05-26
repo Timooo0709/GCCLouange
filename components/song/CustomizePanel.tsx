@@ -20,6 +20,7 @@ import { X, GripVertical, Plus, Trash2, RotateCcw } from "lucide-react";
 import { ALL_KEYS, semitonesTo, getTransposedKey } from "@/lib/transpose";
 import type { ChordProSection } from "@/lib/types";
 import { useTranslation } from "react-i18next";
+import { formatSectionName } from "@/lib/chordpro/parser";
 
 // --- Types ---
 
@@ -53,10 +54,12 @@ interface CustomizePanelProps {
 
 function SortableRow({
   item,
+  section,
   onRemove,
   onNoteChange,
 }: {
   item: SectionItem;
+  section?: ChordProSection;
   onRemove: () => void;
   onNoteChange: (note: string) => void;
 }) {
@@ -84,7 +87,9 @@ function SortableRow({
       </button>
 
       <div className="flex-1 min-w-0">
-        <div className="text-sm font-medium text-foreground">{item.name}</div>
+        <div className="text-sm font-medium text-foreground text-ellipsis overflow-hidden whitespace-nowrap">
+          {section ? formatSectionName(section, t) : item.name}
+        </div>
         <input
           type="text"
           placeholder={t("setlists.form.songNotePlaceholder")}
@@ -287,7 +292,7 @@ export function CustomizePanel({
                       className="flex items-center gap-1 text-xs px-2 py-1 rounded border border-border hover:bg-muted text-foreground transition-colors"
                     >
                       <Plus className="h-3 w-3" />
-                      {s.name || s.type}
+                      {formatSectionName(s, t)}
                     </button>
                   ))}
                 </div>
@@ -303,14 +308,18 @@ export function CustomizePanel({
                     strategy={verticalListSortingStrategy}
                   >
                     <div className="space-y-1.5">
-                      {state.structure.map((item, i) => (
-                        <SortableRow
-                          key={item.uid}
-                          item={item}
-                          onRemove={() => removeAt(i)}
-                          onNoteChange={(note) => updateNote(i, note)}
-                        />
-                      ))}
+                      {state.structure.map((item, i) => {
+                        const section = sections.find((s) => s.id === item.sectionId);
+                        return (
+                          <SortableRow
+                            key={item.uid}
+                            item={item}
+                            section={section}
+                            onRemove={() => removeAt(i)}
+                            onNoteChange={(note) => updateNote(i, note)}
+                          />
+                        );
+                      })}
                     </div>
                   </SortableContext>
                 </DndContext>

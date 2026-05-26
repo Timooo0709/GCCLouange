@@ -48,13 +48,17 @@
       "jianpuWarning": "简谱模式下无法修改歌谱结构（诗歌将完整显示）。"
     },
     "sections": {
-      "verse": "诗节",
+      "verse": "主歌",
       "chorus": "副歌",
       "bridge": "桥段",
       "intro": "前奏",
       "outro": "尾奏",
       "prechorus": "副歌前奏",
-      "other": "段落"
+      "other": "段落",
+      "tag": "尾声连接",
+      "interlude": "间奏",
+      "instrumental": "器乐",
+      "coda": "尾声"
     }
   },
   "login": {

@@ -5,6 +5,7 @@ import { JianpuLine } from "@/components/song/JianpuLine";
 import { resolvePinyin, extractChinese } from "@/lib/pinyin";
 import type { ChordProAST, ChordProSection } from "@/lib/types";
 import { useTranslation } from "react-i18next";
+import { formatSectionName } from "@/lib/chordpro/parser";
 
 // --- Composant section ---
 
@@ -20,7 +21,7 @@ interface SectionViewProps {
 function SectionView({ section, language, showChords, showPinyin, useJianpu, note }: SectionViewProps) {
   const { t } = useTranslation();
   const isZh = language === "zh";
-  const label = section.name || t(`songs.sections.${section.type}`, { defaultValue: section.type });
+  const label = formatSectionName(section, t);
 
   return (
     <div className="mb-5 print:mb-4" style={{ breakInside: "avoid" }}>

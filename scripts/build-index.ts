@@ -17,6 +17,8 @@ function main() {
         id: s.id,
         name: s.name || s.type,
         type: s.type,
+        number: s.number,
+        suffix: s.suffix,
       })),
     };
   });

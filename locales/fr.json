@@ -54,7 +54,11 @@
       "intro": "Intro",
       "outro": "Outro",
       "prechorus": "Pré-refrain",
-      "other": "Section"
+      "other": "Section",
+      "tag": "Tag",
+      "interlude": "Interlude",
+      "instrumental": "Instrumental",
+      "coda": "Coda"
     }
   },
   "login": {
