@@ -19,9 +19,29 @@ function toSegments(tokens: Token[]): Segment[] {
         lyric += tokens[i].value;
         i++;
       }
-      segments.push({ chord, lyric });
+
+      // Sépare le premier mot (collé à l'accord) du reste
+      const spaceIdx = lyric.search(/\s/);
+      if (spaceIdx === -1 || spaceIdx === lyric.length - 1) {
+        // Pas d'espace ou espace seulement à la fin → un seul segment
+        segments.push({ chord, lyric });
+      } else {
+        // Premier mot avec l'accord, puis le reste mot par mot
+        const firstWord = lyric.slice(0, spaceIdx + 1); // inclut l'espace trailing
+        const rest = lyric.slice(spaceIdx + 1);
+        segments.push({ chord, lyric: firstWord });
+        // Découpe le reste mot par mot
+        const words = rest.split(/(?<=\s)/);
+        for (const word of words) {
+          if (word) segments.push({ chord: null, lyric: word });
+        }
+      }
     } else {
-      segments.push({ chord: null, lyric: token.value });
+      // Lyric sans accord → mot par mot
+      const words = token.value.split(/(?<=\s)/);
+      for (const word of words) {
+        if (word) segments.push({ chord: null, lyric: word });
+      }
       i++;
     }
   }
@@ -35,16 +55,15 @@ interface ChordLineProps {
   fontSize?: number;
 }
 
-export function ChordLine({ tokens, showChords = true, fontSize = 0.95 }: ChordLineProps) {
+export function ChordLine({ tokens, showChords = true, fontSize = 0.90 }: ChordLineProps) {
   const segments = toSegments(tokens);
   const hasAnyChord = showChords && segments.some((s) => s.chord !== null);
-
   return (
     <div
-      className="font-mono leading-normal select-text"
+      className="font-sans leading-normal select-text flex flex-wrap items-end"
       style={{
         fontSize: `${fontSize}rem`,
-        paddingTop: hasAnyChord ? "1.5em" : "0.15em",
+        paddingTop: "0.15em", // plus besoin du 1.5em
         paddingBottom: "0.15em",
         lineHeight: segments.every(s => !s.lyric?.trim()) ? "0" : undefined,
       }}
@@ -59,28 +78,18 @@ export function ChordLine({ tokens, showChords = true, fontSize = 0.95 }: ChordL
         return (
           <span
             key={i}
-            className="relative inline-block align-bottom"
+            className="inline-flex flex-col align-bottom whitespace-nowrap"
             style={{ minWidth }}
           >
-            {showChords && seg.chord && (
-              <span
-                className="absolute left-0 whitespace-nowrap font-bold font-chord"
-                style={{
-                  bottom: "100%",
-                  paddingBottom: "2px",
-                  fontSize: "0.9em",
-                  lineHeight: "1.2",
-                }}
-              >
+            {showChords && seg.chord ? (
+              <span className="font-bold font-chord whitespace-nowrap text-[0.9em] leading-[1.2] pb-[2px]">
                 {seg.chord}
               </span>
+            ) : (
+              hasAnyChord && <span className="leading-[1.2] pb-[2px] text-[0.9em]">&nbsp;</span>
             )}
-
-            {/* whitespace-pre preserves trailing spaces so words don't merge at chord boundaries */}
-            <span 
-              className="text-foreground whitespace-pre"
-            >
-              {(showChords ? seg.lyric : seg.lyric?.trimStart()) || (seg.chord && showChords ? "  " : "")}
+            <span className="text-foreground whitespace-pre">
+              {(showChords ? seg.lyric : seg.lyric?.trimStart()) || (seg.chord && showChords ? "  " : "")}
             </span>
           </span>
         );

@@ -126,7 +126,7 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
           </button>
         </div>
 
-        <div className="ml-auto flex gap-3 items-center">
+        <div className="ml-auto flex flex-wrap gap-2 items-center justify-end">
           <DarkModeToggle />
           {youtubeId && (
             <button
@@ -178,7 +178,7 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
       )}
 
       {/* Contenu */}
-      <main className="px-4 py-6 print:px-0 print:py-2 print:max-w-none max-w-2xl mx-auto">
+      <main className="px-4 py-6 print:px-0 print:py-2 print:max-w-none max-w-2xl mx-auto overflow-x-auto">
         <SongView
           ast={displayedAST}
           showChords={customize.showChords}

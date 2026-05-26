@@ -49,7 +49,7 @@ function SectionView({ section, language, showChords, showPinyin, useJianpu, not
         {section.lines.map((line, i) => {
           // Ligne vide (tokens vides)
           if (line.tokens.length === 0 && !line.jianpu) {
-            return <div key={i} className="h-2" />;
+            return <div key={i} className="h-5" />;
           }
 
           const lyricsText = extractChinese(line.tokens);
