@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-26T21:26:42.767Z",
+  "generatedAt": "2026-05-26T21:35:04.283Z",
   "songs": [
     {
       "slug": "a-jamais-tu-es-saint",
@@ -448,7 +448,53 @@
       "appleMusicUrl": null,
       "hasJianpu": false,
       "jianpuKey": null,
-      "sections": []
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "Interlude",
+          "type": "verse"
+        },
+        {
+          "id": "verse-4",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-5",
+          "name": "Refrain 1",
+          "type": "chorus"
+        },
+        {
+          "id": "chorus-6",
+          "name": "Refrain 2",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-7",
+          "name": "Instrumental",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-8",
+          "name": "Pont",
+          "type": "bridge"
+        },
+        {
+          "id": "verse-9",
+          "name": "Fin",
+          "type": "verse"
+        }
+      ]
     },
     {
       "slug": "aucun-autre-nom",
@@ -3520,7 +3566,18 @@
       "appleMusicUrl": null,
       "hasJianpu": false,
       "jianpuKey": null,
-      "sections": []
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        }
+      ]
     },
     {
       "slug": "je-veux-proclamer-le-nom-de-jesus",
@@ -3764,10 +3821,10 @@
       "slug": "l-entre-deux",
       "title": "L'entre-Deux",
       "titlePinyin": null,
-      "artist": "Inconnu",
+      "artist": "Raphaëlle Pierre, Maxime Jean-Louis, Tendry Rajaonson",
       "language": "fr",
-      "originalKey": "C",
-      "tempo": null,
+      "originalKey": "E",
+      "tempo": 76,
       "themes": [
         "foi",
         "esperance"
@@ -3777,7 +3834,28 @@
       "appleMusicUrl": null,
       "hasJianpu": false,
       "jianpuKey": null,
-      "sections": []
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "bridge-4",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
     },
     {
       "slug": "la-benediction",
@@ -4180,24 +4258,6 @@
       ]
     },
     {
-      "slug": "le-nom-de-jesus-plus-haut",
-      "title": "Le Nom de Jésus plus haut que tous les noms",
-      "titlePinyin": null,
-      "artist": "Sinach",
-      "language": "fr",
-      "originalKey": "G",
-      "tempo": null,
-      "themes": [
-        "adoration"
-      ],
-      "youtubeUrl": null,
-      "spotifyUrl": null,
-      "appleMusicUrl": null,
-      "hasJianpu": false,
-      "jianpuKey": null,
-      "sections": []
-    },
-    {
       "slug": "le-plus-grand",
       "title": "Le plus Grand",
       "titlePinyin": null,
@@ -4214,7 +4274,33 @@
       "appleMusicUrl": null,
       "hasJianpu": false,
       "jianpuKey": null,
-      "sections": []
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "bridge-5",
+          "name": "Pont",
+          "type": "bridge"
+        }
+      ]
     },
     {
       "slug": "le-roi-est-ne",
@@ -4527,7 +4613,7 @@
       "slug": "moi-et-ma-maison",
       "title": "Moi et ma maison",
       "titlePinyin": null,
-      "artist": "Inconnu",
+      "artist": "École Pierre",
       "language": "fr",
       "originalKey": "D",
       "tempo": null,
@@ -4539,7 +4625,38 @@
       "appleMusicUrl": null,
       "hasJianpu": false,
       "jianpuKey": null,
-      "sections": []
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "Pré-Refrain 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-4",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-5",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "verse-6",
+          "name": "Pré-Refrain 2",
+          "type": "verse"
+        }
+      ]
     },
     {
       "slug": "mon-ancre-et-ma-voile",
@@ -5587,7 +5704,7 @@
       "titlePinyin": null,
       "artist": "Inconnu",
       "language": "fr",
-      "originalKey": "C",
+      "originalKey": "F",
       "tempo": null,
       "themes": [
         "croix",
@@ -5598,7 +5715,33 @@
       "appleMusicUrl": null,
       "hasJianpu": false,
       "jianpuKey": null,
-      "sections": []
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Verset 1",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-2",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-3",
+          "name": "Verset 2",
+          "type": "verse"
+        },
+        {
+          "id": "verse-4",
+          "name": "Verset 3",
+          "type": "verse"
+        },
+        {
+          "id": "verse-5",
+          "name": "Verset 4",
+          "type": "verse"
+        }
+      ]
     },
     {
       "slug": "prince-de-paix",
@@ -6755,7 +6898,7 @@
       "titlePinyin": null,
       "artist": "Inconnu",
       "language": "fr",
-      "originalKey": "C",
+      "originalKey": "G",
       "tempo": null,
       "themes": [
         "engagement",
@@ -6766,7 +6909,23 @@
       "appleMusicUrl": null,
       "hasJianpu": false,
       "jianpuKey": null,
-      "sections": []
+      "sections": [
+        {
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 2",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "Refrain",
+          "type": "chorus"
+        }
+      ]
     },
     {
       "slug": "seigneur-par-la-clarte",
@@ -7737,7 +7896,7 @@
       "titlePinyin": null,
       "artist": "Inconnu",
       "language": "fr",
-      "originalKey": "C",
+      "originalKey": "G",
       "tempo": null,
       "themes": [
         "saint-esprit",
@@ -7748,7 +7907,23 @@
       "appleMusicUrl": null,
       "hasJianpu": false,
       "jianpuKey": null,
-      "sections": []
+      "sections": [
+        {
+          "id": "chorus-1",
+          "name": "Refrain",
+          "type": "chorus"
+        },
+        {
+          "id": "verse-2",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {
+          "id": "verse-3",
+          "name": "Couplet 2",
+          "type": "verse"
+        }
+      ]
     },
     {
       "slug": "vases-d-argile",
