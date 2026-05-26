@@ -26,12 +26,19 @@ export function SongListClient({ songs, themes }: SongListClientProps) {
     [songs]
   );
 
+  const compareSongTitles = (a: SongIndexEntry, b: SongIndexEntry) => {
+    const titleA = a.title.normalize("NFC").toLowerCase();
+    const titleB = b.title.normalize("NFC").toLowerCase();
+
+    if (titleA < titleB) return -1;
+    if (titleA > titleB) return 1;
+    return a.slug < b.slug ? -1 : a.slug > b.slug ? 1 : 0;
+  };
+
   const filtered = useMemo(() => {
     let result = query.trim()
       ? fuse.search(query.trim()).map((r) => r.item)
-      : [...songs].sort((a, b) =>
-          a.title.localeCompare(b.title, "fr", { sensitivity: "base" })
-        );
+      : [...songs].sort(compareSongTitles);
 
     if (langFilter !== "all") {
       result = result.filter((s) => s.language === langFilter);
