@@ -16,23 +16,22 @@ export function SongListClient({ songs, themes }: SongListClientProps) {
   const [langFilter, setLangFilter] = useState<"all" | "fr" | "zh">("all");
   const [themeFilter, setThemeFilter] = useState("");
 
-  // Use server-provided order to avoid client/server locale differences
-  const sortedSongs = useMemo(() => [...songs], [songs]);
-
   const fuse = useMemo(
     () =>
-      new Fuse(sortedSongs, {
+      new Fuse(songs, {
         keys: ["title", "titlePinyin", "artist"],
         threshold: 0.4,
         includeScore: true,
       }),
-    [sortedSongs]
+    [songs]
   );
 
   const filtered = useMemo(() => {
     let result = query.trim()
       ? fuse.search(query.trim()).map((r) => r.item)
-      : [...sortedSongs];
+      : [...songs].sort((a, b) =>
+          a.title.localeCompare(b.title, "fr", { sensitivity: "base" })
+        );
 
     if (langFilter !== "all") {
       result = result.filter((s) => s.language === langFilter);
@@ -42,7 +41,7 @@ export function SongListClient({ songs, themes }: SongListClientProps) {
     }
 
     return result;
-  }, [query, langFilter, themeFilter, fuse, sortedSongs]);
+  }, [query, langFilter, themeFilter, fuse, songs]);
 
   const usedThemeSlugs = new Set(songs.flatMap((s) => s.themes));
   const availableThemes = themes.filter((t) => usedThemeSlugs.has(t.slug));

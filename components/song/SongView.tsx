@@ -71,7 +71,7 @@ function SectionView({ section, language, showChords, showPinyin, useJianpu, not
             const pinyinText = resolvePinyin(lyricsText, line.pinyin);
 
             return (
-              <div key={i}>
+              <div key={i} className="mb-1" >
                 <ChordLine tokens={line.tokens} showChords={showChords} />
                 {showPinyin && pinyinText && (
                   <div
