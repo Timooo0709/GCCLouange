@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { Menu, X, Sun, Moon, Globe, LogIn, LogOut, Music } from "lucide-react";
@@ -37,8 +38,15 @@ export function Navbar() {
       <div className="max-w-2xl mx-auto px-4 h-full flex items-center justify-between">
         {/* Brand / Logo */}
         <Link href="/songs" className="flex items-center gap-2 group">
-          <div className="h-8 w-8 rounded-lg bg-gradient-to-tr from-primary to-orange-400 flex items-center justify-center text-white shadow-sm shadow-orange-500/20 group-hover:scale-105 transition-transform duration-200">
-            <Music className="h-4.5 w-4.5" />
+          <div className="relative h-8 w-8 rounded-full overflow-hidden shadow-sm shadow-orange-500/10 group-hover:scale-105 transition-transform duration-200 bg-white">
+            <Image
+              src="/logo.png"
+              alt="GCC Logo"
+              fill
+              sizes="32px"
+              className="object-contain"
+              priority
+            />
           </div>
           <span className="font-bold tracking-tight text-lg text-foreground group-hover:text-primary transition-colors duration-200">
             {t("common.header.title")}
