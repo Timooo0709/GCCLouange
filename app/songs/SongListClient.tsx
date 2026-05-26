@@ -81,13 +81,22 @@ export function SongListClient({ songs, themes }: SongListClientProps) {
     [songs]
   );
 
-  const compareSongTitles = (a: SongIndexEntry, b: SongIndexEntry) => {
-    const titleA = a.title.normalize("NFC").toLowerCase();
-    const titleB = b.title.normalize("NFC").toLowerCase();
+  const getSortKey = (song: SongIndexEntry) => {
+    const key = song.language === "zh" && song.titlePinyin ? song.titlePinyin : song.title;
+    return key
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]/g, "");
+  };
 
-    if (titleA < titleB) return -1;
-    if (titleA > titleB) return 1;
-    return a.slug < b.slug ? -1 : a.slug > b.slug ? 1 : 0;
+  const compareSongTitles = (a: SongIndexEntry, b: SongIndexEntry) => {
+    const keyA = getSortKey(a);
+    const keyB = getSortKey(b);
+
+    if (keyA < keyB) return -1;
+    if (keyA > keyB) return 1;
+    return a.slug.localeCompare(b.slug);
   };
 
   const filtered = useMemo(() => {

@@ -23,7 +23,17 @@ function main() {
     };
   });
 
-  songs.sort((a, b) => a.title.localeCompare(b.title, "fr", { sensitivity: "base" }));
+  songs.sort((a, b) => {
+    const getSortKey = (song: typeof a) => {
+      const key = song.language === "zh" && song.titlePinyin ? song.titlePinyin : song.title;
+      return key
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]/g, "");
+    };
+    return getSortKey(a).localeCompare(getSortKey(b), "fr", { sensitivity: "base" });
+  });
 
   const output = { generatedAt: new Date().toISOString(), songs };
   fs.mkdirSync(path.dirname(OUTPUT_FILE), { recursive: true });
