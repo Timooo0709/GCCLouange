@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import { ThemeProvider } from "next-themes";
 import { I18nProvider } from "@/components/I18nProvider";
+import { Navbar } from "@/components/Navbar";
 import "./globals.css";
 
 const inter = Inter({
@@ -49,6 +50,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased min-h-screen bg-background`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <I18nProvider>
+            <Navbar />
             {children}
           </I18nProvider>
         </ThemeProvider>

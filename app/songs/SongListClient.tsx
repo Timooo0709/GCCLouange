@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import Fuse from "fuse.js";
 import { Search, X } from "lucide-react";
@@ -20,6 +20,56 @@ export function SongListClient({ songs, themes }: SongListClientProps) {
   const [query, setQuery] = useState("");
   const [langFilter, setLangFilter] = useState<"all" | "fr" | "zh">("all");
   const [themeFilter, setThemeFilter] = useState("");
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  // Load from URL search params on mount
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get("q") || "";
+    const lang = (params.get("lang") || "all") as "all" | "fr" | "zh";
+    const theme = params.get("theme") || "";
+    
+    setQuery(q);
+    setLangFilter(lang);
+    setThemeFilter(theme);
+    setIsInitialized(true);
+
+    // Restore scroll position
+    const savedScroll = sessionStorage.getItem("songsScrollPos");
+    if (savedScroll) {
+      setTimeout(() => {
+        window.scrollTo({
+          top: parseInt(savedScroll, 10),
+          behavior: "instant" as ScrollBehavior
+        });
+      }, 80);
+    }
+  }, []);
+
+  // Update URL search params and sessionStorage path when state changes
+  useEffect(() => {
+    if (!isInitialized) return;
+    
+    const params = new URLSearchParams();
+    if (query.trim()) params.set("q", query.trim());
+    if (langFilter !== "all") params.set("lang", langFilter);
+    if (themeFilter) params.set("theme", themeFilter);
+    
+    const queryString = params.toString();
+    const newUrl = window.location.pathname + (queryString ? `?${queryString}` : "");
+    window.history.replaceState(null, "", newUrl);
+    
+    sessionStorage.setItem("lastListPath", newUrl);
+  }, [query, langFilter, themeFilter, isInitialized]);
+
+  // Save scroll position when navigating away
+  useEffect(() => {
+    const handleScroll = () => {
+      sessionStorage.setItem("songsScrollPos", window.scrollY.toString());
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const fuse = useMemo(
     () =>

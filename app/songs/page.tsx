@@ -2,7 +2,6 @@ import * as fs from "fs";
 import * as path from "path";
 import { getSongSlugs, loadSong } from "@/lib/content/loadSongs";
 import { SongListClient } from "./SongListClient";
-import { Header } from "@/components/Header";
 import type { SongIndexEntry, Theme } from "@/lib/types";
 
 export const dynamic = "force-static";
@@ -20,7 +19,6 @@ export default async  function SongsPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header activeTab="songs" />
       <main className="max-w-2xl mx-auto px-4 py-6">
         <SongListClient songs={songs} themes={themes} />
       </main>

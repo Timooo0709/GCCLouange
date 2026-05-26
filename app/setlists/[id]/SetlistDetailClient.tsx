@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
+import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { Trash2, List, Music, Pencil } from "lucide-react";
 import { getSetlist, deleteSetlist, isRestricted, type FSSetlist } from "@/lib/firebase/setlists";
@@ -53,10 +54,10 @@ function ListView({
             </span>
             <div className="flex-1 min-w-0">
               <div className="flex items-baseline gap-2 flex-wrap">
-                <a href={`/songs/${item.songSlug}`}
+                <Link href={`/songs/${item.songSlug}`}
                   className="font-semibold text-sm text-foreground hover:text-primary">
                   {song?.title ?? item.songSlug}
-                </a>
+                </Link>
                 {song?.titlePinyin && (
                   <span className="text-xs text-muted-foreground">{song.titlePinyin}</span>
                 )}
@@ -162,6 +163,15 @@ export function SetlistDetailClient() {
   const id = params.id as string;
 
   const [setlist, setSetlist] = useState<FSSetlist | null>(null);
+  const [backPath, setBackPath] = useState("/setlists");
+
+  useEffect(() => {
+    const saved = sessionStorage.getItem("lastListPath");
+    if (saved && (saved.startsWith("/setlists?") || saved === "/setlists")) {
+      setBackPath(saved);
+    }
+    sessionStorage.setItem("lastListPath", window.location.pathname);
+  }, []);
   const [songsMap, setSongsMap] = useState<Record<string, SongIndexEntry>>({});
   const [contents, setContents] = useState<Record<string, SongContent>>({});
   const [loadingSetlist, setLoadingSetlist] = useState(true);
@@ -280,7 +290,7 @@ export function SetlistDetailClient() {
     return (
       <div className="min-h-screen bg-background flex flex-col items-center justify-center gap-3">
         <p className="text-sm text-muted-foreground">{t("setlists.detail.notFound")}</p>
-        <a href="/setlists" className="text-sm text-primary hover:underline">{t("setlists.detail.back")}</a>
+        <Link href={backPath} className="text-sm text-primary hover:underline">{t("setlists.detail.back")}</Link>
       </div>
     );
   }
@@ -290,16 +300,16 @@ export function SetlistDetailClient() {
   return (
     <div className="min-h-screen bg-background">
       {/* Top bar */}
-      <div className="print:hidden sticky top-0 z-10 bg-background/95 backdrop-blur border-b border-border px-4 py-2 flex items-center gap-3">
-        <a href="/setlists" className="text-sm text-muted-foreground hover:text-foreground">
+      <div className="print:hidden sticky top-14 z-10 bg-background/95 backdrop-blur border-b border-border px-4 py-2 flex items-center gap-3 transition-colors duration-200">
+        <Link href={backPath} className="text-sm text-muted-foreground hover:text-foreground">
           {t("setlists.detail.backToAll")}
-        </a>
+        </Link>
 
         {/* Vue toggle */}
         <div className="flex gap-0.5 rounded-lg border border-border p-0.5 bg-muted/30">
           <button
             onClick={() => setView("liste")}
-            className={`flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium transition-colors ${
+            className={`flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium transition-colors cursor-pointer ${
               view === "liste" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -308,7 +318,7 @@ export function SetlistDetailClient() {
           </button>
           <button
             onClick={switchToPartitions}
-            className={`flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium transition-colors ${
+            className={`flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium transition-colors cursor-pointer ${
               view === "partitions" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -319,13 +329,13 @@ export function SetlistDetailClient() {
 
         <div className="ml-auto flex items-center gap-3">
           <DarkModeToggle />
-          <a
+          <Link
             href={`/setlists/${id}/edit`}
             className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
           >
             <Pencil className="h-3.5 w-3.5" />
             {t("setlists.detail.editButton")}
-          </a>
+          </Link>
           <button
             onClick={handleDownload}
             disabled={downloading}

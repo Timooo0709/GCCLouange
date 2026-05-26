@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { Plus, LogIn, LogOut } from "lucide-react";
 import { getSetlists, ALL_CATEGORIES, type FSSetlist } from "@/lib/firebase/setlists";
 import { useAuth, logOut } from "@/lib/firebase/auth";
-import { Header } from "@/components/Header";
 import { useTranslation } from "react-i18next";
 
 function formatDate(iso: string, language: string): string {
@@ -20,7 +20,7 @@ function formatDate(iso: string, language: string): string {
 function SetlistCard({ setlist }: { setlist: FSSetlist }) {
   const { t, i18n } = useTranslation();
   return (
-    <a
+    <Link
       href={`/setlists/${setlist.id}`}
       className="block rounded-xl border border-border bg-background hover:bg-muted/40 transition-colors p-4 group"
     >
@@ -52,7 +52,7 @@ function SetlistCard({ setlist }: { setlist: FSSetlist }) {
         <span>{t("setlists.list.songCounter", { count: setlist.items.length })}</span>
         {setlist.leader && <span>— {setlist.leader}</span>}
       </div>
-    </a>
+    </Link>
   );
 }
 
@@ -62,11 +62,54 @@ export default function SetlistsPage() {
   const [setlists, setSetlists] = useState<FSSetlist[]>([]);
   const [loading, setLoading] = useState(true);
   const [categoryFilter, setCategoryFilter] = useState("Toutes");
+  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
     getSetlists()
       .then(setSetlists)
       .finally(() => setLoading(false));
+  }, []);
+
+  // Load category filter from URL search params on mount
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get("cat") || "Toutes";
+    setCategoryFilter(cat);
+    setIsInitialized(true);
+
+    // Restore scroll position
+    const savedScroll = sessionStorage.getItem("setlistsScrollPos");
+    if (savedScroll) {
+      setTimeout(() => {
+        window.scrollTo({
+          top: parseInt(savedScroll, 10),
+          behavior: "instant" as ScrollBehavior
+        });
+      }, 80);
+    }
+  }, []);
+
+  // Update URL search params and sessionStorage path when categoryFilter changes
+  useEffect(() => {
+    if (!isInitialized) return;
+
+    const params = new URLSearchParams();
+    if (categoryFilter !== "Toutes") params.set("cat", categoryFilter);
+
+    const queryString = params.toString();
+    const newUrl = window.location.pathname + (queryString ? `?${queryString}` : "");
+    window.history.replaceState(null, "", newUrl);
+
+    sessionStorage.setItem("lastListPath", newUrl);
+  }, [categoryFilter, isInitialized]);
+
+  // Save scroll position when navigating away
+  useEffect(() => {
+    const handleScroll = () => {
+      sessionStorage.setItem("setlistsScrollPos", window.scrollY.toString());
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const filtered =
@@ -76,45 +119,44 @@ export default function SetlistsPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header activeTab="setlists" />
       <div className="max-w-2xl mx-auto px-4 py-6">
         {/* Nav header replacement with mobile create action line */}
         <div className="flex flex-col gap-3 mb-6 sm:flex-row sm:items-center sm:gap-4 justify-between">
           <div className="flex items-center gap-3 sm:hidden ml-auto">
             {!authLoading && (user ? (
-              <button onClick={() => logOut()} className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground">
+              <button onClick={() => logOut()} className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground cursor-pointer">
                 <LogOut className="h-3.5 w-3.5" />
                 {t("common.header.logout")}
               </button>
             ) : (
-              <a href="/login?from=/setlists" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground">
+              <Link href="/login?from=/setlists" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground">
                 <LogIn className="h-3.5 w-3.5" />
                 {t("common.header.login")}
-              </a>
+              </Link>
             ))}
-            <a href="/setlists/new" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium">
+            <Link href="/setlists/new" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium">
               <Plus className="h-4 w-4" />
               {t("setlists.list.newButton")}
-            </a>
+            </Link>
           </div>
 
           {/* Actions desktop */}
           <div className="hidden sm:flex ml-auto items-center gap-3">
             {!authLoading && (user ? (
-              <button onClick={() => logOut()} className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground">
+              <button onClick={() => logOut()} className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground cursor-pointer">
                 <LogOut className="h-3.5 w-3.5" />
                 {t("common.header.logout")}
               </button>
             ) : (
-              <a href="/login?from=/setlists" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground">
+              <Link href="/login?from=/setlists" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground">
                 <LogIn className="h-3.5 w-3.5" />
                 {t("common.header.login")}
-              </a>
+              </Link>
             ))}
-            <a href="/setlists/new" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium">
+            <Link href="/setlists/new" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium">
               <Plus className="h-4 w-4" />
               {t("setlists.list.newButton")}
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -124,7 +166,7 @@ export default function SetlistsPage() {
             <button
               key={cat}
               onClick={() => setCategoryFilter(cat)}
-              className={`px-2.5 py-1 rounded text-xs font-medium transition-colors ${
+              className={`px-2.5 py-1 rounded text-xs font-medium transition-colors cursor-pointer ${
                 categoryFilter === cat
                   ? "bg-primary text-primary-foreground"
                   : "bg-muted text-muted-foreground hover:bg-muted/70"

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import Link from "next/link";
 import { SongView } from "@/components/song/SongView";
 import { CustomizePanel, type CustomizeState, type SectionItem } from "@/components/song/CustomizePanel";
 import { parseChordPro } from "@/lib/chordpro/parser";
@@ -39,6 +40,23 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
   const [showVideo, setShowVideo] = useState(false);
   const [showPanel, setShowPanel] = useState(false);
   const [downloading, setDownloading] = useState(false);
+
+  const [backPath, setBackPath] = useState("/songs");
+  const [backLabel, setBackLabel] = useState("");
+
+  useEffect(() => {
+    const saved = sessionStorage.getItem("lastListPath");
+    if (saved) {
+      setBackPath(saved);
+      if (saved.startsWith("/setlists/")) {
+        setBackLabel(t("setlists.detail.back"));
+      } else {
+        setBackLabel(t("songs.detail.backToAll"));
+      }
+    } else {
+      setBackLabel(t("songs.detail.backToAll"));
+    }
+  }, [t]);
 
   const hasJianpu = song.hasJianpu;
 
@@ -95,10 +113,10 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
   return (
     <div className="min-h-screen print:min-h-0 bg-background">
       {/* Barre de contrôles */}
-      <div className="print:hidden sticky top-0 z-10 bg-background/95 backdrop-blur border-b border-border px-4 py-2 flex flex-wrap gap-3 items-center">
-        <a href="/songs" className="text-sm text-muted-foreground hover:text-foreground mr-2">
-          {t("songs.detail.backToAll")}
-        </a>
+      <div className="print:hidden sticky top-14 z-10 bg-background/95 backdrop-blur border-b border-border px-4 py-2 flex flex-wrap gap-3 items-center transition-colors duration-200">
+        <Link href={backPath} className="text-sm text-muted-foreground hover:text-foreground mr-2">
+          {backLabel || t("songs.detail.backToAll")}
+        </Link>
 
         {/* Transposition rapide */}
         <div className="flex items-center gap-1">
