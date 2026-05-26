@@ -475,6 +475,7 @@
       "jianpuKey": null,
       "sections": [
         {
+<<<<<<< HEAD
           "id": "intro-1",
           "name": "Intro",
           "type": "intro"
@@ -524,6 +525,15 @@
           "id": "verse-9",
           "name": "Fin",
           "type": "verse"
+=======
+          "id": "verse-1",
+          "name": "Couplet 1",
+          "type": "verse"
+        },
+        {"id": "chorus-2",
+          "name": "Refrain 1",
+          "type": "chorus"
+>>>>>>> f0ffbdf ([FIX] first 15 french sosng)
         }
       ]
     },
