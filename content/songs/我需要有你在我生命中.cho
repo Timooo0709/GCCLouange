@@ -1,22 +1,34 @@
 {title: 我需要有你在我生命中}
 {title_pinyin: Wǒ xū yào yǒu nǐ zài wǒ shēng mìng zhòng}
 {key: C}
-{tempo: 80}
+{tempo: 72}
+{artist: 葛兆昕、陈慧琴}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-[A]
-5665[G/B]我61篇要气有你心[C]在巧了5我生命中   wǒ piān yào qì yǒu nǐ xīn zài qiǎo liǎo wǒ shēng mìng zhōng
-词曲：葛兆听   cí qǔ gě zhào tīng
-[C]主求你[G/B]保守我的[Am]心我的意使我能行你旨   zhǔ qiú nǐ bǎo shǒu wǒ de xīn wǒ de yì shǐ wǒ néng xíng nǐ zhǐ
-[A]  [G]  [Dm7]
-我你话语在我作路的光成为[Dm/C]找脚前的   wǒ nǐ huà yǔ zài wǒ zuò lù de guāng chéng wèi zhǎo jiǎo qián de
-[E]  [Am]
-求你坚固我信心我的力量使我得以[G/F]勇敢向前   qiú nǐ jiān gù wǒ xìn xīn wǒ de lì liáng shǐ wǒ dé yǐ yǒng gǎn xiàng qián
-我知道有时我仍[Em]会求你[Dm]带领我使我[Dm/C]不会再退   wǒ zhī dào yǒu shí wǒ réng huì qiú nǐ dài lǐng wǒ shǐ wǒ bù huì zài tuì
-我需要有你在我生命中好让[Dm]我一生[F]能学你的样   wǒ xū yào yǒu nǐ zài wǒ shēng mìng zhōng hǎo ràng wǒ yī shēng néng xué nǐ de yàng
-便[G7]你[Em]悦[E/G][Am]年年使我   biàn nǐ yuè nián nián shǐ wǒ
-所悦玉）   suǒ yuè yù
-显你荣   xiǎn nǐ róng
-[Ab]
+{start_of_verse: 主歌 1/Couplet 1}
+哦[C]主 求你[G/B]保守我的[Am7]心我的意[Gm7]念 [C7]   ò zhǔ qiú nǐ bǎo shǒu wǒ de xīn wǒ de yì niàn
+使我[Fmaj7]能够 遵行你旨[G7]意   shǐ wǒ néng gòu zūn xíng nǐ zhǐ yì
+我[Em7]愿 将你[A]话语深藏[Fmaj7]在 我[G]心   wǒ yuàn jiāng nǐ huà yǔ shēn cáng zài wǒ xīn
+作路[Em7]上的光[Am7] 成为我[Dm7]脚前的[Dm/C]灯 [Bb] [Csus4] [C]   zuò lù shàng de guāng chéng wéi wǒ jiǎo qián de dēng
 {end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+哦[Csus4]主 求你[Cmaj7]坚固我的[Bm7b5]信心[E/G#]我的[Am7]力量 [Gm7] [C7]   ò zhǔ qiú nǐ jiān gù wǒ de xìn xīn wǒ de lì liàng
+使我[Fmaj7]得以勇敢向[G/F]前行 [C] [Bb/D] [C/E]   shǐ wǒ dé yǐ yǒng gǎn xiàng qián xíng
+因我[Fmaj7]知道有时我[G7]仍会软[Em7]弱 [Am7]   yīn wǒ zhī dào yǒu shí wǒ réng huì ruǎn ruò
+求你[Dm7]带领我使我不会[Dm/C]再退[G]缩 [F/G]   qiú nǐ dài lǐng wǒ shǐ wǒ bù huì zài tuì suō
+{end_of_verse}
+
+{start_of_chorus: 副歌 1/Refrain 1}
+我需要[F/G]有 你在我生命[Fmaj7]中 [G7]   wǒ xū yào yǒu nǐ zài wǒ shēng mìng zhōng
+好让[Em7]我一生 [A7b9]能学你的样[Dm7]式 [F/G]   hǎo ràng wǒ yī shēng néng xué nǐ de yàng shì
+使我能[Fmaj7]成 为 为你所[G7]喜悦 的儿[Em7]女 [E/G#] [Am7]   shǐ wǒ néng chéng wéi wèi nǐ suǒ xǐ yuè de ér nǚ
+使我[Dm7]的生命 [G7]能够 显明 你的 [C]荣耀   shǐ wǒ de shēng mìng néng gòu xiǎn míng nǐ de róng yào
+{end_of_chorus}
+
+{start_of_chorus: 副歌 2/Refrain 2}
+我需要[F/G]有 你在我生命[Fmaj7]中 [G7]   wǒ xū yào yǒu nǐ zài wǒ shēng mìng zhōng
+好让[Em7]我一生 [A7b9]能学你的样[Dm7]式 [F/G]   hǎo ràng wǒ yī shēng néng xué nǐ de yàng shì
+便我[Fmaj7]成 为 你所[G7]喜悦 宝贵[Em7]儿女 [E/G#] [Am7]   biàn wǒ chéng wéi nǐ suǒ xǐ yuè bǎo guì ér nǚ
+使我[Dm7]的生命 [G7]能够 彰显 你的 [C]荣耀   shǐ wǒ de shēng mìng néng gòu zhāng xiǎn nǐ de róng yào
+{end_of_chorus}

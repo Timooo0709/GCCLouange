@@ -1,15 +1,34 @@
 {title: 差遣我}
 {title_pinyin: Chāi qiǎn wǒ}
+{artist: 赞美之泉}
 {key: G}
-{tempo: 80}
+{tempo: 72}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-周巽倩词曲   zhōu xùn qiàn cí qǔ
-[G]主告诉我[D/F]，如何献[Em]上我的生命[Bm/D]，[Am]带希望[Am/G]入人群[D]中。   zhǔ gào sù wǒ rú hé xiàn shàng wǒ de shēng mìng dài xī wàng rù rén qún zhōng
-[G]主告诉我[D/F]，如何付[Em]出我的关怀[Bm/D]，[Am]将温暖[Am/G]带入世[B7]界。   zhǔ gào sù wǒ rú hé fù chū wǒ de guān huái jiāng wēn nuǎn dài rù shì jiè
-我看[Em]到灵魂中[Em/D]的忧[A]伤，孤独[Em]中人的心[Em/D]在角落[Cmaj7]颤[D]抖。   wǒ kàn dào líng hún zhōng de yōu shāng gū dú zhōng rén de xīn zài jiǎo luò chàn dǒu
-差遣我[Em]，差遣我[Em/D]，我愿付[Em/D]出我所有[C#]，差遣我   chà qiǎn wǒ chà qiǎn wǒ wǒ yuàn fù chū wǒ suǒ yǒu chà qiǎn wǒ
-[C]到[G/B]需要你的[Am]人群[D]中。充满我[Em]，充满我[Em/D]，用你爱   dào xū yào nǐ de rén qún zhōng chōng mǎn wǒ chōng mǎn wǒ yòng nǐ ài
-来充满我，再一次紧握他们的手。   lái chōng mǎn wǒ zài yī cì jǐn wò tā men de shǒu
+{start_of_intro: 前奏/Intro}
+[G]  [D/F#]  [Em]  [Bm/D]  [Am]  [Am/G]  [D]
+{end_of_intro}
+
+{start_of_verse: 主歌 1/Couplet 1}
+[G]主告诉我[D/F#]， 如何献[Em]上我的生命[Bm/D]，   zhǔ gào sù wǒ rú hé xiàn shàng wǒ de shēng mìng
+[Am]带希望[Am/G] 入人群[D]中。   dài xī wàng rù rén qún zhōng
 {end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+[G]主告诉我[D/F#]， 如何付[Em]出我的关怀[Bm/D]，   zhǔ gào sù wǒ rú hé fù chū wǒ de guān huái
+[Am]将温暖[Am/G] 带入世[B7]界。   jiāng wēn nuǎn dài rù shì jiè
+{end_of_verse}
+
+{start_of_verse: 预备副歌/Pre-Chorus}
+我[Em]看到[Em/D] 灵魂中的忧[A]伤，   wǒ kàn dào líng hún zhōng de yōu shāng
+孤[Em]独中[Em/D] 人的心在角落[Cmaj7] 颤[D]抖。   gū dú zhōng rén de xīn zài jiǎo luò chàn dǒu
+{end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+[Em]差遣我， 差[Em/D#]遣我，   chà qiǎn wǒ chà qiǎn wǒ
+我愿[Em/D]付出我所[C#m7b5]有， 差遣[C]我   wǒ yuàn fù chū wǒ suǒ yǒu chà qiǎn wǒ
+[G/B]到需要你的[Am]人[D]群中。   dào xū yào nǐ de rén qún zhōng
+[Em]充满我， 充[Em/D#]满我，   chōng mǎn wǒ chōng mǎn wǒ
+用你[Em/D]爱来充满[C#m7b5]我， 再一[C]次   yòng nǐ ài lái chōng mǎn wǒ zài yī cì
+[D]紧握他们的[G]手。   jǐn wò tā men de shǒu
+{end_of_chorus}

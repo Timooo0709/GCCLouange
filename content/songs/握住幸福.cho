@@ -1,23 +1,38 @@
 {title: 握住幸福}
 {title_pinyin: Wò zhù xìng fú}
-{key: C}
-{tempo: 80}
+{key: G}
+{tempo: 69}
+{artist: 柳子骏}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-•=69握住幸福   wò zhù xìng fú
-［另有一张F调］柳子骏《复兴》（2014）柳子骏词曲   lìng yǒu yī zhāng F tiáo liǔ zǐ jùn fù xīng liǔ zǐ jùn cí qǔ
-恋爱的滋味，像天堂的水珠，甜蜜的感觉连心跳也   liàn ài de zī wèi xiàng tiān táng de shuǐ zhū tián mì de gǎn jué lián xīn tiào yě
-都[Gsus4]跟着欢呼[G]。[Em7]再多的情话也形容不出[Asus4]我的满足[A7]，像小[Am7]矮人   dōu gēn zhe huān hū zài duō de qíng huà yě xíng róng bù chū wǒ de mǎn zú xiàng xiǎo ǎi rén
-娶到[Fmaj9]白雪公主[C/D]。每次看到你，就想到上[C/G]帝的眷顾，   qǔ dào bái xuě gōng zhǔ měi cì kàn dào nǐ jiù xiǎng dào shàng dì de juàn gù
-[D]  [D/F]  [G/D]  [C#]
-[D/F]人的有限在[D]他里头却是丰富[G][D/F]。[Em7]梦想我能爱你到老，连话都说   rén de yǒu xiàn zài tā lǐ tóu què shì fēng fù mèng xiǎng wǒ néng ài nǐ dào lǎo lián huà dōu shuō
-[C#]  [Am7]  [Am/G]  [Cm6/Eb]  [D]
-不清楚[A7]，还能唱[Am7]着诗歌，[A/C]弹琴赞美主[Dsus4]。[D]握着[G]你的手，我   bù qīng chǔ hái néng chàng zhe shī gē tán qín zàn měi zhǔ wò zhe nǐ de shǒu wǒ
-[F#]  [B7]  [Em7]
-[D/F]握住了幸福[Em7]，[G/D]我看见你的笑容带[C/D]着温暖品度。[B7]说过   wò zhù liǎo xìng fú wǒ kàn jiàn nǐ de xiào róng dài zhe wēn nuǎn pǐn dù shuō guò
-握住了幸福，相爱的誓言一辈子要守的住。（FC/ED）   wò zhù liǎo xìng fú xiāng ài de shì yán yī bèi zǐ yào shǒu de zhù FC ED
-[B7]  [Em7]  [G/D]  [Am7]  [Fm7]  [D]
-不赖皮，一起渡过高山低谷，我们答应过要一起服侍主。握着   bù lài pí yī qǐ dù guò gāo shān dī gǔ wǒ men dá yìng guò yào yī qǐ fú shì zhǔ wò zhe
-[B7]我们约定好[B/D]，要[Em7]紧紧跟[G/D]随耶稣[C#]，牵手走[Am7]完人生[C/D]的每一步。[G]；   wǒ men yuē dìng hǎo yào jǐn jǐn gēn suí yē sū qiān shǒu zǒu wán rén shēng de měi yī bù
+{start_of_intro: 前奏/Intro}
+[G]   [D/F#]   [Dm/F]   [Esus4]   [E7]   [Am7]   [Adim9]   [C/D]   [D]
+{end_of_intro}
+
+{start_of_verse: 主歌 1/Couplet 1}
+[Gadd2]恋爱的滋味，像[Am7]天堂的水珠，   liàn ài de zī wèi xiàng tiān táng de shuǐ zhū
+[Dsus4]甜蜜的感觉连[D/F#]心跳也[Gsus4]都跟着[G]欢呼。   tián mì de gǎn jué lián xīn tiào yě dōu gēn zhe huān hū
+[Em7]再多的情话也形容[Asus4]不出我[A7]的满足，   zài duō de qíng huà yě xíng róng bù chū wǒ de mǎn zú
+像[Am7]小矮人[Fmaj9]娶到白雪公[C/D]主。   xiàng xiǎo ǎi rén qǔ dào bái xuě gōng zhǔ
 {end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+[Gadd2]每次看到你，就想到[Am7]上帝的[Dsus4]眷顾， [D/F#]   měi cì kàn dào nǐ jiù xiǎng dào shàng dì de juàn gù
+[Gsus4]人的[G]有限在[Em7]他里头却是丰富。   rén de yǒu xiàn zài tā lǐ tóu què shì fēng fù
+梦想我能[Em7]爱 你到老，连[Asus4]话都[A7]说，   mèng xiǎng wǒ néng ài nǐ dào lǎo lián huà dōu shuō
+[Am7]不清楚，还能[Am7]唱着[A/C#]诗歌，弹琴[Dsus4]赞美[D]主。   bù qīng chǔ hái néng chàng zhe shī gē tán qín zàn měi zhǔ
+{end_of_verse}
+
+{start_of_chorus: 副歌 1/Refrain 1}
+握着你的手，我[G]握住了幸福，   wò zhe nǐ de shǒu wǒ wò zhù le xìng fú
+我看见[D/F#]你的笑容带着[Em7]温暖[G/D]温度。   wǒ kàn jiàn nǐ de xiào róng dài zhe wēn nuǎn wēn dù
+说过[Cadd2]不赖皮，一起[C/D]渡过高山[Gadd2]低谷，   shuō guò bù lài pí yī qǐ dù guò gāo shān dī gǔ
+我们[B7][B/D#]答应[Em7]过要[G/D]一[C#m7b5]起服[Am7]侍[C/D]主。   wǒ men dā yìng guò yào yī qǐ fú shì zhǔ
+{end_of_chorus}
+
+{start_of_chorus: 副歌 2/Refrain 2}
+握着你的手，我[G]握住了幸福，   wò zhe nǐ de shǒu wǒ wò zhù le xìng fú
+相爱的[D/F#]誓言一辈[Em7]子要守[G/D]的住。   xiāng ài de shì yán yī bèi zǐ yào shǒu de zhù
+我们[B7]约定[B/D#]好，[Em7]要紧[G/D]紧跟随[C#m7b5]耶稣，   wǒ men yuē dìng hǎo yào jǐn jǐn gēn suí yē sū
+[Am7]牵手走完[C/D]人生的每[G]一步。   qiān shǒu zǒu wán rén shēng de měi yī bù
+{end_of_chorus}

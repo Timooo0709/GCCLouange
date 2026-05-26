@@ -1,37 +1,27 @@
-{title: 我的生命献给你}
+{title: 我的生命献给祢}
 {title_pinyin: Wǒ de shēng mìng xiàn gěi nǐ}
-{key: G}
-{tempo: 80}
+{artist: 赞美之泉}
+{key: A}
+{tempo: 66}
 {language: zh}
 
+{start_of_intro: 前奏/Intro}
+[A]  [E/G#]  [F#m]  [D]  [A/C#]  [Bm]  [D/E]  [E]  [A]  [E/G#]  [F#m]  [D]  [E]
+{end_of_intro}
+
 {start_of_verse: 主歌/Couplet}
-我的生命獻給祢   wǒ de shēng mìng xiàn gěi mí
-SoeamofTPraisP讚美之泉IWillOfferYouMyLife   SoeamofTPraisP zàn měi zhī quán IWillOfferYouMyLife
-EnglishTranslation:SOP-出自專輯【聽見這世代的呼喚】-詞、曲：曾祥怡   EnglishTranslation SOP chū zì zhuān jí tīng jiàn zhè shì dài de hū huàn cí qǔ céng xiáng yí
-•=66愛慕耶穌地、熱情敬拜地GraceTseng   ài mù yē sū dì rè qíng jìng bài dì GraceTseng
-[A]  [E/G]  [D]  [Bm]  [D/E]  [E]  [A]  [E/G]  [F#m]  [D]  [E]
-[C]獻上   xiàn shàng
-生命，給[E/G]最愛的耶穌，完全[D]順服，[D/E]完全[A]降服。[A/C]因祢   shēng mìng gěi zuì ài de yē sū wán quán shùn fú wán quán jiàng fú yīn mí
-恩典，使我得以[A]事[E/G]奉祢[F#m]，祢的選召沒有懷疑。   ēn diǎn shǐ wǒ dé yǐ shì fèng mí mí de xuǎn zhào méi yǒu huái yí
-我的生命獻給祢，背起十架跟隨祢。願祢的榮耀，彰顯在我生   wǒ de shēng mìng xiàn gěi mí bèi qǐ shí jià gēn suí mí yuàn mí de róng yào zhāng xiǎn zài wǒ shēng
-命。我的心不要忘記，祢如何為我[E/G]捨[F#m]命。耶穌我愛[D]祢，喜[D/E]樂地跟隨   mìng wǒ de xīn bù yào wàng jì mí rú hé wéi wǒ shě mìng yē sū wǒ ài mí xǐ lè dì gēn suí
+献上生[A]命， 给[E/G#]最爱的耶[F#m]稣， 完全[D]顺服[D/E]， 完全[A]降服。[A/C#]   xiàn shàng shēng mìng gěi zuì ài de yē sū wán quán shùn fú wán quán jiàng fú
+因祢恩[D]典， 使我[D/E]得以事奉[A]祢[E/G#]，[F#m] 祢的[Bm]选召 没有任何[Esus4]怀疑。[E]   yīn nǐ ēn diǎn shǐ wǒ dé yǐ shì fèng nǐ nǐ de xuǎn zhào méi yǒu huái yí
 {end_of_verse}
-
-{start_of_verse: 主歌/Couplet 1}
-[A]（結束時停在A和弦[E/G][F#m][D][E]）   jié shù shí tíng zài A hé xián
-祢。獻上   mí xiàn shàng
-我的生命獻給祢-2   wǒ de shēng mìng xiàn gěi mí
-讚美之泉   zàn měi zhī quán
-{end_of_verse}
-
-{start_of_bridge: 桥段/Pont 2}
-{end_of_bridge}
-
-{start_of_bridge: 桥段/Pont 2}
-祢。賜給   mí cì gěi
-我屬於祢的夢想，帶下祢國度如在天上。賜給   wǒ shǔ wū mí de mèng xiǎng dài xià mí guó dù rú zài tiān shàng cì gěi
-{end_of_bridge}
 
 {start_of_chorus: 副歌/Refrain}
-我奔跑不倦的力量，如鷹展翅上騰翱翔。我的生命獻給   wǒ bēn pǎo bù juàn de lì liáng rú yīng zhǎn chì shàng téng áo xiáng wǒ de shēng mìng xiàn gěi
+我的生[A]命献给[E/G#]祢[F#m]， 背起十[D]架跟随[E]祢。   wǒ de shēng mìng xiàn gěi nǐ bèi qǐ shí jià gēn suí nǐ
+愿祢的[A]荣耀， 彰[E/G#]显在我[F#m]生命。[D]   yuàn nǐ de róng yào zhāng xiǎn zài wǒ shēng mìng
+我的[E]心不要忘[A]记， 祢[E/G#]如何[F#m]为我[D]舍[D/E]命。   wǒ de xīn bù yào wàng jì nǐ rú hé wéi wǒ shě mìng
+耶稣我[A]爱祢， [E/G#]喜乐地[F#m]跟随[D]祢。[D/E]   yē sū wǒ ài nǐ xǐ lè dì gēn suí nǐ
 {end_of_chorus}
+
+{start_of_bridge: 桥段/Bridge}
+赐给[D]我属于祢的梦[E/D]想， 带下祢[C#m]国度如在天[F#m]上。[E/G#]  [A]  [A/C#]   cì gěi wǒ shǔ yú nǐ de mèng xiǎng dài xià nǐ guó dù rú zài tiān shàng
+赐给[D]我奔跑不倦的力[E/D]量， 如鹰展[G]翅上腾翱[E]翔。   cì gěi wǒ bēn pǎo bù juàn de lì liáng rú yīng zhǎn chì shàng téng áo xiáng
+{end_of_bridge}

@@ -1,25 +1,26 @@
 {title: 君王就在这里}
 {title_pinyin: Jūn wáng jiù zài zhè lǐ}
-{key: C}
-{tempo: 80}
+{artist: 赞美之泉}
+{key: Bb}
+{tempo: 66}
 {language: zh}
 
+{start_of_intro: 前奏/Intro}
+[Bb/D]   [Eb]   [F/A]   [Bb]   [Gm]   [C7]   [Fsus4]   [F]
+[Bb/D]   [Eb]   [D/F#]   [Gm]   [Cm7]   [F]   [Bb]
+{end_of_intro}
+
 {start_of_verse: 主歌/Couplet}
-君王就在這裡CCRCR   jūn wáng jiù zài zhè lǐ CCRCR
-[B]  [Gm]  [Fsus4]  [F]  [D]  [Gm]  [F]  [B]
-[F]  [C]  [G]
-聖[Eb]潔耶[B]穌，祢[Gm]寶座[C7]在這裡[Fsus4]，   shèng jié yē sū mí bǎo zuò zài zhè lǐ
-[Am]  [E]
-哈利路亞[Gm]一•祢榮耀在這[B]裡。君[D]就在這   hā lì lù yā yī mí róng yào zài zhè lǐ jūn jiù zài zhè
-[G/F]
-裡，[F]【然祭[Dm]，[G]戴祢為[Cm]王，榮耀都歸祢。君在這   lǐ rán jì dài mí wéi wáng róng yào dōu guī mí jūn zài zhè
-[Am]  [A/C]
-裡，大能彰顯這地，和散那歸於至[F]高神主耶穌。   lǐ dà néng zhāng xiǎn zhè dì hé sàn nà guī wū zhì gāo shén zhǔ yē sū
-穌。更多更   sū gèng duō gèng
-[F]  [Am]
-[B]來高舉祢的[E/B]名，更多更[Gm]來呼喊的名。更多更多   lái gāo jǔ mí de míng gèng duō gèng lái hū hǎn de míng gèng duō gèng duō
+[Bb/D]圣洁[Eb]耶[F/A]稣，[Bb]祢[Gm]宝座[C7]在这[Fsus4]里，[F]   shèng jié yē sū nǐ bǎo zuò zài zhè lǐ
+[Bb/D]哈利[Eb]路[D/F#]亚，[Gm]祢[Cm7]荣耀[F]在这[Bb]里。   hā lì lù yà nǐ róng yào zài zhè lǐ
 {end_of_verse}
 
-{start_of_chorus: 副歌/Refrain 6}
-來承認祢是主，直到那日，[Gm]我[F]再見祢的[B]面。君王就在這   lái chéng rèn mí shì zhǔ zhí dào nà rì wǒ zài jiàn mí de miàn jūn wáng jiù zài zhè
+{start_of_chorus: 副歌/Refrain}
+君[Bb/D]王就在这[Eb]里，我们[F/Eb]欢然献[Dm7]祭，[G]拥戴祢为[Cm7]王，[F]荣耀都归于[Bb]祢；   jūn wáng jiù zài zhè lǐ wǒ men huān rán xiàn jì yōng dài nǐ wéi wáng róng yào dōu guī yú nǐ
+君[Bb/D]王就在这[Eb]里，大能[D]彰显这[Gm]地，[G/B]和散那归[Cm7]于至[F]高神主耶[Bb]稣。   jūn wáng jiù zài zhè lǐ dà néng zhāng xiǎn zhè dì hé sàn nà guī yú zhì gāo shén zhǔ yē sū
 {end_of_chorus}
+
+{start_of_bridge: 桥段/Bridge}
+更多更多[Bb]来高举祢[Eb/Bb]的名，更多更多[Gm]来呼喊祢[F]的名；   gèng duō gèng duō lái gāo jǔ nǐ de míng gèng duō gèng duō lái hū hǎn nǐ de míng
+更多更多[Bb/D]来承认祢[Eb]是主，直到那日，[Gm]我[F]再见祢的[Bb]面。   gèng duō gèng duō lái chéng rèn nǐ shì zhǔ zhí dào nà rì wǒ zài jiàn nǐ de miàn
+{end_of_bridge}

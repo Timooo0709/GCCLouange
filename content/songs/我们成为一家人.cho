@@ -1,20 +1,29 @@
 {title: 我们成为一家人}
-{title_pinyin: Wǒ men chéng wéi yì jiā rén}
+{title_pinyin: Wǒ men chéng wéi yī jiā rén}
+{artist: 有情天音乐}
 {key: Bb}
-{tempo: 80}
+{tempo: 128}
 {language: zh}
 
 {start_of_verse: 主歌/Couplet}
-•=128我们成为一家人   wǒ men chéng wèi yī jiā rén
-有情天音乐《严冬里也有春天》（1999）   yǒu qíng tiān yīn lè yán dōng lǐ yě yǒu chūn tiān
-[Bb]我们成为一家[Bb]人，因着[Gm]耶稣，因着耶[Fsus4]稣，成为神   wǒ men chéng wèi yī jiā rén yīn zhe yē sū yīn zhe yē sū chéng wèi shén
-[Bb]儿女。[Bb]我们成为一家[Bb]人，因着[Gm]耶稣，因着   ér nǚ wǒ men chéng wèi yī jiā rén yīn zhe yē sū yīn zhe
-耶稣，成为神国的子民。因着耶稣得洁净，   yē sū chéng wèi shén guó de zǐ mín yīn zhe yē sū dé jié jìng
-因着耶稣同敬拜，   yīn zhe yē sū tóng jìng bài
-[F][F/Eb]因着耶[Dm7]稣入光明[Gm7]，因着耶[Cm7]稣同享   yīn zhe yē sū rù guāng míng yīn zhe yē sū tóng xiǎng
-因着耶稣蒙慈爱，因着耶稣彼此   yīn zhe yē sū méng cí ài yīn zhe yē sū bǐ cǐ
-[F]复活的生[Bb]命。同享生[Ebmaj7]命的喜悦[F]，[F/Eb]同在   fù huó de shēng mìng tóng xiǎng shēng mìng de xǐ yuè tóng zài
-恩慈来相待。或在喜乐中欢唱，或遇   ēn cí lái xiāng dài huò zài xǐ lè zhōng huān chàng huò yù
-主[Dm7]爱中连接[Gm7]，因着[Cm7]耶稣同受[F]丰盛的产[Bb]业。   zhǔ ài zhōng lián jiē yīn zhe yē sū tóng shòu fēng shèng de chǎn yè
-苦难同哀伤，因着耶稣同渡人生的风浪。   kǔ nán tóng āi shāng yīn zhe yē sū tóng dù rén shēng de fēng làng
+[Bb]我们成为一家[Bb]人， 因着[Gm]耶稣， 因着[Fsus4]耶稣， 成为神[Bb]儿女。   wǒ men chéng wéi yī jiā rén yīn zhe yē sū yīn zhe yē sū chéng wéi shén ér nǚ
+[Bb]我们成为一家[Bb]人， 因着[Gm]耶稣， 因着[Dm]耶稣， 成为[Cm7]神国[F]的子[Bb]民。   wǒ men chéng wéi yī jiā rén yīn zhe yē sū yīn zhe yē sū chéng wéi shén guó de zǐ mín
 {end_of_verse}
+
+{start_of_chorus: 副歌 1/Refrain 1}
+因着[Ebmaj7]耶稣得洁净，   yīn zhe yē sū dé jié jìng
+因着[F/Eb]耶稣入[Dm7]光明，   yīn zhe yē sū rù guāng míng
+因着[Gm7]耶稣同[Cm7]分享， [F]复活的生[Bb]命。   yīn zhe yē sū tóng fēn xiǎng fù huó de shēng mìng
+同享[Ebmaj7]生命的喜悦，   tóng xiǎng shēng mìng de xǐ yuè
+同在[F/Eb]主爱中[Dm7]连接，   tóng zài zhǔ ài zhōng lián jiē
+[Gm7]因着[Cm7]耶稣同受[F]丰盛的产[Bb]业。   yīn zhe yē sū tóng shòu fēng shèng de chǎn yè
+{end_of_chorus}
+
+{start_of_chorus: 副歌 2/Refrain 2}
+因着[Ebmaj7]耶稣同敬拜，   yīn zhe yē sū tóng jìng bài
+因着[F/Eb]耶稣蒙[Dm7]慈爱，   yīn zhe yē sū méng cí ài
+因着[Gm7]耶稣彼[Cm7]此， [F]恩慈来相[Bb]待。   yīn zhe yē sū bǐ cǐ ēn cí lái xiāng dài
+或在[Ebmaj7]喜乐中欢唱，   huò zài xǐ lè zhōng huān chàng
+或遇[F/Eb]苦难同[Dm7]哀伤，   huò yù kǔ nán tóng āi shāng
+[Gm7]因着[Cm7]耶稣同渡[F]人生的风[Bb]浪。   yīn zhe yē sū tóng dù rén shēng de fēng làng
+{end_of_chorus}

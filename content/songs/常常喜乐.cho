@@ -1,19 +1,35 @@
 {title: 常常喜乐}
 {title_pinyin: Cháng cháng xǐ lè}
+{artist: 赞美之泉}
 {key: G}
-{tempo: 80}
+{tempo: 130}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-常常喜乐   cháng cháng xǐ lè
-（腓4:4,6）盛晓玫词曲   féi shèng xiǎo méi cí qǔ
-[G]常常喜乐，[C]向主高[G]歌，[C]不论环境如何[G/B]。[C]高山或低谷   cháng cháng xǐ lè xiàng zhǔ gāo gē bù lùn huán jìng rú hé gāo shān huò dī gǔ
-常常祷告，耐心等候，主做事有定时。   cháng cháng dǎo gào nài xīn děng hòu zhǔ zuò shì yǒu dìng shí
-（原版是Am）（原版是Em）   yuán bǎn shì Am yuán bǎn shì Em
-[Em]主都看顾，[Am]相信就能蒙[D7]福。[C]流泪撒种必   zhǔ dōu kàn gù xiāng xìn jiù néng méng fú liú lèi sā zhǒng bì
-欢[Em7]呼收割，[Am]相信就有喜乐。[D7]下垂的手再一次举   huān hū shōu gē xiāng xìn jiù yǒu xǐ lè xià chuí de shǒu zài yī cì jǔ
-起来，封[D/F]闭的心[Em]再一次敞开，抛开一切[Am]忧虑，放下一切   qǐ lái fēng bì de xīn zài yī cì chǎng kāi pāo kāi yī qiè yōu lǜ fàng xià yī qiè
-重担，来到主的面前我喜乐满怀。冰冷的心被主爱来   zhòng dān lái dào zhǔ de miàn qián wǒ xǐ lè mǎn huái bīng lěng de xīn bèi zhǔ ài lái
-温暖，干渴的灵被主爱充满。主是我的力量，主是我的   wēn nuǎn gān kě de líng bèi zhǔ ài chōng mǎn zhǔ shì wǒ de lì liáng zhǔ shì wǒ de
-高台，死荫幽谷[F]一路有耶稣陪[D7]伴，他永不[G]离开！   gāo tái sǐ yìn yōu gǔ yī lù yǒu yē sū péi bàn tā yǒng bù lí kāi
+{start_of_intro: 前奏/Intro}
+[G]  [C]  [G]  [C]  [G/B]  [C]  [D7]
+{end_of_intro}
+
+{start_of_verse: 主歌 1/Couplet 1}
+[G]常常喜乐， [C]向主高[G]歌，   cháng cháng xǐ lè xiàng zhǔ gāo gē
+[C]不论环境如[G/B]何。   bù lùn huán jìng rú hé
+[C]高山或低[Em]谷， 主都看[Am]顾，   gāo shān huò dī gǔ zhǔ dōu kàn gù
+相信就能蒙[D7]福。   xiāng xìn jiù néng mūn fú
 {end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+[G]常常祷告， [C]耐心等[G]候，   cháng cháng dǎo gào nài xīn děng hòu
+[C]主做事有定[G/B]时。   zhǔ zuò shì yǒu dìng shí
+[C]流泪撒种[Em7]必 欢呼收[Am]割，   liú lèi sā zhǒng bì huān hū shōu gē
+相信就有喜[D7]乐。   xiāng xìn jiù yǒu xǐ lè
+{end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+[G]下垂的手 [D/F#]再一次 [Em]举起来，   xià chuí de shǒu zài yī cì jǔ qǐ lái
+[Am]封闭的心 [Am7/G]再一次 [F]敞开，   fēng bì de xīn zài yī cì chǎng kāi
+[D7]抛开一切忧虑， 放下一切重担，   pāo kāi yī qiè yōu lǜ fàng xià yī qiè zhòng dān
+[G]来到主的面前我喜乐满怀。   lái dào zhǔ de miàn qián wǒ xǐ lè mǎn huái
+[G]冰冷的心 [D/F#]被主爱 来 [Em]温暖，   bīng lěng de xīn bèi zhǔ ài lái wēn nuǎn
+[Am]干渴的灵 [Am7/G]被主爱 充 [F]满。   gān kě de lǐng bèi zhǔ ài chōng mǎn
+[D7]主是我的力量， 主是我的高台，   zhǔ shì wǒ de lì liáng zhǔ shì wǒ de gāo tái
+死荫幽谷[F]一路有耶稣陪[D7]伴， 他永不[G]离开！   sǐ yìn yōu gǔ yī lù yǒu yē sū péi bàn tā yǒng bù lí kāi
+{end_of_chorus}

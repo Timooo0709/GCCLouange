@@ -1,24 +1,29 @@
 {title: 新造的人}
 {title_pinyin: Xīn zào de rén}
 {key: G}
-{tempo: 80}
+{tempo: 165}
+{artist: 赞美之泉}
 {language: zh}
+
+{start_of_intro: 前奏/Intro}
+[G]啊   [C]   [D]   [G]啊   [C]   [D]   [G]啊   [C]   [D]   [G]啊   [C]   [D]
+{end_of_intro}
 
 {start_of_verse: 主歌/Couplet}
 [G]飞越时空的领域，[C/G]聆听灵魂的呐喊，   fēi yuè shí kōng de lǐng yù líng tīng líng hún de nà hǎn
-[D7/G]穿过天之涯，[G]越过地之极。   chuān guò tiān zhī yá yuè guò dì zhī jí
-[G]卸下飘泊的心情，[C/G]奔向永恒的生命，   xiè xià piāo bó de xīn qíng bēn xiàng yǒng héng de shēng mìng
-[D7/G]真理在我心，[G]哦真爱在我心。   zhēn lǐ zài wǒ xīn ò zhēn ài zài wǒ xīn
+[D/G]穿过天之涯，[G]越过地之极。   chuān guò tiān zhī yá yuè guò dì zhī jí
+[G]卸下漂泊的心情，[C/G]奔向永恒的生命。   xiè xià piāo bó de xīn qíng bēn xiàng yǒng héng de shēng mìng
+[D/G]真理在我心，哦[G]真爱在我心。   zhēn lǐ zài wǒ xīn ò zhēn ài zài wǒ xīn
 {end_of_verse}
 
 {start_of_bridge: 前副歌/Pre-Chorus}
-将[Em]展开崭新的[Bm]航行，   jiāng zhǎn kāi zhǎn xīn de háng xíng
-[C]主的权能将是[D7]我双翼。   zhǔ de quán néng jiāng shì wǒ shuāng yì
+将展[G]开崭[D/F#]新的[Em]航[Bm]行，   jiāng zhǎn kāi zhǎn xīn de háng xíng
+[C]主的权能[D]将是我双翼。   zhǔ de quán néng jiāng shì wǒ shuāng yì
 {end_of_bridge}
 
-{start_of_chorus: 副歌/Chorus}
-[G]看哪看哪，[C/G]一切都更新，   kàn nǎ kàn nǎ yī qiè dōu gèng xīn
-[D7/G]听哪听哪，[G]天使为我欢呼。   tīng nǎ tīng nǎ tiān shǐ wéi wǒ huān hū
-[Em]真理带我进入那自由之地，   zhēn lǐ dài wǒ jìn rù nà zì yóu zhī dì
-从今[C]天起，从此[D7]刻起，我是[G]新造，我是新造的人。   cóng jīn tiān qǐ cóng cǐ kè qǐ wǒ shì xīn zào wǒ shì xīn zào de rén
+{start_of_chorus: 副歌/Refrain}
+看哪！看[G]哪！一切都更新，   kàn na kàn na yī qiè dōu gèng xīn
+听哪！听[D/G]哪！天使为我欢呼。   tīng na tīng na tiān shǐ wéi wǒ huān hū
+真理带我[Em]进入那自[Bm]由之地，从今   zhēn lǐ dài wǒ jìn rù nà zì yóu zhī dì cóng jīn
+从今[C]天起，从[C]此刻起，我是[D]新造，我是新造的[G]人。   cóng jīn tiān qǐ cóng cǐ kè qǐ wǒ shì xīn zào wǒ shì xīn zào de rén
 {end_of_chorus}

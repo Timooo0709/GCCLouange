@@ -1,13 +1,21 @@
 {title: 你是我的一切}
 {title_pinyin: Nǐ shì wǒ de yí qiè}
+{artist: Dennis L. Jernigan}
 {key: D}
 {tempo: 80}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-你是我的一切（D调）   nǐ shì wǒ de yī qiè D tiáo
-x英文原文/你是我的一切/主使我刚强］   x yīng wén yuán wén nǐ shì wǒ de yī qiè zhǔ shǐ wǒ gāng qiáng
-你是我依靠的力量，你是我[D/A]寻求的[D/F]宝藏，你是我[D/A]的[A]—   nǐ shì wǒ yī kào de lì liáng nǐ shì wǒ xún qiú de bǎo cáng nǐ shì wǒ de
-担当我罪债和羞辱，死里复活我蒙救赎，你是我的   dān dāng wǒ zuì zhài hé xiū rǔ sǐ lǐ fù huó wǒ méng jiù shú nǐ shì wǒ de
-[D]  [A7]  [D]  [A/C]  [Bm]  [D/A]  [D/F]
+{start_of_verse: 主歌 1/Couplet 1}
+[D]你是我依靠的[A/C#]力[Bm]量，你是我寻求的[D/A]宝[D/F#]藏，你是我[G]的[D/A]一[A]切。[D]  [A7]   nǐ shì wǒ yī kào de lì liáng nǐ shì wǒ xún qiú de bǎo cáng nǐ shì wǒ de yī qiè
+[D]你好比贵重的[A/C#]珠[Bm]宝，我怎能放弃你[D/A]不[D/F#]要，你是我[G]的[D/A]一[A]切。[D]   nǐ hǎo bǐ guì zhòng de zhū bǎo wǒ zěn néng fàng qì nǐ bù yào nǐ shì wǒ de yī qiè
 {end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+[D]担当我罪债和[A/C#]羞[Bm]辱，死里复活我蒙[D/A]救[D/F#]赎，你是我[G]的[D/A]一[A]切。[D]  [A7]   dān dāng wǒ zuì zhài hé xiū rǔ sǐ lǐ fù huó wǒ méng jiù shú nǐ shì wǒ de yī qiè
+[D]当我跌倒你扶[A/C#]持[Bm]我，当我干渴你充[D/A]满[D/F#]我，你是我[G]的[D/A]一[A]切。[D]   dāng wǒ diē dǎo nǐ fú chí wǒ dāng wǒ gān kě nǐ chōng mǎn wǒ nǐ shì wǒ de yī qiè
+{end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+[G/A]耶[D]稣，[A/C#]神[Bm]羔[D/F#]羊，[G]配得[D/A]大赞[A]美！[D]  [A7]   yé sū shén gāo yáng pèi dé dà zàn měi
+[G/A]耶[D]稣，[A/C#]神[Bm]羔[D/F#]羊，[G]配得[D/A]大[A]赞[D]美。   yé sū shén gāo yáng pèi dé dà zàn měi
+{end_of_chorus}

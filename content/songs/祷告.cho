@@ -1,25 +1,23 @@
 {title: 祷告}
 {title_pinyin: Dǎo gào}
+{artist: 郑楷}
 {key: E}
 {tempo: 72}
 {language: zh}
 
 {start_of_verse: 主歌/Couplet}
-[E]祷告，因[B/D#]为我渺小；   dǎo gào yīn wéi wǒ miǎo xiǎo
-[C#m]祷告，因为我[G#m]知道我需要，   dǎo gào yīn wéi wǒ zhī dào wǒ xū yào
-[A]明了，祢[E/G#]心意对[F#m]我重要。[B]   míng liǎo nǐ xīn yì duì wǒ zhòng yào
-[E]祷告，已[B/D#]假装不了；   dǎo gào yǐ jiǎ zhuāng bù liǎo
-[C#m]祷告，因为[G#m]祢的爱我需要；   dǎo gào yīn wéi nǐ de ài wǒ xū yào
-[A]祢关怀，我[E/G#]走过的[F#m]祢都[B]明[E]白。   nǐ guān huái wǒ zǒu guò de nǐ dōu míng bái
+[E]祷告， 因[B/D#]为我渺小；   dǎo gào yīn wéi wǒ miǎo xiǎo
+[C#m]祷告， 因为我[G#m]知道我需要，   dǎo gào yīn wéi wǒ zhī dào wǒ xū yào
+[A]明了， 祢[E/G#]心意对[F#m]我[B7]重要。[E]   míng liǎo nǐ xīn yì duì wǒ zhòng yào
+[E]祷告， 已[B/D#]假装不了；   dǎo gào yǐ jiǎ zhuāng bù liǎo
+[C#m]祷告， 因为[G#m]祢的爱我需[A]要；   dǎo gào yīn wéi nǐ de ài wǒ xū yào
+祢[E/G#]关怀， 我[F#m]走过的祢[B]都明[E]白。   nǐ guān huái wǒ zǒu guò de nǐ dōu míng bái
 {end_of_verse}
 
-{start_of_chorus: 副歌/Chorus}
+{start_of_chorus: 副歌/Refrain}
 [E]有些事我[G#m]只想要对[A]祢说，   yǒu xiē shì wǒ zhī xiǎng yào duì nǐ shuō
-因[E/G#]祢比任[F#m]何人都[B]爱我；   yīn nǐ bǐ rèn hé rén dōu ài wǒ
-[E]痛苦从眼[G#m]中流下，   tòng kǔ cóng yǎn zhōng liú xià
-我[A]知道[B]祢为我[E]擦。   wǒ zhī dào nǐ wéi wǒ cā
-在[E]早晨我[G#m]也要来对[A]祢说，   zài zǎo chén wǒ yě yào lái duì nǐ shuō
-主[E/G#]耶稣今[F#m]天我为[B]祢活；   zhǔ yē sū jīn tiān wǒ wéi nǐ huó
-[E]所需要的[G#m]力量祢天[A]天赐给我，   suǒ xū yào de lì liàng nǐ tiān tiān cì gěi wǒ
-祢[F#m]恩典[B]够我[E]用。   nǐ ēn diǎn gòu wǒ yòng
+因[E/G#]祢比任[F#m]何人都[E/G#]爱我；   yīn nǐ bǐ rèn hé rén dōu ài wǒ
+痛[F#m]苦从眼[E/G#]中流[A]下， 我[B]知道祢为我[E]擦。   tòng kǔ cóng yǎn zhōng liú xià wǒ zhī dào nǐ wéi wǒ cā
+在[B]早晨我[E]也要来[G#m]对祢说， 主[A]耶稣今[E/G#]天我为[F#m]祢活；   zài zǎo chén wǒ yě yào lái duì nǐ shuō zhǔ yē sū jīn tiān wǒ wéi nǐ huó
+所[E/G#]需要的[A]力量， 祢[E/G#]天天[F#m]赐给[B]我， 祢[E]恩典够我用。   suǒ xū yào de lì liàng nǐ tiān tiān cì gěi wǒ nǐ ēn diǎn gòu wǒ yòng
 {end_of_chorus}

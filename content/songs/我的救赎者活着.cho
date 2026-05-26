@@ -1,22 +1,23 @@
 {title: 我的救赎者活着}
 {title_pinyin: Wǒ de jiù shú zhě huó zhe}
+{artist: 赞美之泉}
 {key: A}
-{tempo: 80}
+{tempo: 88}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-我的救赎者活着   wǒ de jiù shú zhě huó zhe
-游智婷曲   yóu zhì tíng qǔ
-J=88宣告、有盼望地   J xuān gào yǒu pàn wàng dì
-[E/G]
-我知道我的救赎者活着，他是永活的主。当   wǒ zhī dào wǒ de jiù shú zhě huó zhe tā shì yǒng huó de zhǔ dāng
-[D]我在深谷[A]迷失时，他[Bm]领我走正义[E]路。我知   wǒ zài shēn gǔ mí shī shí tā lǐng wǒ zǒu zhèng yì lù wǒ zhī
-[A]道我的[E/G]救赎者活着，他是永活的[A]主。当   dào wǒ de jiù shú zhě huó zhe tā shì yǒng huó de zhǔ dāng
-我在旷野孤独时，他伴我作我的灯。我知道   wǒ zài kuàng yě gū dú shí tā bàn wǒ zuò wǒ de dēng wǒ zhī dào
-[A]  [E/G]
-我的救赎者永远活着，我心不再忧虑，   wǒ de jiù shú zhě yǒng yuǎn huó zhe wǒ xīn bù zài yōu lǜ
-我要在每一个日夜中，领受他的丰盛之爱。我知道   wǒ yào zài měi yī gè rì yè zhōng lǐng shòu tā de fēng shèng zhī ài wǒ zhī dào
-[A]我的救赎者永远[E/G]活着，[D]我灵不再沉[A]睡。   wǒ de jiù shú zhě yǒng yuǎn huó zhe wǒ líng bù zài chén shuì
-[C]  [C#/F]
-当号角响起的那一天，我将见他荣光之面。   dāng hào jiǎo xiǎng qǐ de nà yī tiān wǒ jiāng jiàn tā róng guāng zhī miàn
+{start_of_verse: 主歌 1/Couplet 1}
+我知[A]道 我的[E/G#]救赎者活[D]着， 他是永活的[A]主。   wǒ zhī dào wǒ de jiù shú zhě huó zhe tā shì yǒng huó de zhǔ
+当我[D]在深谷[A]迷失[F#m]时， 他[Bm]领我走正义[E]路。   dāng wǒ zài shēn gǔ mí shī shí tā lǐng wǒ zǒu zhèng yì lù
 {end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+我知[A]道 我的[E/G#]救赎者活[D]着， 他是永活的[A]主。   wǒ zhī dào wǒ de jiù shú zhě huó zhe tā shì yǒng huó de zhǔ
+当我[D]在旷野[A]孤独[F#m]时， 他[Bm]伴我作[E]我的[A]灯。[G]  [E]   dāng wǒ zài kuàng yě gū dú shí tā bàn wǒ zuò wǒ de dēng
+{end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+我的[A]救赎者[E/G#]永远活[D]着， 我心[D]不再忧[A]虑，   wǒ de jiù shú zhě yǒng yuǎn huó zhe wǒ xīn bù zài yōu lǜ
+我要[D]在每一个[C#]日[C#/F]夜[F#m]中， 领受[Bm]他的丰盛之[E]爱。   wǒ yào zài měi yī gè rì yè zhōng lǐng shòu tā de fēng shèng zhī ài
+我的[A]救赎者[E/G#]永远活[D]着， 我灵[D]不再沉[A]睡，   wǒ de jiù shú zhě yǒng yuǎn huó zhe wǒ líng bù zài chén shuì
+当号[D]角响起的那[C#]一[C#/F]天[F#m]， 我将[Bm]见他荣[E]光之[A]面。   dāng hào jiǎo xiǎng qǐ de nà yī tiān wǒ jiāng jiàn tā róng guāng zhī miàn
+{end_of_chorus}

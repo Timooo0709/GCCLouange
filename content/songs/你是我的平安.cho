@@ -1,20 +1,26 @@
 {title: 祢是我的平安}
 {title_pinyin: Nǐ shì wǒ de píng ān}
+{artist: 蔡佳靈}
 {key: D}
 {tempo: 68}
 {language: zh}
+{themes: 赞美, 平安, 信靠}
+
+{start_of_verse: 前奏/Intro}
+[D]  [Dmaj7]  [D]  [Dmaj7]
+{end_of_verse}
 
 {start_of_verse: 主歌/Couplet}
 [D]是我的平安，[G]风浪中祢掌管，[Em7]祢与[Asus4]我同[D]在，喔主[G/A]耶稣，   shì wǒ de píng ān fēng làng zhōng nǐ zhǎng guǎn nǐ yǔ wǒ tóng zài wō zhǔ yē sū
 [D]是我的盼望，[G]生命中的光，[Em7]祢永[Asus4]不离[D]开。祢是磐石，   shì wǒ de pàn wàng shēng mìng zhōng de guāng nǐ yǒng bù lí kāi nǐ shì pán shí
 {end_of_verse}
 
-{start_of_chorus: 副歌/Chorus}
+{start_of_chorus: 副歌/Refrain}
 [F#m7]祢是我救赎，[Bm7]祢是我[Em7]患难中[Asus4]随时的帮[D]助，将我隐藏，   nǐ shì wǒ jiù shú nǐ shì wǒ huàn nán zhōng suí shí de bāng zhù jiāng wǒ yǐn cáng
 [F#m7]在祢翅膀荫[Bm7]下，我要[Em7]全心来敬拜[Asus4]祢，喔主耶稣。   zài nǐ chì bǎng yīn xià wǒ yào quán xīn lái jìng bài nǐ wō zhǔ yē sū
 {end_of_chorus}
 
-{start_of_bridge: 桥段/Bridge}
+{start_of_bridge: 桥段/Pont}
 [Gadd9]我心里不恐[Bm7]惧，不难过不愁[D]烦，   wǒ xīn lǐ bù kǒng jù bù nán guò bù chóu fán
 祢给我的平[A]安，不像世界给的，   nǐ gěi wǒ de píng ān bù xiàng shì jiè gěi de
 [Gadd9]我心里不恐[Bm7]惧，不难过不愁[D]烦，   wǒ xīn lǐ bù kǒng jù bù nán guò bù chóu fán

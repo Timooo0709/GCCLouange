@@ -1,16 +1,21 @@
 {title: 天国的子民}
 {title_pinyin: Tiān guó de zǐ mín}
+{artist: 盛晓玫}
 {key: C}
-{tempo: 80}
+{tempo: 118}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-天國的子民   tiān guó de zǐ mín
-詞曲：盛曉玫   cí qǔ shèng xiǎo méi
-我們是天國的子民，[C]我們是上帝的寶[F]貝，   wǒ mén shì tiān guó de zǐ mín wǒ mén shì shàng dì de bǎo bèi
-[F7]我們是光明之子神兒女，[G7]我們是天國的子[C]民。   wǒ mén shì guāng míng zhī zǐ shén ér nǚ wǒ mén shì tiān guó de zǐ mín
-我們要彼此真誠相愛，[F7]我們要活出聖潔生命，   wǒ mén yào bǐ cǐ zhēn chéng xiāng ài wǒ mén yào huó chū shèng jié shēng mìng
-讓世人從我們身上聞到，[G7]耶穌的馨香之[C]氣。   ràng shì rén cóng wǒ mén shēn shàng wén dào yē sū de xīn xiāng zhī qì
-我們要在主裡面[F]合一，[F7]我們要活出愛的生命，   wǒ mén yào zài zhǔ lǐ miàn hé yī wǒ mén yào huó chū ài de shēng mìng
-讓世人看見我們就知道，[G7]我們是天國的子[C]民。Fine   ràng shì rén kàn jiàn wǒ mén jiù zhī dào wǒ mén shì tiān guó de zǐ mín Fine
+{start_of_chorus: 副歌/Refrain}
+[G]我们是天国的子[C]民，我们是上帝的宝[F]贝；   wǒ men shì tiān guó de zǐ mín wǒ men shì shàng dì de bǎo bèi
+[F7]我们是光明之子[G]神儿[G7]女，我们是天国的子[C]民。   wǒ men shì guāng míng zhī zǐ shén ér nǚ wǒ men shì tiān guó de zǐ mín
+{end_of_chorus}
+
+{start_of_verse: 主歌 1/Couplet 1}
+[C]我们要彼此真诚相[F]爱，[F7]我们要活出圣洁生[C]命；   wǒ men yào bǐ cǐ zhēn chéng xiāng ài wǒ men yào huó chū shèng jié shēng mìng
+[C7]让世人从我们身[G]上闻到，[G7]耶稣的馨香之[C]气。   ràng shì rén cóng wǒ men shēn shàng wén dào yē sū de xīn xiāng zhī qì
+{end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+[C]我们要在主里面合[F]一，[F7]我们要活出爱的生[C]命；   wǒ men yào zài zhǔ lǐ miàn hé yī wǒ men yào huó chū ài de shēng mìng
+[C7]让世人看见我们[G]就知道，[G7]我们是天国的子[C]民。   ràng shì rén kàn jiàn wǒ men jiù zhī dào wǒ men shì tiān guó de zǐ mín
 {end_of_verse}

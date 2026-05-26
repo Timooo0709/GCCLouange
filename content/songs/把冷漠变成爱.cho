@@ -1,20 +1,22 @@
 {title: 把冷漠变成爱}
 {title_pinyin: Bǎ lěng mò biàn chéng ài}
 {key: D}
-{tempo: 80}
+{tempo: 130}
+{artist: 赞美之泉}
 {language: zh}
 
 {start_of_verse: 主歌/Couplet}
-•=130把冷漠变成爱   bǎ lěng mò biàn chéng ài
 [D]你的眼是否被太多[Em]美丽的事物迷惑？   nǐ de yǎn shì fǒu bèi tài duō měi lì de shì wù mí huò
-[A]你的心[A7]是否被太多[D]纷杂的世俗绑锁[D7]？   nǐ de xīn shì fǒu bèi tài duō fēn zá de shì sú bǎng suǒ
-分些关怀给角落中受伤的灵魂，分些   fēn xiē guān huái gěi jiǎo luò zhōng shòu shāng de líng hún fēn xiē
+[A]你的心[A7]是否被太多[D]纷杂的世俗绑锁？ [D7]   nǐ de xīn shì fǒu bèi tài duō fēn zá de shì sú bǎng suǒ
+[D]分些关[D7]怀给角落中受[G]伤的灵[D]魂，   fēn xiē guān huái gěi jiǎo luò zhōng shòu shāng de líng hún
+分些[Em]爱给那些[A7]不起眼的面[D]孔。 [A7]   fēn xiē ài gěi nà xiē bù qǐ yǎn de miàn kǒng
 {end_of_verse}
 
-{start_of_chorus: 副歌/Refrain 7}
-爱给那些不起眼的面孔。以   ài gěi nà xiē bù qǐ yǎn de miàn kǒng yǐ
-[D]基督的心为[D7]心，以[G]他的眼看世界[G7]，你   jī dū de xīn wèi xīn yǐ tā de yǎn kàn shì jiè nǐ
-[Em]身边的人需要你[A7]我把冷漠变成[D]爱。[D7]以   shēn biān de rén xū yào nǐ wǒ bǎ lěng mò biàn chéng ài yǐ
-[D]基督的心为[D7]心，以[G]他的眼看世[G7]界，这世   jī dū de xīn wèi xīn yǐ tā de yǎn kàn shì jiè zhè shì
-[D]界需要你[A7]我把冷漠变成[D]爱。   jiè xū yào nǐ wǒ bǎ lěng mò biàn chéng ài
+{start_of_chorus: 副歌/Refrain}
+以[D]基督的心[D7]为心，   yǐ jī dū de xīn wéi xīn
+以他的[G]眼看世[G7]界，   yǐ tā de yǎn kàn shì jiè
+你[Em]身边的人需要你[A7]我把冷漠变成[D]爱。 [D7]   nǐ shēn biān de rén xū yào nǐ wǒ bǎ lěng mò biàn chéng ài
+以[D]基督的心[D7]为心，   yǐ jī dū de xīn wéi xīn
+以他的[G]眼看世[G7]界，   yǐ tā de yǎn kàn shì jiè
+这世[D]界需要你[A7]我把冷漠变成[D]爱。   zhè shì jiè xū yào nǐ wǒ bǎ lěng mò biàn chéng ài
 {end_of_chorus}

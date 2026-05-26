@@ -1,29 +1,33 @@
 {title: 从早晨到夜晚}
 {title_pinyin: Cóng zǎo chén dào yè wǎn}
-{artist: 郑懋柔词 / 游智婷曲}
+{artist: 郑懋柔、游智婷}
 {key: F}
-{tempo: 80}
+{tempo: 69}
 {language: zh}
 {themes: 敬拜, 宣告, 称谢}
 
+{start_of_intro: 前奏/Intro}
+[F]   [Bb/F]   [F]   [Bb/F]
+{end_of_intro}
+
 {start_of_verse: 主歌 1/Couplet 1}
-[F]早晨我睁开[Bb/F]眼睛，[F]渴望聆听祢[Bb/F]声音，   zǎo chén wǒ zhēng kāi yǎn jīng kě wàng líng tīng mí shēng yīn
-[Gm]心中思想祢[C]的好，[Gm]更多[C]与祢来[F]亲近。   xīn zhōng sī xiǎng mí de hǎo gèng duō yǔ mí lái qīn jìn
+[F]早晨我睁开[Bb/F]眼睛，[F]渴望聆听祢[Bb/F]声音，   zǎo chén wǒ zhēng kāi yǎn jīng kě wàng líng tīng nǐ shēng yīn
+[Gm]心中思想祢[C]的好，[Gm]更多[C]与祢来[F]亲近。   xīn zhōng sī xiǎng nǐ de hǎo gèng duō yǔ nǐ lái qīn jìn
 {end_of_verse}
 
 {start_of_verse: 主歌 2/Couplet 2}
-[F]夜晚我仍要[Bb/F]歌唱，[F]向祢阐明我[Bb/F]心意，   yè wǎn wǒ réng yào gē chàng xiàng mí chǎn míng wǒ xīn yì
-[Gm]敬拜化成[C]一首歌，[Gm]单单[C]要唱给[F]祢听。   jìng bài huà chéng yī shǒu gē dān dān yào chàng gěi mí tīng
+[F]夜晚我仍要[Bb/F]歌唱，[F]向祢阐明我[Bb/F]心意，   yè wǎn wǒ réng yào gē chàng xiàng nǐ chǎn míng wǒ xīn yì
+[Gm]敬拜化成[C]一首歌，[Gm]单单[C]要唱给[F]祢听。   jìng bài huà chéng yī shǒu gē dān dān yào chàng gěi nǐ tīng
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-从[F]早晨到夜[Bb]晚，从[F]旷野到高[C]山，   cóng zǎo chén dào yè wǎn cóng kuàng yě dào gāo shān
-亲[F]爱主，我要[Bb]称颂[F]祢[C]美[F]名。   qīn ài zhǔ wǒ yào chēng sòng mí měi míng
-从[F]早晨到夜[Bb]晚，祢[F]爱永不止[C]息，   cóng zǎo chén dào yè wǎn mí ài yǒng bù zhǐ xī
-亲[F]爱主，一生[Bb]紧紧[F]跟[C]随[F]祢。   qīn ài zhǔ yī shēng jǐn jǐn gēn suí mí
+从[F]早晨到夜[Bb/F]晚，从[F]旷野到高[C]山，   cóng zǎo chén dào yè wǎn cóng kuàng yě dào gāo shān
+亲[F]爱主，我[Bb/F]要称颂[C]祢美[F]名。   qīn ài zhǔ wǒ yào chēng sòng nǐ měi míng
+从[F]早晨到夜[Bb/F]晚，祢[F]爱永不止[C]息，   cóng zǎo chén dào yè wǎn nǐ ài yǒng bù zhǐ xī
+亲[F]爱主，一[Bb/F]生紧紧[C]跟随[F]祢。   qīn ài zhǔ yī shēng jǐn jǐn gēn suí nǐ
 {end_of_chorus}
 
-{start_of_bridge: 桥段/Pont}
-我的[F]主，我爱[Bb]祢，我要[F]夸祢的爱[C]无止[F]尽。   wǒ de zhǔ wǒ ài mí wǒ yào kuā mí de ài wú zhǐ jìn
-我的[F]主，我爱[Bb]祢，我要[F]夸祢的爱[C]无止[F]尽。   wǒ de zhǔ wǒ ài mí wǒ yào kuā mí de ài wú zhǐ jìn
+{start_of_bridge: 桥段/Bridge}
+我的[F]主，我爱[Bb]祢，我要[F]夸祢的爱无止[C]尽。   wǒ de zhǔ wǒ ài nǐ wǒ yào kuā nǐ de ài wú zhǐ jìn
+我的[F]主，我爱[Bb]祢，我要[F]夸祢的爱[C]无止[F]尽。   wǒ de zhǔ wǒ ài nǐ wǒ yào kuā nǐ de ài wú zhǐ jìn
 {end_of_bridge}

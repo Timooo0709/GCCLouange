@@ -1,25 +1,21 @@
 {title: 耶稣我的耶稣}
 {title_pinyin: Yē sū wǒ de yē sū}
+{artist: 赞美之泉}
 {key: D}
-{tempo: 80}
+{tempo: 60}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-耶穌，我的耶穌   yē sū wǒ de yē sū
-StsanofPrakseP讚之泉Jesus,MyJesus   StsanofPrakseP zàn zhī quán Jesus MyJesus
-取自專輯〔展開清晨的翅膀〕詞、曲：游智婷   qǔ zì zhuān jí zhǎn kāi qīng chén de chì bǎng cí qǔ yóu zhì tíng
-•=60愛慕地、敬拜地SandyYu   ài mù dì jìng bài dì SandyYu
-[D]  [D/E]  [F#m]  [Bm]  [Em7]  [A7]  [D]
-{end_of_verse}
+{start_of_intro: 前奏/Intro}
+[D] [D/E] | [F#m] [Bm] | [Em7] [A7] | [D] |
+{end_of_intro}
 
 {start_of_verse: 主歌/Couplet}
-我的神，我要永遠在祢[Bm]的懷裡，   wǒ de shén wǒ yào yǒng yuǎn zài mí de huái lǐ
-[D/G]愛慕祢，屈膝[D/F]在祢面前單[Em7]單敬拜[A]祢。我   ài mù mí qū xī zài mí miàn qián dān dān jìng bài mí wǒ
-）•日」几[Em7]小J[A7]口门。   rì jǐ xiǎo J kǒu mén
-渴慕祢，我敬拜祢，我的主，我深愛的唯一。   kě mù mí wǒ jìng bài mí wǒ de zhǔ wǒ shēn ài de wéi yī
+[D]我的神， 我要[A/C#]永远在你的[Bm]怀里， [D/A]   wǒ de shén wǒ yào yǒng yuǎn zài nǐ de huái lǐ
+[D/G]爱慕你， 屈膝[D/F#]在你面前[Em7]单单敬拜[A]你。   ài mù nǐ qū xī zài nǐ miàn qián dān dān jìng bài nǐ
+我[G]渴慕[D/F#]你， [F#]我敬拜[Bm]你， 我的[Em7]主， 我[A7]深爱的唯[D]一。   wǒ kě mù nǐ wǒ jìng bài nǐ wǒ de zhǔ wǒ shēn ài de wéi yī
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-[D]耶穌，哦[D/E][Fm]耶[B]穌，我靈[Em7]最深渴慕[A7]。   yē sū ò yē sū wǒ líng zuì shēn kě mù
-耶穌，[D/E]哦耶穌[Bm7]，祢[Em7]醫治我[A7]心深[D]處。   yē sū ò yē sū mí yī zhì wǒ xīn shēn chǔ
+[D]耶稣， 哦[D/E]耶[F#m7]酥， [Bm7]我灵[Em7]最深[E7]渴[A7]慕。   yē sū ó yē sū wǒ líng zuì shēn kě mù
+[D]耶稣， 哦[D/E]耶[F#m7]酥， [Bm7]你[Em7]医治[A7]我心深[D]处。   yē sū ó yē sū nǐ yī zhì wǒ xīn shēn chù
 {end_of_chorus}

@@ -1,21 +1,34 @@
 {title: 我能给你什么}
 {title_pinyin: Wǒ néng gěi nǐ shén me}
+{artist: 赞美之泉}
 {key: F}
-{tempo: 80}
+{tempo: 67}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-•=67我能给你什么（F调）   wǒ néng gěi nǐ shén me F tiáo
-[Bbm/Db]  [C/D]  [Dm7]  [Gm7]  [F/A]  [Bbm]  [C]
-[A7]
-[F]能给你什么[C/E]，回[Dm7]应你所给的[Cm7]。[F7]我[Bb]虽不配，[Bbm/Db]你使   néng gěi nǐ shén me huí yìng nǐ suǒ gěi de wǒ suī bù pèi nǐ shǐ
-能给你什么，回应你所给的。为我舍命，使我   néng gěi nǐ shén me huí yìng nǐ suǒ gěi de wèi wǒ shè mìng shǐ wǒ
-[F/A]我尊贵[C/D]，[Dm7]世[Gm9]界舍弃的，但你看我[Bb/C]为宝贝。我   wǒ zūn guì shì jiè shè qì de dàn nǐ kàn wǒ wèi bǎo bèi wǒ
-[F/C]得完全[C/D]，[Dm7]在创世之前你已[G7]拣选了我[Csus4]。[Bb/C]献上我   dé wán quán zài chuàng shì zhī qián nǐ yǐ jiǎn xuǎn liǎo wǒ xiàn shàng wǒ
-[F]生命为你所用[C/E]，我所[C#dim]有[Dm7]一切为你所赐[Cm7][F7]。   shēng mìng wèi nǐ suǒ yòng wǒ suǒ yǒu yī qiè wèi nǐ suǒ cì
-生命为你所用，我能有什么不能给你。   shēng mìng wèi nǐ suǒ yòng wǒ néng yǒu shén me bù néng gěi nǐ
-[C/Bb]
-[Bb]而我有什[Bbm]么[A7]不能[A/C]够给你[Dm7]，生命是你的，恩赐[G7]是你给   ér wǒ yǒu shén me bù néng gòu gěi nǐ shēng mìng shì nǐ de ēn cì shì nǐ gěi
-赏赐在于你，收取在于你，用我   shǎng cì zài yú nǐ shōu qǔ zài yú nǐ yòng wǒ
-的。[Bb/D]献[C/E]上我为[Gm7]你的尊贵[F/A]器皿，一生[Bbm]为你成为祝[F]福。   de xiàn shàng wǒ wèi nǐ de zūn guì qì mǐn yī shēng wèi nǐ chéng wèi zhù fú
+{start_of_intro: 前奏/Intro}
+[Bb2]  [Bbm/Db]  [F/C]  [C/D]  [Dm7]  [Gm7]  [F/A]  [Bbm]  [C]
+{end_of_intro}
+
+{start_of_verse: 主歌 1/Couplet 1}
+我[F]能 给你什么[C/E]， 回[Dm7]应 祢所给的[Cm7]。[F7]   wǒ néng gěi nǐ shén me huí yìng nǐ suǒ gěi de
+我[Bb]虽不配， [Bbm/Db]祢使[F/A]我尊贵[C/D]；[Dm7]   wǒ suī bù pèi nǐ shǐ wǒ zūn guì
+[Gm9]世界舍弃的， 但祢看[Bb/C]我为宝[C7b9]贝。   shì jiè shè qì de dàn nǐ kàn wǒ wèi bǎo bèi
 {end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+我[F]能 给你什么[C/E]， 回[Dm7]应 祢所给的[Cm7]。[F7]   wǒ néng gěi nǐ shén me huí yìng nǐ suǒ gěi de
+为[Bb]我舍命， [Bbm/Db]使我[F/C]得完全[C/D]；[Dm7]   wèi wǒ shè mìng shǐ wǒ dé wán quán
+在[G7sus4]创世之前 祢已[G7]拣选了[Csus4]我。[Bb/C]   zài chuàng shì zhī qián nǐ yǐ jiàn xuǎn le wǒ
+{end_of_verse}
+
+{start_of_chorus: 副歌 1/Refrain 1}
+[F]生命 为祢所用， [C/E]我所有[C#dim]一[Dm7]切 为祢所赐[Cm7]。[F7]   shēng mìng wèi nǐ suǒ yòng wǒ suǒ yǒu yī qiè wèi nǐ suǒ cì
+而[Bb]我有什[Bbm]么[A7] 不能[A/C#]够给你[Dm7]？   ér wǒ yǒu shén me bù néng gòu gěi nǐ
+生[G7sus4]命是祢的， 恩赐是[G7]祢给的[Csus4]。[Bb/D]  [C/E]   shēng mìng shì nǐ de ēn cì shì nǐ gěi de
+{end_of_chorus}
+
+{start_of_chorus: 副歌 2/Refrain 2}
+[F]生命 为祢所用， [C/E]我能有[C#dim]什[Dm7]么 不能给你[Cm7]？[F7]   shēng mìng wèi nǐ suǒ yòng wǒ néng huò shén me bù néng gěi nǐ
+赏[Bb]赐在于祢[Bbm]， [A7]收取在[A/C#]于祢[Dm7]，   shǎng cì zài yú nǐ shōu qǔ zài yú nǐ
+用[Gm7]我 为祢的[F/A]尊贵器皿， 一生[Bbm]为你成[C7]为祝[F]福。   yòng wǒ wèi nǐ de zūn guì qì mǐn yī shēng wèi nǐ chéng wéi zhù fú
+{end_of_chorus}

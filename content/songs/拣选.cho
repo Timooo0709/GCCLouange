@@ -1,22 +1,27 @@
 {title: 拣选}
 {title_pinyin: Jiǎn xuǎn}
-{key: C}
-{tempo: 80}
+{key: F}
+{tempo: 150}
+{artist: 赞美之泉}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-揀選   jiǎn xuǎn
-{end_of_verse}
-
 {start_of_intro: 前奏/Intro}
-十字架的大[B]能，重[Gm]價贖回我靈魂。   shí zì jià de dà néng zhòng jià shú huí wǒ líng hún
-惑[Am7]典使我被[Dm]揀選[F/C]，叫[Gm7]我生[C7]命果常存。   huò diǎn shǐ wǒ bèi jiǎn xuǎn jiào wǒ shēng mìng guǒ cháng cún
+[F]   [Bb]   [F]   [Bb]
 {end_of_intro}
 
+{start_of_verse: 主歌/Couplet}
+[F]十字架的大[Bb]能，   shí zì jià de dà néng
+重[Gm]价赎回我灵[C]魂。   zhòng jià shú huí wǒ líng hún
+祢[Am7]恩典使[A7]我被[Dm]拣[F/C]选，   nǐ ēn diǎn shǐ wǒ bèi jiǎn xuǎn
+叫[Gm7]我生命果子常[C7]存。 [F]   jiào wǒ shēng mìng guǒ zǐ cháng cún
+{end_of_verse}
+
 {start_of_chorus: 副歌/Refrain}
-求主，用我來贏得更多靈魂，堅   qiú zhǔ yòng wǒ lái yíng dé gèng duō líng hún jiān
-[B][F/A]小[Gm]」上[F][Am]』   xiǎo shàng
-固我，潔淨我，委身做称門徒。求主，差遣我去   gù wǒ jié jìng wǒ wěi shēn zuò chēng mén tú qiú zhǔ chà qiǎn wǒ qù
-傳揚祢的一愛，以愛擁抱城市，建立合一教會。賜我   chuán yáng chēng de yī ài yǐ ài yōng bào chéng shì jiàn lì hé yī jiào huì cì wǒ
-信心宣告，在称凡事都能，喔主，在祢凡事都能。   xìn xīn xuān gào zài chēng fán shì dōu néng wō zhǔ zài mí fán shì dōu néng
+求主，[F]用我来[Am]赢得[Dm]更多[F/C]灵魂，   qiú zhǔ yòng wǒ lái yíng dé gèng duō líng hún
+坚[Bb]固我，[F/A]洁净我，[Gm]委身做祢[C]门徒。   jiān gù wǒ jié jìng wǒ wěi shēn zuò nǐ mén tú
+求主，[F]差遣我[Am]去[Dm]传扬[Am]祢的爱，   qiú zhǔ chāi qiǎn wǒ qù chuán yáng nǐ de ài
+以[Bb]爱拥抱城[F/A]市，[Gm]建立合一[C]教会。   yǐ ài yōng bào chéng shì jiàn lì hé yī jiào huì
+赐我[Dm7]信心宣[F+/C#]告，   cì wǒ xìn xīn xuān gào
+[F/C]在祢凡事[Bdim7]都能，   zài nǐ fán shì dōu néng
+[Gm]喔主，[C7]在祢凡事都[F]能。   ō zhǔ zài nǐ fán shì dōu néng
 {end_of_chorus}

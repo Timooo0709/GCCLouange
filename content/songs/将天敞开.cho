@@ -1,30 +1,26 @@
 {title: 将天敞开}
 {title_pinyin: Jiāng tiān chǎng kāi}
-{key: C}
-{tempo: 80}
+{artist: 赞美之泉}
+{key: G}
+{tempo: 152}
 {language: zh}
 
+{start_of_intro: 前奏/Intro}
+[G]   [D/F#]   [C/E]   [G/D]
+{end_of_intro}
+
 {start_of_verse: 主歌/Couplet}
-Tom將天敞開   Tom jiāng tiān chǎng kāi
-SreameofPoiseP泉OpenHeaven   SreameofPoiseP quán OpenHeaven
-EnglishTranslation:JohnHo詞：鄭懋柔：TiffanyM.Cheng   EnglishTranslation JohnHo cí zhèng mào róu TiffanyM Cheng
-•=152熱情宣揚地、讚美地曲：游智婷SandyYu   rè qíng xuān yáng dì zàn měi dì qǔ yóu zhì tíng SandyYu
-[D/F][C/E][G/D][G]將天敞開，   jiāng tiān chǎng kāi
-[D/F]祢的榮耀[C/E]降下來[G/D]。[C]將天敞開，[G/B]祢的同在   mí de róng yào jiàng xià lái jiāng tiān chǎng kāi mí de tóng zài
-[Am]降下[D]來。[G]將天敞開，[D/F]祢的榮耀[C/E]降下   jiàng xià lái jiāng tiān chǎng kāi mí de róng yào jiàng xià
+[G]将天敞开，[D/F#]祢的荣耀[C/E]降下[G/D]来；   jiāng tiān chǎng kāi nǐ de róng yào jiàng xià lái
+[C]将天敞开，[G/B]祢的同在[Am]降下[D]来；   jiāng tiān chǎng kāi nǐ de tóng zài jiàng xià lái
+[G]将天敞开，[D/F#]祢的荣耀[C/E]降下[G/D]来，[C]万国赞叹祢，[D]祢是荣耀[G]君王。   jiāng tiān chǎng kāi nǐ de róng yào jiàng xià lái wàn guó zàn tàn nǐ nǐ shì róng yào jūn wáng
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-來。萬國讚嘆祢，祢是榮耀—君王。天上地   lái wàn guó zàn tàn mí mí shì róng yào jūn wáng tiān shàng dì
-[G][C/G][Am]口一   kǒu yī
-下，合敬拜。歡呼耶穌基督，   xià hé jìng bài huān hū yē sū jī dū
-聖潔羔羊，榮耀歸於祢。天上地下，[Dm/F]在永   shèng jié gāo yáng róng yào guī wū mí tiān shàng dì xià zài yǒng
-恆拜。哈利亞，哈亞。   héng bài hā lì yā hā yā
+天上地[G]下，合一[C/G]敬拜；欢呼[Am]耶稣基督，圣洁[C/G]羔羊，[D]荣耀归于[G]祢；   tiān shàng dì xià hé yī jìng bài huān hū yē sū jī dū shèng jié gāo yáng róng yào guī yú nǐ
+天上地[Dm/F]下，在永[C/E]恒里[Cm/Eb]敬拜，[G/D]哈利路[C/D]亚，哈利路[G]亚。   tiān shàng dì xià zài yǒng héng lǐ jìng bài hā lì lù yà hā lì lù yà
 {end_of_chorus}
 
-{start_of_bridge: 桥段/Pont}
-[C]神熱在。熱熱[Bm]開數細[Em]祢，讓切焦   shén rè zài rè rè kāi shù xì mí ràng qiè jiāo
-點轉向祢；神就在這裡，   diǎn zhuǎn xiàng mí shén jiù zài zhè lǐ
-[Bm]我們歡迎[Em]祢，寶座[Am]前敬拜[A]不停[D]息。   wǒ mén huān yíng mí bǎo zuò qián jìng bài bù tíng xī
-〔將天敞開，活著為要敬拜祢〕•12   jiāng tiān chǎng kāi huó zhù wéi yào jìng bài mí
+{start_of_bridge: 桥段/Bridge}
+[C]神就在这[D]里，我[Bm]们欢迎[Em]祢，让[C]一切焦点[D]转向[G]祢；   shén jiù zài zhè lǐ wǒ men huān yíng nǐ ràng yī qiè jiāo diǎn zhuǎn xiàng nǐ
+[C]神就在这[D]里，我[Bm]们欢迎[Em]祢，宝[Am]座前敬拜[A/C#]不停[D]息。   shén jiù zài zhè lǐ wǒ men huān yíng nǐ bǎo zuò qián jìng bài bù tíng xī
 {end_of_bridge}

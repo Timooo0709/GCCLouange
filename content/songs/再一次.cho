@@ -1,24 +1,34 @@
 {title: 再一次}
 {title_pinyin: Zài yí cì}
+{artist: 赞美之泉}
 {key: G}
-{tempo: 80}
+{tempo: 125}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-再一次   zài yī cì
-•-125迫切呼求地、熱情地詞：游智婷SandyYu   pò qiè hū qiú dì rè qíng dì cí yóu zhì tíng SandyYu
-曲：曾祥怡GraceTseng   qǔ céng xiáng yí GraceTseng
+{start_of_intro: 前奏/Intro}
+[G]   [D/G]   [C/G]   [G]
+{end_of_intro}
+
+{start_of_verse: 主歌 1/Couplet 1}
+[G]再一次，点燃我[D/G]的心，不让[C/G]冷漠来占[G]据；   zài yī cì diǎn rán wǒ de xīn bù ràng lěng mò lái zhàn jù
+[C]我的爱不再[G/B]漠不关心，我的[A]敬拜充满热[D]情。   wǒ de ài bù zài mò bù guān xīn wǒ de jìng bài chōng mǎn rè qíng
 {end_of_verse}
 
-{start_of_intro: 前奏/Intro}
-再一次，點燃我   zài yī cì diǎn rán wǒ
-的心，不讓冷漠來佔據；我的愛不再漠不關心，我的   de xīn bù ràng lěng mò lái zhàn jù wǒ de ài bù zài mò bù guān xīn wǒ de
-敬拜充滿熱情。再一次，賜給我信心，我要看見祢神   jìng bài chōng mǎn rè qíng zài yī cì cì gěi wǒ xìn xīn wǒ yào kàn jiàn mí shén
-[G]蹟，病得醫治[D]，瞎眼[Bm]得看[Em]見，我渴[Am]慕[C/D]更多見到[G]称。   jì bìng dé yī zhì xiā yǎn dé kàn jiàn wǒ kě mù gèng duō jiàn dào chēng
-我們要，我們要，我們要主祢的恩膏；看神蹟，看奇   wǒ mén yào wǒ mén yào wǒ mén yào zhǔ chēng de ēn gāo kàn shén jì kàn qí
-再一次，再一次，再一次觸摸我的靈；讓敬拜，衝破   zài yī cì zài yī cì zài yī cì chù mō wǒ de líng ràng jìng bài chōng pò
-妙作為，我們要見祢的榮耀。我們要，我們要，我們   miào zuò wéi wǒ mén yào jiàn chēng de róng yào wǒ mén yào wǒ mén yào wǒ mén
-雲霄，如称信實上達穹蒼。再一次，再一次，再一   yún xiāo rú chēng xìn shí shàng dá qióng cāng zài yī cì zài yī cì zài yī
-要主祢的恩膏，用信心，看神蹟奇事，全地要見祢的榮耀。   yào zhǔ chēng de ēn gāo yòng xìn xīn kàn shén jì qí shì quán dì yào jiàn chēng de róng yào
-次獻上我生命，我的心，不停為祢燃燒，我一生單為祢而活。   cì xiàn shàng wǒ shēng mìng wǒ de xīn bù tíng wéi mí rán shāo wǒ yī shēng dān wéi mí ér huó
-{end_of_intro}
+{start_of_verse: 主歌 2/Couplet 2}
+[G]再一次，赐给我[D/G]信心，我要[C/G]看见祢神[G]迹；   zài yī cì cì gěi wǒ xìn xīn wǒ yào kàn jiàn nǐ shén jì
+[C]病得[D]医[Bm]治，瞎眼[Em]得看[Am]见，我渴[C/D]慕更多见到[G]祢。   bìng dé yī zhì xiā yǎn dé kàn jiàn wǒ kě mù gèng duō jiàn dào nǐ
+{end_of_verse}
+
+{start_of_chorus: 副歌 1/Refrain 1}
+[G]我们要，[D/G]我们要，我们[C]要主[D]祢的恩[G]膏；   wǒ men yào wǒ men yào wǒ men yào zhǔ nǐ de ēn gāo
+看[C]神[D]迹，看[B]奇妙作[Em]为，我们[Am]要见祢的[F]荣[D]耀。   kàn shén jì kàn qí miào zuò wéi wǒ men yào jiàn nǐ de róng yào
+[G]我们要，[D/G]我们要，我们[C]要主[D]祢的恩[G]膏；   wǒ men yào wǒ men yào wǒ men yào zhǔ nǐ de ēn gāo
+用[C]信[D]心，看[B]神迹奇[Em]事，全地[Am]要见[C/D]祢的荣[G]耀。   yòng xìn xīn kàn shén jì qí shì quán dì yào jiàn nǐ de róng yào
+{end_of_chorus}
+
+{start_of_chorus: 副歌 2/Refrain 2}
+[G]再一次，[D/G]再一次，再一[C]次触[D]摸我的[G]灵；   zài yī cì zài yī cì zài yī cì chù mō wǒ de líng
+让[C]敬[D]拜，冲[B]破云[Em]霄，如祢[Am]信实上达[F]穹[D]苍。   ràng jìng bài chōng pò yún xiāo rú nǐ xìn shí shàng dá qióng cāng
+[G]再一次，[D/G]再一次，再一[C]次献[D]上我生[G]命；   zài yī cì zài yī cì zài yī cì xiàn shàng wǒ shēng mìng
+我[C]的[D]心，不[B]停为祢[Em]燃烧，我一[Am]生单[C/D]为祢而[G]活。   wǒ de xīn bù tíng wéi nǐ rán shāo wǒ yī shēng dān wéi nǐ ér huó
+{end_of_chorus}

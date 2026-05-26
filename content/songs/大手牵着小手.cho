@@ -1,43 +1,39 @@
 {title: 大手牵着小手}
 {title_pinyin: Dà shǒu qiān zhe xiǎo shǒu}
-{key: F}
-{tempo: 80}
+{artist: 赞美之泉}
+{key: D}
+{tempo: 70}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-大手牽著小手   dà shǒu qiān zhù xiǎo shǒu
-〔台灣世界展望會第25屆飢餓三十主題曲〕   tái wān shì jiè zhǎn wàng huì dì jiè jī è sān shí zhǔ tí qǔ
-詞：鄭懋柔TiftfanyM.Cheng   cí zhèng mào róu TiftfanyM Cheng
-•=70熱情地、盼望地曲：游智婷SandyYu   rè qíng dì pàn wàng dì qǔ yóu zhì tíng SandyYu
-[D][A/D][G/D][D][D][Bm][G/A]一起   yī qǐ
+{start_of_intro: 前奏/Intro}
+[D]   [A/D]   [G/D]   [D]   [A/C#]   [G]   [D]   [A/C#]   [Bm]   [D/A]   [G]   [G/A]
+{end_of_intro}
+
+{start_of_verse: 主歌 1/Couplet 1}
+一[G/A]起[D]张开眼[A/C#]睛，[Bm]看看这世[G]界，[D/F#]最美的美[Em]景，在[D/F#]真诚[E/G#]笑容[Asus4]里；[A7]   yī qǐ zhāng kāi yǎn jīng kàn kàn zhè shì jiè zuì měi de měi jǐng zài zhēn chéng xiào róng lǐ
+一[G/A]起[D]付出真[A/C#]心，[Bm]关爱这世[G]界，[D/F#]最美的足[Em]迹，在[G/A]爱的道路[Dsus4]里。[D]   yī qǐ fù chū zhēn xīn guān ài zhè shì jiè zuì měi de zú jì zài ài de dào lù lǐ
 {end_of_verse}
 
-{start_of_verse: 主歌/Couplet}
-張開[A/C]眼睛[Bm]，看看這世界，最美的美景，在真[D/F]誠笑容[Asus4]裡。[A7]一起   zhāng kāi yǎn jīng kàn kàn zhè shì jiè zuì měi de měi jǐng zài zhēn chéng xiào róng lǐ yī qǐ
-付出真心[Bm]，關愛這世界，最美的足跡，在愛的道路裡[Dsus4][D]。   fù chū zhēn xīn guān ài zhè shì jiè zuì měi de zú jì zài ài de dào lù lǐ
+{start_of_verse: 主歌 2/Couplet 2}
+[D]一同向世界[A/C#]展望，爱因[Bm7]为你而闪[D/A]亮，让[G]我们共享[D/F#]生命[E/G#]的亮[Asus4]光；[A7]   yī tóng xiàng shì jiè zhǎn wàng ài yīn wèi nǐ ér shǎn liàng ràng wǒ men gòng xiǎng shēng mìng de liàng guāng
+[D]一同向世界[A/C#]展望，幸福[Bm7]因你而延[D/A]长，让[G]我们共享[G/A]未来的希[D]望。[A7]   yī tóng xiàng shì jiè zhǎn wàng xìng fú yīn wèi nǐ ér yán cháng ràng wǒ men gòng xiǎng wèi lái de xī wàng
 {end_of_verse}
 
-{start_of_verse: 主歌/Couplet 2}
-一同向世界展望，愛因為你而閃亮，讓我們共享生[D/F]命的[E/G]亮光[Asus4][A7]。   yī tóng xiàng shì jiè zhǎn wàng ài yīn wéi nǐ ér shǎn liàng ràng wǒ mén gòng xiǎng shēng mìng de liàng guāng
-一同向世界展望，幸福因你而延長，讓我們共享未來的希[D]望[A7]。   yī tóng xiàng shì jiè zhǎn wàng xìng fú yīn nǐ ér yán cháng ràng wǒ mén gòng xiǎng wèi lái de xī wàng
-{end_of_verse}
-
-{start_of_chorus: 副歌/Refrain}
-[D]大手牽著小手，同[Bm7]心攜手出[D/A]發，期待[G]有一天，處處[D/F]開滿[Em]生命的花[A]。   dà shǒu qiān zhù xiǎo shǒu tóng xīn xié shǒu chū fā qī dài yǒu yī tiān chǔ chǔ kāi mǎn shēng mìng de huā
-讚美之泉   zàn měi zhī quán
-[Bm7]门几J[D/A]）[D/F]。   mén jǐ J
-大手牽著小手，分享微笑盼望，期待：那一，大，再也沒有   dà shǒu qiān zhù xiǎo shǒu fēn xiǎng wēi xiào pàn wàng qī dài nà yī dà zài yě méi yǒu
+{start_of_chorus: 副歌 1 (D调)/Refrain 1 (D)}
+[D]大手牵着小[A/C#]手，同[Bm7]心携手出[D/A]发，期待[G]有一天，处[D/F#]处开[Em]满生命的[A]花；   dà shǒu qiān zhe xiǎo shǒu tóng xīn xié shǒu chū fā qī dài yǒu yī tiān chǔ chǔ kāi mǎn shēng mìng de huā
+[D]大手牵着小[A/C#]手，分[Bm7]享微笑盼[D/A]望，期待[G]那一天，再[D/F#]也没有[Em]饥饿[G/A]和悲[D]伤。   dà shǒu qiān zhe xiǎo shǒu fēn xiǎng wēi xiào pàn wàng qī dài nà yī tiān zài yě méi yǒu jī è hé bēi shāng
 {end_of_chorus}
 
-{start_of_bridge: 桥段/Pont}
-飢餓札悲傷。看見需要，停下腳步，使   jī è zhá bēi shāng kàn jiàn xū yào tíng xià jiǎo bù shǐ
-受傷的心得著安[A]撫。[Em]求神賜下，勇敢憐[D/F]憫的心，使   shòu shāng de xīn dé zhù ān fǔ qiú shén cì xià yǒng gǎn lián mǐn de xīn shǐ
+{start_of_bridge: 桥段/Bridge}
+[Em]看见需要，就[D/F#]停下脚步，使[G]受伤的心得着安[A]抚；   kàn jiàn xū yào jiù tíng xià jiǎo bù shǐ shòu shāng de xīn dé zhe ān fǔ
+[Em]求神赐下，勇敢[D/F#]怜悯的心，使[G]我的拥抱温暖像[A]阳光。   qiú shén cì xià yǒng gǎn lián mǐn de xīn shǐ wǒ de yōng bào wēn nuǎn xiàng yáng guāng
 {end_of_bridge}
 
-{start_of_chorus: 副歌/Refrain}
-我的擁；抱溫暖像陽光。大手牽著小手，   wǒ de yōng bào wēn nuǎn xiàng yáng guāng dà shǒu qiān zhù xiǎo shǒu
-同[Dm7]心攜手出[F/C]發，期待[Bb]有天，處[F/A]處滿[Gm]生命的[G/B]花[C]。   tóng xīn xié shǒu chū fā qī dài yǒu tiān chǔ chǔ mǎn shēng mìng de huā
-[F]大手牽著小[C/E]手，分[Dm7]享微笑盼望，期待[Bb]那一天，再[F/A]也沒有   dà shǒu qiān zhù xiǎo shǒu fēn xiǎng wēi xiào pàn wàng qī dài nà yī tiān zài yě méi yǒu
-[Gm]飢餓[C7]和悲傷[F]。祈禱[Bb]那一天，你[F/A]我充滿[Gm]永恆的盼[F]望。   jī è hé bēi shāng qí dǎo nà yī tiān nǐ wǒ chōng mǎn yǒng héng de pàn wàng
-〔這裡有榮耀〕   zhè lǐ yǒu róng yào
+{start_of_chorus: 副歌 2 (F调)/Refrain 2 (F)}
+[F]大手牵着小[C/E]手，同[Dm7]心携手出[F/C]发，期待[Bb]有一天，处[F/A]处开[Gm]满生[G/B]命的[C]花；   dà shǒu qiān zhe xiǎo shǒu tóng xīn xié shǒu chū fā qī dài yǒu yī tiān chǔ chǔ kāi mǎn shēng mìng de huā
+[F]大手牵着小[C/E]手，分[Dm7]享微笑盼[F/C]望，期待[Bb]那一天，再[F/A]也没有[Gm]饥饿[C7]和悲[F]伤。   dà shǒu qiān zhe xiǎo shǒu fēn xiǎng wēi xiào pàn wàng qī dài nà yī tiān zài yě méi yǒu jī è hé bēi shāng
 {end_of_chorus}
+
+{start_of_bridge: 尾奏/Coda}
+[Bb]祈祷那一天，[F/A]你我充满[Gm]永恒[Bb/C]的盼[F]望。   qí dǎo nà yī tiān nǐ wǒ chōng mǎn yǒng héng de pàn wàng
+{end_of_bridge}

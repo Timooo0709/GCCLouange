@@ -1,20 +1,27 @@
 {title: 这里有荣耀}
 {title_pinyin: Zhè lǐ yǒu róng yào}
+{artist: 赞美之泉}
 {key: G}
-{tempo: 80}
+{tempo: 152}
 {language: zh}
 
+{start_of_intro: 前奏/Intro}
+[G] | [G] | [C] | [C] | [G] | [G] | [C] | [C] |
+{end_of_intro}
+
 {start_of_verse: 主歌/Couplet}
-这里有荣耀   zhè lǐ yǒu róng yào
-[G]哈利路亚，[G/B]哈利路亚，[C]这里有荣耀[G]。[G]哈利路亚，   hā lì lù yà hā lì lù yà zhè lǐ yǒu róng yào hā lì lù yà
-[G/B]哈利路亚，[Am]这里有医治涌[D]流。[G]哈利路亚，[G/B]哈利路亚，   hā lì lù yà zhè lǐ yǒu yī zhì yǒng liú hā lì lù yà hā lì lù yà
-[C]这里有光明自由[G]。[G]敬拜声音如[G/B]众水涌流，   zhè lǐ yǒu guāng míng zì yóu jìng bài shēng yīn rú zhòng shuǐ yǒng liú
+[G]哈利路亚， [G/B]哈利路亚， [C]这里有荣[G]耀。   hā lì lù yà hā lì lù yà zhè lǐ yǒu róng yào
+[G]哈利路亚， [G/B]哈利路亚， [Am]这里有医治[D]涌流。   hā lì lù yà hā lì lù yà zhè lǐ yǒu yī zhì yǒng liú
+[G]哈利路亚， [G/B]哈利路亚， [C]这里有光明[G]自由。   hā lì lù yà hā lì lù yà zhè lǐ yǒu guāng míng zì yóu
+[G]敬拜声音[G/B]如众水涌流， [Am]永活的主[D]你在这里。[G]   jìng bài shēng yīn rú zhòng shuǐ yǒng liú yǒng huó de zhǔ nǐ zài zhè lǐ
 {end_of_verse}
 
-{start_of_chorus: 副歌/Refrain}
-永活的主你在这里。你是起初的，末后的，   yǒng huó de zhǔ nǐ zài zhè lǐ nǐ shì qǐ chū de mò hòu de
-的日头，如光照耀，   de rì tóu rú guāng zhào yào
-[Am]昔在今在[D]永在的主[G]。全心[C]敬拜你，大[G/B]声欢呼，   xī zài jīn zài yǒng zài de zhǔ quán xīn jìng bài nǐ dà shēng huān hū
-万国赞叹你的荣美。圣洁公义主，明亮晨星，   wàn guó zàn tàn nǐ de róng měi shèng jié gōng yì zhǔ míng liàng chén xīng
-[Am]羔羊被高举[D]。公义[Am]昔在、今在、[D]永在的君王[G]。   gāo yáng bèi gāo jǔ gōng yì xī zài jīn zài yǒng zài de jūn wáng
+{start_of_chorus: 副歌 1/Refrain 1}
+你是[C]起初的， [G/B]末后的， [Am]昔在今在[D]永在的主。[G]   nǐ shì qǐ chū de mò hòu de xī zài jīn zài yǒng zài de zhǔ
+全心[C]敬拜你， [G/B]大声欢呼， [Am]羔羊被高[D]举。   quán xīn jìng bài nǐ dà shēng huān hū gāo yáng bèi gāo jǔ
+{end_of_chorus}
+
+{start_of_chorus: 副歌 2/Refrain 2}
+公义[C]的日头， [G/B]如光照耀， [Am]万国赞叹[D]你的荣美。[G]   gōng yì de rì tou rú guāng zhào yào wàn guó zàn tàn nǐ de róng měi
+圣洁[C]公义主， [G/B]明亮晨星， [Am]昔在、今在、[D]永在的君[G]王。   shèng jié gōng yì zhǔ míng liàng chén xīng xī zài jīn zài yǒng zài de jūn wáng
 {end_of_chorus}

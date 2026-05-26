@@ -1,16 +1,28 @@
 {title: 深深爱你}
 {title_pinyin: Shēn shēn ài nǐ}
 {key: E}
-{tempo: 80}
+{tempo: 68}
+{artist: Robert & Lea Sutanto}
 {language: zh}
 
 {start_of_verse: 主歌/Couplet}
-深深爱祢   shēn shēn ài mí
-高安妮、张慧慧中文译词   gāo ān nī zhāng huì huì zhōng wén yì cí
-J=68渴慕地   J kě mù dì
-我[E]生命中最[E/G]渴望的一件[A6]事，[E/G]切[F#m7]慕祢单[B13]单寻求   wǒ shēng mìng zhōng zuì kě wàng de yī jiàn shì qiè mù mí dān dān xún qiú
-祢[Bm7][E7]。[Amaj]全心全意，用我全力爱祢，敬   mí quán xīn quán yì yòng wǒ quán lì ài mí jìng
-[F#m]拜祢，让祢[F#9]荣耀充满全地[B7]。深深爱[E]你耶[B/D]稣，深深爱   bài mí ràng mí róng yào chōng mǎn quán dì shēn shēn ài nǐ yē sū shēn shēn ài
-[C#m]祢耶[A]稣！我[E/G]爱祢超越[F]生命中一[B9sus4]切。[B]深深爱   mí yē sū wǒ ài mí chāo yuè shēng mìng zhōng yī qiè shēn shēn ài
-[E]祢耶[B/D]稣，深深爱[C#m]祢耶[A]稣！哦！[E/B]我爱祢[B]耶[E]稣。   mí yē sū shēn shēn ài mí yē sū ò wǒ ài mí yē sū
+我[E]生命中最[E/G#]渴望的一[Amaj7]件[A6]事，[E/G#]
+wǒ   shēng   mìng   zhōng   zuì   kě   wàng   de   yī   jiàn   shì
+切[F#m7]慕祢单单[B13]寻求[Emaj7]祢。[Bm7]   [E7]
+qiè   mù   nǐ   dān   dān   xún   qiú   nǐ
+用我[Amaj7]全心全[B/A]意，用我[G#m]全力爱[C#m]祢，
+yòng   wǒ   quán   xīn   quán   yì   yòng   wǒ   quán   lì   ài   nǐ
+敬[F#m]拜祢，让祢[F#9]荣耀充满[B9sus4]全地[B7]。
+jìng   bài   nǐ   ràng   nǐ   róng   yào   chōng   mǎn   quán   dì
 {end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+深深爱[E]你耶[B/D#]稣，深深爱[C#m]祢耶[A]稣！
+shēn   shēn   ài   nǐ   yē   sū   shēn   shēn   ài   nǐ   yē   sū
+我[E/G#]爱祢超越[F#7]生命中一[B9sus4]切。[B]
+wǒ   ài   nǐ   chāo   yuè   shēng   mìng   zhōng   yī   qiè
+深深爱[E]祢耶[B/D#]稣，深深爱[C#m]祢耶[A]稣！
+shēn   shēn   ài   nǐ   yē   sū   shēn   shēn   ài   nǐ   yē   sū
+哦！[E/B]我爱[A/B]祢耶[B]稣[E]。
+ò   wǒ   ài   nǐ   yē   sū
+{end_of_chorus}

@@ -1,24 +1,33 @@
 {title: 耶和华行了大事}
 {title_pinyin: Yē hé huá xíng le dà shì}
-{key: C}
-{tempo: 80}
+{artist: 曾祥怡}
+{key: Bb}
+{tempo: 148}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-耶和华行了大事   yē hé huá xíng liǎo dà shì
-J=148喜乐、庆贺地   J xǐ lè qìng hè dì
-耶和[B]华已经为我们[F/B]行了大[B]事，祂3[E]铺张云彩   yē hé huá yǐ jīng wèi wǒ men xíng liǎo dà shì tā pù zhāng yún cǎi
-耶和华已经为我们行了大事，祂命令狂风   yē hé huá yǐ jīng wèi wǒ men xíng liǎo dà shì tā mìng lìng kuáng fēng
-[B]  [D/F]
-当遮盖，夜[Cm]间使火光照[F]。耶和华已经为我们[F/A]行了大   dāng zhē gài yè jiān shǐ huǒ guāng zhào yē hé huá yǐ jīng wèi wǒ men xíng liǎo dà
-止息，那波浪就平静。耶和华己经为我们行了大   zhǐ xī nà bō làng jiù píng jìng yē hé huá jǐ jīng wèi wǒ men xíng liǎo dà
-[F7]  [B]
-[Gm]事，祂在干早之处[F7]便水流   shì tā zài gān zǎo zhī chù biàn shuǐ liú
-我们要欢呼，   wǒ men yào huān hū
-事，祂张开双手我们就得   shì tā zhāng kāi shuāng shǒu wǒ men jiù dé
-述说祂的作为，我们依靠神，就能施展大能。   shù shuō tā de zuò wèi wǒ men yī kào shén jiù néng shī zhǎn dà néng
-我们要歌颂要欢呼，述说祂的作为，我们   wǒ men yào gē sòng yào huān hū shù shuō tā de zuò wèi wǒ men
-依靠神就能施展[F]大[B]能。祂必带领选民欢呼向   yī kào shén jiù néng shī zhǎn dà néng tā bì dài lǐng xuǎn mín huān hū xiàng
-前，祂将列国的地赐给我们。祂必带领   qián tā jiāng liè guó de dì cì gěi wǒ men tā bì dài lǐng
-选民欢呼向前，祂将列国的地赐给我们。   xuǎn mín huān hū xiàng qián tā jiāng liè guó de dì cì gěi wǒ men
+{start_of_intro: 前奏/Intro}
+[Bb] | [Eb/Bb] | [F/Bb] | [Bb] | [Eb] | [F7] | [Bb] |
+{end_of_intro}
+
+{start_of_verse: 主歌 1/Couplet 1}
+[Bb]耶和华已[Eb/Bb]经为我[F/Bb]们行了[Bb]大事， 祂[Eb]铺张云彩[F7]当遮盖，   yē hé huá yǐ jīng wèi wǒ men xíng le dà shì tā pù zhāng yún cǎi dāng zhē gài
+[Bb/D]夜间使火[Cm]光照[F]。   yè jiān shǐ huǒ guāng zhào
+[Bb]耶和华已[Eb/Bb]经为我[F/Bb]们行了[Bb]大事， 祂[Eb]命令狂风[F7]止息，   yē hé huá yǐ jīng wèi wǒ men xíng le dà shì tā mìng lǐng kuáng fēng zhǐ xī
+[Bb/D]那波浪[Cm]就平[F]静。   nà bō làng jiù píng jìng
 {end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+[Bb]耶和华已[Eb/Bb]经为我[F/A]们行了[D/F#]大事， [Gm]祂在干旱[Eb]之处使水流[F7]成[Eb/F]河。[F7]   yē hé huá yǐ jīng wèi wǒ men xíng le dà shì tā zài gān hàn zhī chù shǐ shuǐ liú chéng hé
+[Bb]耶和华已[Eb/Bb]经为我[F/A]们行了[D/F#]大事， [Gm]祂张开双[Eb]手我们就得[F7]饱[Eb/F]足。[F7]   yē hé huá yǐ jīng wèi wǒ men xíng le dà shì tā zhāng kāi shuāng shǒu wǒ men jiù dé bǎo zú
+{end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+我们[Eb]要欢呼， [F/Eb]述说祂的作[Bb/D]为， [Cm] 我们[Bb]依靠神， [Eb] 就能施[F/Eb]展大[Bb/D]能。[Cm]   wǒ men yào huān hū shù shuō tā de zuò wéi wǒ men yī kào shén jiù néng shī zhǎn dà néng
+我们[Bb]要歌颂[Eb]要欢呼， [F/Eb]述说祂的[D]作为，   wǒ men yào gē sòng yào huān hū shù shuō tā de zuò wéi
+我们[Cm]依靠神， [F] 就能[Eb/F]施展 [F] 大[Bb]能。   wǒ men yī kào shén jiù néng shī zhǎn dà néng
+{end_of_chorus}
+
+{start_of_bridge: 桥段/Bridge}
+[Ab]祂必带领选[Eb]民欢呼向[Bb]前， [Ab]祂将列国的[Eb]地赐给我[Bb]们。   tā bì dài lǐng xuǎn mín huān hū xiàng qián tā jiāng liè guó de dì cì gěi wǒ men
+[Ab]祂必带领选[Eb]民欢呼向[Bb]前， [F/A] [Gm] [Bb/F] [Eb] 祂将列国的[Cm]地赐给我[F]们。   tā bì dài lǐng xuǎn mín huān hū xiàng qián tā jiāng liè guó de dì cì gěi wǒ men
+{end_of_bridge}

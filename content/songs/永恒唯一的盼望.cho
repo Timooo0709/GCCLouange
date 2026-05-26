@@ -1,26 +1,22 @@
 {title: 永恒唯一的盼望}
 {title_pinyin: Yǒng héng wéi yī de pàn wàng}
 {key: F}
-{tempo: 80}
+{tempo: 156}
+{artist: 赞美之泉}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-永恆唯一的盼望   yǒng héng wéi yī de pàn wàng
-TheHopeofOurLives讚美之泉   TheHopeofOurLives zàn měi zhī quán
-EnglishTranslation:SOP詞、曲：曾祥怡   EnglishTranslation SOP cí qǔ céng xiáng yí
-•=156熱情讚美地、宣告地GraceTseng   rè qíng zàn měi dì xuān gào dì GraceTseng
-{end_of_verse}
-
 {start_of_intro: 前奏/Intro}
+[F]
 {end_of_intro}
 
 {start_of_verse: 主歌/Couplet}
-[F]有一位真神[Dm]，祂名字叫耶穌，祂來到這世界上，為要救   yǒu yī wèi zhēn shén tā míng zì jiào yē sū tā lái dào zhè shì jiè shàng wéi yào jiù
-[Gm]贖你[C]。[F]生命的意[Dm]義，盡[Gm]在這福音裡，只要你開口呼   shú nǐ shēng mìng de yì yì jìn zài zhè fú yīn lǐ zhī yào nǐ kāi kǒu hū
+[F]有   yǒu   一位   yī wèi   真   zhēn   神，   shén   [Dm]祂   tā   名字叫   míng zì jiào   [Gm]耶   yē   稣，   sū   祂   tā   来到   lái dào   [C]这   zhè   世   shì   界上，   jiè shàng   [Am]为   wèi   要   yào   救   jiù   [Dm]赎   shú   你。   nǐ
+[Gm]生命的   shēng mìng de   [C]意   yì   [F]义，   yì   盡   jìn   [Dm]在   zài   这   zhè   福   fú   [Gm]音   yīn   里，   lǐ   只要   zhī yào   你   nǐ   [C]开口   kāi kǒu   呼   hū   [Am]喊   hǎn   耶   yē
+[Dm]稣。   sū   耶   yē   [Gm]稣。   sū   [C]
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-喊，耶穌。耶穌是生命一切問題的解   hǎn yē sū yē sū shì shēng mìng yī qiè wèn tí de jiě
-答[Bb/D]，[D]耶穌是[Gm]生命一切[G]黑[F]暗的亮[C]光。將憂   dá yē sū shì shēng mìng yī qiè hēi àn de liàng guāng jiāng yōu
-傷變為喜樂，將懼怕變為力量，耶穌是永恆唯一的盼望。   shāng biàn wéi xǐ lè jiāng jù pà biàn wéi lì liáng yē sū shì yǒng héng wéi yī de pàn wàng
+[F]耶稣   yē sū   是   shì   生   shēng   命   mìng   [C/E]一切   yī qiè   问题的   wèn tí de   解   jiě
+[Bb/D]答，   dá   [D]耶稣   yē sū   是   shì   [Gm]生   shēng   命   mìng   一切   yī qiè   [Gm/F]黑   hēi   暗的   àn de   亮   liàng   [C]光。   guāng   [C]将   jiāng   忧   yōu
+[Am]伤   shāng   变   biàn   为   wéi   喜   xǐ   [Dm]乐，   lè   将   jiāng   [A]惧怕   jù pà   变   biàn   为   wéi   力   lì   [Dm]量，   liàng   耶稣   yē sū   是   shì   [Gm]永   yǒng   恒   héng   唯   wéi   [Bb/C]一的   yī de   盼   pàn   [F]望。   wàng
 {end_of_chorus}

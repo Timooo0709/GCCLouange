@@ -1,34 +1,36 @@
 {title: 打开天窗}
 {title_pinyin: Dǎ kāi tiān chuāng}
 {key: D}
-{tempo: 80}
+{tempo: 66}
+{artist: 赞美之泉}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-•弦樂套譜可在讚美之泉網站購買。   xián lè tào pǔ kě zài zàn měi zhī quán wǎng zhàn gòu mǎi
-打開天窗   dǎ kāi tiān chuāng
-{end_of_verse}
-
 {start_of_intro: 前奏/Intro}
+[D]   [D]   [D]   [D]
 {end_of_intro}
 
 {start_of_verse: 主歌/Couplet}
-[D]我，我的禱告[F#m]如香陳[G]列在祢面前[D]，沒[G]有黑暗勢力，   wǒ wǒ de dǎo gào rú xiāng chén liè zài mí miàn qián méi yǒu hēi àn shì lì
-可以搖動[Em]我的信心[A]。願[D]我，我的敬拜[F#m]到祢面前，   kě yǐ yáo dòng wǒ de xìn xīn yuàn wǒ wǒ de jìng bài dào mí miàn qián
-蒙祢悦納。天使天軍屈膝，俯伏敬拜在祢寶座前。   méng mí yuè nà tiān shǐ tiān jūn qū xī fǔ fú jìng bài zài mí bǎo zuò qián
+[D]我，我的祷告[F#m]如香陈[G]列在祢面前，   wǒ wǒ de dǎo gào rú xiāng chén liè zài nǐ miàn qián
+[D]没有[G]黑暗势力，   méi yǒu hēi àn shì lì
+可以[D/F#]摇动[Em]我的信心。[A]   kě yǐ yáo dòng wǒ de xìn xīn
+愿[D]我，我的敬拜[F#m]到祢面前，   yuàn wǒ wǒ de jìng bài dào nǐ miàn qián
+[G]蒙祢悦纳。[D]   méng nǐ yuè nà
+天[G]使天军屈膝，[D/F#]俯伏敬拜[Em]在祢宝座前。[A]   tiān shǐ tiān jūn qū xī fǔ fú jìng bài zài nǐ bǎo zuò qián
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-打開天窗，打開天窗，願我的禱告打開天窗。願祢充   dǎ kāi tiān chuāng dǎ kāi tiān chuāng yuàn wǒ de dǎo gào dǎ kāi tiān chuāng yuàn mí chōng
-滿，祢的榮耀，祢的同在在這地。打開天窗，打開天窗，   mǎn mí de róng yào mí de tóng zài zài zhè dì dǎ kāi tiān chuāng dǎ kāi tiān chuāng
-讚美之泉   zàn měi zhī quán
-願我的敬拜打開天窗。我們只要祢的榮耀，祢的同在   yuàn wǒ de jìng bài dǎ kāi tiān chuāng wǒ mén zhī yào mí de róng yào mí de tóng zài
+打开[D]天窗，打开[A/C#]天窗，   dǎ kāi tiān chuāng dǎ kāi tiān chuāng
+愿我的[Bm]祷告打开[F#m]天窗。   yuàn wǒ de dǎo gào dǎ kāi tiān chuāng
+愿祢[G]充满，祢的[D/F#]荣耀，   yuàn nǐ chōng mǎn nǐ de róng yào
+祢的[Em]同在在这[A]地。[D]   nǐ de tóng zài zài zhè dì
+打开[D]天窗，打开[A/C#]天窗，   dǎ kāi tiān chuāng dǎ kāi tiān chuāng
+愿我的[Bm]敬拜打开[F#m]天窗。   yuàn wǒ de jìng bài dǎ kāi tiān chuāng
+我们[G]只要祢的[D/F#]荣耀，   wǒ men zhǐ yào nǐ de róng yào
+祢的[Em]同在在这[A]地，在这[Bm]地。   nǐ de tóng zài zài zhè dì zài zhè dì
 {end_of_chorus}
 
-{start_of_verse: 主歌/Couplet}
-在這地，在這地[A][Bm]。   zài zhè dì zài zhè dì
-一fillthisplace,fillthisplace.   yī fillthisplace fillthisplace
-願我的禱告如[G]香，[Em]願我的禱[D/F]告如香，   yuàn wǒ de dǎo gào rú xiāng yuàn wǒ de dǎo gào rú xiāng
-香，獻在祢面[A]前。   xiāng xiàn zài mí miàn qián
-〔從早晨到夜晚〕   cóng zǎo chén dào yè wǎn
-{end_of_verse}
+{start_of_bridge: 桥段/Bridge}
+[Em]愿我的[D/F#]祷告如[G]香，   yuàn wǒ de dǎo gào rú xiāng
+[Em]愿我的[D/F#]祷告如[G]香，   yuàn wǒ de dǎo gào rú xiāng
+献在祢[A]面前。   xiàn zài nǐ miàn qián
+{end_of_bridge}

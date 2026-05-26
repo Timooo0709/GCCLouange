@@ -1,17 +1,20 @@
 {title: 每一天我需要你}
 {title_pinyin: Měi yì tiān wǒ xū yào nǐ}
 {key: C}
-{tempo: 80}
+{tempo: 66}
+{artist: 曾祥怡}
 {language: zh}
 
 {start_of_verse: 主歌/Couplet}
-每一天我需要你   měi yī tiān wǒ xū yào nǐ
-J=66恳切呼求、敬拜地（启2:4；来4:16）曾祥怡曲   J kěn qiè hū qiú jìng bài dì qǐ lái céng xiáng yí qǔ
-[C]让我姐奶无[G/B]惧来[Am]到施恩座前，[F]用心灵诚实寻求   ràng wǒ jiě nǎi wú jù lái dào shī ēn zuò qián yòng xīn líng chéng shí xún qiú
-[G]你。[C]亲爱的天父[G/B]我何[Am]等的需要你，需要更多   nǐ qīn ài de tiān fù wǒ hé děng de xū yào nǐ xū yào gèng duō
-你的同[F/G]在在我生[C]命。[C][G/B]何[Am]天，[C/G]我需要你，   nǐ de tóng zài zài wǒ shēng mìng hé tiān wǒ xū yào nǐ
-[F]你[G]话语如甘[C]髹[F]；[C]每[G/B]时[Am]刻，[C/G]我需要你，   nǐ huà yǔ rú gān xiū měi shí kè wǒ xū yào nǐ
-圣[G]灵如雨降[C]临。这是我的祷[Am]告，[C/G]愿我生   shèng líng rú yǔ jiàng lín zhè shì wǒ de dǎo gào yuàn wǒ shēng
-[F]命单[C/E]单归荣：[Dm]耀给你耶[G]稣；[C]这[G/B]是我的呼   mìng dān dān guī róng yào gěi nǐ yē sū zhè shì wǒ de hū
-[Am]求，[C/G]每天都[F]更爱[C/E]你永不[Dm]失去起初[G]爱你的[C]心。   qiú měi tiān dōu gèng ài nǐ yǒng bù shī qù qǐ chū ài nǐ de xīn
+[C]让我坦然   ràng wǒ tǎn rán   无   wú   [G/B]惧   jù   来   lái   [Am]到   dào   施恩座前，   shī ēn zuò qián   [F]用   yòng   心灵   xīn líng   诚   chéng   实   shí   寻求   xún qiú
+[G]你。   nǐ   [C]亲爱的   qīn ài de   天   tiān   [G/B]父   fù   我   wǒ   何   hé   [Am]等的   děng de   需要   xū yào   你，   nǐ   需要   xū yào   更多   gèng duō
+[Dm]你的   nǐ de   同   tóng   在在   zài zài   我   wǒ   [F/G]生   shēng   [C]命。   mìng
 {end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+[C]每   měi   一   yī   [G/B]天，   tiān   [Am]我   wǒ   需要   xū yào   [C/G]你，   nǐ
+[F]你   nǐ   [G]话语   huà yǔ   如   rú   甘   gān   [C]霖；   lín   [F/G]   [G]   [C]每   měi   [G/B]时   shí   [Am]刻，   kè   [C/G]我   wǒ   需要   xū yào   你，   nǐ
+[F]圣   shèng   [G]灵   líng   如雨   rú yǔ   降   jiàng   [C]临。   lín   [F/G]   [C]这   zhè   [G/B]是   shì   我的   wǒ de   祷   dǎo   [Am]告，   gào   [C/G]愿   yuàn   我   wǒ   生   shēng
+[F]命   mìng   单   dān   [C/E]单   dān   归   guī   荣   róng   [Dm]耀   yào   给你   gěi nǐ   耶   yē   [G]稣；   sū   [C]这   zhè   [G/B]是   shì   我的   wǒ de   呼   hū
+[Am]求，   qiú   [C/G]每天   měi tiān   都   dōu   [F]更爱   gèng ài   [C/E]你   nǐ   永不   yǒng bù   [Dm]失去   shī qù   起初   qǐ chū   [G]爱你的   ài nǐ de   [C]心。   xīn
+{end_of_chorus}

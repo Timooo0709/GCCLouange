@@ -1,26 +1,24 @@
 {title: 深不见底的爱}
-{title_pinyin: Shēn bú jiàn dǐ de ài}
+{title_pinyin: Shēn bù jiàn dǐ de ài}
 {key: G}
-{tempo: 80}
+{tempo: 67}
+{artist: 赞美之泉}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-深不見底的愛以   shēn bù jiàn dǐ de ài yǐ
-EndlessLoveSreanofTPraise）讚美之泉   EndlessLoveSreanofTPraise zàn měi zhī quán
-［CD版本副歌升調至A大調」〔創1:27；路12:7；弗3:18-19〕   CD bǎn běn fù gē shēng diào zhì A dà diào chuàng lù fú
-EnglishTranslation:SOP-出自專輯【聽見這世代的呼喚】-詞、曲：余盈盈   EnglishTranslation SOP chū zì zhuān jí tīng jiàn zhè shì dài de hū huàn cí qǔ yú yíng yíng
-•=67被愛地、感恩敬拜地SarahYu   bèi ài dì gǎn ēn jìng bài dì SarahYu
-[Bm7]  [Em]  [D/C]  [Dsus4]  [D]
-[C]
-{end_of_verse}
+{start_of_intro: 前奏/Intro}
+[CMaj7]   [D/C]   [Bm7]   [Em]   [CMaj7]   [D/C]   [Dsus4]   [D]
+{end_of_intro}
 
 {start_of_verse: 主歌/Couplet}
-[G]聖經裡面[D/F]說天[Em]父何等愛[G/D]我，[C]不管做對[G/B]做錯，愛[Am7]我一樣多。   shèng jīng lǐ miàn shuō tiān fù hé děng ài wǒ bù guǎn zuò duì zuò cuò ài wǒ yī yàng duō
+[G]圣经里[D/F#]面说[Em]天父何[G/D]等爱我，[C]不管做[G/B]对做错，[Am7]爱我一[D]样多。
+shèng   jīng   lǐ   miàn   shuō   tiān   fù   hé   děng   ài   wǒ   bù   guǎn   zuò   duì   zuò   cuò   ài   wǒ   yī   yàng   duō
+[G]认识祢[D/F#]之后，[Em]不再为[G/D]自己活，[C]愿圣灵[G/B]帮助我，[Am7]能经历[D]祢更多。
+rèn   shí   nǐ   zhī   hòu   bù   zài   wéi   zì   jǐ   huó   yuàn   shèng   líng   bāng   zhù   wǒ   néng   jīng   lì   nǐ   gèng   duō
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-[G]認識祢之[D/F]後，不[Em]再為自己[G/D]活，[C]願聖靈幫[G/B]助我，能[Am7]經歷祢更多。深不見   rèn shí mí zhī hòu bù zài wéi zì jǐ huó yuàn shèng líng bāng zhù wǒ néng jīng lì mí gèng duō shēn bù jiàn
-[D/C]•月[Bm7]•小[Em][Am][G/B]小   yuè xiǎo xiǎo
-底的愛，沒有別處能找到，按祢形象造我，深深認識我。我每一   dǐ de ài méi yǒu bié chǔ néng zhǎo dào àn mí xíng xiàng zào wǒ shēn shēn rèn shí wǒ wǒ měi yī
-根頭髮，天父祢都細數過，恩典如繁星一樣多。   gēn tóu fà tiān fù mí dōu xì shù guò ēn diǎn rú fán xīng yī yàng duō
+深不见[CMaj7]底的[D/C]爱，没有[Bm7]别处能[Em]找到，[Am]按祢形[G/B]象造我，[C]深深认[D]识我。
+shēn   bù   jiàn   dǐ   de   ài   méi   yǒu   bié   chǔ   néng   zhǎo   dào   àn   nǐ   xíng   xiàng   zào   wǒ   shēn   shēn   rèn   shí   wǒ
+我每一[CMaj7]根头[D/C]发，天父[Bm7]祢都细[Em]数过，[Am]恩典如[C/D]繁星一[G]样多。
+wǒ   měi   yī   gēn   tóu   fa   tiān   fù   nǐ   dōu   xì   shǔ   guò   ēn   diǎn   rú   fán   xīng   yī   yàng   duō
 {end_of_chorus}

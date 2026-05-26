@@ -1,40 +1,28 @@
-{title: 我是承带神荣耀的器皿}
-{title_pinyin: Wǒ shì chéng dài shén róng yào de qì mǐn}
-{key: C}
-{tempo: 80}
+{title: 我是承载神荣耀的器皿}
+{title_pinyin: Wǒ shì chéng zài shén róng yào de qì mǐn}
+{artist: 赞美之泉}
+{key: G}
+{tempo: 158}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-我是承載神榮耀的器皿   wǒ shì chéng zài shén róng yào de qì mǐn
-SkreamofFPraiseP泉CarryGod'sGlory   SkreamofFPraiseP quán CarryGod sGlory
-•弦樂譜可在讚美之泉網站購買。〔賽60:1,61:1-2；太5:13-14,11:5〕   xián lè pǔ kě zài zàn měi zhī quán wǎng zhàn gòu mǎi sài tài
-EnglishTranslation:SOP-出自專輯【讚美中信心不斷升起】-詞：曾祥怡GraceTseng   EnglishTranslation SOP chū zì zhuān jí zàn měi zhōng xìn xīn bù duàn shēng qǐ cí céng xiáng yí GraceTseng
-•=158有信心地、慶賀地曲：游智婷SandyYu   yǒu xìn xīn dì qìng hè dì qǔ yóu zhì tíng SandyYu
-{end_of_verse}
-
 {start_of_intro: 前奏/Intro}
+[G]  [G]  [G]  [G]
 {end_of_intro}
 
 {start_of_verse: 主歌/Couplet}
-.」。」[C/G]。心」人。   xīn rén
-主耶和華的靈在我身上，   zhǔ yē hé huá de líng zài wǒ shēn shàng
-叫我傳好信息給[D]謙卑的人，   jiào wǒ chuán hǎo xìn xī gěi qiān bēi de rén
-[G]醫好傷心的人，安慰[C/G]悲哀的人，   yī hǎo shāng xīn de rén ān wèi bēi āi de rén
-報告祂的恩年將要來到。   bào gào tā de ēn nián jiāng yào lái dào
-我是承載神榮耀的器皿，我是   wǒ shì chéng zài shén róng yào de qì mǐn wǒ shì
-承載神大能的器皿，興起發光，神的榮耀   chéng zài shén dà néng de qì mǐn xīng qǐ fā guāng shén de róng yào
-我是承載神榮耀的器皿-2   wǒ shì chéng zài shén róng yào de qì mǐn
-SreanofTPraise）讚美之泉   SreanofTPraise zàn měi zhī quán
-發現照耀我，作鹽作光，將盼望帶入人群裡。   fā xiàn zhào yào wǒ zuò yán zuò guāng jiāng pàn wàng dài rù rén qún lǐ
+主耶和华的[G]灵在我身[C/G]上， 叫我传好信[Am]息给谦卑的[D]人，   zhǔ yē hé huá de líng zài wǒ shēn shàng jiào wǒ chuán hǎo xìn xī gěi qiān bēi de rén
+医好伤心的[G]人， 安慰悲哀的[C/G]人， 报告祂的恩[Am]年将要来[D]到。   yī hǎo shāng xīn de rén ān wèi bēi ài de rén bào gào tā de ēn nián jiāng yào lái dào
 {end_of_verse}
 
-{start_of_bridge: 桥段/Pont 43}
-被擄的得釋放，被囚的出監牢，因   bèi lǔ de dé shì fàng bèi qiú de chū jiān láo yīn
-[G]耶穌的名，神蹟要發生[D]！   yē sū de míng shén jì yào fā shēng
-C分[G]二、一一［[C/G]二一-   C fēn èr yī yī èr yī
-瘸腿的要行走，瞎眼的要看見，   qué tuǐ de yào xíng zǒu xiā yǎn de yào kàn jiàn
-{end_of_bridge}
-
 {start_of_chorus: 副歌/Refrain}
-日！穌在這裡，天國在這裡！   rì sū zài zhè lǐ tiān guó zài zhè lǐ
+我是[G]承载神荣耀的器[C]皿， 我是[G]承载神大能的器[D]皿，   wǒ shì chéng zài shén róng yào de qì mǐn wǒ shì chéng zài shén dà néng de qì mǐn
+兴起[Em]发光， 神的荣[C]耀， [C/D]发现照[D]耀我；   xīng qǐ fā guāng shén de róng yào fā xiàn zhào yào wǒ
+作[Em]盐作光， 将[C]盼望 [C/D]带入人[D]群里。   zuò yán zuò guāng jiāng pàn wàng dài rù rén qún lǐ
 {end_of_chorus}
+
+{start_of_bridge: 桥段/Bridge}
+[G]被掳的得释放， [C/G]被囚的出监牢，   bèi lǔ de dé shì fàng bèi qiú de chū jiān láo
+因[G]耶稣的名， 神[D]迹要发生！   yīn yē sū de míng shén jì yào fā shēng
+[G]瘸腿的要行走， [C/G]瞎眼的要看见，   qué tuǐ de yào xíng zǒu xiā yǎn de yào kàn jiàn
+耶稣在[G]这里， 天国在这[D]里！   yē sū zài zhè lǐ tiān guó zài zhè lǐ
+{end_of_bridge}

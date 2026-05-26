@@ -1,43 +1,40 @@
 {title: 圣诞节耶稣为你而来}
 {title_pinyin: Shèng dàn jié yē sū wèi nǐ ér lái}
+{artist: 赞美之泉}
 {key: A}
-{tempo: 80}
+{tempo: 134}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-聖誕節耶穌為你而來   shèng dàn jié yē sū wéi nǐ ér lái
-{end_of_verse}
-
 {start_of_intro: 前奏/Intro}
-[A]  [C#m]  [F#m]  [D]
-[A]  [E]  [D]  [A]
+[A]   [C#m]   [F#m]   [D]
+[A]   [E]   [D]   [A]
 {end_of_intro}
 
-{start_of_verse: 主歌/Couplet 1}
-[A]又到十[C#m7]二月又到[F#m]我最期待[D]的季節   yòu dào shí èr yuè yòu dào wǒ zuì qī dài de jì jié
-[A]聖誕的[C#m7]鈴聲呼喚[D]著我   shèng dàn de líng shēng hū huàn zhù wǒ
+{start_of_verse: 主歌 1/Couplet 1}
+[A]又到十二月[C#m7]又到我最[F#m]期待的季[D]节，   yòu dào shí èr yuè yòu dào wǒ zuì qī dài de jì jié
+[A]圣诞的铃[C#m7]声 呼唤着[D]我。   shèng dàn de líng shēng hū huàn zhe wǒ
 {end_of_verse}
 
-{start_of_verse: 主歌/Couplet 2}
-[A]耶穌告[C#m7]訴我我是[F#m]祂最珍貴[D]的寶貝   yē sū gào sù wǒ wǒ shì tā zuì zhēn guì de bǎo bèi
-[A]所以祂[C#m7]願意為我[D]而來   suǒ yǐ tā yuàn yì wéi wǒ ér lái
+{start_of_verse: 主歌 2/Couplet 2}
+[A]耶稣告诉我[C#m7]我是祂最[F#m]珍贵的宝贝，   yē sū gào su wǒ wǒ shì tā zuì zhēn guì de bǎo bèi
+[A]所以祂愿[C#m7]意 为我而[D]来。   suǒ yǐ tā yuàn yì wèi wǒ ér lái
+{end_of_verse}
+
+{start_of_verse: 预备副歌/Pre-Chorus}
+[Bm7]祂放弃了[A/C#]一切，[D]用爱挽[F#m7]回一切；   tā fàng qì le yī qiè yòng ài wǎn huí yī qiè
+[Bm7]为我们[A/C#]舍生命[E] 耶稣。   wèi wǒ men shě shēng mìng yē sū
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-[Bm7]祂放棄了[A/C]一切用愛挽[F#m7]回一切   tā fàng qì liǎo yī qiè yòng ài wǎn huí yī qiè
-[Bm7]為我們捨[A/C]生命耶[E]穌   wéi wǒ mén shě shēng mìng yē sū
+[A]圣诞节 [C#m7]耶稣为你而[F#m]来，圣诞节 [D]耶稣为我而[A]来；   shèng dàn jié yē sū wèi nǐ ér lái shèng dàn jié yē sū wèi wǒ ài lái
+我们要 [E]大声欢呼赞[D]美祂。   wǒ men yào dà shēng huān hū zàn měi tā
 {end_of_chorus}
 
-{start_of_chorus: 副歌/Refrain}
-[A]聖誕節耶[C#m7]穌為你而來[F#m]聖誕節耶[D]穌為我而來   shèng dàn jié yē sū wéi nǐ ér lái shèng dàn jié yē sū wéi wǒ ér lái
-[A]我們要[E]大聲歡呼讚美祂   wǒ mén yào dà shēng huān hū zàn měi tā
-{end_of_chorus}
-
-{start_of_bridge: 桥段/Pont}
-[A]欸欸大聲[C#m7]歡呼讚美欸[F#m]欸大[D]聲歡呼讚美   ǎi ǎi dà shēng huān hū zàn měi ǎi ǎi dà shēng huān hū zàn měi
-[A]欸欸大[E]聲歡呼讚美[D]祂   ǎi ǎi dà shēng huān hū zàn měi tā
+{start_of_bridge: 桥段/Bridge}
+[A]诶诶 [C#m7]大声欢呼赞[F#m]美，诶诶 [D]大声欢呼赞[A]美；   āi āi dà shēng huān hū zàn měi āi āi dà shēng huān hū zàn měi
+诶诶 [E]大声欢呼赞[D]美祂。   āi āi dà shēng huān hū zàn měi tā
 {end_of_bridge}
 
-{start_of_verse: 主歌/Couplet}
-[A]  [C#m7]  [F#m]  [D]  [A]  [C#m7]  [D]
-{end_of_verse}
+{start_of_intro: 间奏/Interlude}
+[A]   [C#m7]   [F#m]   [D]   [A]   [C#m7]   [D]
+{end_of_intro}

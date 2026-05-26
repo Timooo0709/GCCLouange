@@ -1,28 +1,30 @@
 {title: 只需要你}
 {title_pinyin: Zhī xū yào nǐ}
+{artist: 赞美之泉}
 {key: C}
-{tempo: 80}
+{tempo: 68}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-只需要祢   zhī xū yào mí
-中文譯詞：鄭蔥柔［弗3:18-19］詞、曲：周巽倩   zhōng wén yì cí zhèng cōng róu fú cí qǔ zhōu xùn qiàn
-[C]  [G/B]  [Am]  [F]  [C/E]  [Dm]  [G]  [G]
+{start_of_intro: 前奏/Intro}
+[C]   [G/B]   [Am]   [C/G]   [F]   [C/E]   [Dm]   [Fmaj7/G]   [G]
+{end_of_intro}
+
+{start_of_verse: 主歌 1/Couplet 1}
+[F]耶稣，祢如[G]此爱[C/E]我，[Am]背负我的[F]罪使我洁[G]净。   yē sū nǐ rú cǐ ài wǒ bèi fù wǒ de zuì shǐ wǒ jié jìng
 {end_of_verse}
 
-{start_of_verse: 主歌/Couplet}
-耶穌，祢如此[C/E]愛我[Am]，背負我的罪使我潔淨。   yē sū mí rú cǐ ài wǒ bèi fù wǒ de zuì shǐ wǒ jié jìng
-[F]耶穌，祢如此[C/E]愛[Am]我，為我[F]流寶血，付[G]上代[C]價。當我看   yē sū mí rú cǐ ài wǒ wéi wǒ liú bǎo xuè fù shàng dài jià dāng wǒ kàn
+{start_of_verse: 主歌 2/Couplet 2}
+[F]耶稣，祢如[G]此爱[C/E]我，[Am]为我流[F]宝血，付[G]上代[C]价。   yē sū nǐ rú cǐ ài wǒ wéi wǒ liú bǎo xuè fù shàng dài jià
+{end_of_verse}
+
+{start_of_verse: 预备副歌/Pre-Chorus}
+当我看[F]不见，祢开[G]启我眼[C]睛；当我心[F]孤寂，祢[G]与我亲[Am]近；   dāng wǒ kàn bú jiàn nǐ kāi qǐ wǒ yǎn jing dāng wǒ xīn gū jì nǐ yǔ wǒ qīn jìn
+当我快[F]放弃，祢[E]赐我生[Am]命，因[Am/G]祢鞭[F]伤，我[Gsus4]得医[G]治。   dāng wǒ kuài fàng qì nǐ cì wǒ shēng mìng yīn nǐ biān shāng wǒ dé yī zhì
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-不見，祢開啟我眼睛。當我心[F]孤寂，祢與我親   bù jiàn mí kāi qǐ wǒ yǎn jīng dāng wǒ xīn gū jì mí yǔ wǒ qīn
-[Am]近。當我快[F]放棄，祢[E]賜我生[Am]命，因[Am/G]祢鞭[F]傷，我得醫   jìn dāng wǒ kuài fàng qì mí cì wǒ shēng mìng yīn mí biān shāng wǒ dé yī
--只需要祢2-   zhī xū yào mí
-ChorusStreanofFPraiseP讚之泉   ChorusStreanofFPraiseP zàn zhī quán
-治[Gsus4][G]。[C]耶穌[G/B]，祢[Am]愛是長闊[C/G]高深，[F]耶[Em]穌祢   zhì yē sū mí ài shì cháng kuò gāo shēn yē sū mí
-愛是没有止畫。世上的一切有一天將過去，我只   ài shì méi yǒu zhǐ huà shì shàng de yī qiè yǒu yī tiān jiāng guò qù wǒ zhī
-需要祢，只需要祢[Gsus4]。[G][C]耶穌[G/B]，祢[Am]愛是長闊[C/G]高深，   xū yào mí zhī xū yào mí yē sū mí ài shì cháng kuò gāo shēn
-[F]耶穌，祢愛是没有止盡。世上的一切有   yē sū mí ài shì méi yǒu zhǐ jìn shì shàng de yī qiè yǒu
-一天將過去[Am]，我只需要祢，只[F/G]需要[C]祢。   yī tiān jiāng guò qù wǒ zhī xū yào mí zhī xū yào mí
+[C]耶稣，祢[G/B]爱是[Am]长阔[C/G]高深，[F]耶稣，祢[Em]爱是[Am]没有[C/G]止尽；   yē sū nǐ ài shì cháng kuò gāo shēn yē sū nǐ ài shì méi yǒu zhǐ jìn
+[F]世上的[Em]一切有[Am]一天将过去，我只[F]需要[Gsus4]祢，只[G]需要[C]祢。   shì shàng de yī qiè yǒu yī tiān jiāng guò qù wǒ zhǐ xū yào nǐ zhǐ xū yào nǐ
+[C]耶稣，祢[G/B]爱是[Am]长阔[C/G]高深，[F]耶稣，祢[Em]爱是[Am]没有[C/G]止尽；   yē sū nǐ ài shì cháng kuò gāo shēn yē sū nǐ ài shì méi yǒu zhǐ jìn
+[F]世上的[Em]一切有[Am]一天将过去，我只[F]需要[F/G]祢，只[G]需要[C]祢。   shì shàng de yī qiè yǒu yī tiān jiāng guò qù wǒ zhǐ xū yào nǐ zhǐ xū yào nǐ
 {end_of_chorus}

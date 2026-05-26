@@ -1,29 +1,30 @@
 {title: 大声敬拜}
 {title_pinyin: Dà shēng jìng bài}
+{artist: 赞美之泉}
 {key: G}
-{tempo: 80}
+{tempo: 140}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-J=140大声敬拜（G原调）   J dà shēng jìng bài G yuán tiáo
-[C]  [G]  [Em]  [D]  [D]
-[C]晨夜[G]晚，[Em]听你声[D]音，敬的   chén yè wǎn tīng nǐ shēng yīn jìng de
-论得时，或不得时，我要敬   lùn dé shí huò bù dé shí wǒ yào jìng
+{start_of_intro: 前奏/Intro}
+[C]   [G]   [Em]   [D]
+{end_of_intro}
+
+{start_of_verse: 主歌 1/Couplet 1}
+[C]晨夜[G]晚，[Em]听你声[D]音，敬[C]拜的歌[G]唱给你[Em]听。[D]   chén yè wǎn tīng nǐ shēng yīn jìng bài de gē chàng gěi nǐ tīng
 {end_of_verse}
 
-{start_of_chorus: 副歌/Refrain 77}
-歌唱给你听。不拜。大声敬拜，   gē chàng gěi nǐ tīng bù bài dà shēng jìng bài
-拜，我要敬   bài wǒ yào jìng
-[C]woo[G]h自由跳舞[Em]，WOo[D]h宣告你是   wooh zì yóu tiào wǔ WOoh xuān gào nǐ shì
-wooh我的拯救，WOoh一生一世   wooh wǒ de zhěng jiù WOoh yī shēng yī shì
-[C]我[G]的最爱[Em]。[D]我的诗歌   wǒ de zuì ài wǒ de shī gē
+{start_of_verse: 主歌 2/Couplet 2}
+[C]论得[G]时，[Em]或不得[D]时，我[C]要敬拜，[G]我要敬[Em]拜。[D]   lùn dé shí huò bù dé shí wǒ yào jìng bài wǒ yào jìng bài
+{end_of_verse}
+
+{start_of_chorus: 副歌 1/Refrain 1}
+大声敬拜，[C]wooh 自[G]由跳舞，[Em]wo oh [D]宣告你是[C]我的[G]最爱。[Em] [D]   dà shēng jìng bài wooh zì yóu tiào wǔ wo oh xuān gào nǐ shì wǒ de zuì ài
 {end_of_chorus}
 
-{start_of_outro: 结尾/Outro}
-离不开你同在，你同在。Fine   lí bù kāi nǐ tóng zài nǐ tóng zài Fine
-[D]从日[Am]出之[G/B]地到日[C]落之处[D]，诸天   cóng rì chū zhī dì dào rì luò zhī chù zhū tiān
-{end_of_outro}
-
-{start_of_chorus: 副歌/Refrain}
-要赞美，众山要欢呼！   yào zàn měi zhòng shān yào huān hū
+{start_of_chorus: 副歌 2/Refrain 2}
+大声敬拜，[C]wooh 我[G]的拯救，[Em]wo oh [D]一生一世[C]离不开[G]你同在，[Em]你[D]同在。[C]   dà shēng jìng bài wooh wǒ de zhěng jiù wo oh yī shēng yī shì lí bù kāi nǐ tóng zài nǐ tóng zài
 {end_of_chorus}
+
+{start_of_bridge: 桥段/Bridge}
+[D]从日[Am]出之[G/B]地到日[C]落之[D]处，诸天[Am]要赞[G/B]美，众山[C]要欢[D]呼！   cóng rì chū zhī dì dào rì luò zhī chù zhū tiān yào zàn měi zhòng shān yào huān hū
+{end_of_bridge}

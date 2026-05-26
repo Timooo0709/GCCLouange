@@ -1,25 +1,29 @@
 {title: 是祢的爱}
-{title_pinyin: Shì mí de ài}
+{title_pinyin: Shì nǐ de ài}
 {key: E}
-{tempo: 80}
+{tempo: 146}
+{artist: 赞美之泉}
 {language: zh}
 
 {start_of_verse: 主歌/Couplet}
-是祢的爱   shì mí de ài
-J=146喜乐、幸福被爱地   J xǐ lè xìng fú bèi ài dì
-[C#m]
-[E]多么丰富无条件的爱[A]，[E]无法测度一直都存在。   duō me fēng fù wú tiáo jiàn de ài wú fǎ cè dù yī zhí dōu cún zài
-这就是耶稣祢的爱，陪伴我永不离开[C#m]。心不再寂寞，因为   zhè jiù shì yē sū mí de ài péi bàn wǒ yǒng bù lí kāi xīn bù zài jì mò yīn wèi
-我是祢最爱。我是祢最爱。   wǒ shì mí zuì ài wǒ shì mí zuì ài
-祢的爱[B/D]高过[G]星宿海洋，[C#m]祢的爱[E/G]大过我所相像，祢对   mí de ài gāo guò xīng sù hǎi yáng mí de ài dà guò wǒ suǒ xiāng xiàng mí duì
-暗死亡，祢的爱   àn sǐ wáng mí de ài
-祢的爱胜过黑温暖就像太阳，   mí de ài shèng guò hēi wēn nuǎn jiù xiàng tài yáng
-不灭   bù miè
-[E/G]我的爱永远都不会[B]更改；   wǒ de ài yǒng yuǎn dōu bù huì gèng gǎi
-我的爱不会因时间更改。不管是现   wǒ de ài bù huì yīn shí jiān gèng gǎi bù guǎn shì xiàn
-在的事[E/G]，还是那将来的事，都不能隔绝祢对   zài de shì hái shì nà jiāng lái de shì dōu bù néng gé jué mí duì
-[G#m]  [E/G]
-我的爱；[A]不管是现在的事，还是那将来的事，   wǒ de ài bù guǎn shì xiàn zài de shì hái shì nà jiāng lái de shì
-都不能隔绝祢的爱，这是祢的爱。   dōu bù néng gé jué mí de ài zhè shì mí de ài
-【注】括号里为第二段歌词所用和弦。   zhù kuò hào lǐ wèi dì èr duàn gē cí suǒ yòng hé xián
+[E]多么   duō me   丰富   fēng fù   无   wú   [C#m]条件的   tiáo jiàn de   爱，   ài   [A]无法   wú fǎ   测度   cè dù   [E]一   yī   直   zhí   都   dōu   存   cún   [G#m]在。   zài
+[F#m]这就是   zhè jiù shì   耶稣   yē sū   [B]祢的   nǐ de   爱，   ài   [G#m]陪伴   péi bàn   我   wǒ   永不   yǒng bù   离   lí   [C#m]开。   kāi   [A]心   xīn   不再   bù zài   寂寞，   jì mò   因为   yīn wèi
+[B]我   wǒ   是   shì   祢   nǐ   最   zuì   爱。   ài
 {end_of_verse}
+
+{start_of_chorus: 副歌 1/Refrain 1}
+[E]祢的爱   nǐ de ài   [B/D#]高过   gāo guò   星   xīng   [C#m]宿   sù   海洋，   hǎi yáng   祢的爱   nǐ de ài   [E/G#]大过   dà guò   我   wǒ   [A]所   suǒ   相像，   xiāng xiàng   祢   nǐ   对   duì
+[E/G#]我的爱   wǒ de ài   [F#m]永远   yǒng yuǎn   都   dōu   不会   bù huì   更   gèng   [B]改；   gǎi
+{end_of_chorus}
+
+{start_of_chorus: 副歌 2/Refrain 2}
+[E]祢的爱   nǐ de ài   [B/D#]胜过   shèng guò   黑   hēi   [C#m]暗   àn   死亡，   sǐ wáng   祢的爱   nǐ de ài   [E/G#]温暖   wēn nuǎn   就   jiù   [A]像   xiàng   太阳，   tài yáng   祢   nǐ   对   duì
+[E/G#]我的爱   wǒ de ài   [F#m]不会   bù huì   因   yīn   时间   shí jiān   更   gèng   [B]改。   gǎi
+{end_of_chorus}
+
+{start_of_bridge: 桥段/Pont}
+[A]不管   bù guǎn   是   shì   现   xiàn
+[A]在的事，   zài de shì   [E/G#]还是   hái shì   那将   nà jiāng   [E/G#]来的事，   lái de shì   [F#m]都   dōu   不能   bù néng   隔   gé   绝   jué   祢   nǐ   对   duì
+[G#m]我的   wǒ de   爱；   ài   [A]不管   bù guǎn   是   shì   现   xiàn   在的事，   zài de shì   [E/G#]还是   hái shì   那将   nà jiāng   来的事，   lái de shì
+[D]都   dōu   不能   bù néng   隔   gé   [B]绝   jué   祢的   nǐ de   爱，   ài   [E]这是   zhè shì   祢的   nǐ de   爱。   ài
+{end_of_bridge}

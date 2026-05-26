@@ -2,21 +2,25 @@
 {title_pinyin: Bù tíng zàn měi nǐ}
 {artist: 何俊杰}
 {key: G}
-{tempo: 80}
+{tempo: 146}
 {language: zh}
 {themes: 赞美, 歌唱, 拯救}
 
+{start_of_intro: 前奏/Intro}
+[G]   [Fadd2]   [C/E]   [Cm/Eb]   [D]
+{end_of_intro}
+
 {start_of_verse: 主歌/Couplet}
-[Cmaj7]时时称颂[D/C]祢，向[Bm7]祢来歌[Em]唱，因[Am7]祢是拯救我[C/D]们伟大的[G]神。[G7]   shí shí chēng sòng mí xiàng mí lái gē chàng yīn mí shì zhěng jiù wǒ men wěi dà de shén
-[Cmaj7]我们尊崇[D/C]祢，称[Bm7]颂祢圣[Em]名，口[Am7]唱心和地[C/D]大声地赞美[G]祢。   wǒ men zūn chóng mí chēng sòng mí shèng míng kǒu chàng xīn hé dì dà shēng dì zàn měi mí
+[C]时时称颂[D/C]祢，向[Bm7]祢来歌[Em]唱，因[Am7]祢是拯救[C/D]我们伟大的[G]神。   shí shí chēng sòng nǐ xiàng nǐ lái gē chàng yīn nǐ shì zhěng jiù wǒ men wěi dà de shén
+[C]我们尊崇[D/C]祢，称[Bm7]颂祢圣[Em]名，口[Am7]唱心和地[C/D]大声地赞美[G]祢。   wǒ men zūn chóng nǐ chēng sòng nǐ shèng míng kǒu chàng xīn hé dì dà shēng dì zàn měi nǐ
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-[Cmaj7]不停赞美[D/C]祢，大[Bm7]声赞美[Em]祢，唯[Am7]有祢配得荣[C/D]耀尊贵权[G]柄。[G7]   bù tíng zàn měi mí dà shēng zàn měi mí wéi yǒu mí pèi dé róng yào zūn guì quán bǐng
-[Cmaj7]天是属于[D/C]祢，地[Bm7]也属于[Em]祢，一[Am7]切所造之[C/D]物齐来赞美[G]祢。   tiān shì shǔ yú mí dì yě shǔ yú mí yī qiè suǒ zào zhī wù qí lái zàn měi mí
+[C]不停赞美[D/C]祢，大[Bm7]声赞美[Em]祢，唯[Am7]有祢配得荣[C/D]耀、尊贵、权[G]柄。   bù tíng zàn měi nǐ dà shēng zàn měi nǐ wéi yǒu nǐ pèi dé róng yào zūn guì quán bǐng
+[C]天是属于[D/C]祢，地[Bm7]也属于[Em]祢，一[Am7]切所造之[C/D]物齐来赞美[G]祢。   tiān shì shǔ yú nǐ dì yě shǔ yú nǐ yī qiè suǒ zào zhī wù qí lái zàn měi nǐ
 {end_of_chorus}
 
-{start_of_bridge: 桥段/Pont}
-我[C]赞美赞美，[D]不停赞美；[G]跳舞跳舞，[Em]不停跳舞；[C]高举双手，[D]大声赞美[G]祢。   wǒ zàn měi zàn měi bù tíng zàn měi tiào wǔ tiào wǔ bù tíng tiào wǔ gāo jǔ shuāng shǒu dà shēng zàn měi mí
-我[C]赞美赞美，[D]不停赞美；[G]跳舞跳舞，[Em]不停跳舞；[C]高举双手，[C/D]大声赞美[G]祢。   wǒ zàn měi zàn měi bù tíng zàn měi tiào wǔ tiào wǔ bù tíng tiào wǔ gāo jǔ shuāng shǒu dà shēng zàn měi mí
+{start_of_bridge: 桥段/Bridge}
+我[C]赞美赞美，[D]不停赞美；[G]跳舞跳舞，[Em]不停跳舞；[C]高举双手，[C/D]大声赞美[G]祢。   wǒ zàn měi zàn měi bù tíng zàn měi tiào wǔ tiào wǔ bù tíng tiào wǔ gāo jǔ shuāng shǒu dà shēng zàn měi nǐ
+我[C]赞美赞美，[D]不停赞美；[G]跳舞跳舞，[Em]不停跳舞；[C]高举双手，[C/D]大声赞美[G]祢。   wǒ zàn měi zàn měi bù tíng zàn měi tiào wǔ tiào wǔ bù tíng tiào wǔ gāo jǔ shuāng shǒu dà shēng zàn měi nǐ
 {end_of_bridge}

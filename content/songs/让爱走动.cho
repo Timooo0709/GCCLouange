@@ -1,32 +1,27 @@
-{title: 让爱走动}
+{title: 讓愛走動}
 {title_pinyin: Ràng ài zǒu dòng}
-{key: Bb}
-{tempo: 80}
+{artist: 游智婷}
+{album: 讓愛走動}
+{key: G}
+{tempo: 115}
 {language: zh}
+{scripture: 太5:16}
 
-{start_of_verse: 主歌/Couplet}
-讓愛走動   ràng ài zǒu dòng
-泉LoveOverflows   quán LoveOverflows
-取自專輯〔讓愛走動〕〔太5:16〕   qǔ zì zhuān jí ràng ài zǒu dòng tài
-EnglishTranslation:JeffNelson,DennisChou詞、曲：游智婷   EnglishTranslation JeffNelson DennisChou cí qǔ yóu zhì tíng
-•=115喜樂地、充滿盼望地SandyYu   xǐ lè dì chōng mǎn pàn wàng dì SandyYu
-{end_of_verse}
-
-{start_of_intro: 前奏/Intro 2}
-[F]  [Cm/Eb]
+{start_of_intro: 前奏/Intro}
+[G]  [Fadd2]  [C/E]  [Cm/Eb]
+[G]  [Fadd2]  [C/E]  [Cm/Eb]  [D]
 {end_of_intro}
 
 {start_of_verse: 主歌/Couplet}
-走過傷心，走過淚水，讓每一   zǒu guò shāng xīn zǒu guò lèi shuǐ ràng měi yī
-顆心[Am]再次飛起[D]來。用你   kē xīn zài cì fēi qǐ lái yòng nǐ
-的心，伸出你手[Bm]，讓每個   de xīn shēn chū nǐ shǒu ràng měi gè
+[D]走過[G]傷心，走過淚[Bm]水，讓每一   zǒu guò shāng xīn zǒu guò lèi shuǐ ràng měi yī
+[C]顆心，[Am]再次飛起[D]來。用你   kē xīn zài cì fēi qǐ lái yòng nǐ
+[G]的心，伸出你[Bm]手，讓每個   de xīn shēn chū nǐ shǒu ràng měi gè
+[C]靈魂[Am]再次活過[D]來。   líng hún zài cì huó guò lái
 {end_of_verse}
 
-{start_of_chorus: 副歌/Refrain 23}
-靈魂再次活過來。讓愛走   líng hún zài cì huó guò lái ràng ài zǒu
-讚美之泉   zàn měi zhī quán
-動，讓你的愛化成希望的種子，隨風揚   dòng ràng nǐ de ài huà chéng xī wàng de zhǒng zǐ suí fēng yáng
-起，編織美麗的夢。[D7]讓愛走   qǐ biān zhī měi lí de mèng ràng ài zǒu
-[G]動，[B]讓[F]你的愛化[C/E]成溫暖的擁[Cm]抱，綻放陽   dòng ràng nǐ de ài huà chéng wēn nuǎn de yōng bào zhàn fàng yáng
-[Am]光，[Cm/D]編織神所造的夢。   guāng biān zhī shén suǒ zào de mèng
+{start_of_chorus: 副歌/Refrain}
+[D]讓愛走[G]動，[Bdim/F]讓你的愛化[C/E]成希望的種[G/D]子，隨風揚   ràng ài zǒu dòng ràng nǐ de ài huà chéng xī wàng de zhǒng zi suí fēng yáng
+[Am]起，[A]編織美麗的[D]夢。[D7]讓愛走   qǐ biān zhī měi lì de mèng ràng ài zǒu
+[G]動，[Bdim/F]讓你的愛化[C/E]成溫暖的擁[Cm/Eb]抱，綻放陽   dòng ràng nǐ de ài huà chéng wēn nuǎn de yōng bào zhàn fàng yáng
+[Am]光，[Cm/D]編織神所造[G]的夢。   guāng biān zhī shén suǒ zào de mèng
 {end_of_chorus}

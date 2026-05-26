@@ -1,19 +1,39 @@
 {title: 深刻的爱}
 {title_pinyin: Shēn kè de ài}
 {key: C}
-{tempo: 80}
+{tempo: 66}
+{artist: 赞美之泉}
 {language: zh}
 
 {start_of_verse: 主歌/Couplet}
-深刻的爱   shēn kè de ài
-J=66幸福被爱、感恩地   J xìng fú bèi ài gǎn ēn dì
-有一种真实的爱，它[G#dim]永远不更改；有一种奇妙的爱[G]，[G/B]从天降下来，   yǒu yī zhǒng zhēn shí de ài tā yǒng yuǎn bù gèng gǎi yǒu yī zhǒng qí miào de ài cóng tiān jiàng xià lái
-满足我[F]心里一[Am]切的[D]渴慕[Dm]，这就是[F/G]耶稣的爱。[Dm]耶[C/E]稣的爱   mǎn zú wǒ xīn lǐ yī qiè de kě mù zhè jiù shì yē sū de ài yē sū de ài
-[G/F]永远不更改[Em]，[Am]深刻的爱[F/G]将我心填   yǒng yuǎn bù gèng gǎi shēn kè de ài jiāng wǒ xīn tián
-永远不更改，深刻的爱超过一切所   yǒng yuǎn bù gèng gǎi shēn kè de ài chāo guò yī qiè suǒ
-满。耶稣的爱从天降下来，与我相遇   mǎn yē sū de ài cóng tiān jiàng xià lái yǔ wǒ xiāng yù
-爱。耶稣的爱一直都B存在，我只要祢   ài yē sū de ài yī zhí dōu B cún zài wǒ zhī yào mí
-[F/G]拥我在祂[C]怀。[Dm]耶[C/E]稣的爱[F/G]深刻的爱。   yōng wǒ zài tā huái yē sū de ài shēn kè de ài
-[C]耶稣[G/B]的爱[Am]比海洋还要深，[F]比众山还要高，比[Dm]生命更美[G]好！   yē sū de ài bǐ hǎi yáng hái yào shēn bǐ zhòng shān hái yào gāo bǐ shēng mìng gèng měi hǎo
-耶稣的[G/B]爱[Am]没有人能代替，找到绝不[C]放弃，耶[Dm]稣我的唯一。   yē sū de ài méi yǒu rén néng dài tì zhǎo dào jué bù fàng qì yē sū wǒ de wéi yī
+[C]有一种[F/A]真实[G/B]的爱，它[G#dim]永远不[Am]更改；
+yǒu   yī   zhǒng   zhēn   shí   de   ài   tā   yǒng   yuǎn   bù   gèng   gǎi
+[Dm]有一种[G]奇妙[G/B]的爱，从[C]天降[F]下来，[Am]
+yǒu   yī   zhǒng   qí   miào   de   ài   cóng   tiān   jiàng   xià   lái
+[C]满足我心[F]里一[Am]切的[D/F#]渴慕，[Dm]这就是[F/G]耶稣的爱。
+mǎn   zú   wǒ   xīn   lǐ   yī   qiè   de   kě   mù   zhè   jiù   shì   yē   sū   de   ài
 {end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+[F]永远不[G/F]更改，[Em]深刻的[Am]爱，[Dm]将我心填[F/G]满，
+yǒng   yuǎn   bù   gèng   gǎi   shēn   kè   de   ài   jiāng   wǒ   xīn   tián   mǎn
+[C]耶稣[Dm]的爱[C/E]
+yē   sū   de   ài
+[F]永远不[G/F]更改，[Em]深刻的[Am]爱，[Dm]超过一切所[F/G]爱，
+yǒng   yuǎn   bù   gèng   gǎi   shēn   kè   de   ài   chāo   guò   yī   qiè   suǒ   ài
+[C]耶稣[Dm]的爱[C/E]
+yē   sū   de   ài
+[F]从天降[G/F]下来，[Em]与我相[Am]遇，[Dm]拥我在祂[F/G]怀，
+cóng   tiān   jiàng   xià   lái   yǔ   wǒ   xiāng   yù   yōng   wǒ   zài   tā   huái
+[C]耶稣[Dm]的爱[C/E]
+yē   sū   de   ài
+[F]一直都[G/F]存在，[Em]我只要[Am]祢，[Dm]深刻[F/G]的爱。[C]
+yī   zhí   dōu   cún   zài   wǒ   zhī   yào   nǐ   shēn   kè   de   ài
+{end_of_chorus}
+
+{start_of_bridge: 桥段/Bridge}
+[C]耶稣[G/B]的爱[Am]比海洋还要[C/G]深，[F]比众山还要[C/E]高，比[Dm]生命更美[G]好！
+yē   sū   de   ài   bǐ   hǎi   yáng   hái   yào   shēn   bǐ   zhòng   shān   hái   yào   gāo   bǐ   shēng   mìng   gèng   měi   hǎo
+[C]耶稣[G/B]的爱[Am]没有人能代[C/G]替，[F]找到绝不[C/E]放弃，[Dm]耶稣[G]我的唯[C]一。
+yē   sū   de   ài   méi   yǒu   rén   néng   dài   tì   zhǎo   dào   jué   bù   fàng   qì   yē   sū   wǒ   de   wéi   yī
+{end_of_bridge}

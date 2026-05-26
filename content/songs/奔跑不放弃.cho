@@ -1,27 +1,28 @@
 {title: 奔跑不放弃}
 {title_pinyin: Bēn pǎo bú fàng qì}
+{artist: 赞美之泉}
 {key: E}
-{tempo: 80}
+{tempo: 64}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-（原曲Bb调升C调，可与F调版歌谱奔跑不放弃   yuán qǔ Bb tiáo shēng C tiáo kě yǔ F tiáo bǎn gē pǔ bēn pǎo bù fàng qì
-[A/C]  [B/D]  [E]  [A/C]  [B/D]  [E]  [Bm/D]  [A/C]  [F#m7]
-每个狂风暴雨里，你同在在那里。每个难处低谷里，你   měi gè kuáng fēng bào yǔ lǐ nǐ tóng zài zài nà lǐ měi gè nán chù dī gǔ lǐ nǐ
-[F#m]恩典在那[B]里。[E]每个伤心[B/D]失望里，你[D]爱[E/D]我爱到[C]底。在你   ēn diǎn zài nà lǐ měi gè shāng xīn shī wàng lǐ nǐ ài wǒ ài dào dǐ zài nǐ
+{start_of_intro: 前奏/Intro}
+[A/C#]   [B/D#]   [E]   [A/C#]   [B/D#]   [E]   [Bm/D]   [A/C#]   [F#m7]   [Bsus4]   [B]
+{end_of_intro}
+
+{start_of_verse: 主歌 1/Couplet 1}
+[E]每个狂风暴雨里，你[B/D#]同在[A/C#]在那[E/B]里；[A]每个难处[E/G#]低谷里，你[F#m]恩典在那[B]里。   měi gè kuáng fēng bào yǔ lǐ nǐ tóng zài zài nà lǐ měi gè nán chù dī gǔ lǐ nǐ ēn diǎn zài nà lǐ
+{end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+[E]每个伤心失望里，你[B/D#]爱我[D]爱到[C#]底；在[F#m]你爱的[B]光中，我[E]得着能[A/B]力。   měi gè shāng xīn shī wàng lǐ nǐ ài wǒ ài dào dǐ zài nǐ ài de guāng zhōng wǒ dé zhe néng lì
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-[F#m]爱的光中，[B]我得着能[E]力。[A/B]我爱你，用[B/D]尽我全心[A/C]全意全[E/B]力，   ài de guāng zhōng wǒ dé zhe néng lì wǒ ài nǐ yòng jìn wǒ quán xīn quán yì quán lì
-[Am7]  [B]  [G#m7]  [G#/C]
-[A]荣耀高举[E/G]你的名，我[F#m]跟随不怀[B]疑。找关你[E]，用[B/D]尽我全心   róng yào gāo jǔ nǐ de míng wǒ gēn suí bù huái yí zhǎo guān nǐ yòng jìn wǒ quán xīn
+我[E]爱你，用[B/D#]尽我全[A/C#]心全意全[E/B]力，[A]荣耀高[E/G#]举你的名，我[F#m]跟随不怀[B]疑；   wǒ ài nǐ yòng jìn wǒ quán xīn quán yì quán lì róng yào gāo jǔ nǐ de míng wǒ gēn suí bù huái yí
+我[E]爱你，用[B/D#]尽我全[A/C#]心全意全[E/B]力，[A]在这爱[E/G#]的路程里，我[F#m]奔跑[A/B]不放[E]弃。   wǒ ài nǐ yòng jìn wǒ quán xīn quán yì quán lì zài zhè ài de lù chéng lǐ wǒ bēn pǎo bù fàng qì
 {end_of_chorus}
 
-{start_of_chorus: 副歌/Refrain}
-[Am6]  [E]  [Bm/D]  [G#/C]  [Am/C]  [B]
-[A/C]全意全[E/B]力，[A]在这爱的[E/G]路程里，我[F#m]奔跑[A/B]不放[E]弃。Fin[D][E/G]e   quán yì quán lì zài zhè ài de lù chéng lǐ wǒ bēn pǎo bù fàng qì Fine
-[A]  [Bm7]  [E]  [E/G]
-四面受敌，[B/A]却不被[E/G]困住。[A]心里作难[B]，却不至[E]失望[Bm][E7]。   sì miàn shòu dí què bù bèi kùn zhù xīn lǐ zuò nán què bù zhì shī wàng
-（仅第二遍）（仅第二遍）（2-4拍仅第一遍Bridge时）D.S.   jǐn dì èr biàn jǐn dì èr biàn pāi jǐn dì yī biàn Bridge shí D S
-[A]至暂至轻[A]的苦楚[G#m]要[G#/C]成[C#m]就[F#m]极重无比永[F#/A]远的荣[B]耀[E][B]。我[G]爱   zhì zàn zhì qīng de kǔ chǔ yào chéng jiù jí zhòng wú bǐ yǒng yuǎn de róng yào wǒ ài
-{end_of_chorus}
+{start_of_bridge: 桥段/Bridge}
+[A]四面受[B/A]敌，却不被[E/G#]困住；[A]心里作[B]难，却不至[E]失望；   sì miàn shòu dí què bù bèi kùn zhù xīn lǐ zuò nán què bù zhì shī wàng
+[A]至暂至[B/A]轻的苦楚[G#m]要成[C#m]就，[F#m]极重无比[B]永远的荣[E]耀。   zhì zàn zhì qīng de kǔ chǔ yào chéng jiù jí zhòng wú bǐ yǒng yuǎn de róng yào
+{end_of_bridge}

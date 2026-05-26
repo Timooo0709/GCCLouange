@@ -1,5 +1,6 @@
 {title: 伯利恒的喜讯}
 {title_pinyin: Bó lì héng de xǐ xùn}
+{artist: 橄榄枝音乐}
 {key: Eb}
 {tempo: 147}
 {language: zh}
@@ -9,6 +10,9 @@
 人类[Eb]救主从锡安降[Bb]临，   rén lèi jiù zhǔ cóng xī ān jiàng lín
 带来[Eb]了和平的福[Ab]音，   dài lái liǎo hé píng de fú yīn
 赐恩[Bb]典拯救万[Eb]民。   cì ēn diǎn zhěng jiù wàn mín
-[Eb]哈利路[Ab]亚，带来和[Bb]平的福[Eb]音，   hā lì lù yà dài lái hé píng de fú yīn
-[Eb]哈利路[Ab]亚，赐恩[Bb]典拯救万[Eb]民。   hā lì lù yà cì ēn diǎn zhěng jiù wàn mín
 {end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+[Eb]哈利路[Ab]亚，带来[Bb]和平的福[Eb]音，   hā lì lù yà dài lái hé píng de fú yīn
+[Eb]哈利路[Ab]亚，赐恩[Bb]典拯救万[Eb]民。   hā lì lù yà cì ēn diǎn zhěng jiù wàn mín
+{end_of_chorus}

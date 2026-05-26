@@ -1,19 +1,25 @@
 {title: 十架的爱}
 {title_pinyin: Shí jià de ài}
-{key: F}
-{tempo: 80}
+{artist: 赞美之泉}
+{key: D}
+{tempo: 74}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-十架的爱   shí jià de ài
-J=74敬拜、感恩地   J jìng bài gǎn ēn dì
-[D/F]  [D/F]  [A/C]
-谦卑的[G]君王，荣耀的君王，[G]祢甘心卑微顺   qiān bēi de jūn wáng róng yào de jūn wáng mí gān xīn bēi wēi shùn
-[A/C]  [D/F]
-[G]服，舍[Bm]命在十架上。谦卑的君王[G]，   fú shè mìng zài shí jià shàng qiān bēi de jūn wáng
-荣耀的君王，我得医治因祢鞭便伤，无尽   róng yào de jūn wáng wǒ dé yī zhì yīn mí biān biàn shāng wú jìn
-[Bm]恩典，我[A13]心感[D]恩。[G/A]十架的[D]爱，何等奇[F#m]妙，超乎   ēn diǎn wǒ xīn gǎn ēn shí jià de ài hé děng qí miào chāo hū
-[Bm]我所求所[Am]想！[D7]洗净我[G]罪，脱离污[D/F]秽，穿上公[Em11]义洁白衣   wǒ suǒ qiú suǒ xiǎng xǐ jìng wǒ zuì tuō lí wū huì chuān shàng gōng yì jié bái yī
-[G/A]裳。十架的[D]爱，何等奇[F#m]妙，我生[Bm]命从此不再一[Am]样！[D7]带我   shang shí jià de ài hé děng qí miào wǒ shēng mìng cóng cǐ bù zài yī yàng dài wǒ
-[G]回天父怀[D/F]抱，在永恒[Em11]里我不停歌[G/A]唱：十架的[D]爱。   huí tiān fù huái bào zài yǒng héng lǐ wǒ bù tíng gē chàng shí jià de ài
+{start_of_intro: 前奏/Intro}
+[D/F#]   [G]   [Bm]   [A/C#]   [D/F#]   [G]   [Bm]   [A/C#]
+{end_of_intro}
+
+{start_of_verse: 主歌 1/Couplet 1}
+[D/F#]谦卑的[G]君王，[Bm]荣耀的[A/C#]君王，[D/F#]祢甘心卑微顺[G]服，舍[Bm]命在十[A/C#]架上。   qiān bēi de jūn wáng róng yào de jūn wáng nǐ gān xīn bēi wēi shùn fú shè mìng zài shí jià shàng
 {end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+[D/F#]谦卑的[G]君王，[Bm]荣耀的[A/C#]君王，我得[D/F#]医治因祢[G]鞭伤，无尽[Bm]恩典，我[A13]心感[D]恩。[G/A]   qiān bēi de jūn wáng róng yào de jūn wáng wǒ dé yī zhì yīn nǐ biān shāng wú jìn ēn diǎn wǒ xīn gǎn ēn
+{end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+十架的[D]爱，何等奇[F#m]妙，超乎[Bm]我所求所[Am]想！[D7]   shí jià de ài hé děng qí miào chāo hū wǒ suǒ qiú suǒ xiǎng
+洗净我[G]罪，脱离污[D/F#]秽，穿上公[Em11]义洁白衣[G/A]裳。   xǐ jìng wǒ zuì tuō lí wū huì chuān shàng gōng yì jié bái yī shang
+十架的[D]爱，何等奇[F#m]妙，我生[Bm]命从此不再一[Am]样！[D7]   shí jià de ài hé děng qí miào wǒ shēng mìng cóng cǐ bù zài yī yàng
+带我[G]回天父怀[D/F#]抱，在永恒[Em11]里我不停歌[G/A]唱：十架的[D]爱。   dài wǒ huí tiān fù huái bào zài yǒng héng lǐ wǒ bù tíng gē chàng shí jià de ài
+{end_of_chorus}

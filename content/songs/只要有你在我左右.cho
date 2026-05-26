@@ -4,30 +4,29 @@
 {key: G}
 {tempo: 76}
 {language: zh}
-{themes: 信心, 宣告, 保护}
 
-{start_of_verse: Intro}
-[Gsus]  [G]  [Gsus]  [G]  [Gsus/E]  [G/E]  [Gsus/E]  [G/E]
-{end_of_verse}
+{start_of_intro: 前奏/Intro}
+[Gsus]   [G]   [Gsus]   [G]   [Gsus/E]   [G/E]   [Gsus/E]   [G/E]
+{end_of_intro}
 
 {start_of_verse: 主歌/Couplet}
-[Gsus]开我[G]的眼睛，[Gsus]让我[G]看到[Gsus/E]天使[G/E]天军；[Gsus/E] [G/E]   kāi wǒ de yǎn jīng ràng wǒ kàn dào tiān shǐ tiān jūn
-[C]仇敌的攻击，[Am]我要更坚[D]定信靠祢。   chóu dí de gōng jī wǒ yào gèng jiān dìng xìn kào nǐ
-[G]祢是我的[D/F#]力量，祢是我永[Em]远的拯救，   nǐ shì wǒ de lì liáng nǐ shì wǒ yǒng yuǎn de zhěng jiù
-[C]祢的右手施展能力，[D]显出[G]荣耀。   nǐ de yòu shǒu shī zhǎn néng lì xiǎn chū róng yào
+[G]开我的眼睛，让我[C]看到天使天[Am]军；   kāi wǒ de yǎn jīng ràng wǒ kàn dào tiān shǐ tiān jūn
+[Am]仇敌的攻击，我要[D]更坚定信靠祢。   chóu dí de gōng jī wǒ yào gèng jiān dìng xìn kào nǐ
+[G]祢是我的[D/F#]力量，祢是我[Em]永远的拯救，   nǐ shì wǒ de lì liáng nǐ shì wǒ yǒng yuǎn de zhěng jiù
+[C]祢的右手施展能力，[D]显出荣[G]耀。   nǐ de yòu shǒu shī zhǎn néng lì xiǎn chū róng yào
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-[D]只要[G]有祢在[D]我左右，[G]我必不惧[D]怕；   zhǐ yào yǒu nǐ zài wǒ zuǒ yòu wǒ bì bù jù pà
-靠[G]着祢的[C]圣灵，祢的[G/B]应许，[Am]永远不放[D]弃。   kào zhe nǐ de shèng líng nǐ de yìng xǔ yǒng yuǎn bù fàng qì
-只要[G]有祢在[D]我左右，[G]我必不惧[D]怕；   zhǐ yào yǒu nǐ zài wǒ zuǒ yòu wǒ bì bù jù pà
-神[G]啊，谁能[C]像祢，至[G/B]圣至容，[Am]可颂可[C/D]畏，施行[G]奇事。   shén a shuí néng xiàng nǐ zhì shèng zhì róng kě sòng kě wèi shī xíng qí shì
+[G]只要有祢在[D]我左右，[G]我必不[D]惧[G]怕；   zhǐ yào yǒu nǐ zài wǒ zuǒ yòu wǒ bì bù jù pà
+靠[C]着祢的圣[G/B]灵，祢的[Am]应许，永远[D]不放弃。   kào zhe nǐ de shèng líng nǐ de yìng xǔ yǒng yuǎn bù fàng qì
+[G]只要有祢在[D]我左右，[G]我必不[D]惧[G]怕；   zhǐ yào yǒu nǐ zài wǒ zuǒ yòu wǒ bì bù jù pà
+神[C]啊，谁能像[G/B]祢，至[Am]圣至荣，[C/D]可颂可畏，施行[G]奇事。   shén a shuí néng xiàng nǐ zhì shèng zhì róng kě sòng kě wèi shī xíng qí shì
 {end_of_chorus}
 
-{start_of_bridge: 桥段 1/Pont 1}
+{start_of_bridge: 桥段 1/Bridge 1}
 [C]谁能控告，谁能[G/B]敌挡，我是[Em]神所拣选的，我是[Am]神所拣选的；   shuí néng kòng gào shuí néng dí dǎng wǒ shì shén suǒ jiǎn xuǎn de wǒ shì shén suǒ jiǎn xuǎn de
 {end_of_bridge}
 
-{start_of_bridge: 桥段 2/Pont 2}
+{start_of_bridge: 桥段 2/Bridge 2}
 [C]谁能控告，谁能[G/B]敌挡，我是[Em]神所拣选的，[Am]神所拣[D]选的。   shuí néng kòng gào shuí néng dí dǎng wǒ shì shén suǒ jiǎn xuǎn de shén suǒ jiǎn xuǎn de
 {end_of_bridge}

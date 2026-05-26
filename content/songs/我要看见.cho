@@ -1,26 +1,27 @@
 {title: 我要看见}
 {title_pinyin: Wǒ yào kàn jiàn}
+{artist: 赞美之泉}
 {key: C}
-{tempo: 80}
+{tempo: 70}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-•弦樂套譜可在讚美之泉網站購買.   xián lè tào pǔ kě zài zàn měi zhī quán wǎng zhàn gòu mǎi
-我要看見   wǒ yào kàn jiàn
-IWanttoSeeSteanofTraiseP讚美之泉   IWanttoSeeSteanofTraiseP zàn měi zhī quán
-•-70渴慕敬拜地、迫切地詞：游智婷SandyYu   kě mù jìng bài dì pò qiè dì cí yóu zhì tíng SandyYu
-曲：周巽倩MaryChikagamiLee   qǔ zhōu xùn qiàn MaryChikagamiLee
-[Bdim7]  [E/G]  [Am]  [C/G]  [F]  [G]  [G7]
-{end_of_verse}
+{start_of_intro: 前奏/Intro}
+[C]  [Bdim7]  [E/G#]  [Am]  [C/G]  [F]  [D#dim]  [G]  [G7b9]
+{end_of_intro}
 
 {start_of_verse: 主歌/Couplet}
-求祢降下同在，在祢子民的敬拜中，   qiú mí jiàng xià tóng zài zài mí zǐ mín de jìng bài zhōng
-[C]求祢顯出[E]榮[Am]耀，在祢[F]子民的讚美[G]中。我要   qiú mí xiǎn chū róng yào zài mí zǐ mín de zàn měi zhōng wǒ yào
-[C]看見，[G/B]我要看[Am]見[C/G]，如同[F]摩西看見[G]祢榮耀。我要   kàn jiàn wǒ yào kàn jiàn rú tóng mó xī kàn jiàn mí róng yào wǒ yào
-看見，[G/B]我要看[Am]見，這世[F]代要看見祢榮耀。   kàn jiàn wǒ yào kàn jiàn zhè shì dài yào kàn jiàn mí róng yào
-我們呼求祢的名，求祢恩待我們，我們宣告祢的名，求祢憐憫我們。   wǒ mén hū qiú mí de míng qiú mí ēn dài wǒ mén wǒ mén xuān gào mí de míng qiú mí lián mǐn wǒ mén
+求[C]祢 降下同[Em]在， 在[Am]祢 子民的敬[F]拜[G]中，[C]   qiú nǐ jiàng xià tóng zài zài nǐ zǐ mín de jìng bài zhōng
+求[C]祢 显出[E]荣[Am]耀， 在[F]祢 子民的赞[G]美中。   qiú nǐ xiǎn chū róng yào zài nǐ zǐ mín de zàn měi zhōng
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-求祢與我們同行，使我們得安息，在祢眼前蒙恩。我要   qiú mí yǔ wǒ mén tóng xíng shǐ wǒ mén dé ān xī zài mí yǎn qián méng ēn wǒ yào
+我要[C]看见， [G/B]我要看[Am]见[C/G]， 如同[F]摩西 看见祢的[G]荣[C]耀。   wǒ yào kàn jiàn wǒ yào kàn jiàn rú tóng mó xī kàn jiàn nǐ róng yào
+我要[C]看见， [G/B]我要看[Am]见[C/G]， 这世[F]代 要看见祢[G]荣[C]耀。   wǒ yào kàn jiàn wǒ yào kàn jiàn zhè shì dài yào kàn jiàn nǐ róng yào
 {end_of_chorus}
+
+{start_of_bridge: 桥段/Bridge}
+我们[F]呼求 祢的名， 求[G]祢恩[Em]待我[Am]们；   wǒ men hū qiú nǐ de míng qiú nǐ ēn dài wǒ men
+我们[F]宣告 祢的名， 求[G]祢怜[Em]悯我[Am]们。   wǒ men xuān gào nǐ de míng qiú nǐ lián mǐn wǒ men
+求祢[F]与 我们同行， 使[G]我们得[Em]安[Am]息，   qiú nǐ yǔ wǒ men tóng xíng shǐ wǒ men dé ān xī
+在[F]祢眼 前蒙[G]恩。   zài nǐ yǎn qián méng ēn
+{end_of_bridge}

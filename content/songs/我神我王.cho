@@ -1,38 +1,30 @@
 {title: 我神我王}
 {title_pinyin: Wǒ shén wǒ wáng}
-{key: G}
-{tempo: 80}
+{artist: City to City Taiwan}
+{key: D}
+{tempo: 110}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-KUAGLOBAL我神我王   KUAGLOBAL wǒ shén wǒ wáng
-MyGodAndMyKing蔡佳靈CharisChua   MyGodAndMyKing cài jiā líng CharisChua
-{end_of_verse}
-
 {start_of_intro: 前奏/Intro}
-[Bm]  [G]
+[Bm7]  [Dmaj7]  [G]
 {end_of_intro}
 
 {start_of_verse: 主歌/Couplet}
-[Bm]除祢以外，天上有誰[G]，祢是我所愛慕[Bm]。雖我肉體，   chú mí yǐ wài tiān shàng yǒu shuí mí shì wǒ suǒ ài mù suī wǒ ròu tǐ
+[Bm7]除祢以外， 天上[Dmaj7]有谁， 祢是[G]我所爱[Bm7]慕。   chú nǐ yǐ wài tiān shàng yǒu shuí nǐ shì wǒ suǒ ài mù
+虽我[Bm7]肉体， 渐渐[Dmaj7]衰退， 祢是[G]我的力[Em7]量。   suī wǒ ròu tǐ jiàn jiàn shuāi tuì nǐ shì wǒ de lì liáng
+{end_of_verse}
+
+{start_of_verse: 预备副歌/Pre-Chorus}
+走过[Em7]死 荫幽谷我[Bm7]仍要宣扬，   zǒu guò sǐ yīn yōu gǔ wǒ réng yào xuān yáng
+[Em7]祢与我同在祢使[G]软弱者得刚[Asus4]强。   nǐ yǔ wǒ tóng zài nǐ shǐ ruǎn ruò zhě dé gāng qiáng
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-[G]心心[Em]。••.   xīn xīn
-漸漸衰退，祢是我的力量。走過死蔭幽谷我   jiàn jiàn shuāi tuì mí shì wǒ de lì liáng zǒu guò sǐ yīn yōu gǔ wǒ
-[Bm]仍要宣揚，[Em]祢與我同在祢使[G]軟弱者得剛強。   réng yào xuān yáng mí yǔ wǒ tóng zài mí shǐ ruǎn ruò zhě dé gāng qiáng
+我神[D]我王， 我信靠[Bm7]祢， 我的盼望， 我仰望祢，   wǒ shén wǒ wáng wǒ xìn kào nǐ wǒ de pàn wàng wǒ yǎng wàng nǐ
+[Em7]祢是我心[Asus4]里的力[A]量， 我的福份直到永[A]远。   nǐ shì wǒ xīn lǐ de lì liáng wǒ de fú fèn zhí dào yǒng yuǎn
 {end_of_chorus}
 
-{start_of_chorus: 副歌/Refrain}
-我神我王，我信靠祢[Bm]，我的盼望，我仰望祢，   wǒ shén wǒ wáng wǒ xìn kào mí wǒ de pàn wàng wǒ yǎng wàng mí
-[Em]祢是我心裡的力量，我的福份直到永遠。福份直到永遠   mí shì wǒ xīn lǐ de lì liáng wǒ de fú fèn zhí dào yǒng yuǎn fú fèn zhí dào yǒng yuǎn
-間奏   jiàn zòu
-{end_of_chorus}
-
-{start_of_bridge: 桥段/Pont}
-[D]受患難卻不被壓碎，[Bm]心困惑卻沒有絕望，   shòu huàn nán què bù bèi yā suì xīn kùn huò què méi yǒu jué wàng
+{start_of_bridge: 桥段/Bridge}
+[D]受患难却不被压[Bm7]碎， 心困惑却没有绝[Em7]望，   shòu huàn nán què bù bèi yā suì xīn kùn huò què méi yǒu jué wàng
+[Em7]受逼迫却不被撇[Asus4]弃， 被打倒却没有灭[A]亡。   shòu bī pò què bù bèi piě qì bèi dǎ dǎo què méi yǒu miè wáng
 {end_of_bridge}
-
-{start_of_chorus: 副歌/Refrain 4}
-受逼迫卻不被撇棄，被打倒卻沒有滅亡。沒有滅亡。   shòu bī pò què bù bèi piě qì bèi dǎ dǎo què méi yǒu miè wáng méi yǒu miè wáng
-{end_of_chorus}

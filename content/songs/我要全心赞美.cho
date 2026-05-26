@@ -1,23 +1,23 @@
 {title: 我要全心赞美}
 {title_pinyin: Wǒ yào quán xīn zàn měi}
+{artist: 赞美之泉}
 {key: F}
-{tempo: 80}
+{tempo: 150}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-我要全心讚美   wǒ yào quán xīn zàn měi
-•-150喜樂地、揚聲讚美地GraceTseng   xǐ lè dì yáng shēng zàn měi dì GraceTseng
-{end_of_verse}
-
 {start_of_intro: 前奏/Intro}
+[F]  [F/A]  [Bb]  [Bb]
 {end_of_intro}
 
 {start_of_verse: 主歌/Couplet}
-全心感謝，全心讚美，進入祢的院。[Gm]全心頌讚，   quán xīn gǎn xiè quán xīn zàn měi jìn rù chēng de yuàn quán xīn sòng zàn
-獻上為祭，是嘴唇的果子[C7]。[F]在称[F/A]裡   xiàn shàng wéi jì shì zuǐ chún de guǒ zǐ zài chēng lǐ
-You，一fruitofmyIips.—inYourpresence，freeofwor•nles，   You yī fruitofmyIips inYourpresence freeofwor nles
-喜樂滿溢。常常感謝，不住禱告，盼望在於称。   xǐ lè mǎn yì cháng cháng gǎn xiè bù zhù dǎo gào pàn wàng zài wū chēng
-我要全心讚美，跳舞頌揚祢名，在   wǒ yào quán xīn zàn měi tiào wǔ sòng yáng mí míng zài
-称殿中[Gm]日勝過在[B/C]世上千[C7]日。我要全[F]心讚美，   chēng diàn zhōng rì shèng guò zài shì shàng qiān rì wǒ yào quán xīn zàn měi
-讚美還要讚美不停，義人棚裡歡呼聲永不息。   zàn měi huán yào zàn měi bù tíng yì rén péng lǐ huān hū shēng yǒng bù xī
+[F]全心感[F/A]谢， 全心[Bbmaj7]赞美， 进入祢的[Gm]院。   quán xīn gǎn xiè quán xīn zàn měi jìn rù nǐ de yuàn
+[Gm/F]献上为[Bb/C]祭， 是[C7]嘴唇的果[F]子。 [F/A]   xiàn shàng wéi jì shì zuǐ chún de guǒ zi
+[Bbmaj7]喜乐满[Gm]溢。 常常[Gm/F]感谢， 不住[Bb/C]祷告， 盼望[C7]在于祢。   xǐ lè mǎn yì cháng cháng gǎn xiè bù zhù dǎo gào pàn wàng zài yú nǐ
 {end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+我要[F]全心赞美， 跳舞颂扬[C/E]祢[A/C#]名[Dm]，   wǒ yào quán xīn zàn měi tiào wǔ sòng yáng nǐ míng
+在祢[Bb]殿中一[Gm]日， 胜过在[Bb/C]世上千[C7]日。[F]   zài nǐ diàn zhōng yī rì shèng guò zài shì shàng qiān rì
+我要[F]全心赞美， 赞美还要[C/E]赞[A/C#]美不[Dm]停，   wǒ yào quán xīn zàn měi zàn měi hái yào zàn měi bù tíng
+义人[Gm]棚里欢[Bb/C]呼声永不[F]息。   yì rén péng lǐ huān hū shēng yǒng bù xī
+{end_of_chorus}

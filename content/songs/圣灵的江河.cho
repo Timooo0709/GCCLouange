@@ -1,17 +1,23 @@
 {title: 圣灵的江河}
 {title_pinyin: Shèng líng de jiāng hé}
+{artist: 赞美之泉}
 {key: F}
-{tempo: 80}
+{tempo: 66}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-圣灵的江河   shèng líng de jiāng hé
-•=66渴慕、呼求地   kě mù hū qiú dì
-[Bdim]
-[F]在祢宝座[F/A]前有一道生命水流，我[F/A]们进前[Dm]来谦卑[Gm]等候领[C]受。   zài mí bǎo zuò qián yǒu yī dào shēng mìng shuǐ liú wǒ men jìn qián lái qiān bēi děng hòu lǐng shòu
-[B]  [F]  [B/C]
-[F]在祢同在[F/A]中有满足的喜[Bdim]乐，圣灵[F/C]请祢来自由运行这地。圣灵的   zài mí tóng zài zhōng yǒu mǎn zú de xǐ lè shèng líng qǐng mí lái zì yóu yùn xíng zhè dì shèng líng de
-[F7]  [Bb]
-[F]江河流啊流，自由涌流在这地，[Am]在我的里[Dm]面生命[Gm]活水不停[C]息。   jiāng hé liú a liú zì yóu yǒng liú zài zhè dì zài wǒ de lǐ miàn shēng mìng huó shuǐ bù tíng xī
-圣灵的江河自由涌流到无尽，我们欢迎祢圣灵我们爱祢。   shèng líng de jiāng hé zì yóu yǒng liú dào wú jìn wǒ men huān yíng mí shèng líng wǒ men ài mí
+{start_of_intro: 前奏/Intro}
+[F]   [F/A]   [Bb]   [Bdim]   [F/C]   [Bb/C]   [F]
+{end_of_intro}
+
+{start_of_verse: 主歌 1/Couplet 1}
+[F]在祢宝座[F/A]前有一[Bb]道生命水流，[F/A]我们进前[Dm]来谦卑[Gm]等候领[C]受；   zài nǐ bǎo zuò qián yǒu yī dào shēng mìng shuǐ liú wǒ men jìn qián lái qiān bēi děng hòu lǐng shòu
 {end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+[F]在祢同在[F/A]中有满[Bb]足的喜[Bdim]乐，[F/C]圣灵请祢[Bb/C]来自由运[F]行这[Bb/C]地。   zài nǐ tóng zài zhōng yǒu mǎn zú de xǐ lè shèng líng qǐng nǐ lái zì yóu yùn xíng zhè dì
+{end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+圣灵的[F]江河流啊[F7]流，自[Bb]由涌流在这地，在我的[Am]里面[Dm]生命[Gm]活水不停[C]息；   shèng líng de jiāng hé liú a liú zì yóu yǒng liú zài zhè dì zài wǒ de lǐ miàn shēng mìng huó shuǐ bù tíng xī
+圣灵的[F]江河自[F7]由[Bb]涌流到无[Bdim]尽，我们[F/C]欢迎祢，[Bb/C]圣灵我们爱[F]祢。   shèng líng de jiāng hé zì yóu yǒng liú dào wú jìn wǒ men huān yíng nǐ shèng líng wǒ men ài nǐ
+{end_of_chorus}

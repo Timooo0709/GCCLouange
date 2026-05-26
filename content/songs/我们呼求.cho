@@ -5,9 +5,9 @@
 {tempo: 70}
 {language: zh}
 
-{start_of_verse: Intro}
-[D]  [E/G#]  [A]  [E/G#]  [F#m]  [Bm]  [E/G#]
-{end_of_verse}
+{start_of_intro: 前奏/Intro}
+[D]  [E/G#]  [A]  [E/G#]  [F#m]  [Bm]  [E/G#]  [D]  [A]
+{end_of_intro}
 
 {start_of_verse: 主歌 1/Couplet 1}
 [A]主我们同[E/G#]心在祢面[D/F#]前，   zhǔ wǒ men tóng xīn zài nǐ miàn qián
@@ -26,18 +26,18 @@
 我们转[D]离所有的恶[C#m]行，[F#m]   wǒ men zhuǎn lí suǒ yǒu de è xíng
 定意单[Bm]单跟[B]随[E]祢。   dìng yì dān dān gēn suí nǐ
 [A]主我们国[E/G#]家是属于[D/F#]祢，   zhǔ wǒ men guó jiā shì shǔ yú nǐ
-求祢来[D/E]掌管全[A]地；   qiú nǐ lái zhǎng guǎn quán dì
-[A]愿祢[D]来怜悯医[C#m]治这[F#m]地，   yuàn nǐ lái lián mǐn yī zhì zhè dì
+求祢来[D/E]掌控全[A]地；   qiú nǐ lái zhǎng kòng quán dì
+愿[D]祢来怜[C#m]悯医治[F#m]这地，   yuàn nǐ lái lián mǐn yī zhì zhè dì
 荣[B]耀再次降[E]临。   róng yào zài cì jiàng lín
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-我们[A]呼求阿爸[C#m]父，   wǒ men hū qiú ā bà fù
+我们呼[A]求 祢， 阿爸[C#m]父，   wǒ men hū qiú nǐ ā bà fù
 设立[F#m]祢宝座在这[G/A]地[A7]；   shè lì nǐ bǎo zuò zài zhè dì
 [D]祢必睁眼看[A/C#]耳垂[F#m]听，   nǐ bì zhēng yǎn kàn ěr chuí tīng
-奉主[B]名的呼[G]求[E]。   fèng zhǔ míng de hū qiú
+奉[B]主名 的呼[G]求[E]。   fèng zhǔ míng de hū qiú
 万民[A]都要来敬拜[C#m]祢，   wàn mín dōu yào lái jìng bài nǐ
-荣耀[F#m]高举[G/A]祢的[A7]圣[A7/E]名；   róng yào gāo jǔ nǐ de shèng míng
-[D]复兴这地，[A/C#]全能的[F#]君王，   fù xīng zhè dì quán néng de jūn wáng
+荣耀[F#m]高举[G/A]祢的[A7]圣名；   róng yào gāo jǔ nǐ de shèng míng
+[D]复兴这地， [A/C#]全能的[F#]君王，   fù xīng zhè dì quán néng de jūn wáng
 我们[Bm]欢迎[Esus4]祢[A]。   wǒ men huān yíng nǐ
 {end_of_chorus}

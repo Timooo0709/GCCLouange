@@ -1,26 +1,18 @@
 {title: 认识你真好}
 {title_pinyin: Rèn shi nǐ zhēn hǎo}
-{artist: 万美兰词 / 洪启元曲}
+{artist: 赞美之泉}
 {key: G}
 {tempo: 84}
 {language: zh}
-{themes: 感恩, 喜乐, 慈爱}
+{themes: 喜乐, 感恩, 依靠}
 
 {start_of_verse: 主歌/Couplet}
-如同[G]朝露中的小草，蓝[Am7]天中的小鸟，   rú tóng cháo lù zhōng de xiǎo cǎo lán tiān zhōng de xiǎo niǎo
-我整[G/B]颗心被幸福围[C]绕。[D]   wǒ zhěng kē xīn bèi xìng fú wéi rào
-哦，[G]我慈爱的天父，认[Am7]识你真好，   ò wǒ cí ài de tiān fù rèn shí nǐ zhēn hǎo
-你赐[G/B]的福份别处找不[D4]着。[B/D#]   nǐ cì de fú fēn bié chù zhǎo bù zháo
+如同[G]朝露中的小[Am7]草，蓝天中的小鸟，[G/B]我整颗心被幸福围[C]绕。[D]   rú tóng zhāo lù zhōng de xiǎo cǎo lán tiān zhōng de xiǎo niǎo wǒ zhěng kē xīn bèi xìng fú wéi rào
+哦，[G]我慈爱的天[Am7]父，认识你真好，[G/B]你赐的福分别处[Am7]找[D7]不[Em]着。[Bm7]   ò wǒ cí ài de tiān fù rèn shi nǐ zhēn hǎo nǐ cì de fú fèn bié chù zhǎo bù zháo
+你使我[Em]抛开一切烦[Bm7]恼，[C]乐充[D]满在[Am7]心头[D7]燃烧。   nǐ shǐ wǒ pāo kāi yī qiè fán nǎo xǐ lè chōng mǎn zài xīn tóu rán shāo
 {end_of_verse}
 
-{start_of_prechorus: 前副歌/Couplet-PreChorus}
-你使[Em7]我抛开[Bm7]一切烦恼，   nǐ shǐ wǒ pāo kāi yī qiè fán nǎo
-[C]喜乐充[D]满在[C]心[D]头[C/E]燃[D/F#]烧。   lè chōng mǎn zài xīn tóu rán shāo
-{end_of_prechorus}
-
 {start_of_chorus: 副歌/Refrain}
-[G]认识你真好，[Em7]认识你真好，   rèn shí nǐ zhēn hǎo rèn shí nǐ zhēn hǎo
-今生[Am7]今世我不再寻[D4]找。[D]   jīn shēng jīn shì wǒ bù zài xún zhǎo
-哦，[G]主啊，认识你真好，[Em7]认识你真好，   ò zhǔ a rèn shí nǐ zhēn hǎo rèn shí nǐ zhēn hǎo
-只愿[Am7]分分秒秒在[D4]你慈爱的怀[G]抱。   zhī yuàn fēn fēn miǎo miǎo zài nǐ cí ài de huái bào
+认识你真[G]好，认识你真[Em]好，今生今世我[Am7]不再寻[D]找。[D7]   rèn shi nǐ zhēn hǎo rèn shi nǐ zhēn hǎo jīn shēng jīn shì wǒ bù zài xún zhǎo
+哦，主啊，[G]认识你真好，认识你真[Em]好，只愿分分[Am]秒秒在[D]你慈[D7]爱的怀[G]抱。   ò zhǔ ā rèn shi nǐ zhēn hǎo rèn shi nǐ zhēn hǎo zhǐ yuàn fēn fēn miǎo miǎo zài nǐ cí ài de huái bào
 {end_of_chorus}

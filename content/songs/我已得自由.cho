@@ -1,18 +1,27 @@
 {title: 我已得自由}
 {title_pinyin: Wǒ yǐ dé zì yóu}
+{artist: 赞美之泉}
 {key: C}
-{tempo: 80}
+{tempo: 152}
 {language: zh}
 
+{start_of_intro: 前奏/Intro}
+[C]  [F/A]  [G/B]  [C]  [F/A]  [G/B]  [C]  [F/A]  [G/B]  [C]  [F/A]  [G/B]
+{end_of_intro}
+
 {start_of_verse: 主歌/Couplet}
-我已得自由   wǒ yǐ dé zì yóu
-[C]  [F/A]  [G/B]  [C]  [F/A]  [G/B]  [C]  [F/A]  [G/B]  [C]
-[G/B]在创世以前天[F/C]父祂已经爱[C]我，[F/C][G/C]创[C]造我、认   zài chuàng shì yǐ qián tiān fù tā yǐ jīng ài wǒ chuàng zào wǒ rèn
-[F/C]识我、拣选[G/B]我[F/A][G]。差派[Dm]独生子耶[G]稣基督为我舍命，   shí wǒ jiǎn xuǎn wǒ chà pài dú shēng zǐ yē sū jī dū wèi wǒ shè mìng
-从此进入永恒爱的约定。我宣告！我宣告！我已得自由！   cóng cǐ jìn rù yǒng héng ài de yuē dìng wǒ xuān gào wǒ xuān gào wǒ yǐ dé zì yóu
-基督福音是大能，要赐给我生命；我宣告！我宣告！   jī dū fú yīn shì dà néng yào cì gěi wǒ shēng mìng wǒ xuān gào wǒ xuān gào
-[G/B]我已得自由[F/A]！[C/G]基督[F]福音是大能，要[Dm]赐给我能[G]力。恩   wǒ yǐ dé zì yóu jī dū fú yīn shì dà néng yào cì gěi wǒ néng lì ēn
-典已经来到，救赎真光已照耀。我宣告[Dm]！在基督[F/G]里我自由！Fine   diǎn yǐ jīng lái dào jiù shú zhēn guāng yǐ zhào yào wǒ xuān gào zài jī dū lǐ wǒ zì yóu Fine
-[F]定罪已过[G]去，[Am]控告已过[C/E]去，[F]基督的宝[G]血大有能力。   dìng zuì yǐ guò qù kòng gào yǐ guò qù jī dū de bǎo xuè dà yǒu néng lì
-罪己得熬免，旧事已过都变成新，全新的生命因耶稣的名。[D]我宣告！   zuì jǐ dé áo miǎn jiù shì yǐ guò dōu biàn chéng xīn quán xīn de shēng mìng yīn yē sū de míng wǒ xuān gào
+在创世以[C]前， 天父[F/C]祂已经爱[C]我， [F/C]创[G/C]造[C]我、认[F/C]识我、拣[G/B]选我。[F/A]  [G]   zài chuàng shì yǐ qián tiān fù tā yǐ jīng ài wǒ chuàng zào wǒ rèn shí wǒ jiǎn xuǎn wǒ
+差派[Dm]独生子 [G]耶稣基督 [E]为我舍命， 从[Am]此进[Dm]入， 永恒[F/G]爱的约[C]定。   chà pài dú shēng zǐ yē sū jī dū wèi wǒ shè mìng cóng cǐ jìn rù yǒng héng ài de yuē dìng
 {end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+[C]我宣告！ [G/B]我已得自由！ [F/A] 基督[C/G]福音是大[F]能， [C/E]要赐给我[Dm]生[G]命；   wǒ xuān gào wǒ yǐ dé zì yóu jī dū fú yīn shì dà néng yào cì gěi wǒ shēng mìng
+[C]我宣告！ [G/B]我已得自由！ [F/A] 基督[C/G]福音是大[F]能， [C/E]要赐给我[Dm]能[G]力。   wǒ xuān gào wǒ yǐ dé zì yóu jī dū fú yīn shì dà néng yào cì gěi wǒ néng lì
+恩[Dm]典已经来[G]到， 救[E]赎真光已照[Am]耀。 我宣告[Dm]！ 在基督[F/G]里我自[C]由！   ēn diǎn yǐ jīng lái dào jiù shú zhēn guāng yǐ zhào yào wǒ xuān gào zài jī dū lǐ wǒ zì yóu
+{end_of_chorus}
+
+{start_of_bridge: 桥段/Bridge}
+[F]定罪已过[G]去， [Am]控告已过[C/E]去， [F]基督的[G]宝血大有能[C]力。   dìng zuì yǐ guò qù kòng gào yǐ guò qù jī dū de bǎo xuè dà yǒu néng lì
+[F]罪已得[G] 赦免， 旧[Em]事已[E]过都变成[Am]新，   zuì yǐ dé shè miǎn jiù shì yǐ guò dōu biàn chéng xīn
+全[Dm]新的生[D]命因耶稣的[G]名。   quán xīn de shēng mìng yīn yē sū de míng
+{end_of_bridge}

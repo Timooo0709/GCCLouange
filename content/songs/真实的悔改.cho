@@ -1,23 +1,30 @@
 {title: 真实的悔改}
 {title_pinyin: Zhēn shí de huǐ gǎi}
 {key: F}
-{tempo: 80}
+{tempo: 62}
+{artist: 赞美之泉}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-真實的悔改   zhēn shí de huǐ gǎi
-SieamofFPiokseP讚之杲   SieamofFPiokseP zàn zhī gǎo
-•=62敬拜地、呼求地SarahYu   jìng bài dì hū qiú dì SarahYu
-[Csus4]
-{end_of_verse}
+{start_of_intro: 前奏/Intro}
+[F]   [C/E]   [Bb/D]   [D/F#]   [Gm]   [Gm/F]   [Bbmaj7]   [Csus4]
+{end_of_intro}
 
-{start_of_verse: 主歌/Couplet 2}
-主称已救贖我們，招聚我們，為称爭戰。主我們   zhǔ chēng yǐ jiù shú wǒ mén zhāo jù wǒ mén wéi chēng zhēng zhàn zhǔ wǒ mén
-同心尋求，祢的國度，祢的公義。求祢赦免我們得   tóng xīn xún qiú chēng de guó dù mí de gōng yì qiú chēng shè miǎn wǒ mén dé
+{start_of_verse: 主歌/Couplet}
+主[Fadd2]祢已救赎我[Bbmaj7]们，招聚我们，为祢争战。主我们
+zhǔ   nǐ   yǐ   jiù   shú   wǒ   men   zhāo   jù   wǒ   men   wèi   nǐ   zhēng   zhàn   zhǔ   wǒ   men
+[Gm9]同心寻[D/F#]求，祢的[Bb/C]国度，[C]祢的[A7]公义。[A/C#]
+tóng   xīn   xún   qiú   nǐ   de   guó   dù   nǐ   de   gōng   yì
+求[Dm9]祢赦[F/C]免我们得[Bb]罪了祢，[Gm7]从今天[Bb/C]起我们要[C]顺服祢旨意。
+qiú   nǐ   shè   miǎn   wǒ   men   dé   zuì   le   nǐ   cóng   jīn   tiān   qǐ   wǒ   men   yào   shùn   fù   nǐ   zhǐ   yì
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-罪了称，從今天起我們要順服祢旨意。主我們真實的悔改，回轉到称   zuì liǎo chēng cóng jīn tiān qǐ wǒ mén yào shùn fú mí zhǐ yì zhǔ wǒ mén zhēn shí de huǐ gǎi huí zhuǎn dào chēng
-[Dm9]面前，求祢赦免我們的[D/F]罪，潔[Bb/C]淨我們的心；主再次賜下称恩典，再次賜下   miàn qián qiú chēng shè miǎn wǒ mén de zuì jié jìng wǒ mén de xīn zhǔ zài cì cì xià chēng ēn diǎn zài cì cì xià
-憐憫；求祢塑造[Gm7]我們生命，為[Bb/C]称而活，一生討称   lián mǐn qiú chēng sù zào wǒ mén shēng mìng wéi chēng ér huó yī shēng tǎo chēng
+主我们[F]真实的悔[C/E]改，回转到[Dm9]祢面[F/C]前，
+zhǔ   wǒ   men   zhēn   shí   de   huǐ   gǎi   huí   zhuǎn   dào   nǐ   miàn   qián
+求[Gm9]祢赦[D/F#]免我们的[Bb/C]罪，洁[C]净我们的[F]心；[C/E]
+qiú   nǐ   shè   miǎn   wǒ   men   de   zuì   jié   jìn   wǒ   men   de   xīn
+主再次[Dm9]赐下祢[F/C]恩典，再次赐下[Gm7]怜[Bb/C]悯；
+zhǔ   zài   cì   cì   xià   nǐ   ēn   diǎn   zài   cì   cì   xià   lián   mǐn
+求[C]祢塑造[Gm7]我们生命，为[Bb/C]祢而活，[C]一生讨祢[Fmaj7]喜悦。
+qiú   nǐ   sù   zào   wǒ   men   shēng   mìng   wéi   nǐ   ér   huó   yī   shēng   tǎo   nǐ   xǐ   yuè
 {end_of_chorus}

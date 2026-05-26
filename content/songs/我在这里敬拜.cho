@@ -1,29 +1,40 @@
 {title: 我在这里敬拜}
 {title_pinyin: Wǒ zài zhè lǐ jìng bài}
+{artist: 赞美之泉}
 {key: D}
-{tempo: 80}
+{tempo: 76}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-我在这里敬拜   wǒ zài zhè lǐ jìng bài
-（诗23:2-3,6）游智婷词曲   shī yóu zhì tíng cí qǔ
-[D]  [A13]
-（所有括号里的和弦有时加，有时不加）我在这里敬拜，   suǒ yǒu kuò hào lǐ de hé xián yǒu shí jiā yǒu shí bù jiā wǒ zài zhè lǐ jìng bài
-（先低后高）   xiān dī hòu gāo
-我在[A/C]这里献[Bm7]上我的爱，[Bmadd9]全心[D/A]全意[Gmaj7]，全然爱你[D/E]，你是那   wǒ zài zhè lǐ xiàn shàng wǒ de ài quán xīn quán yì quán rán ài nǐ nǐ shì nà
-我在这里献上我的爱，你的恩惠，你的慈爱，一生一   wǒ zài zhè lǐ xiàn shàng wǒ de ài nǐ de ēn huì nǐ de cí ài yī shēng yī
-爱[Em9]我的天父。F[G/A]ine我在这里[Em7][Asus4][A7][G/A]！   ài wǒ de tiān fù Fine wǒ zài zhè lǐ
-世追随着我。献上   shì zhuī suí zhe wǒ xiàn shàng
-［接'我的一切1   jiē wǒ de yī qiè
-[D]我心，献[C]上敬：拜，献[A]上[Bm]我最深的爱，天[A]地   wǒ xīn xiàn shàng jìng bài xiàn shàng wǒ zuì shēn de ài tiān dì
-敬拜，献上   jìng bài xiàn shàng
-[G]我的一切，[D/F]我的意念，[Em]你是阿爸父；[A]献上我爱   wǒ de yī qiè wǒ de yì niàn nǐ shì ā bà fù xiàn shàng wǒ ài
-都要过去，你爱不变，不曾放弃我。   dōu yào guò qù nǐ ài bù biàn bù céng fàng qì wǒ
-[D]你，我[A/C]爱[Bm]你，躺[D/A]卧[G]青草地上，[D/F]安歇水边，   nǐ wǒ ài nǐ tǎng wò qīng cǎo dì shàng ān xiē shuǐ biān
-你，我爱你，使我灵魂苏醒，安慰我心，   nǐ wǒ ài nǐ shǐ wǒ líng hún sū xǐng ān wèi wǒ xīn
-[Em9]  [G/A]  [Em9]  [Asus4]  [A]
+{start_of_intro: 前奏/Intro}
+[D]  [Gmaj7]  [A13]  [Gmaj7]
+{end_of_intro}
+
+{start_of_verse: 主歌 1/Couplet 1}
+我在这里敬[D]拜， 我在这里[Bm7]献上我的爱，   wǒ zài zhè lǐ jìng bài wǒ zài zhè lǐ xiàn shàng wǒ de ài
+[Gmaj7]全心全意， [D/F#]全然爱你， 你是那[Em9]爱我的天[G/A]父。   quán xīn quán yì quán rán ài nǐ nǐ shì nà ài wǒ de tiān fù
 {end_of_verse}
 
-{start_of_verse: 主歌/Couplet}
-享受你同在。我爱恩膏我生命。   xiǎng shòu nǐ tóng zài wǒ ài ēn gāo wǒ shēng mìng
+{start_of_verse: 主歌 2/Couplet 2}
+我在这里敬[D]拜， 我在这里[Bm7]献上我的爱，   wǒ zài zhè lǐ jìng bài wǒ zài zhè lǐ xiàn shàng wǒ de ài
+[Gmaj7]你的恩惠， [D/F#]你的慈爱， 一生一[Em7]世追随[Asus4]着[A7]我[G/A]。   nǐ de ēn huì nǐ de cí ài yī shēng yī shì zhuī suí zhe wǒ
 {end_of_verse}
+
+{start_of_chorus: 副歌 1/Refrain 1}
+献上我[D]心， 献[Bm]上敬拜，   xiàn shàng wǒ xīn xiàn shàng jìng bài
+[G]我的一切， [D/F#]我的意念， [Em]你是阿爸[G/A]父；   wǒ de yī qiè wǒ de yì niàn nǐ shì ā bà fù
+{end_of_chorus}
+
+{start_of_chorus: 副歌 2/Refrain 2}
+献上[D]敬拜， 献上[Bm]我最深的爱，   xiàn shàng jìng bài xiàn shàng wǒ zuì shēn de ài
+天[G]地都要过[D/F#]去， 你爱[Em]不变， 不曾[Asus4]放弃[A]我。   tiān dì dōu yào guò qù nǐ ài bù biàn bù céng fàng qì wǒ
+{end_of_chorus}
+
+{start_of_bridge: 桥段 1/Bridge 1}
+我爱[D]你， 我爱[A/C#]你[Bm]， 躺[D/A]卧[G]青草地上， [D/F#]安歇水边，   wǒ ài nǐ wǒ ài nǐ tǎng wò qīng cǎo dì shàng ān xiē shuǐ biān
+[Em9]享受你同[G/A]在。   xiǎng shòu nǐ tóng zài
+{end_of_bridge}
+
+{start_of_bridge: 桥段 2/Bridge 2}
+我爱[D]你， 我爱[A/C#]你[Bm]， 使我[D/A]灵[G]魂苏醒， [D/F#]安慰我心，   wǒ ài nǐ wǒ ài nǐ shǐ wǒ líng hún sū xǐng ān wèi wǒ xīn
+[Em9]恩膏我生[Asus4]命[A]。   ēn gāo wǒ shēng mìng
+{end_of_bridge}

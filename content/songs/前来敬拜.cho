@@ -1,24 +1,25 @@
 {title: 前来敬拜}
 {title_pinyin: Qián lái jìng bài}
+{artist: 赞美之泉}
 {key: C}
-{tempo: 80}
+{tempo: 172}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-前來敬拜筊   qián lái jìng bài jiǎo
-CometoWorship讚之泉   CometoWorship zàn zhī quán
-EnglishTranslation:SOP詞：鄭懋柔TiffanyM.Cheng   EnglishTranslation SOP cí zhèng mào róu TiffanyM Cheng
-•=172讚美地、喜樂地曲：游智婷SandyYu   zàn měi dì xǐ lè dì qǔ yóu zhì tíng SandyYu
-{end_of_verse}
-
 {start_of_intro: 前奏/Intro}
+[G]   [C]   [D]   [G]
 {end_of_intro}
 
 {start_of_verse: 主歌/Couplet}
-哈利路亞，哈利路亞，前來敬拜永遠的君王。哈利路   hā lì lù yā hā lì lù yā qián lái jìng bài yǒng yuǎn de jūn wáng hā lì lù
-亞，哈利路亞，大聲宣香王榮耀降臨！榮耀尊貴，   yā hā lì lù yā dà shēng xuān xiāng wáng róng yào jiàng lín róng yào zūn guì
-能力權柄歸於祢，祢是我的救主，我的救贖。榮耀尊   néng lì quán bǐng guī wū mí mí shì wǒ de jiù zhǔ wǒ de jiù shú róng yào zūn
-貴，能力權柄歸於祢，祢是配得，祢是配得，祢是配得   guì néng lì quán bǐng guī wū mí mí shì pèi dé mí shì pèi dé mí shì pèi dé
-我的敬拜。榮耀尊貴，美麗無比，神的兒子，耶穌我的主。   wǒ de jìng bài róng yào zūn guì měi lí wú bǐ shén de ér zǐ yē sū wǒ de zhǔ
-榮耀尊；貴，美麗無比，神的兒子，耶穌我的主。   róng yào zūn guì měi lí wú bǐ shén de ér zǐ yē sū wǒ de zhǔ
+[G]哈利路亚，[C]哈利路亚，[D]前来敬拜[G]永远的君王。   hā lì lù yā hā lì lù yā qián lái jìng bài yǒng yuǎn de jūn wáng
+[G]哈利路亚，[C]哈利路亚，[D]大声宣告[G]主荣耀降临！   hā lì lù yā hā lì lù yā dà shēng xuān gào zhǔ róng yào jiàng lín
 {end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+[G]荣耀尊[D]贵，能力权[Em]柄归于祢，[C]祢是我的[G]救主，[Am]我的救[D]赎。   róng yào zūn guì néng lì quán bǐng guī yú nǐ nǐ shì wǒ de jiù zhǔ wǒ de jiù shú
+[G]荣耀尊[D]贵，能力权[Em]柄归于祢，[C]祢是配得，[G/B]祢是配得，[Am]祢是配得[D]我的敬[G]拜。   róng yào zūn guì néng lì quán bǐng guī yú nǐ nǐ shì pèi de nǐ shì pèi de nǐ shì pèi de wǒ de jìng bài
+{end_of_chorus}
+
+{start_of_bridge: 桥段/Bridge}
+[G]荣耀尊[D]贵，美丽无[Em]比，[C]神的儿[G]子，[Am]耶稣[D]我的[G]主。   róng yào zūn guì měi lì wú bǐ shén de ér zi yē sū wǒ de zhǔ
+[D]荣耀尊[Em]贵，美丽无[C]比，[G]神的儿[Am]子，[D]耶稣我的[G]主。   róng yào zūn guì měi lì wú bǐ shén de ér zi yē sū wǒ de zhǔ
+{end_of_bridge}

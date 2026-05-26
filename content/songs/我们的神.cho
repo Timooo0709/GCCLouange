@@ -1,27 +1,31 @@
 {title: 我们的神}
 {title_pinyin: Wǒ men de shén}
+{artist: 赞美之泉}
 {key: G}
-{tempo: 80}
+{tempo: 66}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-•=66我们的神   wǒ men de shén
+{start_of_intro: 前奏/Intro}
 [G]  [Em]  [C]  [D]
-诸天述[G]说天[D/F]父的[Em]荣耀，穹苍传[C]扬奇妙的   zhū tiān shù shuō tiān fù de róng yào qióng cāng chuán yáng qí miào de
-[D]作为。张开双[G]手，万物[D/F]得[Em]饱足。万口承[C]认你是我们的   zuò wèi zhāng kāi shuāng shǒu wàn wù dé bǎo zú wàn kǒu chéng rèn nǐ shì wǒ men de
-[F#m]  [E/G]  [D/A]  [A/C]
-[A]  [E/G]  [F#m]  [A/E]  [D]  [A/C]
-神。[D]我们的[G]神，[D/F]坐在宝座[Em]上，[G/D]圣殿充[C]满荣耀[G/B]，万   shén wǒ men de shén zuò zài bǎo zuò shàng shèng diàn chōng mǎn róng yào wàn
-[Bm]  [E]  [A]  [E/G]  [F#m]  [A/E]  [D]  [A/C]
-[Am]民敬[D]拜。全能的[G]神，我[D/F]们尊崇[Em]你。[G/D]圣洁、荣[C]耀、尊贵[G/B]、能   mín jìng bài quán néng de shén wǒ men zūn chóng nǐ shèng jié róng yào zūn guì néng
-[Bm]  [E]  [A]
+{end_of_intro}
+
+{start_of_verse: 主歌/Couplet}
+诸天述[G]说 [D/F#]天父的[Em]荣耀， 穹苍传[C]扬 奇妙的[D]作为。   zhū tiān shù shuō tiān fù de róng yào qióng cāng chuán yáng qí miào de zuò wéi
+张开双[G]手， [D/F#]万物得[Em]饱足。 万口承[C]认你是我们的[Dsus4]神。[D]   zhāng kāi shuāng shǒu wàn wù dé bǎo zú wàn kǒu chéng rèn nǐ shì wǒ men de shén
 {end_of_verse}
 
-{start_of_bridge: 桥段/Pont}
-力，都归于你。你说话，命立就立；你吹   lì dōu guī yú nǐ nǐ shuō huà mìng lì jiù lì nǐ chuī
-[C]气，就得生[G]命。万物齐[C]唱哈利[G]路[D/F][Em]亚！圣哉！   qì jiù dé shēng mìng wàn wù qí chàng hā lì lù yà shèng zāi
+{start_of_chorus: 副歌 1 (G调)/Refrain 1 (G)}
+我们的[G]神， [D/F#]坐在宝座[Em]上， [G/D]圣殿充[C]满荣耀[G/B]， 万民敬[Am]拜。[D]   wǒ men de shén zuò zài bǎo zuò shàng shèng diàn chōng mǎn róng yào wàn mín jìng bài
+全能的[G]神， [D/F#]我们尊崇[Em]你。 [G/D]圣洁、 荣[C]耀、 尊贵[G/B]、 能[Am]力， 都归[D]于你[G]。   quán néng de shén wǒ men zūn chóng nǐ shèng jié róng yào zūn guì néng lì dōu guī yú nǐ
+{end_of_chorus}
+
+{start_of_bridge: 桥段/Bridge}
+你说话， [C]命立就[G/B]立； 你吹[C]气， 就得生[G]命。   nǐ shuō huà mìng lì jiù lì nǐ chuī qì jiù dé shēng mìng
+万物齐[C]唱哈利路[G]亚[D/F#]！ [Em]圣哉！   wàn wù qí chàng hā lì lù yà shèng zāi
+[C]圣哉！ [D]圣哉！ 圣[Dsus4]哉！   shèng zāi shèng zāi shèng zāi
 {end_of_bridge}
 
-{start_of_chorus: 副歌/Refrain 4}
-圣哉！圣哉！你说哉！（我们的神！）我们的   shèng zāi shèng zāi nǐ shuō zāi wǒ men de shén wǒ men de
+{start_of_chorus: 副歌 2 (A调)/Refrain 2 (A)}
+我们的[A]神， [E/G#]坐在宝座[F#m]上， [A/E]圣殿充[D]满荣耀[A/C#]， 万民敬[Bm]拜。[E]   wǒ men de shén zuò zài bǎo zuò shàng shèng diàn chōng mǎn róng yào wàn mín jìng bài
+全能的[A]神， [E/G#]我们尊崇[F#m]你。 [A/E]圣洁、 荣[D]耀、 尊贵[A/C#]、 能[Bm]力， 都归[E]于你[A]。   quán néng de shén wǒ men zūn chóng nǐ shèng jié róng yào zūn guì néng lì dōu guī yú nǐ
 {end_of_chorus}

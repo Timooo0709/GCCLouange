@@ -1,20 +1,26 @@
 {title: 我安然居住}
 {title_pinyin: Wǒ ān rán jū zhù}
+{artist: 约书亚乐团}
 {key: G}
-{tempo: 80}
+{tempo: 65}
 {language: zh}
 
 {start_of_verse: 主歌/Couplet}
-我安然居住   wǒ ān rán jū zhù
-（速度65）约书亚乐团《主你是我们的太阳》（2017）郑孆薇、杨丽珊词   sù dù yuē shū yà lè tuán zhǔ nǐ shì wǒ men de tài yáng zhèng yīng wēi yáng lì shān cí
-我来[G]到你宝座[D/F]，献上[Em7]我的祷告[Bm7]，在这宁静时刻[G/B]，我听见   wǒ lái dào nǐ bǎo zuò xiàn shàng wǒ de dǎo gào zài zhè níng jìng shí kè wǒ tīng jiàn
-你[Am7]的声音[C/D]。因为你的爱[D/F]，已经[Em7]找到了我[Bm7]，使我   nǐ de shēng yīn yīn wèi nǐ de ài yǐ jīng zhǎo dào liǎo wǒ shǐ wǒ
-配得走进[G/B]你的同[Am7]了在里[C/D]。[B/D]在这安[Em7]静时刻[Bm7]，你聆   pèi dé zǒu jìn nǐ de tóng liǎo zài lǐ zài zhè ān jìng shí kè nǐ líng
-（第二遍没有3-4拍）（C/D）   dì èr biàn méi yǒu pāi C D
-听我呼求，[F]享受[Em7]在你的荣[Bm7]耀[Am7]圣洁中。[D]求你仰   tīng wǒ hū qiú xiǎng shòu zài nǐ de róng yào shèng jié zhōng qiú nǐ yǎng
-[D/F]  [F]  [B/D]  [Em7]  [C#]  [Am7]  [Am]  [C/D]  [D/E]  [Eb/F]  [F/G]
-[G]起脸[D/F]来光照我[Em7]的心，你使我[Am7]心充[Am]满了快乐[C/D]。主啊，你   qǐ liǎn lái guāng zhào wǒ de xīn nǐ shǐ wǒ xīn chōng mǎn liǎo kuài lè zhǔ a nǐ
-（这四个和弦各半拍）［尾句2］Em7A9b13   zhè sì gè hé xián gè bàn pāi wěi jù Em A b
-[B7]  [B/D]  [Em7]  [Eb]  [D]  [C#]  [Am7]  [C/D]  [Em7]  [G/D]  [C#]
-是我全然信靠，耶和华使我安然居住。   shì wǒ quán rán xìn kào yē hé huá shǐ wǒ ān rán jū zhù
+我来[G]到你宝座， [D/F#]献上[Em7]我的祷告，   wǒ lái dào nǐ bǎo zuò xiàn shàng wǒ de dǎo gào
+[Bm7]在这[C2]宁静时刻， [G/B]我听见[Am7]你的声[C/D]音。   zài zhè níng jìng shí kè wǒ tīng jiàn nǐ de shēng yīn
+因为[G2]你 的[D/F#]爱， 已经[Em7]找到了我[Bm7]，   yīn wèi nǐ de ài yǐ jīng zhǎo dào le wǒ
+使我[C2]配得走进 [G/B]你的[Am7]同 在[C/D]里。   shǐ wǒ pèi dé zǒu jìn nǐ de tóng zài lǐ
+[B/D#]在这[Em7]安静时刻[Bm7]， 你聆[C2]听我呼[G]求，   zài zhè ān jìng shí kè nǐ líng tīng wǒ hū qiú
+[D/F#]享受[Em7]在你的荣[Bm7]耀 [Am7]圣洁[Dsus4]中。[D]   xiǎng shòu zài nǐ de róng yào shèng jié zhōng
 {end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+求你[G]仰起[D/F#]脸来光[Em7]照我的心，   qiú nǐ yǎng qǐ liǎn lái guāng zhào wǒ de xīn
+你使我[Am7]心充[Am(maj7)]满了快[C/D]乐。   nǐ shǐ wǒ xīn chōng mǎn le kuài lè
+主啊，你[G]是 我[B7]全然信[B/D#]靠[Em7]，   zhǔ a nǐ shì wǒ quán rán xìn kào
+耶和[Am7]华 使我[C/D]安然居[G]住。   yē hé huá shǐ wǒ ān rán jū zhù
+{end_of_chorus}
+
+{start_of_bridge: 尾句/Tag}
+耶和[Am7]华 使我[C/D]安然居[G]住。   yē hé huá shǐ wǒ ān rán jū zhù
+{end_of_bridge}

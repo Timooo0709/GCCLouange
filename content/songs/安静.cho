@@ -1,19 +1,20 @@
 {title: 安静}
 {title_pinyin: Ān jìng}
+{artist: 赞美之泉}
 {key: D}
 {tempo: 62}
 {language: zh}
 
+{start_of_intro: 前奏/Intro}
+[D]   [D/F#]   [G]   [D/F#]   [A]   [D]   [G]   [D/F#]   [A7]   [D]
+{end_of_intro}
+
 {start_of_verse: 主歌/Couplet}
-[D]安 [D/F#]静 让[G]平安入我心，   ān jìng ràng píng ān rù wǒ xīn
-深深[D/F#]知道祢是我的[A]神。   shēn shēn zhī dào nǐ shì wǒ de shén
-[D]风 浪 让我[G]灵更坚定，   fēng làng ràng wǒ líng gèng jiān dìng
-在我[D/F#]身旁祢使风浪[A7]平[D]息。   zài wǒ shēn páng nǐ shǐ fēng làng píng xī
+[D]安[D/F#]静 让[G]平安入我心，深深[D/F#]知道祢是我的[A]神。   ān jìng ràng píng ān rù wǒ xīn shēn shēn zhī dào nǐ shì wǒ de shén
+[D]风浪 让我[G]灵更坚定，在我[D/F#]身旁祢使风浪[A7]平[D]息。   fēng làng ràng wǒ líng gèng jiān dìng zài wǒ shēn páng nǐ shǐ fēng làng píng xī
 {end_of_verse}
 
-{start_of_chorus: 副歌/Chorus}
-我不[D]害 [D/F#]怕， 我[G]仍 然要敬拜，   wǒ bù hài pà wǒ réng rán yào jìng bài
-祢[D/A]陪我走向应许之[A]处。   nǐ péi wǒ zǒu xiàng yīng xǔ zhī chǔ
-充满[D]盼 [D/F#]望， 我[G]一 生要敬拜，   chōng mǎn pàn wàng wǒ yī shēng yào jìng bài
-生命满有[D/A]祢的印[A7]记。[D]   shēng mìng mǎn yǒu nǐ de yìn jì
+{start_of_chorus: 副歌/Refrain}
+我不[D]害[D/F#]怕，我[G]仍然要敬拜，祢[D/A]陪我走向应许之[A]处；   wǒ bù hài pà wǒ réng rán yào jìng bài nǐ péi wǒ zǒu xiàng yīng xǔ zhī chǔ
+充满[D]盼[D/F#]望，我[G]一生要敬拜，生命满有[D/A]祢的印[A7]记。[D]   chōng mǎn pàn wàng wǒ yī shēng yào jìng bài shēng mìng mǎn yǒu nǐ de yìn jì
 {end_of_chorus}

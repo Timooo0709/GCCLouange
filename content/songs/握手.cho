@@ -2,22 +2,23 @@
 {title_pinyin: Wò shǒu}
 {key: D}
 {tempo: 80}
+{artist: 祝瑞莲}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-握手   wò shǒu
-祝瑞莲《求圣灵运行》   zhù ruì lián qiú shèng líng yùn xíng
-踏上十字架的道路，我的心绝不会后悔，纵然   tà shàng shí zì jià de dào lù wǒ de xīn jué bù huì hòu huǐ zòng rán
-走在十字架的道路，我的脚踪何等佳美，有时   zǒu zài shí zì jià de dào lù wǒ de jiǎo zōng hé děng jiā měi yǒu shí
-[D]道路曲折难[Bm]行，我的[Em]脚步不会后退[A]；岁月   dào lù qǔ zhé nán xíng wǒ de jiǎo bù bù huì hòu tuì suì yuè
-失望悄悄落泪，耶稣是我力量安慰；往事   shī wàng qiāo qiāo luò lèi yē sū shì wǒ lì liáng ān wèi wǎng shì
-[D]流过不能[Bm]追，春去[G]秋来：落叶纷[A]飞，我要   liú guò bù néng zhuī chūn qù qiū lái luò yè fēn fēi wǒ yào
-飞过只能回味，干山万水有主伴随，我要   fēi guò zhī néng huí wèi gān shān wàn shuǐ yǒu zhǔ bàn suí wǒ yào
-[D]向耶和华敬[Bm]畏，等候[Em]他的必[A]不至羞[D]愧。向软   xiàng yē hé huá jìng wèi děng hòu tā de bì bù zhì xiū kuì xiàng ruǎn
-向耶和华赞美，扬声歌唱与主同饮杯。向世   xiàng yē hé huá zàn měi yáng shēng gē chàng yǔ zhǔ tóng yǐn bēi xiàng shì
+{start_of_verse: 主歌 1/Couplet 1}
+踏上[D]十字架的[Bm]道路，[G]我的心绝不会[A]后悔，纵然   tà shàng shí zì jià de dào lù wǒ de xīn gué bù huì hòu huǐ zòng rán
+[D]道路曲折难[Bm]行，我的[Em]脚步不会后[A]退；岁月   dào lù qǔ zhé nán xíng wǒ de jiǎo bù bù huì hòu tuì suì yuè
+[D]流过不能再[Bm]追，[G]春去秋来落叶纷[A]飞，我要   liú guò bù néng zài zhuī chūn qù qiū lái luò yè fēn fēi wǒ yào
+[D]向耶和华敬[Bm]畏，等[Em]候他的[A]必不至[D]羞愧。向软   xiàng yē hé huá jìng wèi děng hòu tā de bì bù zhì xiū kuì xiàng ruǎn
 [D]弱挥挥[Bm]手，向刚[G]强握[A]手，向悲   ruò huī huī shǒu xiàng gāng qiáng wò shǒu xiàng bēi
-界挥挥手，向十架握手，往前   jiè huī huī shǒu xiàng shí jià wò shǒu wǎng qián
-伤挥挥手，向喜乐握手。   shāng huī huī shǒu xiàng xǐ lè wò shǒu
-走不停留，往前走莫停留。   zǒu bù tíng liú wǎng qián zǒu mò tíng liú
-（回头）   huí tóu
+[D]伤挥挥[Bm]手，向[G]喜乐[A]握[D]手。   shāng huī huī shǒu xiàng xǐ lè wò shǒu
+{end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+走在[D]十字架的[Bm]道路，[G]我的脚踪何等[A]佳美，有时   zǒu zài shí zì jià de dào lù wǒ de jiǎo zōng hé děng jiā měi yǒu shí
+[D]失望悄悄落[Bm]泪，耶稣[Em]是我力量安[A]慰；往事   shī wàng qiāo qiāo luò lèi yē sū shì wǒ lì liáng ān wèi wǎng shì
+[D]飞过只能回[Bm]味，[G]千山万水有主伴[A]随，我要   fēi guò zhī néng huí wèi qiān shān wàn shuǐ yǒu zhǔ bàn suí wǒ yào
+[D]向耶和华赞[Bm]美，扬[Em]声歌唱与[A]主同饮[D]杯。向世   xiàng yē hé huá zàn měi yáng shēng gē chàng yǔ zhǔ tóng yǐn bēi xiàng shì
+[D]界挥挥[Bm]手，向十[G]架握[A]手，往前   jiè huī huī shǒu xiàng shí jià wò shǒu wǎng qián
+[D]走不停[Bm]留，往[G]前走[A]莫停[D]留。 （回头）   zǒu bù tíng liú wǎng qián zǒu mò tíng liú huí tóu
 {end_of_verse}

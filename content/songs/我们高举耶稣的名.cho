@@ -1,32 +1,31 @@
 {title: 我们高举耶稣的名}
 {title_pinyin: Wǒ men gāo jǔ yē sū de míng}
+{artist: 赞美之泉}
 {key: D}
-{tempo: 80}
+{tempo: 72}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-我们高举耶稣的名   wǒ men gāo jǔ yē sū de míng
-[D/F]  [G]  [D/F]  [D]
-[D/F]大能的君王[G]，[D/F]尊贵的君王[A]，   dà néng de jūn wáng zūn guì de jūn wáng
+{start_of_verse: 主歌 1/Couplet 1}
+[D/F#]大能的[G]君王， [D/F#]尊贵的[A]君王，   dà néng de jūn wáng zūn guì de jūn wáng
+[D/F#]我们敬[G]拜你， [A]尊崇荣[D]耀你。   wǒ men jìng bài nǐ zūn chóng róng yào nǐ
 {end_of_verse}
 
-{start_of_chorus: 副歌/Refrain}
-我们敬拜你，尊崇荣耀你。我们   wǒ men jìng bài nǐ zūn chóng róng yào nǐ wǒ men
-与天使齐声，高举你的名。   yǔ tiān shǐ qí shēng gāo jǔ nǐ de míng
-[A]  [E]  [A]
-[G]高举，高举你的名[D]，我们[G]高举荣耀的君王。   gāo jǔ gāo jǔ nǐ de míng wǒ men gāo jǔ róng yào de jūn wáng
-[E]  [B/D]  [C#m]  [A]  [E]  [B]
-[D][A/C]尊贵，[Bm]荣耀，颂赞，能力[G]，我们[D]高举[A]耶稣的   zūn guì róng yào sòng zàn néng lì wǒ men gāo jǔ yē sū de
-[E]
+{start_of_verse: 主歌 2/Couplet 2}
+[D/F#]大能的[G]君王， [D/F#]尊贵的[A]君王，   dà néng de jūn wáng zūn guì de jūn wáng
+与[D/F#]天使[G]齐声， [A]高举你[D]的名。   yǔ tiān shǐ qí shēng gāo jǔ nǐ de míng
+{end_of_verse}
+
+{start_of_chorus: 副歌 1 (D调)/Refrain 1 (D)}
+[G]高举， 高举[D]你的名， 我们[G]高举荣耀[D]的君王。   gāo jǔ gāo jǔ nǐ de míng wǒ men gāo jǔ róng yào de jūn wáng
+[D]尊贵[A/C#]、 [Bm]荣耀、 颂赞[G]、 能力， 我们[D]高举[A]耶稣的[D]名。   zūn guì róng yào sòng zàn néng lì wǒ men gāo jǔ yē sū de míng
 {end_of_chorus}
 
-{start_of_bridge: 桥段/Pont}
-DDGDA升调用上层和弦）   DDGDA shēng tiáo yòng shàng céng hé xián
-名。Fine你是世界的拯救，你是得胜的君王，   míng Fine nǐ shì shì jiè de zhěng jiù nǐ shì dé shèng de jūn wáng
-[E]  [A]  [E]  [B]  [E]
+{start_of_bridge: 桥段/Bridge}
+[D]你是世界的[G]拯救， 你是[D]得胜的君[A]王，   nǐ shì shì jiè de zhěng jiù nǐ shì dé shèng de jūn wáng
+[D]你是明亮的[G]晨星， 你的[D]国度[A]没有穷[D]尽。   nǐ shì míng liàng de chén xīng nǐ de guó dù méi yǒu qióng jìn
 {end_of_bridge}
 
-{start_of_chorus: 副歌/Refrain}
-你是明亮的晨星，你的国度没有穷尽。我们   nǐ shì míng liàng de chén xīng nǐ de guó dù méi yǒu qióng jìn wǒ men
-歌谱简谱网jianpu.cr   gē pǔ jiǎn pǔ wǎng jianpu cr
+{start_of_chorus: 副歌 2 (E调)/Refrain 2 (E)}
+[A]高举， 高举[E]你的名， 我们[A]高举荣耀[E]的君王。   gāo jǔ gāo jǔ nǐ de míng wǒ men gāo jǔ róng yào de jūn wáng
+[E]尊贵[B/D#]、 [C#m]荣耀、 颂赞[A]、 能力， 我们[E]高举[B]耶稣的[E]名。   zūn guì róng yào sòng zàn néng lì wǒ men gāo jǔ yē sū de míng
 {end_of_chorus}

@@ -1,27 +1,27 @@
 {title: 唯独依靠你}
 {title_pinyin: Wéi dú yī kào nǐ}
+{artist: 火把音乐}
 {key: E}
-{tempo: 80}
+{tempo: 68}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-J=68唯独倚靠你   J wéi dú yǐ kào nǐ
-[E]  [A/E]  [Bsus4]  [B7]  [Am/E]  [E]
-[E]若非你[E/G]流出宝血赎[Amaj7]回我，[Bsus4]我怎能[B/D]有机会重新来[E]过。   ruò fēi nǐ liú chū bǎo xuè shú huí wǒ wǒ zěn néng yǒu jī huì zhòng xīn lái guò
-虽然我曾有失信远离过，但你信实仍紧紧抓住我。   suī rán wǒ céng yǒu shī xìn yuǎn lí guò dàn nǐ xìn shí réng jǐn jǐn zhuā zhù wǒ
-[C#m7]  [E/B]  [F#/A]  [F#m7]  [B]
-[E]看见我所有罪恶[F]和软弱，[A]你却用完全的爱[B]接纳我。   kàn jiàn wǒ suǒ yǒu zuì è hé ruǎn ruò nǐ què yòng wán quán de ài jiē nà wǒ
-学会放手不再靠自己活只夸耀你一切为我所做。   xué huì fàng shǒu bù zài kào zì jǐ huó zhī kuā yào nǐ yī qiè wèi wǒ suǒ zuò
+{start_of_verse: 主歌 1/Couplet 1}
+[E]若非你流出宝血[A/E]赎回我，[Bsus4]我怎能有机会[B7]重新[Am/E]来[E]过；   ruò fēi nǐ liú chū bǎo xuè shú huí wǒ wǒ zěn néng yǒu jī huì zhòng xīn lái guò
+[E]虽然我[E/G#]曾有失信[Amaj7]远离过，[Bsus4]但你信[B/D#]实仍紧紧[Esus4]抓[E]住我。   suī rán wǒ céng yǒu shī xìn yuǎn lí guò dàn nǐ xìn shí réng jǐn jǐn zhuā zhù wǒ
+{end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+[C#m7]看见我所有罪恶[E/B]和[F#/A#]软弱，[F#m7]你却用完全的爱[B]接纳我；   kàn jiàn wǒ suǒ yǒu zuì è hé ruǎn ruò nǐ què yòng wán quán de ài jiē nà wǒ
+[E]学会放手不再靠[F#]自己[A]活，只夸耀你一切为[B]我所做。   xué huì fàng shǒu bù zài kào zì jǐ huó zhī kuā yào nǐ yī qiè wèi wǒ suǒ zuò
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-唯独倚靠你，唯独倚靠你，无价的宝血，映出真实的我，多么   wéi dú yǐ kào nǐ wéi dú yǐ kào nǐ wú jià de bǎo xuè yìng chū zhēn shí de wǒ duō me
-唯独倚靠你，唯独倚靠你，成就永恒，坚定不移的约，天涯   wéi dú yǐ kào nǐ wéi dú yǐ kào nǐ chéng jiù yǒng héng jiān dìng bù yí de yuē tiān yá
+唯独[E]倚靠你，唯独[B/D#]倚靠你，无价[A/C#]的宝血，映出[E/B]真实的我，多么[A]不等价的替换；   wéi dú yǐ kào nǐ wéi dú yǐ kào nǐ wú jià de bǎo xuè yìng chū zhēn shí de wǒ duō me bù děng jià de tì huàn
+唯独[E]倚靠你，唯独[B/D#]倚靠你，成就[A/C#]永恒，坚定[E/B]不移的约，天涯[F#m]海角[A]你把我[Am]寻回，耶[E]稣。   wéi dú yǐ kào nǐ wéi dú yǐ kào nǐ chéng jiù yǒng héng jiān dìng bù yí de yuē tiān yá hǎi jiǎo nǐ bǎ wǒ xún huí yē sū
 {end_of_chorus}
 
-{start_of_bridge: 桥段/Pont}
-不等价的替换。海角你把我寻回，耶稣。Fine因你的宝   bù děng jià de tì huàn hǎi jiǎo nǐ bǎ wǒ xún huí yē sū Fine yīn nǐ de bǎo
-[C#m]血，恩典的宝[E/G]血，修补一切[E]，再次立约[G#m]。因你的宝   xuè ēn diǎn de bǎo xuè xiū bǔ yī qiè zài cì lì yuē yīn nǐ de bǎo
-血，牺牲的宝血，坦然无惧，到你面前。因你的宝   xuè xī shēng de bǎo xuè tǎn rán wú jù dào nǐ miàn qián yīn nǐ de bǎo
-[E]到你面前[G#m]，无[C#m]瑕疵[E/G]的爱来到[E]破碎的[B]我面前[C]。ToC[F]horus   dào nǐ miàn qián wú xiá cī de ài lái dào pò suì de wǒ miàn qián ToChorus
+{start_of_bridge: 桥段/Bridge}
+因你的宝[C#m]血，恩典的宝[E/G#]血，修补一[E]切，再次立[G#m]约；   yīn nǐ de bǎo xuè ēn diǎn de bǎo xuè xiū bǔ yī qiè zài cì lì yuē
+因你的宝[C#m]血，牺牲的宝[E/G#]血，坦然无[E]惧，到你面[G#m]前；   yīn nǐ de bǎo xuè xī shēng de bǎo xuè tǎn rán wú jù dào nǐ miàn qián
+到你面[E]前，[G#m]无[C#m]瑕疵[E/G#]的爱来到[E]破碎的[B]我面[C#]前。   dào nǐ miàn qián wú xiá cī de ài lái dào pò suì de wǒ miàn qián
 {end_of_bridge}

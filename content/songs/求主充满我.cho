@@ -1,15 +1,19 @@
 {title: 求主充满我}
 {title_pinyin: Qiú zhǔ chōng mǎn wǒ}
 {key: D}
-{tempo: 80}
+{tempo: 66}
+{artist: 赞美之泉}
 {language: zh}
 
 {start_of_verse: 主歌/Couplet}
-求主充满我   qiú zhǔ chōng mǎn wǒ
-J=66恳切、祷告地   J kěn qiè dǎo gào dì
-主，我来寻求祢的面，求祢充满我来充满[D]我[A7]；   zhǔ wǒ lái xún qiú mí de miàn qiú mí chōng mǎn wǒ lái chōng mǎn wǒ
-[D]主，我渴慕祢的同[Bm]在，求祢洁净[G]我，来[A7]充满[D]我。耶   zhǔ wǒ kě mù mí de tóng zài qiú mí jié jìng wǒ lái chōng mǎn wǒ yē
-[D]稣，耶稣，耶[G/B]稣，耶[D/A]稣！[G]祢的宝[D/F]血洗[E]净[A7]我。耶   sū yē sū yē sū yē sū mí de bǎo xuè xǐ jìng wǒ yē
-[D/F]  [A7]
-稣，耶稣，耶稣，耶稣！祢以恩典为我冠[D]冕。   sū yē sū yē sū yē sū mí yǐ ēn diǎn wèi wǒ guān miǎn
+[D]主，   zhǔ   我来   wǒ lái   [A/C#]寻   xún   求   qiú   祢的   nǐ de   [Bm]面，   miàn   求   qiú   祢   nǐ   [G]充   chōng   满   mǎn   我   wǒ   [A]来   lái   充   chōng   满   mǎn   [D]我；   wǒ   [A7]
+[D]主，   zhǔ   我   wǒ   渴   kě   [A/C#]慕   mù   祢的   nǐ de   同   tóng   [Bm]在，   zài   求   qiú   祢   nǐ   洁   jié   [G]净   jìng   我，   wǒ   来   lái   [A7]充   chōng   满   mǎn   [D]我。   wǒ
 {end_of_verse}
+
+{start_of_chorus: 副歌 1/Refrain 1}
+[D]耶   yē   [A/C#]稣，   sū   耶   yē   稣，   sū   耶   yē   [G/B]稣，   sū   耶   yē   [D/A]稣！   sū   [G]祢的   nǐ de   宝   bǎo   [D/F#]血   xuè   洗   xǐ   [E]净   jìng   [A7]我。   wǒ
+{end_of_chorus}
+
+{start_of_chorus: 副歌 2/Refrain 2}
+[D]耶   yē   [A/C#]稣，   sū   耶   yē   稣，   sū   耶   yē   [G/B]稣，   sū   耶   yē   [D/A]稣！   sū   [G]祢   nǐ   以恩   yǐ ēn   [D/F#]典   diǎn   为   wéi   [Em]我   wǒ   [A7]冠   guān   [D]冕。   miǎn
+{end_of_chorus}

@@ -1,17 +1,27 @@
 {title: 献上尊荣}
 {title_pinyin: Xiàn shàng zūn róng}
 {key: F}
-{tempo: 80}
+{tempo: 70}
+{artist: 赞美之泉}
 {language: zh}
 
 {start_of_verse: 主歌/Couplet}
-献上尊荣   xiàn shàng zūn róng
-J=70敬拜地（玛1:11；诗45:6；约1:18）曾祥怡曲   J jìng bài dì mǎ shī yuē céng xiáng yí qǔ
-[F]耶稣基督，荣[C/E]耀父[Dm]神彰显，救赎真光，万国的[B]盼望[C]。   yē sū jī dū róng yào fù shén zhāng xiǎn jiù shú zhēn guāng wàn guó de pàn wàng
-[F]你的国度、宝[C/E]座存[Dm]到永远，唯有[Gm]你配得所有颂[F]赞。献上   nǐ de guó dù bǎo zuò cún dào yǒng yuǎn wéi yǒu nǐ pèi dé suǒ yǒu sòng zàn xiàn shàng
-[F]尊荣，[Dm]尊荣，给主[Gm]耶稣，在万民之[C]上；献上   zūn róng zūn róng gěi zhǔ yē sū zài wàn mín zhī shàng xiàn shàng
-[F]敬拜，敬拜，愿你[Gm]崇高在全地之[F]上。   jìng bài jìng bài yuàn nǐ chóng gāo zài quán dì zhī shàng
-[Bb]日出之地到[C/B]日落之处，[A/C]唯有你名被   rì chū zhī dì dào rì luò zhī chù wéi yǒu nǐ míng bèi
-[Dm]尊崇伟大。最小部落到[C/E]最大国家，   zūn chóng wěi dà zuì xiǎo bù luò dào zuì dà guó jiā
-[Eb]凡有气息都归荣耀给你。[D]献上   fán yǒu qì xī dōu guī róng yào gěi nǐ xiàn shàng
+[F]耶稣基督，[C/E]荣耀[Dm]父神彰显，[Bb]救赎真光，万国的[Bb/C]盼望[C]。
+yē   sū   jī   dū   róng   yào   fù   shén   zhāng   xiǎn   jiù   shú   zhēn   guāng   wàn   guó   de   pàn   wàng
+[F]你的国度、[C/E]宝座[Dm]存到永远，唯有[Gm]你配得[Bb/C]所有颂[F]赞。[Bb/C]
+nǐ   de   guó   dù   bǎo   zuò   cún   dào   yǒng   yuǎn   wéi   yǒu   nǐ   pèi   dé   suǒ   yǒu   sòng   zàn
 {end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+献上[F]尊荣，[Dm]尊荣，给主[Gm]耶稣，在万民之[Bb/C]上；[C]
+xiàn   shàng   zūn   róng   zūn   róng   gěi   zhǔ   yē   sū   zài   wàn   mín   zhī   shàng
+献上[F]敬拜，[Dm]敬拜，愿你[Gm]崇高在[Bb/C]全地之[F]上。
+xiàn   shàng   jìng   bài   jìng   bài   yuàn   nǐ   chóng   gāo   zài   quán   dì   zhī   shàng
+{end_of_chorus}
+
+{start_of_bridge: 桥段/Pont}
+[Bb]日出之地[C/Bb]到日落之处，[A/C#]唯有你名[Dm]被尊崇伟大。
+rì   chū   zhī   dì   dào   rì   luò   zhī   chù   wéi   yǒu   nǐ   míng   bèi   zūn   chóng   wěi   dà
+[Bb/D]最小部落[C/E]到最大国家，[Eb]凡有气息[Bb/D]都归荣耀[Bb/C]给你。[C7]
+zuì   xiǎo   bù   luò   dào   zuì   dà   guó   jiā   fán   yǒu   qì   xī   dōu   guī   róng   yào   gěi   nǐ
+{end_of_bridge}

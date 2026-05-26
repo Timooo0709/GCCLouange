@@ -1,16 +1,26 @@
 {title: 你的爱不离不弃}
 {title_pinyin: Nǐ de ài bù lí bú qì}
+{artist: 施弘美}
 {key: A}
-{tempo: 80}
+{tempo: 82}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-祢的爱不离不弃   mí de ài bù lí bù qì
-词、曲：施弘美生命河灵粮堂《神机会的风》旷野歌谱网整理制作   cí qǔ shī hóng měi shēng mìng hé líng liáng táng shén jī huì de fēng kuàng yě gē pǔ wǎng zhěng lǐ zhì zuò
-没有一个忧患，耶稣不能担当；没有—个痛苦，耶   méi yǒu yī gè yōu huàn yē sū bù néng dān dāng méi yǒu gè tòng kǔ yē
-[E]稣不[A/E]能背[F#m]负。我要向高山举目，我的帮助从祢而来。满有   sū bù néng bèi fù wǒ yào xiàng gāo shān jǔ mù wǒ de bāng zhù cóng mí ér lái mǎn yǒu
-丰盛的慈爱，赐给凡求告祢名的人。祢的爱总是不   fēng shèng de cí ài cì gěi fán qiú gào mí míng de rén mí de ài zǒng shì bù
-离不弃，[F#m]怜悯如江河涌[C#m]流。在我敌人面前摆设宴席，   lí bù qì lián mǐn rú jiāng hé yǒng liú zài wǒ dí rén miàn qián bǎi shè yàn xí
-使我的福杯满溢。祢的爱总是不离不弃，时刻将我环   shǐ wǒ de fú bēi mǎn yì mí de ài zǒng shì bù lí bù qì shí kè jiāng wǒ huán
-绕。祢必永远纪念与我所立的约，使我领受丰盛的恩典。   rào mí bì yǒng yuǎn jì niàn yǔ wǒ suǒ lì de yuē shǐ wǒ lǐng shòu fēng shèng de ēn diǎn
+{start_of_verse: 主歌 1/Couplet 1}
+没有一[F#m]个忧[D]患，耶[E]稣不能担[A]当；[C#]   méi yǒu yī gè yōu huàn yē sū bù néng dān dāng
+没有一[F#m]个痛[D]苦，耶[E]稣不[A/E]能背[F#m]负。我   méi yǒu yī gè tòng kǔ yē sū bù néng bèi fù wǒ
 {end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+[F#m]要向高山[D]举目，我[E]的帮助从祢[A]而[C#]来。满有   yào xiàng gāo shān jǔ mù wǒ de bāng zhù cóng nǐ ér lái mǎn yǒu
+[D]丰盛的慈[E]爱，赐[F#m]给凡求告[C#m]祢名[F#m]的[A]人。祢的   fēng shèng de cí ài cì gěi fán qiú gào nǐ míng de rén nǐ de
+{end_of_verse}
+
+{start_of_chorus: 副歌 1/Refrain 1}
+[A]爱总是不[E]离不弃，[F#m]怜悯如江[C#m]河涌流。在[Bm]我敌人面[A]前摆设宴席，   ài zǒng shì bù lí bù qì lián mǐn rú jiāng hé yǒng liú zài wǒ dí rén miàn qián bǎi shè yàn xí
+使[B7]我的福杯[E]满溢。祢的   shǐ wǒ de fú bēi mǎn yì nǐ de
+{end_of_chorus}
+
+{start_of_chorus: 副歌 2/Refrain 2}
+[A]爱总是不[E]离不弃，[F#m]时刻将我[C#m]环绕。祢必   ài zǒng shì bù lí bù qì shí kè jiāng wǒ huán rào nǐ bì
+[Bm]永远纪念[A]与我[B7]所立的[E]约，使我[F#m]领受丰[C#m]盛的恩[F#m]典。   yǒng yuǎn jì niàn yǔ wǒ suǒ lì de yuē shǐ wǒ lǐng shòu fēng shèng de ēn diǎn
+{end_of_chorus}

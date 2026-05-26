@@ -1,27 +1,25 @@
 {title: 在你宝座前}
 {title_pinyin: Zài nǐ bǎo zuò qián}
-{artist: 游智婷词 / 曾祥怡曲}
+{artist: 赞美之泉}
 {key: A}
 {tempo: 146}
 {language: zh}
-{themes: 敬拜, 赞美, 宝座}
+
+{start_of_intro: 前奏/Intro}
+[A]   [A/G#]   [F#m]   [A/E]   [A]   [A/G#]   [F#m]   [A/E]
+{end_of_intro}
 
 {start_of_verse: 主歌 1/Couplet 1}
-[A]在你宝座[E/G#]前，我[D/F#]献上我的敬[E/G#]拜，   zài nǐ bǎo zuò qián wǒ xiàn shàng wǒ de jìng bài
-我[D2]高举双手，[A/C#]扬声敬拜，   wǒ gāo jǔ shuāng shǒu yáng shēng jìng bài
-愿[D]救恩[Bm7]归于宝座上的[E4]神。[E7]   yuàn jiù ēn guī yú bǎo zuò shàng de shén
+[A]在祢宝座[E/G#]前，我[D/F#]献上我的敬[E/G#]拜；我[D]高举双手，[A/C#]扬声敬拜，愿[D]救恩[Bm]归与宝座上的[E]神。   zài nǐ bǎo zuò qián wǒ xiàn shàng wǒ de jìng bài wǒ gāo jǔ shuāng shǒu yáng shēng jìng bài yuàn jiù ēn guī yú bǎo zuò shàng de shén
 {end_of_verse}
 
 {start_of_verse: 主歌 2/Couplet 2}
-[A]在你宝座[E/G#]前，众[D/F#]天使俯伏敬[E/G#]拜，   zài nǐ bǎo zuò qián zhòng tiān shǐ fǔ fú jìng bài
-让[D2]万国万邦，[A/C#]在天上说，   ràng wàn guó wàn bāng zài tiān shàng shuō
-愿[D]救恩[Bm7]归于宝座上的[E4]神。[E7]   yuàn jiù ēn guī yú bǎo zuò shàng de shén
+[A]在祢宝座[E/G#]前，众[D/F#]天使俯伏敬[E/G#]拜；让[D]万国万邦，[A/C#]在天上说，愿[D]救恩[Bm]归与宝座上的[E]神。   zài nǐ bǎo zuò qián zhòng tiān shǐ fǔ fú jìng bài ràng wàn guó wàn bāng zài tiān shàng shuō yuàn jiù ēn guī yú bǎo zuò shàng de shén
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-哈利路[A2]亚！哈利路[E/G#]亚！哈利路[F#m]亚！哈利路[A/E]亚！   hā lì lù yà hā lì lù yà hā lì lù yà hā lì lù yà
-[D2]救恩荣[A/C#]耀，都[Bm7]归于我们的[E]神。   jiù ēn róng yào dōu guī yú wǒ men de shén
-哈利路[A2]亚！哈利路[E/G#]亚！哈利路[F#m]亚！哈利路[A/E]亚！   hā lì lù yà hā lì lù yà hā lì lù yà hā lì lù yà
-[D2]颂赞权[A/C#]能，都[Bm7]归于我们的[E]神，   sòng zàn quán néng dōu guī yú wǒ men de shén
-直到永永远[A2]远。   zhí dào yǒng yǒng yuǎn yuǎn
+哈利路[A]亚，哈利路[A/G#]亚，哈利路[F#m]亚，哈利路[A/E]亚！   hā lì lù yà hā lì lù yà hā lì lù yà hā lì lù yà
+[D]救恩、荣[A/C#]耀，都[Bm]归与我们的[E]神；   jiù ēn róng yào dōu guī yú wǒ men de shén
+哈利路[A]亚，哈利路[A/G#]亚，哈利路[F#m]亚，哈利路[A/E]亚！   hā lì lù yà hā lì lù yà hā lì lù yà hā lì lù yà
+[D]颂赞、权[A/C#]能，都[Bm]归于我们的[E]神，直到永永远[A]远。   sòng zàn quán néng dōu guī yú wǒ men de shén zhí dào yǒng yǒng yuǎn yuǎn
 {end_of_chorus}

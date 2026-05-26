@@ -1,20 +1,23 @@
 {title: 我心坚定与你}
 {title_pinyin: Wǒ xīn jiān dìng yǔ nǐ}
-{key: C}
-{tempo: 80}
+{artist: 赞美之泉}
+{key: A}
+{tempo: 66}
 {language: zh}
 
 {start_of_verse: 主歌/Couplet}
-•=66我心坚定于你   wǒ xīn jiān dìng yú nǐ
-[D/F]  [E/G]  [A]  [D/F]  [E/G]  [D/A]  [D/F]
-[D/F][E/G][A][D/F]耶稣[E/G]基督[A]，圣洁美丽，[D/F]无人[E/G]能及。   yē sū jī dū shèng jié měi lì wú rén néng jí
-[A][D/F]赐我[E/G]气息[A]，毫无保留，[D/F]为我[E/G]舍命。   cì wǒ qì xī háo wú bǎo liú wèi wǒ shè mìng
-你的[F#m]爱使[E]我[D]灵魂苏[A]醒，患难[F#m]中我[E]能刚强站   nǐ de ài shǐ wǒ líng hún sū xǐng huàn nán zhōng wǒ néng gāng qiáng zhàn
-[D]立。你的[F#m]爱使[E]我[D]重新得[A]力，黑暗[F#m]中使[E]我生   lì nǐ de ài shǐ wǒ zhòng xīn dé lì hēi àn zhōng shǐ wǒ shēng
-[G/B]  [Am]
-[D]命再次绚丽[Esus4]。我心[A]坚定于你[E/G]，眼目[F#m]专注于你，   mìng zài cì xuàn lì wǒ xīn jiān dìng yú nǐ yǎn mù zhuān zhù yú nǐ
-[F]  [C/E]  [Dm]  [G]  [G/B]
-[D]风浪之中[A/C]有你同行，[Bm]不畏惧[E]。我心[A]坚定于你[E/G]，我灵   fēng làng zhī zhōng yǒu nǐ tóng xíng bù wèi jù wǒ xīn jiān dìng yú nǐ wǒ líng
-[Am]  [F]  [C/E]  [Dm7]  [F/G]  [C]
-降服于你，在你怀中平静安稳，我必得安息。   jiàng fú yú nǐ zài nǐ huái zhōng píng jìng ān wěn wǒ bì dé ān xī
+[D/F#]耶稣 [E/G#]基督[A]， 圣洁美丽， [D/F#]无人 [E/G#]能及。[A]   yē sū jī dū shèng jié měi lì wú rén néng jí
+[D/F#]赐我 [E/G#]气息[A]， 毫无保留， [D/F#]为我 [E/G#]舍命。[A]   cì wǒ qì xī háo wú bǎo liú wèi wǒ shè mìng
 {end_of_verse}
+
+{start_of_verse: 预备副歌/Pre-Chorus}
+你的[F#m]爱使[E]我[D]灵魂苏[A]醒， 患难[F#m]中我[E]能刚强站[D]立。   nǐ de ài shǐ wǒ líng hún sū xǐng huàn nán zhōng wǒ néng gāng qiáng zhàn lì
+你的[F#m]爱使[E]我[D]重新得[A]力， 黑暗[F#m]中使[E]我生[D]命 再次[Esus4]绚丽。   nǐ de ài shǐ wǒ zhòng xīn dé lì hēi àn zhōng shǐ wǒ shēng mìng zài cì xuàn lì
+{end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+我心[A]坚定于[E/G#]你， 眼目[F#m]专注于你，   wǒ xīn jiān dìng yú nǐ yǎn mù zhuān zhù yú nǐ
+[D]风浪之[A/C#]中有你同[Bm]行， 不[E]畏惧。   fēng làng zhī zhōng yǒu nǐ tóng xíng bù wèi jù
+我心[A]坚定于[E/G#]你， 我灵[F#m]降服于你，   wǒ xīn jiān dìng yú nǐ wǒ líng jiàng fù yú nǐ
+在[D]你怀[A/C#]中平静安[Bm7]稳， 我[D/E]必得安[A]息。   zài nǐ huái zhōng píng jìng ān wěn wǒ bì dé ān xī
+{end_of_chorus}

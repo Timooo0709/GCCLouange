@@ -2,9 +2,11 @@
 {title_pinyin: Quán xīn de nǐ}
 {artist: 游智婷}
 {key: C}
-{tempo: 80}
+{tempo: 100}
 {language: zh}
 {themes: 宣告, 盼望, 被爱}
+
+# Intro: [C/G] [Dm/F] [C/E] | [C/G] [Dm/F] [C/E] [Dm] [G]
 
 {start_of_verse: 主歌 1/Couplet 1}
 你说[C]阴天代表你[Em]的心情，[F]雨天更是你对[C]生命的反应；   nǐ shuō yīn tiān dài biǎo nǐ de xīn qíng yǔ tiān gèng shì nǐ duì shēng mìng de fǎn yìng
@@ -17,9 +19,9 @@
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-耶稣[C]能够，[G]叫一切都[Am]更新；[G]   yē sū néng gòu jiào yī qiè dōu gèng xīn
-耶稣[F]能够，[C/E]体会你的[Dm]心情；[G]   yē sū néng gòu tǐ huì nǐ de xīn qíng
-耶稣[C]能够，[G]改变你的[Am]曾经；[G]   yē sū néng gòu gǎi biàn nǐ de céng jīng
-耶稣[F]爱你，耶稣[C/E]疼你，   yē sū ài nǐ yē sū téng nǐ
-耶稣[Dm]能造一[G7]个全新的[C]你。   yē sū néng zào yī gè quán xīn de nǐ
+耶稣能够[C]叫一切都[G/B]更新，[Am]   yē sū néng gòu jiào yī qiè dōu gèng xīn
+[C/G]耶稣能够[F]体会你的[C/E]心[Dm]情，   yē sū néng gòu tǐ huì nǐ de xīn qíng
+[G]耶稣能够[C]改变你的[G/B]曾经，[Am]   yē sū néng gòu gǎi biàn nǐ de céng jīng
+[C/G]耶稣爱[F]你，耶稣[C/E]疼你，   yē sū ài nǐ yē sū téng nǐ
+[Dm]耶稣能造[G7]一个全新的[C]你。   yē sū néng zào yī gè quán xīn de nǐ
 {end_of_chorus}

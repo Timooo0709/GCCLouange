@@ -1,29 +1,25 @@
 {title: 尽情地微笑}
 {title_pinyin: Jìn qíng dì wēi xiào}
-{key: F}
-{tempo: 80}
+{artist: 赞美之泉}
+{key: D}
+{tempo: 72}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-尽情地微笑（敬拜版）（原版）   jìn qíng dì wēi xiào jìng bài bǎn yuán bǎn
-曾祥怡词/游智婷曲   céng xiáng yí cí yóu zhì tíng qǔ
-C/D调/原版/级数］   C D tiáo yuán bǎn jí shù
-[D]  [G/D]  [D]  [A/D]  [G/D]  [D]
-[D]黑夜虽[A/C]漫长，[Bm]携手过低谷[D/A]，[G]生命的[D/F]坚强[Em]如美丽音[A]符，   hēi yè suī màn cháng xié shǒu guò dī gǔ shēng mìng de jiān qiáng rú měi lì yīn fú
-[D]让永恒[A/C]的爱[Bm]再次包围[D/A]你，让[G]我陪伴[D/F]你擦[Em]干昨[Asus4]日的泪[D]水。   ràng yǒng héng de ài zài cì bāo wéi nǐ ràng wǒ péi bàn nǐ cā gān zuó rì de lèi shuǐ
-[F]  [C/E]  [Dm]  [F/C]  [Bb]  [F/A]  [Gm]  [G/B]  [Csus4]  [C]
-尽情[D]地微[A/C]笑，别害[Bm]怕忧[D/A]伤，[G]勇敢地[D/F]相信[Em]明天[E/G]有阳光[Asus4][A]，   jìn qíng dì wēi xiào bié hài pà yōu shāng yǒng gǎn dì xiāng xìn míng tiān yǒu yáng guāng
-[Bb]  [F/A]  [A]  [Dm]  [Gm]  [C]
-[G]擦干所[D/F]有眼泪，[F]你不再孤[Bm]单，神必[Em]赐下重生的力[A]量。尽情   cā gān suǒ yǒu yǎn lèi nǐ bù zài gū dān shén bì cì xià zhòng shēng de lì liáng jìn qíng
-[F]  [C/E]  [Dm]  [Bb]  [F/A]  [Gm]  [G/B]  [Bb/C]
-[D]地微笑[A/C]，别失[Bm]望沮[D/A]丧，[G]勇敢地[D/F]打破[Em]冰冷[E/G]的围墙[G/A]，   dì wēi xiào bié shī wàng jǔ sàng yǒng gǎn dì dǎ pò bīng lěng de wéi qiáng
-[Bb]  [F/A]  [A]  [Dm]  [Gm]  [Csus4]  [F]
-{end_of_verse}
+{start_of_intro: 前奏/Intro}
+[D]   [G/D]   [D]   [A/D]   [G/D]   [D]
+{end_of_intro}
 
 {start_of_verse: 主歌/Couplet}
-[D]
-再次昂首踏出信心的脚步，神必陪伴你走每一步路。   zài cì áng shǒu tà chū xìn xīn de jiǎo bù shén bì péi bàn nǐ zǒu měi yī bù lù
+[D]黑夜虽[A/C#]漫长，[Bm]携手过低[D/A]谷，[G]生命的[D/F#]坚强[Em]如美丽音[A]符；   hēi yè suī màn cháng xié shǒu guò dī gǔ shēng mìng de jiān qiáng rú měi lì yīn fú
+[D]让永恒[A/C#]的爱[Bm]再次包围[D/A]你，让[G]我陪伴[D/F#]你擦[Em]干昨[Asus4]日的泪[D]水。   ràng yǒng héng de ài zài cì bāo wéi nǐ ràng wǒ péi bàn nǐ cā gān zuó rì de lèi shuǐ
 {end_of_verse}
 
-{start_of_verse: 主歌/Couplet}
-{end_of_verse}
+{start_of_chorus: 副歌/Refrain}
+尽情[D]地微[A/C#]笑，别害[Bm]怕忧[D/A]伤，[G]勇敢地[D/F#]相信[Em]明天[E/G#]有阳[Asus4]光；[A]   jìn qíng dì wēi xiào bié hài pà yōu shāng yǒng gǎn dì xiāng xìn míng tiān yǒu yáng guāng
+[G]擦干所[D/F#]有眼泪，[F#]你不再[Bm]孤单，神必[Em]赐下重生的力[A]量。   cā gān suǒ yào yǎn lèi nǐ bú zài gū dān shén bì cì xià zhòng shēng de lì liáng
+尽情[D]地微[A/C#]笑，别失[Bm]望沮[D/A]丧，[G]勇敢地[D/F#]打破[Em]冰冷[E/G#]的围[G/A]墙；   jìn qíng dì wēi xiào bié shī wàng jǔ sàng yǒng gǎn dì dǎ pò bīng lěng de wéi qiáng
+{end_of_chorus}
+
+{start_of_outro: 尾奏/Outro}
+[G]再次昂[D/F#]首踏出[F#]信心的[Bm]脚步，神必[Em]陪伴你[Asus4]走每一[D]步路。   zài cì áng shǒu tà chū xìn xīn de jiǎo bù shén bì péi bàn nǐ zǒu měi yī bù lù
+{end_of_outro}

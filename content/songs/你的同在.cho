@@ -1,18 +1,22 @@
 {title: 你的同在}
 {title_pinyin: Nǐ de tóng zài}
+{artist: Robert & Lea Sutanto}
 {key: D}
-{tempo: 80}
+{tempo: 67}
 {language: zh}
 
+{start_of_intro: 前奏/Intro}
+[D]  [Bm]  [C#m7(b5)]  [F#7]  [Bm7]  [E7]  [A7]
+[D]  [Bm]  [C#m7(b5)]  [F#7]  [Bm]  [E7]  [A7]
+{end_of_intro}
+
 {start_of_verse: 主歌/Couplet}
-祢的同在   mí de tóng zài
-游智婷中文译词   yóu zhì tíng zhōng wén yì cí
-J=67渴慕、亲密地   J kě mù qīn mì dì
-[D]  [Bm]  [C#m7]  [F#7]  [Bm7]  [E7]  [A7]
-[D]  [Bm]  [C#m75]  [F#7]  [Bm]  [E]  [A7]
-[D]主祢[Bm]充满在这[Em7]地，我屈膝敬拜[F#m7]祢，我[B7]心单单属   zhǔ mí chōng mǎn zài zhè dì wǒ qū xī jìng bài mí wǒ xīn dān dān shǔ
-[Em]祢[A]。[D]我从[Bm]心深处呼[Em7]求，要[A11]得见祢的   mí wǒ cóng xīn shēn chù hū qiú yào dé jiàn mí de
-面[F#m7]。喔主，祢是我的1切。我高举双手来   miàn wō zhǔ mí shì wǒ de qiè wǒ gāo jǔ shuāng shǒu lái
-[Em7]尊崇祢[A]，我高声歌[B7]颂：“主我爱[Em7]祢。[A]”主祢   zūn chóng mí wǒ gāo shēng gē sòng zhǔ wǒ ài mí zhǔ mí
-荣耀如[C#m7]云彩围绕，我俯伏来敬拜祢。   róng yào rú yún cǎi wéi rào wǒ fǔ fú lái jìng bài mí
+[D]主祢[Bm]充满在[Em7]这地，[A11]我屈膝敬[F#m7]拜祢，我[B7]心单单属[Em]祢。[A]   zhǔ nǐ chōng mǎn zài zhè dì wǒ qū xī jìng bài nǐ wǒ xīn dān dān shǔ nǐ
+我[D]从心[Bm]深处呼[Em7]求，要[A11]得见祢的[F#m7]面。[Bm7]喔主，[Em7]祢是[A11]我的[D]一切。   wǒ cóng xīn shēn chù hū qiú yào dé jiàn nǐ de miàn wō zhǔ nǐ shì wǒ de yī qiè
 {end_of_verse}
+
+{start_of_chorus: 副歌/Refrain}
+我高举[F#m]双手来[Bm7]尊崇[Em7]祢，[A]   wǒ gāo jǔ shuāng shǒu lái zūn chóng nǐ
+我高声[F#m7]歌颂：“主[B7]我爱[Em7]祢。”[A]主祢   wǒ gāo shēng gē sòng zhǔ wǒ ài nǐ zhǔ nǐ
+[D]荣[Bm]耀如[C#m7(b5)]云彩[F#m]围绕，[Bm7]我俯伏来[E7]敬拜[Asus4]祢。[D]   róng yào rú yún cǎi wéi rào wǒ fǔ fú lái jìng bài nǐ
+{end_of_chorus}

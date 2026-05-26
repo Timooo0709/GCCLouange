@@ -1,27 +1,25 @@
 {title: 耶和华是应当称颂的}
 {title_pinyin: Yē hé huá shì yīng dāng chēng sòng de}
+{artist: 赞美之泉}
 {key: F}
-{tempo: 80}
+{tempo: 153}
 {language: zh}
-
+{themes: 赞美, 喜乐, 依靠}
+{start_of_intro: 前奏/Intro}
+[F] [C/E] [Dm] [Am] [Bb] [F/A] [Gm] [C]
+{end_of_intro}
 {start_of_verse: 主歌/Couplet}
-•=153耶和华是应当称颂的（F调）   yē hé huá shì yìng dāng chēng sòng de F tiáo
-[F]  [C/E]  [Dm]  [Am]  [Bb]  [F/A]  [Gm]  [C]
-[F]天属：于你[C/E]，[Dm]地也属于[Am]你。[Bb]万物都因[F/A]你欢欣，   tiān shǔ yú nǐ dì yě shǔ yú nǐ wàn wù dōu yīn nǐ huān xīn
-[Gm]都要欢呼赞美[C]你。耶和[F]华是应当[C/E]称颂的，[A/C]击鼓   dōu yào huān hū zàn měi nǐ yē hé huá shì yìng dāng chēng sòng de jī gǔ
-[Cm7]  [F]
-[Dm]跳舞弹琴[Am]歌颂你。耶和[Bb]华你喜爱你[F/A]的百姓，在你   tiào wǔ tán qín gē sòng nǐ yē hé huá nǐ xǐ ài nǐ de bǎi xìng zài nǐ
-跳舞弹琴歌颂你。向你欢呼的民是有福的，因你   tiào wǔ tán qín gē sòng nǐ xiàng nǐ huān hū de mín shì yǒu fú de yīn nǐ
-[Eb]殿中唱新歌[C]。耶和[Eb]的名终日欢喜[C]。赞美[F]你。Fine   diàn zhōng chàng xīn gē yē hé de míng zhōng rì huān xǐ zàn měi nǐ Fine
+[F]天属于你，[C/E] [Dm]地也属于[Am]你。 [Bb]万物都因[F/A]你欢欣， [Gm]都要欢呼赞美[C]你。   tiān shǔ yú nǐ   dì yě shǔ yú nǐ   wàn wù dōu yīn nǐ huān xīn   dōu yào huān hū zàn měi nǐ
 {end_of_verse}
-
-{start_of_verse: 主歌/Couplet}
-{end_of_verse}
-
-{start_of_bridge: 桥段/Pont 2}
-我的口称赞神为高，行大能仇敌都逃跑，   wǒ de kǒu chēng zàn shén wèi gāo xíng dà néng chóu dí dōu táo pǎo
-{end_of_bridge}
 
 {start_of_chorus: 副歌/Refrain}
-以救恩作我的装饰，喜乐的歌为我依靠。   yǐ jiù ēn zuò wǒ de zhuāng shì xǐ lè de gē wèi wǒ yī kào
+耶和[F]华是应当[C/E]称颂的，[A/C#] 击鼓[Dm]跳舞弹琴[Am]歌颂你。   yē hé huá shì yīng dāng chēng sòng de   jī gǔ tiào wǔ tán qín gē sòng nǐ
+耶和[Bb]华你喜爱你[F/A]的百姓， 在你[Eb]殿中唱新[C]歌。   yē hé huá nǐ xǐ ài nǐ de bǎi xìng   zài nǐ diàn zhōng chàng xīn gē
+耶和[F]华是应当[C/E]称颂的，[A/C#] 击鼓[Dm]跳舞弹琴[Am]歌颂你。   yē hé huá shì yīng dāng chēng sòng de   jī gǔ tiào wǔ tán qín gē sòng nǐ
+向你[Bb]欢呼的民是[F/A]有福的， 因你[Eb]的名终日欢[C]喜。 赞美[F]你。   xiàng nǐ huān hū de mín shì yǒu fú de   yīn nǐ de míng zhōng rì huān xǐ   zàn měi nǐ
 {end_of_chorus}
+
+{start_of_bridge: 桥段/Bridge}
+[Dm]我的口称赞[G]神为高， [Bb]行大能仇敌[F/A]都逃跑，   wǒ de kǒu chēng zàn shén wèi gāo   xíng dà néng chóu dí dōu táo pǎo
+[Dm]以救恩作我[G]的装饰， [Bb]喜乐的歌为我[C]依靠。   yǐ jiù ēn zuò wǒ de zhuāng shì   xǐ lè de gē wéi wǒ yī kào
+{end_of_bridge}

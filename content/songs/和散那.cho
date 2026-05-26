@@ -1,24 +1,26 @@
 {title: 和散那}
 {title_pinyin: Hé sàn nà}
-{artist: 郑懋柔词 / 游智婷曲}
+{artist: 游智婷}
 {key: F}
-{tempo: 80}
+{tempo: 68}
 {language: zh}
 {themes: 敬拜, 赞美, 和散那}
 
 {start_of_verse: 主歌/Couplet}
-[F]凡有气息，[C/E]荣耀敬拜[Dm]你。   fán yǒu qì xī róng yào jìng bài nǐ
-[Bb]地上平[F/A]安，归[Gm7]于他喜[C7]悦的人。   dì shàng píng ān guī yú tā xǐ yuè de rén
-[F]以马内[C/E]利，神与我们[Dm]同[C#m7]在。   yǐ mǎ nèi lì shén yǔ wǒ men tóng zài
-[Bb]耶稣，[F]以恩[Gm7]典代[C7]替咒[F]诅。   yē sū yǐ ēn diǎn dài tì zhòu zǔ
+[F]凡有气[A7b9]息，[Dm]荣耀敬拜你。   fán yǒu qì xī róng yào jìng bài nǐ
+[Bb]地上平[F/A]安归与[Gm]他喜悦[C]的人。   dì shàng píng ān guī yǔ tā xǐ yuè de rén
+[F]以马内[A7b9]利，[Dm]神与我们[Bm7b5]同在。   yǐ mǎ nèi lì shén yǔ wǒ men tóng zài
+[F/C]耶稣，[Bb/C]以恩典代替咒[F]诅。   yē sū yǐ ēn diǎn dài tì zhòu zǔ
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-和[F]散那！和[Dm]散那！和[Bb]平君[F/A]王与我[Gm7]们同[C]住。   sàn nà sàn nà hé píng jūn wáng yǔ wǒ men tóng zhù
-和[F]散那！和[Dm]散那！哈[Bb]利路[F/A]亚！荣耀[Gm7]归与至[C7]高真[F]神。   sàn nà sàn nà hā lì lù yà róng yào guī yú zhì gāo zhēn shén
+和[F]散那！和[Am]散那！和[Bb]平君[F/A]王与我[Gm]们同[C]住。   hé sàn nà hé sàn nà hé píng jūn wáng yǔ wǒ men tóng zhù
+和[F]散那！和[Am]散那！哈[Bb]利[F/A]路亚！[Gm]荣耀[Bb/C]归与至高真[F]神。   hé sàn nà hé sàn nà hā lì lù yà róng yào guī yǔ zhì gāo zhēn shén
 {end_of_chorus}
 
 {start_of_bridge: 桥段/Pont}
-[Bb]天使天军，[F]齐声赞美。   tiān shǐ tiān jūn qí shēng zàn měi
-[Bb]哈利路[Dm]亚！[Bb]哈利路[C7]亚！   hā lì lù yà hā lì lù yà
+[Bb]天使天军，[F/A]齐声赞美。   tiān shǐ tiān jūn qí shēng zàn měi
+[Bb]哈利路[Dm]亚！   hā lì lù yà
+[Bb]天使天军，[F/A]齐声赞美。   tiān shǐ tiān jūn qí shēng zàn měi
+[Bb]哈利路[C]亚！   hā lì lù yà
 {end_of_bridge}

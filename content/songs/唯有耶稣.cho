@@ -1,23 +1,23 @@
 {title: 唯有耶稣}
 {title_pinyin: Wéi yǒu yē sū}
-{key: C}
-{tempo: 80}
+{artist: 赞美之泉}
+{key: G}
+{tempo: 72}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-唯有耶穌   wéi yǒu yē sū
-EnglishTranslation:AndyChenandSOP詞、曲：曾祥怡   EnglishTranslation AndyChenandSOP cí qǔ céng xiáng yí
-{end_of_verse}
-
 {start_of_intro: 前奏/Intro}
+[G]   [D/F#]   [C/E]   [G/D]   [C]   [Am]   [G/D]   [D7]
 {end_of_intro}
 
-{start_of_verse: 主歌/Couplet}
-耶穌祢能使瞎眼看見，耶穌祢[Am]能醫治傷心人[D7]；   yē sū mí néng shǐ xiā yǎn kàn jiàn yē sū mí néng yī zhì shāng xīn rén
+{start_of_verse: 主歌 1/Couplet 1}
+[G]耶稣祢[D/F#]能[C/E]使瞎眼[G/D]看见，[C]耶稣祢[Am]能[G/D]医治伤心[D7]人；   yē sū nǐ néng shǐ xiā yǎn kàn jiàn yē sū nǐ néng yī zhì shāng xīn rén
+{end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+[G]耶稣祢[D/F#]有[C/E]权柄释[G/D]放，[C]叫不可[Dsus4]能变[G]为可[C/D]能。   yē sū nǐ yǒu quán bǐng shì fàng jiào bù kě néng biàn wéi kě néng
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-耶穌祢有權柄釋放，叫不可能變為可能。唯有耶   yē sū mí yǒu quán bǐng shì fàng jiào bù kě néng biàn wéi kě néng wéi yǒu yē
-穌掌[D/F]管天地萬[Em]有，[G/D]唯有耶穌能[A]使水變成酒[Dsus4]。[D]叫狂   sū zhǎng guǎn tiān dì wàn yǒu wéi yǒu yē sū néng shǐ shuǐ biàn chéng jiǔ jiào kuáng
-風巨浪平息，大能赦罪行神[Am7]蹟，耶穌無[C/D]人與祢相比。   fēng jù làng píng xī dà néng shè zuì xíng shén jì yē sū wú rén yǔ mí xiāng bǐ
+唯有耶[G]稣掌[D/F#]管天[Em]地万[G/D]有，唯有耶[A/C#]稣能[A]使水变成[Dsus4]酒；[D]   wéi yǒu yē sū zhǎng guǎn tiān dì wàn yǒu wéi yǒu yē sū néng shǐ shuǐ biàn chéng jiǔ
+叫狂[Bdim]风巨浪[E/G#]平息，大能[Am]赦罪行[Am7(b5)/Eb]神迹，耶[G/D]稣无[C/D]人与祢相[G]比。   jiào kuáng fēng jù làng píng xī dà néng shè zuì xíng shén jì yē sū wú rén yǔ nǐ xiāng bǐ
 {end_of_chorus}

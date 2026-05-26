@@ -1,33 +1,35 @@
 {title: 日日夜夜}
 {title_pinyin: Rì rì yè yè}
-{artist: 曾祥怡词 / 曾祥怡曲}
-{key: C}
-{tempo: 80}
+{artist: 曾祥怡、游智婷}
+{key: G}
+{tempo: 70}
 {language: zh}
 {themes: 敬拜, 宣告, 祭坛}
 
+# Intro: [G] [C/G] | [G] [C/G]
+
 {start_of_verse: 主歌 1/Couplet 1}
-[C]耶和华祢[F]大荣耀降[C]临，[F]   yē hé huá mí dà róng yào jiàng lín
-[C]在地上[F]如天上的敬[G]拜。   zài dì shàng rú tiān shàng de jìng bài
-[F]祢是我们的[G]神，[E]我们是祢子[Am]民，   mí shì wǒ men de shén wǒ men shì mí zǐ mín
-[F]因祢荣耀[G]我不住敬[C]拜。   yīn mí róng yào wǒ bù zhù jìng bài
+[G]耶和华，[C/G]祢大荣耀降[G]临，[C/G]   yē hé huá nǐ dà róng yào jiàng lín
+在[G]地上[C/G]如天上的敬[D]拜。   zài dì shàng rú tiān shàng de jìng bài
+祢是[C]我们的[D/C]神，我们[B]是祢子[Em]民，   nǐ shì wǒ men de shén wǒ men shì nǐ zǐ mín
+[Am]因祢荣耀，[C/D]我不住敬[G]拜。   yīn nǐ róng yào wǒ bù zhù jìng bài
 {end_of_verse}
 
 {start_of_verse: 主歌 2/Couplet 2}
-[C]我受造[F]是为了敬拜[C]祢，[F]   wǒ shòu zào shì wéi liǎo jìng bài mí
-[C]我受造[F]是为了荣耀[G]祢。   wǒ shòu zào shì wéi liǎo róng yào mí
-[F]祢是我们的[G]神，[E]祢与我们同[Am]住，   mí shì wǒ men de shén mí yǔ wǒ men tóng zhù
-[F]因祢荣耀[G]我不住敬[C]拜。   yīn mí róng yào wǒ bù zhù jìng bài
+[G]我受造[C/G]是为了敬拜[G]祢，[C/G]   wǒ shòu zào shì wèi le jìng bài nǐ
+我[G]受造[C/G]是为了荣耀[D]祢。   wǒ shòu zào shì wèi le róng yào nǐ
+祢是[C]我们的[D/C]神，祢与[B]我们同[Em]住，   nǐ shì wǒ men de shén nǐ yǔ wǒ men tóng zhù
+[Am]因祢荣耀，[C/D]我不住敬[G]拜。   yīn nǐ róng yào wǒ bù zhù jìng bài
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-[C]圣哉，圣哉，圣哉，[Em]昔在今在[Am]永在；   shèng zāi shèng zāi shèng zāi xī zài jīn zài yǒng zài
-[F]荣耀，荣耀，[C/E]荣耀，[Dm]配得颂赞爱[G]戴。   róng yào róng yào róng yào pèi dé sòng zàn ài dài
-[C]圣哉，圣哉，圣哉，[Em]全地向祢[Am]跪拜；   shèng zāi shèng zāi shèng zāi quán dì xiàng mí guì bài
-[F]尊贵荣耀[G]都归宝座[C]羔羊。   zūn guì róng yào dōu guī bǎo zuò gāo yáng
+圣[G]哉、圣哉、[G/B]圣哉，[C]昔在今在[G/B]永在；   shèng zāi shèng zāi shèng zāi xī zài jīn zài yǒng zài
+[Am]荣耀、[Am/G]荣耀，配得[C/D]颂赞[D7]爱戴。   róng yào róng yào róng yào pèi dé sòng zàn ài dài
+圣[G]哉、圣哉、[G/F]圣哉，[C/E]全地向祢[Cm/Eb]跪拜，   shèng zāi shèng zāi shèng zāi quán dì xiàng nǐ guì bài
+[G/D]尊贵[C/D]荣耀都归宝座[G]羔羊。   zūn guì róng yào dōu guī bǎo zuò gāo yáng
 {end_of_chorus}
 
 {start_of_bridge: 桥段/Pont}
-[F]日日夜夜，[G]不停献上，[Em]祷告如香[Am]不停升起；   rì rì yè yè bù tíng xiàn shàng dǎo gào rú xiāng bù tíng shēng qǐ
-[F]日日夜夜，[G]不停献上，[Dm]赞美献祭[G]永不断[C]续。   rì rì yè yè bù tíng xiàn shàng zàn měi xiàn jì yǒng bù duàn xù
+[C]日日夜夜，[D/C]不停献上，[Bm]祷告[Em]如香[Am]不停[C/D]升起；[G] [G7]   rì rì yè yè bù tíng xiàn shàng dǎo gào rú xiāng bù tíng shēng qǐ
+[C]日日夜夜，[D/C]不停献上，[Bm]赞美[Em]献祭[Am]永不[C/D]断续。[G]   rì rì yè yè bù tíng xiàn shàng zàn měi xiàn jì yǒng bù duàn xù
 {end_of_bridge}

@@ -1,23 +1,21 @@
 {title: 复兴的火}
 {title_pinyin: Fù xīng de huǒ}
-{key: F}
-{tempo: 80}
+{artist: 赞美之泉}
+{key: C}
+{tempo: 120}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-复兴的火   fù xīng de huǒ
-刘荣神词   liú róng shén cí
-Dm（b5）/C游智婷曲   Dm b C yóu zhì tíng qǔ
-[Dm]  [C]
-[C]
-复兴的火焰正燃烧，让我们响起胜利的号角，传   fù xīng de huǒ yàn zhèng rán shāo ràng wǒ men xiǎng qǐ shèng lì de hào jiǎo chuán
-前同心地祷告，让我们忠于十架的呼召，以   qián tóng xīn dì dǎo gào ràng wǒ men zhōng yú shí jià de hū zhào yǐ
-扬耶稣基督的真道，一起迈向合一的宣教。在主   yáng yē sū jī dū de zhēn dào yī qǐ mài xiàng hé yī de xuān jiào zài zhǔ
-[F]赞美在宝座前[C/E]围绕[Am]，让[Dm]复兴的火在[F/G]我里面燃[C]烧。   zàn měi zài bǎo zuò qián wéi rào ràng fù xīng de huǒ zài wǒ lǐ miàn rán shāo
+{start_of_verse: 主歌 1/Couplet 1}
+[C]复兴的[G/B]火焰正燃[F/A]烧，让我们响起胜利的号[C/G]角；   fù xīng de huǒ yàn zhèng rán shāo ràng wǒ men xiǎng qǐ shèng lì de hào jiǎo
+传[F]扬耶稣基督的真[C/E]道，[Am]一[Dm]起迈向合一的宣[G]教。   chuán yáng yē sū jī dū de zhēn dào yī qǐ mài xiàng hé yī de xuān jiào
+{end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+在主[C]前同[G/B]心地祷[F/A]告，让我们忠于十架的呼[C/G]召；   zài zhǔ qián tóng xīn dì dǎo gào ràng wǒ men zhōng yú shí jià de hū zhào
+以[F]赞美在宝座前围[C/E]绕，[Am]让[Dm]复兴的火在我里面燃[F/G]烧。[C]   yǐ zàn měi zài bǎo zuò qián wéi rào ràng fù xīng de huǒ zài wǒ lǐ miàn rán shāo
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-复兴的火，圣灵的火，在   fù xīng de huǒ shèng líng de huǒ zài
-[F]我心[C/E]中点[Bb]燃[G]！[C]复兴的火[G/B]，   wǒ xīn zhōng diǎn rán fù xīng de huǒ
-[F/A]圣灵的[C/G]火，把[F]我烧在[F/G]主[G]祭坛！   shèng líng de huǒ bǎ wǒ shāo zài zhǔ jì tán
+[C]复兴的[G/B]火，[F/A]圣灵的[C/G]火，在[F]我心[C/E]中点[Bb]燃！[G]   fù xīng de huǒ shèng líng de huǒ zài wǒ xīn zhōng diǎn rán
+[C]复兴的[G/B]火，[F/A]圣灵的[C/G]火，把[F]我烧在[F/G]主[G]祭[C]坛！   fù xīng de huǒ shèng líng de huǒ bǎ wǒ shāo zài zhǔ jì tán
 {end_of_chorus}

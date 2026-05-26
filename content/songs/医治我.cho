@@ -1,8 +1,13 @@
 {title: 医治我}
 {title_pinyin: Yī zhì wǒ}
+{artist: 赞美之泉}
 {key: A}
 {tempo: 61}
 {language: zh}
+
+{start_of_intro: 前奏/Intro}
+[A]   [E/G#]   [F#m]   [A/E]   [D]   [D/E]   [A]   [E/G#]   [F#m]   [A/E]   [D]   [A/C#]   [Bm7]   [D/E]   [A]
+{end_of_intro}
 
 {start_of_verse: 主歌/Couplet}
 [A]压伤的芦[E/G#]苇，祂不[F#m]折[A/E]断，   yā shāng de lú wěi tā bù zhé duàn
@@ -12,7 +17,7 @@
 平[D]安喜[D/E]乐都陪[A]伴我。[D/E]   píng ān xǐ lè dōu péi bàn wǒ
 {end_of_verse}
 
-{start_of_chorus: 副歌/Chorus}
+{start_of_chorus: 副歌/Refrain}
 [A]医治我，我[E/G#]必得痊[F#m]愈，[A/E]   yī zhì wǒ wǒ bì dé quán yù
 [D]万军之耶和[D/E]华，全能的[A]主。[D/E]   wàn jūn zhī yē hé huá quán néng de zhǔ
 [A]医治我，我[E/G#]必得痊[F#m]愈，[A/E]   yī zhì wǒ wǒ bì dé quán yù

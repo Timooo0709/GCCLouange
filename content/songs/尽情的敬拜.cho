@@ -1,27 +1,27 @@
 {title: 尽情的敬拜}
 {title_pinyin: Jìn qíng de jìng bài}
-{key: G}
-{tempo: 80}
+{artist: 生命河灵粮堂}
+{key: A}
+{tempo: 74}
 {language: zh}
 
-{start_of_verse: 主歌/Couplet}
-尽情的敬拜   jìn qíng de jìng bài
-生命河灵粮堂《释放属天的能力》（2006）   shēng mìng hé líng liáng táng shì fàng shǔ tiān de néng lì
-[G]  [Am7]  [D7]
-耶[A]稣，圣洁公[Bm7]义救主，彰[E7]显神的智慧能   yē sū shèng jié gōng yì jiù zhǔ zhāng xiǎn shén de zhì huì néng
-稣，权柄统管万有，配得荣耀尊贵颂   sū quán bǐng tǒng guǎn wàn yǒu pèi dé róng yào zūn guì sòng
-[G]  [D/F]  [Em]  [Am7]  [Cmaj7]
-力。你的爱是何等长阔高深，满有丰富无穷的恩   lì nǐ de ài shì hé děng cháng kuò gāo shēn mǎn yǒu fēng fù wú qióng de ēn
-赞。我以心灵诚实尽情敬拜，坐   zàn wǒ yǐ xīn líng chéng shí jìn qíng jìng bài zuò
+{start_of_verse: 主歌 1/Couplet 1}
+耶[A]稣， 圣洁公[Bm7]义救主，   yē sū shèng jié gōng yì jiù zhǔ
+彰[E7]显神的智慧能[A]力。   zhāng xiǎn shén de zhì huì néng lì
+[E/G#]你 的[F#m]爱 是何等[Bm7]长阔高深，   nǐ de ài shì hé děng cháng kuò gāo shēn
+满[Dmaj7]有 丰富无穷的恩[Esus4]典。   mǎn yǒu fēng fù wú qióng de ēn diǎn
+{end_of_verse}
+
+{start_of_verse: 主歌 2/Couplet 2}
+耶[A]稣， 权柄统[Bm7]管万有，   yē sū quán bǐng tǒng guǎn wàn yǒu
+配[E7]得荣耀尊贵颂[A]赞。   pèi dé róng yào zūn guì sòng zàn
+[E/G#]我 以[F#m]心 灵诚实[Bm7]尽情敬拜，   wǒ yǐ xīn líng chéng shí jìn qíng jìng bài
+[D]坐 在宝座上[B/D#]深爱我的[E7]主。   zuò zài bǎo zuò shàng shēn ài wǒ de zhǔ
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-[A/C]
-[D7]  [C/E]  [D/F]
-[D]  [B/D]
-典。耶在宝座上深爱我的[E7]主。[D/F]举起[E/G]我的   diǎn yē zài bǎo zuò shàng shēn ài wǒ de zhǔ jǔ qǐ wǒ de
-[G]  [Am7/G]  [D7/F]  [C/D]  [G]  [D/F]
-[A]心来敬拜你[Bm7/A]，用生[E7/G]命来[D/E]回应你的[A]爱。[E/G]哦，我的   xīn lái jìng bài nǐ yòng shēng mìng lái huí yìng nǐ de ài ò wǒ de
-[Em]  [Am7]  [C]  [C/D]  [D]  [G]
-[F#m]主，让我单单[Bm7]在乎你，尽[D]情地[D/E]敬[E]拜[A]你。   zhǔ ràng wǒ dān dān zài hū nǐ jìn qíng dì jìng bài nǐ
+[D/F#]举 起[E/G#]我 的[A]心 来敬拜[Bm7/A]你，   jǔ qǐ wǒ de xīn lái jìng bài nǐ
+用[E7/G#]生  命来[D/E]回应你的[A]爱。   yòng shēng mìng lái huí yìng nǐ de ài
+[E/G#]哦，我 的[F#m]主， 让我单单[Bm7]在乎你，   ò wǒ de zhǔ ràng wǒ dān dān zài hū nǐ
+尽[D]情 地[D/E]敬  [E]拜  [A]你。   jìn qíng de jìng bài nǐ
 {end_of_chorus}

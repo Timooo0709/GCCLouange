@@ -1,35 +1,35 @@
 {title: 我愿为你去}
 {title_pinyin: Wǒ yuàn wèi nǐ qù}
-{artist: 林婉容}
+{artist: 小羊诗歌}
 {key: D}
-{tempo: 80}
+{tempo: 75}
 {language: zh}
 {themes: 敬拜, 呼召, 奉献}
 
 {start_of_verse: 主歌 1/Couplet 1}
 [D]用圣灵[A/C#]与火为我施[Bm]洗，[Bm/A]   yòng shèng líng yǔ huǒ wèi wǒ shī xǐ
-让[G]我充满[D/F#]天上的能[Em7]力；[A]   ràng wǒ chōng mǎn tiān shàng de néng lì
+让[G]我充满[D/F#]天上的能[Em7]力；[A7]   ràng wǒ chōng mǎn tiān shàng de néng lì
 让[D]圣火烧[F#7/C#]尽邪情和[Bm]私欲，[Bm/A]   ràng shèng huǒ shāo jìn xié qíng hé sī yù
 因[G]为我愿[A7]为你[D]去。   yīn wèi wǒ yuàn wèi nǐ qù
 {end_of_verse}
 
 {start_of_verse: 主歌 2/Couplet 2}
-[D]成为我[A/C#]的异象，荣耀[Bm]救主，[Bm/A]   chéng wéi wǒ de yì xiàng róng yào jiù zhǔ
-让[G]万国的[D/F#]荣华尽都[Em7]失色；[A]   ràng wàn guó de róng huá jìn dōu shī sè
+[D]成为我[A/C#]的异象， 荣耀[Bm]救主，[Bm/A]   chéng wéi wǒ de yì xiàng róng yào jiù zhǔ
+让[G]万国的[D/F#]荣华尽都[Em7]失色；[A7]   ràng wàn guó de róng huá jìn dōu shī sè
 赐[D]我勇敢[F#7/C#]的心一无[Bm]畏惧，[Bm/A]   cì wǒ yǒng gǎn de xīn yī wú wèi jù
 因[G]为我愿[A7]为你[D]去。   yīn wèi wǒ yuàn wèi nǐ qù
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-[D]钉痕手[F#7]引我前[Bm]行，[Bm/A]   dīng hén shǒu yǐn wǒ qián xíng
+[D]钉痕[F#/C#]手 引我前[Bm]行，[Bm/A]   dīng hén shǒu yǐn wǒ qián xíng
 我[G]只愿[D/F#]合你心[Em7]意；[A7]   wǒ zhī yuàn hé nǐ xīn yì
-看[G]万事为[D/F#]损失，受苦[Bm]为小[Bm/A]事，   kàn wàn shì wéi sǔn shī shòu kǔ wéi xiǎo shì
-靠[G]你的恩[A7]典站[D]立。   kào nǐ de ēn diǎn zhàn lì
+看[G]万事为[D/F#]损失， [A/C#]受苦为[Bm]小事，   kàn wàn shì wéi sǔn shī shòu kǔ wéi xiǎo shì
+靠[Em7]你的恩[A7]典站[D]立。   kào nǐ de ēn diǎn zhàn lì
 {end_of_chorus}
 
-{start_of_bridge: 桥段/Pont}
-[D]神圣的[A]爱，融化[G]我！   shén shèng de ài róng huà wǒ
-[D]神圣的[A]火，熬炼[G]我！   shén shèng de huǒ áo liàn wǒ
-[D]神圣的[A]使命，占有[G]我！   shén shèng de shǐ mìng zhàn yǒu wǒ
-[D]神圣的[A]灵，引领[G]我！   shén shèng de líng yǐn lǐng wǒ
+{start_of_bridge: 桥段/Bridge}
+[D]神圣的[A]爱， 融化[Bm]我！   shén shèng de ài róng huà wǒ
+[G]神圣的[D]火， 熬炼[A]我！[D7/F#]   shén shèng de huǒ áo liàn wǒ
+[G]神圣的[A]使命， 占有[Bm]我！   shén shèng de shǐ mìng zhàn yǒu wǒ
+[Em7]神圣的[E7]灵， 引领[A]我！   shén shèng de líng yǐn lǐng wǒ
 {end_of_bridge}
