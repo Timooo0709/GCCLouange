@@ -5,6 +5,8 @@ import type {
   Language,
   Token,
 } from "@/lib/types";
+import { hasChinese, extractChinese } from "@/lib/pinyin";
+
 
 // --- Parsing des directives {key: value} ---
 
@@ -305,6 +307,28 @@ export function parseChordPro(source: string): ChordProAST {
 
     // Ligne de paroles (dans une section)
     if (currentSection) {
+      // Détection d'une ligne de Pinyin séparée
+      const isPinyinOnly =
+        metadata.language === "zh" &&
+        !hasChinese(trimmed) &&
+        !trimmed.includes("[");
+
+      const prevLine =
+        currentSection.lines.length > 0
+          ? currentSection.lines[currentSection.lines.length - 1]
+          : null;
+
+      if (
+        isPinyinOnly &&
+        prevLine &&
+        prevLine.type === "line" &&
+        hasChinese(extractChinese(prevLine.tokens)) &&
+        prevLine.pinyin === null
+      ) {
+        prevLine.pinyin = trimmed;
+        continue;
+      }
+
       const { tokens, pinyin } = parseLyricLine(trimmed);
       const chordLine: ChordProLine = {
         type: "line",

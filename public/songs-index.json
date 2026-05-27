@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-26T23:01:05.923Z",
+  "generatedAt": "2026-05-27T15:01:04.562Z",
   "songs": [
     {
       "slug": "abba-pere",
@@ -95,7 +95,7 @@
       ]
     },
     {
-      "slug": "ai-de-yue-ding",
+      "slug": "爱的约定",
       "title": "爱的约定",
       "titlePinyin": "Ài de yuē dìng",
       "artist": "周巽倩",
@@ -132,13 +132,20 @@
         },
         {
           "id": "chorus-4",
-          "name": "副歌/Refrain",
-          "type": "chorus"
+          "name": "副歌1/Refrain1",
+          "type": "chorus",
+          "number": "1"
+        },
+        {
+          "id": "chorus-5",
+          "name": "副歌2/Refrain2",
+          "type": "chorus",
+          "number": "2"
         }
       ]
     },
     {
-      "slug": "ai-de-zhang-xian",
+      "slug": "爱的彰显",
       "title": "爱的彰显",
       "titlePinyin": "Ài de zhāng xiǎn",
       "artist": "Sandy Yu / Gather Worship",
@@ -159,41 +166,49 @@
       "sections": [
         {
           "id": "intro-1",
-          "name": "前奏/Intro",
+          "name": "Intro",
           "type": "intro"
         },
         {
           "id": "verse-2",
-          "name": "主歌 1/Couplet 1",
+          "name": "Couplet 1",
           "type": "verse",
           "number": "1"
         },
         {
           "id": "verse-3",
-          "name": "主歌 2/Couplet 2",
+          "name": "Couplet 2",
           "type": "verse",
           "number": "2"
         },
         {
           "id": "verse-4",
-          "name": "主歌 3/Couplet 3",
+          "name": "Couplet 3",
           "type": "verse",
           "number": "3"
         },
         {
           "id": "chorus-5",
-          "name": "副歌/Refrain",
-          "type": "chorus"
+          "name": "Refrain 1",
+          "type": "chorus",
+          "number": "1"
         },
         {
           "id": "bridge-6",
-          "name": "桥段/Pont",
-          "type": "bridge"
+          "name": "Pont1",
+          "type": "bridge",
+          "number": "1"
+        },
+        {
+          "id": "bridge-7",
+          "name": "Pont2",
+          "type": "bridge",
+          "number": "2"
         }
       ]
     },
     {
-      "slug": "ai-ke-yi-zai-geng-duo-yi-dian-dian",
+      "slug": "爱可以再更多一点点",
       "title": "爱可以再更多一点点",
       "titlePinyin": "Ài kě yǐ zài gèng duō yì diǎn diǎn",
       "artist": "赞美之泉",
@@ -219,14 +234,15 @@
         },
         {
           "id": "chorus-3",
-          "name": "副歌/Refrain",
-          "type": "chorus"
+          "name": "Refrain 1",
+          "type": "chorus",
+          "number": "1"
         }
       ]
     },
     {
-      "slug": "ai-shi-wo-men-yong-gan-wo-men-ai",
-      "title": "爱使我们勇敢我们爱",
+      "slug": "爱使我们勇敢",
+      "title": "爱使我们勇敢",
       "titlePinyin": "Ài shǐ wǒ men yǒng gǎn wǒ men ài",
       "artist": "赞美之泉",
       "language": "zh",
@@ -248,16 +264,11 @@
           "id": "chorus-2",
           "name": "副歌/Refrain",
           "type": "chorus"
-        },
-        {
-          "id": "bridge-3",
-          "name": "桥段/Pont",
-          "type": "bridge"
         }
       ]
     },
     {
-      "slug": "ai-wo-yuan-yi",
+      "slug": "爱我愿意",
       "title": "爱，我愿意",
       "titlePinyin": "Ài wǒ yuàn yì",
       "artist": "赞美之泉",
@@ -284,7 +295,7 @@
       ]
     },
     {
-      "slug": "ai-ying-le",
+      "slug": "爱赢了",
       "title": "爱赢了",
       "titlePinyin": "Ài yíng le",
       "artist": "约书亚乐团",
@@ -330,7 +341,7 @@
       ]
     },
     {
-      "slug": "ai-zhong-xiang-yu",
+      "slug": "爱中相遇",
       "title": "爱中相遇",
       "titlePinyin": "Ài zhōng xiāng yù",
       "artist": "邓晓云 / 游智婷",
@@ -653,7 +664,7 @@
       ]
     },
     {
-      "slug": "an-jing",
+      "slug": "安静",
       "title": "安静",
       "titlePinyin": "Ān jìng",
       "artist": "赞美之泉",
@@ -960,7 +971,7 @@
       ]
     },
     {
-      "slug": "ba-leng-mo-bian-cheng-ai",
+      "slug": "把冷漠变成爱",
       "title": "把冷漠变成爱",
       "titlePinyin": "Bǎ lěng mò biàn chéng ài",
       "artist": "赞美之泉",
@@ -987,7 +998,7 @@
       ]
     },
     {
-      "slug": "bao-gui-shi-jia",
+      "slug": "宝贵十架",
       "title": "宝贵十架",
       "titlePinyin": "Bǎo guì shí jià",
       "artist": "赞美之泉",
@@ -1175,7 +1186,7 @@
       ]
     },
     {
-      "slug": "ben-pao-bu-fang-qi",
+      "slug": "奔跑不放弃",
       "title": "奔跑不放弃",
       "titlePinyin": "Bēn pǎo bú fàng qì",
       "artist": "赞美之泉",
@@ -1219,7 +1230,7 @@
       ]
     },
     {
-      "slug": "bo-li-heng-de-xi-xun",
+      "slug": "伯利恒的喜讯",
       "title": "伯利恒的喜讯",
       "titlePinyin": "Bó lì héng de xǐ xùn",
       "artist": "橄榄枝音乐",
@@ -1284,7 +1295,7 @@
       ]
     },
     {
-      "slug": "bu-ting-zan-mei",
+      "slug": "不停赞美",
       "title": "不停赞美",
       "titlePinyin": "Bù tíng zàn měi",
       "artist": "盛晓玫",
@@ -1322,7 +1333,7 @@
       ]
     },
     {
-      "slug": "bu-ting-zan-mei-ni",
+      "slug": "不停赞美你",
       "title": "不停赞美你",
       "titlePinyin": "Bù tíng zàn měi nǐ",
       "artist": "何俊杰",
@@ -1501,7 +1512,7 @@
       ]
     },
     {
-      "slug": "chai-qian-wo",
+      "slug": "差遣我",
       "title": "差遣我",
       "titlePinyin": "Chāi qiǎn wǒ",
       "artist": "赞美之泉",
@@ -1545,7 +1556,7 @@
       ]
     },
     {
-      "slug": "chang-chang-xi-le",
+      "slug": "常常喜乐",
       "title": "常常喜乐",
       "titlePinyin": "Cháng cháng xǐ lè",
       "artist": "赞美之泉",
@@ -1668,7 +1679,7 @@
       ]
     },
     {
-      "slug": "chong-man-zai-zhe-li",
+      "slug": "充满在这里",
       "title": "充满在这里",
       "titlePinyin": "Chōng mǎn zài zhè lǐ",
       "artist": "赞美之泉",
@@ -1939,7 +1950,7 @@
       ]
     },
     {
-      "slug": "cong-xin-he-yi",
+      "slug": "从心合一",
       "title": "从心合一",
       "titlePinyin": "Cóng xīn hé yī",
       "artist": "游智婷",
@@ -1971,7 +1982,7 @@
       ]
     },
     {
-      "slug": "cong-zao-chen-dao-ye-wan",
+      "slug": "从早晨到夜晚",
       "title": "从早晨到夜晚",
       "titlePinyin": "Cóng zǎo chén dào yè wǎn",
       "artist": "郑懋柔、游智婷",
@@ -2019,7 +2030,7 @@
       ]
     },
     {
-      "slug": "cong-zhe-dai-dao-na-dai",
+      "slug": "从这代到那代",
       "title": "从这代到那代",
       "titlePinyin": "Cóng zhè dài dào nà dài",
       "artist": "曾祥怡、游智婷",
@@ -2218,7 +2229,7 @@
       ]
     },
     {
-      "slug": "da-kai-tian-chuang",
+      "slug": "打开天窗",
       "title": "打开天窗",
       "titlePinyin": "Dǎ kāi tiān chuāng",
       "artist": "赞美之泉",
@@ -2255,7 +2266,7 @@
       ]
     },
     {
-      "slug": "dao-gao",
+      "slug": "祷告",
       "title": "祷告",
       "titlePinyin": "Dǎo gào",
       "artist": "郑楷",
@@ -2282,7 +2293,7 @@
       ]
     },
     {
-      "slug": "dao-ge-shan-ling-qu-chuan-yang",
+      "slug": "到各山岭去传扬",
       "title": "到各山岭去传扬",
       "titlePinyin": "Dào gè shān lǐng qù chuán yáng",
       "artist": "美国黑人灵歌",
@@ -2304,7 +2315,7 @@
       ]
     },
     {
-      "slug": "da-shan-wei-wo-nuo-kai",
+      "slug": "大山为我挪开",
       "title": "大山为我挪开",
       "titlePinyin": "Dà shān wèi wǒ nuó kāi",
       "artist": "赞美之泉",
@@ -2348,7 +2359,7 @@
       ]
     },
     {
-      "slug": "da-sheng-jing-bai",
+      "slug": "大声敬拜",
       "title": "大声敬拜",
       "titlePinyin": "Dà shēng jìng bài",
       "artist": "赞美之泉",
@@ -2399,7 +2410,7 @@
       ]
     },
     {
-      "slug": "da-shou-qian-zhe-xiao-shou",
+      "slug": "大手牵着小手",
       "title": "大手牵着小手",
       "titlePinyin": "Dà shǒu qiān zhe xiǎo shǒu",
       "artist": "赞美之泉",
@@ -2595,7 +2606,7 @@
       ]
     },
     {
-      "slug": "de-sheng-de-xuan-gao",
+      "slug": "得胜的宣告",
       "title": "得胜的宣告",
       "titlePinyin": "Dé shèng de xuān gào",
       "artist": "赞美之泉",
@@ -3298,43 +3309,7 @@
       ]
     },
     {
-      "slug": "en-dian-zhi-lu",
-      "title": "恩典之路",
-      "titlePinyin": "Ēn diǎn zhī lù",
-      "artist": "赞美之泉",
-      "language": "zh",
-      "originalKey": "F",
-      "tempo": 72,
-      "themes": [
-        "grace",
-        "foi",
-        "esperance"
-      ],
-      "youtubeUrl": null,
-      "spotifyUrl": null,
-      "appleMusicUrl": null,
-      "hasJianpu": false,
-      "jianpuKey": null,
-      "sections": [
-        {
-          "id": "intro-1",
-          "name": "前奏/Intro",
-          "type": "intro"
-        },
-        {
-          "id": "verse-2",
-          "name": "主歌/Couplet",
-          "type": "verse"
-        },
-        {
-          "id": "chorus-3",
-          "name": "副歌/Refrain",
-          "type": "chorus"
-        }
-      ]
-    },
-    {
-      "slug": "test_bianpu",
+      "slug": "test_jianpu",
       "title": "恩典之路",
       "titlePinyin": "Ēn diǎn zhī lù",
       "artist": "曾祥怡",
@@ -3355,6 +3330,42 @@
         {
           "id": "intro-1",
           "name": "Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
+          "name": "主歌/Couplet",
+          "type": "verse"
+        },
+        {
+          "id": "chorus-3",
+          "name": "副歌/Refrain",
+          "type": "chorus"
+        }
+      ]
+    },
+    {
+      "slug": "恩典之路",
+      "title": "恩典之路",
+      "titlePinyin": "Ēn diǎn zhī lù",
+      "artist": "赞美之泉",
+      "language": "zh",
+      "originalKey": "F",
+      "tempo": 72,
+      "themes": [
+        "grace",
+        "foi",
+        "esperance"
+      ],
+      "youtubeUrl": null,
+      "spotifyUrl": null,
+      "appleMusicUrl": null,
+      "hasJianpu": false,
+      "jianpuKey": null,
+      "sections": [
+        {
+          "id": "intro-1",
+          "name": "前奏/Intro",
           "type": "intro"
         },
         {
@@ -3668,7 +3679,7 @@
       ]
     },
     {
-      "slug": "feng-sheng-de-ying-xu",
+      "slug": "丰盛的应许",
       "title": "丰盛的应许",
       "titlePinyin": "Fēng shèng de yīng xǔ",
       "artist": "赞美之泉",
@@ -3779,7 +3790,7 @@
       ]
     },
     {
-      "slug": "fu-xing-de-huo",
+      "slug": "复兴的火",
       "title": "复兴的火",
       "titlePinyin": "Fù xīng de huǒ",
       "artist": "赞美之泉",
@@ -3813,7 +3824,7 @@
       ]
     },
     {
-      "slug": "gei-meng-xiang-yi-shuang-chi-bang",
+      "slug": "给梦想一双翅膀",
       "title": "给梦想一双翅膀",
       "titlePinyin": "Gěi mèng xiǎng yì shuāng chì bǎng",
       "artist": "游智婷",
@@ -4046,7 +4057,7 @@
       ]
     },
     {
-      "slug": "hao-xi-huan-yu-ni-zai-yi-qi",
+      "slug": "好喜欢与你在一起",
       "title": "好喜欢与你在一起",
       "titlePinyin": "Hǎo xǐ huan yǔ nǐ zài yì qǐ",
       "artist": "赞美之泉",
@@ -4133,7 +4144,7 @@
       ]
     },
     {
-      "slug": "he-deng-en-dian",
+      "slug": "何等恩典",
       "title": "何等恩典",
       "titlePinyin": "Hé děng ēn diǎn",
       "artist": "赞美之泉",
@@ -4232,7 +4243,7 @@
       ]
     },
     {
-      "slug": "he-san-na",
+      "slug": "和散那",
       "title": "和散那",
       "titlePinyin": "Hé sàn nà",
       "artist": "游智婷",
@@ -4437,7 +4448,7 @@
       ]
     },
     {
-      "slug": "hui-jia",
+      "slug": "回家",
       "title": "回家",
       "titlePinyin": "Huí jiā",
       "artist": "赞美之泉",
@@ -4476,7 +4487,7 @@
       ]
     },
     {
-      "slug": "huo-chu-ai",
+      "slug": "活出爱",
       "title": "活出爱",
       "titlePinyin": "Huó chū ài",
       "artist": "盛晓玫",
@@ -4530,7 +4541,7 @@
       ]
     },
     {
-      "slug": "huo-zhe-wei-yao-jing-bai-ni",
+      "slug": "活着为要敬拜你",
       "title": "活着为要敬拜你",
       "titlePinyin": "Huó zhe wèi yào jìng bài nǐ",
       "artist": "赞美之泉",
@@ -5323,7 +5334,7 @@
       ]
     },
     {
-      "slug": "jiang-tian-chang-kai",
+      "slug": "将天敞开",
       "title": "将天敞开",
       "titlePinyin": "Jiāng tiān chǎng kāi",
       "artist": "赞美之泉",
@@ -5360,7 +5371,7 @@
       ]
     },
     {
-      "slug": "jian-xuan",
+      "slug": "拣选",
       "title": "拣选",
       "titlePinyin": "Jiǎn xuǎn",
       "artist": "赞美之泉",
@@ -5392,7 +5403,7 @@
       ]
     },
     {
-      "slug": "jiao-bu",
+      "slug": "脚步",
       "title": "脚步",
       "titlePinyin": "Jiǎo bù",
       "artist": "盛晓玫",
@@ -5430,7 +5441,7 @@
       ]
     },
     {
-      "slug": "jiao-wo-tai-qi-tou-de-shen",
+      "slug": "叫我抬起头的神",
       "title": "叫我抬起头的神",
       "titlePinyin": "Jiào wǒ tái qǐ tóu de shén",
       "artist": "余盈盈",
@@ -5461,7 +5472,7 @@
       ]
     },
     {
-      "slug": "jing-bai-de-xin",
+      "slug": "敬拜的心",
       "title": "敬拜的心",
       "titlePinyin": "Jìng bài de xīn",
       "artist": "约书亚乐团",
@@ -5493,7 +5504,7 @@
       ]
     },
     {
-      "slug": "jin-qing-de-jing-bai",
+      "slug": "尽情的敬拜",
       "title": "尽情的敬拜",
       "titlePinyin": "Jìn qíng de jìng bài",
       "artist": "生命河灵粮堂",
@@ -5527,7 +5538,7 @@
       ]
     },
     {
-      "slug": "jin-qing-di-wei-xiao",
+      "slug": "尽情地微笑",
       "title": "尽情地微笑",
       "titlePinyin": "Jìn qíng dì wēi xiào",
       "artist": "赞美之泉",
@@ -5672,7 +5683,7 @@
       ]
     },
     {
-      "slug": "jun-wang-jiu-zai-zhe-li",
+      "slug": "君王就在这里",
       "title": "君王就在这里",
       "titlePinyin": "Jūn wáng jiù zài zhè lǐ",
       "artist": "赞美之泉",
@@ -5752,7 +5763,7 @@
       ]
     },
     {
-      "slug": "kan-jian-fu-xing",
+      "slug": "看见复兴",
       "title": "看见复兴",
       "titlePinyin": "Kàn jiàn fù xīng",
       "artist": "赞美之泉",
@@ -5779,7 +5790,7 @@
       ]
     },
     {
-      "slug": "kuang-ye-zhong-wei-yi-de-li-liang",
+      "slug": "旷野中唯一的力量",
       "title": "旷野中唯一的力量",
       "titlePinyin": "Kuàng yě zhōng wéi yī de lì liàng",
       "artist": "赞美之泉",
@@ -6478,7 +6489,7 @@
       ]
     },
     {
-      "slug": "ling-wo-dao-ni-bao-xue-li",
+      "slug": "领我到你宝血里面",
       "title": "领我到你宝血里",
       "titlePinyin": "Lǐng wǒ dào nǐ bǎo xuè lǐ",
       "artist": "Inconnu",
@@ -6559,7 +6570,7 @@
       ]
     },
     {
-      "slug": "man-you-neng-li",
+      "slug": "满有能力",
       "title": "满有能力",
       "titlePinyin": "Mǎn yǒu néng lì",
       "artist": "赞美之泉",
@@ -6688,7 +6699,7 @@
       ]
     },
     {
-      "slug": "mei-yi-tian-wo-xu-yao-ni",
+      "slug": "每一天我需要你",
       "title": "每一天我需要你",
       "titlePinyin": "Měi yì tiān wǒ xū yào nǐ",
       "artist": "曾祥怡",
@@ -6800,7 +6811,7 @@
       ]
     },
     {
-      "slug": "ming-liang-chen-xing",
+      "slug": "明亮晨星",
       "title": "明亮晨星",
       "titlePinyin": "Míng liàng chén xīng",
       "artist": "赞美之泉",
@@ -7162,7 +7173,7 @@
       ]
     },
     {
-      "slug": "neng-bu-neng",
+      "slug": "能不能",
       "title": "能不能",
       "titlePinyin": "Néng bu néng",
       "artist": "赞美之泉",
@@ -7245,7 +7256,7 @@
       ]
     },
     {
-      "slug": "ni-ai-chao-yue-yi-qie",
+      "slug": "祢爱超越一切",
       "title": "祢爱超越一切",
       "titlePinyin": "Nǐ ài chāo yuè yī qiè",
       "artist": "约书亚乐团",
@@ -7281,7 +7292,7 @@
       ]
     },
     {
-      "slug": "ni-de-ai-bu-li-bu-qi",
+      "slug": "你的爱不离不弃",
       "title": "你的爱不离不弃",
       "titlePinyin": "Nǐ de ài bù lí bú qì",
       "artist": "施弘美",
@@ -7322,7 +7333,7 @@
       ]
     },
     {
-      "slug": "ni-de-tong-zai",
+      "slug": "你的同在",
       "title": "你的同在",
       "titlePinyin": "Nǐ de tóng zài",
       "artist": "Robert & Lea Sutanto",
@@ -7354,7 +7365,7 @@
       ]
     },
     {
-      "slug": "ni-en-dian-bu-li-kai",
+      "slug": "你恩典不离开",
       "title": "你恩典不离开",
       "titlePinyin": "Nǐ ēn diǎn bù lí kāi",
       "artist": "曾祥怡",
@@ -7385,7 +7396,7 @@
       ]
     },
     {
-      "slug": "ni-men-yao-zan-mei-ye-he-hua",
+      "slug": "你们要赞美耶和华",
       "title": "你们要赞美耶和华",
       "titlePinyin": "Nǐ men yào zàn měi yē hé huá",
       "artist": "Inconnu",
@@ -7414,7 +7425,7 @@
       ]
     },
     {
-      "slug": "ni-shi-pei-de",
+      "slug": "你是配的",
       "title": "你是配的",
       "titlePinyin": "Nǐ shì pèi de",
       "artist": "曾祥怡",
@@ -7458,7 +7469,7 @@
       ]
     },
     {
-      "slug": "ni-shi-wei-yi",
+      "slug": "祢是唯一",
       "title": "祢是唯一",
       "titlePinyin": "Nǐ shì wéi yī",
       "artist": "Inconnu",
@@ -7499,7 +7510,7 @@
       ]
     },
     {
-      "slug": "ni-shi-wo-de-ping-an",
+      "slug": "你是我的平安",
       "title": "祢是我的平安",
       "titlePinyin": "Nǐ shì wǒ de píng ān",
       "artist": "蔡佳靈",
@@ -7540,7 +7551,7 @@
       ]
     },
     {
-      "slug": "ni-shi-wo-de-yi-qie",
+      "slug": "你是我的一切",
       "title": "你是我的一切",
       "titlePinyin": "Nǐ shì wǒ de yí qiè",
       "artist": "Dennis L. Jernigan",
@@ -7574,7 +7585,7 @@
       ]
     },
     {
-      "slug": "ni-yong-yuan-ru-ci-shen-ai-zhe-wo",
+      "slug": "你永远如此深爱着我",
       "title": "你永远如此深爱着我",
       "titlePinyin": "Nǐ yǒng yuǎn rú cǐ shēn ài zhe wǒ",
       "artist": "曾祥怡",
@@ -7610,7 +7621,7 @@
       ]
     },
     {
-      "slug": "ni-zuo-zhe-wei-wang",
+      "slug": "你坐着为王",
       "title": "你坐着为王",
       "titlePinyin": "Nǐ zuò zhe wèi wáng",
       "artist": "施弘美",
@@ -7998,7 +8009,7 @@
       ]
     },
     {
-      "slug": "o-shi-zi-jia",
+      "slug": "哦十字架",
       "title": "哦十字架",
       "titlePinyin": "Ò shí zì jià",
       "artist": "游智婷",
@@ -8275,7 +8286,7 @@
       ]
     },
     {
-      "slug": "pei-wo-zou-guo-chun-xia-qiu-dong",
+      "slug": "陪我走过春夏秋冬",
       "title": "陪我走过春夏秋冬",
       "titlePinyin": "Péi wǒ zǒu guò chūn xià qiū dōng",
       "artist": "林婉容",
@@ -8707,7 +8718,7 @@
       ]
     },
     {
-      "slug": "qian-lai-jing-bai",
+      "slug": "前来敬拜",
       "title": "前来敬拜",
       "titlePinyin": "Qián lái jìng bài",
       "artist": "赞美之泉",
@@ -8744,7 +8755,7 @@
       ]
     },
     {
-      "slug": "qi-lai-zan-mei",
+      "slug": "齐来赞美",
       "title": "齐来赞美",
       "titlePinyin": "Qí lái zàn měi",
       "artist": "赞美之泉",
@@ -8782,7 +8793,7 @@
       ]
     },
     {
-      "slug": "qing-dao",
+      "slug": "倾倒",
       "title": "倾倒",
       "titlePinyin": "Qīng dǎo",
       "artist": "张思言",
@@ -8819,7 +8830,7 @@
       ]
     },
     {
-      "slug": "qin-yan-kan-jian-ni",
+      "slug": "亲眼看见你",
       "title": "亲眼看见你",
       "titlePinyin": "Qīn yǎn kàn jiàn nǐ",
       "artist": "基恩敬拜",
@@ -8846,7 +8857,7 @@
       ]
     },
     {
-      "slug": "qiu-chong-man-zhe-di",
+      "slug": "求充满这地",
       "title": "求充满这地",
       "titlePinyin": "Qiú chōng mǎn zhè dì",
       "artist": "杨家宁词 / 李宗唐曲",
@@ -8897,7 +8908,7 @@
       ]
     },
     {
-      "slug": "qiu-zhu-chong-man-wo",
+      "slug": "求主充满我",
       "title": "求主充满我",
       "titlePinyin": "Qiú zhǔ chōng mǎn wǒ",
       "artist": "赞美之泉",
@@ -8931,7 +8942,7 @@
       ]
     },
     {
-      "slug": "qi-yi-en-dian",
+      "slug": "奇异恩典",
       "title": "奇异恩典",
       "titlePinyin": "Qí yì ēn diǎn",
       "artist": "Chris Tomlin",
@@ -9089,7 +9100,7 @@
       ]
     },
     {
-      "slug": "quan-ran-xiang-ni",
+      "slug": "全然向你",
       "title": "全然向你",
       "titlePinyin": "Quán rán xiàng nǐ",
       "artist": "赞美之泉",
@@ -9121,7 +9132,7 @@
       ]
     },
     {
-      "slug": "quan-xin-de-ni",
+      "slug": "全新的你",
       "title": "全新的你",
       "titlePinyin": "Quán xīn de nǐ",
       "artist": "游智婷",
@@ -9465,7 +9476,7 @@
       ]
     },
     {
-      "slug": "rang-ai-fei-xiang",
+      "slug": "让爱飞翔",
       "title": "让爱飞翔",
       "titlePinyin": "Ràng ài fēi xiáng",
       "artist": "曾祥怡",
@@ -9509,7 +9520,7 @@
       ]
     },
     {
-      "slug": "rang-ai-zou-dong",
+      "slug": "让爱走动",
       "title": "讓愛走動",
       "titlePinyin": "Ràng ài zǒu dòng",
       "artist": "游智婷",
@@ -9541,7 +9552,7 @@
       ]
     },
     {
-      "slug": "rang-wo-de-jian-ni-de-rong-mian",
+      "slug": "让我得见你的荣面",
       "title": "让我得见你的荣面",
       "titlePinyin": "Ràng wǒ dé jiàn nǐ de róng miàn",
       "artist": "曾祥怡",
@@ -9577,7 +9588,7 @@
       ]
     },
     {
-      "slug": "rang-zan-mei-fei-yang",
+      "slug": "让赞美飞扬",
       "title": "让赞美飞扬",
       "titlePinyin": "Ràng zàn měi fēi yáng",
       "artist": "赞美之泉",
@@ -9865,7 +9876,7 @@
       ]
     },
     {
-      "slug": "ren-shi-ni-zhen-hao",
+      "slug": "认识你真好",
       "title": "认识你真好",
       "titlePinyin": "Rèn shi nǐ zhēn hǎo",
       "artist": "赞美之泉",
@@ -9985,7 +9996,7 @@
       ]
     },
     {
-      "slug": "ri-ri-ye-ye",
+      "slug": "日日夜夜",
       "title": "日日夜夜",
       "titlePinyin": "Rì rì yè yè",
       "artist": "曾祥怡、游智婷",
@@ -10172,7 +10183,7 @@
       ]
     },
     {
-      "slug": "rong-yao-de-hu-zhao",
+      "slug": "荣耀的呼召",
       "title": "荣耀的呼召",
       "titlePinyin": "Róng yào de hū zhào",
       "artist": "曾祥怡",
@@ -10208,7 +10219,7 @@
       ]
     },
     {
-      "slug": "rong-yao-zhi-gao-shen",
+      "slug": "荣耀至高神",
       "title": "荣耀至高神",
       "titlePinyin": "Róng yào zhì gāo shén",
       "artist": "陈琰冰",
@@ -10251,7 +10262,7 @@
       ]
     },
     {
-      "slug": "ru-guo-ni-xiang-zhi-dao",
+      "slug": "如果你想知道",
       "title": "如果你想知道",
       "titlePinyin": "Rú guǒ nǐ xiǎng zhī dào",
       "artist": "赞美之泉",
@@ -10302,7 +10313,7 @@
       ]
     },
     {
-      "slug": "ruo-you-ren-zai-ji-du-li",
+      "slug": "若有人在基督里",
       "title": "若有人在基督里",
       "titlePinyin": "Ruò yǒu rén zài jī dū lǐ",
       "artist": "蔡佳灵、纪文惠",
@@ -10334,7 +10345,7 @@
       ]
     },
     {
-      "slug": "ru-ying-zhan-chi-shang-teng",
+      "slug": "如鹰展翅上腾",
       "title": "如鹰展翅上腾",
       "titlePinyin": "Rú yīng zhǎn chì shàng téng",
       "artist": "生命河灵粮堂",
@@ -10603,7 +10614,7 @@
       ]
     },
     {
-      "slug": "shen-bu-jian-di-de-ai",
+      "slug": "深不见底的爱",
       "title": "深不见底的爱",
       "titlePinyin": "Shēn bù jiàn dǐ de ài",
       "artist": "赞美之泉",
@@ -10635,7 +10646,7 @@
       ]
     },
     {
-      "slug": "shen-gao-yang-pei-de",
+      "slug": "神羔羊配得",
       "title": "神羔羊配得",
       "titlePinyin": "Shén gāo yáng pèi dé",
       "artist": "约书亚乐团",
@@ -10678,7 +10689,7 @@
       ]
     },
     {
-      "slug": "sheng-dan-jie-ye-su-wei-ni-er-lai",
+      "slug": "圣诞节耶稣为你而来",
       "title": "圣诞节耶稣为你而来",
       "titlePinyin": "Shèng dàn jié yē sū wèi nǐ ér lái",
       "artist": "赞美之泉",
@@ -10732,7 +10743,7 @@
       ]
     },
     {
-      "slug": "sheng-ling-de-jiang-he",
+      "slug": "圣灵的江河",
       "title": "圣灵的江河",
       "titlePinyin": "Shèng líng de jiāng hé",
       "artist": "赞美之泉",
@@ -10771,7 +10782,7 @@
       ]
     },
     {
-      "slug": "shen-ke-de-ai",
+      "slug": "深刻的爱",
       "title": "深刻的爱",
       "titlePinyin": "Shēn kè de ài",
       "artist": "赞美之泉",
@@ -10803,7 +10814,7 @@
       ]
     },
     {
-      "slug": "shen-shen-ai-ni",
+      "slug": "深深爱你",
       "title": "深深爱你",
       "titlePinyin": "Shēn shēn ài nǐ",
       "artist": "Robert & Lea Sutanto",
@@ -10830,7 +10841,7 @@
       ]
     },
     {
-      "slug": "shi-jia-de-ai",
+      "slug": "十架的爱",
       "title": "十架的爱",
       "titlePinyin": "Shí jià de ài",
       "artist": "赞美之泉",
@@ -10869,7 +10880,7 @@
       ]
     },
     {
-      "slug": "shi-jia-de-da-neng",
+      "slug": "十架的大能",
       "title": "十架的大能",
       "titlePinyin": "Shí jià de dà néng",
       "artist": "赞美之泉",
@@ -10917,7 +10928,7 @@
       ]
     },
     {
-      "slug": "shi-ming",
+      "slug": "使命",
       "title": "使命",
       "titlePinyin": "Shǐ mìng",
       "artist": "GwonHeui Lee",
@@ -10964,7 +10975,7 @@
       ]
     },
     {
-      "slug": "shi-ni-de-ai",
+      "slug": "是祢的爱",
       "title": "是祢的爱",
       "titlePinyin": "Shì nǐ de ài",
       "artist": "赞美之泉",
@@ -11003,7 +11014,7 @@
       ]
     },
     {
-      "slug": "shi-wei-le-ai",
+      "slug": "是为了爱",
       "title": "是为了爱",
       "titlePinyin": "Shì wèi le ài",
       "artist": "赞美之泉",
@@ -11040,7 +11051,7 @@
       ]
     },
     {
-      "slug": "shi-ye-su-de-ming",
+      "slug": "是耶稣的名",
       "title": "是耶稣的名",
       "titlePinyin": "Shì yē sū de míng",
       "artist": "赞美之泉",
@@ -11077,7 +11088,7 @@
       ]
     },
     {
-      "slug": "shi-zi-jia-de-chuan-da-zhe",
+      "slug": "十字架的传达者",
       "title": "十字架的传达者",
       "titlePinyin": "Shí zì jià de chuán dá zhě",
       "artist": "Inconnu",
@@ -11116,7 +11127,7 @@
       ]
     },
     {
-      "slug": "shi-zi-jia-shi-wo-de-rong-yao",
+      "slug": "十字架是我的荣耀",
       "title": "十字架是我的荣耀",
       "titlePinyin": "Shí zì jià shì wǒ de róng yào",
       "artist": "王子音乐",
@@ -11255,7 +11266,7 @@
       ]
     },
     {
-      "slug": "suo-you-de-rong-yao-gui-yu-ni",
+      "slug": "所有的荣耀归于你",
       "title": "所有的荣耀归于你",
       "titlePinyin": "Suǒ yǒu de róng yào guī yú nǐ",
       "artist": "赞美之泉",
@@ -11340,7 +11351,7 @@
       ]
     },
     {
-      "slug": "tian-guo-de-zi-min",
+      "slug": "天国的子民",
       "title": "天国的子民",
       "titlePinyin": "Tiān guó de zǐ mín",
       "artist": "盛晓玫",
@@ -12512,7 +12523,7 @@
       ]
     },
     {
-      "slug": "wei-ai-er-sheng",
+      "slug": "为爱而生",
       "title": "为爱而生",
       "titlePinyin": "Wèi ài ér shēng",
       "artist": "郑懋柔词 / 游智婷曲",
@@ -12554,7 +12565,7 @@
       ]
     },
     {
-      "slug": "wei-du-yi-kao-ni",
+      "slug": "唯独依靠你",
       "title": "唯独依靠你",
       "titlePinyin": "Wéi dú yī kào nǐ",
       "artist": "火把音乐",
@@ -12593,7 +12604,7 @@
       ]
     },
     {
-      "slug": "wei-rao-wo",
+      "slug": "围绕我",
       "title": "围绕我",
       "titlePinyin": "Wéi rào wǒ",
       "artist": "赞美之泉",
@@ -12634,7 +12645,7 @@
       ]
     },
     {
-      "slug": "wei-wo-er-lai",
+      "slug": "为我而来",
       "title": "为我而来",
       "titlePinyin": "Wèi wǒ ér lái",
       "artist": "Inconnu",
@@ -12679,7 +12690,7 @@
       ]
     },
     {
-      "slug": "wei-you-ye-su",
+      "slug": "唯有耶稣",
       "title": "唯有耶稣",
       "titlePinyin": "Wéi yǒu yē sū",
       "artist": "赞美之泉",
@@ -12718,7 +12729,7 @@
       ]
     },
     {
-      "slug": "wo-an-ran-ju-zhu",
+      "slug": "我安然居住",
       "title": "我安然居住",
       "titlePinyin": "Wǒ ān rán jū zhù",
       "artist": "约书亚乐团",
@@ -12750,7 +12761,7 @@
       ]
     },
     {
-      "slug": "wo-de-jia-yao-rong-yao-zhu",
+      "slug": "我的家要荣耀主",
       "title": "我的家要荣耀主",
       "titlePinyin": "Wǒ de jiā yào róng yào zhǔ",
       "artist": "赞美之泉",
@@ -12789,7 +12800,7 @@
       ]
     },
     {
-      "slug": "wo-de-jiu-shu-zhe-huo-zhe",
+      "slug": "我的救赎者活着",
       "title": "我的救赎者活着",
       "titlePinyin": "Wǒ de jiù shú zhě huó zhe",
       "artist": "赞美之泉",
@@ -12823,7 +12834,7 @@
       ]
     },
     {
-      "slug": "wo-de-sheng-ming-xian-gei-ni",
+      "slug": "我的生命献给你",
       "title": "我的生命献给祢",
       "titlePinyin": "Wǒ de shēng mìng xiàn gěi nǐ",
       "artist": "赞美之泉",
@@ -12860,7 +12871,7 @@
       ]
     },
     {
-      "slug": "wo-ke-wang-kan-jian",
+      "slug": "我渴望看见",
       "title": "我渴望看见",
       "titlePinyin": "Wǒ kě wàng kàn jiàn",
       "artist": "赞美之泉",
@@ -12904,7 +12915,7 @@
       ]
     },
     {
-      "slug": "wo-men-ai-rang-shi-jie-bu-yi-yang",
+      "slug": "我们爱让世界不一样",
       "title": "我们爱让世界不一样",
       "titlePinyin": "Wǒ men ài ràng shì jiè bù yī yàng",
       "artist": "赞美之泉",
@@ -12931,7 +12942,7 @@
       ]
     },
     {
-      "slug": "wo-men-cheng-wei-yi-jia-ren",
+      "slug": "我们成为一家人",
       "title": "我们成为一家人",
       "titlePinyin": "Wǒ men chéng wéi yī jiā rén",
       "artist": "有情天音乐",
@@ -12965,7 +12976,7 @@
       ]
     },
     {
-      "slug": "wo-men-de-shen",
+      "slug": "我们的神",
       "title": "我们的神",
       "titlePinyin": "Wǒ men de shén",
       "artist": "赞美之泉",
@@ -13011,7 +13022,7 @@
       ]
     },
     {
-      "slug": "wo-men-gao-ju-ye-su-de-ming",
+      "slug": "我们高举耶稣的名",
       "title": "我们高举耶稣的名",
       "titlePinyin": "Wǒ men gāo jǔ yē sū de míng",
       "artist": "赞美之泉",
@@ -13059,7 +13070,7 @@
       ]
     },
     {
-      "slug": "wo-men-huan-ying-jun-wang-jiang-lin",
+      "slug": "我们欢迎君王降临",
       "title": "我们欢迎君王降临",
       "titlePinyin": "Wǒ men huān yíng jūn wáng jiàng lín",
       "artist": "赞美之泉",
@@ -13091,7 +13102,7 @@
       ]
     },
     {
-      "slug": "wo-men-hu-qiu",
+      "slug": "我们呼求",
       "title": "我们呼求",
       "titlePinyin": "Wǒ men hū qiú",
       "artist": "赞美之泉",
@@ -13130,7 +13141,7 @@
       ]
     },
     {
-      "slug": "wo-men-shi-guang-ming-zhi-zi",
+      "slug": "我们是光明之子",
       "title": "我们是光明之子",
       "titlePinyin": "Wǒ men shì guāng míng zhī zǐ",
       "artist": "赞美之泉",
@@ -13169,7 +13180,7 @@
       ]
     },
     {
-      "slug": "wo-neng-gei-ni-shen-me",
+      "slug": "我能给你什么",
       "title": "我能给你什么",
       "titlePinyin": "Wǒ néng gěi nǐ shén me",
       "artist": "赞美之泉",
@@ -13215,7 +13226,7 @@
       ]
     },
     {
-      "slug": "wo-shen-wo-wang",
+      "slug": "我神我王",
       "title": "我神我王",
       "titlePinyin": "Wǒ shén wǒ wáng",
       "artist": "City to City Taiwan",
@@ -13257,7 +13268,7 @@
       ]
     },
     {
-      "slug": "wo-shi-cheng-zai-shen-rong-yao-de-qi-min",
+      "slug": "我是承带神荣耀的器皿",
       "title": "我是承载神荣耀的器皿",
       "titlePinyin": "Wǒ shì chéng zài shén róng yào de qì mǐn",
       "artist": "赞美之泉",
@@ -13294,7 +13305,7 @@
       ]
     },
     {
-      "slug": "wo-shou",
+      "slug": "握手",
       "title": "握手",
       "titlePinyin": "Wò shǒu",
       "artist": "祝瑞莲",
@@ -13323,7 +13334,7 @@
       ]
     },
     {
-      "slug": "wo-xiang-xin",
+      "slug": "我相信",
       "title": "我相信",
       "titlePinyin": "Wǒ xiāng xìn",
       "artist": "赞美之泉",
@@ -13360,7 +13371,7 @@
       ]
     },
     {
-      "slug": "wo-xin-jian-ding-yu-ni",
+      "slug": "我心坚定与你",
       "title": "我心坚定与你",
       "titlePinyin": "Wǒ xīn jiān dìng yǔ nǐ",
       "artist": "赞美之泉",
@@ -13392,7 +13403,7 @@
       ]
     },
     {
-      "slug": "wo-xu-yao-you-ni-zai-wo-sheng-ming-zhong",
+      "slug": "我需要有你在我生命中",
       "title": "我需要有你在我生命中",
       "titlePinyin": "Wǒ xū yào yǒu nǐ zài wǒ shēng mìng zhòng",
       "artist": "葛兆昕、陈慧琴",
@@ -13433,7 +13444,7 @@
       ]
     },
     {
-      "slug": "wo-yao-ai-mu-ni",
+      "slug": "我要爱慕你",
       "title": "我要爱慕你",
       "titlePinyin": "Wǒ yào ài mù nǐ",
       "artist": "约书亚乐团",
@@ -13460,7 +13471,7 @@
       ]
     },
     {
-      "slug": "wo-yao-kan-jian",
+      "slug": "我要看见",
       "title": "我要看见",
       "titlePinyin": "Wǒ yào kàn jiàn",
       "artist": "赞美之泉",
@@ -13497,7 +13508,7 @@
       ]
     },
     {
-      "slug": "wo-yao-quan-xin-zan-mei",
+      "slug": "我要全心赞美",
       "title": "我要全心赞美",
       "titlePinyin": "Wǒ yào quán xīn zàn měi",
       "artist": "赞美之泉",
@@ -13529,7 +13540,7 @@
       ]
     },
     {
-      "slug": "wo-yao-shun-fu",
+      "slug": "我要顺服",
       "title": "我要顺服",
       "titlePinyin": "Wǒ yào shùn fú",
       "artist": "赞美之泉",
@@ -13561,7 +13572,7 @@
       ]
     },
     {
-      "slug": "wo-yi-de-zi-you",
+      "slug": "我已得自由",
       "title": "我已得自由",
       "titlePinyin": "Wǒ yǐ dé zì yóu",
       "artist": "赞美之泉",
@@ -13598,7 +13609,7 @@
       ]
     },
     {
-      "slug": "wo-yuan-wei-ni-qu",
+      "slug": "我愿为你去",
       "title": "我愿为你去",
       "titlePinyin": "Wǒ yuàn wèi nǐ qù",
       "artist": "小羊诗歌",
@@ -13641,7 +13652,7 @@
       ]
     },
     {
-      "slug": "wo-zai-zhe-li-jing-bai",
+      "slug": "我在这里敬拜",
       "title": "我在这里敬拜",
       "titlePinyin": "Wǒ zài zhè lǐ jìng bài",
       "artist": "赞美之泉",
@@ -13699,7 +13710,7 @@
       ]
     },
     {
-      "slug": "wo-zhu-xing-fu",
+      "slug": "握住幸福",
       "title": "握住幸福",
       "titlePinyin": "Wò zhù xìng fú",
       "artist": "柳子骏",
@@ -13745,7 +13756,7 @@
       ]
     },
     {
-      "slug": "wu-jia-zhi-bao",
+      "slug": "无价至宝",
       "title": "无价至宝",
       "titlePinyin": "Wú jià zhì bǎo",
       "artist": "Andre Hermanto",
@@ -13795,7 +13806,7 @@
       ]
     },
     {
-      "slug": "xiang-gao-de-yu-ping",
+      "slug": "香膏的玉瓶",
       "title": "香膏的玉瓶",
       "titlePinyin": "Xiāng gāo de yù píng",
       "artist": "约书亚乐团",
@@ -13839,7 +13850,7 @@
       ]
     },
     {
-      "slug": "xiang-qi-ni",
+      "slug": "想起你",
       "title": "想起你",
       "titlePinyin": "Xiǎng qǐ nǐ",
       "artist": "盛晓玫",
@@ -13873,7 +13884,7 @@
       ]
     },
     {
-      "slug": "xiang-wo-de-shen-xian-shang-gan-xie",
+      "slug": "向我的神献上感谢",
       "title": "向我的神献上感谢",
       "titlePinyin": "Xiàng wǒ de shén xiàn shàng gǎn xiè",
       "artist": "游智婷",
@@ -13908,7 +13919,7 @@
       ]
     },
     {
-      "slug": "xian-shang-zun-rong",
+      "slug": "献上尊荣",
       "title": "献上尊荣",
       "titlePinyin": "Xiàn shàng zūn róng",
       "artist": "赞美之泉",
@@ -13940,7 +13951,7 @@
       ]
     },
     {
-      "slug": "xie-xie-ni",
+      "slug": "谢谢你",
       "title": "谢谢你",
       "titlePinyin": "Xiè xiè nǐ",
       "artist": "曾祥怡词 / 游智婷曲",
@@ -13989,7 +14000,7 @@
       ]
     },
     {
-      "slug": "xing-shen-ji-de-shen",
+      "slug": "行神迹的神",
       "title": "行神迹的神",
       "titlePinyin": "Xíng shén jì de shén",
       "artist": "曾祥怡词 / 陈麒安曲",
@@ -14027,7 +14038,7 @@
       ]
     },
     {
-      "slug": "xin-shi-de-shen",
+      "slug": "信实的神",
       "title": "信实的神",
       "titlePinyin": "Xìn shí de shén",
       "artist": "游智婷",
@@ -14059,7 +14070,7 @@
       ]
     },
     {
-      "slug": "xin-zao-de-ren",
+      "slug": "新造的人",
       "title": "新造的人",
       "titlePinyin": "Xīn zào de rén",
       "artist": "赞美之泉",
@@ -14155,7 +14166,7 @@
       ]
     },
     {
-      "slug": "ye-he-hua-shi-ying-dang-cheng-song-de",
+      "slug": "耶和华是应当称颂的",
       "title": "耶和华是应当称颂的",
       "titlePinyin": "Yē hé huá shì yīng dāng chēng sòng de",
       "artist": "赞美之泉",
@@ -14196,7 +14207,7 @@
       ]
     },
     {
-      "slug": "ye-he-hua-xing-le-da-shi",
+      "slug": "耶和华行了大事",
       "title": "耶和华行了大事",
       "titlePinyin": "Yē hé huá xíng le dà shì",
       "artist": "曾祥怡",
@@ -14240,7 +14251,7 @@
       ]
     },
     {
-      "slug": "ye-su-de-ming",
+      "slug": "耶稣的名",
       "title": "耶稣的名",
       "titlePinyin": "Yē sū de míng",
       "artist": "曾祥怡",
@@ -14277,7 +14288,7 @@
       ]
     },
     {
-      "slug": "ye-su-wan-ming-zhi-shang-de-ming",
+      "slug": "耶稣万名之上的名",
       "title": "耶稣万名之上的名",
       "titlePinyin": "Yē sū wàn míng zhī shàng de míng",
       "artist": "林婉容",
@@ -14315,7 +14326,7 @@
       ]
     },
     {
-      "slug": "ye-su-wo-de-ye-su",
+      "slug": "耶稣我的耶稣",
       "title": "耶稣我的耶稣",
       "titlePinyin": "Yē sū wǒ de yē sū",
       "artist": "赞美之泉",
@@ -14347,7 +14358,7 @@
       ]
     },
     {
-      "slug": "ye-su-ye-su",
+      "slug": "耶稣耶稣",
       "title": "耶稣耶稣",
       "titlePinyin": "Yē sū yē sū",
       "artist": "曾祥怡",
@@ -14374,7 +14385,7 @@
       ]
     },
     {
-      "slug": "yi-ke-qian-bei-de-xin",
+      "slug": "一颗谦卑的心",
       "title": "一颗谦卑的心",
       "titlePinyin": "Yì kē qiān bēi de xīn",
       "artist": "张敬雅",
@@ -14412,7 +14423,7 @@
       ]
     },
     {
-      "slug": "yi-li-mai-zi",
+      "slug": "一粒麦子",
       "title": "一粒麦子",
       "titlePinyin": "Yī lì mài zi",
       "artist": "林婉容",
@@ -14448,7 +14459,7 @@
       ]
     },
     {
-      "slug": "yin-zhe-shi-jia-ai",
+      "slug": "因着十架爱",
       "title": "因着十架爱",
       "titlePinyin": "Yīn zhe shí jià ài",
       "artist": "生命河灵粮堂",
@@ -14482,7 +14493,7 @@
       ]
     },
     {
-      "slug": "yi-qie-dou-geng-xin",
+      "slug": "一切都更新",
       "title": "一切都更新",
       "titlePinyin": "Yī qiè dōu gēng xīn",
       "artist": "Sidney Mohede / 潘都芸译",
@@ -14523,7 +14534,7 @@
       ]
     },
     {
-      "slug": "yi-qie-ge-song-zan-mei",
+      "slug": "一切歌颂赞美",
       "title": "一切歌颂赞美",
       "titlePinyin": "Yī qiè gē sòng zàn měi",
       "artist": "Niko Njotorahardjo / 蒋忠译",
@@ -14553,7 +14564,7 @@
       ]
     },
     {
-      "slug": "yi-sheng-ai-ni",
+      "slug": "一生爱你",
       "title": "一生爱你",
       "titlePinyin": "Yī shēng ài nǐ",
       "artist": "曾祥怡词 / 游智婷曲",
@@ -14589,7 +14600,7 @@
       ]
     },
     {
-      "slug": "yi-sheng-gen-sui",
+      "slug": "一生跟随",
       "title": "一生跟随",
       "titlePinyin": "Yī shēng gēn suí",
       "artist": "Anlan 凡口草",
@@ -14620,7 +14631,7 @@
       ]
     },
     {
-      "slug": "yi-sheng-jing-bai-ni",
+      "slug": "一生敬拜你",
       "title": "一生敬拜你",
       "titlePinyin": "Yī shēng jìng bài nǐ",
       "artist": "游智婷词 / 郑梓怡曲",
@@ -14655,7 +14666,7 @@
       ]
     },
     {
-      "slug": "yi-tong-qi-sheng-xuan-yang",
+      "slug": "一同齐声宣扬",
       "title": "一同齐声宣扬",
       "titlePinyin": "Yī tóng qí shēng xuān yáng",
       "artist": "游智婷词 / 陈麟安曲",
@@ -14705,7 +14716,7 @@
       ]
     },
     {
-      "slug": "yi-zhi-wo",
+      "slug": "医治我",
       "title": "医治我",
       "titlePinyin": "Yī zhì wǒ",
       "artist": "赞美之泉",
@@ -14737,7 +14748,7 @@
       ]
     },
     {
-      "slug": "yong-heng-wei-yi-de-pan-wang",
+      "slug": "永恒唯一的盼望",
       "title": "永恒唯一的盼望",
       "titlePinyin": "Yǒng héng wéi yī de pàn wàng",
       "artist": "赞美之泉",
@@ -14769,7 +14780,7 @@
       ]
     },
     {
-      "slug": "yong-huo-pan-wang",
+      "slug": "永活盼望",
       "title": "永活盼望",
       "titlePinyin": "Yǒng huó pàn wàng",
       "artist": "Phil Wickham / Brian Johnson",
@@ -14808,7 +14819,7 @@
       ]
     },
     {
-      "slug": "you-ni-tong-xing",
+      "slug": "有你同行",
       "title": "有你同行",
       "titlePinyin": "Yǒu nǐ tóng xíng",
       "artist": "林婉容",
@@ -14851,7 +14862,7 @@
       ]
     },
     {
-      "slug": "you-yi-tian",
+      "slug": "有一天",
       "title": "有一天",
       "titlePinyin": "Yǒu yì tiān",
       "artist": "盛晓玫",
@@ -14885,7 +14896,7 @@
       ]
     },
     {
-      "slug": "you-yi-wei-shen",
+      "slug": "有一位神",
       "title": "有一位神",
       "titlePinyin": "Yǒu yí wèi shén",
       "artist": "赞美之泉",
@@ -14919,7 +14930,7 @@
       ]
     },
     {
-      "slug": "yuan-wei-zhu-shan-liang",
+      "slug": "愿为主闪亮",
       "title": "愿为主闪亮",
       "titlePinyin": "Yuàn wéi zhǔ shǎn liàng",
       "artist": "赞美之泉",
@@ -14951,7 +14962,7 @@
       ]
     },
     {
-      "slug": "yu-jian-ni",
+      "slug": "遇见你",
       "title": "遇见你",
       "titlePinyin": "Yù jiàn nǐ",
       "artist": "Inconnu",
@@ -14985,7 +14996,7 @@
       ]
     },
     {
-      "slug": "yun-shang-tai-yang",
+      "slug": "云上太阳",
       "title": "云上太阳",
       "titlePinyin": "Yún shàng tài yáng",
       "artist": "泥土音乐",
@@ -15016,7 +15027,7 @@
       ]
     },
     {
-      "slug": "zai-ci-jiang-wo-geng-xin",
+      "slug": "再次将我更新",
       "title": "再次将我更新",
       "titlePinyin": "Zài cì jiāng wǒ gèng xīn",
       "artist": "小羊诗歌",
@@ -15056,7 +15067,7 @@
       ]
     },
     {
-      "slug": "zai-ni-bao-zuo-qian",
+      "slug": "在你宝座前",
       "title": "在你宝座前",
       "titlePinyin": "Zài nǐ bǎo zuò qián",
       "artist": "赞美之泉",
@@ -15095,7 +15106,7 @@
       ]
     },
     {
-      "slug": "zai-ye-su-de-jiao-qian",
+      "slug": "在耶稣的脚前",
       "title": "在耶稣的脚前",
       "titlePinyin": "Zài yē sū de jiǎo qián",
       "artist": "赞美之泉",
@@ -15134,7 +15145,7 @@
       ]
     },
     {
-      "slug": "zai-yi-ci",
+      "slug": "再一次",
       "title": "再一次",
       "titlePinyin": "Zài yí cì",
       "artist": "赞美之泉",
@@ -15180,7 +15191,7 @@
       ]
     },
     {
-      "slug": "zai-zhe-li",
+      "slug": "在这里",
       "title": "在这里",
       "titlePinyin": "Zài zhè lǐ",
       "artist": "赞美之泉",
@@ -15212,7 +15223,7 @@
       ]
     },
     {
-      "slug": "zan-mei-zhi-quan",
+      "slug": "赞美之泉",
       "title": "赞美之泉",
       "titlePinyin": "Zàn měi zhī quán",
       "artist": "万美兰词 / 游智婷曲",
@@ -15243,7 +15254,7 @@
       ]
     },
     {
-      "slug": "zhe-li-you-rong-yao",
+      "slug": "这里有荣耀",
       "title": "这里有荣耀",
       "titlePinyin": "Zhè lǐ yǒu róng yào",
       "artist": "赞美之泉",
@@ -15282,7 +15293,7 @@
       ]
     },
     {
-      "slug": "zhe-li-you-shen-de-tong-zai",
+      "slug": "这里有神的同在",
       "title": "这里有神的同在",
       "titlePinyin": "Zhè lǐ yǒu shén de tóng zài",
       "artist": "吕小敏",
@@ -15309,7 +15320,7 @@
       ]
     },
     {
-      "slug": "zhen-shi-de-hui-gai",
+      "slug": "真实的悔改",
       "title": "真实的悔改",
       "titlePinyin": "Zhēn shí de huǐ gǎi",
       "artist": "赞美之泉",
@@ -15341,7 +15352,7 @@
       ]
     },
     {
-      "slug": "zhe-shi-ye-he-hua-suo-ding-de-ri-zi",
+      "slug": "这是耶和华所定的日子",
       "title": "这是耶和华所定的日子",
       "titlePinyin": "Zhè shì yē hé huá suǒ dìng de rì zi",
       "artist": "Les Garrett",
@@ -15368,7 +15379,7 @@
       ]
     },
     {
-      "slug": "zhe-tiao-lu-shang-wo-men-yi-qi-zou",
+      "slug": "这条路上我们一起走",
       "title": "这条路上我们一起走",
       "titlePinyin": "Zhè tiáo lù shang wǒ men yì qǐ zǒu",
       "artist": "吕小敏",
@@ -15402,7 +15413,7 @@
       ]
     },
     {
-      "slug": "zhe-yi-sheng-zui-mei-de-zhu-fu",
+      "slug": "这一生最美的祝福",
       "title": "这一生最美的祝福",
       "titlePinyin": "Zhè yì shēng zuì měi de zhù fú",
       "artist": "赞美之泉",
@@ -15429,7 +15440,7 @@
       ]
     },
     {
-      "slug": "zhi-xu-yao-ni",
+      "slug": "只需要你",
       "title": "只需要你",
       "titlePinyin": "Zhī xū yào nǐ",
       "artist": "赞美之泉",
@@ -15473,7 +15484,7 @@
       ]
     },
     {
-      "slug": "zhi-yao-you-ni-zai-wo-zuo-you",
+      "slug": "只要有你在我左右",
       "title": "只要有你在我左右",
       "titlePinyin": "Zhǐ yào yǒu nǐ zài wǒ zuǒ yòu",
       "artist": "赞美之泉",
@@ -15517,7 +15528,7 @@
       ]
     },
     {
-      "slug": "zhong-guo-zao-chen-wu-dian-zhong",
+      "slug": "中国早晨五点钟",
       "title": "中国早晨五点钟",
       "titlePinyin": "Zhōng guó zǎo chén wǔ diǎn zhōng",
       "artist": "迦南诗选",
@@ -15550,7 +15561,7 @@
       ]
     },
     {
-      "slug": "zhu-de-xi-le-shi-wo-li-liang",
+      "slug": "主的喜乐是我力量",
       "title": "主的喜乐是我力量",
       "titlePinyin": "Zhǔ de xǐ lè shì wǒ lì liàng",
       "artist": "曾祥怡",
@@ -15577,7 +15588,7 @@
       ]
     },
     {
-      "slug": "zhu-ni-shi-wo-li-liang",
+      "slug": "主你是我力量",
       "title": "主你是我力量",
       "titlePinyin": "Zhǔ nǐ shì wǒ lì liàng",
       "artist": "赞美之泉",
@@ -15608,7 +15619,7 @@
       ]
     },
     {
-      "slug": "zhu-zai-ni-li-mian",
+      "slug": "住在你里面",
       "title": "住在你里面",
       "titlePinyin": "Zhù zài nǐ lǐ miàn",
       "artist": "曾祥怡",
@@ -15635,7 +15646,7 @@
       ]
     },
     {
-      "slug": "zui-mei-de-li-wu",
+      "slug": "最美的礼物",
       "title": "最美的礼物",
       "titlePinyin": "Zuì měi de lǐ wù",
       "artist": "赞美之泉",
@@ -15667,7 +15678,7 @@
       ]
     },
     {
-      "slug": "zuo-zai-bao-zuo-shang-sheng-jie-gao-yang",
+      "slug": "坐在宝座上圣洁羔羊",
       "title": "坐在宝座上圣洁羔羊",
       "titlePinyin": "Zuò zài bǎo zuò shàng shèng jié gāo yáng",
       "artist": "葛兆昕",
