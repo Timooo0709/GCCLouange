@@ -4,14 +4,11 @@
 {language: fr}
 {themes: Adoration, Action de grâce}
 
-{start_of_intro: Intro}
-[D]
-{end_of_intro}
 
 {start_of_verse: Couplet 1}
-[D]Comment expli[G2]quer et comment déc[Bm]rire
+[D] Comment expli[G2]quer et comment déc[Bm]rire
 Un amour si grand, [G2]si puissant,
-[A/E]Que rien ne peut le conte[Bm]nir ?
+[A/E] Que rien ne peut le conte[Bm]nir ?
 Tu sais mes es[G2]poirs, Seigneur, Tu sais mes [Bm]craintes,
 Et mes mots sont bien [G2]trop petits pour di[A/E]re
 Tout l'amour que j'ai pour [Bm]Toi.
@@ -19,7 +16,7 @@ Tout l'amour que j'ai pour [Bm]Toi.
 
 {start_of_chorus: Refrain 1}
 Alors entends mon [G2]cœur, mon esprit qui Te [Bm]loue.
-Entends le chant d'a[G2]mour d'un enfant [A/E]rachet[D]é.
+Entends le chant d'a[G2]mour [A/E]d'un enfant rachet[D]é.
 Je prendrai mes [G2]faibles mots
 Pour [A]Te dire quel Dieu [D]merveil[A/C#]leux Tu e[Bm]s.
 Mais je ne pourrai [G2]pas Te dire combien je [A]T'aime,
@@ -28,22 +25,25 @@ Alors entends mon [D]cœur.
 
 {start_of_verse: Couplet 2}
 Si tout comme la [G2]pluie les mots pouvaient coul[Bm]er,
-Et si j'avais l'é[G2]ternité,[A/E]je ne pourrais pas l'expr[Bm]imer.
+Et si j'avais l'é[G2]ternité, 
+[A/E]je ne pourrais pas l'expri[Bm]mer.
 Mais dans les battements de mon [G2]cœur Tu entendras tou[Bm]jours:
-Merci pour la [G2]vie, pour la véri[A/E]té et pour le che[Bm]min.
+Merci pour la [G2]vie, 
+pour la véri[A/E]té et pour le che[Bm]min.
 {end_of_verse}
 
 {start_of_verse: Couplet 3}
-Tu sais nos espo[G2]irs, Seigneur, Tu sais nos[Bm]craintes,
+Tu sais nos espo[G2]irs, Seigneur, Tu sais nos [Bm]craintes,
 Et nos mots sont bien [G2]trop petits pour di[A/E]re
 Tout l'amour que nous a[Bm]vons.
 {end_of_verse}
 
 {start_of_chorus: Refrain 2}
 Alors entends nos [G2]cœurs, nos esprits qui Te [Bm]louent.
-Entends le chant d'a[G2]mour de tous Tes [A/E]rache[D]tés.
+Entends le chant d'a[G2]mour [A/E]de tous Tes rache[D]tés.
 Nous prendrons nos [G2]faibles mots
 Pour [A]Te dire quel Dieu [D]merveil[A/C#]leux Tu e[Bm]s.
-Non, nous ne pourrons [G2]pas Te dire tout notre a[A]mour,
+Non, nous ne pourrons [G2]pas
+Te dire tout notre a[A]mour,
 Alors entends nos [D]cœurs.
 {end_of_chorus}

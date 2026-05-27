@@ -5,23 +5,32 @@
 {themes: Adoration, Engagement}
 
 {start_of_intro: Intro}
-[E]  [B]  [F#]  [G#m]
-[E]  [B]  [F#]
+[E][ ][B][ ][F#][ ][G#m]
+[E][ ][B][ ][F#]
+{end_of_intro}
+
+{start_of_verse: Couplet 1}
 [E]Je n’ai pas sei[B]gneur de [F#]discours à [G#m]t'offrir
 [E]Je n’ai que mon c[B]oeur là devant t[F#]oi
 [E]Voici mes faibl[B]esses, v[F#]oici mes é[G#m]checs
 [E]Je n’ai rien que t[B]on amour pour m[F#]oi
+{end_of_verse}
+
+{start_of_chorus: Refrain}
 Et me voi[E]ci en vér[B]ité
 le c[F#]oeur ouvert à [G#m]toi
 Tu me [E]désires te[B]l que suis [F#]déjà
 Tu vois [E]ma vie en [B]vérité
 Mes d[F#]ouleurs et mes jo[G#m]ies
 Dieu me v[E]oici je m[B]’abandonne à [F#]toi
-Tout ce que tu cherches c’est toucher mon coeur
-Lorsqu’enfin je laisse couler mes pleurs
-Le passé est passé, ta grâce m’a trouvé
-Je viens devant toi pour t’adorer
-{end_of_intro}
+{end_of_chorus}
+
+{start_of_verse: Couplet 2}
+[E]Tout ce que [B]tu cherches c’est [F#]toucher mon [G#m]coeur
+[E]Lorsqu’en[B]fin je laisse couler mes [F#]pleurs
+[E]Le passé est [B]passé, ta [F#]grâce m’a [G#m]trouvé
+[E]Je viens de[B]vant toi pour t’a[F#]dorer
+{end_of_verse}
 
 {start_of_bridge: Pont}
 [E]Rien, rien au [B]monde
@@ -29,9 +38,8 @@ Ne peut [F#]prendre ta place, prendre ta place
 [E]Rien, rien au [B]monde
 Ne peut p[F#]rendre ta place en mon âme
 X2
-{end_of_bridge}
 
-{start_of_verse: Couplet 1}
+
 (Non) [C#m]Rien, rien au mo[G#m]nde
 Ne peut [F#]prendre ta place, prendre ta place
 [C#m]Rien, rien au mon[G#m]de
@@ -40,4 +48,4 @@ X2
 [E]Tu es m[B]on seul b[F#]ien X2
 [E]Tu es [B/D#]mon seul bie[F#]n[G#m]
 [E]Tu es [B/D#]mon seul bie[F#]n
-{end_of_verse}
+{end_of_bridge}

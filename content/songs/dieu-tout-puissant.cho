@@ -4,9 +4,6 @@
 {language: fr}
 {themes: Adoration, Action de grâce}
 
-{start_of_intro: Intro}
-[G]
-{end_of_intro}
 
 {start_of_verse: Couplet 1}
 Dieu Tout-Pui[G]ssant, quand mon cœur consi[C]dère
@@ -15,9 +12,9 @@ Le ciel d'a[G]zur, les éclairs, le to[C]nnerre,
 Le clair mat[G]in ou [D]les ombres du [G]soir.
 {end_of_verse}
 
-{start_of_chorus: Refrain 2}
+{start_of_chorus: Refrain}
 De tout mon [G]être, a[C]lors, s'élève un [G]chant [D/F#]:[Em]
-Dieu Tout-Pui[Am]ssant,[D]que Tu e[G]s grand.
+Dieu Tout-Pui[Am]ssant, [D]que Tu e[G]s grand.
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
@@ -26,3 +23,8 @@ Se lève[G]ra de [D]Son trône éter[G]nel
 Et que, la[G]issant les douleurs de la [C]terre,
 Je pourrai [G]voir les s[D]plendeurs de Son [G]Ciel.
 {end_of_verse}
+
+{start_of_final: Final}
+Dieu Tout-Pui[D]ssant, [C]que Tu e[G]s grand.
+
+{end_of_final}

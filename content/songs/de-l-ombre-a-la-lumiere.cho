@@ -1,64 +1,43 @@
 {title: De l'ombre à la lumière}
+{artist: Hillsong}
 {tempo: 116}
 {language: fr}
 {themes: Salut, Résurrection, Adoration}
 
-{start_of_intro: Intro}
-[A]  [A]  [A]  [A]
-{end_of_intro}
-
 {start_of_verse: Couplet 1}
-[A]Lève-toi mon âme et souviens-toi
-[A]Tout mon péché Il l’a enterré
+Lève-[A]toi mon âme et souviens-toi
+Tout [A]mon péché Il l’a enterré
 {end_of_verse}
 
 {start_of_chorus: Refrain 1}
-Ce n’est plus [Dsus2]moi [E7]qui vi[A5]s
-C’est Christ qui vit en moi[E]
-J’étais mort [Dsus2]mais [E7]je sui[A5]s
-Passé de l’ombre[E]à la lumière
-INSTRUMENTAL 1
-[A]  [Asus2]  [Asus]  [A]
+Ce n’est plus [Dsus2]moi [E7]qui vis[F#m]
+C’est Ch[A5]rist qui vit en moi[E]
+J’étais mort [Dsus2]mais [ ][E7]je sui[F#m]s
+Passé de l’ombre [E]à la lumière
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[A]Je ne veux me vanter que de la croix
-[A]Où mon Sauveur S’est offert pour moi
-En [F#m]Lui me[E]s craintes [A]n’ont aucune emprise
-Donc [F#m]mort o[E]ù es[A]t, où est [D]ta [E]victoire [A]?
+Je ne [A]veux me vanter que de la croix
+Où [A]mon Sauveur S’est offert pour moi
 {end_of_verse}
 
-{start_of_chorus: Refrain 2}
-Ce n’est plus [Dsus2]moi [E7]qui vi[F#m]s
-C’est Chris[A]t qui vit en moi[E]
-J’étais mort [D]mais [E]je sui[F#m]s
-Passé de l’ombre[E]à la lumière
-{end_of_chorus}
-
-{start_of_intro: Intro}
-[A]  [Asus2]  [Asus]  [A]
-[A/D]  [Asus2/D]  [Asus]  [A]
-{end_of_intro}
+{start_of_verse: Couplet 3}
+En [F#m]Lui [ ][E]mes craintes [A]n’ont aucune emprise
+Donc [F#m]mort [ ][E]où es[A]t, où est [D]ta [E]vic[A]toire ?
+{end_of_verse}
 
 {start_of_bridge: Pont 1}
 [A]Tout, tout en moi veut T’adorer
 [A]Tout, tout en moi veut T’adorer
 [F#m7]Tout, [D]tout en moi veut T’a[A]dorer
 [F#m7]Tout, [D]tout en moi veut T’a[A]dorer
-[F#m7]Tout, tout en moi veut [D]T’a[A]dorer
-[F#m7]Tout, tout en moi veut [D]T[Esus]’adorer[E]
+[F#m7]Tout, [D]tout en moi veut T’a[A]dorer
+[F#m7]Tout, [D]tout en moi veut T[Esus]’adorer[E]
 {end_of_bridge}
-
-{start_of_chorus: Refrain 2}
-| N.C. |
-INSTRUMENTAL 3
-[A]  [Asus2]  [Asus]  [A]
-[A/D]  [Bm7]  [Asus]  [A]
-{end_of_chorus}
 
 {start_of_bridge: Pont 2}
 [A]Tou[Asus2]t, tout en moi veut T’a[A]dorer[Amaj7]
 [A]Tou[Asus2]t, tout en moi veut T’a[A]dorer[Amaj7]
-[F#m7]Tout, tout en moi veut [D]T’a[A]dorer[Amaj7]
+[F#m7]Tout, [D]tout en moi veut T’a[A]dorer[Amaj7]
 [F#m7]Tout, [D]tout en moi veut T’a[A]dorer
 {end_of_bridge}

@@ -1,31 +1,30 @@
 {title: Dieu est parmi nous}
 {artist: Dan Luiten}
-{key: D}
+{key: G}
 {language: fr}
 {themes: Adoration, Action de grâce}
 
-{start_of_intro: Intro}
-[G]
-{end_of_intro}
 
 {start_of_verse: Couplet 1}
 [G]Assemblons-nous pour Le louer,
 [G]Vers notre Dieu, faisons monter nos voix
 [C]Pour élever Sa majesté,
-Il est là.[Gsus4][G][Gsus4][G]
+Il est là.[G][Gsus4][G][Gsus4]
 {end_of_verse}
 
 {start_of_verse: Couplet 2}
 [G]Pour effacer notre péché,
 [G]Il accepta d'être cloué au bois.
 [C]Jésus seul pouvait triompher
-À la croix.[Gsus4][G][Gsus4][G]
+À la croix.[G][Gsus4][G][Gsus4]
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[C]Oh ! Célé[D]brons Ses [Em]louanges, accuei[D/F#]llons Sa p[G]résence,
+[C]Oh ! Célé[D]brons Ses [Em]louanges, 
+accuei[D/F#]llons Sa p[G]résence,
 Dieu est parmi n[Dsus4]ous.[G/B]
-[C]Oh ! Béni[D]ssons le S[Em]eigneur, procl[D/F#]amons Sa g[G]randeur,
+[C]Oh ! Béni[D]ssons le S[Em]eigneur, 
+procl[D/F#]amons Sa g[G]randeur,
 Il est parmi n[Dsus4]ous.
 {end_of_chorus}
 
@@ -33,24 +32,16 @@ Il est parmi n[Dsus4]ous.
 [G]Dans nos cœurs, Il S'est révélé.
 [G]Par Son Esprit, Il vient guider nos pas
 [C]Pour nous donner la liberté
-Ici-bas.[Gsus4][G][Gsus4][G]
+Ici-bas.[G][Gsus4][G][Gsus4]
 {end_of_verse}
 
 {start_of_bridge: Pont}
-[C]Tous les peuples et les [D]nations, [Em]dans
+[C]Tous les peuples et les [D]nations, [Em]dans chaque généra[D/F#]tion,
 [G]Proclameront Son saint N[Dsus4]om.[G/B]
-[C]Jésus le Prince [D]de Paix,[Em]le Tout-Puissant
+[C]Jésus le Prince [D]de Paix,[Em]le Tout-Puissant bou[D/F#]clié
 [G]Il est le ressuscit[Dsus4]é.[G/B]
-[C]Acclamons le Cré[D]ateur, [Em]levons nos
+[C]Acclamons le Cré[D]ateur, [Em]levons nos mains en [D/F#]l'honneur, 
 [G]De notre libérat[Dsus4]eur.[G/B]
-[C]Ensemble, élevons [D]nos voix[Em]et poussons
+[C]Ensemble, élevons [D]nos voix[Em]et poussons des cris [D/F#]de joie
 [G]Vers Jésus le Roi des r[Dsus4]ois.[D]
 {end_of_bridge}
-
-{start_of_verse: Couplet 1}
-chaque génér[D/F#]ation,
-bouc[D/F#]lier,
-mains en [D/F#]l'honneur
-des cris [D/F#]de joie
-2/2
-{end_of_verse}

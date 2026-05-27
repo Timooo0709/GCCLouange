@@ -4,10 +4,6 @@
 {language: fr}
 {themes: Adoration, Croix, Sainteté}
 
-{start_of_intro: Intro}
-[G]
-{end_of_intro}
-
 {start_of_verse: Couplet}
 [G]Merci pour la [C]croix Sei[G/B]gneur,
 Merci pour le [C]prix [D]pa - [G]yé.
@@ -16,13 +12,14 @@ Tu [D]es ven[C]u m'é[Am7]tonner p[G/B]ar Ta g[D]râce.
 [G/B]Merci pour l'[C]amour Sei[G/B]gneur,
 Merci pour Tes [C]mains [D]per[G]cées.
 Tu m'as lavé [D]dans Ton f[Em]leuve,
-Et [D]j'ai compr[C]is Ton par[Am7]don et T[G/B]on amo[D4]ur.[D]
+Et [D]j'ai compr[C]is Ton par[Am7]don et T[G/B]on amo[D4]ur.[ ][D]
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-[G]Digne est l'Agn[D/F#]eau [Am7]assis s[G/B]ur le t[C]rône,
-[D]Couronn[D/C]é de mi[G/B]lle couro[C]nnes, Tu [Am7]es vict[G]orie[D]ux.
+[G]Digne est l'Agn[D/F#]eau [ ][Am7]assis s[G/B]ur le t[C]rône,
+[D]Couron[D/C]né de mi[G/B]lle couro[C]nnes, Tu [Am7]es vict[G]orie[D]ux.
 [G]Saint et élev[D/F#]é, [Am7]Jésus Fi[G/B]ls de Di[C]eu,
-Le [D]trésor des C[D/C]ieux fut c[G/B]ruci - f[C]ié,[D4]
-Digne est l'[Am7]Agneau, [C]digne est [G/B]l'[Am7]Agneau.[D][G/B]
+Le [D]trésor des C[D/C]ieux fut c[G/B]ruci - f[C]ié,[ ][D4]
+Digne est l'[Am7]Agneau[G/B], 
+[C]digne est l'[Am7]Agneau.[G/B][ ][D]
 {end_of_chorus}

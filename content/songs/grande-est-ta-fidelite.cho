@@ -1,48 +1,41 @@
 {title: Grande est Ta fidélité}
 {tempo: 149}
+{artist: Hillsong}
+{key: A}
 {language: fr}
 {themes: Adoration, Foi, Espérance}
 
 {start_of_verse: Couplet 1}
-[F#m]Dès le matin
-[D]Jusqu'à la fin
-[A]Ton grand amour est i[E]nfaillible
-[F#m]Quand tout est sombre
-[D]La tempête gronde
-[A]Seigneur Tu demeures [E]inchangeable
+[F#m] Dès le matin, [D] Jusqu'à la fin,
+[A] Ton grand amour [E]est infaillible
+[F#m] Quand tout est sombre, [D] La tempête gronde
+[A] Seigneur Tu de[E]meures inchangeable
 {end_of_verse}
 
 {start_of_prechorus: Pré-Refrain}
-[D]Et à chaque h[E]eure
-Je [F#m]redirai
-M[D]on espoir est J[E]ésus
+[D] Et à chaque heure, [E]Je [F#m]redirai :
+[D] Mon espoir est J[E]ésus
 {end_of_prechorus}
 
 {start_of_chorus: Refrain}
-[A]Grande est Ta fi[E]délité
-[F#m]Grande est Ta fi[D]délité
-[A]Je lève les ye[E]ux
+[A] Grande est Ta fi[E]délité
+[F#m] Grande est Ta fi[D]délité
+[A] Je lève les ye[E]ux
 Je redis [F#m]grande est Ta f[E]idélité
-Traducteurs
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-Dans la bataille
-Je ne crains rien
-Car Tes promesses sont certaines
-Mon assurance
-Et ma confiance
-Sont en Christ seul
-Mon refuge
+[F#m] Dans la bataille, [D] Je ne crains rien
+[A] Car Tes promesses [E] sont certaines
+[F#m] Mon assurance, [D] Et ma confiance
+[A] Sont en Christ seul, [E] mon refuge
 {end_of_verse}
 
 {start_of_bridge: Pont}
-[A]Il y a un temps pour
-[E]La joie et les larmes
-[F#m]En toutes choses notre [D]Dieu est fidèle
-[A]Ses bras sont ouverts
-[E]Je viens en courant
-[F#m]À jamais notre D[D]ieu est fidèle
-Titre original : Faithfulness
-: Jonathan Mercier et Ruth Jornod
+[A] Il y a un temps pour
+[E] La joie et les larmes
+[F#m] En toutes choses notre [D]Dieu est fidèle
+[A] Ses bras sont ouverts
+[E] Je viens en courant
+[F#m] À jamais notre D[D]ieu est fidèle
 {end_of_bridge}

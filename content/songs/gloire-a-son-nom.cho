@@ -1,34 +1,32 @@
 {title: Gloire à Son Nom}
 {artist: Hillsong}
-{key: G}
+{key: C}
 {language: fr}
 {themes: Adoration, Croix, Résurrection}
 
 {start_of_intro: Intro}
-[C]
-[C]  [Em]  [F]  [C]  [Em]  [F]
+[C][ ][Em][ ][F][ ][C][ ][Em][ ][F]
 {end_of_intro}
 
 {start_of_verse: Couplet 1}
 Quand je [C]songe à l'infâme croix,
 Où Jésus [G]fut meurtri p[Am]our moi.
 Je vois Ses [F]mains, Ses pieds p[C/E]ercés,
-Mon Sauv[G]eur au bois a[C]ttaché.[F][Em]
+Mon Sauv[G]eur au bois a[C]ttaché.[Em][ ][F]
 {end_of_verse}
 
 {start_of_verse: Couplet 2}
 Son corps l[C]ié, de larmes trempé,
 Dans le tom[G]beau fut dé[Am]posé.
 L'entrée sce[F]llée d'une lourd[C/E]e pierre,
-Le Messi[G]e seul et déla[C]issé.[F][Em]
+Le Messi[G]e seul et déla[C]issé.[Em][ ][F]
 {end_of_verse}
 
 {start_of_chorus: Refrain}
 Ô [C]gloire au Nom de no[F]tre Sei[C]gneur,
 Gloire [Am]à Son Nom à [Gsus4]tout ja[G]mais.
 Nous [C/E]chanterons sans fin [F]Tes lou[Am]anges,
-F Gsus4 G C (Em F)
-Ô gloire à Toi ô Dieu.
+Ô [F]gloire à [Gsus4]Toi [G]ô [ ][C]Dieu. [ ][(Em F)]
 {end_of_chorus}
 
 {start_of_verse: Couplet 3}

@@ -5,46 +5,48 @@
 {themes: Adoration, Grâce, Foi}
 
 {start_of_intro: Intro}
-[Bm7]  [Asus]  [G]  [D]
+[Bm7][ ][Asus][ ][G][ ][D]
 {end_of_intro}
 
 {start_of_intro: Intro}
-[Bm7]Rien ne pour [Asus4]ra changer, Ton a [G]mour pour [D]moi
-Tu m’as toujours aimé [Bm7], [Asus4]sans relâche (et) Ton amour n’a [G]bandonne [D5]pas
+[Bm7]Rien ne pour[Asus4]ra changer, Ton a[G]mour pour [D]moi
+Tu m’as toujours aimé [Bm7], [Asus4]sans relâche 
+(et) Ton amour n’a [G]bandonne [D5]pas
 Bien [Asus4]que je sois [Bm7]imparfait, Tu es [Em7]fier de [D5]moi
-[Bm7]Rien ne pourra chan [Asus4]ger, Ton a [G]mour pour [D]moi
-[Bm7]Aucun [Asus4]e tempête, ne m’a [G]rrête [D]ra
-Au milieu des ven [Bm7]ts, Je re [Asus4]connais le son de Ta voix m’a [G]ppeller à [D5]Toi
-Tu [Asus4]traverse [Bm7]rais les mers, si [Em7]je me noy [D5]ais
-[Bm7]Rien ne t’em [Asus4]pêchera de me [G]proté [D]ger
-[Asus4]Ji [Bm7]reh, je n’ai que toi[D][Gmaj7]
-[Asus4]Ji [Bm7]reh, je n’ai que toi[D][Gmaj7]
-En [Asus4]toute circon [Bm7]stance, je [Em7]serai com [D]blé
-[Asus4]Ji [Bm7]reh, je n’ai que toi[D][Gmaj7]
-[Asus4]
+[Bm7]Rien ne pourra chan[Asus4]ger, 
+Ton a[G]mour pour [D]moi
+[Bm7]Aucune [Asus4]tempête, ne m’a[G]rrête[D]ra
+Au milieu des ven[Bm7]ts, Je re[Asus4]connais le son de Ta voix m’a[G]ppeller à [D5]Toi
+Tu [Asus4]traverse [Bm7]rais les mers, si [Em7]je me noy[D5]ais
+[Bm7]Rien ne t’em [Asus4]pêchera de me [G]proté[D]ger
+[Asus4]Ji [Bm7]reh, je n’ai que toi[Gmaj7][D]
+[Asus4]Ji [Bm7]reh, je n’ai que toi[Gmaj7][D]
+En [Asus4]toute circon[Bm7]stance, je [Em7]serai com[D]blé
+[Asus4]Ji [Bm7]reh, je n’ai que toi[Gmaj7][D]
 {end_of_intro}
 
-{start_of_intro: Interlude}
+{start_of_verse}
+Je n’ai que Toi[Asus4]
 Je n’ai que [Bm7]Toi
 Je n’ai que [Gmaj7]Toi[D]
 Je n’ai que Toi[Asus4]
 Je n’ai que [Bm7]Toi
 Je n’ai que [Gmaj7]Toi[D]
 [Bm7]Je n’oublierai [Asus4]jamais, ce que [G]Tu as [D]fait
-Maintenant je vois [Bm7], [Asus4]du sommet des monts ce dont tu [G]m’as sau [D/F#]vé
-Et [A]même dans la va [Bm7]llée, Tu es [Gmaj7]avec [D/F#]moi
-[Bm7]Je n’oublie [A]rai jamais, ce que [Em7]Tu as [D]fait
+Maintenant je vois [Bm7], [Asus4]du sommet des monts ce dont tu [G]m’as sau[D/F#]vé
+Et [A]même dans la va[Bm7]llée, Tu es [Gmaj7]avec [D/F#]moi
+[Bm7]Je n’oublie[A]rai jamais, ce que [Em7]Tu as [D]fait
 [A]Ji [Bm7]reh, je n’ai que toi[D/F#][Gmaj7]
 [A]Ji [Bm7]reh, je n’ai que toi[D/F#][Gmaj7]
-{end_of_intro}
-
-{start_of_verse: Couplet 1}
-En [A]toute circon [Bm7]stance, je [Em7]serai com [D]blé
-[A]Ji [Bm7]reh, je n’ai que toi[D/F#][G]
-[Asus4]
 {end_of_verse}
 
-{start_of_intro: Interlude}
+{start_of_verse: Couplet 1}
+En [A]toute circon[Bm7]stance, je [Em7]serai com[D]blé
+[A]Ji [Bm7]reh, je n’ai que toi[D/F#][G]
+{end_of_verse}
+
+{start_of_verse: Interlude}
+Je n’ai que Toi[Asus4]
 Je n’ai que [Bm7]Toi
 Je n’ai que [Gmaj7]Toi[D/F#]
 Je n’ai que Toi[Asus4]
@@ -65,13 +67,12 @@ vamp 1 [A]Je n’ai [Bm]que Toi
 [G]Il n’y a [D/F#]que Toi
 [A]Ji [Bm7]reh, je n’ai que toi[D/F#][Gmaj7]
 [A]Ji [Bm7]reh, je n’ai que toi[D/F#][Gmaj7]
-En [A]toute circon [Bm7]stance, je [Em7]serai com [D]blé
+En [A]toute circon[Bm7]stance, je [Em7]serai com[D]blé
 [A]Ji [Bm7]reh, je n’ai que toi[D/F#][Gmaj7]
-2 Jireh
-{end_of_intro}
+{end_of_verse}
 
 {start_of_verse: Couplet 1}
-vamp 2 [G]Et si [D/F#]Dieu revêt ainsi[G]
+[G]Et si [D/F#]Dieu revêt ainsi[G]
 [D/F#]Même l’herbe des champs
 [G]Je ne [D/F#]manquerai de rien
 [G]Je ne [D/F#]manquerai de rien
@@ -79,9 +80,8 @@ vamp 2 [G]Et si [D/F#]Dieu revêt ainsi[G]
 [D/F#]Les oiseaux du ciel
 [G]Je ne [D/F#]manquerai de rien
 [G]Je ne [D/F#]manquerai de rien
-vamp 3 Au-delà de tous [A]mes rêves et [Bm7]mes pensées
+Au-delà de tous [A]mes rêves et [Bm7]mes pensées
 [G]Par Ta main [D/F#]puissante
 Tu agis en [A]moi[Bm7]
 Je ne veux que [G]Toi[D/F#]
-Jireh 3
 {end_of_verse}

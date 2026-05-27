@@ -1,6 +1,6 @@
 {title: Inattendu}
 {artist: Maxime Jean-Louis, Raphaëlle Pierre & Tendry Rajaonson}
-{key: G}
+{key: D}
 {tempo: 70}
 {language: fr}
 {themes: Foi, Espérance}
@@ -31,21 +31,16 @@ Si Tu es le D[G]ieu de l’inattendu
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-Je me tiens là où Tes promesses prennent
-vie
-Ta paix règne ici comme en territoire
-conquis
-Tes plan parfaits ne laissent aucune place au
-hasard
-Et je sais qu’aucun miracle n’arrive jamais
-en retard
+Je me tiens là où Tes promesses prennent vie
+Ta paix règne ici comme en territoire conquis
+Tes plan parfaits ne laissent aucune place au hasard
+Et je sais qu’aucun miracle n’arrive jamais en retard
 {end_of_verse}
 
 {start_of_prechorus: Pré-Refrain 2}
 Je sais que Ton Esprit vit en moi
 Guidant chacun des pas
 Sur le chemin qui m’amène à Toi
-: TBC
 {end_of_prechorus}
 
 {start_of_bridge: Pont}
@@ -56,7 +51,9 @@ Dans le bonh[G]eur, les larmes, le meilleur et le
 pir[Bm]e
 Je Te loue[D]rai
 Je Te loue[A]rai
-FIN
+{end_of_bridge}
+
+{start_of_final: Final}
 Je ne cr[Bm]aindrai pas l’inconnu
 Car Tu es le D[G]ieu de l’inattendu[D]
-{end_of_bridge}
+{end_of_final}

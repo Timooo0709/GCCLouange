@@ -1,24 +1,33 @@
 {title: Je fléchis le genou}
 {artist: Nicolas Ternisien}
-{key: Em}
+{key: G}
 {language: fr}
 {themes: Adoration, Engagement}
 
 {start_of_intro: Intro}
-[Em]  [D]  [C]  [Em]  [D]  [C]
+[Em][ ][D][ ][C][ ][Em][ ][D][ ][C]
+{end_of_intro}
+
+{start_of_verse: Couplet 1}
 Je fléchis le ge[Em]nou d[D]evant toi[C]
 Et je veux que tu [Em]règn[D]es sur moi.[C]
 Je te donne ma [Em]vie e[D]t mes droits.[C]
 Viens, Jésus, sois mon [Em]maître e[D]t mon roi.[D]
+{end_of_verse}
+
+{start_of_verse: Couplet 2}
 Je ne veux pas ca[Em]cher mo[D]n péché,[C]
 Je ne veux pas trom[Em]per t[D]a bonté.[C]
 Je n’ai qu’un seul dés[Em]ir, qu’u[D]n seul souh[C]ait,
 Celui de te ser[Em]vir, de t[D]’adorer.[D]
+{end_of_verse}
+
+{start_of_chorus: Refrain}
 Et j’abandon[G]ne entre tes mai[D]ns
 Ma person[Am]ne, je ne suis ri[Em]en.[D]
 Et je soumet[G]s ma volonté[D]
 À ta divi [D]ne [Em][Am]royauté.[C][D][Em][G][C/G][G]
-{end_of_intro}
+{end_of_chorus}
 
 {start_of_final: Final}
 [Em]Je fléch[D]is le geno[C]u,

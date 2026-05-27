@@ -4,10 +4,6 @@
 {language: fr}
 {themes: Foi, Espérance, Adoration}
 
-{start_of_intro: Intro}
-[C]
-{end_of_intro}
-
 {start_of_verse: Couplet 1}
 [Am]Il y a une grâce quand mon [F]cœur traverse l[C]e feu.
 [Am]Une autre voie quand tout [F]sombre autour de mo[C]i.
@@ -25,7 +21,7 @@ Et s'il m'arrive un jour d'oub[Am]lier,
 Le [F]prix payé pour [C]moi,
 Il y a la croix qui porta [Am]le poids
 D'un Sau[F]veur mort à ma [C]place.
-Oui Il est avec moi dans [Am]le feu.[C][F][Am][C][F]
+Oui Il est avec moi dans [Am]le feu.[F][ ][C][ ][Am][ ][F][ ][C]
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}

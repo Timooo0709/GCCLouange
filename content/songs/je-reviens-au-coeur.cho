@@ -4,10 +4,6 @@
 {language: fr}
 {themes: Adoration, Sainteté}
 
-{start_of_intro: Intro}
-[Eb]
-{end_of_intro}
-
 {start_of_verse: Couplet 1}
 [Eb]Le chant termin[Bb/D]é, le rideau retom[Fm7]be.
 Je viens simplem[Bbsus4]ent
@@ -17,16 +13,16 @@ De réjouir Ton c[Bbsus4]œur.[Bb]
 
 {start_of_prechorus: Pré-Refrain}
 [Fm7]J'apporte [Eb/G]plus qu'un beau ch[Bbsus4]ant, chanter ne suffit pas
-[Fm7]Pour répondre [Eb/G]à Ton appel[Bbsus4].[Bbsus4][Eb9]
+[Fm7]Pour répondre [Eb/G]à Ton appel[Bbsus4].[Eb9][ ][Bbsus4]
 [Fm7]Les appa[Eb/G]rences sont trompeu[Bbsus4]ses, Tu vois bien au delà ;
 [Fm7]Ô Dieu, Tu [Eb/G]sondes mon cœur[Bbsus4].[Bb]
 {end_of_prechorus}
 
 {start_of_chorus: Refrain}
 [Eb]Je reviens au cœur de l[Bb/D]a louange,
-Tout est [Fm7]centré sur Toi, [Ab]centré sur Toi[Bbsus4], Jésus.
+Tout est [Fm7]centré sur Toi, [Ab]centré sur Toi, [Bbsus4]Jésus.
 [Eb]Oui, je renonce à tous m[Bb/D]es faux semblants
-Pour tout [Fm7]centrer sur Toi, [Ab]centrer sur Toi, Jésus.[Eb]
+Pour tout [Fm7]centrer sur Toi, [Ab]centrer sur Toi, [Bb7sus4]Jésus.[Eb]
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}

@@ -4,18 +4,14 @@
 {language: fr}
 {themes: Sainteté, Adoration, Repentance}
 
-{start_of_intro: Intro}
-[G]
-{end_of_intro}
-
 {start_of_verse: Couplet 1}
-[G]Incline nos cœurs,[D]fléchis nos genoux,
-[C2]Ô Saint-Esprit rends-nous humb[G]les.
+[G] Incline nos cœurs, [D]fléchis nos genoux,
+[C2] Ô Saint-Esprit rends-nous humb[G]les.
 {end_of_verse}
 
 {start_of_verse: Couplet 2}
-[G]Tourne nos regards[D]des choses mauvaises,
-[C2]Nous renversons toutes nos idoles.
+[G] Tourne nos regards [D]des choses mauvaises,
+[C2] Nous renversons toutes nos idoles.
 {end_of_verse}
 
 {start_of_chorus: Refrain}
