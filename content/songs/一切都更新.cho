@@ -6,26 +6,42 @@
 {language: zh}
 {themes: 信心, 赞美, 更新}
 
-{start_of_verse: 主歌/Couplet}
-[C]喔主，你赐我新[Cmaj7]生命，拥有全新盼望，   ō zhǔ nǐ cì wǒ xīn shēng mìng yōng yǒu quán xīn pàn wàng
-[C]你赎回我生命，全因耶稣基督宝血，   nǐ shú huí wǒ shēng mìng quán yīn yē sū jī dū bǎo xuè
-[Am]得着完全的自[F]由，你的自由在我心，   dé zháo wán quán de zì yóu nǐ de zì yóu zài wǒ xīn
-[Am]我们来到你面[F]前，   wǒ men lái dào nǐ miàn qián
+{start_of_verse: 主歌1/Couplet1}
+喔主，[C] 祢赐我新生命，[Cmaj7] 拥有全新盼望，
+ō   zhǔ   nǐ   cì   wǒ   xīn   shēng   mìng   yōng   yǒu   quán   xīn   pàn   wǎng
+[Am7] 得着完全的自由，[F] 祢的[F]自由在我心，
+dé   zháo   wán   quán   de   zì   yóu   nǐ   de   zì   yóu   zài   wǒ   xīn
+{end_of_verse}
+
+{start_of_verse: 主歌2/Couplet2}
+喔主，[C]祢赎回我生命，[Cmaj7]全因耶稣基督宝血，
+ō   zhǔ   nǐ   shú   huí   wǒ   shēng   mìng   quán   yīn   yē   sū   jī   dū   bǎo   xuè
+[Am7] 我们来到祢面前，[F] 全[F]心来敬拜。
+wǒ   men   lái   dào   nǐ   miàn   qián   quán   xīn   lài   jìng   bài
 {end_of_verse}
 
 {start_of_prechorus: 导歌/Pré-refrain}
-[Am7]全心来敬拜，有你[Dm7]万事都可能，你荣   quán xīn lái jìng bài yǒu nǐ wàn shì dōu kě néng nǐ róng
-耀掌[G]权，我们高声[C]唱，   yào zhǎng quán wǒ men gāo shēng chàng
-全地都宣扬，[G]我们已得释[C]放，   quán dì dōu xuān yáng wǒ men yǐ dé shì fàng
+[Dm7]有祢万事[Am7]都可能，[Dm7]祢荣耀掌[G]权。
+yǒu   nǐ   wàn   shì   dōu   kě   néng   nǐ   róng   yào   zhǎng   quán
 {end_of_prechorus}
 
-{start_of_chorus: 副歌/Refrain}
-[Fmaj7]同心高举全能，君王，你荣[Am7]耀掌权，主   tóng xīn gāo jǔ quán néng jūn wáng nǐ róng yào zhǎng quán zhǔ
-[Fmaj7]不再受到捆[Am7]绑，   bù zài shòu dào kǔn bǎng
-你大能[Dm7]叫一切都更[Gsus4]新，你是一切所[Am7]需，   nǐ dà néng jiào yī qiè dōu gēng xīn nǐ shì yī qiè suǒ xū
+{start_of_chorus: 副歌1/Refrain1}
+我们高声唱，[C] 全地都宣扬，
+wǒ   men   gāo   shēng   chàng   quán   dì   dōu   xuān   yáng
+[Fmaj7] 同心高举全能[Am7] 君王，祢荣耀掌权，
+tóng   xīn   gāo   jǔ   quán   néng   jūn   wáng   nǐ   róng   yào   zhǎng   quán
+主，[Dm7]祢大能叫一[Gsus4] 切都更新。
+zhǔ   nǐ   dà   néng   jiào   yī   qiè   dōu   gēng   xīn   
+{end_of_chorus}
+
+{start_of_chorus: 副歌2/Refrain2}
+我们已得释放，[Fmaj7] 不再受到捆绑，
+wǒ   men   yǐ   dé   shì   fàng   bù   zài   shòu   dào   kǔn   bǎng
+[Am7] 祢是一切所需， 愿[Dm7]世界看见我[G]为主发光，[C]
+nǐ   shì   yī   qiè   suǒ   xū  yuàn shì   jiè   kàn   jiàn   wǒ   wèi   zhǔ   fā   guāng
 {end_of_chorus}
 
 {start_of_outro: 结尾/Outro}
-[Dm7]世界看见我[G]为主发光，愿   shì jiè kàn jiàn wǒ wèi zhǔ fā guāng yuàn
-[F]世界看见我[Em7]为主发[Dm7]光，我[Gsus4]为主发光。   shì jiè kàn jiàn wǒ wèi zhǔ fā guāng wǒ wèi zhǔ fā guāng
+愿[F]世界看见我[Em7] 为主发光，[Dm7] [Gsus4]我为主发光。[C]
+yuàn   shì   jiè   kàn   jiàn   wǒ   wèi   zhǔ   fā   guāng   wǒ   wèi   zhǔ   fā   guāng
 {end_of_outro}

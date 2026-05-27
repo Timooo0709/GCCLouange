@@ -7,16 +7,25 @@
 {themes: 奉献, 舍己, 信心}
 
 {start_of_verse: 主歌/Couplet}
-[Dm]一粒麦子，它若[Am]不落在地里死了，[Bb]不论过了多少时候，它[F]仍旧是它[C/E]自己。   yī lì mài zi tā ruò bù luò zài dì lǐ sǐ le bù lùn guò le duō shǎo shí hòu tā réng jiù shì tā zì jǐ
-[Dm]它若愿意让自己[Am]被掩埋、被用尽，就必[Bb]结出许多[F/A]子粒，[Gm7]经历生命的[C]奇迹！   tā ruò yuàn yì ràng zì jǐ bèi yǎn mái bèi yòng jìn jiù bì jié chū xǔ duō zǐ lì jīng lì shēng mìng de qí jì
+[Dm]一粒麦子，它若不[Am]落在地里死了，不论[Bb]过了多少时候，它[F]仍旧是它[C/E]自己。
+yī lì mài zi tā ruò bù luò zài dì lǐ sǐ le bù lùn guò le duō shǎo shí hòu tā réng jiù shì tā zì jǐ
+[Dm]它若愿意让自己[Am]被掩埋被用尽，就必[Bb]结出许多[F/A]子粒，经历[Gm7]生命的奇[C]迹！
+tā ruò yuàn yì ràng zì jǐ bèi yǎn mái bèi yòng jìn jiù bì jié chū xǔ duō zǐ lì jīng lì shēng mìng de qí jì
 {end_of_verse}
 
-{start_of_chorus: 副歌/Refrain}
-[F]主，我愿[C/E]意，[Dm]主，我愿[Am/C]意，[Bb]让自己[C]像种子[Am]落在地[Dm]里，[Gm7]失丧生命必反得[Csus4]生[C]命！   zhǔ wǒ yuàn yì zhǔ wǒ yuàn yì ràng zì jǐ xiàng zhǒng zi luò zài dì lǐ shī sàng shēng mìng bì fǎn dé shēng mìng
-[F]主，我愿[C/E]意，[Dm]主，我愿[Am/C]意，[Bb]放下自[C]以为[Am]应得的权[Dm]利，[Gm7]在我身上[C]成就你旨[F]意！   zhǔ wǒ vuàn vi fàng xià zì vǐ wéi vīng dé de quán lì zài wǒ shēn shàng chéng jiù nǐ zhǐ yì
+{start_of_chorus: 副歌1/Refrain1}
+[F]主，我愿[C/E]意，[Dm]主，我愿[Am/C]意，[Bb]让自己[C]像种子[Am]落在地[Dm]里，[Gm]失丧生命必反得[Csus4]生[C]命！
+zhǔ wǒ yuàn yì zhǔ wǒ yuàn yì ràng zì jǐ xiàng zhǒng zi luò zài dì lǐ shī sàng shēng mìng bì fǎn dé shēng mìng
+{end_of_chorus}
+
+{start_of_chorus: 副歌2/Refrain2}
+[F]主，我愿[C/E]意，[Dm]主，我愿[Am/C]意，[Bb]放下自[C]以为[Am]应得的[Dm]权利，[Gm]在我身上[C]成就祢旨[F]意！
+zhǔ wǒ yuàn yì zhǔ wǒ yuàn yì fàng xià zì yǐ wéi yīng dé de quán lì zài wǒ shēn shàng chéng jiù nǐ zhǐ yì
 {end_of_chorus}
 
 {start_of_bridge: 桥段/Pont}
-[Dm]呼召如此[Gm]崇高，[C]种子何等[F]渺小，   hū zhào rú cǐ chóng gāo zhǒng zi hé děng miǎo xiǎo
-[Dm]定睛标竿[Gm]直跑，[C]必见神的荣[F]耀！   dìng jīng biāo gān zhí pǎo bì jiàn shén de róng yào
+[Dm]呼召如此[Gm]崇高，[C]种子何等[F]渺小，
+hū zhào rú cǐ chóng gāo zhǒng zi hé děng miǎo xiǎo
+[Dm]定睛标竿[Gm]直跑，[C]必见神的荣耀！
+dìng jīng biāo gān zhí pǎo bì jiàn shén de róng yào
 {end_of_bridge}
