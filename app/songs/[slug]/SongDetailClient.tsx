@@ -7,7 +7,7 @@ import { CustomizePanel, type CustomizeState, type SectionItem } from "@/compone
 import { parseChordPro } from "@/lib/chordpro/parser";
 import { transposeAST } from "@/lib/transposeAST";
 import type { Song } from "@/lib/types";
-import { Settings } from "lucide-react";
+import { Eye, EyeOff, Settings } from "lucide-react";
 import { getTransposedKey } from "@/lib/transpose";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
 import { useTranslation } from "react-i18next";
@@ -169,6 +169,16 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
               ♪ Apple Music
             </a>
           )}
+          <button
+            onClick={() => setCustomize((c) => ({ ...c, showChords: !c.showChords }))}
+            className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
+            title={customize.showChords ? t("customize.panel.hideChords") : t("customize.panel.showChords")}
+          >
+            {customize.showChords ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
+            <span className="hidden sm:inline">
+              {customize.showChords ? t("customize.panel.hideChords") : t("customize.panel.showChords")}
+            </span>
+          </button>
           <button
             onClick={() => setShowPanel(true)}
             className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"

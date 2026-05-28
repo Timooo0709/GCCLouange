@@ -85,7 +85,7 @@
       "songCounter_other": "{{count}} chants"
     },
     "detail": {
-      "backToAll": "← Setlists",
+      "backToAll": "←",
       "tabList": "Liste",
       "tabCharts": "Partitions",
       "editButton": "Modifier",
@@ -148,6 +148,7 @@
       "keyShift_other": "{{count}} demi-tons",
       "display": "Affichage",
       "showChords": "Afficher les accords",
+      "hideChords": "Masquer les accords",
       "showPinyin": "Afficher le pinyin",
       "structure": "Structure",
       "jianpuStructureWarning": "La structure n'est pas modifiable en mode 简谱 — le chant s'affiche dans son intégralité.",

@@ -3,6 +3,7 @@
 import { useTranslation } from "react-i18next";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
 import { LanguageToggle } from "@/components/LanguageToggle";
+import { Music, List } from "lucide-react";
 
 interface HeaderProps {
   activeTab: "songs" | "setlists" | "none";
@@ -19,23 +20,25 @@ export function Header({ activeTab }: HeaderProps) {
       <nav className="flex gap-1">
         <a
           href="/songs"
-          className={`px-3 py-1.5 rounded text-sm font-medium transition-colors ${
+          aria-label={t("common.header.songs")}
+          className={`p-2 rounded transition-colors ${
             activeTab === "songs"
               ? "bg-muted text-foreground"
               : "text-muted-foreground hover:text-foreground hover:bg-muted"
           }`}
         >
-          {t("common.header.songs")}
+          <Music className="h-5 w-5" />
         </a>
         <a
           href="/setlists"
-          className={`px-3 py-1.5 rounded text-sm font-medium transition-colors ${
+          aria-label={t("common.header.setlists")}
+          className={`p-2 rounded transition-colors ${
             activeTab === "setlists"
               ? "bg-muted text-foreground"
               : "text-muted-foreground hover:text-foreground hover:bg-muted"
           }`}
         >
-          {t("common.header.setlists")}
+          <List className="h-5 w-5" />
         </a>
       </nav>
       <div className="ml-auto flex items-center gap-3">

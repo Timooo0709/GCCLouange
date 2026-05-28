@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
-import { Menu, X, Sun, Moon, Globe, LogIn, LogOut, Music } from "lucide-react";
+import { Menu, X, Sun, Moon, Globe, LogIn, LogOut, Music, List } from "lucide-react";
 import { useDarkMode } from "@/lib/useDarkMode";
 import { useAuth, logOut } from "@/lib/firebase/auth";
 
@@ -58,23 +58,17 @@ export function Navbar() {
           <nav className="flex items-center gap-1">
             <Link
               href="/songs"
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${
-                isActiveSongs
-                  ? "bg-primary/10 text-primary dark:bg-primary/20"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
-              }`}
+              aria-label={t("common.header.songs")}
+              className={`p-2 rounded-lg transition-all duration-200 ${isActiveSongs ? "bg-primary/10 text-primary dark:bg-primary/20" : "text-muted-foreground hover:text-foreground hover:bg-muted"}`}
             >
-              {t("common.header.songs")}
+              <Music className="h-5 w-5" />
             </Link>
             <Link
               href="/setlists"
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${
-                isActiveSetlists
-                  ? "bg-primary/10 text-primary dark:bg-primary/20"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
-              }`}
+              aria-label={t("common.header.setlists")}
+              className={`p-2 rounded-lg transition-all duration-200 ${isActiveSetlists ? "bg-primary/10 text-primary dark:bg-primary/20" : "text-muted-foreground hover:text-foreground hover:bg-muted"}`}
             >
-              {t("common.header.setlists")}
+              <List className="h-5 w-5" />
             </Link>
           </nav>
 

@@ -85,7 +85,7 @@
       "songCounter_other": "{{count}} 首诗歌"
     },
     "detail": {
-      "backToAll": "← 歌单列表",
+      "backToAll": "←",
       "tabList": "曲目列表",
       "tabCharts": "歌谱预览",
       "editButton": "编辑",
@@ -148,6 +148,7 @@
       "keyShift_other": "{{count}} 个半音",
       "display": "显示设置",
       "showChords": "显示和弦",
+      "hideChords": "隐藏和弦",
       "showPinyin": "显示拼音",
       "structure": "歌单结构",
       "jianpuStructureWarning": "简谱模式下无法修改歌谱结构 — 诗歌将完整显示。",

@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-import { Trash2, List, Music, Pencil } from "lucide-react";
+import { Trash2, List, Music, Pencil, Eye, EyeOff } from "lucide-react";
 import { getSetlist, deleteSetlist, isRestricted, type FSSetlist } from "@/lib/firebase/setlists";
 import { useAuth } from "@/lib/firebase/auth";
 import { parseChordPro, formatSectionName } from "@/lib/chordpro/parser";
@@ -101,10 +101,12 @@ function PartitionsView({
   items,
   contents,
   loading,
+  showChordsGlobal,
 }: {
   items: SetlistItem[];
   contents: Record<string, SongContent>;
   loading: boolean;
+  showChordsGlobal: boolean;
 }) {
   const { t } = useTranslation();
   if (loading) {
@@ -140,7 +142,7 @@ function PartitionsView({
             </div>
             <SongView
               ast={ast}
-              showChords={item.showChords}
+              showChords={showChordsGlobal && item.showChords}
               showPinyin={item.showPinyin}
               useJianpu={false}
               structureOverride={item.structureOverride}
@@ -176,6 +178,7 @@ export function SetlistDetailClient() {
   const [contents, setContents] = useState<Record<string, SongContent>>({});
   const [loadingSetlist, setLoadingSetlist] = useState(true);
   const [loadingContent, setLoadingContent] = useState(false);
+  const [showChords, setShowChords] = useState(true);
   const [view, setView] = useState<"liste" | "partitions">("liste");
   const [deleting, setDeleting] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
@@ -329,12 +332,18 @@ export function SetlistDetailClient() {
 
         <div className="ml-auto flex items-center gap-3">
           <DarkModeToggle />
+          <button
+            onClick={() => setShowChords((s) => !s)}
+            className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
+          >
+            {showChords ? <Eye className="h-3.5 w-3.5" /> : <EyeOff className="h-3.5 w-3.5" />}
+            <span className="hidden sm:inline">{showChords ? t("setlists.detail.hideChords") : t("setlists.detail.showChords")}</span>
+          </button>
           <Link
             href={`/setlists/${id}/edit`}
             className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
           >
             <Pencil className="h-3.5 w-3.5" />
-            {t("setlists.detail.editButton")}
           </Link>
           <button
             onClick={handleDownload}
@@ -408,6 +417,7 @@ export function SetlistDetailClient() {
             items={setlist.items}
             contents={contents}
             loading={loadingContent}
+            showChordsGlobal={showChords}
           />
         )}
       </div>
