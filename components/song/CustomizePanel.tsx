@@ -5,6 +5,7 @@ import {
   DndContext,
   closestCenter,
   PointerSensor,
+  TouchSensor,
   useSensor,
   useSensors,
   DragEndEvent,
@@ -70,7 +71,7 @@ function SortableRow({
   return (
     <div
       ref={setNodeRef}
-      style={{ transform: CSS.Transform.toString(transform), transition }}
+      style={{ transform: CSS.Transform.toString(transform), transition, touchAction: "none" }}
       className={`flex items-start gap-2 p-2 rounded border ${
         isDragging
           ? "border-primary/50 bg-primary/5 shadow-lg"
@@ -124,7 +125,17 @@ export function CustomizePanel({
   const { t } = useTranslation();
   const [instanceCounter, setInstanceCounter] = useState(100);
 
-  const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 5 } }));
+  const sensors = useSensors(
+    useSensor(TouchSensor, {
+      activationConstraint: {
+        delay: 100,
+        tolerance: 5,
+      },
+    }),
+    useSensor(PointerSensor, {
+      activationConstraint: { distance: 8 },
+    })
+  );
 
   function update(patch: Partial<CustomizeState>) {
     onChange({ ...state, ...patch });

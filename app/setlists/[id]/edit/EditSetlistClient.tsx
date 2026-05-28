@@ -98,7 +98,7 @@ function SortableSectionRow({
   return (
     <div
       ref={setNodeRef}
-      style={{ transform: CSS.Transform.toString(transform), transition }}
+      style={{ transform: CSS.Transform.toString(transform), transition, touchAction: "none"  }}
       className={`flex items-start gap-2 px-2 py-1.5 rounded border text-xs ${
         isDragging ? "border-primary/40 bg-primary/5 shadow" : "border-border bg-background"
       }`}
@@ -141,12 +141,16 @@ function SectionStructureEditor({
 }) {
   const { t } = useTranslation();
   const sensors = useSensors(
-    useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
     useSensor(TouchSensor, {
       activationConstraint: {
-        delay: 250,       // attend 250ms avant d'activer le drag
-        tolerance: 10,     // tolère 10px de mouvement pendant le délai
+        delay: 100,        // Shorter delay for better UX
+        tolerance: 5,      // Smaller tolerance (fewer accidental triggers)
       },
+    }),
+    useSensor(PointerSensor, { 
+      activationConstraint: { 
+        distance: 8,       // Slightly larger for desktop precision
+      } 
     })
   );
   function handleDragEnd(e: DragEndEvent) {
@@ -229,7 +233,7 @@ function SongRow({
   return (
     <div
       ref={setNodeRef}
-      style={{ transform: CSS.Transform.toString(transform), transition }}
+      style={{ transform: CSS.Transform.toString(transform), transition, touchAction: "none"  }}
       className={`rounded-lg border ${
         isDragging ? "border-primary/50 bg-primary/5 shadow-md" : "border-border bg-background"
       }`}
@@ -358,12 +362,16 @@ export function EditSetlistClient() {
   );
 
   const sensors = useSensors(
-    useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
     useSensor(TouchSensor, {
       activationConstraint: {
-        delay: 250,
-        tolerance: 10,
+        delay: 100,
+        tolerance: 5,
       },
+    }),
+    useSensor(PointerSensor, { 
+      activationConstraint: { 
+        distance: 8,
+      } 
     })
   );
   function addSong(song: SongIndexEntry) {

@@ -6,6 +6,7 @@ import {
   DndContext,
   closestCenter,
   PointerSensor,
+  TouchSensor,
   useSensor,
   useSensors,
   DragEndEvent,
@@ -72,7 +73,7 @@ function SortableSectionRow({
   return (
     <div
       ref={setNodeRef}
-      style={{ transform: CSS.Transform.toString(transform), transition }}
+      style={{ transform: CSS.Transform.toString(transform), transition, touchAction: "none" }}
       className={`flex items-start gap-2 px-2 py-1.5 rounded border text-xs ${
         isDragging ? "border-primary/40 bg-primary/5 shadow" : "border-border bg-background"
       }`}
@@ -118,7 +119,17 @@ function SectionStructureEditor({
   onChange: (items: FormSectionItem[]) => void;
 }) {
   const { t } = useTranslation();
-  const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 5 } }));
+  const sensors = useSensors(
+    useSensor(TouchSensor, {
+      activationConstraint: {
+        delay: 100,
+        tolerance: 5,
+      },
+    }),
+    useSensor(PointerSensor, {
+      activationConstraint: { distance: 8 },
+    })
+  );
 
   function handleDragEnd(e: DragEndEvent) {
     const { active, over } = e;
@@ -215,10 +226,11 @@ function SongRow({
   return (
     <div
       ref={setNodeRef}
-      style={{ transform: CSS.Transform.toString(transform), transition }}
+      style={{ transform: CSS.Transform.toString(transform), transition, touchAction: "none" }}
       className={`rounded-lg border ${
         isDragging ? "border-primary/50 bg-primary/5 shadow-md" : "border-border bg-background"
       }`}
+    >
     >
       {/* Ligne principale */}
       <div className="flex items-start gap-2 p-3">
@@ -340,7 +352,17 @@ export function CreateSetlistClient() {
     [query, fuse, availableSongs]
   );
 
-  const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 5 } }));
+  const sensors = useSensors(
+    useSensor(TouchSensor, {
+      activationConstraint: {
+        delay: 100,
+        tolerance: 5,
+      },
+    }),
+    useSensor(PointerSensor, {
+      activationConstraint: { distance: 8 },
+    })
+  );
 
   function addSong(song: SongIndexEntry) {
     setItems((prev) => [
