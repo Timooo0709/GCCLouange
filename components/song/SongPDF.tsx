@@ -35,24 +35,24 @@ const s = StyleSheet.create({
   page:         { paddingTop: 40, paddingBottom: 50, paddingHorizontal: 52, backgroundColor: "#fff" },
   // header
   header:       { marginBottom: 12, paddingBottom: 9, borderBottomWidth: 0.5, borderBottomColor: LGRAY },
-  title:        { fontSize: 18, fontWeight: 700, color: BLACK, marginBottom: 2, fontFamily: "NotoSans" },
-  titlePinyin:  { fontSize: 9,  color: GRAY, marginBottom: 2, fontFamily: "NotoSans" },
+  title:        { fontSize: 24, fontWeight: 700, color: BLACK, marginBottom: 2, fontFamily: "NotoSans" },
+  titlePinyin:  { fontSize: 15,  color: GRAY, marginBottom: 2, fontFamily: "NotoSans" },
   metaRow:      { flexDirection: "row", gap: 12 },
-  metaChip:     { fontSize: 9, color: GRAY, fontFamily: "NotoSans" },
-  keyChip:      { fontSize: 9, color: BLACK, fontFamily: "NotoSans", fontWeight: 700 },
+  metaChip:     { fontSize: 15, color: GRAY, fontFamily: "NotoSans" },
+  keyChip:      { fontSize: 15, color: BLACK, fontFamily: "NotoSans", fontWeight: 700 },
   // section
-  section:      { marginBottom: 12 },
-  sectionLabel: { fontSize: 7, fontWeight: 700, color: ORANGE, letterSpacing: 1.2,
+  section:      { marginBottom: 6 },
+  sectionLabel: { fontSize: 13, fontWeight: 700, color: ORANGE, letterSpacing: 1.2,
                   textTransform: "uppercase", marginBottom: 4, fontFamily: "NotoSans" },
-  sectionNote:  { fontSize: 7, color: GRAY, fontFamily: "NotoSans", marginBottom: 4 },
+  sectionNote:  { fontSize: 13, color: GRAY, fontFamily: "NotoSans", marginBottom: 4 },
   // lines
-  line:         { flexDirection: "row", flexWrap: "wrap", alignItems: "flex-end", marginBottom: 1 },
+  line:         { flexDirection: "row", flexWrap: "wrap", alignItems: "flex-end", marginBottom: 1,paddingTop: 0.5,paddingBottom: 0.5 },
   seg:          { flexDirection: "column" },
-  chordText:    { fontSize: 8, color: BLUE, fontWeight: 700, fontFamily: "NotoSans", minHeight: 11 },
-  lyricFr:      { fontSize: 10.5, color: BLACK, fontFamily: "NotoSans" },
-  lyricZh:      { fontSize: 11,   color: BLACK, fontFamily: "NotoSansSC" },
-  jianpuText:   { fontSize: 9,    color: RED,   fontFamily: "NotoSans", fontWeight: 700 },
-  pinyinText:   { fontSize: 6.5,  color: GRAY,  fontFamily: "NotoSans", marginTop: 0.5 },
+  chordText:    { fontSize: 14, color: BLUE, fontWeight: 700, fontFamily: "NotoSans", minHeight: 8,lineHeight: 1,paddingBottom: 1 },
+  lyricFr:      { fontSize: 14.5, color: BLACK, fontFamily: "NotoSans" },
+  lyricZh:      { fontSize: 15,   color: BLACK, fontFamily: "NotoSansSC" },
+  jianpuText:   { fontSize: 15,    color: RED,   fontFamily: "NotoSans", fontWeight: 700 },
+  pinyinText:   { fontSize: 11.5,  color: GRAY,  fontFamily: "NotoSans", marginTop: 0.5 },
   spacer:       { height: 4 },
   // footer
   footer:       { position: "absolute", bottom: 20, left: 52, right: 52,
@@ -65,22 +65,43 @@ const s = StyleSheet.create({
 type Seg = { chord: string | null; lyric: string };
 
 function toSegments(tokens: Token[]): Seg[] {
-  const out: Seg[] = [];
+  const segments: Seg[] = [];
   let i = 0;
+
   while (i < tokens.length) {
-    const tok = tokens[i];
-    if (tok.type === "chord") {
+    const token = tokens[i];
+
+    if (token.type === "chord") {
+      const chord = token.value;
       let lyric = "";
       i++;
       while (i < tokens.length && tokens[i].type === "lyric") {
-        lyric += tokens[i].value; i++;
+        lyric += tokens[i].value;
+        i++;
       }
-      out.push({ chord: tok.value, lyric });
+
+      const spaceIdx = lyric.search(/\s/);
+      if (spaceIdx === -1 || spaceIdx === lyric.length - 1) {
+        segments.push({ chord, lyric });
+      } else {
+        const firstWord = lyric.slice(0, spaceIdx + 1);
+        const rest = lyric.slice(spaceIdx + 1);
+        segments.push({ chord, lyric: firstWord });
+        const words = rest.split(/(?<=\s)/);
+        for (const word of words) {
+          if (word) segments.push({ chord: null, lyric: word });
+        }
+      }
     } else {
-      out.push({ chord: null, lyric: tok.value }); i++;
+      const words = token.value.split(/(?<=\s)/);
+      for (const word of words) {
+        if (word) segments.push({ chord: null, lyric: word });
+      }
+      i++;
     }
   }
-  return out;
+
+  return segments;
 }
 
 function isCJK(ch: string) {
