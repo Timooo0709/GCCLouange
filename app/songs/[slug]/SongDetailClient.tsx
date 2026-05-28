@@ -11,6 +11,8 @@ import { Eye, EyeOff, Settings } from "lucide-react";
 import { getTransposedKey } from "@/lib/transpose";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
 import { useTranslation } from "react-i18next";
+import { pdf } from "@react-pdf/renderer";
+import { SongPDF } from "@/components/song/SongPDF";
 
 function extractYouTubeId(url: string): string | null {
   const m = url.match(/(?:youtu\.be\/|[?&]v=)([A-Za-z0-9_-]{11})/);
@@ -84,8 +86,6 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
   async function handleDownload() {
     setDownloading(true);
     try {
-      const { pdf } = await import("@react-pdf/renderer");
-      const { SongPDF } = await import("@/components/song/SongPDF");
       const blob = await pdf(
         <SongPDF
           ast={displayedAST}

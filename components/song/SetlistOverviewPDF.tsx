@@ -17,7 +17,10 @@ Font.register({
   family: "NotoSansSC",
   fonts: [{ src: "/fonts/NotoSansSC-Regular.ttf", fontWeight: 400 }],
 });
-
+Font.register({
+  family: "KaiTi",
+  fonts: [{ src: "/fonts/KaiTi.ttf", fontWeight: 400 }],
+});
 const ORANGE = "#EA580C";
 const BLUE   = "#2563EB";
 const GRAY   = "#6b7280";

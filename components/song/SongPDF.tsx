@@ -21,6 +21,12 @@ Font.register({
     { src: "/fonts/NotoSansSC-Regular.ttf", fontWeight: 400 },
   ],
 });
+Font.register({
+  family: "KaiTi",
+  fonts: [
+    { src: "/fonts/KaiTi.ttf", fontWeight: 400 },
+  ],
+});
 
 // ─── Styles ───────────────────────────────────────────────────────────────────
 
@@ -35,7 +41,7 @@ const s = StyleSheet.create({
   page:         { paddingTop: 40, paddingBottom: 50, paddingHorizontal: 52, backgroundColor: "#fff" },
   // header
   header:       { marginBottom: 12, paddingBottom: 9, borderBottomWidth: 0.5, borderBottomColor: LGRAY },
-  title:        { fontSize: 24, fontWeight: 700, color: BLACK, marginBottom: 2, fontFamily: "NotoSansSC" },
+  title:        { fontSize: 24, fontWeight: 700, color: BLACK, marginBottom: 2, fontFamily: "KaiTi" },
   titlePinyin:  { fontSize: 15,  color: GRAY, marginBottom: 2, fontFamily: "NotoSans" },
   metaRow:      { flexDirection: "row", gap: 12 },
   metaChip:     { fontSize: 15, color: GRAY, fontFamily: "NotoSansSC" },
@@ -50,9 +56,9 @@ const s = StyleSheet.create({
   seg:          { flexDirection: "column" },
   chordText:    { fontSize: 14, color: BLUE, fontWeight: 700, fontFamily: "NotoSans", minHeight: 8,lineHeight: 1,paddingBottom: 1 },
   lyricFr:      { fontSize: 14.5, color: BLACK, fontFamily: "NotoSans" },
-  lyricZh:      { fontSize: 12,   color: BLACK, fontFamily: "NotoSansSC" },
+  lyricZh:      { fontSize: 14,   color: BLACK, fontFamily: "KaiTi" },
   jianpuText:   { fontSize: 15,    color: RED,   fontFamily: "NotoSans", fontWeight: 700 },
-  pinyinText:   { fontSize: 6,  color: GRAY,  fontFamily: "NotoSans", marginTop: 0.5 },
+  pinyinText:   { fontSize: 7,  color: GRAY,  fontFamily: "NotoSans", marginTop: 0.5 },
   spacer:       { height: 4 },  
   // footer
   footer:       { position: "absolute", bottom: 20, left: 52, right: 52,

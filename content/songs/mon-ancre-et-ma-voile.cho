@@ -4,10 +4,6 @@
 {language: fr}
 {themes: Foi, Espérance}
 
-{start_of_intro: Intro}
-[D]
-{end_of_intro}
-
 {start_of_verse: Couplet 1}
 Dieu, Tu [D]es ma [A/C#]force, ma con[G/B]sola - [D/A]tion,
 Une [G]lampe de[D/F#]vant mes[Asus4]pas.[A]
@@ -16,14 +12,14 @@ Remp[Em7]orté [Asus4]le [A]comb[D]at.
 {end_of_verse}
 
 {start_of_chorus: Refrain}
-Tu [Bm]m'offres chaque [F#m]jour Ton [G]infaillible a[Asus4]mour.[A]
+Tu [Bm]m'offres chaque [F#m]jour Ton [G]infaillible a[Asus4]mour.[ ][A]
 Toi qui [D/F#]as fixé [G]le cours [A]des é[Bm]toiles,
 Sois mon [G]ancre, [G/A]sois ma [D]voile.
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
 Tu é[D]tends mes [A/C#]ailes pour tou[G/B]cher les [D/A]Cieux,
-Pro[G]tégé [D/F#]par Ta [Asus4]main.[A]
+Pro[G]tégé [D/F#]par Ta [Asus4]main.[ ][A]
 Ta [D]grâce m'a[A/C#]ppelle à le[G/B]ver les [D/A]yeux
 Et [Em7]suivre [Asus4]Ton [A]che[D]min.
 {end_of_verse}
