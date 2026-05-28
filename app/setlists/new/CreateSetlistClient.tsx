@@ -231,7 +231,7 @@ function SongRow({
         isDragging ? "border-primary/50 bg-primary/5 shadow-md" : "border-border bg-background"
       }`}
     >
-    >
+    
       {/* Ligne principale */}
       <div className="flex items-start gap-2 p-3">
         <button
