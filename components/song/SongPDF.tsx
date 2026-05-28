@@ -35,11 +35,11 @@ const s = StyleSheet.create({
   page:         { paddingTop: 40, paddingBottom: 50, paddingHorizontal: 52, backgroundColor: "#fff" },
   // header
   header:       { marginBottom: 12, paddingBottom: 9, borderBottomWidth: 0.5, borderBottomColor: LGRAY },
-  title:        { fontSize: 24, fontWeight: 700, color: BLACK, marginBottom: 2, fontFamily: "NotoSans" },
+  title:        { fontSize: 24, fontWeight: 700, color: BLACK, marginBottom: 2, fontFamily: "NotoSansSC" },
   titlePinyin:  { fontSize: 15,  color: GRAY, marginBottom: 2, fontFamily: "NotoSans" },
   metaRow:      { flexDirection: "row", gap: 12 },
-  metaChip:     { fontSize: 15, color: GRAY, fontFamily: "NotoSans" },
-  keyChip:      { fontSize: 15, color: BLACK, fontFamily: "NotoSans", fontWeight: 700 },
+  metaChip:     { fontSize: 15, color: GRAY, fontFamily: "NotoSansSC" },
+  keyChip:      { fontSize: 15, color: BLACK, fontFamily: "NotoSansSC", fontWeight: 700 },
   // section
   section:      { marginBottom: 6 },
   sectionLabel: { fontSize: 13, fontWeight: 700, color: ORANGE, letterSpacing: 1.2,
@@ -50,10 +50,10 @@ const s = StyleSheet.create({
   seg:          { flexDirection: "column" },
   chordText:    { fontSize: 14, color: BLUE, fontWeight: 700, fontFamily: "NotoSans", minHeight: 8,lineHeight: 1,paddingBottom: 1 },
   lyricFr:      { fontSize: 14.5, color: BLACK, fontFamily: "NotoSans" },
-  lyricZh:      { fontSize: 15,   color: BLACK, fontFamily: "NotoSansSC" },
+  lyricZh:      { fontSize: 12,   color: BLACK, fontFamily: "NotoSansSC" },
   jianpuText:   { fontSize: 15,    color: RED,   fontFamily: "NotoSans", fontWeight: 700 },
-  pinyinText:   { fontSize: 11.5,  color: GRAY,  fontFamily: "NotoSans", marginTop: 0.5 },
-  spacer:       { height: 4 },
+  pinyinText:   { fontSize: 6,  color: GRAY,  fontFamily: "NotoSans", marginTop: 0.5 },
+  spacer:       { height: 4 },  
   // footer
   footer:       { position: "absolute", bottom: 20, left: 52, right: 52,
                   flexDirection: "row", justifyContent: "space-between" },
