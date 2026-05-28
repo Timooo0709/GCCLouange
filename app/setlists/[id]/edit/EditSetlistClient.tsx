@@ -6,6 +6,7 @@ import {
   DndContext,
   closestCenter,
   PointerSensor,
+  TouchSensor,
   useSensor,
   useSensors,
   DragEndEvent,
@@ -139,8 +140,15 @@ function SectionStructureEditor({
   onChange: (items: FormSectionItem[]) => void;
 }) {
   const { t } = useTranslation();
-  const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 5 } }));
-
+  const sensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
+    useSensor(TouchSensor, {
+      activationConstraint: {
+        delay: 250,       // attend 250ms avant d'activer le drag
+        tolerance: 10,     // tolère 10px de mouvement pendant le délai
+      },
+    })
+  );
   function handleDragEnd(e: DragEndEvent) {
     const { active, over } = e;
     if (!over || active.id === over.id) return;
@@ -349,8 +357,15 @@ export function EditSetlistClient() {
     [query, fuse, availableSongs]
   );
 
-  const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 5 } }));
-
+  const sensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
+    useSensor(TouchSensor, {
+      activationConstraint: {
+        delay: 250,
+        tolerance: 10,
+      },
+    })
+  );
   function addSong(song: SongIndexEntry) {
     setItems((prev) => [
       ...prev,
