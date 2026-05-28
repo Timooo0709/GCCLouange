@@ -1,4 +1,4 @@
-{title: Là pour Toi (Agis parmi nous)}
+{title: Là pour Toi}
 {artist: Maxime Jean-Louis & Tendry Rajaonson}
 {key: B}
 {tempo: 145}
@@ -6,7 +6,7 @@
 {themes: Adoration, Engagement, Saint-Esprit}
 
 {start_of_intro: Intro}
-[B]  [G#m]  [F#]  [E]
+[B][ ][G#m][ ][F#][ ][E]
 {end_of_intro}
 
 {start_of_verse: Couplet 1}
@@ -29,7 +29,7 @@ Nous Te laissons la place
 {end_of_chorus}
 
 {start_of_intro: Intro}
-[B]  [G#m]  [F#]  [E]
+[B][ ][G#m][ ][F#][ ][E]
 {end_of_intro}
 
 {start_of_verse: Couplet 2}
@@ -40,8 +40,6 @@ Que rien ne T’est impossible
 Comme dans la chambre haute
 Remplis-nous à nouveau
 Tu es notre seul désir
-INSTRUMENTAL 2 x2
-[E]  [B/D#]  [G#m]  [F#]
 {end_of_verse}
 
 {start_of_bridge: Pont 1}
@@ -56,8 +54,7 @@ Que la gloire Te r[E]ev[B/D#]ienne
 Que la gloire Te re[G#m]vienne[F#]
 Que la gloire Te re[E]vi[B/D#]enne
 Que la gloire Te re[G#m]vienne[F#]
-INSTRUMENTAL 3
-[E]  [G#m]  [F#]  [C#m]
+
 {end_of_verse}
 
 {start_of_bridge: Pont 2}

@@ -115,23 +115,36 @@ function isCJK(ch: string) {
 
 function FrLine({ tokens, showChords }: { tokens: Token[]; showChords: boolean }) {
   const segs = toSegments(tokens);
-  const hasChords = showChords && segs.some((g) => g.chord !== null);
+  const hasAnyChord = showChords && segs.some((g) => g.chord !== null);
+
+  // Ligne vide (que des lyrics vides) → hauteur zéro comme le web
+  const allEmpty = segs.every(s => !s.lyric?.trim());
 
   return (
-    <View style={s.line}>
+    <View style={[s.line, allEmpty ? { paddingTop: 0, paddingBottom: 0 } : {}]}>
       {segs.map((seg, i) => {
-        const cLen = seg.chord?.length ?? 0;
-        const lLen = seg.lyric.length;
-        // Approx: chord 8pt ~ 5pt/ch, lyric 10.5pt ~ 6pt/ch
+        const chordLen = seg.chord?.length ?? 0;
+        const lyricLen = [...seg.lyric].length;
+
+        // Web : chordLen > lyricLen → `${chordLen + 0.5}ch`
+        // PDF : 1ch ≈ 5.5pt pour fontSize 14
         const minWidth =
-          hasChords && cLen * 5 > lLen * 6 ? cLen * 5 + 2 : undefined;
+          hasAnyChord && chordLen > lyricLen
+            ? (chordLen + 0.5) * 5.5
+            : undefined;
+
         return (
           <View key={i} style={[s.seg, minWidth ? { minWidth } : {}]}>
-            {showChords && (
-              <Text style={s.chordText}>{seg.chord ?? ""}</Text>
+            {/* Web : accord présent → span bold, absent → span &nbsp; pour réserver la hauteur */}
+            {showChords && seg.chord ? (
+              <Text style={s.chordText}>{seg.chord}</Text>
+            ) : (
+              hasAnyChord && <Text style={s.chordText}>{""}</Text>
             )}
+            {/* Web : trimStart() si showChords=false */}
             <Text style={s.lyricFr}>
-              {seg.lyric || (seg.chord && showChords ? "  " : "")}
+              {(showChords ? seg.lyric : seg.lyric?.trimStart()) ||
+                (seg.chord && showChords ? "  " : "")}
             </Text>
           </View>
         );
@@ -155,7 +168,7 @@ function ZhLine({ tokens, pinyin, showChords, showPinyin }: {
   const cols: Col[] = [];
 
   for (const seg of toSegments(tokens)) {
-    const chars = [...seg.lyric];
+    const chars = [...(showChords ? seg.lyric : seg.lyric?.trimStart() ?? "")];
     if (chars.length === 0) {
       cols.push({ char: " ", chord: seg.chord, py: "" });
     } else {
@@ -168,20 +181,22 @@ function ZhLine({ tokens, pinyin, showChords, showPinyin }: {
       });
     }
   }
-
-  const CELL = 16;
+  const CELL = 20; // augmenté car fontSize 15
+  //const hasAnyChord = showChords && cols.some(col => col.chord !== null);
+  const visibleCols = showChords 
+    ? cols 
+    : cols.filter(col => col.char.trim() !== "");
   return (
     <View style={s.line}>
-      {cols.map((col, i) => (
+      {visibleCols.map((col, i) => (
         <View key={i} style={[s.seg, { width: CELL, alignItems: "center" }]}>
-          {showChords && (
-            <Text style={[s.chordText, { fontSize: 7, minHeight: 10 }]}>
-              {col.chord ?? ""}
-            </Text>
-          )}
+          {/* Toujours rendu (même vide) pour réserver la hauteur — comme le &nbsp; web */}
+          <Text style={[s.chordText, { fontSize: 8, minHeight: 11 }]}>
+            {showChords ? (col.chord ?? "") : ""}
+          </Text>
           <Text style={[s.lyricZh, { textAlign: "center" }]}>{col.char}</Text>
           {showPinyin && (
-            <Text style={[s.pinyinText, { textAlign: "center" }]}>{col.py}</Text>
+            <Text style={[s.pinyinText, { textAlign: "center" }]}>{col.py || "\u00A0"}</Text>
           )}
         </View>
       ))}
