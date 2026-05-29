@@ -6,25 +6,24 @@
 {language: zh}
 
 {start_of_intro: 前奏/Intro}
-[EMaj7]   [B]   [C#m7]   [AMaj7]
+[EMaj7]  [B]  [C#m7]  [AMaj7]
 {end_of_intro}
 
 {start_of_verse: 主歌/Couplet}
-[E]当   dāng   我   wǒ   赞   zàn   美时，   měi shí   [C#m]仇敌   chóu dí   就   jiù   四散；   sì sàn
-[A]当   dāng   我   wǒ   敬   jìng   拜时，   bài shí   [B]我的   wǒ de   眼   yǎn   目   mù   光明；   guāng míng
-[E]当   dāng   我   wǒ   祷   dǎo   告时，   gào shí   [C#m]握起   wò qǐ   祢   nǐ   权柄；   quán bǐng
-[A]当   dāng   我   wǒ   举   jǔ   手时，   shǒu shí   [B]能   néng   力   lì   大大   dà dà   充满。   chōng mǎn
+[E]当我赞美时，[C#m]仇敌就四散；   dāng wǒ zàn měi shí chóu dí jiù sì sàn
+[A]当我敬拜时，我的[B]眼目光明；   dāng wǒ jìng bài shí wǒ de yǎn mù guāng míng
+[E]当我祷告时，[C#m]握起祢权柄；   dāng wǒ dǎo gào shí wò qǐ nǐ quán bǐng
+[A]当我举手时，能力[B]大大充满。   dāng wǒ jǔ shǒu shí néng lì dà dà chōng mǎn
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-[EMaj7]是   shì   耶稣的   yē sū de   名，   míng   [B]满有   mǎn yǒu   能力。   néng lì
-[C#m7]是   shì   耶稣的   yē sū de   名，   míng   [AMaj7]我们   wǒ men   全然   quán rán   胜利。   shèng lì
-[EMaj7]谁   shuí   践踏   jiàn tà   仇敌？   chóu dí   是   shì   耶稣。   yē sū   [B]谁   shuí   能   néng   保护我？   bǎo hù wǒ   是   shì   耶稣。   yē sū
-[C#m]我们   wǒ men   依靠的？   yī kào de   是   shì   耶   yē   [AMaj7]稣，   sū   是   shì   耶稣。   yē sū
+是耶稣的[EMaj7]名，满有能力[B]。   shì yē sū de míng mǎn yǒu néng lì
+是耶稣的[C#m7]名， 我们全然胜利[AMaj7]。   shì yē sū de míng wǒ men quán rán shèng lì
+[EMaj7]谁践踏仇敌？是耶稣。[B]谁能保护我？是耶稣。   shuí jiàn tà chóu dí shì yē sū shuí néng bǎo hù wǒ shì yē sū
+[C#m]我们依靠的？是耶稣，[AMaj7] 是耶稣。   wǒ men yī kào de shì yē sū shì yē sū
 {end_of_chorus}
 
 {start_of_bridge: 桥段/Pont}
-[A]我   wǒ   要   yào   向   xiàng   你   nǐ   来   lái   [E/G#]歌   gē   唱，   chàng   [F#m]因   yīn   祢   nǐ
-[B]用   yòng   厚   hòu   恩   ēn   待我。   dài wǒ   [A]我   wǒ   依   yī   靠   kào   祢的   nǐ de   [E/G#]慈   cí
-爱。   ài   [F#m]因   yīn   祢的   nǐ de   救   jiù   [B]恩   ēn   快乐。   kuài lè
+[A]我要向祢[E/G#]来歌唱，[F#m]因祢用厚[B]恩待我。   wǒ yào xiàng nǐ lái gē chàng yīn nǐ yòng hòu ēn dài wǒ
+[A]我依靠[E/G#]祢的慈爱，[F#m]因祢的救恩[B]快乐。   wǒ yī kào nǐ de cí ài yīn nǐ de jiù ēn kuài lè
 {end_of_bridge}

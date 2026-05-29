@@ -43,6 +43,11 @@ Les accords de transition finale ou de passage qui terminent un vers doivent se 
   * *Exemple :* `[Bb/C]  [C7]我要[F]一生...` (placés au début du Refrain).
 * **Espacement des accords d'introduction successifs :** Si plusieurs accords d'introduction se succèdent sans texte au début d'une ligne, les séparer par deux espaces :
   * *Exemple :* `[Bb/C]  [C7]我要`
+* **Identification des syllabes anacrusses dans le Jianpu :** Une syllabe dont la note dans le jianpu correspond au motif `0 [n]` (repos suivi d'une note courte en fin de mesure) est une **anacrouse** — elle reste sous l'accord précédent. L'accord suivant se place **après** cette syllabe, sur la première note forte de la mesure suivante. Ne jamais placer l'accord AVANT une syllabe anacrusse.
+  * *Exemples issus de 不停赞美 (clé D) :*
+    * Section D se terminant par `5 - - 0 5` → syllabe `是` = anacrouse sous D → **`[D]敬拜耶稣，是[G]我的生命`** (et non `[D]敬拜耶稣，[G]是我的生命`)
+    * Section A se terminant par `3̄2̄ 2̄2̄0 1` → syllabe `在` = anacrouse sous A → **`在[G]春夏秋冬的`** (et non `[G]在春夏秋冬的`)
+    * Section G se terminant par `6 6 6 5̄3̄` → dernière syllabe `每` = dernier temps de G → **`在[G]每个白天，每[A]个黑夜`** (et non `[G]在每个白天，[A]每个黑夜`)
 
 ### E. Simplification Harmonique
 Éviter la surcharge d'accords de passage ou de quart de mesure complexes s'ils alourdissent la lecture ou nuisent à l'interprétation. Simplifier et stabiliser les cadences finales :
@@ -82,8 +87,44 @@ Pour illustrer l'alignement rythmique rigoureux à partir de la structure d'une 
 3. **La synchronisation syllabique directe** :
    * **Résolution sur `靠`** : L'accord de transition dominante `[A7]` tombe exactement sur le 3ème temps de la mesure, qui correspond à la syllabe `靠` dans `倚靠` (note `2`). Le placement correct est donc bien `倚[A7]靠` (et non `靠，[A7]`).
 
+### H. Étude de cas pratique : Accords de transition et de fin de phrase (Chant *不停赞美你*)
+
+Pour calibrer correctement les accords de transition et les résolutions sans briser la lecture sémantique et visuelle du chant :
+
+1. **Intégrité sémantique et accords de transition en fin de sous-phrase** :
+   * Les mots ou expressions unies (comme `时时称颂祢` ou `向祢来歌唱`) ne doivent pas être coupés par des accords de transition de fin de mesure (ex: `[D/C]` ou `[Em]`).
+   * Si l'accord tombe sur une note tenue ou un silence à la fin de la sous-phrase, il se place **après** le mot et sa ponctuation (ex: `时时称颂祢，[D/C]` et `向祢来歌唱，[Em]`). Cela évite de hacher le texte.
+   * **Enchaînement d'accords hors chant** : Si un accord de transition résout en fin de phrase puis qu'un autre accord lance la mesure suivante sur une syllabe d'anacrouse, on les place à la suite à la fin de la phrase (ex: `时时称颂祢，[D/C] [Bm7]向...`).
+
+2. **Accords de résolution finale** :
+   * L'accord de résolution finale d'un vers (comme le `[G]` final) se positionne à la toute fin de la ligne, après la ponctuation (ex: `伟大的神。[G]`), et non au milieu de l'expression (`伟大[G]的神`).
+
+3. **Précision des espaces après crochets (Silences et pulsations)** :
+   * **Avec espace (`[Accord] Syllabe`)** : Si l'accord est joué sur un temps fort instrumental (pulsation, début de mesure) mais que la voix ne commence/reprend à chanter qu'après un silence ou un contretemps (ex: sur le 2ème temps), on laisse un espace après le crochet.
+     * *Exemples :* `[Emaj7] 主的喜乐` (la voix commence sur le temps 2), `[(E/G#)] 无论得时` (l'accord change sur le temps 1 de la mesure, la voix chante sur le temps 2).
+   * **Sans espace (`[Accord]Syllabe`)** : Si la voix et la pulsation instrumentale attaquent exactement en même temps, l'accord est collé au caractère.
+     * *Exemples :* `我仍[F#m]因`, `我心[F#m]坚定`.
+
+### I. Accords optionnels, de passage et d'alternative
+
+Pour enrichir la partition tout en guidant au mieux l'instrumentiste, utiliser le formatage suivant pour les accords spécifiques :
+1. **Accords optionnels ou de passage rapide (Basses intermédiaires)** :
+   * S'ils sont joués rapidement en transition ou s'ils sont facultatifs pour une version simplifiée, les entourer de parenthèses : `[(A/C#)]`, `[(D/F#)]`, `[(C#m)]`.
+   * *Exemples :* `无论是住[(A/C#)]在`, `我仍[F#m]因救我的[(F#/A#)]神`.
+2. **Accords d'alternative ou substitution** :
+   * Si deux options d'accords sont possibles ou si un accord enrichi remplace un accord simple, écrire l'accord principal suivi de l'alternative entre parenthèses dans le même crochet.
+   * *Exemples :* `[G (G#m7b5)]`, `[D/A (D/F#)]`.
+
+### J. Respect absolu de la structure et répétition du chant
+
+* **Pas de raccourcis structurels** : Ne jamais condenser ou omettre des répétitions de couplets ou de refrains présentant des variations harmoniques ou de paroles (ex: changer une phrase ou un accord dans la dernière répétition).
+* **Déroulé complet** : Écrire toutes les strophes répétées avec leurs accords exacts plutôt que d'utiliser des annotations de répétition ou des raccourcis comme des "Coda" fictifs si la structure chantée est une suite de refrains complets.
+  * *Exemple (丰盛的应许) :* Écrire toutes les variations du refrain à la suite sous `{start_of_chorus: 副歌/Refrain}` pour refléter fidèlement le déroulement de la chanson.
+
 ---
 ## 3. Structure Visuelle et Parallélisme
+* **Fidélité stricte à la partition PDF :** La structure du `.cho` doit correspondre exactement aux sections présentes dans la partition PDF de référence. Ne jamais conserver ni inventer une section absente du PDF (refrain supplémentaire, pont, outro). Ne pas numéroter les sections (`副歌1/副歌2`) si la partition n'en montre qu'une seule.
+  * *Exemple :* Dans 不停赞美, une section 哈利路亚 absente du PDF → supprimée du `.cho` ; un seul refrain → `{start_of_chorus: 副歌/Refrain}` sans numéro.
 * **Vérification de la structure du chant :** Toujours vérifier la structure officielle des paroles et de la musique pour découper le fichier en strophes musicales réelles.
   * *Découpage des Couplets :* Si le couplet contient plusieurs strophes distinctes (ex: Verset 1 et Verset 2), les séparer en `{start_of_verse: 主歌1/Couplet1}` et `{start_of_verse: 主歌2/Couplet2}`.
   * *Découpage des Refrains :* Si le refrain a deux parties ou une suite spécifique, le diviser en `{start_of_chorus: 副歌1/Refrain1}` et `{start_of_chorus: 副歌2/Refrain2}`.

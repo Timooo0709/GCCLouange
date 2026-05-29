@@ -7,8 +7,8 @@
 {themes: 赞美, 感恩}
 
 {start_of_verse: 主歌/Couplet}
-[C]今天早[G]晨，[Am]我要歌[Em]颂，[F]祢的力[C]量、[F]祢的[G]慈[C]爱。   jīn tiān zǎo chén wǒ yào gē sòng nǐ de lì liàng nǐ de cí ài
-[C]就是现[G]在，[Am]我要献[Em]上[F]我的感[C]谢，[G]要被世界听[C]到。   jiù shì xiàn zài wǒ yào xiàn shàng wǒ de gǎn xiè yào bèi shì jiè tīng dào
+[C]今天早[G]晨，[Am]我要歌[Em]颂，[F]祢的力[C]量、[F]祢的慈[G]爱。   jīn tiān zǎo chén wǒ yào gē sòng nǐ de lì liàng nǐ de cí ài
+[C]就是现[G]在，[Am]我要献[Em]上，[F]我的感[C]谢，要被[G]世界听[C]到。   jiù shì xiàn zài wǒ yào xiàn shàng wǒ de gǎn xiè yào bèi shì jiè tīng dào
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
@@ -17,6 +17,6 @@
 {end_of_chorus}
 
 {start_of_bridge: 桥段/Pont}
-[F]我的力量啊，我要歌颂[C/E]祢。感恩与赞美，[Dm7]是我[F/G]争战武[C]器。   wǒ de lì liáng a wǒ yào gē sòng nǐ gǎn ēn yǔ zàn měi shì wǒ zhēng zhàn wǔ qì
-[F]我的力量啊，我要歌颂[C/E]祢。[D]感恩与赞美，[G]是我争战武器。   wǒ de lì liáng a wǒ yào gē sòng nǐ gǎn ēn yǔ zàn měi shì wǒ zhēng zhàn wǔ qì
+我的力量[F]啊，我要歌颂[C/E]祢。感恩与赞[Dm7]美，是[F/G]我争战武[C]器。   wǒ de lì liáng a wǒ yào gē sòng nǐ gǎn ēn yǔ zàn měi shì wǒ zhēng zhàn wǔ qì
+我的力量[F]啊，我要歌颂[C/E]祢。感恩与赞[D]美，是我争战武[G]器。   wǒ de lì liáng a wǒ yào gē sòng nǐ gǎn ēn yǔ zàn měi shì wǒ zhēng zhàn wǔ qì
 {end_of_bridge}

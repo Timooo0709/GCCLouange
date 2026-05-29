@@ -5,21 +5,16 @@
 {artist: 盛晓玫}
 {language: zh}
 
-{start_of_verse: 主歌 1/Couplet 1}
-[A]有一天   yǒu yī tiān   你若   nǐ ruò   觉得   jué de   失去   shī qù   [F#m7]勇气，   yǒng qì   [A]有一天   yǒu yī tiān   你若   nǐ ruò   真的   zhēn de   想   xiǎng   放   fàng
-[C#m7]弃，   qì   [D]有一天   yǒu yī tiān   你若   nǐ ruò   感觉   gǎn jué   没人   méi rén   [A/C#]爱你，   ài nǐ   [D/F#]有一天   yǒu yī tiān   好像   hǎo xiàng   走到   zǒu dào   谷   gǔ
-[E]底，   dǐ
-{end_of_verse}
-
-{start_of_verse: 主歌 2/Couplet 2}
-[A]那一天   nà yī tiān   你要   nǐ yào   振作   zhèn zuò   你的   nǐ de   [F#m7]心情，   xīn qíng   [A]那一天   nà yī tiān   你要   nǐ yào   珍惜   zhēn xī   你   nǐ   自   zì
-[C#m7]己，   jǐ   [D]那一天   nà yī tiān   不要   bù yào   忘记   wàng jì   有人   yǒu rén   [A/C#]爱你，   ài nǐ   [F#m7]那一天   nà yī tiān   [Bm7]不要   bù yào   轻易   qīng yì   说   shuō   放   fàng
-[E]弃。   qì
+{start_of_verse: 主歌/Couplet}
+有一[A]天你若觉得失去[F#m7]勇气，有一[A]天你若真的想放[C#m7]弃，   yǒu yī tiān nǐ ruò jué de shī qù yǒng qì yǒu yī tiān nǐ ruò zhēn de xiǎng fàng qì
+有一[D]天你若感觉没人[A/C#]爱你，有一[D/F#]天你好像走到谷[E]底。   yǒu yī tiān nǐ ruò gǎn jué méi rén ài nǐ yǒu yī tiān nǐ hǎo xiàng zǒu dào gǔ dǐ
+那一[A]天你要振作你的[F#m7]心情，那一[A]天你要珍惜你自[C#m7]己，   nà yī tiān nǐ yào zhèn zuò nǐ de xīn qíng nà yī tiān nǐ yào zhēn xī nǐ zì jǐ
+那一[D]天不要忘记有人[A/C#]爱你，[F#m7] 那一[Bm7]天不要轻易说放[E] 弃。   nà yī tiān bù yào wàng jì yǒu rén ài nǐ nà yī tiān bù yào qīng yì shuō fàng qì
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-[A]这个   zhè ge   世界   shì jiè   真有   zhēn yǒu   一位   yī wèi   上帝，   shàng dì   [C#m7]祂   tā   [D]爱你   ài nǐ   祂   tā   愿意   yuàn yì   帮助   bāng zhù
-[E]你，   nǐ   [D]茫茫   máng máng   人海   rén hǎi   虽然   suī rán   [A]寂   jì   [C#m7]寞，   mò   [F#m7]祂   tā   [Bm7]爱   ài   能   néng   温暖   wēn nuǎn   一切   yī qiè   冷   lěng   [E]漠。   mò   这个   zhè ge
-[A]世界   shì jiè   真有   zhēn yǒu   一位   yī wèi   上帝，   shàng dì   [C#m7]祂的   tā de   [D]双手   shuāng shǒu   渴望   kě wàng   紧紧   jǐn jǐn   拥抱   yōng bào   [E]你，   nǐ
-[D]漫漫   màn màn   长夜   cháng yè   陪   péi   你   nǐ   走   zǒu   [A]过，   guò   [E/G#]祂   tā   [F#m7]爱你   ài nǐ   伴你   bàn nǐ   [Bm7]一生   yī shēng   之   zhī   [E]久。   jiǔ   [A]
+这个[A]世界真有一位上[C#m7]帝，祂[D]爱你，祂愿意帮助[E]你，   zhè ge shì jiè zhēn yǒu yī wèi shàng dì tā ài nǐ tā yuàn yì bāng zhù nǐ
+[D]茫茫人海虽然[A]寂[C#m7] [F#m7]寞，祂[Bm7]爱能温暖一切冷[E]漠。   máng máng rén hǎi suī rán jì mò tā ài néng wēn nuǎn yī qiè lěng mò
+这个[A]世界真有一位上[C#m7]帝，祂的[D]双手渴望紧紧拥抱[E]你，   zhè ge shì jiè zhēn yǒu yī wèi shàng dì tā de shuāng shǒu kě wàng jǐn jǐn yōng bào nǐ
+[D]漫漫长夜陪你[A]走[E/G#] [F#m7]过，祂[Bm7]爱你伴你[E]一生之[A]久。   màn màn cháng yè péi nǐ zǒu guò tā ài nǐ bàn nǐ yī shēng zhī jiǔ
 {end_of_chorus}

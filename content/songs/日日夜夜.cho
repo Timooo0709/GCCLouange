@@ -6,30 +6,32 @@
 {language: zh}
 {themes: 敬拜, 宣告, 祭坛}
 
-# Intro: [G] [C/G] | [G] [C/G]
+{start_of_intro: 前奏/Intro}
+[G]  [C/G]  [G]  [C/G]
+{end_of_intro}
 
 {start_of_verse: 主歌 1/Couplet 1}
-[G]耶和华，[C/G]祢大荣耀降[G]临，[C/G]   yē hé huá nǐ dà róng yào jiàng lín
-在[G]地上[C/G]如天上的敬[D]拜。   zài dì shàng rú tiān shàng de jìng bài
+[G]耶和华，祢[C/G]大荣耀降[G]临，[C/G]   yē hé huá nǐ dà róng yào jiàng lín
+[G]在地上如[C/G]天上的敬[D]拜。   zài dì shàng rú tiān shàng de jìng bài
 祢是[C]我们的[D/C]神，我们[B]是祢子[Em]民，   nǐ shì wǒ men de shén wǒ men shì nǐ zǐ mín
-[Am]因祢荣耀，[C/D]我不住敬[G]拜。   yīn nǐ róng yào wǒ bù zhù jìng bài
+因祢[Am]荣耀，我[C/D]不住敬拜[G]。   yīn nǐ róng yào wǒ bù zhù jìng bài
 {end_of_verse}
 
 {start_of_verse: 主歌 2/Couplet 2}
-[G]我受造[C/G]是为了敬拜[G]祢，[C/G]   wǒ shòu zào shì wèi le jìng bài nǐ
-我[G]受造[C/G]是为了荣耀[D]祢。   wǒ shòu zào shì wèi le róng yào nǐ
+[G]我受造是[C/G]为了敬拜[G]祢，[C/G]   wǒ shòu zào shì wèi le jìng bài nǐ
+[G]我受造是[C/G]为了荣耀[D]祢。   wǒ shòu zào shì wèi le róng yào nǐ
 祢是[C]我们的[D/C]神，祢与[B]我们同[Em]住，   nǐ shì wǒ men de shén nǐ yǔ wǒ men tóng zhù
-[Am]因祢荣耀，[C/D]我不住敬[G]拜。   yīn nǐ róng yào wǒ bù zhù jìng bài
+因祢[Am]荣耀，我[C/D]不住敬拜[G]。   yīn nǐ róng yào wǒ bù zhù jìng bài
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-圣[G]哉、圣哉、[G/B]圣哉，[C]昔在今在[G/B]永在；   shèng zāi shèng zāi shèng zāi xī zài jīn zài yǒng zài
-[Am]荣耀、[Am/G]荣耀，配得[C/D]颂赞[D7]爱戴。   róng yào róng yào róng yào pèi dé sòng zàn ài dài
-圣[G]哉、圣哉、[G/F]圣哉，[C/E]全地向祢[Cm/Eb]跪拜，   shèng zāi shèng zāi shèng zāi quán dì xiàng nǐ guì bài
-[G/D]尊贵[C/D]荣耀都归宝座[G]羔羊。   zūn guì róng yào dōu guī bǎo zuò gāo yáng
+[C/D]圣哉、[G]圣哉、[G/B]圣哉，昔[C]在今在永在；   shèng zāi shèng zāi shèng zāi xī zài jīn zài yǒng zài
+[G/B]荣耀、[Am]荣耀、[Am/G]荣耀，配[C/D]得颂赞爱[D7]戴。  róng yào róng yào róng yào pèi dé sòng zàn ài dài
+圣哉、[G]圣哉、[G/F]圣哉，全[C/E]地向祢跪[Cm/Eb]拜，   shèng zāi shèng zāi shèng zāi quán dì xiàng nǐ guì bài
+尊贵荣[G/D]耀都[C/D]归宝座羔[G]羊。   zūn guì róng yào dōu guī bǎo zuò gāo yáng
 {end_of_chorus}
 
 {start_of_bridge: 桥段/Pont}
-[C]日日夜夜，[D/C]不停献上，[Bm]祷告[Em]如香[Am]不停[C/D]升起；[G] [G7]   rì rì yè yè bù tíng xiàn shàng dǎo gào rú xiāng bù tíng shēng qǐ
-[C]日日夜夜，[D/C]不停献上，[Bm]赞美[Em]献祭[Am]永不[C/D]断续。[G]   rì rì yè yè bù tíng xiàn shàng zàn měi xiàn jì yǒng bù duàn xù
+[C]日日夜夜[D/C]， [Bm]不停献上[Em]， 祷告[Am]如香[C/D]不停升起[G]；[G7]   rì rì yè yè bù tíng xiàn shàng dǎo gào rú xiāng bù tíng shēng qǐ
+[C]日日夜夜[D/C]， [Bm]不停献上[Em]， 赞美[Am]献祭[C/D]永不断续[G]。   rì rì yè yè bù tíng xiàn shàng zàn měi xiàn jì yǒng bù duàn xù
 {end_of_bridge}

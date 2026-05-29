@@ -5,7 +5,7 @@
 {tempo: 66}
 {language: zh}
 {start_of_intro: 前奏/Intro}
-[A] | [E/G#] [D/F#] | [A] | [A/C#] [D2] | [A] [E/G#] |
+[A]  [E/G#]  [D/F#]  [A]  [A/C#] [D2]  [A] [E/G#]
 {end_of_intro}
 {start_of_verse: 主歌 1 (Key A)/Couplet 1 (Key A)}
 各各[A]他 耶[E/G#]稣受[F#m]难， 天父[Bm]爱我的彰[E]显。   gè gè tā yē sū shòu nàn   tiān fù ài wǒ de zhāng xiǎn
@@ -13,20 +13,8 @@
 {end_of_verse}
 
 {start_of_chorus: 副歌 (Key A)/Refrain (Key A)}
-感谢 [A]耶[E/G#]稣，十[F#m]架的大能， 领受[D]你的[E]身体和宝[A]血。   gǎn xiè yē sū shí jià de dà néng   lǐng shòu nǐ de shēn tǐ hé bǎo xuè
-因你[Bm]受鞭[E]伤，我[C#m]必得[F#m]医治， 高举[Bm]双手来领[E]受。   yīn nǐ shòu biān shāng wǒ bì dé yī zhì   gāo jǔ shuāng shǒu lái lǐng shòu
-感谢 [A]耶[E/G#]稣，我[F#m]罪得赦免， 在我[D]里面是[E]基督活[A]着。   gǎn xiè yē sū wǒ zuì dé shè miǎn   zài wǒ lǐ miàn shì jī dū huó zhe
-得平[Bm]安、得饶[E]恕、[E/D]蒙[C#m]恩[F#m]惠、得保[Bm]护，复活的[E]大能住在我里[A]面。   dé píng ān dé ráo shù méng ēn huì dé bǎo hù   fù huó de dà néng zhù zài wǒ lǐ miàn
-{end_of_chorus}
-
-{start_of_verse: 主歌 2 (Key B)/Couplet 2 (Key B)}
-各各[B]他 耶[F#/A#]稣受[G#m]难， 天父[C#m]爱我的彰[F#]显。   gè gè tā yē sū shòu nàn   tiān fù ài wǒ de zhāng xiǎn
-永恒[D#m]盼望的生[G#m]命， 荣耀[C#m]恩典为我冠[F#sus4]冕。[F#]   yǒng héng pàn wàng de shēng mìng   róng yào ēn diǎn wèi wǒ guān miǎn
-{end_of_verse}
-
-{start_of_chorus: 副歌 (Key B)/Refrain (Key B)}
-感谢 [B]耶[F#/A#]稣，十[G#m]架的大能， 领受[E]你的[F#]身体和宝[B]血。   gǎn xiè yē sū shí jià de dà néng   lǐng shòu nǐ de shēn tǐ hé bǎo xuè
-因你[C#m]受鞭[F#]伤，我[D#m]必得[G#m]医治， 高举[C#m]双手来领[F#]受。   yīn nǐ shòu biān shāng wǒ bì dé yī zhì   gāo jǔ shuāng shǒu lái lǐng shòu
-感谢 [B]耶[F#/A#]稣，我[G#m]罪得赦免， 在我[E]里面是[F#]基督活[B]着。   gǎn xiè yē sū wǒ zuì dé shè miǎn   zài wǒ lǐ miàn shì jī dū huó zhe
-得平[C#m]安、得饶[F#]恕、[F#/E]蒙[D#m]恩[G#m]惠、得保[C#m]护，复活的[F#]大能住在我里[B]面。   dé píng ān dé ráo shù méng ēn huì dé bǎo hù   fù huó de dà néng zhù zài wǒ lǐ miàn
-{end_of_chorus}
+感谢[A]耶稣，十[E/G#]架的[F#m]大能， 领受[D]你的[E]身体和宝[A]血。   gǎn xiè yē sū shí jià de dà néng   lǐng shòu nǐ de shēn tǐ hé bǎo xuè
+因你[Bm]受鞭[E]伤，我必[C#m]得医[F#m]治， 高举[Bm]双手来领[E]受。   yīn nǐ shòu biān shāng wǒ bì dé yī zhì   gāo jǔ shuāng shǒu lái lǐng shòu
+感谢[A]耶稣，我[E/G#]罪得[F#m]赦免， 在我[D]里面[E]是基督活[A]着。   gǎn xiè yē sū wǒ zuì dé shè miǎn   zài wǒ lǐ miàn shì jī dū huó zhe
+得平[Bm]安、得饶[E]恕、[E/D]蒙恩[C#m]惠、得保[F#m]护，复活[Bm]的大能[E]住在我里[A]面。   dé píng ān dé ráo shù méng ēn huì dé bǎo hù   fù huó de dà néng zhù zài wǒ lǐ miàn
+{end_of_chorus} 

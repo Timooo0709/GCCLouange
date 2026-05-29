@@ -6,22 +6,24 @@
 {language: zh}
 {themes: 宣告, 盼望, 被爱}
 
-# Intro: [C/G] [Dm/F] [C/E] | [C/G] [Dm/F] [C/E] [Dm] [G]
+{start_of_intro: 前奏/Intro}
+[C/G]  [Dm/F]  [C/E]  [C/G]  [Dm/F]  [C/E]  [Dm]  [G]
+{end_of_intro}
 
 {start_of_verse: 主歌 1/Couplet 1}
-你说[C]阴天代表你[Em]的心情，[F]雨天更是你对[C]生命的反应；   nǐ shuō yīn tiān dài biǎo nǐ de xīn qíng yǔ tiān gèng shì nǐ duì shēng mìng de fǎn yìng
-你说[F]每天生活一[C/E]样平静，对于[Dm]未来没有一点[G]信心。   nǐ shuō měi tiān shēng huó yī yàng píng jìng duì yú wèi lái méi yǒu yī diǎn xìn xīn
+你说[C]阴天代表你的[Em]心情，雨天[F]更是你对生命的[C]反应；   nǐ shuō yīn tiān dài biǎo nǐ de xīn qíng yǔ tiān gèng shì nǐ duì shēng mìng de fǎn yìng
+你说[F]每天生活一样[C/E]平静，对于[Dm]未来没有一点信[G]心。   nǐ shuō měi tiān shēng huó yī yàng píng jìng duì yú wèi lái méi yǒu yī diǎn xìn xīn
 {end_of_verse}
 
 {start_of_verse: 主歌 2/Couplet 2}
-亲爱[C]朋友，你是否[Em]曾经，[F]曾经观看满[C]天的星星？   qīn ài péng yǒu nǐ shì fǒu céng jīng céng jīng guān kàn mǎn tiān de xīng xīng
-期待[F]有人能够了[C/E]解你心，能够[Dm]爱你赐你[G7]力量更[C]新。   qī dài yǒu rén néng gòu liǎo jiě nǐ xīn néng gòu ài nǐ cì nǐ lì liáng gèng xīn
+亲爱[C]朋友，你是否[Em]曾经，曾经[F]观看满天的[C]星星？   qīn ài péng yǒu nǐ shì fǒu céng jīng céng jīng guān kàn mǎn tiān de xīng xīng
+期待[F]有人能够了解[C/E]你心，能够[Dm]爱你赐你[G7]力量更[C]新。  qī dài yǒu rén néng gòu liǎo jiě nǐ xīn néng gòu ài nǐ cì nǐ lì liáng gèng xīn
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-耶稣能够[C]叫一切都[G/B]更新，[Am]   yē sū néng gòu jiào yī qiè dōu gèng xīn
-[C/G]耶稣能够[F]体会你的[C/E]心[Dm]情，   yē sū néng gòu tǐ huì nǐ de xīn qíng
-[G]耶稣能够[C]改变你的[G/B]曾经，[Am]   yē sū néng gòu gǎi biàn nǐ de céng jīng
-[C/G]耶稣爱[F]你，耶稣[C/E]疼你，   yē sū ài nǐ yē sū téng nǐ
-[Dm]耶稣能造[G7]一个全新的[C]你。   yē sū néng zào yī gè quán xīn de nǐ
+[G] 耶稣能[C]够叫[G/B]一切都[Am]更新，   yē sū néng gòu jiào yī qiè dōu gèng xīn
+[C/G] 耶稣能[F]够体[C/E]会你的[Dm]心情，   yē sū néng gòu tǐ huì nǐ de xīn qíng
+[G] 耶稣能[C]够改[G/B]变你的[Am]曾经，   yē sū néng gòu gǎi biàn nǐ de céng jīng
+[C/G] 耶稣爱[F]你，耶稣疼[C/E]你，   yē sū ài nǐ yē sū téng nǐ
+耶稣能[Dm]造[G7] 一个全新的[C]你。   yē sū néng zào yī gè quán xīn de nǐ
 {end_of_chorus}
