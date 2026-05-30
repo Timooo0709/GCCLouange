@@ -6,6 +6,9 @@
 {language: fr}
 {youtube: https://youtu.be/...}
 
+{start_of_intro: Intro}
+{end_of_intro}
+
 {start_of_verse: Couplet 1}
 {end_of_verse}
 
@@ -25,7 +28,7 @@
 {key: C}
 {language: zh}
 
-{start_of_verse: 第一节}
+{start_of_verse: 主歌/Couplet}
 [C]你好世界   nǐ hǎo shì jiè
 {end_of_verse}
 
