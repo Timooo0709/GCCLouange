@@ -7,6 +7,7 @@ import type { ChordProAST, ChordProSection } from "@/lib/types";
 import { useTranslation } from "react-i18next";
 import { formatSectionName } from "@/lib/chordpro/parser";
 
+
 // --- Composant section ---
 
 interface SectionViewProps {
@@ -18,13 +19,25 @@ interface SectionViewProps {
   note?: string;
 }
 
+const SECTION_COLORS: Record<string, { bg: string, bgDark: string }> = {
+  verse:     { bg: "#CCE7D3", bgDark: "#1a3d24" },
+  chorus:    { bg: "#FFF1C5", bgDark: "#3d3210" },
+  bridge:    { bg: "#E3D7ED", bgDark: "#2a2035" },
+  intro:     { bg: "#D4E5F2", bgDark: "#1a2d3d" },
+};
+
+function getSectionColors(section: ChordProSection) {
+  const key = section.type?.toLowerCase().replace(/[\s-]/g, "") ?? "";
+  return SECTION_COLORS[key] ?? { bg: "", bgDark: "" };
+}
+
 function SectionView({ section, language, showChords, showPinyin, useJianpu, note }: SectionViewProps) {
   const { t } = useTranslation();
   const isZh = language === "zh";
   const label = formatSectionName(section, t);
-
+  const { bg, bgDark } = getSectionColors(section);
   return (
-    <div className="mb-5 print:mb-4" style={{ breakInside: "avoid" }}>
+    <div className={`mb-5 print:mb-4 `} style={{ breakInside: "avoid", backgroundColor: bg ? bg : undefined }}>
       {/* En-tête de section */}
       <div className="font-section text-xs font-bold uppercase tracking-widest text-section dark:text-orange-400 mb-1">
         {label}
