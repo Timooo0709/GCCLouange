@@ -17,27 +17,33 @@ interface SectionViewProps {
   showPinyin: boolean;
   useJianpu: boolean;
   note?: string;
+  method?: number;
 }
 
-const SECTION_COLORS: Record<string, { bg: string, bgDark: string }> = {
-  verse:     { bg: "#CCE7D3", bgDark: "#1a3d24" },
-  chorus:    { bg: "#FFF1C5", bgDark: "#3d3210" },
-  bridge:    { bg: "#E3D7ED", bgDark: "#2a2035" },
-  intro:     { bg: "#D4E5F2", bgDark: "#1a2d3d" },
-};
+function getSectionStyle(type: string, method: 0 | 1 | 2): React.CSSProperties {
+  if (method === 0) return {};
+  
+  if (method === 1) return {
+    backgroundColor: `var(--section-${type})`,
+  };
 
-function getSectionColors(section: ChordProSection) {
-  const key = section.type?.toLowerCase().replace(/[\s-]/g, "") ?? "";
-  return SECTION_COLORS[key] ?? { bg: "", bgDark: "" };
+  if (method === 2) return {
+    backgroundColor: `var(--section-${type}-2-background)`,
+    borderLeft: `3px solid var(--section-${type}-2)`,
+    paddingLeft: "12px",
+    borderRadius: "6px",
+  };
+
+  return {};
 }
 
-function SectionView({ section, language, showChords, showPinyin, useJianpu, note }: SectionViewProps) {
+function SectionView({ section, language, showChords, showPinyin, useJianpu, note, method }: SectionViewProps) {
   const { t } = useTranslation();
   const isZh = language === "zh";
   const label = formatSectionName(section, t);
-  const { bg, bgDark } = getSectionColors(section);
+
   return (
-    <div className={`mb-5 print:mb-4 `} style={{ breakInside: "avoid", backgroundColor: bg ? bg : undefined }}>
+    <div className={`mb-5 print:mb-4 `} style={{ breakInside: "avoid", ...getSectionStyle(section.type, method as 0 | 1 | 2) }}>
       {/* En-tête de section */}
       <div className="font-section text-xs font-bold uppercase tracking-widest text-section dark:text-orange-400 mb-1">
         {label}
@@ -108,6 +114,7 @@ export interface SongViewProps {
   useJianpu?: boolean;
   structureOverride?: string[] | null;
   sectionNotes?: Record<string, string>;
+  method?: number; //TEST
 }
 
 export function SongView({
@@ -117,6 +124,7 @@ export function SongView({
   useJianpu = false,
   structureOverride = null,
   sectionNotes = {},
+  method = 0, // TEST
 }: SongViewProps) {
   const { t } = useTranslation();
   const isZh = ast.metadata.language === "zh";
@@ -177,6 +185,7 @@ export function SongView({
             showPinyin={isZh ? showPinyin : false}
             useJianpu={canUseJianpu}
             note={sectionNotes[section.id]}
+            method={method}
           />
         ))}
       </div>

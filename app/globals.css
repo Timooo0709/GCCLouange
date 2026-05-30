@@ -24,6 +24,13 @@
     --input: 214 32% 91%;
     --ring: 21 91% 48%;
     --radius: 0.5rem;
+    --section-verse: #CCE7D3;
+    --section-chorus: #FFF1C5;
+    --section-bridge: #E3D7ED;
+    --section-intro: #D4E5F2;
+    --section-chorus-2: #FE9800;
+    --section-chorus-2-background: #E6E6E6;
+    --section-bridge-2: #959FA8;
   }
 
   .dark {
@@ -46,6 +53,13 @@
     --border: 217 33% 17%;
     --input: 217 33% 17%;
     --ring: 21 91% 48%;
+    --section-verse: #1a3d24;
+    --section-chorus: #3d3210;
+    --section-bridge: #2a2035;
+    --section-intro: #1a2d3d;
+    --section-chorus-2: #FE9800;
+    --section-chorus-2-background: #E6E6E6;
+    --section-bridge-2: #959FA8;
   }
 }
 

@@ -45,7 +45,6 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
 
   const [backPath, setBackPath] = useState("/songs");
   const [backLabel, setBackLabel] = useState("");
-
   useEffect(() => {
     const saved = sessionStorage.getItem("lastListPath");
     if (saved) {
@@ -69,6 +68,7 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
     showPinyin: isZh,
     useJianpu: false,
     structure: buildDefaultStructure(ast.sections),
+    method: 0, //TEST
   });
 
   // AST transposé en mémoire — recalculé uniquement si semitones change
@@ -219,6 +219,7 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
           sectionNotes={Object.fromEntries(
             customize.structure.map((s) => [s.sectionId, s.note]).filter(([, n]) => n)
           )}
+          method={customize.method}
         />
       </main>
 

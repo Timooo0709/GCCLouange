@@ -39,6 +39,7 @@ export interface CustomizeState {
   showPinyin: boolean;
   useJianpu: boolean;
   structure: SectionItem[];
+  method?: number;
 }
 
 interface CustomizePanelProps {
@@ -196,6 +197,7 @@ export function CustomizePanel({
         name: s.name || s.type,
         note: "",
       })),
+      method: 0, // TEST
     });
   }
 
@@ -279,7 +281,19 @@ export function CustomizePanel({
                   {t("customize.panel.showPinyin")}
                 </label>
               )}
+              <label className="flex items-center gap-2 text-sm cursor-pointer select-none"> 
+                <select
+                  value={state.method}
+                  onChange={(e) => update({ method: Number(e.target.value) as 0 | 1 | 2 })}
+                  className="w-full px-2 py-1.5 border border-border rounded bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                >
+                  <option value={0}>Défaut</option>
+                  <option value={1}>Thème 1</option>
+                  <option value={2}>Thème 2</option>
+                </select>
+              </label>
             </div>
+            
           </section>
 
           {/* --- Structure --- */}

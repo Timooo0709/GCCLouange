@@ -337,7 +337,6 @@ export function SetlistDetailClient() {
             className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
           >
             {showChords ? <Eye className="h-3.5 w-3.5" /> : <EyeOff className="h-3.5 w-3.5" />}
-            <span className="hidden sm:inline">{showChords ? t("setlists.detail.hideChords") : t("setlists.detail.showChords")}</span>
           </button>
           <Link
             href={`/setlists/${id}/edit`}
