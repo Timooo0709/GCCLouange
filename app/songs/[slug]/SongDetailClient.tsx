@@ -233,6 +233,7 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
           state={customize}
           onChange={setCustomize}
           onClose={() => setShowPanel(false)}
+          songTitle={song.title}
         />
       )}
     </div>

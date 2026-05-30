@@ -28,6 +28,7 @@
     "react-dom": "^19.0.0",
     "react-i18next": "^17.0.8",
     "react-youtube": "^10.1.0",
+    "resend": "^6.12.4",
     "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {

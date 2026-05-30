@@ -22,7 +22,7 @@ import { ALL_KEYS, semitonesTo, getTransposedKey } from "@/lib/transpose";
 import type { ChordProSection } from "@/lib/types";
 import { useTranslation } from "react-i18next";
 import { formatSectionName } from "@/lib/chordpro/parser";
-
+import { BugReportButton } from "@/components/AlertButton";
 // --- Types ---
 
 export interface SectionItem {
@@ -50,6 +50,7 @@ interface CustomizePanelProps {
   state: CustomizeState;
   onChange: (s: CustomizeState) => void;
   onClose: () => void;
+  songTitle: string;
 }
 
 // --- Sortable row ---
@@ -122,6 +123,7 @@ export function CustomizePanel({
   state,
   onChange,
   onClose,
+  songTitle,
 }: CustomizePanelProps) {
   const { t } = useTranslation();
   const [instanceCounter, setInstanceCounter] = useState(100);
@@ -356,6 +358,9 @@ export function CustomizePanel({
                 )}
               </>
             )}
+          </section>
+          <section>
+            <BugReportButton song={songTitle} />
           </section>
         </div>
 
