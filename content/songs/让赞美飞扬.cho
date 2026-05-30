@@ -6,18 +6,21 @@
 {language: zh}
 {themes: 赞美, 喜乐, 欢呼}
 
-# Intro: [G] [Em] [C] [D] | [G] [Em] [C] [D]
+{start_of_intro: 前奏/Intro}
+[G] [Em] [C] [D] | [G] [Em] [C] [D]
+{end_of_intro}
+
 
 {start_of_verse: 主歌/Couplet}
-[G]这美丽的时刻，我们相聚在[Am]一起，   zhè měi lì de shí kè wǒ men xiāng jù zài yī qǐ
-神的[Am]爱拥抱着我们，[D]神的灵充满这[G]地。   shén de ài yōng bào zhe wǒ men shén de líng chōng mǎn zhè dì
-当称[G]谢进入祂的门，[G]当赞美进入祂的[C]院，   dāng chēng xiè jìn rù tā de mén dāng zàn měi jìn rù tā de yuàn
-击鼓[Am]跳舞扬声欢呼，凡有气息都要[D]赞美祂。   jī gǔ tiào wǔ yáng shēng huān hū fán yǒu qì xī dōu yào zàn měi tā
+在[G]这美丽的时刻，我们[G]相聚在一起[Am]，   zài zhè měi lì de shí kè wǒ men xiāng jù zài yī qǐ
+神的爱拥抱着我们，神的[D]灵充满这地[G]。   shén de ài yōng bào zhe wǒ men shén de líng chōng mǎn zhè dì
+当称[G]谢进入祂的门，当赞[G]美进入祂的院[C]，   dāng chēng xiè jìn rù tā de mén dāng zàn měi jìn rù tā de yuàn
+击鼓[Am]跳舞扬声欢呼，凡有[D]气息都要赞美祂。   jī gǔ tiào wǔ yáng shēng huān hū fán yǒu qì xī dōu yào zàn měi tā
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
 让[G]赞美从四处响起，让[Em]音符在空中飞舞，   ràng zàn měi cóng sì chù xiǎng qǐ ràng yīn fú zài kōng zhōng fēi wǔ
-让[C]我们的心[D]向神敞[G]开。   ràng wǒ men de xīn xiàng shén chǎng kāi
+让[C]我们的心向神敞[D]开。   ràng wǒ men de xīn xiàng shén chǎng kāi
 让[G]赞美从四处响起，让[Em]音符在空中飞舞，   ràng zàn měi cóng sì chù xiǎng qǐ ràng yīn fú zài kōng zhōng fēi wǔ
-让[C]我们的心[D]向神敞[G]开。   ràng wǒ men de xīn xiàng shén chǎng kāi
+让[C]我们的心向[D]神敞[G]开。   ràng wǒ men de xīn xiàng shén chǎng kāi
 {end_of_chorus}

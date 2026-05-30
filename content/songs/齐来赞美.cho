@@ -6,25 +6,27 @@
 {language: zh}
 {themes: 赞美, 喜乐, 歌唱}
 
-# Intro: [F] [Bb] [C] [F]
+{start_of_intro: 前奏/Intro}
+[F] [Bb] [C] [F]
+{end_of_intro}
 
 {start_of_verse: 主歌 1/Couplet 1}
-大山[F]小山都要来赞美， 太阳[Bb]月亮星星来赞美，   dà shān xiǎo shān dōu yào lái zàn měi tài yáng yuè liang xīng xing lái zàn měi
-[C]与河流齐来赞美耶和[F]华。   yǔ hé liú qí lái zàn měi yē hé huá
-大山[F]小山都要来赞美， 太阳[Bb]月亮星星来赞美，   dà shān xiǎo shān dōu yào lái zàn měi tài yáng yuè liang xīng xing lái zàn měi
-[C]万物要歌唱， 齐来赞美耶和[F]华。   wàn wù yào gē chàng qí lái zàn měi yē hé huá
+大山[F]小山都要来赞美，太阳[Bb]月亮星星来赞美，   dà shān xiǎo shān dōu yào lái zàn měi tài yáng yuè liang xīng xing lái zàn měi
+海洋[C]与河流齐来赞美耶和华[F]。   hǎi yáng yǔ hé liú qí lái zàn měi yē hé huá
+大山[F]小山都要来赞美，太阳[Bb]月亮星星来赞美，   dà shān xiǎo shān dōu yào lái zàn měi tài yáng yuè liang xīng xing lái zàn měi
+万物[C]要歌唱，齐来赞美耶和华[F]。   wàn wù yào gē chàng qí lái zàn měi yē hé huá
 {end_of_verse}
 
 {start_of_verse: 主歌 2/Couplet 2}
-我要[F]专心专心来爱祂， 将我[Bb]的心的心献给祂，   wǒ yào zhuān xīn zhuān xīn lái ài tā jiāng wǒ de xīn de xīn xiàn gěi tā
-[C]每一天化作喜乐的[F]诗歌。   měi yī tiān huà zuò xǐ lè de shī gē
-我要[F]专心专心敬拜祂， [Bb]欢呼欢呼赞美祂，   wǒ yào zhuān xīn zhuān xīn jìng bài tā huān hū huān hū zàn měi tā
-将我[C]每一天化作喜乐的[F]诗歌。   jiāng wǒ měi yī tiān huà zuò xǐ lè de shī gē
+我要[F]专心专心来爱祂，将我[Bb]的心的心献给祂，   wǒ yào zhuān xīn zhuān xīn lái ài tā jiāng wǒ de xīn de xīn xiàn gěi tā
+将我[C]每一天化作喜乐的诗歌[F]。   jiāng wǒ měi yī tiān huà zuò xǐ lè de shī gē
+我要[F]专心专心敬拜祂，我要[Bb]欢呼欢呼赞美祂，   wǒ yào zhuān xīn zhuān xīn jìng bài tā wǒ yào huān hū huān hū zàn měi tā
+将我[C]每一天化作喜乐的诗歌[F]。   jiāng wǒ měi yī tiān huà zuò xǐ lè de shī gē
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-哈利路亚，[F]我要唱！哈利路亚，[Bb]我要跳！   hā lì lù yà wǒ yào chàng hā lì lù yà wǒ yào tiào
-哈利路亚，[C]我要大声欢呼赞[F]美！   hā lì lù yà wǒ yào dà shēng huān hū zàn měi
-哈利路亚，[F]我要唱！哈利路亚，[Bb]我要跳！   hā lì lù yà wǒ yào chàng hā lì lù yà wǒ yào tiào
-哈利路亚，[C]我要大声欢呼赞[F]美！   hā lì lù yà wǒ yào dà shēng huān hū zàn měi
+哈利路亚[F]，我要唱！哈利路亚[Bb]，我要跳！   hā lì lù yà wǒ yào chàng hā lì lù yà wǒ yào tiào
+哈利路亚[C]，我要大声欢呼赞美[F]！   hā lì lù yà wǒ yào dà shēng huān hū zàn měi
+哈利路亚[F]，我要唱！哈利路亚[Bb]，我要跳！   hā lì lù yà wǒ yào chàng hā lì lù yà wǒ yào tiào
+哈利路亚[C]，我要大声欢呼赞美[F]！   hā lì lù yà wǒ yào dà shēng huān hū zàn měi
 {end_of_chorus}

@@ -6,32 +6,34 @@
 {language: zh}
 {themes: 爱, 盼望, 力量, 梦想}
 
-# Intro: [G] [B/F#] [Em] [E/G#] [Am] [D] [G/B] [C] [D]
+{start_of_intro: 前奏/Intro}
+[G] [B/F#] [Em] [E/G#] [Am] [D] [G/B] [C] [D]
+{end_of_intro}
 
 {start_of_verse: 主歌 1/Couplet 1}
-[G]谢谢你[Bm7]的爱，[C]每个温暖[D]微笑；   xiè xiè nǐ de ài měi gè wēn nuǎn wēi xiào
-[G]谢谢你[Bm7]的爱，[C]每个紧紧[D]拥抱。   xiè xiè nǐ de ài měi gè jǐn jǐn yōng bào
-[C]坚定的鼓[D/C]励，赐我[B]向前[B/D#]的勇[Em]气，   jiān dìng de gǔ lì cì wǒ xiàng qián de yǒng qì
-[C]一起追[A/C#]逐梦想不放[D]弃。   yī qǐ zhuī zhú mèng xiǎng bù fàng qì
+[G]谢谢你[Bm7]的爱，每[C]个温暖微[D]笑；   xiè xiè nǐ de ài měi gè wēn nuǎn wēi xiào
+[G]谢谢你[Bm7]的爱，每[C]个紧紧拥[D]抱。   xiè xiè nǐ de ài měi gè jǐn jǐn yōng bào
+[C]坚定的鼓[D/C]励，赐我[B]向前的[B/D#] 勇[Em]气，   jiān dìng de gǔ lì cì wǒ xiàng qián de yǒng qì
+一起[C]追逐[A/C#]梦想不放[D]弃。   yī qǐ zhuī zhú mèng xiǎng bù fàng qì
 {end_of_verse}
 
 {start_of_verse: 主歌 2/Couplet 2}
-[G]谢谢你[Bm7]的爱，[C]每个温暖[D]微笑；   xiè xiè nǐ de ài měi gè wēn nuǎn wēi xiào
-[G]谢谢你[Bm7]的爱，[C]每个紧紧[D]拥抱。   xiè xiè nǐ de ài měi gè jǐn jǐn yōng bào
-[C]坚定的鼓[D/C]励，赐我[B]向前[B/D#]的勇[Em]气，   jiān dìng de gǔ lì cì wǒ xiàng qián de yǒng qì
-[C]我相信[A/C#]生命充满奇[D]迹。   wǒ xiāng xìn shēng mìng chōng mǎn qí jì
+[G]谢谢你[Bm7]的爱，每[C]个温暖微[D]笑；   xiè xiè nǐ de ài měi gè wēn nuǎn wēi xiào
+[G]谢谢你[Bm7]的爱，每[C]个紧紧拥[D]抱。   xiè xiè nǐ de ài měi gè jǐn jǐn yōng bào
+[C]坚定的鼓[D/C]励，赐我[B]向前的[B/D#] 勇[Em]气，   jiān dìng de gǔ lì cì wǒ xiàng qián de yǒng qì
+[C]我相信生[A/C#]命充满奇[D]迹。   wǒ xiāng xìn shēng mìng chōng mǎn qí jì
 {end_of_verse}
 
 {start_of_chorus: 副歌/Refrain}
-让爱[G]飞翔，[B/F#]这里就[Em]有希望；[G/D]   ràng ài fēi xiáng zhè lǐ jiù yǒu xī wàng
-让爱[C]飞翔，[A/C#]这里就[D]有力量。   ràng ài fēi xiáng zhè lǐ jiù yǒu lì liáng
-让爱[G]飞翔，[B/D#]乘着梦想[Em]一起去[E/G#]翱翔；   ràng ài fēi xiáng chéng zhe mèng xiǎng yī qǐ qù áo xiáng
-[Am]温暖每颗心，[D]将这世界照[G]亮。   wēn nuǎn měi kē xīn jiāng zhè shì jiè zhào liàng
+让爱[G]飞翔，[B/F#]这里就[Em]有希望；   ràng ài fēi xiáng zhè lǐ jiù yǒu xī wàng
+[G/D] 让爱[C]飞翔，这[A/C#]里就有力[D]量。   ràng ài fēi xiáng zhè lǐ jiù yǒu lì liáng
+让爱[G]飞翔，乘[B/D#]着梦想[Em]一起去翱翔[E/G#]；   ràng ài fēi xiáng chéng zhe mèng xiǎng yī qǐ qù áo xiáng
+温暖[Am]每颗心，将[D]这世界照[G]亮。   wēn nuǎn měi kē xīn jiāng zhè shì jiè zhào liàng
 {end_of_chorus}
 
 {start_of_bridge: 桥段/Pont}
-[Em]用这份爱[Bm]去关怀，[C]去看和去明[D]白；[G]   yòng zhè fèn ài qù guān huái qù kàn hé qù míng bái
-[Em]用这份爱[Bm]去分享，让世界不[C]一[D]样，   yòng zhè fèn ài qù fēn xiǎng ràng shì jiè bù yī yàng
-[Em]让这份深深[Bm]感动停留[C]我们[C/D]心中，   ràng zhè fèn shēn shēn gǎn dòng tíng liú wǒ men xīn zhōng
-[D/F#]因为[Em]爱，使[C]生命[A/C#]再次[D]灿烂。   yīn wèi ài shǐ shēng mìng zài cì càn làn
+[Em]用这份爱[Bm]去关怀，去[C]看和去[D] 明[G]白；   yòng zhè fèn ài qù guān huái qù kàn hé qù míng bái
+[Em]用这份爱[Bm]去分享，让[C]世界不一[D]样，   yòng zhè fèn ài qù fēn xiǎng ràng shì jiè bù yī yàng
+[Em]让这份深[Bm]深感动停[C]留我们[C/D] 心[G]中，   ràng zhè fèn shēn shēn gǎn dòng tíng liú wǒ men xīn zhōng
+[C]因[D/F#]为[Em]爱，使[C]生命[A/C#]再次灿[D]烂。   yīn wèi ài shǐ shēng mìng zài cì càn làn
 {end_of_bridge}
