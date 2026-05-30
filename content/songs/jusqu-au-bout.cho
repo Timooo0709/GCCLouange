@@ -4,24 +4,18 @@
 {language: fr}
 {themes: Espérance, Engagement, Foi}
 
-{start_of_bridge: Pont 1}
-AD AD Eb
-Seigneur je veux te dire ma joie Pour qu'au jour où notre Jésus reviendra
-[Eb]Car mes frères et sœurs dans la [Bb]foi Nous seron[Bb]s fiers de ces fruits
-Comᵗ cont
-Rayonnent de toi Qu'en nous il aura produit
-[Ab]Rachetés par la même grâce Pour qu'a[Ab]u jour où notre Jésus revien[Eb]dra
-Ensemble nous suivons Tes tr[Bb]aces Nous soyon[Bb]s purs devant Lui
-Cont Cont
-Et nous déclarons Sanctifiés par son Esprit
-{end_of_bridge}
+{start_of_verse: Couplet 1}
+[Ab]Seigneur je veux te dire ma joie
+[Eb]Car mes frères et sœurs dans la [Bb]foi
+[Cm7]Rayonnent de toi
+[Ab]Rachetés par la même grâce
+[Eb]Ensemble nous suivons Tes tra[Bb]ces
+[Cm7]Et nous déclarons
+{end_of_verse}
 
 {start_of_chorus: Refrain}
-[Ab]Celui qui a commencé, cette œuvre dans nos Jusqu’au Bout ouh ouh ouh, il nous mènera
-[Bb]cœurs jusqu’au bout ouh ouh ouh
-mt
-La mènera jusqu'au bout, il la mènera Jusqu’au Bout ouh ouh ouh, il nous mènera
-jusqu'au bout jusqu’au bout ouh ouh ouh
+[Ab]Celui qui a commencé, [Eb]cette œuvre dans nos [Bb]cœurs
+La mènera jusqu'au [Cm7]bout, il la mènera jusqu'au bout
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
@@ -33,9 +27,17 @@ Car ce que ta bonté commence
 Tu l'accompliras
 {end_of_verse}
 
-{start_of_chorus: Refrain}
-Celui qui a commencé, cette œuvre dans nos
-cœurs
-La mènera jusqu'au bout, il la mènera
-jusqu'au bout
-{end_of_chorus}
+
+{start_of_bridge: Pont}
+Pour qu'au [Ab]jour où notre Jésus revien[Eb]dra
+Nous serons [Bb]fiers de ces fruits
+[Cm7]Qu'en nous il aura produit
+Pour qu'au [Ab]jour où notre Jésus revien[Eb]dra
+Nous soyons [Bb]purs devant Lui
+[Cm7]Sanctifiés par son Esprit
+{end_of_bridge}
+
+{start_of_grid: Tag}
+[Eb]Jusqu'au Bout ouh ouh ouh, il nous mènera [Bb]jusqu'au bout ouh ouh ouh
+[Cm7]Jusqu'au Bout ouh ouh ouh, il nous mènera [Ab]jusqu'au bout ouh ouh ouh
+{end_of_grid}
