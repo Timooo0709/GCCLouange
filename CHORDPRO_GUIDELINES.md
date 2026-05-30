@@ -5,9 +5,9 @@ Ce document synthétise toutes les règles, habitudes et préférences de format
 ---
 
 ## 1. Usage des Pronoms
-* **Règle :** Nous n'utilisons plus les pronoms honorifiques divins `祢` (ou `祢的`) et `祂`. Tous les chants doivent utiliser systématiquement les pronoms standard **`你`** (et **`你的`**) ainsi que **`他`** (et **`他的`**), y compris pour s'adresser à Dieu, Jésus ou le Saint-Esprit.
+* **Règle :** Nous n'utilisons plus les pronoms honorifiques divins `你` (ou `你的`) et `他`. Tous les chants doivent utiliser systématiquement les pronoms standard **`你`** (et **`你的`**) ainsi que **`他`** (et **`他的`**), y compris pour s'adresser à Dieu, Jésus ou le Saint-Esprit.
 * *Exemple :*
-  * Avant : `祢是我的[D]主` ➔ Corrigé : `你是我的[D]主`
+  * Avant : `你是我的[D]主` ➔ Corrigé : `你是我的[D]主`
 
 
 ---
