@@ -12,7 +12,7 @@ export async function POST(req: Request) {
   }
   
   const result = await resend.emails.send({
-    from: 'noreply@zileebelei.resend.app',
+    from: 'noreply@resend.dev',
     to: process.env.MAIL_TO!,
     subject: `🐛 Signalement : ${title}`,
     text: `
