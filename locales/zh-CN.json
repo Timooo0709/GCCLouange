@@ -95,7 +95,7 @@
       "deleteCancel": "取消",
       "notFound": "未找到该歌单。",
       "back": "← 返回",
-      "leaderLabel": "负责人：",
+      "leaderLabel": "主席：",
       "loadingCharts": "正在加载歌谱…"
     },
     "form": {
@@ -105,9 +105,9 @@
       "titleLabel": "歌单名称",
       "titleRequired": "歌单名称不能为空。",
       "titlePlaceholder": "例如：5月25日主日崇拜",
-      "leaderLabel": "您的名字",
-      "leaderRequired": "名字不能为空。",
-      "leaderPlaceholder": "例如：玛丽",
+      "leaderLabel": "主席",
+      "leaderRequired": "请填写主席姓名。",
+      "leaderPlaceholder": "例如：提摩太",
       "categoryLabel": "类型/聚会",
       "categoryRequired": "请选择一个类型。",
       "categoryPlaceholder": "请选择类型…",
