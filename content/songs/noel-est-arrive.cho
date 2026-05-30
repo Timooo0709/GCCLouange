@@ -1,35 +1,34 @@
 {title: Noël est arrivé}
 {key: Bb}
+{artist:  Be Witness}
 {language: fr}
 {themes: Noël}
 
 {start_of_verse: Couplet 1}
-Le ven[F]t se l[Bb/F]ève
-Nous [F]annonce la nou[C/E]velle
-Un sa[Dm]uveur nous est [Bb]né
-Le div[F/C]in envoy[C]é
-Un te[F]mps s'ac[Bb/F]hève
-Empor[F]tant nos vies anc[C/E]iennes
-Car est[Dm]né le plus[Bb]beau des mys[C4]tère[C3]s
-Nous [Bb2]étions dans la n[F]uit
-No[C]ël est ar[Dm]rivé
-Un en[Bb2]fant nous est né[F]c'est Noël[C3][C4]
-Voici [Bb2]l'heure de minui[F]t
-Où le [C]Dieu d'éter[Dm]nité
+Le ven[F]t se l[Bb/F]ève, Nous [F]annonce la nou[C/E]velle
+Un sa[Dm]uveur nous est [Bb]né, Le div[F/C]in envoy[C]é
+Un te[F]mps s'ac[Bb/F]hève, Empor[F]tant nos vies anc[C/E]iennes
+Car est [Dm]né le plus[Bb]beau des mys[C4]tère[C3]s
+{end_of_verse}
+{start_of_chorus: Refrain 1}
+Nous [Bb2]étions dans la n[F]uit, No[C]ël est ar[Dm]rivé
+Un en[Bb2]fant nous est né [F]c'est Noël[C3][C4]
+Voici [Bb2]l'heure de minui[F]t, Où le [C]Dieu d'éter[Dm]nité
 Vient [Bb]rejoindre notre [F/C]huma[C]nité[F]
-La glo[G]ire du ciel[C]
-Par l'[G]étoile de lum[D]ière
-Nous [Em]révèle ce[C]lui
-Qui vient ch[G/D]anger nos v[D]ies
+{end_of_chorus}
+{start_of_verse: Couplet 2}
+La glo[G]ire du ciel[C], Par l'[G]étoile de lum[D]ière, 
+Nous [Em]révèle ce[C]lui, Qui vient ch[G/D]anger nos v[D]ies
 {end_of_verse}
 
-{start_of_verse: Couplet 1}
-Pont : Et du [Dm7]fond de l'a[Bb]bîme
-Jail[F]lira la lu[C]mière
+{start_of_bridge: Pont}
+Et du [Dm7]fond de l'a[Bb]bîme, Jail[F]lira la lu[C]mière
 Car d[Dm7]éjà Jésus-Ch[Bb]rist accomp[F]lit le mystè[C]re
 Il vien[Dm7]t briser la m[Bb]ort et nous [F]donner la vi[C]e
-Cet en[Bb2]fant c'est n[F/A]otre mes[Eb]sie[Cm6/A][Cm7/Bb][Cm][Gm/D]
-[D]  [G/D]  [C/D]  [D]  [C/D]  [D]
+Cet en[Bb2]fant c'est n[F/A]otre mes[Eb]sie[Cm6/A][ ][Cm7/Bb][ ][Cm][ ][Gm/D][ ][D]  [G/D]  [C/D]  [D]  [C/D]  [D]
+{end_of_bridge}
+
+{start_of_chorus: Refrain 2}
 C'est N[C2]oël, c'est No[G]ël
 Voi[D]ci l'Emma[Em]nuel
 Le sa[C2]lut de notre [G]human[D4]ité[D3]
@@ -42,4 +41,4 @@ Un en[C2]fant nous est [G]né c'est N[D4]oël[D3]
 Voici [C2]l'heure de [G]minuit
 Où le [D/F#]Dieu d'éter[Em]nité
 Vient [C]rejoindre notre[G/D]hum[D]ani[Em]té
-{end_of_verse}
+{end_of_chorus}

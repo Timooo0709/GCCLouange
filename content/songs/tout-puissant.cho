@@ -5,40 +5,33 @@
 {themes: Adoration, Sainteté}
 
 {start_of_intro: Intro}
-[Bm]  [D]  [A]  [D]  [G]  [D]  [Em]  [D]  [A/C#]
-[Bm]Tu es grand et admirable,
-[G]Éternel incompara[D]ble,
-[Bm]Tu es fort et insond[D]able,
-[G]Majestueux, immuab[D]le,
-Nous te ch[G]antons, nous
-Tout puiss[D]ant, souverain,
-Rédempt[D]eur couronné,
+[Bm][ ][D][ ][A][ ][D][ ][G][ ][D][ ][Em][ ][D][ ][A/C#]
 {end_of_intro}
 
+{start_of_verse}
+[Bm]Tu es grand et admirable, [A]tu es saint et vérit[D]able,
+[G]Éternel incompara[D]ble, [Em]tu [D]es [A/C#]là.
+[Bm]Tu es fort et insond[D]able, [A]infini et redout[D]able,
+[G]Majestueux, immuab[D]le, [Em]tu [D]es [A/C#]là.
+Nous te ch[G]antons, nous proc[A]lamons :
+{end_of_verse}
+
+{start_of_chorus : Refrain}
+Tout puiss[D]ant, souve[A]rain, tu tiens m[Bm]a vie dans ta ma[G]in.
+Rédempt[D]eur couron[A]né, par toi [D/F#]je suis libé[G]ré.
+{end_of_chorus}
+
 {start_of_bridge: Pont}
-[Bm]Entends nos cris, [A]entends
-[Em]Nous sommes unis [G]pour
+[Bm]Entends nos cris, [A]entends nos cœurs,
+[Em]Nous sommes unis [G]pour toi, Seigneur.
 (× 4)
-[Bm]Entends nos cris, [A]entends
-[Em]Nous sommes unis [G]pour
+[Bm]Entends nos cris, [A]entends nos [D]cœurs,
+[Em]Nous sommes unis [G]pour toi, Seigneur.
 (× 2)
 {end_of_bridge}
 
 {start_of_final: Final}
-[Bm]  [D]  [A]  [D]  [G]  [D]  [Em]  [D]  [A]
+[Bm][ ][D][ ][A][ ][D][ ][G][ ][D][ ][Em][ ][D][ ][A]
 {end_of_final}
 
-{start_of_intro: Intro}
-[D]
-[D][A]tu es saint et vérit[D]able,
-[Em]tu [D]es [A/C#]là.
-[A]infini et redout[D]able,
-[Em]tu [D]es [A/C#]là.
-proc[A]lamons :
-[A]tu tiens m[Bm]a vie dans ta ma[G]in.
-[A]par toi [D/F#]je suis libé[G]ré.
-nos cœurs,
-toi, Seigneur.
-nos [D]cœurs,
-toi, Seigneur.
-{end_of_intro}
+

@@ -1,11 +1,10 @@
 {title: Réjouis-toi mon âme}
 {artist: Hillsong}
-{key: D}
+{key: G}
 {language: fr}
 {themes: Adoration, Action de grâce}
 
 {start_of_intro: Intro}
-[G]
 [Bm]  [G]  [D]
 {end_of_intro}
 
@@ -38,22 +37,10 @@ Ne perds pas [G]cet instant.
 {start_of_final: Final}
 [D]Réjouis-toi mon âme, [Dsus4]en plein cœur de Sa présence.
 [D]Réjouis-toi mon âme, [Dsus4]en dépit des circonstances.
+[D]Réjouis-toi mon âme, [Dsus4]et n'oublie aucun de Ses bienfaits.
+[D]Réjouis-toi mon âme, [Dsus4]oui réjouis-toi.
+[D]Réjouis-toi mon âme, [Dsus4]choisis encore la louange.
+[D]Réjouis-toi mon âme, [Dsus4]oui réjouis-toi.
+[D]Réjouis-toi mon âme, [G/B]en plein cœur de Sa présence.
+[D/A]Réjouis-toi, [G]Oui réjouis-toi mon âme.
 {end_of_final}
-
-{start_of_verse: Couplet 1}
-[D]Réjouis-toi mon âme,
-[D]Réjouis-toi mon âme,
-[D]Réjouis-toi mon âme,
-[D]Réjouis-toi mon âme,
-[D]Réjouis-toi mon âme,
-[D/A]Réjouis-toi, [G]Oui réjouis-toi
-{end_of_verse}
-
-{start_of_verse: Couplet 1}
-[Dsus4]et n'oublie aucun de Ses bienfaits.
-[Dsus4]oui réjouis-toi.
-[Dsus4]choisis encore la louange.
-[Dsus4]oui réjouis-toi.
-[G/B]en plein cœur de Sa présence.
-mon âme.
-{end_of_verse}

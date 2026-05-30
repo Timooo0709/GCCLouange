@@ -4,10 +4,6 @@
 {language: fr}
 {themes: Adoration, Sainteté}
 
-{start_of_intro: Intro}
-[C]
-{end_of_intro}
-
 {start_of_verse: Couplet}
 [FM7/G]Quand je [C2]contemple Ta sainte[F]té
 Et quand [C]je contemple Ta beaut[F]é,
@@ -19,7 +15,7 @@ Et quand [C2]toutes les [Em7]choses pâl[F]issent à Ta lu[F/G]miè - [G]re.
 
 {start_of_chorus: Refrain}
 Oh ! Je T'a[FM7]do - [G/F]re, oui, je T'a[Em7]do - [Am]re.
-Si [Dm]je vis, Seigneur,[Dm/G]c'est pour [G]T'ador[CM7]er.[Em7][Dm]
+Si [Dm]je vis, Seigneur,[Dm/G]c'est pour [G]T'ador[CM7]er.[ ][Dm][ ][Em7]
 Oh ! Je T'a[FM7]do - [G/F]re, oui, je T'a[Em7]do - [Am]re.
 Si [Dm]je vis, Seigneur,[Dm7/G]c'est pour [G]T'ador[C]er.
 {end_of_chorus}
@@ -28,5 +24,5 @@ Si [Dm]je vis, Seigneur,[Dm7/G]c'est pour [G]T'ador[C]er.
 C'est la [FM7]raison pour laquelle je v[G/F]is,
 C'est la [Em7]raison pour laquelle je v[Am]is,
 C'est la [Dm]raison pour laquelle je v[Dm/G]is,
-Pour [G]T'adorer mon [C]Roi.[Em7][Dm]
+Pour [G]T'adorer mon [C]Roi.[Dm][ ][Em7]
 {end_of_bridge}

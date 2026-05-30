@@ -4,19 +4,15 @@
 {language: fr}
 {themes: Adoration, Mission}
 
-{start_of_intro: Intro}
-[G]
-{end_of_intro}
-
-{start_of_verse: Couplet 2}
-[G]Nous voulons voir J[D]ésus élev[Em]é
+{start_of_verse: Couplet}
+[G] Nous voulons voir J[D]ésus élev[Em]é
 Comme un étend[C]ard sur ce pay[G]s,
 Pour montrer à to[D]us la vérit[Em]é
 Et le chemi[C]n vers le Ciel.
 {end_of_verse}
 
-{start_of_chorus: Refrain 2}
-[G]Nous voulons voir, [D]nous voulons voir,[Em]
+{start_of_chorus: Refrain}
+[G] Nous voulons voir, [D]nous voulons voir,[Em]
 Nous voulons voir J[C]ésus élev[G]é.
 {end_of_chorus}
 

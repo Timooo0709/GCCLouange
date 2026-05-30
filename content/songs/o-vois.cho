@@ -30,9 +30,6 @@ Christ mon Rédempteur
 {start_of_prechorus: Pré-Refrain}
 (Mais) Il a t[G#m]riomphé
 Car Il e[F#]st ressuscit[E]é
-Titre original : Behold
-Inspiré du chant "How Great Thou Art!"
-Traducteur
 {end_of_prechorus}
 
 {start_of_chorus: Refrain}
@@ -52,7 +49,9 @@ Jusqu’à la fin de mes jours
 Fais en moi Ta volonté
 Ô Esprit de Dieu
 Règne en moi à tout jamais
-FIN
+{end_of_verse}
+
+{start_of_final}
 Mon âme cha[B]nte, mon [F#]Dieu
 (Lui) qu[E]i était et qui s[B]era
 Ouvrons la [G#m]voie
@@ -61,7 +60,5 @@ Jusqu’à[B]la fin (de) Son œuvre sur [F#sus]Terre[F#]
 Levons nos [G#m]voix
 (Il) fait de nos louanges Son [E]trône
 Et nous serons touj[B/F#]ours auprès de [B5]Lui
-(Then Sings My Soul)
-(Dieu Tout-Puissant), courtoisie du Stuart Hine Trust
-: Jonathan Mercier
-{end_of_verse}
+
+{end_of_final}

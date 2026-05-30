@@ -1,21 +1,17 @@
 {title: Remémoration}
 {artist: Hillsong}
-{key: B}
+{key: E}
 {language: fr}
 {themes: Croix, Adoration, Action de grâce}
 
-{start_of_intro: Intro}
-[E]
-{end_of_intro}
-
 {start_of_verse: Couplet 1}
-[E]Tu es le [F#m]Pain de [A]Vie,[C#m]rompu pour [B]mes pé[A]chés.
-[E]Ton corps sur [F#m]cette [A]croix,[C#m]meurtri pour [B]me sau[A]ver.
+[E] Tu es le [F#m]Pain de [A]Vie, [C#m]rompu pour [B]mes pé[A]chés.
+[E] Ton corps sur [F#m]cette [A]croix, [C#m]meurtri pour [B]me sau[A]ver.
 {end_of_verse}
 
 {start_of_verse: Couplet 2}
-[E]Je me ra[F#m]ppelle la [A]coupe[C#m]déversée [B]par a[A]mour.
-[E]Cette alliance [F#m]par Ton [A]sang[C#m]me redo[B]nne la [A]vie.
+[E] Je me ra[F#m]ppelle la [A]coupe [C#m]déversée [B]par a[A]mour.
+[E] Cette alliance [F#m]par Ton [A]sang [C#m]me redo[B]nne la [A]vie.
 {end_of_verse}
 
 {start_of_chorus: Refrain 1}
@@ -24,8 +20,8 @@ Allé[A]luia, Tes [E]promesses je n'oublie p[B]as.
 {end_of_chorus}
 
 {start_of_verse: Couplet 3}
-[E]Je mets en œuvre [F#m]mon sa[A]lut[C#m]avec crainte [B]et res[A]pect.
-[E]Et marchant [F#m]dans Tes [A]voies,[C#m]Jésus Tu [B]règnes en [A]moi.
+[E] Je mets en œuvre [F#m]mon sa[A]lut [C#m]avec crainte [B]et res[A]pect.
+[E] Et marchant [F#m]dans Tes [A]voies, [C#m]Jésus Tu [B]règnes en [A]moi.
 {end_of_verse}
 
 {start_of_chorus: Refrain 2}

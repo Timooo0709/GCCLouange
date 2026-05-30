@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
-import { Menu, X, Sun, Moon, Globe, LogIn, LogOut, Music, List } from "lucide-react";
+import { Menu, X, Sun, Moon, Globe, LogIn, LogOut, Music } from "lucide-react";
 import { useDarkMode } from "@/lib/useDarkMode";
 import { useAuth, logOut } from "@/lib/firebase/auth";
 
@@ -58,17 +58,23 @@ export function Navbar() {
           <nav className="flex items-center gap-1">
             <Link
               href="/songs"
-              aria-label={t("common.header.songs")}
-              className={`p-2 rounded-lg transition-all duration-200 ${isActiveSongs ? "bg-primary/10 text-primary dark:bg-primary/20" : "text-muted-foreground hover:text-foreground hover:bg-muted"}`}
+              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${
+                isActiveSongs
+                  ? "bg-primary/10 text-primary dark:bg-primary/20"
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
+              }`}
             >
-              <Music className="h-5 w-5" />
+              {t("common.header.songs")}
             </Link>
             <Link
               href="/setlists"
-              aria-label={t("common.header.setlists")}
-              className={`p-2 rounded-lg transition-all duration-200 ${isActiveSetlists ? "bg-primary/10 text-primary dark:bg-primary/20" : "text-muted-foreground hover:text-foreground hover:bg-muted"}`}
+              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${
+                isActiveSetlists
+                  ? "bg-primary/10 text-primary dark:bg-primary/20"
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
+              }`}
             >
-              <List className="h-5 w-5" />
+              {t("common.header.setlists")}
             </Link>
           </nav>
 
@@ -83,7 +89,7 @@ export function Navbar() {
               className="text-xs font-semibold px-2 py-1.5 rounded-lg border border-border bg-background hover:bg-muted text-muted-foreground hover:text-foreground transition-all duration-200 active:scale-95 flex items-center gap-1 cursor-pointer"
             >
               <Globe className="h-3.5 w-3.5" />
-              <span>{isZh ? "FR" : "中文"}</span>
+              <span>{isZh ? "中文" : "FR"}</span>
             </button>
 
             {/* Dark mode toggle */}
@@ -164,7 +170,7 @@ export function Navbar() {
               className="text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-border bg-background hover:bg-muted text-muted-foreground hover:text-foreground transition-all duration-200 flex items-center gap-1 cursor-pointer"
             >
               <Globe className="h-3.5 w-3.5" />
-              <span>{isZh ? "Français" : "中文"}</span>
+              <span>{isZh ? "中文" : "Français"}</span>
             </button>
           </div>
 

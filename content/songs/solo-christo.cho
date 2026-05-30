@@ -4,10 +4,6 @@
 {language: fr}
 {themes: Adoration, Croix, Résurrection}
 
-{start_of_intro: Intro}
-[C]
-{end_of_intro}
-
 {start_of_verse: Couplet 1}
 Fils de [C]Dieu, splendeur [Dm7]des [C]Cieux, couro[F]nné de l'u[Am]ni - [G]vers,
 Fils de [C/E]l'homme, Sauveur [F]pré[Am]cieux, dépouil[Dm7]lé pour révé[F]ler l'amour [G]du [C]Père.
@@ -32,5 +28,6 @@ Par Sa [C/E]vie, Il nous [F]li - [Am]bère, ressu[Dm7]scité à ja[F]mais, Il es
 
 {start_of_verse: Couplet 4}
 Éle[C]vé parmi [Dm7]les [C]anges, couro[F]nné de nos [Am]lou - [G]anges.
-[C/E]  [F]  [Am]  [Dm7]  [F]  [G]  [C]
+Nous l'é[C/E]glise ento[F]nne[Am]rons l'hymne [Dm7]saint des rache[F]tés pour l'é[G]terni[C]té.
+
 {end_of_verse}

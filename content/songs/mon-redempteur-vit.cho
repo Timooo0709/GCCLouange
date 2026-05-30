@@ -5,21 +5,22 @@
 {themes: Résurrection, Adoration, Foi}
 
 {start_of_verse: Couplet 1}
-[E7]Je sais qu’il [A]m’a secouru,
-[E7]Son sang a [A]couvert mes fautes,
-Je le crois, [A]oui je [E7]crois.[A][E7]
-[E7]Il a en[A]levé ma honte,
-[E7]Je suis guér[A]i en son nom,
-Je le crois, [A]oui je [E7]crois.[A][E7]
-[B]Je veux proclamer : [A]Jésus a [A/B]vaincu la mort.
-Mon ré[E]dempteur vit,[A]mon ré[C#m7]dempteur vit ![B]
-Mon ré[E]dempteur vit,[A]mon ré[C#m7]dempteur vit ![B]
-Mon ré[E]dempteur vit,[A]mon ré[C#m7]dempteur vit ![E][B]
+[E7] Je sais qu’il [A]m’a secouru,
+[E7] Son sang a [A]couvert mes fautes,
+Je le cr[E7]ois, [A]oui je cro[E7]is.[ ][A]
+[E7] Il a en[A]levé ma honte,
+[E7] Je suis guér[A]i en son nom,
+Je le cr[E7]ois, [A]oui je cro[E7]is.[ ][A]
+[B] Je veux proclamer : [A]Jésus a [A/B]vaincu la mort.
 {end_of_verse}
 
+{start_of_chorus: Refrain}
+Mon ré[E]dempteur vit,[A]mon ré[C#m7]dempteur vit ![B]
+Mon ré[E]dempteur vit,[A]mon ré[C#m7]dempteur vit ![B][E]
+{end_of_chorus}
+
 {start_of_bridge: Pont}
-[A]  [A7]  [A]
-[D]Tu prends mon fardeau [A/C#]et tu l’emportes.
+[D] Tu prends mon fardeau [A/C#]et tu l’emportes.
 Al[E/B]ors je danse sur les [F#m7]sommets,
-Je [E/G#]vois venir ton règne.[B][B4]
+Je [E/G#]vois venir ton rè[B4]gne.[B]
 {end_of_bridge}

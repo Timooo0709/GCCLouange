@@ -4,16 +4,12 @@
 {language: fr}
 {themes: Adoration, Saint-Esprit, Sainteté}
 
-{start_of_intro: Intro}
-[A]
-{end_of_intro}
-
 {start_of_verse: Couplet 1}
 [A]Seigneur, [A4]par la clar[A]té de [E/A]Ton amour,
 [A]Chasse [A4]l'obscuri[A]té qui [E/A]nous entoure.
 [D]Jésus, [E/D]Toi, la lu[C#m]mière qui [F#m]nous éclaires,
 [D]Véri[E/D]té qui nous [C#m]guides et qui [F#m]nous libères.
-[G]Brille sur [E4]moi, [G]brille sur [E4][E]moi.[E]
+[G]Brille sur [E4]moi, [E][ ][G]brille sur [E4]moi.[E]
 {end_of_verse}
 
 {start_of_chorus: Refrain}
@@ -28,7 +24,7 @@
 [A]De la [A4]nuit dans l'é[A]clat de [E/A]Ta puissance.
 [D]Par Ton [E/D]sang je prends [C#m]part à Ta [F#m]sainteté,
 [D]Sonde-[E/D]moi, mes té[C#m]nèbres, con[F#m]sume-les.
-[G]Brille sur [E4]moi, [G]brille sur [E4][E]moi.[E]
+[G]Brille sur [E4]moi, [E][ ][G]brille sur [E4]moi.[E]
 {end_of_verse}
 
 {start_of_verse: Couplet 3}
@@ -36,5 +32,5 @@
 [A]Nos v[A4]isages re[A]flètent [E/A]Ta beauté.
 [D]Et trans[E/D]formés sans [C#m]cesse de [F#m]gloire en gloire,
 [D]Que sans [E/D]fin notre [C#m]vie dise [F#m]Ton histoire.
-[G]Brille sur [E4]moi, [G]brille sur [E4][E]moi.[E]
+[G]Brille sur [E4]moi, [E][ ][G]brille sur [E4]moi.[E]
 {end_of_verse}

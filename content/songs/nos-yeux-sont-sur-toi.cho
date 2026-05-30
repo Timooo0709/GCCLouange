@@ -4,10 +4,6 @@
 {language: fr}
 {themes: Adoration, Espérance}
 
-{start_of_intro: Intro}
-[C]
-{end_of_intro}
-
 {start_of_verse: Couplet 1}
 Le s[F]alut tran[C]sperce l'obscurit[G]é
 Et le R[F]oyaume avance à l[C]a vitesse de la lumiè[G]re.
@@ -24,10 +20,10 @@ Jésus notr[G]e Dieu.
 
 {start_of_chorus: Refrain}
 Ô nos yeux sont s[F]ur Toi,
-[C]Fils de Dieu, notre [G]Sauveur.
+[C] Fils de Dieu, notre [G]Sauveur.
 Toi l'image de l[F]'amour,
-[C]Gloire à Ton Nom pour [G]toujours,
-Ô nos yeux sont s[F]ur Toi.[G][C]
+[C] Gloire à Ton Nom pour [G]toujours,
+Ô nos yeux sont s[F]ur Toi.[C][ ][G]
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}

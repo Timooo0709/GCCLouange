@@ -4,10 +4,6 @@
 {language: fr}
 {themes: Adoration, Espérance}
 
-{start_of_intro: Intro}
-[A]
-{end_of_intro}
-
 {start_of_verse: Couplet 1}
 Ta grâ[D]ce fait toutes cho[A]ses nouvel[E]les,
 Tes œu[D]vres pour nous s[A]ont parfai[E]tes.
@@ -18,7 +14,7 @@ Dans la [Bm]vie trouvée [F#m]en Ton N[E]om.
 {start_of_chorus: Refrain}
 Tu fa[D]is toutes cho[A]ses nouvel[E]les, (x2)
 Aujourd'[A/C#]hui et à [D]jamais, Ton [F#m]amour est san[E]s fin,
-Cet [A/C#]espoir est cer[D]tain, a - llélu[E]i - [D][F#m]a.
+Cet [A/C#]espoir est cer[D]tain, a [F#m]- llélu[E]i - [D]a.
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}

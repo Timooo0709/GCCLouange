@@ -55,7 +55,7 @@ interface ChordLineProps {
   fontSize?: number;
 }
 
-export function ChordLine({ tokens, showChords = true, fontSize = 0.90 }: ChordLineProps) {
+export function ChordLine({ tokens, showChords = true, fontSize = 0.88 }: ChordLineProps) {
   const segments = toSegments(tokens);
   const hasAnyChord = showChords && segments.some((s) => s.chord !== null);
   return (

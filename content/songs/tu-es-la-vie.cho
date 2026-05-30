@@ -4,38 +4,33 @@
 {language: fr}
 {themes: Adoration}
 
-{start_of_intro: Intro}
-[C]
-{end_of_intro}
-
 {start_of_verse: Couplet 1}
-[C]En Ton No[Em]m, nous avons t[Am]rouvé la v[F]ie éternelle.
-[C]Par Ta grâ[Em]ce, Tu nous fais c[Am]onnaître T[F]a liberté.
+[C] En Ton No[Em]m, nous avons t[Am]rouvé la v[F]ie éternelle.
+[C] Par Ta grâ[Em]ce, Tu nous fais c[Am]onnaître T[F]a liberté.
 {end_of_verse}
 
 {start_of_prechorus: Pré-Refrain}
-[G]Tu as tracé le chemin pour nous,
-[Am]Par Ton amour
+[G] Tu as tracé le chemin pour nous,
+[Am] Par Ton amour
 {end_of_prechorus}
 
 {start_of_chorus: Refrain}
-(F)
-Tu es la vie,
-[C]Je vis dans la lumi[Em]ère de mon Sauveur.
-[Am]Je danse dans Son [F]amour pour toujours,
-[C]Je chante comme si [Em]je marchais sur l'eau.
-[Am]Tu es la vie,[F]Tu vis en moi.
+[(F)] Tu es la vie,
+[C] Je vis dans la lumi[Em]ère de mon Sauveur.
+[Am] Je danse dans Son [F]amour pour toujours,
+[C] Je chante comme si [Em]je marchais sur l'eau.
+[Am] Tu es la vie,[F]Tu vis en moi.
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[C]Sur un ciel g[Em]ris, Ta lumière ja[Am]illit de mil[F]le couleurs vives.
-[C]Par Ta v[Em]ie, oui Tu nous c[Am]onduis, que tou[F]te la terre voie.
+[C] Sur un ciel g[Em]ris, Ta lumière ja[Am]illit de mil[F]le couleurs vives.
+[C] Par Ta v[Em]ie, oui Tu nous c[Am]onduis, que tou[F]te la terre voie.
 {end_of_verse}
 
-{start_of_chorus: Refrain}
-[Em]Je donne ma [F]vie pour Te suivre
-[G]Car Ton amour [Am]seul me suffit.
-[C]Tu es la v[Em]ie, [Am]Tu es la v[F]ie,
+{start_of_chorus: Post-Refrain}
+[Em] Je donne ma [F]vie pour Te suivre
+[G] Car Ton amour [Am]seul me suffit.
+[C] Tu es la v[Em]ie, [Am]Tu es la v[F]ie,
 Tu vis en mo[C]i.
 {end_of_chorus}
 

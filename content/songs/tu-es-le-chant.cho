@@ -4,25 +4,22 @@
 {language: fr}
 {themes: Adoration}
 
-{start_of_intro: Intro}
-[E]
-{end_of_intro}
-
 {start_of_verse: Couplet 1}
-[E]Seigneur, Tu [B/D#]es la force,
+[E] Seigneur, Tu [B/D#]es la force,
 L'a[C#m]mour qui brûle en [A]moi comme une [E]flamme,
 Le souti[B/D#]en de m[A]on âme.
 {end_of_verse}
 
 {start_of_verse: Couplet 2}
-[E]Seigneur, Tu [B/D#]es la joie
+[E] Seigneur, Tu [B/D#]es la joie
 Qui [C#m]brille sur mon vi[A]sage, Tu es ma [E]gloire,
 Tu [B/D#]es tout p[A]our moi.
 {end_of_verse}
 
 {start_of_prechorus: Pré-Refrain}
-[F#m]Et quand je c[E/G#]ontemple la gran[G#m]deur de Ton a[C#m]mour,
-[D]Mon être entier veut T'ador[Bsus4]er.
+[F#m] Et quand je c[E/G#]ontemple 
+La gran[G#m]deur de Ton a[C#m]mour,
+[D] Mon être entier veut T'ador[Bsus4]er.
 {end_of_prechorus}
 
 {start_of_chorus: Refrain}

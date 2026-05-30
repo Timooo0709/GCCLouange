@@ -1,12 +1,11 @@
 {title: Pour toujours Il règnera}
 {artist: Chris Tomlin}
-{key: Ab}
+{key: Bb}
 {language: fr}
 {themes: Noël, Adoration, Espérance}
 
 {start_of_intro: Intro}
-[Bb]
-[Gm]  [Eb]  [Bb]  [F]
+[Gm][ ][Eb][ ][Bb][ ][F]
 {end_of_intro}
 
 {start_of_verse: Couplet 1}
@@ -23,7 +22,7 @@ Et [Gm]pour toujo[Eb]urs, Il règner[Bb]a, Il règner[F/A]a.
 {end_of_chorus}
 
 {start_of_verse: Couplet 2}
-[Gm]  [Eb]  [Bb]  [F]
+[Gm][ ][Eb][ ][Bb][ ][F]  
 [Gm]Si j'étais un [Eb]des mages, j'[Bb]irais au bout du m[F]onde
 Et [Gm]si j'étais un [Eb]berger, j'[Bb]irais me proste[F]rner,
 Mais moi qui n'[Cm]ai rien,[Eb]je Lui of[Bb]frirais [F]mon cœur.
@@ -32,6 +31,6 @@ Mais moi qui n'[Cm]ai rien,[Eb]je Lui of[Bb]frirais [F]mon cœur.
 {start_of_bridge: Pont}
 Au s[Gm]ein de la mang[Eb]eoire est né, Cel[Bb]ui qui fit le m[F]onde entier,
 L'en[Gm]fant Dieu vient pour n[Eb]ous sauver, [Bb/F]Jésus le Me[F]ssie.
-Dans n[Gm]os espoirs et d[Eb]ans nos peurs, Il a[Bb]pparaît le R[F/A]oi Sauveur,
+Dans n[Gm]os espoirs et d[Eb]ans nos peurs, Il a[Bb]pparaît le [F/A]Roi Sauveur,
 [Gm]L'espoir pour l'é[Eb/G]ternité, [Bb/F]Jésus le [F]Messie.
 {end_of_bridge}

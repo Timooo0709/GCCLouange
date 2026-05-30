@@ -4,13 +4,18 @@
 {language: fr}
 {themes: Adoration, Engagement}
 
-{start_of_verse: Couplet 1}
+{start_of_chorus: Refrain}
 [Am]Reçois ma vie comme [Dm]une adoration,
 [G]Reçois mon cœur comme [C]un cadeau d’amour.[E]
 Je [Am]n’ai rien d’autre à t’offrir que [F]ce sacrifice vivant.
-Je te [E7]donne ma vie [D/F#]pour [E/G#]tou - [Am]jours.
+Je te [E7]donne ma vie [D/F#]pour [ ][E/G#]tou - [ ][Am]jours.
+{end_of_chorus}
+
+{start_of_verse: Couplet}
 J’aban[Dm7]donne sur ton autel, en ré[Dm7/C]ponse à ton appel,
-Mes vi[Bb7]sions, mes ambitions, car tu [A4]es ma vie, ma pas[A]sion.
+Mes vi[Bb7]sions, mes ambitions, 
+Car tu [A4]es ma vie, ma pas[A]sion.
 À tes [F]pieds, émerveillé, je con[C/E]temple ta majesté.
-Je te [Dm]donne sans compromis ce par[A4]fum de grand [A]prix.
+Je te [Dm]donne sans compromis 
+Ce par[A4]fum de grand [A]prix.
 {end_of_verse}

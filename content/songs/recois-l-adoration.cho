@@ -5,47 +5,37 @@
 {themes: Adoration, Sainteté}
 
 {start_of_verse: Couplet 1}
-Reçois l’adoration
-Do Fa Sol Do
-1) Dieu de lumière élevé dans les cieux,
-Do Sol
-Rempli de grâce et de paix.
-Do Fa Sol Lam
-Environné de louange et de feu,
-Fa Do Sol
-Gardien de l’éternité.
-Do Fa Sol Do
-Pourquoi quitter ce palais de bonheur
-Do Sol
-Pour un sentier de misère,
-Do Fa Sol Lam
-Par quel amour les chemins de ton cœur
-Fa Do Sol
-Ont su trouver nos prières. REF
-Fa Sol Do
-REFRAIN) Reçois l’ado – ra - tion,
-Fa Sol Do
-Tu es le Roi de gloire,
-Fa Sol
-Notre victoi-re,
-Lam Sol Fa Do Rém Do Sol
-Digne es – Tu Sei-gneur, Emmanuel.
-Do Fa Sol Do
-2) De cette foi que ton cœur a montré,
-Do Sol
-Je veux puiser mon secours.
-Do Fa Sol Lam
-Sur le chemin que ta vie a tracé
-Fa Do Sol
-Je marcherai chaque jour.
-Do Fa Sol Do
-Garde mes yeux des attraits de ce monde,
-Do Sol
-Garde-moi près de la croix.
-Do Fa Sol Lam
-En ce lieu saint où mon âme est féconde
-Fa Do Sol
-D’humilité et de joie. REF
-Fa Do Fa Do Fa Do
-FINAL) Emmanuel ! Emmanuel ! ) x 2
+[C]Dieu de lu[F]mière élevé [G]dans les [C]cieux,
+[C]Rempli de grâce et de [G]paix.
+[C]Environ[F]né de lou[G]ange et de [Am]feu,
+[F]Gardien de l’[C]éterni[G]té.
+
+[C]Pourquoi quit[F]ter ce pa[G]lais de bon[C]heur
+[C]Pour un sentier de mi[G]sère,
+[C]Par quel a[F]mour les che[G]mins de ton c[Am]œur
+[F]Ont su trou[C]ver nos pri[G]ères.
 {end_of_verse}
+
+{start_of_chorus: Refrain}
+Reçois l’[F]ado – [G]ra - [C]tion,
+Tu es le [F]Roi [G]de [C]gloire,
+Notre vic[F]toi-[G]re,
+[Am]Digne [G]es – [F]Tu [C]Sei - [Dm]gneur, [C]Emma[G]nuel.
+{end_of_chorus}
+
+{start_of_verse: Couplet 2}
+[C]De cette [F]foi que ton c[G]œur a mon[C]tré,
+[C]Je veux puiser mon se[G]cours.
+[C]Sur le che[F]min que ta v[G]ie a tra[Am]cé
+[F]Je marche[C]rai chaque j[G]our.
+
+[C]Garde mes [F]yeux des at[G]traits de ce mon[C]de,
+[C]Garde-moi près de la [G]croix.
+[C]En ce lieu [F]saint où mon â[G]me est fécon[Am]de
+[F]D’humilit[C]é et de j[G]oie.
+{end_of_verse}
+
+{start_of_final}
+[F]Emmanu[C]el ! [F] [ ] [C] [ ][F]Emma[C]nuel ! x2
+{end_of_final}
+

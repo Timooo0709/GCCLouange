@@ -1,15 +1,15 @@
 {title: Toujours puissante}
 {key: G}
 {language: fr}
+{artist: MAXIME JEAN-LOUIS, TENDRY RAJAONSON}
 {themes: Croix, Adoration, Foi}
 
 {start_of_intro: Intro}
-[Em7]  [C]  [G]
-[Em7]  [C]  [G]
+[Em7][ ][C][ ][G]
 {end_of_intro}
 
 {start_of_verse: Couplet 1}
-[Em7]Plus qu’un collier auto[C]ur d[G]u cou
+[Em7]Plus qu’un collier [C]autour d[G]u cou
 [Em7]Beaucoup plus qu’un [C]simple [G]bijou
 [Em7]La croix de Jésu[C]s mon sa[G]uveur
 [Em7]Est la plus grand[C]e preuve [G]d’amour
@@ -19,14 +19,14 @@
 [Em7]Parfois je réa[C]lise à [G]peine
 [Em7]Que Dieu tu sois [C]entré e[G]n scène
 [Em7]Echangeant ta vi[C]e pour [G]la mienne
-[Em7]Et pour ce monde[C]que [G]tu aimes
+[Em7]Et pour ce monde [C]que [G]tu aimes
 {end_of_verse}
 
 {start_of_chorus: Refrain}
 La croix est [C]tou[G]jours puis[D]sante
 La croix est [C]tou[G]jours puis[D]sante
 Pour me [C]justifier me [D]pardonner
-Et [Bm]pour me rest[Em]aurer
+Et [D/B]pour me rest[Em]aurer
 La croix est [Am]toujou[Em]rs puissant[D]e
 {end_of_chorus}
 
@@ -38,21 +38,21 @@ La croix est [Am]toujou[Em]rs puissant[D]e
 {end_of_verse}
 
 {start_of_intro: Interlude}
-[C]  [D]  [Em7]  [D]  [G]  [D]
+[C][ ][D][ ][Em7][ ][D][ ][G][ ][D]
 {end_of_intro}
 
 {start_of_bridge: Pont 1}
-[C]Racheté au prix de [D]ton sa[Em]ng
-Couvert par ton amour [D]si puissa[G]nt
+[C]Racheté au prix de [D]ton sang[Em]
+Couvert par ton amour [D/F#]si puissa[G]nt
 Jésus merci pour cette cro[D]ix
 {end_of_bridge}
 
 {start_of_bridge: Pont 2}
 [C]Tu offres à tous une se[D]conde chanc[Em]e
-Tu répands ta grâce en[D]abonda[G]nce
+Tu répands ta grâce en [D/F#]abonda[G]nce
 Jésus merci pour cette cro[D]ix
 {end_of_bridge}
 
-{start_of_verse: Tag}
+{start_of_final: Tag}
 La croix est [Am]toujou[D]rs puissa[G]nte
-{end_of_verse}
+{end_of_final}

@@ -4,19 +4,15 @@
 {language: fr}
 {themes: Adoration, Engagement}
 
-{start_of_intro: Intro}
-[C]
-{end_of_intro}
-
 {start_of_verse: Couplet 1}
-[Am]De là où tu [G]es,[F]entends mon cri[C]
-[Am]De là où tu [G]es,[F]exauce ma pri[C]ère
+[Am]De là où tu [G]es, [F]entends mon cri[C]
+[Am]De là où tu [G]es, [F]exauce ma pri[C]ère
 [Am]Mon dé[G]sir [F]est de t′ai[C]mer plus fort
 [Am]Je veux abandon[G]ner ce qui ne vient pas de [F]toi
 Ce qui m'éloigne de [C]toi
 {end_of_verse}
 
-{start_of_chorus: Refrain 1}
+{start_of_chorus: Refrain}
 Viens et [Am]prends la première [G]place
 Viens et [F]prends la première [C]place
 Mets chaq[Am]ue chose à sa [G]place
@@ -30,21 +26,11 @@ Enseigne-[Am]moi à te [G]suivre
 Peu impo[F]rte ce qu'il m'ar[C]rive
 {end_of_verse}
 
-{start_of_chorus: Refrain 2}
-Viens et prends la première place
-Viens et prends la première place
-Mets chaque chose à sa place
-Que tu aies la première place
-Viens et prends la place
-Viens et prends la place
-Mets chaque chose à sa place
-Que tu aies la première place
-{end_of_chorus}
 
 {start_of_verse: Couplet 3}
 Ne permets pas que je m′éloigne de ta présence
 Chaque jour, je veux marcher dans ton sens
 Je veux être mis à part, savoir entendre ta voix
 Je veux être cette brebis qui reconnait quand c′est toi
-1 / 1 eecpworship.fr
+    
 {end_of_verse}
