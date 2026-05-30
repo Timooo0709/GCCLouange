@@ -7,9 +7,9 @@
 {themes: 宣告, 敬拜, 被爱}
 
 {start_of_verse: 主歌/Couplet}
-[Dmaj9] 我知[E]道你爱我，[C#m7] 我知[F#m7]道你爱我，耶稣。
+[Dmaj9][]我知[E]道你爱我，[C#m7][]我知[F#m7]道你爱我，耶稣。
 wǒ   zhī   dào   nǐ   ài   wǒ   wǒ   zhī   dào   nǐ   ài   wǒ   yē   sū
-[Dmaj9] 我知[E]道你爱我，[A] 此时此刻此时此刻。
+[Dmaj9][]我知[E]道你爱我，[A][]此时此刻此时此刻。
 wǒ   zhī   dào   nǐ   ài   wǒ   cǐ   shí   cǐ   kè   cǐ   shí   cǐ   kè
 {end_of_verse}
 
@@ -21,7 +21,7 @@ ràng   wǒ   yǒu   xìn   xīn   jū   zhù   zài   nǐ   ài   lǐ
 {end_of_prechorus}
 
 {start_of_chorus: 副歌/Refrain}
-我相[Dmaj9] 信[Esus4] 你的[C#m7] 爱，[F#m7] 享受[Dmaj9] 在[Esus4] 你怀[Asus4]里。[A]
+我相[Dmaj9][]信[Esus4][]你的[C#m7][]爱，[F#m7][]享受[Dmaj9][]在[Esus4][]你怀[Asus4]里。[A]
 wǒ   xiāng   xìn   nǐ   de   ài   xiǎng   shòu   zài   nǐ   huái   lǐ
 {end_of_chorus}
 
@@ -35,6 +35,6 @@ nǐ   ài   wǒ   zhǐ   yīn   wèi   nǐ   shì   ài   ài   yíng   le
 {start_of_coda: 尾奏/Outro}
 此时[Asus4]此刻[A]此时没人[Dmaj9]像[Esus4]你一样[C#m7]爱[F#m7]我，
 cǐ   shí   cǐ   kè   cǐ   shí   méi   rén   xiàng   nǐ   yī   yàng   ài   wǒ
-没人[Dmaj9]如[Esus4]此地爱[A] 我。
+没人[Dmaj9]如[Esus4]此地爱[A][]我。
 méi   rén   rú   cǐ   de   ài   wǒ
 {end_of_coda}
