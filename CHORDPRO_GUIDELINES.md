@@ -4,11 +4,11 @@ Ce document synthétise toutes les règles, habitudes et préférences de format
 
 ---
 
-## 1. Respect des Pronoms Divins
-* **Règle :** Lorsque les paroles s'adressent directement à Dieu, Jésus ou le Saint-Esprit, privilégier systématiquement le pronom honorifique divin **`祢`** (et **`祢的`**) à la place du pronom humain `你` (et `你的`).
-* **Pinyin correspondant :** Le Pinyin reste écrit **`nǐ`** pour `祢` et **`nǐ de`** pour `祢的`.
+## 1. Usage des Pronoms
+* **Règle :** Nous n'utilisons plus les pronoms honorifiques divins `你` (ou `你的`) et `他`. Tous les chants doivent utiliser systématiquement les pronoms standard **`你`** (et **`你的`**) ainsi que **`他`** (et **`他的`**), y compris pour s'adresser à Dieu, Jésus ou le Saint-Esprit.
 * *Exemple :*
-  * Brut : `你是我的[D]主` ➔ Corrigé : `祢是我的[D]主`
+  * Avant : `你是我的[D]主` ➔ Corrigé : `你是我的[D]主`
+
 
 ---
 
@@ -22,17 +22,17 @@ Les accords ne doivent pas être calés de manière rigide au début de chaque m
   * `完全地摆[A7]上` (accord placé sur 上 et non 摆)
   * `我愿意降[Bm7]服` (accord placé sur 服 et non 降)
 * **Sur la particule ou le pronom :**
-  * `祢[C#m7]的爱` (sur de)
+  * `你[C#m7]的爱` (sur de)
   * `使[F#m7]我` (sur wǒ)
   * `不[F#m7]是` (sur shì)
-  * `居住在[Asus4]祢爱里` (sur 祢)
+  * `居住在[Asus4]你爱里` (sur 你)
 
 ### B. Calage Rythmique (Pulsation vs Entrée Vocale)
 Le placement des accords par rapport aux caractères traduit précisément le rythme du chant et les mesures musicales :
 * **Usage de l'espace après le crochet (Respect des mesures et du rythme) :** On laisse un espace après le crochet de l'accord (`[Accord] `) pour marquer la structure de la mesure (ex: l'accord tombe sur le temps fort), alors que la voix n'attaque la syllabe que légèrement après (syncope, décalage rythmique ou contre-temps).
-  * Exemples : `喔主，[C] 祢赐我`, `[Am7] 得着完全`, `[Am] 在祢`, `[C7] 在祢`, `！[G/F] 喔`.
+  * Exemples : `喔主，[C] 你赐我`, `[Am7] 得着完全`, `[Am] 在你`, `[C7] 在你`, `！[G/F] 喔`.
 * **Collage direct (Attaque synchrone) :** L'accord est collé directement au caractère qui suit si la pulsation de l'accord et l'attaque de la syllabe chantée sont parfaitement simultanées.
-  * Exemples : `主，[Dm7]祢大能`, `祢[C#m7]的爱`.
+  * Exemples : `主，[Dm7]你大能`, `你[C#m7]的爱`.
 
 ### C. Accords de Passage en Fin de Ligne
 Les accords de transition finale ou de passage qui terminent un vers doivent se placer **après** la ponctuation finale du texte :
@@ -51,7 +51,7 @@ Les accords de transition finale ou de passage qui terminent un vers doivent se 
 
 ### E. Simplification Harmonique
 Éviter la surcharge d'accords de passage ou de quart de mesure complexes s'ils alourdissent la lecture ou nuisent à l'interprétation. Simplifier et stabiliser les cadences finales :
-* *Exemple :* Préférer la transition directe `[Em7]祢是我，[Em7/A]祢是我的主[D]。` plutôt que d'intercaler des accords de basse intermédiaires encombrants.
+* *Exemple :* Préférer la transition directe `[Em7]你是我，[Em7/A]你是我的主[D]。` plutôt que d'intercaler des accords de basse intermédiaires encombrants.
 
 ### F. Respect de l'Intégrité des Phrases et Mots (Découpage des Lignes)
 Lors du découpage en lignes de chant, la lisibilité et l'intégrité grammaticale des paroles doivent toujours primer sur l'alignement rigide avec les barres de mesure musicales.
@@ -59,13 +59,13 @@ Lors du découpage en lignes de chant, la lisibilité et l'intégrité grammatic
 * **Placer l'anacrouse au début de la ligne suivante** avec les paroles associées, et y caler l'accord d'upbeat correspondant juste devant la première syllabe du mot.
 * *Exemple (Chant 一生爱你) :*
   * **Incorrect (coupe les expressions sémantiques) :**
-    `亲[E]爱的宝贵[A]耶稣，祢[F#m]爱何等的[Bsus4]甘[B]甜，我的` (finit par "我的")
-    `我的[G#m]心深深被祢[C#m]吸引，爱[F#m]祢是[B]我的喜[E]乐。[A/B] 一生爱` (finit par "一生爱")
-    `[E]祢，[G#]一生敬拜[C#m]祢...` (refrain commence au milieu d'une expression par "祢")
+    `亲[E]爱的宝贵[A]耶稣，你[F#m]爱何等的[Bsus4]甘[B]甜，我的` (finit par "我的")
+    `我的[G#m]心深深被你[C#m]吸引，爱[F#m]你是[B]我的喜[E]乐。[A/B] 一生爱` (finit par "一生爱")
+    `[E]你，[G#]一生敬拜[C#m]你...` (refrain commence au milieu d'une expression par "你")
   * **Correct (mots et expressions préservés) :**
-    `亲[E]爱的宝贵[A]耶稣，祢[F#m]爱何等的[Bsus4]甘甜[B]，` (phrase 1 complète)
-    `我的[G#m]心深深被祢[C#m]吸引，爱[F#m]祢是[B]我的喜[E]乐。` (phrase 2 complète)
-    `[A/B] 一生爱[E]祢，[G#]一生敬拜[C#m]祢...` (refrain commence par l'expression complète "一生爱祢", avec l'accord d'anacrouse `[A/B]` placé en début de ligne devant "一生爱")
+    `亲[E]爱的宝贵[A]耶稣，你[F#m]爱何等的[Bsus4]甘甜[B]，` (phrase 1 complète)
+    `我的[G#m]心深深被你[C#m]吸引，爱[F#m]你是[B]我的喜[E]乐。` (phrase 2 complète)
+    `[A/B] 一生爱[E]你，[G#]一生敬拜[C#m]你...` (refrain commence par l'expression complète "一生爱你", avec l'accord d'anacrouse `[A/B]` placé en début de ligne devant "一生爱")
 
 ### G. Étude de cas pratique : Alignement rythmique (Chant *一颗谦卑的心*)
 
@@ -92,9 +92,9 @@ Pour illustrer l'alignement rythmique rigoureux à partir de la structure d'une 
 Pour calibrer correctement les accords de transition et les résolutions sans briser la lecture sémantique et visuelle du chant :
 
 1. **Intégrité sémantique et accords de transition en fin de sous-phrase** :
-   * Les mots ou expressions unies (comme `时时称颂祢` ou `向祢来歌唱`) ne doivent pas être coupés par des accords de transition de fin de mesure (ex: `[D/C]` ou `[Em]`).
-   * Si l'accord tombe sur une note tenue ou un silence à la fin de la sous-phrase, il se place **après** le mot et sa ponctuation (ex: `时时称颂祢，[D/C]` et `向祢来歌唱，[Em]`). Cela évite de hacher le texte.
-   * **Enchaînement d'accords hors chant** : Si un accord de transition résout en fin de phrase puis qu'un autre accord lance la mesure suivante sur une syllabe d'anacrouse, on les place à la suite à la fin de la phrase (ex: `时时称颂祢，[D/C] [Bm7]向...`).
+   * Les mots ou expressions unies (comme `时时称颂你` ou `向你来歌唱`) ne doivent pas être coupés par des accords de transition de fin de mesure (ex: `[D/C]` ou `[Em]`).
+   * Si l'accord tombe sur une note tenue ou un silence à la fin de la sous-phrase, il se place **après** le mot et sa ponctuation (ex: `时时称颂你，[D/C]` et `向你来歌唱，[Em]`). Cela évite de hacher le texte.
+   * **Enchaînement d'accords hors chant** : Si un accord de transition résout en fin de phrase puis qu'un autre accord lance la mesure suivante sur une syllabe d'anacrouse, on les place à la suite à la fin de la phrase (ex: `时时称颂你，[D/C] [Bm7]向...`).
 
 2. **Accords de résolution finale** :
    * L'accord de résolution finale d'un vers (comme le `[G]` final) se positionne à la toute fin de la ligne, après la ponctuation (ex: `伟大的神。[G]`), et non au milieu de l'expression (`伟大[G]的神`).
@@ -168,7 +168,7 @@ Pour caler précisément les accords sur les bons caractères d'un fichier `.cho
 2. **Repérer les pulsations (temps forts)** : localiser la note qui tombe sur la pulsation de l'accord (généralement le 1er temps, parfois le 3ème temps de la mesure).
 3. **Faire correspondre la note et le caractère chanté** : trouver quel caractère (parole sous la note) correspond à cette note de pulsation sur la partition.
 4. **Positionner l'accord dans le fichier `.cho`** :
-   * Si la pulsation de l'accord et l'attaque du caractère sont simultanées, coller l'accord directement : `祢[C#m]的爱`.
-   * Si l'accord tombe sur le temps fort (pulsation) mais que le chant ne démarre qu'après (syncope ou contre-temps), insérer un espace après le crochet de l'accord : `[C] 祢`.
-   * Si l'accord accompagne une anacrouse (upbeat) lançant la phrase suivante, le placer au début de cette ligne cible devant le premier mot (ex: `[A/B] 一生爱[E]祢`).
+   * Si la pulsation de l'accord et l'attaque du caractère sont simultanées, coller l'accord directement : `你[C#m]的爱`.
+   * Si l'accord tombe sur le temps fort (pulsation) mais que le chant ne démarre qu'après (syncope ou contre-temps), insérer un espace après le crochet de l'accord : `[C] 你`.
+   * Si l'accord accompagne une anacrouse (upbeat) lançant la phrase suivante, le placer au début de cette ligne cible devant le premier mot (ex: `[A/B] 一生爱[E]你`).
 
