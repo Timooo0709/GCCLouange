@@ -25,8 +25,8 @@ function parseLyricLine(rawLine: string, language: string = "fr"): { tokens: Tok
 
   if (language === "zh") {
     const pinyinMatch = rawLine.match(/^(.*?)\s{2,}(.+)$/);
-    // Le second groupe ne doit pas contenir de caractères chinois (sinon c'est du texte, pas du pinyin)
-    if (pinyinMatch && !hasChinese(pinyinMatch[2])) {
+    // Le second groupe ne doit pas contenir de caractères chinois ni de crochets d'accords
+    if (pinyinMatch && !hasChinese(pinyinMatch[2]) && !pinyinMatch[2].includes('[')) {
       lyricPart = pinyinMatch[1];
       pinyinPart = pinyinMatch[2].trim() || null;
     }
@@ -43,8 +43,9 @@ function parseLyricLine(rawLine: string, language: string = "fr"): { tokens: Tok
     if (match.index > lastIndex) {
       tokens.push({ type: "lyric", value: lyricPart.slice(lastIndex, match.index) });
     }
-    if (match[1]) {
-      tokens.push({ type: "chord", value: match[1] });
+    const chordValue = match[1].trim();
+    if (chordValue) {
+      tokens.push({ type: "chord", value: chordValue });
     }
     lastIndex = regex.lastIndex;
   }
