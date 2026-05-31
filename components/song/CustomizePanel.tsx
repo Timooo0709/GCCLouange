@@ -73,7 +73,7 @@ function SortableRow({
   return (
     <div
       ref={setNodeRef}
-      style={{ transform: CSS.Transform.toString(transform), transition, touchAction: "none" }}
+      style={{ transform: CSS.Transform.toString(transform), transition}}
       className={`flex items-start gap-2 p-2 rounded border ${
         isDragging
           ? "border-primary/50 bg-primary/5 shadow-lg"
@@ -84,6 +84,7 @@ function SortableRow({
         {...attributes}
         {...listeners}
         className="mt-0.5 text-muted-foreground hover:text-foreground cursor-grab active:cursor-grabbing shrink-0"
+        style={{ touchAction: "none" }}
         aria-label={t("setlists.form.reorderLabel")}
       >
         <GripVertical className="h-4 w-4" />
