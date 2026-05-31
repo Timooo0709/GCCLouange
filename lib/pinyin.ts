@@ -3,7 +3,7 @@ import { pinyin as pinyinPro } from "pinyin-pro";
 /** Génère le pinyin d'un texte chinois avec tons (ex: "nǐ hǎo") */
 export function generatePinyin(text: string): string {
   // Retire les accords ChordPro et le pinyin manuel déjà présent
-  const charsOnly = text.replace(/\[.*?\]/g, "").replace(/\s{3,}.*$/, "");
+  const charsOnly = text.replace(/\[.*?\]/g, "").replace(/\s{2,}.*$/, "");
   return pinyinPro(charsOnly, {
     toneType: "symbol",
     type: "string",

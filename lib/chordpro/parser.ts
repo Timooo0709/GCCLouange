@@ -18,20 +18,24 @@ function parseDirective(line: string): { key: string; value: string } | null {
 
 // --- Parsing d'une ligne de paroles avec accords ---
 
-function parseLyricLine(rawLine: string): { tokens: Token[]; pinyin: string | null } {
-  // Séparation paroles chinoises / pinyin (3 espaces minimum)
+function parseLyricLine(rawLine: string, language: string = "fr"): { tokens: Token[]; pinyin: string | null } {
+  // Séparation paroles chinoises / pinyin (2 espaces minimum, uniquement pour zh)
   let pinyinPart: string | null = null;
   let lyricPart = rawLine;
 
-  const pinyinMatch = rawLine.match(/^(.*?)\s{3,}(.+)$/);
-  if (pinyinMatch) {
-    lyricPart = pinyinMatch[1];
-    pinyinPart = pinyinMatch[2].trim() || null;
+  if (language === "zh") {
+    const pinyinMatch = rawLine.match(/^(.*?)\s{2,}(.+)$/);
+    // Le second groupe ne doit pas contenir de caractères chinois (sinon c'est du texte, pas du pinyin)
+    if (pinyinMatch && !hasChinese(pinyinMatch[2])) {
+      lyricPart = pinyinMatch[1];
+      pinyinPart = pinyinMatch[2].trim() || null;
+    }
   }
 
   // Tokenisation : alternance de [accord] et texte
+  // [^\]]* avec * (et non +) pour consommer les [] vides sans les afficher
   const tokens: Token[] = [];
-  const regex = /\[([^\]]+)\]/g;
+  const regex = /\[([^\]]*)\]/g;
   let lastIndex = 0;
   let match: RegExpExecArray | null;
 
@@ -39,7 +43,9 @@ function parseLyricLine(rawLine: string): { tokens: Token[]; pinyin: string | nu
     if (match.index > lastIndex) {
       tokens.push({ type: "lyric", value: lyricPart.slice(lastIndex, match.index) });
     }
-    tokens.push({ type: "chord", value: match[1] });
+    if (match[1]) {
+      tokens.push({ type: "chord", value: match[1] });
+    }
     lastIndex = regex.lastIndex;
   }
 
@@ -329,7 +335,7 @@ export function parseChordPro(source: string): ChordProAST {
         continue;
       }
 
-      const { tokens, pinyin } = parseLyricLine(trimmed);
+      const { tokens, pinyin } = parseLyricLine(trimmed, metadata.language);
       const chordLine: ChordProLine = {
         type: "line",
         tokens,
