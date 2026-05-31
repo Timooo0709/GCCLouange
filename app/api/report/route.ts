@@ -14,7 +14,7 @@ export async function POST(req: Request) {
 
   await resend.emails.send({
     from: 'noreply@resend.dev',
-    to: process.env.MAIL_TO!,
+    to: (process.env.MAIL_TO ?? '').split(',').map(e => e.trim()).filter(Boolean),
     subject: `🐛 Signalement : ${title}`,
     text: `
       Problème : ${title}
