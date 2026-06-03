@@ -34,104 +34,101 @@ export function Navbar() {
   const isActiveSetlists = pathname.startsWith("/setlists");
 
   return (
-    <header className="sticky top-0 z-50 w-full h-14 border-b border-border/40 bg-background/80 backdrop-blur-md print:hidden transition-colors duration-200">
-      <div className="max-w-2xl mx-auto px-4 h-full flex items-center justify-between">
-        {/* Brand / Logo */}
-        <Link href="/songs" className="flex items-center gap-2 group">
-          <div className="relative h-8 w-8 rounded-full overflow-hidden shadow-sm shadow-orange-500/10 group-hover:scale-105 transition-transform duration-200 bg-white">
+    <header className="sticky top-0 z-50 w-full h-[58px] border-b border-border/50 bg-background/82 backdrop-saturate-[1.2] backdrop-blur-[14px] print:hidden">
+      <div className="max-w-[1080px] mx-auto px-4 h-full flex items-center gap-3.5">
+        {/* Brand */}
+        <Link href="/songs" className="flex items-center gap-2.5 shrink-0">
+          <div className="relative h-9 w-9 rounded-full overflow-hidden bg-white shadow-sm">
             <Image
               src="/logo.png"
               alt="GCC Logo"
               fill
-              sizes="32px"
+              sizes="36px"
               className="object-contain"
               priority
             />
           </div>
-          <span className="font-bold tracking-tight text-lg text-foreground group-hover:text-primary transition-colors duration-200">
-            {t("common.header.title")}
+          <span className="font-bold text-[17px] tracking-[-0.3px] text-foreground">
+            GCC <span className="text-primary">{isZh ? "敬拜" : "Louange"}</span>
           </span>
         </Link>
 
-        {/* Desktop Navigation & Actions */}
-        <div className="hidden sm:flex items-center gap-4">
-          <nav className="flex items-center gap-1">
-            <Link
-              href="/songs"
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${
-                isActiveSongs
-                  ? "bg-primary/10 text-primary dark:bg-primary/20"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
-              }`}
-            >
-              {t("common.header.songs")}
-            </Link>
-            <Link
-              href="/setlists"
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${
-                isActiveSetlists
-                  ? "bg-primary/10 text-primary dark:bg-primary/20"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
-              }`}
-            >
-              {t("common.header.setlists")}
-            </Link>
-          </nav>
+        {/* Desktop nav links */}
+        <nav className="hidden sm:flex items-center gap-1 ml-2">
+          <Link
+            href="/songs"
+            className={`px-3 py-[7px] rounded-[9px] text-[13.5px] font-semibold transition-all duration-150 ${
+              isActiveSongs
+                ? "bg-primary/10 text-primary"
+                : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+            }`}
+          >
+            {t("common.header.songs")}
+          </Link>
+          <Link
+            href="/setlists"
+            className={`px-3 py-[7px] rounded-[9px] text-[13.5px] font-semibold transition-all duration-150 ${
+              isActiveSetlists
+                ? "bg-primary/10 text-primary"
+                : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+            }`}
+          >
+            {t("common.header.setlists")}
+          </Link>
+        </nav>
 
-          <div className="h-4 w-px bg-border/60" />
+        {/* Actions — pushed to far right */}
+        <div className="ml-auto flex items-center gap-2">
+          {/* Lang toggle */}
+          <button
+            onClick={toggleLanguage}
+            aria-label={isZh ? "Changer en français" : "切换为中文"}
+            className="h-[34px] min-w-[34px] px-2 rounded-[9px] border border-border bg-card text-muted-foreground hover:text-foreground hover:border-muted-foreground/50 transition-all duration-150 active:scale-[.96] flex items-center justify-center gap-1.5 text-[12.5px] font-semibold cursor-pointer"
+          >
+            <Globe className="h-3.5 w-3.5" />
+            <span>{isZh ? "中文" : "FR"}</span>
+          </button>
 
-          {/* Action buttons */}
-          <div className="flex items-center gap-2">
-            {/* Lang toggle */}
-            <button
-              onClick={toggleLanguage}
-              aria-label={isZh ? "Changer en français" : "切换为中文"}
-              className="text-xs font-semibold px-2 py-1.5 rounded-lg border border-border bg-background hover:bg-muted text-muted-foreground hover:text-foreground transition-all duration-200 active:scale-95 flex items-center gap-1 cursor-pointer"
-            >
-              <Globe className="h-3.5 w-3.5" />
-              <span>{isZh ? "中文" : "FR"}</span>
-            </button>
+          {/* Dark mode toggle */}
+          <button
+            onClick={toggleTheme}
+            aria-label={dark ? "Mode clair" : "Mode sombre"}
+            className="h-[34px] w-[34px] rounded-[9px] border border-border bg-card text-muted-foreground hover:text-foreground hover:border-muted-foreground/50 transition-all duration-150 active:scale-[.96] flex items-center justify-center cursor-pointer"
+          >
+            {dark ? <Sun className="h-[15px] w-[15px]" /> : <Moon className="h-[15px] w-[15px]" />}
+          </button>
 
-            {/* Dark mode toggle */}
-            <button
-              onClick={toggleTheme}
-              aria-label={dark ? "Mode clair" : "Mode sombre"}
-              className="p-1.5 rounded-lg border border-border bg-background hover:bg-muted text-muted-foreground hover:text-foreground transition-all duration-200 active:scale-95 cursor-pointer"
-            >
-              {dark ? <Sun className="h-3.5 w-3.5" /> : <Moon className="h-3.5 w-3.5" />}
-            </button>
+          {/* Auth */}
+          {!authLoading && (
+            user ? (
+              <button
+                onClick={() => logOut()}
+                className="h-[34px] min-w-[34px] px-2 rounded-[9px] border border-border bg-card text-muted-foreground hover:text-foreground hover:border-muted-foreground/50 transition-all duration-150 active:scale-[.96] flex items-center justify-center gap-1.5 text-[12.5px] font-semibold cursor-pointer"
+                title={user.email ?? undefined}
+              >
+                <LogOut className="h-3.5 w-3.5" />
+                <span className="hidden md:inline">{t("common.header.logout")}</span>
+              </button>
+            ) : (
+              <Link
+                href="/login"
+                className="h-[34px] min-w-[34px] px-2 rounded-[9px] border border-border bg-card text-muted-foreground hover:text-foreground hover:border-muted-foreground/50 transition-all duration-150 active:scale-[.96] flex items-center justify-center gap-1.5 text-[12.5px] font-semibold"
+              >
+                <LogIn className="h-3.5 w-3.5" />
+                <span className="hidden md:inline">{t("common.header.login")}</span>
+              </Link>
+            )
+          )}
 
-            {/* Auth button */}
-            {!authLoading && (
-              user ? (
-                <button
-                  onClick={() => logOut()}
-                  className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-border bg-background hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 text-muted-foreground transition-all duration-200 active:scale-95 text-xs font-semibold cursor-pointer"
-                >
-                  <LogOut className="h-3.5 w-3.5" />
-                  <span className="hidden md:inline">{t("common.header.logout")}</span>
-                </button>
-              ) : (
-                <Link
-                  href="/login"
-                  className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-border bg-background hover:bg-muted text-muted-foreground hover:text-foreground transition-all duration-200 active:scale-95 text-xs font-semibold"
-                >
-                  <LogIn className="h-3.5 w-3.5" />
-                  <span className="hidden md:inline">{t("common.header.login")}</span>
-                </Link>
-              )
-            )}
-          </div>
+          {/* Mobile hamburger */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+            className="sm:hidden h-[34px] w-[34px] rounded-[9px] border border-border bg-card text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors duration-150 flex items-center justify-center cursor-pointer"
+          >
+            {isOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+          </button>
         </div>
-
-        {/* Mobile Hamburger Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-          className="sm:hidden p-1.5 rounded-lg border border-border text-muted-foreground hover:text-foreground hover:bg-muted transition-colors duration-200 cursor-pointer"
-        >
-          {isOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-        </button>
       </div>
 
       {/* Mobile Menu Panel */}

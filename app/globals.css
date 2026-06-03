@@ -4,62 +4,108 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222 47% 6%;
+    /* Warm-neutral light surfaces (design system) */
+    --background: 38 26% 98%;        /* #fbfaf8 */
+    --foreground: 223 14% 10%;       /* #16181d */
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 6%;
+    --card-foreground: 223 14% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 6%;
-    --primary: 21 91% 48%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 21 91% 48%;
-    --accent-foreground: 0 0% 98%;
+    --popover-foreground: 223 14% 10%;
+    --primary: 21 93% 46%;           /* #e0560a */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 21% 94%;         /* #f4f2ee */
+    --secondary-foreground: 223 10% 25%;
+    --muted: 40 21% 94%;             /* #f4f2ee */
+    --muted-foreground: 219 6% 45%;  /* #6b7079 */
+    --accent: 21 93% 46%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 21 91% 48%;
-    --radius: 0.5rem;
-    --section-verse: #CCE7D3;
-    --section-chorus: #FFF1C5;
-    --section-bridge: #E3D7ED;
-    --section-intro: #D4E5F2;
-    --section-chorus-2: #FE9800;
-    --section-chorus-2-background: #E6E6E6;
-    --section-bridge-2: #959FA8;
+    --border: 38 19% 88%;            /* #e7e3dc */
+    --input: 38 19% 88%;
+    --ring: 21 93% 46%;
+    --radius: 0.75rem;
+
+    /* Semantic music colors */
+    --chord-color: #3f63cf;   /* bleu PDF FR */
+    --jianpu-color: #b3261d;
+    --pinyin-color: #8a8f98;
+    --sheet-accent: #1c6e7c;
+
+    /* Section identity — accent (label / rail) + tint (block bg) */
+    --sec-intro: #5b7fa6;        --sec-intro-tint: #eef3f9;
+    --sec-verse: #2c8a7d;        --sec-verse-tint: #e8f3f0;
+    --sec-prechorus: #c1871f;    --sec-prechorus-tint: #faf2e1;
+    --sec-chorus: #e0560a;       --sec-chorus-tint: #fcece1;
+    --sec-bridge: #7a5bcb;       --sec-bridge-tint: #f0ecf9;
+    --sec-instrumental: #6b7280; --sec-instrumental-tint: #f1f3f6;
+    --sec-interlude: #6b7280;    --sec-interlude-tint: #f1f3f6;
+    --sec-outro: #4f6477;        --sec-outro-tint: #eef1f5;
+    --sec-tag: #bd476a;          --sec-tag-tint: #faedf0;
+    --sec-coda: #4f6477;         --sec-coda-tint: #eef1f5;
+    --sec-other: #6b7280;        --sec-other-tint: #f1f3f6;
+
+    /* Legacy section bg colors (method 1 / 2 modes) */
+    --section-verse: #e8f3f0;
+    --section-chorus: #fcece1;
+    --section-bridge: #f0ecf9;
+    --section-intro: #eef3f9;
+    --section-prechorus: #faf2e1;
+    --section-outro: #eef1f5;
+    --section-tag: #faedf0;
+    --section-chorus-2: #e0560a;
+    --section-chorus-2-background: #fcece1;
+    --section-bridge-2: #7a5bcb;
   }
 
   .dark {
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 8%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 8%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 21 91% 48%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 217 33% 17%;
-    --accent-foreground: 210 40% 98%;
+    --background: 224 24% 6%;        /* #0c0e13 */
+    --foreground: 220 8% 92%;        /* #ecedf0 */
+    --card: 224 18% 10%;             /* #14171e */
+    --card-foreground: 220 8% 92%;
+    --popover: 224 18% 10%;
+    --popover-foreground: 220 8% 92%;
+    --primary: 21 96% 54%;           /* #f4751f */
+    --primary-foreground: 24 15% 10%;
+    --secondary: 220 20% 13%;        /* #1b1f28 */
+    --secondary-foreground: 220 8% 80%;
+    --muted: 220 20% 13%;
+    --muted-foreground: 220 6% 61%;  /* #9298a3 */
+    --accent: 220 20% 13%;
+    --accent-foreground: 220 8% 92%;
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 21 91% 48%;
-    --section-verse: #1a3d24;
-    --section-chorus: #3d3210;
-    --section-bridge: #2a2035;
-    --section-intro: #1a2d3d;
-    --section-chorus-2: #FE9800;
-    --section-chorus-2-background: #E6E6E6;
-    --section-bridge-2: #959FA8;
+    --border: 220 16% 18%;           /* #262b35 */
+    --input: 220 16% 18%;
+    --ring: 21 96% 54%;
+
+    --chord-color: #8fb0ff;   /* bleu PDF FR dark */
+    --jianpu-color: #ff7d72;
+    --pinyin-color: #888e98;
+    --sheet-accent: #63c3cf;
+
+    --sec-intro: #8fb2dc;        --sec-intro-tint: #161f2a;
+    --sec-verse: #59bdac;        --sec-verse-tint: #112320;
+    --sec-prechorus: #e0b35b;    --sec-prechorus-tint: #251e0f;
+    --sec-chorus: #fb923c;       --sec-chorus-tint: #2a1810;
+    --sec-bridge: #b59ce9;       --sec-bridge-tint: #1d1730;
+    --sec-instrumental: #98a0ad; --sec-instrumental-tint: #181d26;
+    --sec-interlude: #98a0ad;    --sec-interlude-tint: #181d26;
+    --sec-outro: #93a8ba;        --sec-outro-tint: #161e28;
+    --sec-tag: #e08ba1;          --sec-tag-tint: #281720;
+    --sec-coda: #93a8ba;         --sec-coda-tint: #161e28;
+    --sec-other: #98a0ad;        --sec-other-tint: #181d26;
+
+    --section-verse: #112320;
+    --section-chorus: #2a1810;
+    --section-bridge: #1d1730;
+    --section-intro: #161f2a;
+    --section-prechorus: #251e0f;
+    --section-outro: #161e28;
+    --section-tag: #281720;
+    --section-chorus-2: #fb923c;
+    --section-chorus-2-background: #2a1810;
+    --section-bridge-2: #b59ce9;
   }
 }
 
@@ -70,35 +116,44 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 }
 
 @layer utilities {
   .font-chord {
-    color: #2563EB;
+    color: var(--chord-color);
     font-family: "JetBrains Mono", "Courier New", monospace;
-    font-weight: 600;
+    font-weight: 700;
   }
   .font-section {
-    color: #EA580C;
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
     font-size: 0.75rem;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
+    color: var(--sec-c, #6b7080);
   }
   .font-jianpu {
-    color: #B91C1C;
+    color: var(--jianpu-color);
     font-family: "JetBrains Mono", "Courier New", monospace;
     font-weight: 700;
   }
-  .dark .font-chord {
-    color: #60A5FA;
+
+  /* Section identity rail: thin left border colored per section type */
+  .sec-rail {
+    border-left: 3px solid var(--sec-c, hsl(var(--border)));
+    padding-left: 12px;
   }
-  .dark .font-section {
-    color: #FB923C;
-  }
-  .dark .font-jianpu {
-    color: #F87171;
+
+  /* Section feature card (chorus / pré-refrain editorial highlight) */
+  .sec-feature {
+    background: var(--sec-tint, transparent);
+    border: 1px solid color-mix(in srgb, var(--sec-c, #888) 22%, transparent);
+    border-left: 3px solid var(--sec-c, hsl(var(--border)));
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding: 12px 16px 14px;
+    margin-left: -2px;
   }
 }
 

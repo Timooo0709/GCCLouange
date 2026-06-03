@@ -20,24 +20,19 @@ function toSegments(tokens: Token[]): Segment[] {
         i++;
       }
 
-      // Sépare le premier mot (collé à l'accord) du reste
       const spaceIdx = lyric.search(/\s/);
       if (spaceIdx === -1 || spaceIdx === lyric.length - 1) {
-        // Pas d'espace ou espace seulement à la fin → un seul segment
         segments.push({ chord, lyric });
       } else {
-        // Premier mot avec l'accord, puis le reste mot par mot
-        const firstWord = lyric.slice(0, spaceIdx + 1); // inclut l'espace trailing
+        const firstWord = lyric.slice(0, spaceIdx + 1);
         const rest = lyric.slice(spaceIdx + 1);
         segments.push({ chord, lyric: firstWord });
-        // Découpe le reste mot par mot
         const words = rest.split(/(?<=\s)/);
         for (const word of words) {
           if (word) segments.push({ chord: null, lyric: word });
         }
       }
     } else {
-      // Lyric sans accord → mot par mot
       const words = token.value.split(/(?<=\s)/);
       for (const word of words) {
         if (word) segments.push({ chord: null, lyric: word });
@@ -63,7 +58,7 @@ export function ChordLine({ tokens, showChords = true, fontSize = 0.88 }: ChordL
       className="font-sans leading-normal select-text flex flex-wrap items-end"
       style={{
         fontSize: `${fontSize}rem`,
-        paddingTop: "0.15em", // plus besoin du 1.5em
+        paddingTop: "0.15em",
         paddingBottom: "0.15em",
         lineHeight: segments.every(s => !s.lyric?.trim()) ? "0" : undefined,
       }}

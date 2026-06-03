@@ -3,14 +3,13 @@
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-import { Trash2, List, Music, Pencil, Eye, EyeOff } from "lucide-react";
+import { Trash2, List, Music, Pencil } from "lucide-react";
 import { getSetlist, deleteSetlist, isRestricted, type FSSetlist } from "@/lib/firebase/setlists";
 import { useAuth } from "@/lib/firebase/auth";
 import { parseChordPro, formatSectionName } from "@/lib/chordpro/parser";
 import { transposeAST } from "@/lib/transposeAST";
 import { semitonesTo } from "@/lib/transpose";
 import { SongView } from "@/components/song/SongView";
-import { DarkModeToggle } from "@/components/DarkModeToggle";
 import { useTranslation } from "react-i18next";
 import type { SongIndexEntry, SetlistItem } from "@/lib/types";
 import type { ChordProAST } from "@/lib/types";
@@ -255,7 +254,7 @@ export function SetlistDetailClient() {
         setContents(allContents);
         const { SetlistFullPDF } = await import("@/components/song/SetlistFullPDF");
         const blob = await pdf(
-          <SetlistFullPDF setlist={setlist} contents={allContents} language={i18n.language} />
+          <SetlistFullPDF setlist={setlist} contents={allContents} />
         ).toBlob();
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
@@ -302,75 +301,98 @@ export function SetlistDetailClient() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Top bar */}
-      <div className="print:hidden sticky top-14 z-10 bg-background/95 backdrop-blur border-b border-border px-4 py-2 flex items-center gap-3 transition-colors duration-200">
-        <Link href={backPath} className="text-sm text-muted-foreground hover:text-foreground">
-          {t("setlists.detail.backToAll")}
-        </Link>
+      {/* Top bar — même style que SongDetailClient */}
+      <div className="print:hidden sticky top-[58px] z-30 bg-background/88 backdrop-blur-[12px] border-b border-border/50">
+        <div className="max-w-[1080px] mx-auto px-4">
+          <div className="flex items-center gap-2 py-[9px] flex-wrap">
 
-        {/* Vue toggle */}
-        <div className="flex gap-0.5 rounded-lg border border-border p-0.5 bg-muted/30">
-          <button
-            onClick={() => setView("liste")}
-            className={`flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium transition-colors cursor-pointer ${
-              view === "liste" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            <List className="h-3.5 w-3.5" />
-            {t("setlists.detail.tabList")}
-          </button>
-          <button
-            onClick={switchToPartitions}
-            className={`flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium transition-colors cursor-pointer ${
-              view === "partitions" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            <Music className="h-3.5 w-3.5" />
-            {t("setlists.detail.tabCharts")}
-          </button>
-        </div>
+            {/* ← Retour */}
+            <Link href={backPath} className="text-[13px] font-semibold text-muted-foreground hover:text-foreground flex items-center gap-1 mr-1">
+              ← <span>{t("setlists.detail.backToAll")}</span>
+            </Link>
 
-        <div className="ml-auto flex items-center gap-3">
-          <DarkModeToggle />
-          <button
-            onClick={() => setShowChords((s) => !s)}
-            className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
-          >
-            {showChords ? <Eye className="h-3.5 w-3.5" /> : <EyeOff className="h-3.5 w-3.5" />}
-          </button>
-          <Link
-            href={`/setlists/${id}/edit`}
-            className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
-          >
-            <Pencil className="h-3.5 w-3.5" />
-          </Link>
-          <button
-            onClick={handleDownload}
-            disabled={downloading}
-            className="text-sm text-muted-foreground hover:text-foreground disabled:opacity-50"
-          >
-            {downloading ? "…" : "⬇ " + t("songs.detail.downloadPdf")}
-          </button>
-          {canDelete && !confirmDelete && (
-            <button onClick={() => setConfirmDelete(true)}
-              className="flex items-center gap-1 text-sm text-muted-foreground hover:text-destructive">
-              <Trash2 className="h-3.5 w-3.5" />
-              {t("setlists.detail.deleteButton")}
-            </button>
-          )}
-          {confirmDelete && (
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-muted-foreground">{t("setlists.detail.deleteConfirm")}</span>
-              <button onClick={handleDelete} disabled={deleting}
-                className="text-xs font-medium text-destructive hover:underline disabled:opacity-50">
-                {deleting ? "…" : t("setlists.detail.deleteYes")}
+            {/* Vue toggle — pill identique au transpose pill */}
+            <div className="flex items-center gap-0 border border-border rounded-[10px] bg-card overflow-hidden">
+              <button
+                onClick={() => setView("liste")}
+                className={`flex items-center gap-1.5 px-3 h-[34px] text-[12.5px] font-semibold transition-colors ${
+                  view === "liste" ? "bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                <List className="h-3.5 w-3.5" />
+                <span className="hidden sm:inline">{t("setlists.detail.tabList")}</span>
               </button>
-              <button onClick={() => setConfirmDelete(false)}
-                className="text-xs text-muted-foreground hover:text-foreground">
-                {t("setlists.detail.deleteCancel")}
+              <div className="w-px h-5 bg-border" />
+              <button
+                onClick={switchToPartitions}
+                className={`flex items-center gap-1.5 px-3 h-[34px] text-[12.5px] font-semibold transition-colors ${
+                  view === "partitions" ? "bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                <Music className="h-3.5 w-3.5" />
+                <span className="hidden sm:inline">{t("setlists.detail.tabCharts")}</span>
               </button>
             </div>
-          )}
+
+            {/* Actions — poussées à droite */}
+            <div className="ml-auto flex items-center gap-1 flex-wrap justify-end">
+
+              {/* Accords */}
+              <button
+                onClick={() => setShowChords((s) => !s)}
+                className={`h-8 px-2.5 rounded-[8px] border text-[12.5px] font-semibold flex items-center gap-1.5 transition-all duration-150 ${
+                  showChords
+                    ? "border-transparent bg-primary/10 text-primary"
+                    : "border-border bg-card text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/><path d="M9 18V5l12-2v13"/></svg>
+                <span className="hidden sm:inline">{t("songs.detail.chords")}</span>
+              </button>
+
+              {/* Éditer */}
+              <Link
+                href={`/setlists/${id}/edit`}
+                className="h-8 px-2.5 rounded-[8px] border border-border bg-card text-muted-foreground hover:text-foreground text-[12.5px] font-semibold flex items-center gap-1.5 transition-all duration-150"
+              >
+                <Pencil className="h-3.5 w-3.5" />
+                <span className="hidden sm:inline">{t("setlists.detail.editButton")}</span>
+              </Link>
+
+              {/* PDF */}
+              <button
+                onClick={handleDownload}
+                disabled={downloading}
+                className="h-8 px-2.5 rounded-[8px] border border-border bg-card text-muted-foreground hover:text-foreground text-[12.5px] font-semibold flex items-center gap-1.5 transition-all duration-150 disabled:opacity-50"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+                <span className="hidden sm:inline">{downloading ? "…" : t("songs.detail.downloadPdf")}</span>
+              </button>
+
+              {/* Supprimer */}
+              {canDelete && !confirmDelete && (
+                <button onClick={() => setConfirmDelete(true)}
+                  className="h-8 px-2.5 rounded-[8px] border border-border bg-card text-muted-foreground hover:text-destructive text-[12.5px] font-semibold flex items-center gap-1.5 transition-all duration-150"
+                >
+                  <Trash2 className="h-3.5 w-3.5" />
+                  <span className="hidden sm:inline">{t("setlists.detail.deleteButton")}</span>
+                </button>
+              )}
+              {confirmDelete && (
+                <div className="flex items-center gap-2">
+                  <span className="text-xs text-muted-foreground">{t("setlists.detail.deleteConfirm")}</span>
+                  <button onClick={handleDelete} disabled={deleting}
+                    className="text-xs font-medium text-destructive hover:underline disabled:opacity-50">
+                    {deleting ? "…" : t("setlists.detail.deleteYes")}
+                  </button>
+                  <button onClick={() => setConfirmDelete(false)}
+                    className="text-xs text-muted-foreground hover:text-foreground">
+                    {t("setlists.detail.deleteCancel")}
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
 

@@ -40,6 +40,8 @@
     },
     "detail": {
       "backToAll": "← Tous les chants",
+      "chords": "Accords",
+      "pinyin": "Pinyin",
       "video": "Vidéo",
       "customize": "Personnaliser",
       "downloadPdf": "PDF"

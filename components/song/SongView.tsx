@@ -2,11 +2,171 @@
 
 import { ChordLine } from "@/components/song/ChordLine";
 import { JianpuLine } from "@/components/song/JianpuLine";
-import { resolvePinyin, extractChinese } from "@/lib/pinyin";
-import type { ChordProAST, ChordProSection } from "@/lib/types";
+import type { ChordProAST, ChordProSection, Token } from "@/lib/types";
 import { useTranslation } from "react-i18next";
 import { formatSectionName } from "@/lib/chordpro/parser";
 
+
+// --- Chinese column-layout line renderer ---
+
+function isCJK(ch: string) {
+  const cp = ch.codePointAt(0) ?? 0;
+  return (cp >= 0x4e00 && cp <= 0x9fff) || (cp >= 0x3400 && cp <= 0x4dbf);
+}
+
+/** Build per-character columns: { char, chord | null, pinyin } */
+function zhColumns(tokens: Token[], pinyin: string | null) {
+  const py = pinyin?.split(/\s+/).filter(Boolean) ?? [];
+  let pIdx = 0;
+  const cols: { char: string; chord: string | null; py: string }[] = [];
+  let pendingChord: string | null = null;
+
+  for (const tok of tokens) {
+    if (tok.type === "chord") {
+      pendingChord = tok.value;
+    } else {
+      const chars = [...tok.value];
+      chars.forEach((ch, ci) => {
+        cols.push({
+          char: ch,
+          chord: ci === 0 ? pendingChord : null,
+          py: isCJK(ch) ? (py[pIdx++] ?? "") : "",
+        });
+        if (ci === 0) pendingChord = null;
+      });
+    }
+  }
+  if (pendingChord) cols.push({ char: " ", chord: pendingChord, py: "" });
+  return cols;
+}
+
+/**
+ * Rendu d'une ligne chinoise en colonnes : accord (au-dessus) / caractère / pinyin (dessous).
+ * Typographie identique au PDF.
+ */
+function ZhLineWeb({ tokens, pinyin, showChords, showPinyin }: {
+  tokens: Token[];
+  pinyin: string | null;
+  showChords: boolean;
+  showPinyin: boolean;
+}) {
+  const cols = zhColumns(tokens, pinyin);
+  const hasChord = showChords && cols.some(c => c.chord !== null);
+
+  return (
+    <div className="flex flex-wrap items-end mb-[3px]" style={{ fontSize: "0.88rem" }}>
+      {cols.map((col, i) => {
+        const cjk = isCJK(col.char);
+        // CJK : min 1.6em ; non-CJK avec accord (espace entre deux accords) : largeur basée sur l'accord
+        const minWidth = cjk
+          ? "1.6em"
+          : col.chord
+            ? `${(col.chord.length + 0.5) * 0.62}em`
+            : undefined;
+        return (
+          <span
+            key={i}
+            style={{
+              display: "inline-flex",
+              flexDirection: "column",
+              alignItems: "center",
+              minWidth,
+            }}
+          >
+            {/* Accord */}
+            {showChords && (
+              <span
+                style={{
+                  fontFamily: '"JetBrains Mono", "Courier New", monospace',
+                  fontWeight: 700,
+                  fontSize: "0.9em",
+                  lineHeight: "0.7",
+                  minHeight: hasChord ? "1.1em" : undefined,
+                  color: "var(--jianpu-color, #b3261d)",
+                  visibility: col.chord ? "visible" : "hidden",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {col.chord ?? "x"}
+              </span>
+            )}
+            {/* Caractère */}
+            <span
+              style={{
+                fontSize: "1em",
+                lineHeight: 1.35,
+                color: "var(--fg, inherit)",
+              }}
+            >
+              {col.char}
+            </span>
+            {/* Pinyin */}
+            {showPinyin && (
+              <span
+                style={{
+                  fontSize: "0.6em",
+                  lineHeight: 1.2,
+                  color: "var(--muted-foreground)",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {col.py || " "}
+              </span>
+            )}
+          </span>
+        );
+      })}
+    </div>
+  );
+}
+
+// --- Section styling — identique au PDF (une couleur par langue) ---
+
+// Thèmes par langue (mêmes valeurs que SongPDF.tsx)
+const LANG_THEME = {
+  fr: { accent: "#3f63cf", boxFill: "#e2e7f7", boxBorder: "#c5cee8" },
+  zh: { accent: "#b3261d", boxFill: "#fbeae9", boxBorder: "#e5c4c2" },
+} as const;
+
+// Types avec boîte remplie (même mapping que le PDF)
+const FILLED_BOX = new Set(["chorus", "prechorus", "final", "coda"]);
+// Types avec boîte outline seule
+const OUTLINE_BOX = new Set(["bridge"]);
+
+function getSectionStyle(type: string, isZh: boolean): React.CSSProperties {
+  const { accent, boxFill, boxBorder } = LANG_THEME[isZh ? "zh" : "fr"];
+  const base = {
+    "--sec-c": accent,
+    borderRadius: "0 8px 8px 0",
+    padding: "10px 16px 12px",
+    marginLeft: "-2px",
+    marginBottom: "10px",
+  } as React.CSSProperties;
+
+  if (FILLED_BOX.has(type)) {
+    return {
+      ...base,
+      background: boxFill,
+      borderTop: `0.5px solid ${boxBorder}`,
+      borderRight: `0.5px solid ${boxBorder}`,
+      borderBottom: `0.5px solid ${boxBorder}`,
+      borderLeft: `3px solid ${accent}`,
+    } as React.CSSProperties;
+  }
+
+  if (OUTLINE_BOX.has(type)) {
+    return {
+      ...base,
+      borderTop: `0.5px solid ${accent}`,
+      borderRight: `0.5px solid ${accent}`,
+      borderBottom: `0.5px solid ${accent}`,
+      borderLeft: `3px solid ${accent}`,
+    } as React.CSSProperties;
+  }
+
+  // Plain — pas de boîte, juste la couleur de label
+  return { "--sec-c": accent } as React.CSSProperties;
+}
 
 // --- Composant section ---
 
@@ -17,41 +177,26 @@ interface SectionViewProps {
   showPinyin: boolean;
   useJianpu: boolean;
   note?: string;
-  method?: number;
 }
 
-function getSectionStyle(type: string, method: 0 | 1 | 2): React.CSSProperties {
-  if (method === 0) return {};
-  
-  if (method === 1) return {
-    backgroundColor: `var(--section-${type})`,
-  };
-
-  if (method === 2) return {
-    backgroundColor: `var(--section-${type}-2-background)`,
-    borderLeft: `3px solid var(--section-${type}-2)`,
-    paddingLeft: "12px",
-    borderRadius: "6px",
-  };
-
-  return {};
-}
-
-function SectionView({ section, language, showChords, showPinyin, useJianpu, note, method }: SectionViewProps) {
+function SectionView({ section, language, showChords, showPinyin, useJianpu, note }: SectionViewProps) {
   const { t } = useTranslation();
   const isZh = language === "zh";
   const label = formatSectionName(section, t);
 
   return (
-    <div className={`mb-5 print:mb-4 `} style={{ breakInside: "avoid", ...getSectionStyle(section.type, method as 0 | 1 | 2) }}>
+    <div className="mb-5 print:mb-4" style={{ breakInside: "avoid", ...getSectionStyle(section.type, isZh) }}>
       {/* En-tête de section */}
-      <div className="font-section text-xs font-bold uppercase tracking-widest text-section dark:text-orange-400 mb-1">
-        {label}
-        {note && (
-          <span className="ml-2 normal-case font-normal text-muted-foreground tracking-normal">
-            — {note}
-          </span>
-        )}
+      <div className="font-section mb-1.5" style={{ display: "flex", alignItems: "center", gap: 9 }}>
+        <span style={{ width: 16, height: 2, background: "var(--sec-c, currentColor)", borderRadius: 2, flexShrink: 0, display: "inline-block" }} aria-hidden="true" />
+        <span>
+          {label}
+          {note && (
+            <span className="ml-2 normal-case font-normal text-muted-foreground tracking-normal text-xs">
+              — {note}
+            </span>
+          )}
+        </span>
       </div>
 
       {/* Lignes de la section */}
@@ -61,8 +206,6 @@ function SectionView({ section, language, showChords, showPinyin, useJianpu, not
           if (line.tokens.length === 0 && !line.jianpu) {
             return <div key={i} className="h-5" />;
           }
-
-          const lyricsText = extractChinese(line.tokens);
 
           if (isZh && useJianpu) {
             // Mode 简谱 : 4 couches
@@ -77,21 +220,14 @@ function SectionView({ section, language, showChords, showPinyin, useJianpu, not
           }
 
           if (isZh && !useJianpu) {
-            // Mode chinois standard : paroles + accords + pinyin optionnel
-            const pinyinText = resolvePinyin(lyricsText, line.pinyin);
-
             return (
-              <div key={i} className="mb-1" >
-                <ChordLine tokens={line.tokens} showChords={showChords} />
-                {showPinyin && pinyinText && (
-                  <div
-                    className="font-mono text-muted-foreground select-text"
-                    style={{ fontSize: "0.75rem", paddingLeft: "0", marginTop: "-0.1em", paddingBottom: "0.1em" }}
-                  >
-                    {pinyinText}
-                  </div>
-                )}
-              </div>
+              <ZhLineWeb
+                key={i}
+                tokens={line.tokens}
+                pinyin={line.pinyin}
+                showChords={showChords}
+                showPinyin={showPinyin}
+              />
             );
           }
 
@@ -114,7 +250,6 @@ export interface SongViewProps {
   useJianpu?: boolean;
   structureOverride?: string[] | null;
   sectionNotes?: Record<string, string>;
-  method?: number; //TEST
 }
 
 export function SongView({
@@ -124,7 +259,6 @@ export function SongView({
   useJianpu = false,
   structureOverride = null,
   sectionNotes = {},
-  method = 0, // TEST
 }: SongViewProps) {
   const { t } = useTranslation();
   const isZh = ast.metadata.language === "zh";
@@ -138,33 +272,46 @@ export function SongView({
           .filter((s): s is ChordProSection => s !== undefined)
       : ast.sections;
 
+  // Accent couleur par langue — correspond au thème PDF
+  const langAccent = isZh ? "var(--jianpu-color)" : "var(--chord-color)";
+
   return (
     <div className="max-w-2xl print:max-w-none">
-      {/* En-tête du chant */}
-      <div className="mb-6 pb-4 print:mb-3 border-b border-border">
-        <h1 className="text-2xl font-bold text-foreground leading-tight">
-          {ast.metadata.title}
-        </h1>
-        {ast.metadata.titlePinyin && (
-          <p className="text-muted-foreground text-sm mt-0.5">
-            {ast.metadata.titlePinyin}
-          </p>
-        )}
-        <p className="text-muted-foreground text-sm mt-1">
-          {ast.metadata.artist}
-          {ast.metadata.key && (
-            <span className="ml-3 font-mono text-xs bg-muted px-1.5 py-0.5 rounded">
-              {canUseJianpu
-                ? ast.metadata.jianpuKey ?? `1=${ast.metadata.key}`
-                : ast.metadata.key}
-            </span>
-          )}
-          {ast.metadata.tempo && (
-            <span className="ml-2 text-xs text-muted-foreground">
-              ♩ = {ast.metadata.tempo}
-            </span>
-          )}
-        </p>
+      {/* En-tête du chant — editorial song-sheet style */}
+      <div className="mb-0 pb-3 print:mb-3 border-b border-border">
+        <div className="flex items-start justify-between gap-5">
+          <div className="min-w-0">
+            <h1 className="text-[26px] font-extrabold text-foreground leading-[1.05] tracking-[-0.4px] uppercase">
+              {ast.metadata.title}
+            </h1>
+            {ast.metadata.titlePinyin && (
+              <p className="text-muted-foreground text-[13px] mt-1 font-medium">
+                {ast.metadata.titlePinyin}
+              </p>
+            )}
+            <p className="text-muted-foreground text-[13px] mt-1">
+              {ast.metadata.artist}
+            </p>
+          </div>
+          <div className="flex flex-col items-end gap-2 shrink-0 pt-1">
+            {ast.metadata.key && (
+              <span
+                className="font-mono font-bold text-[14px] rounded-full px-3 py-[3px] border-[1.5px] leading-none"
+                style={{ color: langAccent, borderColor: langAccent }}
+              >
+                {canUseJianpu
+                  ? ast.metadata.jianpuKey ?? `1=${ast.metadata.key}`
+                  : ast.metadata.key}
+              </span>
+            )}
+            {ast.metadata.tempo && (
+              <span className="text-muted-foreground text-[11px] font-medium flex items-baseline gap-0.5">
+                <span className="text-foreground/70 text-[15px] leading-none">♩</span>
+                {` = ${ast.metadata.tempo}`}
+              </span>
+            )}
+          </div>
+        </div>
 
         {/* Avertissement structure désactivée en mode 简谱 */}
         {canUseJianpu && structureOverride && (
@@ -172,6 +319,22 @@ export function SongView({
             {t("songs.view.jianpuWarning")}
           </p>
         )}
+      </div>
+
+      {/* Ligne ORDRE — identique au PDF */}
+      <div className="flex flex-wrap items-baseline gap-x-1 gap-y-0.5 pt-2 pb-3">
+        <span
+          className="text-[8px] font-bold tracking-[1.4px] uppercase mr-1.5 shrink-0"
+          style={{ color: langAccent }}
+        >
+          ORDRE
+        </span>
+        {sections.map((section, i) => (
+          <span key={`ord-${section.id}-${i}`} className="text-[11px] text-muted-foreground">
+            {i > 0 && <span className="mx-0.5 opacity-40">·</span>}
+            {formatSectionName(section, t)}
+          </span>
+        ))}
       </div>
 
       {/* Corps : sections */}
@@ -185,7 +348,6 @@ export function SongView({
             showPinyin={isZh ? showPinyin : false}
             useJianpu={canUseJianpu}
             note={sectionNotes[section.id]}
-            method={method}
           />
         ))}
       </div>

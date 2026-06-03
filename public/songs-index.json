@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-31T21:43:20.889Z",
+  "generatedAt": "2026-06-03T12:31:27.695Z",
   "songs": [
     {
       "slug": "abba-pere",
@@ -171,39 +171,31 @@
         },
         {
           "id": "verse-2",
-          "name": "Couplet 1",
+          "name": "主歌 1/Couplet 1",
           "type": "verse",
           "number": "1"
         },
         {
           "id": "verse-3",
-          "name": "Couplet 2",
+          "name": "主歌 2/Couplet 2",
           "type": "verse",
           "number": "2"
         },
         {
           "id": "verse-4",
-          "name": "Couplet 3",
+          "name": "主歌 3/Couplet 3",
           "type": "verse",
           "number": "3"
         },
         {
           "id": "chorus-5",
-          "name": "Refrain 1",
-          "type": "chorus",
-          "number": "1"
+          "name": "副歌/Refrain",
+          "type": "chorus"
         },
         {
           "id": "bridge-6",
-          "name": "Pont1",
-          "type": "bridge",
-          "number": "1"
-        },
-        {
-          "id": "bridge-7",
-          "name": "Pont2",
-          "type": "bridge",
-          "number": "2"
+          "name": "桥段/Pont",
+          "type": "bridge"
         }
       ]
     },
@@ -229,14 +221,13 @@
         },
         {
           "id": "verse-2",
-          "name": "前副歌/Pre-Refrain",
+          "name": "前副歌/Pré-Refrain",
           "type": "chorus"
         },
         {
           "id": "chorus-3",
-          "name": "Refrain 1",
-          "type": "chorus",
-          "number": "1"
+          "name": "副歌/Refrain",
+          "type": "chorus"
         }
       ]
     },
@@ -320,7 +311,7 @@
         },
         {
           "id": "prechorus-2",
-          "name": "前副歌/Couplet-PreChorus",
+          "name": "前副歌/Pré-Refrain",
           "type": "prechorus"
         },
         {
