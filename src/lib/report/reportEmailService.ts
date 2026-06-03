@@ -1,6 +1,6 @@
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+
 
 export interface SendEmailOptions {
   to: string[];
@@ -19,7 +19,7 @@ export async function sendEmail(options: SendEmailOptions): Promise<void> {
   if (!options.to.length) {
     throw new EmailServiceError('NO_RECIPIENTS', 'No recipients configured');
   }
-
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const { error } = await resend.emails.send({
     from: options.from,
     to: options.to,
