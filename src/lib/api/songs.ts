@@ -9,7 +9,7 @@ export interface SongContent {
 
 export async function fetchSongAST(slug: string): Promise<SongContent | null> {
   try {
-    const res = await fetch(`/api/songs/${slug}`);
+    const res = await fetch(`/api/song/${slug}`);
     if (!res.ok) return null;
     const song = await res.json();
     return { slug, ast: parseChordPro(song.chordProSource) };

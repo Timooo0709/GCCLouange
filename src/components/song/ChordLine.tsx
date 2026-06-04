@@ -1,7 +1,7 @@
 "use client";
 
 import type { Token } from "@/types/chordPro";
-
+import localFont from "next/font/local";
 type Segment = { chord: string | null; lyric: string };
 
 function toSegments(tokens: Token[]): Segment[] {
@@ -48,9 +48,11 @@ interface ChordLineProps {
   tokens: Token[];
   showChords?: boolean;
   fontSize?: number;
+  chord_font?: ReturnType<typeof localFont>;
+  fr_lyric_font?: ReturnType<typeof localFont>;
 }
 
-export function ChordLine({ tokens, showChords = true, fontSize = 0.88 }: ChordLineProps) {
+export function ChordLine({ tokens, showChords = true, fontSize = 0.88, chord_font, fr_lyric_font }: ChordLineProps) {
   const segments = toSegments(tokens);
   const hasAnyChord = showChords && segments.some((s) => s.chord !== null);
   return (
@@ -77,13 +79,13 @@ export function ChordLine({ tokens, showChords = true, fontSize = 0.88 }: ChordL
             style={{ minWidth }}
           >
             {showChords && seg.chord ? (
-              <span className="font-bold font-chord whitespace-nowrap text-[0.9em] leading-[0.7] pb-[-2px]">
+              <span className={`{md:text-xl font-bold font-chord whitespace-nowrap  leading-[0.7] pb-[-2px] ${chord_font?.className}`} >
                 {seg.chord}
               </span>
             ) : (
               hasAnyChord && <span className="leading-[0.7] pb-[-2px] text-[0.9em]">&nbsp;</span>
             )}
-            <span className="text-foreground whitespace-pre">
+            <span className={`{text-foreground whitespace-pre md:text-xl ${fr_lyric_font?.className}`}>
               {(showChords ? seg.lyric : seg.lyric?.trimStart()) || (seg.chord && showChords ? " " : "")}
             </span>
           </span>

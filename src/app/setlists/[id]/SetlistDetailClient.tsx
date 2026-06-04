@@ -165,7 +165,12 @@ export function SetlistDetailClient() {
 
             {/* ← Retour */}
             <Link href={backPath} className="text-[13px] font-semibold text-muted-foreground hover:text-foreground flex items-center gap-1 mr-1">
-              ← <span>{t("setlists.detail.backToAll")}</span>
+              <button className="h-8 px-2.5 rounded-[8px] border border-border bg-card text-muted-foreground hover:text-foreground text-[12.5px] font-semibold flex items-center gap-0.5 transition-all duration-150">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M19 12H5m6-7l-7 7 7 7" />
+                </svg>
+                <span className="hidden sm:inline">{t("songs.detail.backToAll")}</span>
+              </button>
             </Link>
 
             {/* Vue toggle — pill identique au transpose pill */}

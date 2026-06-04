@@ -27,7 +27,11 @@ const FILLED_BOX = new Set(["chorus", "prechorus", "final", "coda"]);
 const OUTLINE_BOX = new Set(["bridge"]);
 
 const KaiTiFont = localFont({ src: "../../../public/fonts/KaiTi.ttf" });
-const Hans = localFont({ src: "../../../public/fonts/Han.otf" });
+
+const fr_lyric_font = localFont({src: "../../../public/fonts/inter-latin-ext-400-normal.ttf"});
+const zh_lyric_font = localFont({src: "../../../public/fonts/Han-source.otf"});
+const chord_font = localFont({src: "../../../public/fonts/SpaceMono-Regular.ttf"});
+
 
 function getSectionStyle(type: string, isZh: boolean): React.CSSProperties {
   const { accent, boxFill, boxBorder } = LANG_THEME[isZh ? "zh" : "fr"];
@@ -106,9 +110,11 @@ interface ZhLineProps {
   pinyin: string | null;
   showChords: boolean;
   showPinyin: boolean;
+  chord_font: ReturnType<typeof localFont>;
+  zh_lyric_font: ReturnType<typeof localFont>;
 }
 
-function ZhLine({ tokens, pinyin, showChords, showPinyin }: ZhLineProps) {
+function ZhLine({ tokens, pinyin, showChords, showPinyin, chord_font, zh_lyric_font }: ZhLineProps) {
   const cols = buildColumns(tokens, pinyin);
   const hasAnyChord = showChords && cols.some((c) => c.chord !== null);
 
@@ -130,7 +136,6 @@ function ZhLine({ tokens, pinyin, showChords, showPinyin }: ZhLineProps) {
             {showChords && (
               <span
                 style={{
-                  fontFamily: '"JetBrains Mono", "Courier New", monospace',
                   fontWeight: 700,
                   fontSize: "0.9em",
                   lineHeight: "0.7",
@@ -139,11 +144,12 @@ function ZhLine({ tokens, pinyin, showChords, showPinyin }: ZhLineProps) {
                   visibility: col.chord ? "visible" : "hidden",
                   whiteSpace: "nowrap",
                 }}
+                className={chord_font.className}
               >
                 {col.chord ?? "x"}
               </span>
             )}
-            <span className = { Hans.className } style={{ fontSize: "1em", lineHeight: 1.35 }}>
+            <span className = { `${zh_lyric_font.className} md:text-[1.2em]` } style={{ fontSize: "1.2em", lineHeight: 1.35 }}>
               {col.char}
             </span>
             {showPinyin && (
@@ -227,11 +233,13 @@ function SectionView({ section, language, showChords, showPinyin, useJianpu, not
                 pinyin={line.pinyin ?? null}
                 showChords={showChords}
                 showPinyin={showPinyin}
+                chord_font={chord_font}
+                zh_lyric_font={zh_lyric_font}
               />
             );
           }
 
-          return <ChordLine key={i} tokens={line.tokens} showChords={showChords} />;
+          return <ChordLine key={i} tokens={line.tokens} showChords={showChords} chord_font={chord_font} fr_lyric_font={fr_lyric_font} />;
         })}
       </div>
     </div>
