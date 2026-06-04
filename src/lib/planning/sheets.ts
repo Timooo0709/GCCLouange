@@ -41,6 +41,9 @@ export function parseDate(s: string): string | null {
   if (m2) return `${m2[3]}-${m2[2].padStart(2,"0")}-${m2[1].padStart(2,"0")}`
   const m3 = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{2})$/)
   if (m3) return `20${m3[3]}-${m3[2].padStart(2,"0")}-${m3[1].padStart(2,"0")}`
+  // DD/MM sans année — format utilisé par la plupart des feuilles (Culte, Groupes, Déjeuner…)
+  const m4 = s.match(/^(\d{1,2})\/(\d{1,2})$/)
+  if (m4) return `2026-${m4[2].padStart(2,"0")}-${m4[1].padStart(2,"0")}`
   return null
 }
 
@@ -149,9 +152,11 @@ export async function fetchCampus(): Promise<{ louange: CampusSeance[]; entraine
     const ch = [r[2],r[3],r[4]].filter(v => v?.trim()).join(", ")
     const mu = [r[5]?"Piano: "+r[5]:"", r[6]?"Guitare: "+r[6]:"", r[7]?"Batterie: "+r[7]:""].filter(Boolean).join(", ")
     const rg = [r[8]?"Sono: "+r[8]:"", r[9]?"PPT: "+r[9]:""].filter(Boolean).join(", ")
-    const obj: CampusSeance = { d: `${label} ${r[1]}`, ch, mu, rg, ent: r[14]||"", chants: [r[10]||"",r[11]||"",r[12]||"",r[13]||""] }
+    const rawEnt = (r[14]||"").trim()
+    const ent = rawEnt ? parseDate(rawEnt.split(" ")[0]) || "" : ""
+    const obj: CampusSeance = { d: `${label} ${r[1]}`, ch, mu, rg, ent, chants: [r[10]||"",r[11]||"",r[12]||"",r[13]||""] }
     louange.push(obj)
-    if (r[14]) entrainement.push(obj)
+    if (ent) entrainement.push(obj)
   }
   louange.sort((a,b) => a.d < b.d ? -1 : 1)
   entrainement.sort((a,b) => a.d < b.d ? -1 : 1)
