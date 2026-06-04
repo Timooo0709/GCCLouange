@@ -103,7 +103,7 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
     <div className="min-h-screen print:min-h-0 bg-background">
       {/* Barre de contrôles */}
       <div className={`print:hidden fixed left-0 right-0 top-[58px] z-10 bg-background/95 backdrop-blur border-b border-border transition-transform duration-300 ${ scrollVisible ? "translate-y-0" : "-translate-y-[calc(100%+58px)]"}`}>
-        <div className = "max-w-2xl mx-auto w-full flex flex-wrap gap-3 items-center">
+        <div className = "max-w-3xl mx-auto w-full flex flex-wrap gap-3 items-center py-2">
           <Link href={backPath} className="text-sm text-muted-foreground hover:text-foreground mr-2">
             {backLabel || t("songs.detail.backToAll")}
           </Link>
@@ -216,7 +216,7 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
       )}
       </div>
       {/* Contenu */}
-      <main className="px-4 py-6 print:px-0 print:py-2 print:max-w-none max-w-2xl mx-auto overflow-x-auto">
+      <main className="px-4 py-6 print:px-0 print:py-2 print:max-w-none max-w-2xl mx-auto overflow-x-auto mt-[48px]">
         <SongView
           ast={displayedAST}
           showChords={customize.showChords}
