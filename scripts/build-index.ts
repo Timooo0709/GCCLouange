@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
-import { getSongSlugs, loadSong } from "../lib/content/loadSongs";
-import { parseChordPro } from "../lib/chordpro/parser";
+import { getSongSlugs, loadSong } from "../src/lib/content/loadSongs";
+import { parseChordPro } from "../src/lib/chordpro/parser";
 
 const OUTPUT_FILE = path.join(process.cwd(), "public", "songs-index.json");
 

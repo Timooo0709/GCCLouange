@@ -1,0 +1,172 @@
+{
+  "common": {
+    "header": {
+      "title": "GCC 敬拜诗歌",
+      "songs": "诗歌",
+      "setlists": "歌单",
+      "login": "登录",
+      "logout": "登出"
+    },
+    "buttons": {
+      "reset": "重置",
+      "close": "关闭",
+      "cancel": "取消",
+      "confirm": "确认",
+      "delete": "删除",
+      "save": "保存",
+      "edit": "编辑",
+      "add": "添加",
+      "back": "返回"
+    },
+    "loading": "加载中…",
+    "languages": {
+      "fr": "法语",
+      "zh": "中文",
+      "mixed": "法语 / 中文"
+    }
+  },
+  "songs": {
+    "list": {
+      "searchPlaceholder": "搜索诗歌或歌手…",
+      "clearSearch": "清除搜索",
+      "filterLanguage": "语言",
+      "filterTheme": "所有主题",
+      "noSongsFound": "未找到相关诗歌。",
+      "counter_one": "{{count}} 首诗歌",
+      "counter_other": "{{count}} 首诗歌",
+      "counterFiltered_one": "找到 {{filteredCount}} 首诗歌（共 {{totalCount}} 首）",
+      "counterFiltered_other": "找到 {{filteredCount}} 首诗歌（共 {{totalCount}} 首）",
+      "allLanguages": "全部"
+    },
+    "detail": {
+      "backToAll": "← 所有诗歌",
+      "chords": "和弦",
+      "pinyin": "拼音",
+      "video": "视频",
+      "customize": "个性化设置",
+      "downloadPdf": "PDF"
+    },
+    "view": {
+      "jianpuWarning": "简谱模式下无法修改歌谱结构（诗歌将完整显示）。"
+    },
+    "sections": {
+      "verse": "主歌",
+      "chorus": "副歌",
+      "bridge": "桥段",
+      "intro": "前奏",
+      "outro": "尾奏",
+      "prechorus": "副歌前奏",
+      "other": "段落",
+      "tag": "尾声连接",
+      "interlude": "间奏",
+      "instrumental": "器乐",
+      "coda": "尾声"
+    }
+  },
+  "login": {
+    "title": "GCC 敬拜诗歌",
+    "subtitle": "敬拜带领人员登录",
+    "emailLabel": "电子邮箱",
+    "passwordLabel": "密码",
+    "emailPlaceholder": "email@example.com",
+    "passwordPlaceholder": "••••••••",
+    "submit": "登录",
+    "submitLoading": "登录中…",
+    "backToSetlists": "← 返回歌单列表",
+    "errorInvalid": "登录凭证错误。请检查电子邮箱和密码。"
+  },
+  "setlists": {
+    "list": {
+      "title": "GCC 敬拜诗歌",
+      "newButton": "新建歌单",
+      "draft": "草稿",
+      "allCategories": "全部类型",
+      "empty": "目前没有歌单。",
+      "emptyCategory": "此类型下没有歌单。",
+      "songCounter_one": "{{count}} 首诗歌",
+      "songCounter_other": "{{count}} 首诗歌"
+    },
+    "detail": {
+      "backToAll": "←",
+      "tabList": "曲目列表",
+      "tabCharts": "歌谱预览",
+      "editButton": "编辑",
+      "deleteButton": "删除",
+      "deleteConfirm": "确认删除？",
+      "deleteYes": "确认删除",
+      "deleteCancel": "取消",
+      "notFound": "未找到该歌单。",
+      "back": "← 返回",
+      "leaderLabel": "主席：",
+      "loadingCharts": "正在加载歌谱…"
+    },
+    "form": {
+      "titleNew": "新建歌单",
+      "titleEdit": "编辑歌单",
+      "infoSection": "基本信息",
+      "titleLabel": "歌单名称",
+      "titleRequired": "歌单名称不能为空。",
+      "titlePlaceholder": "例如：5月25日主日崇拜",
+      "leaderLabel": "主席",
+      "leaderRequired": "请填写主席姓名。",
+      "leaderPlaceholder": "例如：提摩太",
+      "categoryLabel": "类型/聚会",
+      "categoryRequired": "请选择一个类型。",
+      "categoryPlaceholder": "请选择类型…",
+      "categoryGroupRestricted": "主要聚会（需要登录）",
+      "categoryGroupFree": "小组",
+      "categoryRestrictedAuthWarning": "此类型需要登录后操作。",
+      "notesLabel": "备注（选填）",
+      "notesPlaceholder": "主题、背景等…",
+      "searchSongsPlaceholder": "搜索并添加诗歌…",
+      "songOriginalKey": "{{key}} (原调)",
+      "allSongsAdded": "所有诗歌已添加完毕。",
+      "emptySongs": "尚未添加诗歌 — 请使用上方搜索框添加。",
+      "errorTitle": "错误",
+      "draftButton": "存为草稿",
+      "draftSaving": "正在保存…",
+      "publishButton": "发布歌单",
+      "publishing": "正在发布…",
+      "createButton": "创建歌单",
+      "creating": "正在创建…",
+      "saveButton": "保存修改",
+      "saveDraftButton": "保存草稿",
+      "saving": "正在保存…",
+      "errorDefault": "创建歌单失败，请重试。",
+      "errorSaveDefault": "保存歌单失败，请重试。",
+      "structure": "结构",
+      "emptySections": "无段落 — 请点击上方按钮添加段落。",
+      "songNotePlaceholder": "备注（选填）…",
+      "reorderLabel": "拖动排序",
+      "removeLabel": "移除"
+    }
+  },
+  "customize": {
+    "panel": {
+      "title": "个性化设置",
+      "key": "调性升降",
+      "keyOriginal": "(原调)",
+      "keyShift_one": "{{count}} 个半音",
+      "keyShift_other": "{{count}} 个半音",
+      "display": "显示设置",
+      "showChords": "显示和弦",
+      "hideChords": "隐藏和弦",
+      "showPinyin": "显示拼音",
+      "structure": "歌单结构",
+      "jianpuStructureWarning": "简谱模式下无法修改歌谱结构 — 诗歌将完整显示。",
+      "emptySections": "无段落 — 请点击上方按钮添加段落。"
+    }
+  },
+  "categories": {
+    "Culte Francophone": "法语崇拜",
+    "Intergroupe": "联合聚会",
+    "Interfranco": "法语团契聚会",
+    "Campus": "夏令营",
+    "Groupe Paix": "和平团契",
+    "Groupe Fidélité": "信实团契",
+    "Groupe Bonté": "恩慈团契",
+    "中班": "中班",
+    "大班": "大班",
+    "高班": "高班"
+  }
+}
