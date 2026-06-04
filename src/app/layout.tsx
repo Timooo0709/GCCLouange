@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import Script from "next/script";
 import { ThemeProvider } from "next-themes";
 import { I18nProvider } from "@/lib/I18nProvider";
 import { Navbar } from "@/components/layout/Navbar";
@@ -46,6 +45,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.webmanifest" />
         <link rel="icon" href="/icon.png" type="image/png" />
         <meta name="mobile-web-app-capable" content="yes" />
+        <script dangerouslySetInnerHTML={{ __html: `if('serviceWorker'in navigator){navigator.serviceWorker.getRegistrations().then(function(r){r.forEach(function(s){s.unregister();})})}` }} />
       </head>
       <body className={`${inter.variable} font-sans antialiased min-h-screen bg-background`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
@@ -56,13 +56,6 @@ export default function RootLayout({
             </main>
           </I18nProvider>
         </ThemeProvider>
-        <Script id="sw-registration" strategy="afterInteractive">
-          {`if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-              navigator.serviceWorker.register('/sw.js', { scope: '/' });
-            });
-          }`}
-        </Script>
       </body>
     </html>
   );

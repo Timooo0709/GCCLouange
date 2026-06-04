@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
-import { Menu, X, Sun, Moon, Globe, LogIn, LogOut, Music } from "lucide-react";
+import { Menu, X, Sun, Moon, Globe, LogIn, LogOut, ChevronDown } from "lucide-react";
 import { useDarkMode } from "@/hooks/useDarkMode";
 import { useAuth, logOut } from "@/lib/firebase/auth";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
@@ -33,13 +33,14 @@ export function Navbar() {
 
   const isActiveSongs = pathname.startsWith("/songs");
   const isActiveSetlists = pathname.startsWith("/setlists");
+  const isActiveLouange = isActiveSongs || isActiveSetlists;
   const isActivePlanning = pathname.startsWith("/planning");
 
   return (
     <header className={`fixed top-0 z-50 w-full h-[58px] border-b border-border/50 bg-background/82 backdrop-saturate-[1.2] backdrop-blur-[14px] print:hidden transition-transform duration-300 ${scrollVisible ? "translate-y-0" : "-translate-y-full"}`}>
       <div className="max-w-[1080px] mx-auto px-4 h-full flex items-center gap-3.5">
         {/* Brand */}
-        <Link href="/songs" className="flex items-center gap-2.5 shrink-0">
+        <Link href="/planning" className="flex items-center gap-2.5 shrink-0">
           <div className="relative h-9 w-9 rounded-full overflow-hidden bg-white shadow-sm">
             <Image
               src="/logo.png"
@@ -51,32 +52,12 @@ export function Navbar() {
             />
           </div>
           <span className="font-bold text-[17px] tracking-[-0.3px] text-foreground">
-            GCC <span className="text-primary">{isZh ? "敬拜" : "Louange"}</span>
+            GCC <span className="text-primary">{isActivePlanning ? "Planning" : isZh ? "敬拜" : "Louange"}</span>
           </span>
         </Link>
 
         {/* Desktop nav links */}
         <nav className="hidden sm:flex items-center gap-1 ml-2">
-          <Link
-            href="/songs"
-            className={`px-3 py-[7px] rounded-[9px] text-[13.5px] font-semibold transition-all duration-150 ${
-              isActiveSongs
-                ? "bg-primary/10 text-primary"
-                : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-            }`}
-          >
-            {t("common.header.songs")}
-          </Link>
-          <Link
-            href="/setlists"
-            className={`px-3 py-[7px] rounded-[9px] text-[13.5px] font-semibold transition-all duration-150 ${
-              isActiveSetlists
-                ? "bg-primary/10 text-primary"
-                : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-            }`}
-          >
-            {t("common.header.setlists")}
-          </Link>
           <Link
             href="/planning"
             className={`px-3 py-[7px] rounded-[9px] text-[13.5px] font-semibold transition-all duration-150 ${
@@ -87,6 +68,38 @@ export function Navbar() {
           >
             Planning
           </Link>
+
+          {/* Louange dropdown */}
+          <div className="relative group">
+            <button className={`flex items-center gap-1 px-3 py-[7px] rounded-[9px] text-[13.5px] font-semibold transition-all duration-150 cursor-pointer ${
+              isActiveLouange
+                ? "bg-primary/10 text-primary"
+                : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+            }`}>
+              Louange
+              <ChevronDown className="h-3 w-3 opacity-60 group-hover:rotate-180 transition-transform duration-150" />
+            </button>
+            <div className="absolute left-0 top-full pt-1 hidden group-hover:block z-50">
+              <div className="bg-card border border-border rounded-xl shadow-lg py-1 min-w-[140px]">
+                <Link
+                  href="/songs"
+                  className={`flex items-center px-3 py-2 text-[13px] font-semibold transition-colors ${
+                    isActiveSongs ? "text-primary" : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                  }`}
+                >
+                  {t("common.header.songs")}
+                </Link>
+                <Link
+                  href="/setlists"
+                  className={`flex items-center px-3 py-2 text-[13px] font-semibold transition-colors ${
+                    isActiveSetlists ? "text-primary" : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                  }`}
+                >
+                  {t("common.header.setlists")}
+                </Link>
+              </div>
+            </div>
+          </div>
         </nav>
 
 
@@ -151,35 +164,37 @@ export function Navbar() {
       {isOpen && (
         <div className="absolute top-14 left-0 right-0 border-b border-border bg-background/95 backdrop-blur-md px-4 py-4 space-y-4 flex flex-col sm:hidden animate-in slide-in-from-top-2 duration-200 z-50">
           <div className="flex flex-col gap-1">
+            {/* Planning */}
+            <span className="px-3 pt-1 pb-0.5 text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
+              Planning
+            </span>
+            <Link
+              href="/planning"
+              className={`pl-5 pr-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
+                isActivePlanning ? "bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground hover:bg-muted"
+              }`}
+            >
+              Planning
+            </Link>
+            {/* Louange section */}
+            <span className="px-3 pt-2 pb-0.5 text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
+              Louange
+            </span>
             <Link
               href="/songs"
-              className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
-                isActiveSongs
-                  ? "bg-primary/10 text-primary"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
+              className={`pl-5 pr-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
+                isActiveSongs ? "bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground hover:bg-muted"
               }`}
             >
               {t("common.header.songs")}
             </Link>
             <Link
               href="/setlists"
-              className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
-                isActiveSetlists
-                  ? "bg-primary/10 text-primary"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
+              className={`pl-5 pr-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
+                isActiveSetlists ? "bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground hover:bg-muted"
               }`}
             >
               {t("common.header.setlists")}
-            </Link>
-            <Link
-              href="/planning"
-              className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
-                isActivePlanning
-                  ? "bg-primary/10 text-primary"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
-              }`}
-            >
-              Planning
             </Link>
           </div>
 
