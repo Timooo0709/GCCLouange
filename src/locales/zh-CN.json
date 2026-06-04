@@ -40,6 +40,8 @@
     },
     "detail": {
       "backToAll": "← 所有诗歌",
+      "chords": "和弦",
+      "pinyin": "拼音",
       "video": "视频",
       "customize": "个性化设置",
       "downloadPdf": "PDF"

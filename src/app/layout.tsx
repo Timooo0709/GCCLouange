@@ -51,7 +51,9 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <I18nProvider>
             <Navbar />
+            <main className="pt-[58px]">
             {children}
+            </main>
           </I18nProvider>
         </ThemeProvider>
         <Script id="sw-registration" strategy="afterInteractive">

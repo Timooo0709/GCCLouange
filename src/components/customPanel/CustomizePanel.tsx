@@ -4,12 +4,9 @@ import { useState } from "react";
 import {
   DndContext,
   closestCenter,
-  PointerSensor,
-  TouchSensor,
-  useSensor,
-  useSensors,
   DragEndEvent,
 } from "@dnd-kit/core";
+import { useDefaultSensors } from "@/lib/dnd/sensors";
 import {
   SortableContext,
   verticalListSortingStrategy,
@@ -33,7 +30,6 @@ export interface CustomizeState {
   showPinyin: boolean;
   useJianpu: boolean;
   structure: SectionItem[];
-  method?: number;
 }
 
 interface CustomizePanelProps {
@@ -123,17 +119,7 @@ export function CustomizePanel({
   const { t } = useTranslation();
   const [instanceCounter, setInstanceCounter] = useState(100);
 
-  const sensors = useSensors(
-    useSensor(TouchSensor, {
-      activationConstraint: {
-        delay: 100,
-        tolerance: 5,
-      },
-    }),
-    useSensor(PointerSensor, {
-      activationConstraint: { distance: 8 },
-    })
-  );
+  const sensors = useDefaultSensors();
 
   function update(patch: Partial<CustomizeState>) {
     onChange({ ...state, ...patch });
@@ -194,7 +180,6 @@ export function CustomizePanel({
         name: s.name || s.type,
         note: "",
       })),
-      method: 0, // TEST
     });
   }
 
@@ -252,47 +237,7 @@ export function CustomizePanel({
             )}
           </section>
 
-          {/* --- Affichage --- */}
-          <section>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-2">
-              {t("customize.panel.display")}
-            </h3>
-            <div className="space-y-2">
-              <label className="flex items-center gap-2 text-sm cursor-pointer select-none">
-                <input
-                  type="checkbox"
-                  checked={state.showChords}
-                  onChange={(e) => update({ showChords: e.target.checked })}
-                  className="rounded"
-                />
-                {t("customize.panel.showChords")}
-              </label>
-              {isZh && (
-                <label className="flex items-center gap-2 text-sm cursor-pointer select-none">
-                  <input
-                    type="checkbox"
-                    checked={state.showPinyin}
-                    onChange={(e) => update({ showPinyin: e.target.checked })}
-                    className="rounded"
-                  />
-                  {t("customize.panel.showPinyin")}
-                </label>
-              )}
-              <label className="flex items-center gap-2 text-sm cursor-pointer select-none"> 
-                <select
-                  value={state.method}
-                  onChange={(e) => update({ method: Number(e.target.value) as 0 | 1 | 2 })}
-                  className="w-full px-2 py-1.5 border border-border rounded bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
-                >
-                  <option value={0}>Défaut</option>
-                  <option value={1}>Thème 1</option>
-                  <option value={2}>Thème 2</option>
-                </select>
-              </label>
-            </div>
-            
-          </section>
-
+          
           {/* --- Structure --- */}
           <section>
             <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-2">

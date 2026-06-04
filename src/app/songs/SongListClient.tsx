@@ -127,20 +127,20 @@ export function SongListClient({ songs, themes }: SongListClientProps) {
   return (
     <div>
       {/* Barre de recherche */}
-      <div className="relative mb-3">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+      <div className="relative mb-3.5">
+        <Search className="absolute left-[14px] top-1/2 -translate-y-1/2 h-[18px] w-[18px] text-muted-foreground/70 pointer-events-none" />
         <input
           type="search"
           placeholder={t("songs.list.searchPlaceholder")}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full pl-9 pr-8 py-2 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"
+          className="w-full h-[46px] pl-[42px] pr-10 border border-border rounded-xl bg-card text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary focus:ring-[3px] focus:ring-primary/10 text-[15px] transition-all duration-150"
         />
         {query && (
           <button
             onClick={() => setQuery("")}
             aria-label={t("songs.list.clearSearch")}
-            className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+            className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground p-1.5 rounded-md hover:bg-secondary transition-colors"
           >
             <X className="h-4 w-4" />
           </button>
@@ -149,16 +149,16 @@ export function SongListClient({ songs, themes }: SongListClientProps) {
 
       {/* Filtres */}
       <div className="flex flex-wrap gap-2 mb-4 items-center">
-        {/* Langue */}
-        <div className="flex gap-1">
+        {/* Langue — segmented control */}
+        <div className="inline-flex bg-secondary rounded-[9px] p-[3px] gap-0.5">
           {(["all", "fr", "zh"] as const).map((lang) => (
             <button
               key={lang}
               onClick={() => setLangFilter(lang)}
-              className={`px-2.5 py-1 rounded text-xs font-medium transition-colors ${
+              className={`px-3 py-1.5 rounded-[7px] text-[12.5px] font-semibold transition-all duration-150 cursor-pointer ${
                 langFilter === lang
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-muted text-muted-foreground hover:bg-muted/70"
+                  ? "bg-card text-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {lang === "all" ? t("songs.list.allLanguages") : lang === "fr" ? "FR" : "中文"}
@@ -170,7 +170,8 @@ export function SongListClient({ songs, themes }: SongListClientProps) {
         <select
           value={themeFilter}
           onChange={(e) => setThemeFilter(e.target.value)}
-          className="px-2.5 py-1 rounded text-xs bg-muted text-foreground border border-border focus:outline-none focus:ring-2 focus:ring-primary/30 cursor-pointer"
+          className="h-8 pl-3 pr-7 rounded-[8px] text-[12.5px] font-semibold bg-card text-foreground/80 border border-border focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer appearance-none"
+          style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7079' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")`, backgroundRepeat: "no-repeat", backgroundPosition: "right 9px center" }}
         >
           <option value="">{t("songs.list.filterTheme")}</option>
           {availableThemes.map((themeItem) => (
@@ -183,7 +184,7 @@ export function SongListClient({ songs, themes }: SongListClientProps) {
         {hasFilter && (
           <button
             onClick={reset}
-            className="px-2.5 py-1 rounded text-xs text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2"
+            className="text-[12.5px] font-semibold text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2 cursor-pointer"
           >
             {t("common.buttons.reset")}
           </button>
@@ -191,7 +192,7 @@ export function SongListClient({ songs, themes }: SongListClientProps) {
       </div>
 
       {/* Compteur */}
-      <p className="text-xs text-muted-foreground mb-3">
+      <p className="text-[12.5px] text-muted-foreground mb-3">
         {filtered.length === songs.length
           ? t("songs.list.counter", { count: songs.length })
           : t("songs.list.counterFiltered", { count: filtered.length, filteredCount: filtered.length, totalCount: songs.length })}
@@ -203,64 +204,64 @@ export function SongListClient({ songs, themes }: SongListClientProps) {
           {t("songs.list.noSongsFound")}
         </p>
       ) : (
-        <ul className="space-y-2">
+        <ul className="flex flex-col gap-[9px]">
           {filtered.map((song) => (
             <li key={song.slug}>
               <Link
                 href={`/songs/${song.slug}`}
-                className="flex items-start gap-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors"
+                className="flex overflow-hidden border border-border rounded-xl bg-card hover:border-muted-foreground/40 hover:shadow-[0_4px_14px_rgba(20,22,28,0.08),0_2px_6px_rgba(20,22,28,0.05)] transition-all duration-150 active:scale-[.995]"
               >
-                <div className="flex-1 min-w-0">
-                  <div className="font-medium text-foreground truncate">
-                    {song.title}
-                  </div>
-                  {song.titlePinyin && (
-                    <div className="text-xs text-muted-foreground">
-                      {song.titlePinyin}
-                    </div>
-                  )}
-                  <div className="text-sm text-muted-foreground">{song.artist}</div>
-                  {song.themes.length > 0 && (
-                    <div className="flex flex-wrap gap-1 mt-1.5">
-                      {song.themes.slice(0, 3).map((slug) => {
-                        const theme = availableThemes.find((themeObj) => themeObj.slug === slug);
-                        return (
-                          <span
-                            key={slug}
-                            className="text-xs text-muted-foreground bg-muted px-1.5 py-0.5 rounded"
-                          >
-                            {(isZhLocale ? theme?.name_zh : theme?.name_fr) ?? slug}
-                          </span>
-                        );
-                      })}
-                    </div>
-                  )}
-                </div>
-
-                <div className="flex flex-col items-end gap-1 shrink-0">
-                  <span className="font-mono text-xs bg-muted px-1.5 py-0.5 rounded">
-                    {song.originalKey}
-                  </span>
-                  <span
-                    className={`text-xs px-1.5 py-0.5 rounded ${
-                      song.language === "zh"
-                        ? "bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300"
-                        : "bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300"
-                    }`}
-                  >
-                    {song.language === "zh" ? "中文" : "FR"}
-                  </span>
-                  {song.hasJianpu && (
-                    <span className="text-xs text-[#B91C1C] dark:text-red-400">
-                      简谱
+                {/* Language rail */}
+                <span
+                  className="w-[5px] shrink-0"
+                  style={{ background: song.language === "zh" ? "var(--jianpu-color)" : "#3f63cf" }}
+                />
+                {/* Body */}
+                <span className="flex-1 min-w-0 px-[15px] py-[13px] flex items-center gap-3">
+                  <span className="flex-1 min-w-0">
+                    <span className="block font-bold text-[15.5px] leading-tight tracking-[-0.2px] text-foreground">
+                      {song.title}
                     </span>
-                  )}
-                  {song.youtubeUrl && (
-                    <span className="text-xs text-muted-foreground" title="YouTube disponible">
-                      ▶
+                    {song.titlePinyin && (
+                      <span className="block text-xs text-muted-foreground mt-0.5">
+                        {song.titlePinyin}
+                      </span>
+                    )}
+                    <span className="block text-[13px] text-muted-foreground mt-0.5">
+                      {song.artist}
                     </span>
-                  )}
-                </div>
+                    {song.themes.length > 0 && (
+                      <span className="flex flex-wrap gap-[5px] mt-2">
+                        {song.themes.slice(0, 3).map((slug) => {
+                          const theme = availableThemes.find((themeObj) => themeObj.slug === slug);
+                          return (
+                            <span
+                              key={slug}
+                              className="text-[11px] font-semibold text-foreground/70 bg-secondary px-2 py-0.5 rounded-full"
+                            >
+                              {(isZhLocale ? theme?.name_zh : theme?.name_fr) ?? slug}
+                            </span>
+                          );
+                        })}
+                      </span>
+                    )}
+                  </span>
+                  {/* Meta */}
+                  <span className="flex flex-col items-end gap-1.5 shrink-0">
+                    <span className="font-mono text-xs font-semibold bg-secondary text-foreground px-2 py-0.5 rounded-[7px] border border-border/60">
+                      {song.originalKey}
+                    </span>
+                    <span
+                      className={`text-[11px] font-bold px-2 py-0.5 rounded-full min-w-[40px] text-center ${
+                        song.language === "zh"
+                          ? "bg-red-100 dark:bg-[#321617] text-red-700 dark:text-[#ff8e85]"
+                          : "bg-blue-100 dark:bg-[#18233f] text-blue-700 dark:text-[#8fb0ff]"
+                      }`}
+                    >
+                      {song.language === "zh" ? "中文" : "FR"}
+                    </span>
+                  </span>
+                </span>
               </Link>
             </li>
           ))}
