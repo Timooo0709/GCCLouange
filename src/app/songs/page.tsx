@@ -19,7 +19,7 @@ export default async  function SongsPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <main className="max-w-2xl mx-auto px-4 py-6 mt-[106px]">
+      <main className="max-w-2xl mx-auto px-4 py-6">
         <SongListClient songs={songs} themes={themes} />
       </main>
     </div>
