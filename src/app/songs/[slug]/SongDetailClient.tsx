@@ -102,7 +102,7 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
       {/* Barre de contrôles */}
       <div className={`print:hidden fixed left-0 right-0 top-[58px] z-10 bg-background/95 backdrop-blur border-b border-border transition-transform duration-300 ${ scrollVisible ? "translate-y-0" : "-translate-y-[calc(100%+58px)]"}`}>
         <div className = "max-w-3xl mx-auto w-full flex flex-wrap gap-0.5 items-center py-2 px-1">
-          <Link href={backPath} className="text-sm text-muted-foreground hover:text-foreground mr-2">
+          <Link href={backPath} className="text-sm text-muted-foreground hover:text-foreground mr-1">
             <button className="h-8 px-2.5 rounded-[8px] border border-border bg-card text-muted-foreground hover:text-foreground text-[12.5px] font-semibold flex items-center gap-0.5 transition-all duration-150">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M19 12H5m6-7l-7 7 7 7" />
