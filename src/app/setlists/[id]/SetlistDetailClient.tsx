@@ -6,15 +6,8 @@ import { useParams, useRouter } from "next/navigation";
 import { Trash2, List, Music, Pencil } from "lucide-react";
 import { getSetlist, deleteSetlist, isRestricted, type FSSetlist } from "@/lib/firebase/setlists";
 import { useAuth } from "@/lib/firebase/auth";
-<<<<<<< HEAD:src/app/setlists/[id]/SetlistDetailClient.tsx
 import { parseChordPro } from "@/lib/chordpro/parser";
 import { DarkModeToggle } from "@/components/ui/DarkModeToggle";
-=======
-import { parseChordPro, formatSectionName } from "@/lib/chordpro/parser";
-import { transposeAST } from "@/lib/transposeAST";
-import { semitonesTo } from "@/lib/transpose";
-import { SongView } from "@/components/song/SongView";
->>>>>>> origin/main:app/setlists/[id]/SetlistDetailClient.tsx
 import { useTranslation } from "react-i18next";
 import type { SongIndexEntry } from "@/types/song";
 import type { SetlistItem } from "@/types/setList";
