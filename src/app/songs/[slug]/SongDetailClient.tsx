@@ -5,7 +5,6 @@ import Link from "next/link";
 import { SongView } from "@/components/song/SongView";
 import { CustomizePanel, type CustomizeState } from "@/components/customPanel/CustomizePanel";
 import type { Song } from "@/types/song";
-import { getTransposedKey } from "@/lib/transpose";
 import { useTranslation } from "react-i18next";
 import { pdf } from "@react-pdf/renderer";
 import { SongPDF } from "@/components/pdf/SongPDF";
@@ -14,6 +13,8 @@ import { buildDefaultStructure } from "@/lib/chordpro/structure";
 import { parseChordPro } from "@/lib/chordpro/parser";
 import { transposeAST } from "@/lib/transposeAST";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
+import { ALL_KEYS, semitonesTo, getTransposedKey } from "@/lib/transpose";
+
 interface SongDetailClientProps {
   song: Song;
 }
@@ -118,13 +119,27 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
                   return { ...c, semitones: s, currentKey: getTransposedKey(originalKey, s) };
                 })
               }
-              className="w-6 h-6 rounded border border-border text-xs font-bold hover:bg-muted flex items-center justify-center"
+              className="w-8 h-8 rounded border border-border text-xs font-bold hover:bg-muted flex items-center justify-center"
             >
               −
             </button>
-            <span className="font-mono text-sm font-semibold text-foreground min-w-[2.5rem] text-center">
-              {customize.currentKey}
-            </span>
+              <select
+                value={customize.currentKey}
+                onChange={(e) => setCustomize((c) => {
+                  const key = e.target.value;
+                  const diff = semitonesTo(originalKey, key);
+                  return { ...c, semitones: diff, currentKey: key };
+                  })
+                }
+                className="flex-1 px-2 py-1.5 border border-border rounded bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+              >
+                {ALL_KEYS.map((k) => (
+                  <option key={k} value={k}>
+                    {k}
+                    {k === originalKey ? " " + t("customize.panel.keyOriginal") : ""}
+                  </option>
+                ))}
+              </select>
             <button
               onClick={() =>
                 setCustomize((c) => {
@@ -132,7 +147,7 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
                   return { ...c, semitones: s, currentKey: getTransposedKey(originalKey, s) };
                 })
               }
-              className="w-6 h-6 rounded border border-border text-xs font-bold hover:bg-muted flex items-center justify-center"
+              className="w-8 h-8 rounded border border-border text-xs font-bold hover:bg-muted flex items-center justify-center"
             >
               +
             </button>

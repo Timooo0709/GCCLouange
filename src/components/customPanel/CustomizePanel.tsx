@@ -122,17 +122,7 @@ export function CustomizePanel({
 
   const sensors = useDefaultSensors();
 
-  function shiftBy(delta: number) {
-    const newSemitones = state.semitones + delta;
-    const newKey = getTransposedKey(originalKey, newSemitones);
-    update({ semitones: newSemitones, currentKey: newKey });
-  }
-
-  function setKey(key: string) {
-    const diff = semitonesTo(originalKey, key);
-    update({ semitones: diff, currentKey: key });
-  }
-
+  
   function update(patch: Partial<CustomizeState>) {
     onChange({ ...state, ...patch });
   }
@@ -198,43 +188,6 @@ export function CustomizePanel({
         </div>
 
         <div className="flex-1 overflow-y-auto px-4 py-4 space-y-6">
-          {/* --- Tonalité --- */}
-          <section>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-2">
-              {t("customize.panel.key")}
-            </h3>
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => shiftBy(-1)}
-                className="w-8 h-8 rounded border border-border flex items-center justify-center text-foreground hover:bg-muted font-bold"
-              >
-                −
-              </button>
-              <select
-                value={state.currentKey}
-                onChange={(e) => setKey(e.target.value)}
-                className="flex-1 px-2 py-1.5 border border-border rounded bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
-              >
-                {ALL_KEYS.map((k) => (
-                  <option key={k} value={k}>
-                    {k}
-                    {k === originalKey ? " " + t("customize.panel.keyOriginal") : ""}
-                  </option>
-                ))}
-              </select>
-              <button
-                onClick={() => shiftBy(+1)}
-                className="w-8 h-8 rounded border border-border flex items-center justify-center text-foreground hover:bg-muted font-bold"
-              >
-                +
-              </button>
-            </div>
-            {state.semitones !== 0 && (
-              <p className="text-xs text-muted-foreground mt-1">
-                {state.semitones > 0 ? "+" : ""}{t("customize.panel.keyShift", { count: state.semitones })}
-              </p>
-            )}
-          </section>
 
           
           {/* --- Structure --- */}

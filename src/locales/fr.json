@@ -145,7 +145,7 @@
     "panel": {
       "title": "Personnaliser",
       "key": "Tonalité",
-      "keyOriginal": "(original)",
+      "keyOriginal": "(orig.)",
       "keyShift_one": "{{count}} demi-ton",
       "keyShift_other": "{{count}} demi-tons",
       "display": "Affichage",
