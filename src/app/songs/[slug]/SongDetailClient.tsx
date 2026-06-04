@@ -101,9 +101,9 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
     <div className="min-h-screen print:min-h-0 bg-background">
       {/* Barre de contrôles */}
       <div className={`print:hidden fixed left-0 right-0 top-[58px] z-10 bg-background/95 backdrop-blur border-b border-border transition-transform duration-300 ${ scrollVisible ? "translate-y-0" : "-translate-y-[calc(100%+58px)]"}`}>
-        <div className = "max-w-3xl mx-auto w-full flex flex-wrap gap-1 items-center py-2 px-3">
+        <div className = "max-w-3xl mx-auto w-full flex flex-wrap gap-0.5 items-center py-2 px-1">
           <Link href={backPath} className="text-sm text-muted-foreground hover:text-foreground mr-2">
-            <button className="h-8 px-2.5 rounded-[8px] border border-border bg-card text-muted-foreground hover:text-foreground text-[12.5px] font-semibold flex items-center gap-1.5 transition-all duration-150">
+            <button className="h-8 px-2.5 rounded-[8px] border border-border bg-card text-muted-foreground hover:text-foreground text-[12.5px] font-semibold flex items-center gap-0.5 transition-all duration-150">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M19 12H5m6-7l-7 7 7 7" />
               </svg>
@@ -153,7 +153,7 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
             </button>
           </div>
 
-          <div className="ml-auto flex flex-wrap gap-2 items-center justify-end">
+          <div className="ml-auto flex flex-wrap gap-0.5 items-center justify-end">
             {youtubeId && (
               <button
                 onClick={() => setShowVideo((v) => !v)}
@@ -176,7 +176,7 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
             )}
             <button
               onClick={() => setCustomize((c) => ({ ...c, showChords: !c.showChords }))}
-              className={`h-8 px-2.5 rounded-[8px] border text-[12.5px] font-semibold flex items-center gap-1.5 transition-all duration-150 ${
+              className={`h-8 px-2.5 rounded-[8px] border text-[12.5px] font-semibold flex items-center gap-0.5 transition-all duration-150 ${
                     customize.showChords
                       ? "border-transparent bg-primary/10 text-primary"
                       : "border-border bg-card text-muted-foreground hover:text-foreground"
@@ -188,7 +188,7 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
             {isZh && (
                   <button
                     onClick={() => setCustomize((c) => ({ ...c, showPinyin: !c.showPinyin }))}
-                    className={`h-8 px-2.5 rounded-[8px] border text-[12.5px] font-semibold flex items-center gap-1.5 transition-all duration-150 ${
+                    className={`h-8 px-2.5 rounded-[8px] border text-[12.5px] font-semibold flex items-center gap-0.5 transition-all duration-150 ${
                       customize.showPinyin
                         ? "border-transparent bg-primary/10 text-primary"
                         : "border-border bg-card text-muted-foreground hover:text-foreground"
@@ -200,7 +200,7 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
                 )}
                 <button
                   onClick={() => setShowPanel(true)}
-                  className="h-8 px-2.5 rounded-[8px] border border-border bg-card text-muted-foreground hover:text-foreground text-[12.5px] font-semibold flex items-center gap-1.5 transition-all duration-150"
+                  className="h-8 px-2.5 rounded-[8px] border border-border bg-card text-muted-foreground hover:text-foreground text-[12.5px] font-semibold flex items-center gap-0.5 transition-all duration-150"
                 >
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
                   <span className="hidden sm:inline">{t("songs.detail.customize")}</span>
@@ -208,7 +208,7 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
             <button
               onClick={handleDownload}
               disabled={downloading}
-              className="h-8 px-2.5 rounded-[8px] border border-border bg-card text-muted-foreground hover:text-foreground text-[12.5px] font-semibold flex items-center gap-1.5 transition-all duration-150 disabled:opacity-50"
+              className="h-8 px-2.5 rounded-[8px] border border-border bg-card text-muted-foreground hover:text-foreground text-[12.5px] font-semibold flex items-center gap-0.5 transition-all duration-150 disabled:opacity-50"
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
               <span className="hidden sm:inline">{downloading ? "…" : t("songs.detail.downloadPdf") || "PDF"}</span>
