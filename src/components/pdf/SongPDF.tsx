@@ -464,7 +464,7 @@ export function SongPDFPage({
 
   const titleFont = isZh ? "KaiTi" : "NotoSans";
   const centerLabel = footerCenter ?? title;
-
+  console.log("sectionNotes",sectionNotes)
   return (
     <Page size="A4" style={styles.page}>
 
@@ -526,7 +526,7 @@ export function SongPDFPage({
           useJianpu={canUseJianpu}
           showChords={showChords}
           showPinyin={isZh ? showPinyin : false}
-          note={sectionNotes[section.id]}
+          note={sectionNotes[section.uid]}
           theme={theme}
         />
       ))}

@@ -24,7 +24,6 @@ export function PartitionsView({
       </div>
     );
   }
-  console.log('setlist items', items);
   return (
     <div className="space-y-10 print:space-y-6">
       {[...items].sort((a, b) => a.position - b.position).map((item, idx) => {

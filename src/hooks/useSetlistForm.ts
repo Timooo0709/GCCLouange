@@ -44,7 +44,6 @@ export function useSetlistForm({
       const setlistItems: SetlistItem[] = items.map((item, idx) => {
         const allIds = (item.song.sections ?? []).map((s) => s.id);
         const currentIds = item.sectionItems.map((s) => s.sectionId);
-        console.log('currentIds', currentIds);
         const structureOverride =
           JSON.stringify(currentIds) === JSON.stringify(allIds) ? null : currentIds;
         const sectionNotes = Object.fromEntries(

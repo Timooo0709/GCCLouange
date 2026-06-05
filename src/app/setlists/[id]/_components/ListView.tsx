@@ -37,7 +37,7 @@ export function ListView({
               {song?.sections && song.sections.length > 0 && (() => {
                 const names = item.structureOverride
                   ? item.structureOverride.map((id) => {
-                      const s = song.sections!.find((sec) => sec.id === id);
+                      const s = song.sections!.find((sec) => sec.id === id.replace(/-\d+$/,''));
                       return s ? formatSectionName(s, t) : id;
                     })
                   : song.sections.map((s) => formatSectionName(s, t));

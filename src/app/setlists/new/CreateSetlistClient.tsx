@@ -354,8 +354,6 @@ export function CreateSetlistClient() {
     isDraft ? setDraftSaving(true) : setCreating(true);
     try {
       const setlistItems = buildSetlistItems(items);
-      console.log('Built form items', items);
-      console.log('Built setlist items', setlistItems);
       const language = detectSetlistLanguage(items);
 
       const id = await createSetlist({

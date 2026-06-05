@@ -280,8 +280,6 @@ export function SongView({
           .filter((s): s is ChordProSection => s !== undefined)
 
       : ast.sections;
-  console.log('sections', sections)
-  console.log('structureOverride', structureOverride)
   return (
     <div className="max-w-2xl print:max-w-none">
       {/* En-tête */}
