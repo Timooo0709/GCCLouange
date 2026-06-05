@@ -48,7 +48,7 @@ function SortableSectionRow({
   return (
     <div
       ref={setNodeRef}
-      style={{ transform: CSS.Transform.toString(transform), transition, touchAction: "none"  }}
+      style={{ transform: CSS.Transform.toString(transform), transition  }}
       className={`flex items-start gap-2 px-2 py-1.5 rounded border text-xs ${
         isDragging ? "border-primary/40 bg-primary/5 shadow" : "border-border bg-background"
       }`}
@@ -58,6 +58,7 @@ function SortableSectionRow({
         {...listeners}
         type="button"
         className="mt-0.5 text-muted-foreground cursor-grab active:cursor-grabbing shrink-0"
+        style= {{touchAction: "none"}}
       >
         <GripVertical className="h-3.5 w-3.5" />
       </button>
@@ -169,7 +170,7 @@ function SongRow({
   return (
     <div
       ref={setNodeRef}
-      style={{ transform: CSS.Transform.toString(transform), transition, touchAction: "none"  }}
+      style={{ transform: CSS.Transform.toString(transform), transition,  }}
       className={`rounded-lg border ${
         isDragging ? "border-primary/50 bg-primary/5 shadow-md" : "border-border bg-background"
       }`}
@@ -179,6 +180,7 @@ function SongRow({
           {...attributes}
           {...listeners}
           type="button"
+          style={{touchAction: "none" }}
           className="mt-0.5 text-muted-foreground cursor-grab active:cursor-grabbing shrink-0"
         >
           <GripVertical className="h-4 w-4" />
