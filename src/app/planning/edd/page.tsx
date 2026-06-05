@@ -24,7 +24,7 @@ export default function EddPage() {
   let lastMonth = ""
 
   return (
-    <div className="max-w-full space-y-4">
+    <div className="max-w-full space-y-4 mx-auto">
       <div className="flex flex-wrap gap-3 items-center justify-between">
         <h2 className="text-base font-bold text-foreground">EDD — École du Dimanche</h2>
         {loading && <span className="text-xs text-muted-foreground">Chargement…</span>}
@@ -83,7 +83,6 @@ export default function EddPage() {
               const showSep = month !== lastMonth
               if (showSep) lastMonth = month
               const isThis = row[0] === sun
-
               return (
                 <Fragment key={row[0]}>
                   {showSep && (
@@ -94,9 +93,12 @@ export default function EddPage() {
                     </tr>
                   )}
                   <tr className={`border-t border-border transition-colors ${isThis ? "bg-primary/10" : "hover:bg-secondary/50"}`}>
-                    <td className="px-3 py-2 font-semibold whitespace-nowrap" style={{ color: EDD_COLOR }}>
-                      <div>{fdShort(row[0])}</div>
-                      {isThis && <span className="inline-block text-[9px] font-bold px-1.5 py-0.5 rounded bg-primary text-primary-foreground mt-0.5">Cette semaine</span>}
+                    <td className="px-2 py-2 font-semibold whitespace-nowrap" style={{ color: EDD_COLOR }}>
+                      <div>
+                        {isThis ? (
+                        <span className="inline-block text-[9px] font-bold px-1.5 py-0.5 rounded bg-primary text-primary-foreground mt-0.5">Cette semaine</span>
+                      ) : fdShort(row[0])}
+                      </div>
                     </td>
                     {row.slice(1).map((cell, ci) => (
                       <td key={ci} className="px-3 py-2 text-foreground">{cell || "—"}</td>

@@ -5,7 +5,9 @@
       "songs": "Chants",
       "setlists": "Setlists",
       "login": "Connexion",
-      "logout": "Déconnexion"
+      "logout": "Déconnexion",
+      "louange": "Louange",
+      "planning": "Planning"
     },
     "buttons": {
       "reset": "Réinitialiser",

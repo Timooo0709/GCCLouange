@@ -21,7 +21,7 @@ export default function TablePage() {
   let lastMonth = ""
 
   return (
-    <div className="max-w-lg space-y-4">
+    <div className="max-w-lg space-y-4 mx-auto">
       <div className="flex flex-wrap gap-3 items-center justify-between">
         <h2 className="text-base font-bold text-foreground">Prépa. Table du Seigneur</h2>
         {loading && <span className="text-xs text-muted-foreground">Chargement…</span>}
@@ -56,9 +56,10 @@ export default function TablePage() {
                     </tr>
                   )}
                   <tr className={`border-t border-border transition-colors ${isThis ? "bg-primary/10" : "hover:bg-secondary/50"}`}>
-                    <td className="px-3 py-2.5 font-semibold text-primary whitespace-nowrap w-16 align-top pt-3">
-                      {fdShort(row[0])}
-                      {isThis && <div className="mt-0.5"><span className="inline-block text-[9px] font-bold px-1.5 py-0.5 rounded bg-primary text-primary-foreground">Cette semaine</span></div>}
+                    <td className="w-[100px] px-3 py-2.5 font-semibold text-primary whitespace-nowrap w-16 align-top pt-3">
+                      {isThis ? (
+                        <span className="inline-block text-[9px] font-bold px-1.5 py-0.5 rounded bg-primary text-primary-foreground mt-0.5">Cette semaine</span>
+                      ) : fdShort(row[0])}
                     </td>
                     <td className="px-3 py-2.5 text-foreground leading-relaxed">{row[1] || "—"}</td>
                   </tr>

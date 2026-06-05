@@ -23,7 +23,7 @@ export default function CultePage() {
   let lastMonth = ""
 
   return (
-    <div className="max-w-full space-y-4">
+    <div className="max-w-full space-y-4 mx-auto">
       <div className="flex flex-wrap gap-3 items-center justify-between">
         <h2 className="text-base font-bold text-foreground">Culte Franco</h2>
         {loading && <span className="text-xs text-muted-foreground">Chargement…</span>}
@@ -66,10 +66,11 @@ export default function CultePage() {
                     </tr>
                   )}
                   <tr className={`border-t border-border transition-colors ${isThis ? "bg-primary/10" : "hover:bg-secondary/50"}`}>
-                    <td className="px-3 py-2 font-semibold text-primary whitespace-nowrap">
-                      <div>{fdShort(row[0])}</div>
+                    <td className="w-[100px] px-3 py-2 font-semibold text-primary whitespace-nowrap">
+                      <div>{isThis ? (
+                        <span className="inline-block text-[9px] font-bold px-1.5 py-0.5 rounded bg-primary text-primary-foreground mt-0.5">Cette semaine</span>
+                      ) : fdShort(row[0])}</div>
                       {isSC && <span className="inline-block text-[9px] font-bold px-1.5 py-0.5 rounded bg-red-50 text-red-700 border border-red-200 mt-0.5">Sainte Cène</span>}
-                      {isThis && <span className="inline-block text-[9px] font-bold px-1.5 py-0.5 rounded bg-primary text-primary-foreground mt-0.5">Cette semaine</span>}
                     </td>
                     {row.slice(1).map((cell, ci) => (
                       <td key={ci} className="px-3 py-2 text-foreground">{cell || "—"}</td>

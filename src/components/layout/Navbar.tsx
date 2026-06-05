@@ -51,8 +51,8 @@ export function Navbar() {
               priority
             />
           </div>
-          <span className="font-bold text-[17px] tracking-[-0.3px] text-foreground">
-            GCC <span className="text-primary">{isActivePlanning ? "Planning" : isZh ? "敬拜" : "Louange"}</span>
+          <span className="font-bold text-[17px] tracking-[-0.3px] text-foreground w-[111px]">
+            GCC <span className="text-primary">{isActivePlanning ? t('common.header.planning')  : t('common.header.louange')}</span>
           </span>
         </Link>
 
@@ -60,23 +60,23 @@ export function Navbar() {
         <nav className="hidden sm:flex items-center gap-1 ml-2">
           <Link
             href="/planning"
-            className={`px-3 py-[7px] rounded-[9px] text-[13.5px] font-semibold transition-all duration-150 ${
+            className={`w-[80px] px-3 py-[7px] rounded-[9px] text-[13.5px] font-semibold transition-all duration-150 ${
               isActivePlanning
-                ? "bg-primary/10 text-primary"
+                ? "bg-primary/10 text-primary text-center"
                 : "text-muted-foreground hover:text-foreground hover:bg-secondary"
             }`}
           >
-            Planning
+            {t('common.header.planning')}
           </Link>
 
           {/* Louange dropdown */}
           <div className="relative group">
-            <button className={`flex items-center gap-1 px-3 py-[7px] rounded-[9px] text-[13.5px] font-semibold transition-all duration-150 cursor-pointer ${
+            <button className={`flex w-[96px] items-center gap-1 px-3 py-[7px] rounded-[9px] text-[13.5px] font-semibold transition-all duration-150 cursor-pointer ${
               isActiveLouange
-                ? "bg-primary/10 text-primary"
+                ? "bg-primary/10 text-primary text center"
                 : "text-muted-foreground hover:text-foreground hover:bg-secondary"
             }`}>
-              Louange
+              {t('common.header.louange')}
               <ChevronDown className="h-3 w-3 opacity-60 group-hover:rotate-180 transition-transform duration-150" />
             </button>
             <div className="absolute left-0 top-full pt-1 hidden group-hover:block z-50">
@@ -130,7 +130,7 @@ export function Navbar() {
             user ? (
               <button
                 onClick={() => logOut()}
-                className="h-[34px] min-w-[34px] px-2 rounded-[9px] border border-border bg-card text-muted-foreground hover:text-foreground hover:border-muted-foreground/50 transition-all duration-150 active:scale-[.96] flex items-center justify-center gap-1.5 text-[12.5px] font-semibold cursor-pointer"
+                className="hidden sm:flex h-[34px] min-w-[34px] px-2 rounded-[9px] border border-border bg-card text-muted-foreground hover:text-foreground hover:border-muted-foreground/50 transition-all duration-150 active:scale-[.96] flex items-center justify-center gap-1.5 text-[12.5px] font-semibold cursor-pointer"
                 title={user.email ?? undefined}
               >
                 <LogOut className="h-3.5 w-3.5" />
@@ -139,7 +139,7 @@ export function Navbar() {
             ) : (
               <Link
                 href="/login"
-                className="h-[34px] min-w-[34px] px-2 rounded-[9px] border border-border bg-card text-muted-foreground hover:text-foreground hover:border-muted-foreground/50 transition-all duration-150 active:scale-[.96] flex items-center justify-center gap-1.5 text-[12.5px] font-semibold"
+                className="hidden sm:flex h-[34px] min-w-[34px] px-2 rounded-[9px] border border-border bg-card text-muted-foreground hover:text-foreground hover:border-muted-foreground/50 transition-all duration-150 active:scale-[.96] flex items-center justify-center gap-1.5 text-[12.5px] font-semibold"
               >
                 <LogIn className="h-3.5 w-3.5" />
                 <span className="hidden md:inline">{t("common.header.login")}</span>

@@ -40,7 +40,7 @@ export default function CampusPage() {
   const { days, order } = groupByDay(data)
 
   return (
-    <div className="max-w-2xl space-y-4">
+    <div className="max-w-2xl space-y-4 mx-auto">
       <div className="flex flex-wrap gap-3 items-center justify-between">
         <h2 className="text-base font-bold text-foreground">Campus</h2>
         {loading && <span className="text-xs text-muted-foreground">Chargement…</span>}

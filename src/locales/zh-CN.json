@@ -1,11 +1,13 @@
 {
   "common": {
     "header": {
-      "title": "GCC 敬拜诗歌",
+      "title": "GCC 敬拜",
       "songs": "诗歌",
       "setlists": "歌单",
       "login": "登录",
-      "logout": "登出"
+      "logout": "登出",
+      "planning": "排班表",
+      "louange": "敬拜"
     },
     "buttons": {
       "reset": "重置",

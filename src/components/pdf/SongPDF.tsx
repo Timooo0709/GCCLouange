@@ -455,7 +455,10 @@ export function SongPDFPage({
 
   const sections: ChordProSection[] = (!canUseJianpu && structureOverride)
     ? structureOverride
-        .map(id => ast.sections.find(s => s.id === id))
+        .map((uid) => {
+            const section = ast.sections.find((s) => s.id === uid.replace(/-\d+$/, ""));
+            return section ? { ...section, uid } : undefined;
+          })
         .filter((s): s is ChordProSection => s !== undefined)
     : ast.sections;
 
