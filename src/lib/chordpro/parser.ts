@@ -199,7 +199,6 @@ export function formatSectionName(
 
 export function parseChordPro(source: string): ChordProAST {
   const lines = source.split("\n");
-
   const metadata: ChordProAST["metadata"] = {
     title: "Sans titre",
     titlePinyin: null,
@@ -218,7 +217,7 @@ export function parseChordPro(source: string): ChordProAST {
   let currentSection: ChordProSection | null = null;
   let pendingJianpu: string | null = null;
   let sectionCounter = 0;
-
+  let uidCounter = 0;
   for (const rawLine of lines) {
     const line = rawLine.trimEnd();
 
@@ -242,11 +241,13 @@ export function parseChordPro(source: string): ChordProAST {
         currentSection = {
           type: parsedHeader.type,
           id: `${typeKey}-${sectionCounter}`,
+          uid: `${typeKey}-${sectionCounter}-${uidCounter}`,
           name: parsedHeader.name,
           number: parsedHeader.number,
           suffix: parsedHeader.suffix,
           lines: [],
         };
+        uidCounter++;
         continue;
       }
 

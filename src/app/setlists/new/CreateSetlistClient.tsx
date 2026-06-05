@@ -102,7 +102,7 @@ function SectionStructureEditor({
   }
 
   function addSection(section: SectionSummary) {
-    onChange([...sectionItems, { uid: nextUid(), sectionId: section.id, name: section.name, note: "" }]);
+    onChange([...sectionItems, { uid: `${section.id}-${sectionItems.length}`, sectionId: section.id, name: section.name, note: "" }]);
   }
 
   function removeAt(idx: number) {
@@ -114,7 +114,6 @@ function SectionStructureEditor({
     next[idx] = { ...next[idx], note };
     onChange(next);
   }
-
   return (
     <div className="border-t border-border pt-2 px-3 pb-2 space-y-2">
       <p className="text-[10px] uppercase tracking-widest text-muted-foreground">{t("setlists.form.structure")}</p>
@@ -355,7 +354,8 @@ export function CreateSetlistClient() {
     isDraft ? setDraftSaving(true) : setCreating(true);
     try {
       const setlistItems = buildSetlistItems(items);
-
+      console.log('Built form items', items);
+      console.log('Built setlist items', setlistItems);
       const language = detectSetlistLanguage(items);
 
       const id = await createSetlist({
@@ -384,7 +384,6 @@ export function CreateSetlistClient() {
 
   const busy = creating || draftSaving;
   const needsAuth = category && isRestricted(category) && !user && !authLoading;
-
   return (
     <div className="min-h-screen bg-background">
       <div className="sticky top-0 z-10 bg-background/95 backdrop-blur border-b border-border px-4 py-2 flex items-center gap-3">

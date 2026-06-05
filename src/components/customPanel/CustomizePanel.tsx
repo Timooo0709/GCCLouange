@@ -136,8 +136,7 @@ export function CustomizePanel({
   }
 
   function addSection(section: ChordProSection) {
-    const uid = `${section.id}-${instanceCounter}`;
-    setInstanceCounter((c) => c + 1);
+    const uid = `${section.id}-${state.structure.length}`;
     update({
       structure: [
         ...state.structure,

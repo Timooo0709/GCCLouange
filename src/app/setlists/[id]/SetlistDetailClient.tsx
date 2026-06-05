@@ -6,13 +6,11 @@ import { useParams, useRouter } from "next/navigation";
 import { Trash2, List, Music, Pencil } from "lucide-react";
 import { getSetlist, deleteSetlist, isRestricted, type FSSetlist } from "@/lib/firebase/setlists";
 import { useAuth } from "@/lib/firebase/auth";
-import { parseChordPro } from "@/lib/chordpro/parser";
-import { DarkModeToggle } from "@/components/ui/DarkModeToggle";
 import { useTranslation } from "react-i18next";
 import type { SongIndexEntry } from "@/types/song";
 import type { SetlistItem } from "@/types/setList";
 import { formatDate } from "@/lib/utils/formatDate";
-
+import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { ListView } from "./_components/ListView";
 import { PartitionsView } from "./_components/PartitionView";
 import { fetchSongAST, type SongContent} from "@/lib/api/songs";
@@ -30,7 +28,7 @@ export function SetlistDetailClient() {
   const [setlist, setSetlist] = useState<FSSetlist | null>(null);
   const [backPath, setBackPath] = useState("/setlists");
 
-
+  const scrollVisible = useScrollDirection();
   const [songsMap, setSongsMap] = useState<Record<string, SongIndexEntry>>({});
   const [contents, setContents] = useState<Record<string, SongContent>>({});
   const [loadingSetlist, setLoadingSetlist] = useState(true);
@@ -155,11 +153,10 @@ export function SetlistDetailClient() {
   }
 
   const canDelete = !isRestricted(setlist.category) || !!user;
-
   return (
     <div className="min-h-screen bg-background">
       {/* Top bar — même style que SongDetailClient */}
-      <div className="print:hidden sticky top-[58px] z-30 bg-background/88 backdrop-blur-[12px] border-b border-border/50">
+      <div className={`{print:hidden fixed left-0 right-0 top-[58px] z-10 bg-background/95 backdrop-blur border-b border-border transition-transform duration-300 ${ scrollVisible ? "translate-y-0" : "-translate-y-[calc(100%+58px)]"}`}>
         <div className="max-w-[1080px] mx-auto px-4">
           <div className="flex items-center gap-2 py-[9px] flex-wrap">
 
@@ -258,7 +255,7 @@ export function SetlistDetailClient() {
         </div>
       </div>
 
-      <div className="max-w-2xl mx-auto px-4 py-8 print:px-0 print:py-4">
+      <div className="max-w-2xl mx-auto px-4 py-8 print:px-0 print:py-4 mt-[54px]">
         {/* Header setlist */}
         <div className="mb-8 pb-5 border-b border-border print:mb-4">
           <div className="flex items-start gap-3">

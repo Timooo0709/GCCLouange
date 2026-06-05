@@ -26,6 +26,7 @@ export type ChordProSection = {
   number?: string;
   suffix?: string;
   lines: ChordProLine[];
+  uid: string;
 };
 
 export type ChordProAST = {

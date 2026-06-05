@@ -66,10 +66,10 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
 
   // Structure override : IDs des sections dans l'ordre choisi
   const structureOverride = useMemo(
-    () => customize.structure.map((s) => s.sectionId),
+    () => customize.structure.map((s) => s.uid),
     [customize.structure]
   );
-
+  
   async function handleDownload() {
     setDownloading(true);
     try {
@@ -81,7 +81,7 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
           useJianpu={customize.useJianpu}
           structureOverride={structureOverride}
           sectionNotes={Object.fromEntries(
-            customize.structure.map((s) => [s.sectionId, s.note]).filter(([, n]) => n)
+            customize.structure.map((s) => [s.uid, s.note]).filter(([, n]) => n)
           )}
           language={i18n.language}
         />
@@ -240,7 +240,7 @@ export function SongDetailClient({ song }: SongDetailClientProps) {
           useJianpu={customize.useJianpu}
           structureOverride={structureOverride}
           sectionNotes={Object.fromEntries(
-            customize.structure.map((s) => [s.sectionId, s.note]).filter(([, n]) => n)
+            customize.structure.map((s) => [s.uid, s.note]).filter(([, n]) => n)
           )}
         />
       </main>

@@ -181,14 +181,13 @@ interface SectionViewProps {
   showChords: boolean;
   showPinyin: boolean;
   useJianpu: boolean;
-  note?: string;
+  note: string;
 }
 
 function SectionView({ section, language, showChords, showPinyin, useJianpu, note }: SectionViewProps) {
   const { t } = useTranslation();
   const isZh = language === "zh";
   const label = formatSectionName(section, t);
-
   return (
     <div className="mb-5 print:mb-4" style={{ breakInside: "avoid", ...getSectionStyle(section.type, isZh) }}>
       {/* Label de section */}
@@ -271,14 +270,18 @@ export function SongView({
   const isZh = ast.metadata.language === "zh";
   const canUseJianpu = isZh && useJianpu;
   const langAccent = isZh ? "var(--jianpu-color)" : "var(--chord-color)";
-  
   const sections =
     structureOverride && !canUseJianpu
       ? structureOverride
-          .map((id) => ast.sections.find((s) => s.id === id))
+          .map((uid) => {
+            const section = ast.sections.find((s) => s.id === uid.replace(/-\d+$/, ""));
+            return section ? { ...section, uid } : undefined;
+          })
           .filter((s): s is ChordProSection => s !== undefined)
+
       : ast.sections;
-      
+  console.log('sections', sections)
+  console.log('structureOverride', structureOverride)
   return (
     <div className="max-w-2xl print:max-w-none">
       {/* En-tête */}
@@ -347,9 +350,10 @@ export function SongView({
             showChords={showChords}
             showPinyin={isZh ? showPinyin : false}
             useJianpu={canUseJianpu}
-            note={sectionNotes[section.id]}
+            note={sectionNotes[section.uid]}
           />
         ))}
+
       </div>
     </div>
   );

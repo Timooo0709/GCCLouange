@@ -19,8 +19,8 @@ export interface FormItem {
 }
 
 export function makeDefaultSections(sections: SectionSummary[]): FormSectionItem[] {
-  return sections.map((s) => ({
-    uid: nextUid(),
+  return sections.map((s, index) => ({
+    uid: `${s.id}-${index}`,
     sectionId: s.id,
     name: s.name,
     note: "",
@@ -39,15 +39,19 @@ export function buildFormItems(
       const allSections = song.sections ?? [];
       const orderedSections = item.structureOverride
         ? item.structureOverride
-            .map((id) => allSections.find((s) => s.id === id))
+            .map((uid) => {
+              const section = allSections.find((s) => s.id === uid.replace(/-\d+$/, ""));
+              return section ? { ...section, uid } : undefined;
+              })
             .filter((s): s is SectionSummary => s !== undefined)
         : allSections;
-      const sectionItems: FormSectionItem[] = orderedSections.map((s) => ({
-        uid: nextUid(),
+      const sectionItems: FormSectionItem[] = orderedSections.map((s, index) => ({
+        uid: `${s.id}-${index}`,
         sectionId: s.id,
         name: s.name || s.type,
-        note: item.sectionNotes?.[s.id] ?? "",
+        note: item.sectionNotes?.[s.uid] ?? "",
       }));
+      
       return [{
         uid: nextUid(),
         song,

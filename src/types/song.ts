@@ -21,8 +21,10 @@ export type SectionSummary = {
   id: string;
   name: string;
   type: string;
+  uid: string; 
   number?: string;
   suffix?: string;
+  
 };
 
 export type SongIndexEntry = Omit<Song, "chordProSource"> & {

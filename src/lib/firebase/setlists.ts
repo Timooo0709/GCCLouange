@@ -194,7 +194,6 @@ export async function updateSetlist(
   const mask = Object.keys(data)
     .map((f) => `updateMask.fieldPaths=${encodeURIComponent(f)}`)
     .join("&");
-
   const res = await withTimeout(
     fetch(`${FS_BASE}/setlists/${id}?${mask}`, {
       method: "PATCH",

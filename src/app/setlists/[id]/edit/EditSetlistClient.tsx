@@ -5,10 +5,6 @@ import { useRouter, useParams } from "next/navigation";
 import {
   DndContext,
   closestCenter,
-  PointerSensor,
-  TouchSensor,
-  useSensor,
-  useSensors,
   DragEndEvent,
 } from "@dnd-kit/core";
 import {
@@ -29,7 +25,6 @@ import {
 } from "@/lib/firebase/setlists";
 import { useAuth } from "@/lib/firebase/auth";
 import { useTranslation } from "react-i18next";
-import type { SetlistItem } from "@/types/setList";
 import type { SongIndexEntry, SectionSummary } from "@/types/song";
 import { nextUid } from "@/lib/uid";
 import { type FormItem, type FormSectionItem, makeDefaultSections, buildFormItems } from "@/lib/setlist/formItems";
@@ -50,7 +45,6 @@ function SortableSectionRow({
   const { t } = useTranslation();
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } =
     useSortable({ id: item.uid });
-
   return (
     <div
       ref={setNodeRef}
@@ -103,8 +97,7 @@ function SectionStructureEditor({
     const oldIdx = sectionItems.findIndex((s) => s.uid === active.id);
     const newIdx = sectionItems.findIndex((s) => s.uid === over.id);
     onChange(arrayMove(sectionItems, oldIdx, newIdx));
-  }
-
+  } 
   return (
     <div className="border-t border-border pt-2 px-3 pb-2 space-y-2">
       <p className="text-[10px] uppercase tracking-widest text-muted-foreground">{t("setlists.form.structure")}</p>
@@ -113,7 +106,7 @@ function SectionStructureEditor({
           <button
             key={s.id}
             type="button"
-            onClick={() => onChange([...sectionItems, { uid: nextUid(), sectionId: s.id, name: s.name, note: "" }])}
+            onClick={() => onChange([...sectionItems, { uid: `${s.id}-${sectionItems.length}`, sectionId: s.id, name: s.name, note: "" }])}
             className="flex items-center gap-0.5 text-[11px] px-2 py-0.5 rounded border border-border hover:bg-muted text-foreground transition-colors"
           >
             <Plus className="h-2.5 w-2.5" />
@@ -173,7 +166,6 @@ function SongRow({
   const isModified =
     currentCount !== originalCount ||
     item.sectionItems.some((si, i) => si.sectionId !== allSections[i]?.id);
-
   return (
     <div
       ref={setNodeRef}
@@ -340,7 +332,6 @@ export function EditSetlistClient() {
     try {
       const setlistItems = buildSetlistItems(items);
       const language = detectSetlistLanguage(items);
-
       await updateSetlist(id, {
         title: title.trim(),
         leader: leader.trim(),
@@ -374,7 +365,6 @@ export function EditSetlistClient() {
       </div>
     );
   }
-
   return (
     <div className="min-h-screen bg-background">
       <div className="sticky top-0 z-10 bg-background/95 backdrop-blur border-b border-border px-4 py-2 flex items-center gap-3">

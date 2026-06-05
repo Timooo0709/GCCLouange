@@ -5,10 +5,11 @@ export function buildSetlistItems(items: FormItem[]): SetlistItem[] {
   return items.map((item, idx) => {
     const allIds = (item.song.sections ?? []).map((s) => s.id);
     const currentIds = item.sectionItems.map((s) => s.sectionId);
+    const currentUid = item.sectionItems.map((s) => s.uid);
     const structureOverride =
-      JSON.stringify(currentIds) === JSON.stringify(allIds) ? null : currentIds;
+      JSON.stringify(currentIds) === JSON.stringify(allIds) ? null : currentUid;
     const sectionNotes = Object.fromEntries(
-      item.sectionItems.filter((s) => s.note.trim()).map((s) => [s.sectionId, s.note.trim()])
+      item.sectionItems.filter((s) => s.note.trim()).map((s) => [s.uid, s.note.trim()])
     );
     return {
       songSlug: item.song.slug,
