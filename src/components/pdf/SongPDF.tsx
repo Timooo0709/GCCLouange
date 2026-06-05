@@ -411,7 +411,7 @@ function OrdreLine({ sections, theme }: { sections: ChordProSection[]; theme: Th
     <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "baseline",
                    marginBottom: 12, marginTop: 2 }}>
       <Text style={{ fontSize: 7.5, fontWeight: 700, color: theme.accent, fontFamily: "NotoSans",
-                     letterSpacing: 1.4, marginRight: 7 }}>
+                     letterSpacing: 1, marginRight: 7,paddingHorizontal: 2 }}>
         ORDRE
       </Text>
       {names.map((name, i) => (
@@ -464,7 +464,6 @@ export function SongPDFPage({
 
   const titleFont = isZh ? "KaiTi" : "NotoSans";
   const centerLabel = footerCenter ?? title;
-  console.log("sectionNotes",sectionNotes)
   return (
     <Page size="A4" style={styles.page}>
 
