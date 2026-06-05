@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { useScrollDirection } from "@/hooks/useScrollDirection"
 
 const TABS = [
   { label: "Accueil", href: "/planning" },
@@ -14,8 +15,9 @@ const TABS = [
 
 export function PlanningTabs() {
   const pathname = usePathname() || ""
+  const scrollVisible = useScrollDirection()
   return (
-    <div className="sticky top-[57px] z-40 border-b border-border bg-background/95 backdrop-blur-md print:hidden">
+    <div className={`{sticky top-[57px] z-40 border-b border-border bg-background/95 backdrop-blur-md print:hidden  ${ scrollVisible ? "translate-y-0" : "-translate-y-[calc(100%+58px)]"}} `}>
       <div className="max-w-[1080px] mx-auto px-4">
         <nav className="flex overflow-x-auto gap-0 -mb-px" style={{ scrollbarWidth: "none" }}>
           {TABS.map(tab => {
