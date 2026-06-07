@@ -79,13 +79,13 @@ export function ChordLine({ tokens, showChords = true, fontSize = 0.88, chord_fo
             style={{ minWidth }}
           >
             {showChords && seg.chord ? (
-              <span className={`{md:text-xl font-bold font-chord whitespace-nowrap  leading-[0.7] pb-[-2px] ${chord_font?.className}`} >
+              <span className={`text-[0.9em] font-bold font-chord whitespace-nowrap leading-[0.7] ${chord_font?.className}`}>
                 {seg.chord}
               </span>
             ) : (
-              hasAnyChord && <span className="leading-[0.7] pb-[-2px] text-[0.9em]">&nbsp;</span>
+              hasAnyChord && <span className="text-[0.9em] leading-[0.7]">&nbsp;</span>
             )}
-            <span className={`{text-foreground whitespace-pre md:text-xl ${fr_lyric_font?.className}`}>
+            <span className={`text-foreground whitespace-pre ${fr_lyric_font?.className}`}>
               {(showChords ? seg.lyric : seg.lyric?.trimStart()) || (seg.chord && showChords ? " " : "")}
             </span>
           </span>
