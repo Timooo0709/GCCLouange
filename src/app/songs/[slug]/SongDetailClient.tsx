@@ -267,7 +267,7 @@ interface SongDetailClientProps {
             songTitle={song.title}
           />
         )}
-      
+
     </div>
     );
   }
