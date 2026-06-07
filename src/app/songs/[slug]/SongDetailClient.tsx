@@ -15,7 +15,7 @@ import { transposeAST } from "@/lib/transposeAST";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { ALL_KEYS, semitonesTo, getTransposedKey } from "@/lib/transpose";
 import { useSearchParams } from "next/navigation";
-
+import type { SectionItem } from "@/types/song";
 interface SongDetailClientProps {
   song: Song;
 }
@@ -58,7 +58,7 @@ interface SongDetailClientProps {
       useJianpu: false,
       structure: buildDefaultStructure(ast.sections),
     });
-
+    console.log('structure', customize)
     // AST transposé en mémoire — recalculé uniquement si semitones change
     const displayedAST = useMemo(
       () => transposeAST(ast, customize.semitones, customize.currentKey),
@@ -83,6 +83,18 @@ interface SongDetailClientProps {
     const sectionsNote = searchParams.get("sectionNotes")
       ? JSON.parse(searchParams.get("sectionNotes")!)
       : defaultSectionsNote;
+
+    useEffect(() => {
+      const structure: SectionItem[] = structureOverride.map((uid: string) => (
+        {
+          uid: uid,
+          sectionId: uid.replace(/-\d+$/,''),
+          name: ast.sections.find((s) => s.id=== uid.replace(/-\d+$/,''))?.name,
+          note: sectionsNote[uid]
+        }
+      ))
+      setCustomize(prev => ({...prev, structure: structure}))
+    },[]);
 
     useEffect(() => {
       const songKey = searchParams.get('key')
