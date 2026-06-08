@@ -37,7 +37,11 @@ export function useSetlistDownload({
         ).toBlob();
         triggerDownload(blob, `${setlist.title}-liste.pdf`);
       } else {
-        const slugs = setlist.items.map((i) => i.songSlug);
+        const slugs = setlist.items.flatMap((i) => {
+          if (i.type === "transition") return [];
+          if (i.type === "fusion" && i.fusionSongs) return i.fusionSongs.map((fs) => fs.songSlug);
+          return [i.songSlug];
+        });
         const allContents = await fetchMissingSongContents(slugs, contents);
         setContents(allContents);
 

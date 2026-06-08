@@ -1,13 +1,13 @@
 import type { FormItem, FormListItem } from "@/lib/setlist/formItems";
-import { isFormFusion } from "@/lib/setlist/formItems";
+import { isFormFusion, isFormTransition } from "@/lib/setlist/formItems";
 import type { SetlistItem, FusionSong } from "@/types/setList";
 
-function formItemToFusionSong(item: FormItem): FusionSong {
+function formItemToFusionSong(item: FormItem, mixedNotes?: Record<string, string>): FusionSong {
   const allIds = (item.song.sections ?? []).map((s) => s.id);
   const currentIds = item.sectionItems.map((s) => s.sectionId);
   const structureOverride =
     JSON.stringify(currentIds) === JSON.stringify(allIds) ? null : currentIds;
-  const sectionNotes = Object.fromEntries(
+  const sectionNotes = mixedNotes ?? Object.fromEntries(
     item.sectionItems.filter((s) => s.note.trim()).map((s) => [s.sectionId, s.note.trim()])
   );
   return {
@@ -20,7 +20,32 @@ function formItemToFusionSong(item: FormItem): FusionSong {
 
 export function buildSetlistItems(items: FormListItem[]): SetlistItem[] {
   return items.map((item, idx) => {
+    if (isFormTransition(item)) {
+      return {
+        type: "transition" as const,
+        songSlug: "",
+        position: idx + 1,
+        keyOverride: null,
+        showChords: false,
+        showPinyin: false,
+        useJianpu: false,
+        structureOverride: null,
+        sectionNotes: {},
+        notes: "",
+        transitionText: item.text,
+      };
+    }
     if (isFormFusion(item)) {
+      // Build per-song notes from mixed rows when active
+      const mixedNotesBySong: Record<string, Record<string, string>> = {};
+      if (item.mixedStructure) {
+        for (const ms of item.mixedStructure) {
+          if (ms.note.trim()) {
+            if (!mixedNotesBySong[ms.songSlug]) mixedNotesBySong[ms.songSlug] = {};
+            mixedNotesBySong[ms.songSlug][ms.sectionId] = ms.note.trim();
+          }
+        }
+      }
       return {
         type: "fusion" as const,
         songSlug: "",
@@ -32,7 +57,9 @@ export function buildSetlistItems(items: FormListItem[]): SetlistItem[] {
         structureOverride: null,
         sectionNotes: {},
         notes: "",
-        fusionSongs: item.songs.map(formItemToFusionSong),
+        fusionSongs: item.songs.map((song) =>
+          formItemToFusionSong(song, item.mixedStructure ? (mixedNotesBySong[song.song.slug] ?? {}) : undefined)
+        ),
         mixedStructure: item.mixedStructure?.map((ms) => ({
           songSlug: ms.songSlug,
           sectionId: ms.sectionId,
@@ -63,9 +90,11 @@ export function buildSetlistItems(items: FormListItem[]): SetlistItem[] {
 
 export function detectSetlistLanguage(items: FormListItem[]): "fr" | "zh" | "mixed" {
   const langs = new Set(
-    items.flatMap((i) =>
-      isFormFusion(i) ? i.songs.map((s) => s.song.language) : [i.song.language]
-    )
+    items.flatMap((i) => {
+      if (isFormTransition(i)) return [];
+      if (isFormFusion(i)) return i.songs.map((s) => s.song.language);
+      return [i.song.language];
+    })
   );
   if (langs.size === 0) return "fr";
   if (langs.size === 1) return [...langs][0] as "fr" | "zh";

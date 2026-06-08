@@ -13,7 +13,7 @@ export type FusionMixedSection = {
 };
 
 export type SetlistItem = {
-  type?: "fusion";
+  type?: "fusion" | "transition";
   songSlug: string;
   position: number;
   keyOverride: string | null;
@@ -25,6 +25,7 @@ export type SetlistItem = {
   notes: string;
   fusionSongs?: FusionSong[];
   mixedStructure?: FusionMixedSection[] | null;
+  transitionText?: string;
 };
 
 export type Setlist = {

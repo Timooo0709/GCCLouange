@@ -1,9 +1,10 @@
+import { useState } from "react";
 import type { SetlistItem } from "@/types/setList";
 import type { SongIndexEntry } from "@/types/song";
 import { useTranslation } from "react-i18next";
 import { formatSectionName } from "@/lib/chordpro/parser";
 import Link from "next/link";
-import { Link2 } from "lucide-react";
+import { Link2, MessageSquare, ChevronDown, ChevronUp } from "lucide-react";
 
 export function ListView({
   items,
@@ -16,6 +17,11 @@ export function ListView({
   return (
     <ol className="space-y-3">
       {[...items].sort((a, b) => a.position - b.position).map((item, idx) => {
+        // ── Transition item ──
+        if (item.type === "transition") {
+          return <TransitionListItem key={`transition-${idx}`} item={item} />;
+        }
+
         // ── Fusion item ──
         if (item.type === "fusion" && item.fusionSongs) {
           return (
@@ -123,5 +129,31 @@ export function ListView({
         );
       })}
     </ol>
+  );
+}
+
+function TransitionListItem({ item }: { item: SetlistItem }) {
+  const [open, setOpen] = useState(false);
+  const { t } = useTranslation();
+  if (!item.transitionText) return null;
+  return (
+    <li className="flex gap-3 items-start">
+      <span className="shrink-0 w-7 h-7 rounded-full bg-amber-100 dark:bg-amber-950/40 flex items-center justify-center mt-0.5">
+        <MessageSquare className="h-3.5 w-3.5 text-amber-500 dark:text-amber-400" />
+      </span>
+      <div className="flex-1 min-w-0">
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          className="flex items-center gap-1 text-xs font-semibold text-amber-700 dark:text-amber-400 uppercase tracking-wide hover:opacity-80 transition-opacity"
+        >
+          {t("setlists.form.transitionLabel", { defaultValue: "Transition" })}
+          {open ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
+        </button>
+        {open && (
+          <p className="mt-1 text-sm text-foreground whitespace-pre-wrap">{item.transitionText}</p>
+        )}
+      </div>
+    </li>
   );
 }

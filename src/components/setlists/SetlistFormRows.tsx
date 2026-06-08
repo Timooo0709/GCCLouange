@@ -19,12 +19,13 @@ import {
   Unlink,
   Shuffle,
   RotateCcw,
+  MessageSquare,
 } from "lucide-react";
 import { ALL_KEYS } from "@/lib/transpose";
 import { useTranslation } from "react-i18next";
 import { useDefaultSensors } from "@/lib/dnd/sensors";
 import { nextUid } from "@/lib/uid";
-import type { FormItem, FormSectionItem, FormFusionItem, FusionMixedSectionForm } from "@/lib/setlist/formItems";
+import type { FormItem, FormSectionItem, FormFusionItem, FormTransitionItem, FusionMixedSectionForm } from "@/lib/setlist/formItems";
 import type { SectionSummary } from "@/types/song";
 
 // ─── Section row (sortable, inside a song) ────────────────────────────────────
@@ -33,10 +34,12 @@ export function SortableSectionRow({
   item,
   onRemove,
   onNoteChange,
+  hideNote,
 }: {
   item: FormSectionItem;
   onRemove: () => void;
   onNoteChange: (note: string) => void;
+  hideNote?: boolean;
 }) {
   const { t } = useTranslation();
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } =
@@ -60,13 +63,15 @@ export function SortableSectionRow({
       </button>
       <div className="flex-1 min-w-0">
         <div className="font-medium text-foreground">{item.name}</div>
-        <input
-          type="text"
-          placeholder={t("setlists.form.songNotePlaceholder")}
-          value={item.note}
-          onChange={(e) => onNoteChange(e.target.value)}
-          className="mt-1 w-full text-[11px] px-1.5 py-0.5 border border-border rounded bg-muted/50 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-1 focus:ring-primary/30"
-        />
+        {!hideNote && (
+          <input
+            type="text"
+            placeholder={t("setlists.form.songNotePlaceholder")}
+            value={item.note}
+            onChange={(e) => onNoteChange(e.target.value)}
+            className="mt-1 w-full text-[11px] px-1.5 py-0.5 border border-border rounded bg-muted/50 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-1 focus:ring-primary/30"
+          />
+        )}
       </div>
       <button
         type="button"
@@ -85,10 +90,12 @@ export function SectionStructureEditor({
   allSections,
   sectionItems,
   onChange,
+  hideNotes,
 }: {
   allSections: SectionSummary[];
   sectionItems: FormSectionItem[];
   onChange: (items: FormSectionItem[]) => void;
+  hideNotes?: boolean;
 }) {
   const { t } = useTranslation();
   const sensors = useDefaultSensors();
@@ -137,6 +144,7 @@ export function SectionStructureEditor({
                   next[idx] = { ...next[idx], note };
                   onChange(next);
                 }}
+                hideNote={hideNotes}
               />
             ))}
           </div>
@@ -156,10 +164,13 @@ export function SectionStructureEditor({
 function SortableMixedRow({
   item,
   onRemove,
+  onNoteChange,
 }: {
   item: FusionMixedSectionForm;
   onRemove: () => void;
+  onNoteChange: (note: string) => void;
 }) {
+  const { t } = useTranslation();
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } =
     useSortable({ id: item.uid });
 
@@ -167,7 +178,7 @@ function SortableMixedRow({
     <div
       ref={setNodeRef}
       style={{ transform: CSS.Transform.toString(transform), transition, touchAction: "none" }}
-      className={`flex items-center gap-2 px-2 py-1.5 rounded border text-xs ${
+      className={`flex items-start gap-2 px-2 py-1.5 rounded border text-xs ${
         isDragging ? "border-primary/40 bg-primary/5 shadow" : "border-border bg-background"
       }`}
     >
@@ -175,18 +186,29 @@ function SortableMixedRow({
         {...attributes}
         {...listeners}
         type="button"
-        className="text-muted-foreground cursor-grab active:cursor-grabbing shrink-0"
+        className="mt-1 text-muted-foreground cursor-grab active:cursor-grabbing shrink-0"
       >
         <GripVertical className="h-3.5 w-3.5" />
       </button>
-      <span className="flex-1 font-medium text-foreground truncate">{item.sectionName}</span>
-      <span className="text-[10px] px-1.5 py-0.5 rounded bg-primary/10 text-primary font-medium truncate max-w-[120px]">
-        {item.songTitle}
-      </span>
+      <div className="flex-1 min-w-0">
+        <div className="flex items-center gap-1.5">
+          <span className="font-medium text-foreground truncate">{item.sectionName}</span>
+          <span className="text-[10px] px-1.5 py-0.5 rounded bg-primary/10 text-primary font-medium truncate max-w-[100px] shrink-0">
+            {item.songTitle}
+          </span>
+        </div>
+        <input
+          type="text"
+          placeholder={t("setlists.form.songNotePlaceholder")}
+          value={item.note}
+          onChange={(e) => onNoteChange(e.target.value)}
+          className="mt-1 w-full text-[11px] px-1.5 py-0.5 border border-border rounded bg-muted/50 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-1 focus:ring-primary/30"
+        />
+      </div>
       <button
         type="button"
         onClick={onRemove}
-        className="shrink-0 text-muted-foreground hover:text-destructive"
+        className="mt-1 shrink-0 text-muted-foreground hover:text-destructive"
       >
         <Trash2 className="h-3.5 w-3.5" />
       </button>
@@ -224,6 +246,7 @@ function MixedStructureEditor({
         sectionId: si.sectionId,
         sectionName: si.name,
         songTitle: song.song.title,
+        note: si.note,
       },
     ]);
   }
@@ -277,6 +300,11 @@ function MixedStructureEditor({
                 key={ms.uid}
                 item={ms}
                 onRemove={() => onChangeMixed(mixed.filter((_, i) => i !== idx))}
+                onNoteChange={(note) => {
+                  const next = [...mixed];
+                  next[idx] = { ...next[idx], note };
+                  onChangeMixed(next);
+                }}
               />
             ))}
           </div>
@@ -445,10 +473,12 @@ function FusionSongCard({
   item,
   onKeyChange,
   onSectionItemsChange,
+  hasMixed,
 }: {
   item: FormItem;
   onKeyChange: (key: string | null) => void;
   onSectionItemsChange: (items: FormSectionItem[]) => void;
+  hasMixed?: boolean;
 }) {
   const { t } = useTranslation();
   const [showStructure, setShowStructure] = useState(false);
@@ -484,7 +514,7 @@ function FusionSongCard({
               <option key={k} value={k}>{k}</option>
             ))}
           </select>
-          {originalCount > 1 && (
+          {!hasMixed && originalCount > 1 && (
             <button
               type="button"
               onClick={() => setShowStructure((v) => !v)}
@@ -501,11 +531,35 @@ function FusionSongCard({
           )}
         </div>
       </div>
-      {showStructure && originalCount > 1 && (
+
+      {/* Notes par section et structure — masqués si structure mélangée active */}
+      {!hasMixed && item.sectionItems.length > 0 && (
+        <div className="border-t border-border px-2.5 pb-2 pt-1.5 space-y-1">
+          {item.sectionItems.map((si, idx) => (
+            <div key={si.uid} className="flex items-center gap-2">
+              <span className="text-[10px] text-muted-foreground w-20 shrink-0 truncate">{si.name}</span>
+              <input
+                type="text"
+                placeholder={t("setlists.form.songNotePlaceholder")}
+                value={si.note}
+                onChange={(e) => {
+                  const next = [...item.sectionItems];
+                  next[idx] = { ...next[idx], note: e.target.value };
+                  onSectionItemsChange(next);
+                }}
+                className="flex-1 text-[11px] px-1.5 py-0.5 border border-border rounded bg-muted/50 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-1 focus:ring-primary/30"
+              />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {!hasMixed && showStructure && originalCount > 1 && (
         <SectionStructureEditor
           allSections={allSections}
           sectionItems={item.sectionItems}
           onChange={onSectionItemsChange}
+          hideNotes
         />
       )}
     </div>
@@ -549,6 +603,7 @@ export function FusionRow({
           sectionId: si.sectionId,
           sectionName: si.name,
           songTitle: song.song.title,
+          note: si.note,
         }))
       );
       onChangeMixed(defaultMixed);
@@ -644,8 +699,76 @@ export function FusionRow({
               item={song}
               onKeyChange={(key) => onPatchSong(song.uid, { keyOverride: key })}
               onSectionItemsChange={(sectionItems) => onPatchSong(song.uid, { sectionItems })}
+              hasMixed={item.mixedStructure !== null}
             />
           ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Transition row ───────────────────────────────────────────────────────────
+
+export function TransitionRow({ item, onTextChange, onRemove }: {
+  item: FormTransitionItem;
+  onTextChange: (text: string) => void;
+  onRemove: () => void;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const { t } = useTranslation();
+  const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: item.uid });
+  const style = { transform: CSS.Transform.toString(transform), transition };
+
+  return (
+    <div
+      ref={setNodeRef}
+      style={style}
+      className="rounded-lg border border-dashed border-amber-300 dark:border-amber-700 bg-amber-50/50 dark:bg-amber-950/20"
+    >
+      {/* Header row */}
+      <div className="flex items-center gap-2 px-3 py-2">
+        <button type="button" {...attributes} {...listeners}
+          className="cursor-grab text-muted-foreground hover:text-foreground touch-none">
+          <GripVertical className="h-4 w-4" />
+        </button>
+
+        <MessageSquare className="h-3.5 w-3.5 text-amber-500 dark:text-amber-400 shrink-0" />
+        <span className="text-xs font-semibold uppercase tracking-wide text-amber-700 dark:text-amber-400 flex-1">
+          {t("setlists.form.transitionLabel", { defaultValue: "Transition" })}
+        </span>
+
+        {/* Preview when collapsed */}
+        {!expanded && item.text && (
+          <span className="text-xs text-muted-foreground italic truncate max-w-[160px]">{item.text}</span>
+        )}
+
+        <button
+          type="button"
+          onClick={() => setExpanded((v) => !v)}
+          className="text-muted-foreground hover:text-foreground p-0.5"
+        >
+          {expanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+        </button>
+        <button
+          type="button"
+          onClick={onRemove}
+          className="text-muted-foreground hover:text-destructive p-0.5"
+        >
+          <Trash2 className="h-3.5 w-3.5" />
+        </button>
+      </div>
+
+      {/* Textarea */}
+      {expanded && (
+        <div className="px-3 pb-3 border-t border-amber-200 dark:border-amber-800 pt-2">
+          <textarea
+            value={item.text}
+            onChange={(e) => onTextChange(e.target.value)}
+            rows={4}
+            placeholder={t("setlists.form.transitionPlaceholder", { defaultValue: "Texte de transition du président de séance…" })}
+            className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-amber-400/30 text-sm resize-none"
+          />
         </div>
       )}
     </div>

@@ -394,7 +394,7 @@ function JianpuLine({ tokens, jianpu, pinyin, showChords, showPinyin, theme }: {
 
 // ─── Section ──────────────────────────────────────────────────────────────────
 
-function SectionBlock({ section, isZh, useJianpu, showChords, showPinyin, note, theme, uiLang }: {
+function SectionBlock({ section, isZh, useJianpu, showChords, showPinyin, note, theme, uiLang, sourceLabel, sourceLabelFont }: {
   section: ChordProSection;
   isZh: boolean;
   useJianpu: boolean;
@@ -403,6 +403,8 @@ function SectionBlock({ section, isZh, useJianpu, showChords, showPinyin, note, 
   note?: string;
   theme: Theme;
   uiLang: string;
+  sourceLabel?: string;
+  sourceLabelFont?: string;
 }) {
   const labelFont = isZh && uiLang === "zh-CN" ? "SourceHanSansCN" : "SpaceGrotesk";
   const label = sectionName(section, uiLang).toUpperCase();
@@ -445,6 +447,12 @@ function SectionBlock({ section, isZh, useJianpu, showChords, showPinyin, note, 
                          letterSpacing: 1.4 }}>
             {label}
           </Text>
+          {sourceLabel ? (
+            <Text style={{ fontSize: 7.5, color: C.subtitle, fontFamily: sourceLabelFont ?? "SpaceGrotesk",
+                           fontWeight: 300 }}>
+              {sourceLabel}
+            </Text>
+          ) : null}
         </View>
         {note ? (
           <Text style={{ fontSize: 8.5, color: C.subtitle, fontFamily: labelFont, fontWeight: 300 }}>
@@ -621,6 +629,142 @@ export function SongPDFPage({
         </Text>
         <Text style={[styles.footerText, { fontFamily: "LiberationSans", fontWeight: 400 }]}>
           {centerLabel}
+        </Text>
+        <Text
+          style={[styles.footerText, { fontFamily: "LiberationSans", fontWeight: 400 }]}
+          render={({ pageNumber, totalPages }) => `Page ${pageNumber} / ${totalPages}`}
+        />
+      </View>
+    </Page>
+  );
+}
+
+// ─── Fusion page (mixed structure) ───────────────────────────────────────────
+
+export interface FusionPDFSong {
+  slug: string;
+  ast: ChordProAST;
+  sectionNotes: Record<string, string>;
+}
+
+export function FusionPDFPage({
+  songs,
+  mixedStructure,
+  showChords,
+  footerCenter,
+}: {
+  songs: FusionPDFSong[];
+  mixedStructure: Array<{ songSlug: string; sectionId: string }>;
+  showChords: boolean;
+  footerCenter?: string;
+}) {
+  const songMap = Object.fromEntries(songs.map((s) => [s.slug, s]));
+
+  const mixedSections = mixedStructure.flatMap((ms) => {
+    const song = songMap[ms.songSlug];
+    if (!song) return [];
+    const section = song.ast.sections.find((s) => s.id === ms.sectionId);
+    if (!section) return [];
+    const note = song.sectionNotes?.[ms.sectionId];
+    const isZh = song.ast.metadata.language === "zh";
+    const sourceLabel = song.ast.metadata.title;
+    const sourceLabelFont = isZh ? "KaiTi" : "SpaceGrotesk";
+    return [{ section: { ...section, uid: ms.sectionId }, note, isZh, theme: isZh ? RED_THEME : BLUE_THEME, sourceLabel, sourceLabelFont }];
+  });
+
+  if (mixedSections.length === 0) return null;
+
+  const centerLabel = footerCenter ?? songs.map((s) => s.ast.metadata.title).join(" / ");
+
+  // Build flat list of title parts so each Text gets a key (no Fragment needed)
+  const titleParts: { text: string; font: string; bold: boolean; key: string }[] = [];
+  songs.forEach((s, i) => {
+    if (i > 0) titleParts.push({ text: " / ", font: "SpaceGrotesk", bold: false, key: `sep-${i}` });
+    titleParts.push({
+      text: s.ast.metadata.title,
+      font: s.ast.metadata.language === "zh" ? "KaiTi" : "SpaceGrotesk",
+      bold: true,
+      key: `title-${s.slug}`,
+    });
+  });
+
+  return (
+    <Page size="A4" style={styles.page}>
+      <View style={styles.header}>
+        <View style={{ flexDirection: "row", alignItems: "baseline", flexWrap: "wrap" }}>
+          {titleParts.map(({ text, font, bold, key }) => (
+            <Text key={key} style={{ fontSize: 18, fontWeight: bold ? 700 : 400,
+                                     color: bold ? C.title : C.subtitle,
+                                     fontFamily: font, lineHeight: 1.2 }}>
+              {text}
+            </Text>
+          ))}
+        </View>
+        <View style={{ height: 0.5, backgroundColor: C.rule, marginTop: 10, marginBottom: 0 }} />
+      </View>
+
+      {mixedSections.map(({ section, note, isZh, theme, sourceLabel, sourceLabelFont }, idx) => (
+        <SectionBlock
+          key={`${section.id}-${idx}`}
+          section={section}
+          isZh={isZh}
+          useJianpu={false}
+          showChords={showChords}
+          showPinyin={isZh}
+          note={note}
+          theme={theme}
+          uiLang="fr"
+          sourceLabel={sourceLabel}
+          sourceLabelFont={sourceLabelFont}
+        />
+      ))}
+
+      <View style={styles.footer} fixed>
+        <Text style={[styles.footerText, { fontFamily: "LiberationSans", fontWeight: 700,
+                       color: BLUE_THEME.accent, letterSpacing: 1 }]}>
+          GCC LOUANGE
+        </Text>
+        <Text style={[styles.footerText, { fontFamily: "LiberationSans", fontWeight: 400 }]}>
+          {centerLabel}
+        </Text>
+        <Text
+          style={[styles.footerText, { fontFamily: "LiberationSans", fontWeight: 400 }]}
+          render={({ pageNumber, totalPages }) => `Page ${pageNumber} / ${totalPages}`}
+        />
+      </View>
+    </Page>
+  );
+}
+
+// ─── Transition page ──────────────────────────────────────────────────────────
+
+export function TransitionPDFPage({ text, footerCenter }: { text: string; footerCenter?: string }) {
+  const hasCJK = /[一-鿿㐀-䶿]/.test(text);
+  const textFont = hasCJK ? "SourceHanSansCN" : "SpaceGrotesk";
+
+  return (
+    <Page size="A4" style={styles.page}>
+      <View style={styles.header}>
+        <Text style={{ fontSize: 9, fontWeight: 700, color: C.subtitle, fontFamily: "SpaceGrotesk",
+                       letterSpacing: 2 }}>
+          TRANSITION
+        </Text>
+        <View style={{ height: 0.5, backgroundColor: C.rule, marginTop: 8 }} />
+      </View>
+
+      <View style={{ marginTop: 28 }}>
+        <Text style={{ fontSize: 13, color: C.lyric, fontFamily: textFont, lineHeight: 1.8, fontWeight: 400 }}>
+          {text}
+        </Text>
+      </View>
+
+      <View style={styles.footer} fixed>
+        <Text style={[styles.footerText, { fontFamily: "LiberationSans", fontWeight: 700,
+                       color: BLUE_THEME.accent, letterSpacing: 1 }]}>
+          GCC LOUANGE
+        </Text>
+        <Text style={[styles.footerText, { fontFamily: "LiberationSans", fontWeight: 400 }]}>
+          {footerCenter ?? ""}
         </Text>
         <Text
           style={[styles.footerText, { fontFamily: "LiberationSans", fontWeight: 400 }]}

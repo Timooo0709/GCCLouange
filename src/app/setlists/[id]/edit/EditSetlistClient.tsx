@@ -27,15 +27,17 @@ import { nextUid } from "@/lib/uid";
 import {
   type FormItem,
   type FormFusionItem,
+  type FormTransitionItem,
   type FormListItem,
   type FusionMixedSectionForm,
   isFormFusion,
+  isFormTransition,
   makeDefaultSections,
   buildFormItems,
 } from "@/lib/setlist/formItems";
 import { useDefaultSensors } from "@/lib/dnd/sensors";
 import { buildSetlistItems, detectSetlistLanguage } from "@/lib/setlist/buildSetlistItems";
-import { SongRow, FusionRow } from "@/components/setlists/SetlistFormRows";
+import { SongRow, FusionRow, TransitionRow } from "@/components/setlists/SetlistFormRows";
 
 export function EditSetlistClient() {
   const { t } = useTranslation();
@@ -80,6 +82,7 @@ export function EditSetlistClient() {
   const addedSlugs = useMemo(() => {
     const slugs = new Set<string>();
     for (const item of items) {
+      if (isFormTransition(item)) continue;
       if (isFormFusion(item)) {
         for (const s of item.songs) slugs.add(s.song.slug);
       } else {
@@ -113,6 +116,16 @@ export function EditSetlistClient() {
       { uid: nextUid(), song, keyOverride: null, notes: "", sectionItems: makeDefaultSections(song.sections ?? []) },
     ]);
     setQuery("");
+  }
+
+  function addTransition() {
+    setItems((prev) => [...prev, { uid: nextUid(), kind: "transition" as const, text: "" }]);
+  }
+
+  function patchTransition(uid: string, text: string) {
+    setItems((prev) =>
+      prev.map((i) => (i.uid === uid && isFormTransition(i) ? { ...i, text } : i))
+    );
   }
 
   function patch(uid: string, update: Partial<FormItem>) {
@@ -228,7 +241,7 @@ export function EditSetlistClient() {
 
   const busy = saving || publishing;
   const needsAuth = category && isRestricted(category) && !user && !authLoading;
-  const selectableItems = items.filter((i): i is FormItem => !isFormFusion(i));
+  const selectableItems = items.filter((i): i is FormItem => !isFormFusion(i) && !isFormTransition(i));
 
   if (loadingData) {
     return (
@@ -335,10 +348,18 @@ export function EditSetlistClient() {
 
         {/* ── Chants ── */}
         <section className="space-y-3">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-2">
             <h2 className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
               {t("common.header.songs")}
             </h2>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={addTransition}
+                className="text-xs px-2.5 py-1 rounded-lg border border-amber-300 dark:border-amber-700 text-amber-700 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-950/30 transition-colors"
+              >
+                + {t("setlists.form.addTransition", { defaultValue: "Transition" })}
+              </button>
             {selectableItems.length >= 2 && (
               selectMode ? (
                 <div className="flex items-center gap-2">
@@ -370,7 +391,8 @@ export function EditSetlistClient() {
                 </button>
               )
             )}
-          </div>
+            </div>{/* end inner flex */}
+          </div>{/* end header row */}
 
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
@@ -423,7 +445,14 @@ export function EditSetlistClient() {
               <SortableContext items={items.map((i) => i.uid)} strategy={verticalListSortingStrategy}>
                 <div className="space-y-2">
                   {items.map((item) =>
-                    isFormFusion(item) ? (
+                    isFormTransition(item) ? (
+                      <TransitionRow
+                        key={item.uid}
+                        item={item}
+                        onTextChange={(text) => patchTransition(item.uid, text)}
+                        onRemove={() => setItems((prev) => prev.filter((i) => i.uid !== item.uid))}
+                      />
+                    ) : isFormFusion(item) ? (
                       <FusionRow
                         key={item.uid}
                         item={item}
