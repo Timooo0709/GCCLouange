@@ -4,8 +4,21 @@ import { SongView, SectionView } from "@/components/song/SongView";
 import { useTranslation } from "react-i18next";
 import { transposeAST } from "@/lib/transposeAST";
 import { semitonesTo } from "@/lib/transpose";
-import { Link2 } from "lucide-react";
+import { Link2, MessageSquare } from "lucide-react";
 import type { ChordProAST } from "@/types/chordPro";
+
+function TransitionBanner({ text }: { text: string }) {
+  return (
+    <div className="flex items-center gap-3 py-3 print:py-2">
+      <div className="flex-1 border-t border-dashed border-amber-300/60 dark:border-amber-700/40" />
+      <div className="flex items-start gap-2.5 px-4 py-3 bg-amber-50/80 dark:bg-amber-950/20 border border-amber-200/70 dark:border-amber-800/40 rounded-xl max-w-lg">
+        <MessageSquare className="h-4 w-4 text-amber-500 dark:text-amber-400 shrink-0 mt-0.5 print:hidden" />
+        <p className="text-sm text-foreground whitespace-pre-wrap leading-relaxed">{text}</p>
+      </div>
+      <div className="flex-1 border-t border-dashed border-amber-300/60 dark:border-amber-700/40" />
+    </div>
+  );
+}
 
 export function PartitionsView({
   items,
@@ -29,6 +42,12 @@ export function PartitionsView({
   return (
     <div className="space-y-10 print:space-y-6">
       {[...items].sort((a, b) => a.position - b.position).map((item, idx) => {
+        // ── Transition item ──
+        if (item.type === "transition") {
+          if (!item.transitionText) return null;
+          return <TransitionBanner key={`transition-${idx}`} text={item.transitionText} />;
+        }
+
         // ── Fusion item ──
         if (item.type === "fusion" && item.fusionSongs) {
           // Préparer les ASTs transposés par slug
