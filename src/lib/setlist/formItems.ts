@@ -7,6 +7,7 @@ export interface FormSectionItem {
   sectionId: string;
   name: string;
   note: string;
+  transition: string;
 }
 
 export interface FormItem {
@@ -55,6 +56,7 @@ export function makeDefaultSections(sections: SectionSummary[]): FormSectionItem
     sectionId: s.id,
     name: s.name,
     note: "",
+    transition: "",
   }));
 }
 
@@ -63,7 +65,8 @@ function toFormItem(
   keyOverride: string | null,
   notes: string,
   structureOverride: string[] | null,
-  sectionNotes: Record<string, string>
+  sectionNotes: Record<string, string>,
+  sectionTransitions: Record<string, string> = {}
 ): FormItem {
   const allSections = song.sections ?? [];
   const orderedSections = structureOverride && structureOverride.length > 0
@@ -81,6 +84,7 @@ function toFormItem(
       sectionId: s.id,
       name: s.name || s.type,
       note: sectionNotes?.[s.id] ?? "",
+      transition: sectionTransitions?.[s.id] ?? "",
     })),
   };
 }
@@ -127,6 +131,6 @@ export function buildFormItems(
 
       const song = songsMap[item.songSlug];
       if (!song) return [];
-      return [toFormItem(song, item.keyOverride, item.notes, item.structureOverride, item.sectionNotes)];
+      return [toFormItem(song, item.keyOverride, item.notes, item.structureOverride, item.sectionNotes, item.sectionTransitions)];
     });
 }

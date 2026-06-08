@@ -74,6 +74,9 @@ export function buildSetlistItems(items: FormListItem[]): SetlistItem[] {
     const sectionNotes = Object.fromEntries(
       item.sectionItems.filter((s) => s.note.trim()).map((s) => [s.uid, s.note.trim()])
     );
+    const sectionTransitions = Object.fromEntries(
+      item.sectionItems.filter((s) => s.transition.trim()).map((s) => [s.uid, s.transition.trim()])
+    );
     return {
       songSlug: item.song.slug,
       position: idx + 1,
@@ -83,6 +86,7 @@ export function buildSetlistItems(items: FormListItem[]): SetlistItem[] {
       useJianpu: false,
       structureOverride,
       sectionNotes,
+      sectionTransitions,
       notes: item.notes,
     };
   });

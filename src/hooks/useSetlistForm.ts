@@ -51,6 +51,11 @@ export function useSetlistForm({
             .filter((s) => s.note.trim())
             .map((s) => [s.sectionId, s.note.trim()])
         );
+        const sectionTransitions = Object.fromEntries(
+          item.sectionItems
+            .filter((s) => s.transition?.trim())
+            .map((s) => [s.sectionId, s.transition.trim()])
+        );
         return {
           songSlug: item.song.slug,
           position: idx + 1,
@@ -60,6 +65,7 @@ export function useSetlistForm({
           useJianpu: false,
           structureOverride,
           sectionNotes,
+          sectionTransitions,
           notes: item.notes,
         };
       });
