@@ -114,14 +114,14 @@ export function SectionStructureEditor({
         {t("setlists.form.structure")}
       </p>
       <div className="flex flex-wrap gap-1">
-        {allSections.map((s) => (
+        {allSections.map((s,index) => (
           <button
             key={s.id}
             type="button"
             onClick={() =>
               onChange([
                 ...sectionItems,
-                { uid: nextUid(), sectionId: s.id, name: s.name, note: "" },
+                { uid: `${s.id}-${index}`, sectionId: s.id, name: s.name, note: "" },
               ])
             }
             className="flex items-center gap-0.5 text-[11px] px-2 py-0.5 rounded border border-border hover:bg-muted text-foreground transition-colors"

@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "GCC Louange",
     short_name: "GCC Louange",
     description: "Partitions et setlists de louange — église GCC",
-    start_url: "/songs",
+    start_url: "/planning",
     display: "standalone",
     background_color: "#ffffff",
     theme_color: "#EA580C",
