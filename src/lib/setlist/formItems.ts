@@ -23,6 +23,7 @@ export interface FusionMixedSectionForm {
   sectionId: string;
   sectionName: string;
   songTitle: string;
+  note: string;
 }
 
 export interface FormFusionItem {
@@ -32,10 +33,20 @@ export interface FormFusionItem {
   mixedStructure: FusionMixedSectionForm[] | null;
 }
 
-export type FormListItem = FormItem | FormFusionItem;
+export interface FormTransitionItem {
+  uid: string;
+  kind: "transition";
+  text: string;
+}
+
+export type FormListItem = FormItem | FormFusionItem | FormTransitionItem;
 
 export function isFormFusion(item: FormListItem): item is FormFusionItem {
   return (item as FormFusionItem).kind === "fusion";
+}
+
+export function isFormTransition(item: FormListItem): item is FormTransitionItem {
+  return (item as FormTransitionItem).kind === "transition";
 }
 
 export function makeDefaultSections(sections: SectionSummary[]): FormSectionItem[] {
@@ -81,6 +92,9 @@ export function buildFormItems(
   return [...items]
     .sort((a, b) => a.position - b.position)
     .flatMap((item): FormListItem[] => {
+      if (item.type === "transition") {
+        return [{ uid: nextUid(), kind: "transition", text: item.transitionText ?? "" }];
+      }
       if (item.type === "fusion" && item.fusionSongs) {
         const songs: FormItem[] = item.fusionSongs.flatMap((fs) => {
           const song = songsMap[fs.songSlug];
@@ -96,12 +110,14 @@ export function buildFormItems(
             if (!song) return [];
             const section = (song.sections ?? []).find((s) => s.id === ms.sectionId);
             if (!section) return [];
+            const fusionSong = item.fusionSongs!.find((fs) => fs.songSlug === ms.songSlug);
             return [{
               uid: nextUid(),
               songSlug: ms.songSlug,
               sectionId: ms.sectionId,
               sectionName: section.name || section.type,
               songTitle: song.title,
+              note: fusionSong?.sectionNotes?.[ms.sectionId] ?? "",
             }];
           });
         }
