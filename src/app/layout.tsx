@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { I18nProvider } from "@/lib/I18nProvider";
 import { Navbar } from "@/components/layout/Navbar";
+import { PageTransition } from "@/components/layout/PageTransition";
 import "./globals.css";
 
 const inter = Inter({
@@ -46,7 +47,7 @@ export default function RootLayout({
           <I18nProvider>
             <Navbar />
             <main className="pt-[58px]">
-            {children}
+              <PageTransition>{children}</PageTransition>
             </main>
           </I18nProvider>
         </ThemeProvider>
