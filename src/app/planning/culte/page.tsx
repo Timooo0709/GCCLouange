@@ -7,6 +7,7 @@ import { CULTE_FALLBACK } from "@/lib/planning/data"
 import { fetchCulte } from "@/lib/planning/sheets"
 
 const COLS = ["Date","Présidence","Choriste 1","Choriste 2","Piano","Guitare","Batterie","Sono","PPT","Orateur","Trad."]
+const COLOR = "#2d5a65"
 
 export default function CultePage() {
   const [rows, setRows] = useState(CULTE_FALLBACK)
@@ -29,17 +30,17 @@ export default function CultePage() {
         {loading && <span className="text-xs text-muted-foreground">Chargement…</span>}
       </div>
 
-      <FilterButtons options={["T1","T2","T3","T4"]} active={tri} onChange={setTri} />
+      <FilterButtons options={["T1","T2","T3","T4"]} active={tri} onChange={setTri} color={COLOR} />
 
       <div className="flex items-center gap-2 text-xs text-muted-foreground">
-        <div className="w-3 h-3 rounded-sm bg-primary/15 border border-primary/30" />
+        <div className="w-3 h-3 rounded-sm" style={{ background: `${COLOR}26`, border: `1px solid ${COLOR}4d` }} />
         Dimanche de la semaine courante
       </div>
 
       <div className="overflow-x-auto rounded-xl border border-border">
         <table className="w-full text-sm border-collapse min-w-[680px]">
           <thead>
-            <tr className="bg-primary text-primary-foreground">
+            <tr style={{ background: COLOR }} className="text-white">
               {COLS.map(c => (
                 <th key={c} className="px-3 py-2.5 text-left text-[11px] font-semibold whitespace-nowrap">{c}</th>
               ))}
@@ -49,7 +50,7 @@ export default function CultePage() {
             {filtered.length === 0 && (
               <tr><td colSpan={COLS.length} className="px-4 py-8 text-center text-sm text-muted-foreground">Aucune donnée</td></tr>
             )}
-            {filtered.map((row, i) => {
+            {filtered.map((row) => {
               const month = MOIS[getMois(row[0]) - 1]
               const showSep = month !== lastMonth
               if (showSep) lastMonth = month
@@ -59,16 +60,19 @@ export default function CultePage() {
               return (
                 <Fragment key={row[0]}>
                   {showSep && (
-                    <tr className="bg-secondary">
-                      <td colSpan={COLS.length} className="px-3 py-1.5 text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
+                    <tr style={{ background: `${COLOR}15` }}>
+                      <td colSpan={COLS.length} className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider" style={{ color: COLOR }}>
                         {month}
                       </td>
                     </tr>
                   )}
-                  <tr className={`border-t border-border transition-colors ${isThis ? "bg-primary/10" : "hover:bg-secondary/50"}`}>
-                    <td className="w-[100px] px-3 py-2 font-semibold text-primary whitespace-nowrap">
+                  <tr
+                    className={`border-t border-border transition-colors ${!isThis ? "hover:bg-secondary/50" : ""}`}
+                    style={isThis ? { background: `${COLOR}1a` } : undefined}
+                  >
+                    <td className="w-[100px] px-3 py-2 font-semibold whitespace-nowrap" style={{ color: COLOR }}>
                       <div>{isThis ? (
-                        <span className="inline-block text-[9px] font-bold px-1.5 py-0.5 rounded bg-primary text-primary-foreground mt-0.5">Cette semaine</span>
+                        <span className="inline-block text-[9px] font-bold px-1.5 py-0.5 rounded text-white mt-0.5" style={{ background: COLOR }}>Cette semaine</span>
                       ) : fdShort(row[0])}</div>
                       {isSC && <span className="inline-block text-[9px] font-bold px-1.5 py-0.5 rounded bg-red-50 text-red-700 border border-red-200 mt-0.5">Sainte Cène</span>}
                     </td>

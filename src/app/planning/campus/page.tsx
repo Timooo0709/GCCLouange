@@ -6,6 +6,8 @@ import { fetchCampus } from "@/lib/planning/sheets"
 import type { CampusSeance } from "@/lib/planning/utils"
 import { fdLong } from "@/lib/planning/utils"
 
+const COLOR = "#2471a3"
+
 type CampusSub = "louange" | "entrainement"
 
 function groupByDay(seances: CampusSeance[]) {
@@ -52,10 +54,9 @@ export default function CampusPage() {
             key={s}
             onClick={() => setSub(s)}
             className={`flex-1 py-2 px-4 rounded-xl border text-sm font-semibold transition-all duration-150 cursor-pointer ${
-              sub === s
-                ? "bg-primary border-primary text-primary-foreground"
-                : "bg-card border-border text-muted-foreground hover:text-foreground"
+              sub === s ? "text-white border-transparent" : "bg-card border-border text-muted-foreground hover:text-foreground"
             }`}
+            style={sub === s ? { background: COLOR, borderColor: COLOR } : undefined}
           >
             {s === "louange" ? "Louange" : "Répétition"}
           </button>
@@ -68,7 +69,7 @@ export default function CampusPage() {
 
       {order.map(day => (
         <div key={day} className="bg-card border border-border rounded-xl overflow-hidden">
-          <div className="bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">{day}</div>
+          <div className="px-4 py-2.5 text-sm font-semibold text-white" style={{ background: COLOR }}>{day}</div>
           {days[day].map((s, i) => {
             const moment = s.d.includes("Matin") ? "Matin" : "Soir"
             const isSoir = moment === "Soir"
@@ -79,7 +80,7 @@ export default function CampusPage() {
             return (
               <div key={i} className="border-t border-border">
                 {sub === "entrainement" && s.ent && (
-                  <div className="bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground">
+                  <div className="px-4 py-2 text-xs font-semibold text-white" style={{ background: COLOR }}>
                     Répétition : <span className="font-normal">{fdLong(s.ent)}</span>
                   </div>
                 )}
@@ -90,7 +91,7 @@ export default function CampusPage() {
                   <div className="px-4 py-3 border-r border-border">
                     <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wide mb-2">Présidence &amp; choristes</p>
                     {choristes[0] && (
-                      <p className="text-sm font-semibold text-primary mb-1">{choristes[0]}</p>
+                      <p className="text-sm font-semibold mb-1" style={{ color: COLOR }}>{choristes[0]}</p>
                     )}
                     {choristes.slice(1).map(c => <Chip key={c} label={c} />)}
                   </div>

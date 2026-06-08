@@ -6,6 +6,8 @@ import { currentSundayStr, fdShort, getMois, MOIS, filterByTri, getCurrentTri } 
 import { DEJEUNER_FALLBACK } from "@/lib/planning/data"
 import { fetchDejeuner } from "@/lib/planning/sheets"
 
+const COLOR = "#c87941"
+
 export default function TablePage() {
   const [rows, setRows] = useState(DEJEUNER_FALLBACK)
   const [tri, setTri] = useState(getCurrentTri())
@@ -27,10 +29,10 @@ export default function TablePage() {
         {loading && <span className="text-xs text-muted-foreground">Chargement…</span>}
       </div>
 
-      <FilterButtons options={["T1","T2","T3","T4"]} active={tri} onChange={setTri} />
+      <FilterButtons options={["T1","T2","T3","T4"]} active={tri} onChange={setTri} color={COLOR} />
 
       <div className="flex items-center gap-2 text-xs text-muted-foreground">
-        <div className="w-3 h-3 rounded-sm bg-primary/15 border border-primary/30" />
+        <div className="w-3 h-3 rounded-sm" style={{ background: `${COLOR}26`, border: `1px solid ${COLOR}4d` }} />
         Dimanche de la semaine courante
       </div>
 
@@ -49,16 +51,19 @@ export default function TablePage() {
               return (
                 <Fragment key={row[0]}>
                   {showSep && (
-                    <tr className="bg-secondary">
-                      <td colSpan={2} className="px-3 py-1.5 text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
+                    <tr style={{ background: `${COLOR}15` }}>
+                      <td colSpan={2} className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider" style={{ color: COLOR }}>
                         {month}
                       </td>
                     </tr>
                   )}
-                  <tr className={`border-t border-border transition-colors ${isThis ? "bg-primary/10" : "hover:bg-secondary/50"}`}>
-                    <td className="w-[100px] px-3 py-2.5 font-semibold text-primary whitespace-nowrap w-16 align-top pt-3">
+                  <tr
+                    className={`border-t border-border transition-colors ${!isThis ? "hover:bg-secondary/50" : ""}`}
+                    style={isThis ? { background: `${COLOR}1a` } : undefined}
+                  >
+                    <td className="px-3 py-2.5 font-semibold w-16 align-top pt-3" style={{ color: COLOR }}>
                       {isThis ? (
-                        <span className="inline-block text-[9px] font-bold px-1.5 py-0.5 rounded bg-primary text-primary-foreground mt-0.5">Cette semaine</span>
+                        <span className="inline-block text-[9px] font-bold px-1.5 py-0.5 rounded text-white mt-0.5" style={{ background: COLOR }}>Cette semaine</span>
                       ) : fdShort(row[0])}
                     </td>
                     <td className="px-3 py-2.5 text-foreground leading-relaxed">{row[1] || "—"}</td>

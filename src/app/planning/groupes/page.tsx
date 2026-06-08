@@ -9,11 +9,12 @@ import { fetchPaix, fetchFidelite, fetchFideliteMusic, fetchBonte } from "@/lib/
 type Groupe = "paix" | "fidelite" | "bonte"
 type FidSub = "groupe" | "musiciens"
 
-const GRP_ACTIVE: Record<Groupe, string> = {
-  paix: "bg-[#6b4a8e] text-white border-[#6b4a8e]",
-  fidelite: "bg-[#a03030] text-white border-[#a03030]",
-  bonte: "bg-[#8b4a2e] text-white border-[#8b4a2e]",
+const GRP_COLORS: Record<Groupe, string> = {
+  paix:     "#6b4a8e",
+  fidelite: "#a03030",
+  bonte:    "#8b4a2e",
 }
+
 const GRP_INACTIVE = "bg-card text-muted-foreground border-border hover:text-foreground"
 
 export default function GroupesPage() {
@@ -36,6 +37,7 @@ export default function GroupesPage() {
   }, [])
 
   const sun = currentSundayStr()
+  const color = GRP_COLORS[grp]
 
   const data = (() => {
     if (grp === "fidelite" && fidSub === "musiciens") return filterByTri(fidM, tri)
@@ -64,7 +66,8 @@ export default function GroupesPage() {
           <button
             key={g}
             onClick={() => { setGrp(g); if (g !== "fidelite") setFidSub("groupe") }}
-            className={`flex-1 py-2 px-3 rounded-xl border text-xs font-semibold transition-all duration-150 cursor-pointer ${grp === g ? GRP_ACTIVE[g] : GRP_INACTIVE}`}
+            className={`flex-1 py-2 px-3 rounded-xl border text-xs font-semibold transition-all duration-150 cursor-pointer ${grp === g ? "text-white border-transparent" : GRP_INACTIVE}`}
+            style={grp === g ? { background: GRP_COLORS[g], borderColor: GRP_COLORS[g] } : undefined}
           >
             {g === "fidelite" ? "Fidélité" : g.charAt(0).toUpperCase() + g.slice(1)}
           </button>
@@ -79,9 +82,10 @@ export default function GroupesPage() {
               onClick={() => setFidSub(sub)}
               className={`flex-1 py-1.5 px-3 rounded-lg border text-xs font-semibold transition-all duration-150 cursor-pointer ${
                 fidSub === sub
-                  ? "bg-[#fde8e8] border-[#a03030] text-[#a03030]"
+                  ? "border-transparent"
                   : "bg-card border-border text-muted-foreground hover:text-foreground"
               }`}
+              style={fidSub === sub ? { background: `${color}15`, borderColor: color, color } : undefined}
             >
               {sub === "groupe" ? "Planning groupe" : "Planning musiciens 🎵"}
             </button>
@@ -89,17 +93,17 @@ export default function GroupesPage() {
         </div>
       )}
 
-      <FilterButtons options={["T1","T2","T3","T4"]} active={tri} onChange={setTri} />
+      <FilterButtons options={["T1","T2","T3","T4"]} active={tri} onChange={setTri} color={color} />
 
       <div className="flex items-center gap-2 text-xs text-muted-foreground">
-        <div className="w-3 h-3 rounded-sm bg-primary/15 border border-primary/30" />
+        <div className="w-3 h-3 rounded-sm" style={{ background: `${color}26`, border: `1px solid ${color}4d` }} />
         Dimanche de la semaine courante
       </div>
 
       <div className="overflow-x-auto rounded-xl border border-border">
         <table className="w-full text-sm border-collapse min-w-[480px]">
           <thead>
-            <tr className="bg-primary text-primary-foreground">
+            <tr style={{ background: color }} className="text-white">
               {cols.map(c => (
                 <th key={c} className="px-3 py-2.5 text-left text-[11px] font-semibold whitespace-nowrap">{c}</th>
               ))}
@@ -118,18 +122,20 @@ export default function GroupesPage() {
               return (
                 <Fragment key={row[0]}>
                   {showSep && (
-                    <tr className="bg-secondary">
-                      <td colSpan={cols.length} className="px-3 py-1.5 text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
+                    <tr style={{ background: `${color}15` }}>
+                      <td colSpan={cols.length} className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider" style={{ color }}>
                         {month}
                       </td>
                     </tr>
                   )}
-                  <tr className={`border-t border-border transition-colors ${isThis ? "bg-primary/10" : "hover:bg-secondary/50"}`}>
-                    <td className="w-[100px] px-3 py-2 font-semibold text-primary whitespace-nowrap">
+                  <tr
+                    className={`border-t border-border transition-colors ${!isThis ? "hover:bg-secondary/50" : ""}`}
+                    style={isThis ? { background: `${color}1a` } : undefined}
+                  >
+                    <td className="w-[100px] px-3 py-2 font-semibold whitespace-nowrap" style={{ color }}>
                       <div>{isThis ? (
-                        <span className="inline-block text-[9px] font-bold px-1.5 py-0.5 rounded bg-primary text-primary-foreground mt-0.5">Cette semaine</span>
+                        <span className="inline-block text-[9px] font-bold px-1.5 py-0.5 rounded text-white mt-0.5" style={{ background: color }}>Cette semaine</span>
                       ) : fdShort(row[0])}</div>
-                    
                     </td>
                     {row.slice(1).map((cell, ci) => (
                       <td key={ci} className="px-3 py-2 text-foreground">{cell || "—"}</td>
