@@ -22,6 +22,7 @@ export type SetlistItem = {
   useJianpu: boolean;
   structureOverride: string[] | null;
   sectionNotes: Record<string, string>;
+  sectionTransitions?: Record<string, string>;
   notes: string;
   fusionSongs?: FusionSong[];
   mixedStructure?: FusionMixedSection[] | null;
