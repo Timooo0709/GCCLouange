@@ -81,14 +81,16 @@ interface SongDetailClientProps {
       : defaultSectionsNote;
 
     useEffect(() => {
-      const structure: SectionItem[] = structureOverride.map((uid: string) => (
-        {
-          uid: uid,
-          sectionId: uid.replace(/-\d+$/,''),
-          name: ast.sections.find((s) => s.id=== uid.replace(/-\d+$/,''))?.name,
-          note: sectionsNote[uid]
-        }
-      ))
+      const structure: SectionItem[] = structureOverride.map((uid: string, index: number) => {
+        const sectionId = uid.replace(/-\d+$/, "");
+        const cleanUid = uid.match(/-\d+$/) ? uid : `${sectionId}-${index}`;
+        return {
+          uid: cleanUid,
+          sectionId,
+          name: ast.sections.find((s) => s.id === sectionId)?.name,
+          note: sectionsNote[cleanUid] ?? sectionsNote[uid] ?? sectionsNote[sectionId] ?? "",
+        };
+      });
       setCustomize(prev => ({...prev, structure: structure}))
     },[]);
 

@@ -72,7 +72,7 @@ function toFormItem(
   const allSections = song.sections ?? [];
   const orderedSections = structureOverride && structureOverride.length > 0
     ? structureOverride
-        .map((id) => allSections.find((s) => s.id === id))
+        .map((id) => allSections.find((s) => s.id === id || s.id === id.replace(/-\d+$/, '')))
         .filter((s): s is SectionSummary => s !== undefined)
     : allSections;
   const occ: Record<string, number> = {};

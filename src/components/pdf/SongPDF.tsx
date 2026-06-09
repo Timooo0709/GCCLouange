@@ -570,7 +570,10 @@ export function SongPDFPage({
 
   const sections: ChordProSection[] = (!canUseJianpu && structureOverride && structureOverride.length > 0)
     ? structureOverride
-        .map((id) => ast.sections.find((s) => s.id === id))
+        .map((uid) => {
+          const section = ast.sections.find((s) => s.id === uid || s.id === uid.replace(/-\d+$/, ''));
+          return section ? { ...section, uid } : undefined;
+        })
         .filter((s): s is ChordProSection => s !== undefined)
     : ast.sections;
 
@@ -629,31 +632,25 @@ export function SongPDFPage({
       <OrdreLine sections={sections} theme={theme} uiLang={uiLang} isZh={isZh} />
 
       {/* ── Sections ── */}
-      {(() => {
-        const occ: Record<string, number> = {};
-        return sections.flatMap((section, i) => {
-          const idx = occ[section.id] ?? 0;
-          occ[section.id] = idx + 1;
-          const key = idx === 0 ? section.id : `${section.id}:${idx}`;
-          const note = sectionNotes[key] ?? sectionNotes[section.id];
-          const transition = sectionTransitions[key] ?? sectionTransitions[section.id];
-          const items = [
-            <SectionBlock
-              key={`${section.id}-${i}`}
-              section={section}
-              isZh={isZh}
-              useJianpu={canUseJianpu}
-              showChords={showChords}
-              showPinyin={isZh ? showPinyin : false}
-              note={note}
-              theme={theme}
-              uiLang={uiLang}
-            />,
-          ];
-          if (transition) items.push(<TransitionPDFBlock key={`tr-${section.id}-${i}`} text={transition} />);
-          return items;
-        });
-      })()}
+      {sections.flatMap((section, i) => {
+        const note = sectionNotes[section.uid] ?? sectionNotes[section.id];
+        const transition = sectionTransitions[section.uid] ?? sectionTransitions[section.id];
+        const items = [
+          <SectionBlock
+            key={`${section.uid ?? section.id}-${i}`}
+            section={section}
+            isZh={isZh}
+            useJianpu={canUseJianpu}
+            showChords={showChords}
+            showPinyin={isZh ? showPinyin : false}
+            note={note}
+            theme={theme}
+            uiLang={uiLang}
+          />,
+        ];
+        if (transition) items.push(<TransitionPDFBlock key={`tr-${section.uid ?? section.id}-${i}`} text={transition} />);
+        return items;
+      })}
 
       {/* ── Footer ── */}
       <View style={styles.footer} fixed>

@@ -360,7 +360,10 @@ export function SongView({
   const sections =
     structureOverride && structureOverride.length > 0 && !canUseJianpu
       ? structureOverride
-          .map((id) => ast.sections.find((s) => s.id === id))
+          .map((uid) => {
+            const section = ast.sections.find((s) => s.id === uid || s.id === uid.replace(/-\d+$/, ''));
+            return section ? { ...section, uid } : undefined;
+          })
           .filter((s): s is ChordProSection => s !== undefined)
       : ast.sections;
   return (
@@ -425,29 +428,23 @@ export function SongView({
 
       {/* Corps */}
       <div>
-        {(() => {
-          const occ: Record<string, number> = {};
-          return sections.map((section, i) => {
-            const idx = occ[section.id] ?? 0;
-            occ[section.id] = idx + 1;
-            const key = idx === 0 ? section.id : `${section.id}:${idx}`;
-            const note = sectionNotes[key] ?? sectionNotes[section.id];
-            const transition = sectionTransitions?.[key] ?? sectionTransitions?.[section.id];
-            return (
-              <div key={`${section.id}-${i}`}>
-                <SectionView
-                  section={section}
-                  language={ast.metadata.language}
-                  showChords={showChords}
-                  showPinyin={isZh ? showPinyin : false}
-                  useJianpu={canUseJianpu}
-                  note={note}
-                />
-                {transition && <TransitionNote text={transition} />}
-              </div>
-            );
-          });
-        })()}
+        {sections.map((section, i) => {
+          const note = sectionNotes[section.uid] ?? sectionNotes[section.id];
+          const transition = sectionTransitions?.[section.uid] ?? sectionTransitions?.[section.id];
+          return (
+            <div key={`${section.uid ?? section.id}-${i}`}>
+              <SectionView
+                section={section}
+                language={ast.metadata.language}
+                showChords={showChords}
+                showPinyin={isZh ? showPinyin : false}
+                useJianpu={canUseJianpu}
+                note={note}
+              />
+              {transition && <TransitionNote text={transition} />}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
