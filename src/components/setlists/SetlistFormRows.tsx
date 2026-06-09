@@ -134,12 +134,13 @@ export function SectionStructureEditor({
           <button
             key={s.id}
             type="button"
-            onClick={() =>
+            onClick={() => {
+              const uid = `${s.id}-${Date.now()}${Math.floor(Math.random() * 1000)}`;
               onChange([
                 ...sectionItems,
-                { uid: nextUid(), sectionId: s.id, name: s.name, note: "", transition: "" },
-              ])
-            }
+                { uid, sectionId: s.id, name: s.name, note: "", transition: "" },
+              ]);
+            }}
             className="flex items-center gap-0.5 text-[11px] px-2 py-0.5 rounded border border-border hover:bg-muted text-foreground transition-colors"
           >
             <Plus className="h-2.5 w-2.5" />

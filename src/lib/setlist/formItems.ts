@@ -72,7 +72,12 @@ function toFormItem(
   const allSections = song.sections ?? [];
   const orderedSections = structureOverride && structureOverride.length > 0
     ? structureOverride
-        .map((id) => allSections.find((s) => s.id === id || s.id === id.replace(/-\d+$/, '')))
+        .map((uid, index) => {
+          const sectionId = uid.replace(/-\d+$/, "");
+          const section = allSections.find((s) => s.id === uid || s.id === sectionId);
+          const cleanUid = uid.match(/-\d+$/) ? uid : `${sectionId}-${index}`;
+          return section ? { ...section, uid: cleanUid } : undefined;
+        })
         .filter((s): s is SectionSummary => s !== undefined)
     : allSections;
   const occ: Record<string, number> = {};
@@ -81,16 +86,17 @@ function toFormItem(
     song,
     keyOverride,
     notes,
-    sectionItems: orderedSections.map((s) => {
+    sectionItems: orderedSections.map((s, index) => {
+      const uid = s.uid ?? `${s.id}-${index}`;
       const idx = occ[s.id] ?? 0;
       occ[s.id] = idx + 1;
       const key = idx === 0 ? s.id : `${s.id}:${idx}`;
       return {
-        uid: nextUid(),
+        uid,
         sectionId: s.id,
         name: s.name || s.type,
-        note: sectionNotes?.[key] ?? sectionNotes?.[s.id] ?? "",
-        transition: sectionTransitions?.[key] ?? sectionTransitions?.[s.id] ?? "",
+        note: sectionNotes?.[uid] ?? sectionNotes?.[key] ?? sectionNotes?.[s.id] ?? "",
+        transition: sectionTransitions?.[uid] ?? sectionTransitions?.[key] ?? sectionTransitions?.[s.id] ?? "",
       };
     }),
   };
