@@ -44,7 +44,6 @@ export function SortableSectionRow({
   const { t } = useTranslation();
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } =
     useSortable({ id: item.uid });
-
   return (
     <div
       ref={setNodeRef}
@@ -100,7 +99,6 @@ export function SectionStructureEditor({
 }) {
   const { t } = useTranslation();
   const sensors = useDefaultSensors();
-
   function handleDragEnd(e: DragEndEvent) {
     const { active, over } = e;
     if (!over || active.id === over.id) return;
@@ -115,14 +113,14 @@ export function SectionStructureEditor({
         {t("setlists.form.structure")}
       </p>
       <div className="flex flex-wrap gap-1">
-        {allSections.map((s,index) => (
+        {allSections.map((s) => (
           <button
             key={s.id}
             type="button"
             onClick={() =>
               onChange([
                 ...sectionItems,
-                { uid: `${s.id}-${index}`, sectionId: s.id, name: s.name, note: "" },
+                { uid: `${s.id}-${sectionItems.length}`, sectionId: s.id, name: s.name, note: "" },
               ])
             }
             className="flex items-center gap-0.5 text-[11px] px-2 py-0.5 rounded border border-border hover:bg-muted text-foreground transition-colors"
@@ -346,7 +344,6 @@ export function SongRow({
   const { t } = useTranslation();
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } =
     useSortable({ id: item.uid });
-
   const [showStructure, setShowStructure] = useState(false);
   const allSections = item.song.sections ?? [];
   const originalCount = allSections.length;
@@ -354,7 +351,6 @@ export function SongRow({
   const isModified =
     currentCount !== originalCount ||
     item.sectionItems.some((si, i) => si.sectionId !== allSections[i]?.id);
-
   return (
     <div
       ref={setNodeRef}

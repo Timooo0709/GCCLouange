@@ -68,7 +68,7 @@ function toFormItem(
   const allSections = song.sections ?? [];
   const orderedSections = structureOverride && structureOverride.length > 0
     ? structureOverride
-        .map((id) => allSections.find((s) => s.id === id))
+        .map((id) => allSections.find((s) => s.id === id.replace(/-\d+$/,'')))
         .filter((s): s is SectionSummary => s !== undefined)
     : allSections;
   return {
@@ -76,11 +76,11 @@ function toFormItem(
     song,
     keyOverride,
     notes,
-    sectionItems: orderedSections.map((s) => ({
-      uid: nextUid(),
+    sectionItems: orderedSections.map((s,index) => ({
+      uid: `${s.id}-${index}`,
       sectionId: s.id,
       name: s.name || s.type,
-      note: sectionNotes?.[s.id] ?? "",
+      note: sectionNotes?.[`${s.id}-${index}`] ?? "",
     })),
   };
 }
@@ -126,6 +126,7 @@ export function buildFormItems(
       }
 
       const song = songsMap[item.songSlug];
+      console.log("items",items)
       if (!song) return [];
       return [toFormItem(song, item.keyOverride, item.notes, item.structureOverride, item.sectionNotes)];
     });

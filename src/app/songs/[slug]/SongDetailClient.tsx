@@ -104,8 +104,6 @@ interface SongDetailClientProps {
       () => transposeAST(ast, customize.semitones, customize.currentKey),
       [ast, customize.semitones, customize.currentKey]
     );
-    console.log('custom', customize)
-    console.log('displayedAST', displayedAST)
     async function handleDownload() {
       setDownloading(true);
       try {

@@ -78,7 +78,7 @@ export function EditSetlistClient() {
       setItems(buildFormItems(setlist.items, songsMap));
     }).finally(() => setLoadingData(false));
   }, [id, router]);
-
+  
   const addedSlugs = useMemo(() => {
     const slugs = new Set<string>();
     for (const item of items) {
