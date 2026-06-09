@@ -3,6 +3,7 @@ import {
 } from "@react-pdf/renderer";
 import type { ChordProAST, ChordProSection, Token } from "@/types/chordPro";
 import { formatSectionName } from "@/lib/chordpro/parser";
+import { resolveStructureOverride } from "@/lib/chordpro/structure";
 import frTranslations from "@/locales/fr.json";
 import zhTranslations from "@/locales/zh-CN.json";
 
@@ -569,14 +570,7 @@ export function SongPDFPage({
   const displayKey = canUseJianpu ? (jianpuKey ?? `1=${key}`) : key;
 
   const sections: ChordProSection[] = (!canUseJianpu && structureOverride && structureOverride.length > 0)
-    ? structureOverride
-        .map((uid, index) => {
-          const sectionId = uid.replace(/-\d+$/, "");
-          const section = ast.sections.find((s) => s.id === uid || s.id === sectionId);
-          const cleanUid = uid.match(/-\d+$/) ? uid : `${sectionId}-${index}`;
-          return section ? { ...section, uid: cleanUid } : undefined;
-        })
-        .filter((s): s is ChordProSection => s !== undefined)
+    ? resolveStructureOverride(ast.sections, structureOverride)
     : ast.sections;
 
   const titleFont = isZh ? "KaiTi" : "SpaceGrotesk";

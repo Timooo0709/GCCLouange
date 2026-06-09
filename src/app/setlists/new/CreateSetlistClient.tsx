@@ -86,7 +86,8 @@ export function CreateSetlistClient() {
           language,
           notes: notes.trim(),
           items: setlistItems,
-          isDraft: false,
+          // Brouillon invisible dans les listes tant que l'utilisateur n'a pas cliqué « Créer »
+          isDraft: true,
           isPrivate,
           ownerId: isPrivate ? (user?.uid ?? null) : null,
         };
@@ -223,6 +224,7 @@ export function CreateSetlistClient() {
   const doCreate = useCallback(async () => {
     setError("");
     if (!title.trim()) { setError(t("setlists.form.titleRequired")); return; }
+    if (!date) { setError(t("setlists.form.dateRequired")); return; }
     if (!leader.trim()) { setError(t("setlists.form.leaderRequired")); return; }
     if (!category) { setError(t("setlists.form.categoryRequired")); return; }
     if ((isPrivate || isRestricted(category)) && !user) {

@@ -5,6 +5,7 @@ import { JianpuLine } from "@/components/song/JianpuLine";
 import type { ChordProAST, ChordProSection, Token } from "@/types/chordPro";
 import { useTranslation } from "react-i18next";
 import { formatSectionName } from "@/lib/chordpro/parser";
+import { resolveStructureOverride } from "@/lib/chordpro/structure";
 import { MessageSquare } from "lucide-react";
 
 // ---------------------------------------------------------------------------
@@ -359,14 +360,7 @@ export function SongView({
   const langAccent = isZh ? "var(--jianpu-color)" : "var(--chord-color)";
   const sections =
     structureOverride && structureOverride.length > 0 && !canUseJianpu
-      ? structureOverride
-          .map((uid, index) => {
-            const sectionId = uid.replace(/-\d+$/, "");
-            const section = ast.sections.find((s) => s.id === uid || s.id === sectionId);
-            const cleanUid = uid.match(/-\d+$/) ? uid : `${sectionId}-${index}`;
-            return section ? { ...section, uid: cleanUid } : undefined;
-          })
-          .filter((s): s is ChordProSection => s !== undefined)
+      ? resolveStructureOverride(ast.sections, structureOverride)
       : ast.sections;
   return (
     <div className="max-w-2xl print:max-w-none">

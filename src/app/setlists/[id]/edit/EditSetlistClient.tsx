@@ -210,6 +210,7 @@ export function EditSetlistClient() {
   async function doUpdate() {
     setError("");
     if (!title.trim()) { setError(t("setlists.form.titleRequired")); return; }
+    if (!date) { setError(t("setlists.form.dateRequired")); return; }
     if (!leader.trim()) { setError(t("setlists.form.leaderRequired")); return; }
     if (!category) { setError(t("setlists.form.categoryRequired")); return; }
     if (isRestricted(category) && !user) {

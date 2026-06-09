@@ -112,6 +112,7 @@
       "infoSection": "基本信息",
       "titleLabel": "歌单名称",
       "dateLabel": "领会日期",
+      "dateRequired": "请选择日期。",
       "titleRequired": "歌单名称不能为空。",
       "titlePlaceholder": "例如：5月25日主日崇拜",
       "leaderLabel": "主席",

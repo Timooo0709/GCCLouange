@@ -153,7 +153,7 @@ export async function getSetlists(): Promise<FSSetlist[]> {
   return rows
     .filter((r) => r.document)
     .map((r) => fromFsDoc(r.document!))
-    .filter((s) => !s.isPrivate);
+    .filter((s) => !s.isPrivate && !s.isDraft);
 }
 
 export async function getMySetlists(uid: string): Promise<FSSetlist[]> {
@@ -181,7 +181,7 @@ export async function getMySetlists(uid: string): Promise<FSSetlist[]> {
   return rows
     .filter((r) => r.document)
     .map((r) => fromFsDoc(r.document!))
-    .filter((s) => s.isPrivate === true)
+    .filter((s) => s.isPrivate === true && !s.isDraft)
     .sort((a, b) => {
       const aTs = a.createdAt?.toMillis() ?? 0;
       const bTs = b.createdAt?.toMillis() ?? 0;

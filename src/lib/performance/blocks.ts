@@ -3,6 +3,7 @@ import type { ChordProSection, ChordProAST } from "@/types/chordPro";
 import type { SongContent } from "@/lib/utils/fetchSongContent";
 import { transposeAST } from "@/lib/transposeAST";
 import { semitonesTo } from "@/lib/transpose";
+import { resolveStructureOverride } from "@/lib/chordpro/structure";
 
 export type SongHeaderBlock = {
   kind: "song-header";
@@ -12,6 +13,9 @@ export type SongHeaderBlock = {
   artist: string;
   songKey: string;
   position: number;
+  language?: "fr" | "zh";
+  /** Fusion en structure mixte : titres + tonalités des chants fusionnés */
+  fusionSongs?: { title: string; key: string; language: "fr" | "zh" }[];
 };
 
 export type SectionBlock = {
@@ -53,13 +57,7 @@ function getTransposed(content: SongContent, keyOverride: string | null): ChordP
 
 function resolveSections(ast: ChordProAST, structureOverride: string[] | null): ChordProSection[] {
   if (!structureOverride?.length) return ast.sections;
-  return structureOverride.flatMap((ov, idx) => {
-    const baseId = ov.replace(/-\d+$/, "");
-    const s = ast.sections.find((s) => s.uid === ov || s.id === ov || s.id === baseId);
-    if (!s) return [];
-    const cleanUid = ov.match(/-\d+$/) ? ov : `${baseId}-${idx}`;
-    return [{ ...s, uid: cleanUid }];
-  });
+  return resolveStructureOverride(ast.sections, structureOverride);
 }
 
 export function buildPerformanceBlocks(
@@ -88,6 +86,27 @@ export function buildPerformanceBlocks(
 
       if (item.mixedStructure?.length) {
         const multiSong = item.fusionSongs.length > 1;
+        const fusionMeta = item.fusionSongs.flatMap((fs) => {
+          const ast = asts[fs.songSlug];
+          return ast
+            ? [{
+                title: ast.metadata.title,
+                key: fs.keyOverride ?? ast.metadata.key,
+                language: ast.metadata.language,
+              }]
+            : [];
+        });
+        if (fusionMeta.length > 0) {
+          blocks.push({
+            kind: "song-header",
+            uid: uid(),
+            title: fusionMeta.map((m) => m.title).join(" + "),
+            artist: "",
+            songKey: fusionMeta.map((m) => m.key).join(" / "),
+            position: item.position,
+            fusionSongs: fusionMeta,
+          });
+        }
         for (const ms of item.mixedStructure) {
           const ast = asts[ms.songSlug];
           if (!ast) continue;
@@ -122,6 +141,7 @@ export function buildPerformanceBlocks(
             artist: ast.metadata.artist,
             songKey: fs.keyOverride ?? ast.metadata.key,
             position: item.position,
+            language: ast.metadata.language,
           });
           for (const sec of resolveSections(ast, fs.structureOverride)) {
             blocks.push({
@@ -154,6 +174,7 @@ export function buildPerformanceBlocks(
       artist: ast.metadata.artist,
       songKey: item.keyOverride ?? ast.metadata.key,
       position: item.position,
+      language: ast.metadata.language,
     });
     const occ: Record<string, number> = {};
 
@@ -186,7 +207,11 @@ export function buildPerformanceBlocks(
   return blocks;
 }
 
-export function computePageKey(blocks: PerformanceBlock[], indices: number[]): string {
+export function computePageKey(
+  blocks: PerformanceBlock[],
+  indices: number[],
+  layoutSig = "",
+): string {
   const uids = indices
     .map((i) => blocks[i])
     .filter((b): b is SectionBlock => b.kind === "section")
@@ -196,5 +221,6 @@ export function computePageKey(blocks: PerformanceBlock[], indices: number[]): s
   for (let i = 0; i < str.length; i++) {
     h = (Math.imul(31, h) + str.charCodeAt(i)) | 0;
   }
-  return (h >>> 0).toString(36);
+  const base = (h >>> 0).toString(36);
+  return layoutSig ? `${base}-${layoutSig}` : base;
 }

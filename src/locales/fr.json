@@ -112,6 +112,7 @@
       "infoSection": "Informations",
       "titleLabel": "Titre",
       "dateLabel": "Date de la présidence",
+      "dateRequired": "La date est obligatoire.",
       "titleRequired": "Le titre est obligatoire.",
       "titlePlaceholder": "ex. Culte du 25 mai",
       "leaderLabel": "Présidence",

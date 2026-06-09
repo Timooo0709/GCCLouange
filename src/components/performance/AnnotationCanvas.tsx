@@ -23,6 +23,8 @@ export const AnnotationCanvas = forwardRef<AnnotationCanvasHandle, Props>(
     const [color, setColor] = useState(COLORS[0]);
     const drawing = useRef(false);
     const lastPos = useRef<{ x: number; y: number } | null>(null);
+    // Un seul trait à la fois : on ignore les pointeurs supplémentaires (paume, 2e doigt)
+    const activePointer = useRef<number | null>(null);
 
     useImperativeHandle(ref, () => ({
       getDataURL: () => {
@@ -89,8 +91,11 @@ export const AnnotationCanvas = forwardRef<AnnotationCanvasHandle, Props>(
     }
 
     function onPointerDown(e: React.PointerEvent) {
-      if (e.pointerType !== "pen") return;
+      // Doigt, stylet ou souris — mais un seul pointeur actif à la fois
+      if (activePointer.current !== null) return;
       e.preventDefault();
+      e.stopPropagation();
+      activePointer.current = e.pointerId;
       drawing.current = true;
       lastPos.current = { x: e.clientX, y: e.clientY };
       (e.target as HTMLElement).setPointerCapture(e.pointerId);
@@ -102,7 +107,7 @@ export const AnnotationCanvas = forwardRef<AnnotationCanvasHandle, Props>(
     }
 
     function onPointerMove(e: React.PointerEvent) {
-      if (!drawing.current || e.pointerType !== "pen" || !lastPos.current) return;
+      if (!drawing.current || e.pointerId !== activePointer.current || !lastPos.current) return;
       e.preventDefault();
       const ctx = canvasRef.current?.getContext("2d");
       if (!ctx) return;
@@ -115,7 +120,9 @@ export const AnnotationCanvas = forwardRef<AnnotationCanvasHandle, Props>(
     }
 
     function onPointerUp(e: React.PointerEvent) {
-      if (e.pointerType !== "pen") return;
+      if (e.pointerId !== activePointer.current) return;
+      e.stopPropagation();
+      activePointer.current = null;
       drawing.current = false;
       lastPos.current = null;
       onSave?.();

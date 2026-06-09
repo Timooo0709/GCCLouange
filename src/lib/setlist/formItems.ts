@@ -1,4 +1,5 @@
 import { nextUid } from "@/lib/uid";
+import { resolveStructureOverride } from "@/lib/chordpro/structure";
 import type { SetlistItem } from "@/types/setList";
 import type { SongIndexEntry, SectionSummary } from "@/types/song";
 
@@ -70,15 +71,8 @@ function toFormItem(
   sectionTransitions: Record<string, string> = {}
 ): FormItem {
   const allSections = song.sections ?? [];
-  const orderedSections = structureOverride && structureOverride.length > 0
-    ? structureOverride
-        .map((uid, index) => {
-          const sectionId = uid.replace(/-\d+$/, "");
-          const section = allSections.find((s) => s.id === uid || s.id === sectionId);
-          const cleanUid = uid.match(/-\d+$/) ? uid : `${sectionId}-${index}`;
-          return section ? { ...section, uid: cleanUid } : undefined;
-        })
-        .filter((s): s is SectionSummary => s !== undefined)
+  const orderedSections: SectionSummary[] = structureOverride && structureOverride.length > 0
+    ? resolveStructureOverride(allSections, structureOverride)
     : allSections;
   const occ: Record<string, number> = {};
   return {

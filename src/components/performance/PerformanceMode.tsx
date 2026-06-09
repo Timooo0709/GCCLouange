@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
-import { X, ChevronLeft, ChevronRight, Link2, MessageSquare } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Link2, MessageSquare, ListMusic } from "lucide-react";
 import type { PerformanceBlock, SectionBlock, SongHeaderBlock } from "@/lib/performance/blocks";
 import { buildPerformanceBlocks, computePageKey } from "@/lib/performance/blocks";
 import { SectionView, TransitionNote } from "@/components/song/SongView";
@@ -71,7 +71,36 @@ function BlockRenderer({
   );
 }
 
+const langAccent = (language?: "fr" | "zh") =>
+  language === "zh" ? "var(--jianpu-color, #b91c1c)" : "var(--chord-color, #2563eb)";
+
 function SongHeader({ block }: { block: SongHeaderBlock }) {
+  if (block.fusionSongs?.length) {
+    return (
+      <div className="flex items-start gap-2 mb-3 pb-3 border-b border-border">
+        <span className="w-5 h-5 rounded-full bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">
+          {block.position}
+        </span>
+        <Link2 className="h-3.5 w-3.5 text-primary shrink-0 mt-1" />
+        <div className="flex flex-wrap gap-x-3 gap-y-0.5 min-w-0">
+          {block.fusionSongs.map((s, i) => (
+            <span
+              key={i}
+              className="text-[17px] font-bold text-foreground leading-tight uppercase tracking-tight"
+            >
+              {s.title}
+              <span
+                className="ml-1.5 font-mono text-xs font-normal normal-case"
+                style={{ color: langAccent(s.language) }}
+              >
+                {s.key}
+              </span>
+            </span>
+          ))}
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="flex items-start justify-between gap-4 mb-3 pb-3 border-b border-border">
       <div className="min-w-0">
@@ -89,7 +118,7 @@ function SongHeader({ block }: { block: SongHeaderBlock }) {
         <p className="text-xs text-muted-foreground mt-0.5 ml-7">{block.artist}</p>
       </div>
       <span className="text-sm font-bold font-mono shrink-0 border-2 rounded-full px-2.5 py-0.5 mt-1"
-        style={{ color: "var(--chord-color, #2563eb)", borderColor: "var(--chord-color, #2563eb)" }}>
+        style={{ color: langAccent(block.language), borderColor: langAccent(block.language) }}>
         {block.songKey}
       </span>
     </div>
@@ -98,23 +127,31 @@ function SongHeader({ block }: { block: SongHeaderBlock }) {
 
 // ─── Greedy pagination ────────────────────────────────────────────────────────
 
-function paginateBlocks(heights: number[], viewportH: number): number[][] {
-  const pages: number[][] = [[]];
+// Chaque chant commence sur une nouvelle page (breakBefore = indices des
+// en-têtes de chant) ; à l'intérieur d'un chant, remplissage glouton.
+function paginateBlocks(heights: number[], viewportH: number, breakBefore: Set<number>): number[][] {
+  const pages: number[][] = [];
+  let current: number[] = [];
   let used = 0;
   for (let i = 0; i < heights.length; i++) {
     const h = heights[i];
-    if (pages[pages.length - 1].length === 0 || used + h <= viewportH) {
-      pages[pages.length - 1].push(i);
-      used += h;
-    } else {
-      pages.push([i]);
-      used = h;
+    const mustBreak = breakBefore.has(i) && current.length > 0;
+    if (mustBreak || (current.length > 0 && used + h > viewportH)) {
+      pages.push(current);
+      current = [];
+      used = 0;
     }
+    current.push(i);
+    used += h;
   }
-  return pages;
+  if (current.length > 0) pages.push(current);
+  return pages.length > 0 ? pages : [[]];
 }
 
 // ─── Main component ───────────────────────────────────────────────────────────
+
+const MIN_SCALE = 0.8;
+const MAX_SCALE = 1.5;
 
 export interface PerformanceModeProps {
   items: SetlistItem[];
@@ -138,9 +175,18 @@ export function PerformanceMode({
   const [showTransitions, setShowTransitions] = useState(true);
   const [annotateMode, setAnnotateMode] = useState(false);
   const [showChrome, setShowChrome] = useState(true);
+  const [songListOpen, setSongListOpen] = useState(false);
   const [pages, setPages] = useState<number[][]>([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [remeasureKey, setRemeasureKey] = useState(0);
+  const [fontScale, setFontScale] = useState(() => {
+    try {
+      const v = parseFloat(localStorage.getItem("perf-font-scale") ?? "1");
+      return v >= MIN_SCALE && v <= MAX_SCALE ? v : 1;
+    } catch {
+      return 1;
+    }
+  });
 
   const blockRefs = useRef<(HTMLDivElement | null)[]>([]);
   const chromeTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
@@ -155,10 +201,10 @@ export function PerformanceMode({
     [items, contents],
   );
 
-  // Re-measure when showChords or showTransitions changes (affects heights)
+  // Re-measure when a setting affecting heights changes
   useEffect(() => {
     setRemeasureKey((k) => k + 1);
-  }, [showChords, showTransitions]);
+  }, [showChords, showTransitions, fontScale]);
 
   // Re-measure on viewport resize / orientation change
   useEffect(() => {
@@ -171,14 +217,36 @@ export function PerformanceMode({
   useEffect(() => {
     const run = async () => {
       await document.fonts.ready;
-      const viewportH = window.innerHeight;
-      const heights = blockRefs.current.map((el) => el?.getBoundingClientRect().height ?? 0);
-      const computed = paginateBlocks(heights, viewportH);
+      // py-4 du conteneur de contenu (16px haut + bas, mis à l'échelle par le zoom),
+      // plus une marge de sécurité pour la marge haute du 1er bloc d'une page
+      // (comptée dans le delta du bloc précédent lors de la mesure).
+      const safety = 24 * fontScale;
+      const viewportH = window.innerHeight - 32 * fontScale - safety;
+      // Hauteur réellement occupée par chaque bloc, marges verticales comprises :
+      // delta entre le haut du bloc et le haut du bloc suivant dans le flux.
+      const rects = blocks.map((_, i) => blockRefs.current[i]?.getBoundingClientRect() ?? null);
+      const heights = rects.map((r, i) => {
+        if (!r) return 0;
+        const next = rects[i + 1];
+        return next ? Math.max(0, next.top - r.top) : r.height;
+      });
+      const breakBefore = new Set(
+        blocks.flatMap((b, i) => (b.kind === "song-header" ? [i] : [])),
+      );
+      const computed = paginateBlocks(heights, viewportH, breakBefore);
       setPages(computed);
       setCurrentPage((prev) => Math.min(prev, Math.max(0, computed.length - 1)));
     };
     run();
-  }, [blocks, remeasureKey]);
+  }, [blocks, remeasureKey, fontScale]);
+
+  const changeFontScale = useCallback((delta: number) => {
+    setFontScale((s) => {
+      const next = Math.min(MAX_SCALE, Math.max(MIN_SCALE, Math.round((s + delta) * 10) / 10));
+      try { localStorage.setItem("perf-font-scale", String(next)); } catch { /* privé */ }
+      return next;
+    });
+  }, []);
 
   // Wake lock
   useEffect(() => {
@@ -200,11 +268,16 @@ export function PerformanceMode({
     };
   }, []);
 
-  // Chrome auto-hide
+  // Chrome auto-hide (reste visible tant que le mode annotation est actif)
+  const annotateModeRef = useRef(annotateMode);
+  annotateModeRef.current = annotateMode;
+
   const showChromeWithTimer = useCallback(() => {
     setShowChrome(true);
     clearTimeout(chromeTimer.current);
-    chromeTimer.current = setTimeout(() => setShowChrome(false), 3000);
+    chromeTimer.current = setTimeout(() => {
+      if (!annotateModeRef.current) setShowChrome(false);
+    }, 3000);
   }, []);
 
   useEffect(() => {
@@ -212,10 +285,22 @@ export function PerformanceMode({
     return () => clearTimeout(chromeTimer.current);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  useEffect(() => {
+    if (annotateMode) {
+      setShowChrome(true);
+      clearTimeout(chromeTimer.current);
+    } else {
+      showChromeWithTimer();
+    }
+  }, [annotateMode, showChromeWithTimer]);
+
   // ── Annotation persistence ──────────────────────────────────────────────────
 
   const currentPageIndices = pages[currentPage] ?? [];
-  const currentPageKey = computePageKey(blocks, currentPageIndices);
+  // Les annotations sont liées à la mise en page : accords, transitions et
+  // taille de texte font partie de la clé.
+  const layoutSig = `c${showChords ? 1 : 0}t${showTransitions ? 1 : 0}z${Math.round(fontScale * 100)}`;
+  const currentPageKey = computePageKey(blocks, currentPageIndices, layoutSig);
 
   const saveAnnotations = useCallback(async (pgKey: string) => {
     if (!user || !pgKey || !canvasRef.current) return;
@@ -247,6 +332,24 @@ export function PerformanceMode({
   useEffect(() => {
     prevPageKey.current = currentPageKey;
   });
+
+  // Keyboard navigation (flèches, PageUp/Down — pédales Bluetooth, Échap pour quitter)
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      if (e.key === "ArrowLeft" || e.key === "PageUp") {
+        e.preventDefault();
+        goToPage(currentPage - 1, pages.length);
+      } else if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " ") {
+        e.preventDefault();
+        goToPage(currentPage + 1, pages.length);
+      } else if (e.key === "Escape") {
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [currentPage, pages.length, goToPage, onClose]);
 
   // Touch/pointer tap handling
   const handlePointerDown = useCallback((e: React.PointerEvent) => {
@@ -282,6 +385,17 @@ export function PerformanceMode({
     .map((i) => blocks[i])
     .find((b): b is SectionBlock => b.kind === "section");
 
+  // Sommaire : un en-tête de chant par entrée, avec sa page de départ
+  const songEntries = useMemo(
+    () => blocks.flatMap((b, i) => (b.kind === "song-header" ? [{ block: b, index: i }] : [])),
+    [blocks],
+  );
+  const firstBlockIdx = currentPageIndices[0] ?? 0;
+  const currentSongEntryIdx = songEntries.reduce(
+    (acc, e, i) => (e.index <= firstBlockIdx ? i : acc),
+    0,
+  );
+
   return (
     <div
       className="fixed inset-0 z-[9999] bg-background overflow-hidden select-none"
@@ -294,7 +408,7 @@ export function PerformanceMode({
         style={{ opacity: 0, zIndex: -1 }}
         aria-hidden="true"
       >
-        <div className="px-6 py-4">
+        <div className="px-6 py-4" style={{ zoom: fontScale }}>
           {blocks.map((block, i) => (
             <div
               key={block.uid}
@@ -311,7 +425,7 @@ export function PerformanceMode({
       </div>
 
       {/* ── Content area ── */}
-      <div className="absolute inset-0 overflow-hidden px-6 py-4" style={{ zIndex: 1 }}>
+      <div className="absolute inset-0 overflow-hidden px-6 py-4" style={{ zIndex: 1, zoom: fontScale }}>
         {pages.length === 0 ? (
           <div className="h-full flex items-center justify-center">
             <p className="text-sm text-muted-foreground animate-pulse">Mise en page…</p>
@@ -334,6 +448,50 @@ export function PerformanceMode({
           ref={canvasRef}
           onSave={() => saveAnnotations(currentPageKey)}
         />
+      )}
+
+      {/* ── Sommaire des chants ── */}
+      {songListOpen && (
+        <div
+          className="absolute inset-0"
+          style={{ zIndex: 30 }}
+          onPointerDown={(e) => e.stopPropagation()}
+          onPointerUp={(e) => e.stopPropagation()}
+        >
+          <div className="absolute inset-0 bg-black/30" onClick={() => setSongListOpen(false)} />
+          <div className="absolute left-0 top-0 bottom-0 w-72 max-w-[80vw] bg-background border-r border-border shadow-xl overflow-y-auto py-3 animate-in slide-in-from-left duration-200">
+            <p className="px-4 pb-2 text-xs font-bold uppercase tracking-widest text-muted-foreground truncate">
+              {setlistTitle}
+            </p>
+            {songEntries.map(({ block, index }, i) => {
+              const page = pages.findIndex((p) => p.includes(index));
+              const isCurrent = i === currentSongEntryIdx;
+              return (
+                <button
+                  key={block.uid}
+                  onClick={() => {
+                    if (page >= 0) goToPage(page, pages.length);
+                    setSongListOpen(false);
+                  }}
+                  className={`w-full flex items-center gap-2.5 px-4 py-2.5 text-left transition-colors ${
+                    isCurrent ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted/50"
+                  }`}
+                >
+                  <span className="w-5 h-5 rounded-full bg-muted text-muted-foreground text-[10px] font-bold flex items-center justify-center shrink-0">
+                    {block.position}
+                  </span>
+                  <span className="flex-1 min-w-0">
+                    <span className="block text-sm font-medium truncate">{block.title}</span>
+                    {block.titlePinyin && (
+                      <span className="block text-[11px] text-muted-foreground truncate">{block.titlePinyin}</span>
+                    )}
+                  </span>
+                  <span className="text-xs font-mono text-muted-foreground shrink-0">{block.songKey}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
       )}
 
       {/* ── Chrome (auto-hide overlay) ── */}
@@ -369,6 +527,15 @@ export function PerformanceMode({
           onPointerDown={(e) => e.stopPropagation()}
           onPointerUp={(e) => e.stopPropagation()}
         >
+          {/* Sommaire des chants */}
+          <button
+            onClick={() => setSongListOpen(true)}
+            className="h-8 w-8 flex items-center justify-center rounded-lg border border-border text-muted-foreground hover:text-foreground active:bg-muted"
+            aria-label="Liste des chants"
+          >
+            <ListMusic className="h-4 w-4" />
+          </button>
+
           {/* Toggle accords */}
           <ChromeBtn
             active={showChords}
@@ -395,6 +562,26 @@ export function PerformanceMode({
               Annoter
             </ChromeBtn>
           )}
+
+          {/* Taille du texte */}
+          <div className="flex items-center">
+            <button
+              onClick={() => changeFontScale(-0.1)}
+              disabled={fontScale <= MIN_SCALE}
+              className="h-8 w-8 flex items-center justify-center rounded-l-lg border border-border text-muted-foreground disabled:opacity-30 hover:text-foreground active:bg-muted text-[11px] font-bold"
+              aria-label="Réduire le texte"
+            >
+              A−
+            </button>
+            <button
+              onClick={() => changeFontScale(0.1)}
+              disabled={fontScale >= MAX_SCALE}
+              className="h-8 w-8 flex items-center justify-center rounded-r-lg border border-l-0 border-border text-muted-foreground disabled:opacity-30 hover:text-foreground active:bg-muted text-[13px] font-bold"
+              aria-label="Agrandir le texte"
+            >
+              A+
+            </button>
+          </div>
 
           {/* Spacer + navigation arrows */}
           <div className="ml-auto flex items-center gap-1">
