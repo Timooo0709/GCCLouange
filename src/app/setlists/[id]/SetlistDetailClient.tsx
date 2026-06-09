@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-import { Trash2, List, Music, Pencil, Play } from "lucide-react";
+import { Trash2, List, Music, Pencil, Play, MoreHorizontal, Download } from "lucide-react";
 import { getSetlist, deleteSetlist, isRestricted, type FSSetlist } from "@/lib/firebase/setlists";
 import { useAuth } from "@/lib/firebase/auth";
 import { useTranslation } from "react-i18next";
@@ -40,6 +40,26 @@ export function SetlistDetailClient() {
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [downloading, setDownloading] = useState(false);
   const [performanceMode, setPerformanceMode] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  // Fermer le menu ⋯ au clic/tap en dehors
+  useEffect(() => {
+    if (!menuOpen) return;
+    const handler = (e: MouseEvent | TouchEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+        setConfirmDelete(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    document.addEventListener("touchstart", handler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+      document.removeEventListener("touchstart", handler);
+    };
+  }, [menuOpen]);
+
   useEffect(() => {
     const saved = sessionStorage.getItem("lastListPath");
     if (saved && (saved.startsWith("/setlists?") || saved === "/setlists")) {
@@ -213,31 +233,24 @@ export function SetlistDetailClient() {
             </div>
 
             {/* Actions — poussées à droite */}
-            <div className="ml-auto flex items-center gap-1 flex-wrap justify-end">
+            <div className="ml-auto flex items-center gap-1.5 justify-end">
 
-              {/* Accords */}
-              <button
-                onClick={() => setShowChords((s) => !s)}
-                className={`h-8 px-2.5 rounded-[8px] border text-[12.5px] font-semibold flex items-center gap-1.5 transition-all duration-150 ${
-                  showChords
-                    ? "border-transparent bg-primary/10 text-primary"
-                    : "border-border bg-card text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/><path d="M9 18V5l12-2v13"/></svg>
-                <span className="hidden sm:inline">{t("songs.detail.chords")}</span>
-              </button>
+              {/* Accords (pertinent uniquement en vue partitions) */}
+              {view === "partitions" && (
+                <button
+                  onClick={() => setShowChords((s) => !s)}
+                  className={`h-8 px-2.5 rounded-[8px] border text-[12.5px] font-semibold flex items-center gap-1.5 transition-all duration-150 ${
+                    showChords
+                      ? "border-transparent bg-primary/10 text-primary"
+                      : "border-border bg-card text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/><path d="M9 18V5l12-2v13"/></svg>
+                  <span className="hidden sm:inline">{t("songs.detail.chords")}</span>
+                </button>
+              )}
 
-              {/* Éditer */}
-              <Link
-                href={`/setlists/${id}/edit`}
-                className="h-8 px-2.5 rounded-[8px] border border-border bg-card text-muted-foreground hover:text-foreground text-[12.5px] font-semibold flex items-center gap-1.5 transition-all duration-150"
-              >
-                <Pencil className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">{t("setlists.detail.editButton")}</span>
-              </Link>
-
-              {/* Mode Performance */}
+              {/* Mode Performance — action principale en live */}
               <button
                 onClick={async () => {
                   if (setlist && Object.keys(contents).length === 0) {
@@ -245,44 +258,71 @@ export function SetlistDetailClient() {
                   }
                   setPerformanceMode(true);
                 }}
-                className="h-8 px-2.5 rounded-[8px] border border-border bg-card text-muted-foreground hover:text-foreground text-[12.5px] font-semibold flex items-center gap-1.5 transition-all duration-150"
+                className="h-8 px-3 rounded-[8px] bg-primary text-primary-foreground text-[12.5px] font-semibold flex items-center gap-1.5 hover:bg-primary/90 transition-all duration-150"
               >
                 <Play className="h-3.5 w-3.5" />
                 <span className="hidden sm:inline">Performance</span>
               </button>
 
-              {/* PDF */}
-              <button
-                onClick={handleDownload}
-                disabled={downloading}
-                className="h-8 px-2.5 rounded-[8px] border border-border bg-card text-muted-foreground hover:text-foreground text-[12.5px] font-semibold flex items-center gap-1.5 transition-all duration-150 disabled:opacity-50"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
-                <span className="hidden sm:inline">{downloading ? "…" : t("songs.detail.downloadPdf")}</span>
-              </button>
-
-              {/* Supprimer */}
-              {canDelete && !confirmDelete && (
-                <button onClick={() => setConfirmDelete(true)}
-                  className="h-8 px-2.5 rounded-[8px] border border-border bg-card text-muted-foreground hover:text-destructive text-[12.5px] font-semibold flex items-center gap-1.5 transition-all duration-150"
+              {/* Menu ⋯ : Modifier / PDF / Supprimer */}
+              <div className="relative" ref={menuRef}>
+                <button
+                  onClick={() => { setMenuOpen((v) => !v); setConfirmDelete(false); }}
+                  aria-label="Plus d'actions"
+                  className="h-8 w-8 rounded-[8px] border border-border bg-card text-muted-foreground hover:text-foreground flex items-center justify-center transition-all duration-150"
                 >
-                  <Trash2 className="h-3.5 w-3.5" />
-                  <span className="hidden sm:inline">{t("setlists.detail.deleteButton")}</span>
+                  <MoreHorizontal className="h-4 w-4" />
                 </button>
-              )}
-              {confirmDelete && (
-                <div className="flex items-center gap-2">
-                  <span className="text-xs text-muted-foreground">{t("setlists.detail.deleteConfirm")}</span>
-                  <button onClick={handleDelete} disabled={deleting}
-                    className="text-xs font-medium text-destructive hover:underline disabled:opacity-50">
-                    {deleting ? "…" : t("setlists.detail.deleteYes")}
-                  </button>
-                  <button onClick={() => setConfirmDelete(false)}
-                    className="text-xs text-muted-foreground hover:text-foreground">
-                    {t("setlists.detail.deleteCancel")}
-                  </button>
-                </div>
-              )}
+                {menuOpen && (
+                  <div className="absolute right-0 top-full mt-1 w-52 bg-card border border-border rounded-xl shadow-lg py-1 z-50">
+                    <Link
+                      href={`/setlists/${id}/edit`}
+                      className="w-full flex items-center gap-2.5 px-3 py-2.5 text-[13px] font-medium text-foreground hover:bg-muted/50 transition-colors"
+                    >
+                      <Pencil className="h-3.5 w-3.5 text-muted-foreground" />
+                      {t("setlists.detail.editButton")}
+                    </Link>
+                    <button
+                      onClick={async () => { setMenuOpen(false); await handleDownload(); }}
+                      disabled={downloading}
+                      className="w-full flex items-center gap-2.5 px-3 py-2.5 text-[13px] font-medium text-foreground hover:bg-muted/50 transition-colors disabled:opacity-50 text-left"
+                    >
+                      <Download className="h-3.5 w-3.5 text-muted-foreground" />
+                      {downloading ? "…" : t("songs.detail.downloadPdf")}
+                    </button>
+                    {canDelete && (
+                      confirmDelete ? (
+                        <div className="px-3 py-2.5 border-t border-border">
+                          <p className="text-xs text-muted-foreground mb-2">{t("setlists.detail.deleteConfirm")}</p>
+                          <div className="flex items-center gap-3">
+                            <button
+                              onClick={handleDelete}
+                              disabled={deleting}
+                              className="text-xs font-semibold text-destructive hover:underline disabled:opacity-50"
+                            >
+                              {deleting ? "…" : t("setlists.detail.deleteYes")}
+                            </button>
+                            <button
+                              onClick={() => setConfirmDelete(false)}
+                              className="text-xs text-muted-foreground hover:text-foreground"
+                            >
+                              {t("setlists.detail.deleteCancel")}
+                            </button>
+                          </div>
+                        </div>
+                      ) : (
+                        <button
+                          onClick={() => setConfirmDelete(true)}
+                          className="w-full flex items-center gap-2.5 px-3 py-2.5 text-[13px] font-medium text-destructive hover:bg-destructive/10 transition-colors text-left"
+                        >
+                          <Trash2 className="h-3.5 w-3.5" />
+                          {t("setlists.detail.deleteButton")}
+                        </button>
+                      )
+                    )}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
