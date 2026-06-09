@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-import { Trash2, List, Music, Pencil } from "lucide-react";
+import { Trash2, List, Music, Pencil, Play } from "lucide-react";
 import { getSetlist, deleteSetlist, isRestricted, type FSSetlist } from "@/lib/firebase/setlists";
 import { useAuth } from "@/lib/firebase/auth";
 import { useTranslation } from "react-i18next";
@@ -14,6 +14,7 @@ import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { ListView } from "./_components/ListView";
 import { PartitionsView } from "./_components/PartitionView";
 import { fetchSongAST, type SongContent} from "@/lib/api/songs";
+import { PerformanceMode } from "@/components/performance/PerformanceMode";
   
 
 // ─── Main component ───────────────────────────────────────────────────────────
@@ -38,6 +39,7 @@ export function SetlistDetailClient() {
   const [deleting, setDeleting] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [downloading, setDownloading] = useState(false);
+  const [performanceMode, setPerformanceMode] = useState(false);
   useEffect(() => {
     const saved = sessionStorage.getItem("lastListPath");
     if (saved && (saved.startsWith("/setlists?") || saved === "/setlists")) {
@@ -235,6 +237,20 @@ export function SetlistDetailClient() {
                 <span className="hidden sm:inline">{t("setlists.detail.editButton")}</span>
               </Link>
 
+              {/* Mode Performance */}
+              <button
+                onClick={async () => {
+                  if (setlist && Object.keys(contents).length === 0) {
+                    await loadContents(setlist.items);
+                  }
+                  setPerformanceMode(true);
+                }}
+                className="h-8 px-2.5 rounded-[8px] border border-border bg-card text-muted-foreground hover:text-foreground text-[12.5px] font-semibold flex items-center gap-1.5 transition-all duration-150"
+              >
+                <Play className="h-3.5 w-3.5" />
+                <span className="hidden sm:inline">Performance</span>
+              </button>
+
               {/* PDF */}
               <button
                 onClick={handleDownload}
@@ -313,6 +329,18 @@ export function SetlistDetailClient() {
           />
         )}
       </div>
+
+      {/* Mode Performance */}
+      {performanceMode && (
+        <PerformanceMode
+          items={setlist.items}
+          contents={contents}
+          initialShowChords={showChords}
+          setlistId={id}
+          setlistTitle={setlist.title}
+          onClose={() => setPerformanceMode(false)}
+        />
+      )}
     </div>
   );
 }

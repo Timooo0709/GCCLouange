@@ -36,3 +36,27 @@ Tout le monde peut créer des setlists (pas seulement les responsables) en édit
 - Commits séparés par fichier (best practice de ce projet)
 - Tester sur au moins 1 chant FR + 1 chant ZH avant de valider une étape
 - Pas de mini-éditeur web en v1 (content-as-code uniquement)
+
+## Comportement (guidelines Karpathy)
+
+### Penser avant de coder
+- Expliciter les hypothèses avant d'implémenter. Si incertain, demander.
+- Si plusieurs interprétations existent, les présenter — ne pas choisir silencieusement.
+- Si une approche plus simple existe, la proposer. Pousser en arrière si justifié.
+- Si quelque chose est flou, s'arrêter et nommer ce qui est confus.
+
+### Simplicité d'abord
+- Minimum de code qui résout le problème. Rien de spéculatif.
+- Pas de features au-delà de ce qui est demandé.
+- Pas d'abstractions pour du code à usage unique.
+- Pas de gestion d'erreurs pour des scénarios impossibles.
+
+### Changements chirurgicaux
+- Ne toucher que ce qui est nécessaire. Ne pas "améliorer" le code adjacent.
+- Correspondre au style existant, même si on ferait différemment.
+- Si du code mort est repéré, le mentionner — ne pas le supprimer.
+- Nettoyer uniquement les imports/variables rendus orphelins par SES propres changements.
+
+### Exécution orientée objectif
+- Définir des critères de succès vérifiables avant de commencer.
+- Pour les tâches multi-étapes, énoncer un plan bref avec vérification à chaque étape.
