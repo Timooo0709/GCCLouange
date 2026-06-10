@@ -202,7 +202,6 @@ export function SectionStructureEditor({
 }) {
   const { t } = useTranslation();
   const sensors = useDefaultSensors();
-
   function handleDragEnd(e: DragEndEvent) {
     const { active, over } = e;
     if (!over || active.id === over.id) return;
@@ -483,7 +482,6 @@ export function SongRow({
   const { t } = useTranslation();
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } =
     useSortable({ id: item.uid });
-
   const [showStructure, setShowStructure] = useState(false);
   const allSections = item.song.sections ?? [];
   const originalCount = allSections.length;
@@ -491,7 +489,6 @@ export function SongRow({
   const isModified =
     currentCount !== originalCount ||
     item.sectionItems.some((si, i) => si.sectionId !== allSections[i]?.id);
-
   return (
     <div
       ref={setNodeRef}

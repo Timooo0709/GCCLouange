@@ -303,8 +303,10 @@ interface SongDetailClientProps {
           </div>
 
           {/* Embed YouTube */}
-          {youtubeId && showVideo && (
-            <div className="print:hidden border-b border-border bg-black/5 px-4 py-3 flex justify-center">
+          
+        </div>
+        {youtubeId && showVideo && (
+            <div className="print:hidden border-b border-border bg-black/5 px-4 py-3 flex justify-center mt-[82px]">
               <div className="w-full max-w-xl aspect-video">
                 <iframe
                   src={`https://www.youtube.com/embed/${youtubeId}`}
@@ -316,7 +318,6 @@ interface SongDetailClientProps {
             </div>
           </div>
         )}
-        </div>
         {/* Contenu */}
         <main className="px-4 py-6 print:px-0 print:py-2 print:max-w-none max-w-2xl mx-auto overflow-x-auto mt-[48px]">
           <SongView
