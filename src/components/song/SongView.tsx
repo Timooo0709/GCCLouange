@@ -34,12 +34,15 @@ const KaiTiFont = localFont({
 });
 const fr_lyric_font = localFont({ src: "../../../public/fonts/inter-latin-ext-400-normal.ttf" });
 const zh_lyric_font = localFont({ src: "../../../public/fonts/Han-source.otf" });
+// Réexport pour la partition 简谱 (mêmes polices que la page chant)
+export { zh_lyric_font as zhLyricFont };
 const chord_font = localFont({
   src: [
     { path: "../../../public/fonts/SpaceGrotesk-Light.ttf", weight: "300" },
     { path: "../../../public/fonts/SpaceGrotesk-Bold.ttf",  weight: "700" },
   ],
 });
+export { chord_font as chordFont };
 
 
 function getSectionStyle(type: string, isZh: boolean): React.CSSProperties {
@@ -237,6 +240,71 @@ function ZhLine({ tokens, pinyin, showChords, showPinyin, chord_font, zh_lyric_f
 }
 
 // ---------------------------------------------------------------------------
+// SongHeaderCard — en-tête de chant (titre, pinyin, artiste, tonalité, tempo)
+// Réutilisé par SongView et par la vue partition 简谱.
+// ---------------------------------------------------------------------------
+
+export function SongHeaderCard({
+  title,
+  titlePinyin,
+  artist,
+  isZh,
+  keyLabel,
+  tempo,
+  timeSignature,
+  children,
+}: {
+  title: string;
+  titlePinyin?: string | null;
+  artist: string;
+  isZh: boolean;
+  keyLabel?: string | null;
+  tempo?: number | string | null;
+  timeSignature?: string | null;
+  children?: React.ReactNode;
+}) {
+  const langAccent = isZh ? "var(--jianpu-color)" : "var(--chord-color)";
+  return (
+    <div className="mb-0 pb-3 print:mb-3 border-b border-border">
+      <div className="flex items-start justify-between gap-5">
+        <div className="min-w-0">
+          <h1 className={`text-[26px] font-bold text-foreground leading-[1.05] tracking-[-0.4px] uppercase ${isZh ? KaiTiFont.className : chord_font.className}`}>
+            {title}
+          </h1>
+          {titlePinyin && (
+            <p className={`text-muted-foreground text-[13px] mt-1 ${zh_lyric_font.className}`}>
+              {titlePinyin}
+            </p>
+          )}
+          <p className={`text-muted-foreground text-[13px] mt-1 ${isZh ? zh_lyric_font.className : chord_font.className}`}>
+            {artist}
+          </p>
+        </div>
+
+        <div className="flex flex-col items-end gap-2 shrink-0 pt-1">
+          {keyLabel && (
+            <span
+              className={`text-[14px] font-bold rounded-full px-3 py-[3px] border-[1.5px] leading-none ${chord_font.className}`}
+              style={{ color: langAccent, borderColor: langAccent }}
+            >
+              {keyLabel}
+            </span>
+          )}
+          {tempo && (
+            <span className="text-muted-foreground text-[11px] font-medium flex items-baseline gap-0.5">
+              {timeSignature && <span className="mr-1">{timeSignature}</span>}
+              <span className="text-foreground/70 text-[15px] leading-none">♩</span>
+              {` = ${tempo}`}
+            </span>
+          )}
+        </div>
+      </div>
+      {children}
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
 // TransitionNote — bloc affiché entre deux sections
 // ---------------------------------------------------------------------------
 
@@ -365,46 +433,20 @@ export function SongView({
   return (
     <div className="max-w-2xl print:max-w-none">
       {/* En-tête */}
-      <div className="mb-0 pb-3 print:mb-3 border-b border-border">
-        <div className="flex items-start justify-between gap-5">
-          <div className="min-w-0">
-            <h1 className={`text-[26px] font-bold text-foreground leading-[1.05] tracking-[-0.4px] uppercase ${isZh ? KaiTiFont.className : chord_font.className}`}>
-              {ast.metadata.title}
-            </h1>
-            {ast.metadata.titlePinyin && (
-              <p className={`text-muted-foreground text-[13px] mt-1 ${zh_lyric_font.className}`}>
-                {ast.metadata.titlePinyin}
-              </p>
-            )}
-            <p className={`text-muted-foreground text-[13px] mt-1 ${isZh ? zh_lyric_font.className : chord_font.className}`}>
-              {ast.metadata.artist}
-            </p>
-          </div>
-
-          <div className="flex flex-col items-end gap-2 shrink-0 pt-1">
-            {ast.metadata.key && (
-              <span
-                className={`text-[14px] font-bold rounded-full px-3 py-[3px] border-[1.5px] leading-none ${chord_font.className}`}
-                style={{ color: langAccent, borderColor: langAccent }}
-              >
-                {canUseJianpu ? ast.metadata.jianpuKey ?? `1=${ast.metadata.key}` : ast.metadata.key}
-              </span>
-            )}
-            {ast.metadata.tempo && (
-              <span className="text-muted-foreground text-[11px] font-medium flex items-baseline gap-0.5">
-                <span className="text-foreground/70 text-[15px] leading-none">♩</span>
-                {` = ${ast.metadata.tempo}`}
-              </span>
-            )}
-          </div>
-        </div>
-
+      <SongHeaderCard
+        title={ast.metadata.title}
+        titlePinyin={ast.metadata.titlePinyin}
+        artist={ast.metadata.artist}
+        isZh={isZh}
+        keyLabel={canUseJianpu ? ast.metadata.jianpuKey ?? `1=${ast.metadata.key}` : ast.metadata.key}
+        tempo={ast.metadata.tempo}
+      >
         {canUseJianpu && structureOverride && (
           <p className="mt-2 text-xs text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950 px-2 py-1 rounded">
             {t("songs.view.jianpuWarning")}
           </p>
         )}
-      </div>
+      </SongHeaderCard>
 
       {/* Ligne ORDRE */}
       <div className="flex flex-wrap items-baseline gap-x-1 gap-y-0.5 pt-2 pb-3">

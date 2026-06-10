@@ -211,6 +211,7 @@ export function parseChordPro(source: string): ChordProAST {
     youtubeUrl: null,
     spotifyUrl: null,
     appleMusicUrl: null,
+    jianpuScore: null,
   };
 
   const sections: ChordProSection[] = [];
@@ -218,8 +219,25 @@ export function parseChordPro(source: string): ChordProAST {
   let pendingJianpu: string | null = null;
   let sectionCounter = 0;
   let uidCounter = 0;
+  // Capture brute du bloc partition 简谱 (hors parsing de sections)
+  let inJianpuScore = false;
+  const jianpuScoreLines: string[] = [];
   for (const rawLine of lines) {
     const line = rawLine.trimEnd();
+
+    if (inJianpuScore) {
+      if (line.trim() === "{end_of_jianpu}") {
+        inJianpuScore = false;
+        metadata.jianpuScore = jianpuScoreLines.join("\n");
+      } else {
+        jianpuScoreLines.push(line);
+      }
+      continue;
+    }
+    if (line.trim() === "{start_of_jianpu}") {
+      inJianpuScore = true;
+      continue;
+    }
 
     // Ligne vide
     if (!line.trim()) continue;

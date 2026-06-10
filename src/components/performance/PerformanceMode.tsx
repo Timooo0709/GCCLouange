@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { X, ChevronLeft, ChevronRight, Link2, MessageSquare, ListMusic, Settings, PenLine, Sun, Moon } from "lucide-react";
 import type { PerformanceBlock, SectionBlock, SongHeaderBlock } from "@/lib/performance/blocks";
 import { buildPerformanceBlocks, computePageKey } from "@/lib/performance/blocks";
+import { JianpuScore } from "@/components/jianpu/JianpuScore";
 import { SectionView, TransitionNote } from "@/components/song/SongView";
 import { AnnotationCanvas, type AnnotationCanvasHandle } from "./AnnotationCanvas";
 import { loadAnnotation, saveAnnotation } from "@/lib/firebase/annotations";
@@ -57,6 +58,21 @@ function BlockRenderer({
   if (block.kind === "transition-inter") {
     if (!showTransitions) return null;
     return <TransitionBanner text={block.text} />;
+  }
+  if (block.kind === "jianpu-section") {
+    return (
+      <div className="mb-3">
+        <JianpuScore
+          raw={block.raw}
+          sectionRange={[block.sectionIndex, block.sectionIndex + 1]}
+          hideHeader={!block.isFirst}
+          targetKey={block.targetKey}
+          semitones={block.semitones}
+          showChords={showChordsGlobal}
+          showPinyin
+        />
+      </div>
+    );
   }
   return (
     <SectionView
@@ -173,6 +189,7 @@ export function PerformanceMode({
   const { user } = useAuth();
   const [showChords, setShowChords] = useState(initialShowChords);
   const [showTransitions, setShowTransitions] = useState(true);
+  const [showJianpuScore, setShowJianpuScore] = useState(false);
   const [annotateMode, setAnnotateMode] = useState(false);
   const [showChrome, setShowChrome] = useState(true);
   const [songListOpen, setSongListOpen] = useState(false);
@@ -227,9 +244,15 @@ export function PerformanceMode({
 
   // Build flat block list (memoised — only changes when content changes)
   const blocks = useMemo(
-    () => buildPerformanceBlocks(items, contents, true), // always build with chords=true for stable UIDs
+    () => buildPerformanceBlocks(items, contents, true, showJianpuScore), // always build with chords=true for stable UIDs
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [items, contents],
+    [items, contents, showJianpuScore],
+  );
+
+  // Au moins un chant de la setlist a-t-il une partition 简谱 ?
+  const anyJianpuScore = useMemo(
+    () => Object.values(contents).some((c) => !!c.ast.metadata.jianpuScore),
+    [contents],
   );
 
   // Re-measure when a setting affecting heights changes
@@ -328,9 +351,9 @@ export function PerformanceMode({
   // ── Annotation persistence ──────────────────────────────────────────────────
 
   const currentPageIndices = pages[currentPage] ?? [];
-  // Les annotations sont liées à la mise en page : accords, transitions et
-  // taille de texte font partie de la clé.
-  const layoutSig = `c${showChords ? 1 : 0}t${showTransitions ? 1 : 0}z${Math.round(fontScale * 100)}`;
+  // Les annotations sont liées à la mise en page : accords, transitions,
+  // partition et taille de texte font partie de la clé.
+  const layoutSig = `c${showChords ? 1 : 0}t${showTransitions ? 1 : 0}j${showJianpuScore ? 1 : 0}z${Math.round(fontScale * 100)}`;
   const currentPageKey = computePageKey(blocks, currentPageIndices, layoutSig);
 
   const saveAnnotations = useCallback(async (pgKey: string) => {
@@ -621,6 +644,11 @@ export function PerformanceMode({
                 <SettingRow label="Transitions">
                   <SwitchBtn on={showTransitions} onToggle={() => setShowTransitions((v) => !v)} />
                 </SettingRow>
+                {anyJianpuScore && (
+                  <SettingRow label="Partition 简谱">
+                    <SwitchBtn on={showJianpuScore} onToggle={() => setShowJianpuScore((v) => !v)} />
+                  </SettingRow>
+                )}
                 <SettingRow label="Texte">
                   <div className="flex items-center gap-1.5">
                     <button

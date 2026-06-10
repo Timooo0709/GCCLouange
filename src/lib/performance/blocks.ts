@@ -4,6 +4,7 @@ import type { SongContent } from "@/lib/utils/fetchSongContent";
 import { transposeAST } from "@/lib/transposeAST";
 import { semitonesTo } from "@/lib/transpose";
 import { resolveStructureOverride } from "@/lib/chordpro/structure";
+import { parseJianpu } from "@/lib/jianpu/parseJianpu";
 
 export type SongHeaderBlock = {
   kind: "song-header";
@@ -43,11 +44,24 @@ export type TransitionInterBlock = {
   text: string;
 };
 
+export type JianpuSectionBlock = {
+  kind: "jianpu-section";
+  uid: string;
+  raw: string;             // bloc jianpu complet du chant
+  sectionIndex: number;    // section de la partition à rendre
+  isFirst: boolean;        // affiche l'en-tête 1=X sur la première
+  targetKey: string;
+  semitones: number;
+  songTitle: string;
+  songKey: string;
+};
+
 export type PerformanceBlock =
   | SongHeaderBlock
   | SectionBlock
   | TransitionIntraBlock
-  | TransitionInterBlock;
+  | TransitionInterBlock
+  | JianpuSectionBlock;
 
 function getTransposed(content: SongContent, keyOverride: string | null): ChordProAST {
   const ast = content.ast;
@@ -64,6 +78,7 @@ export function buildPerformanceBlocks(
   items: SetlistItem[],
   contents: Record<string, SongContent>,
   showChordsGlobal: boolean,
+  useJianpuScore = false,
 ): PerformanceBlock[] {
   const blocks: PerformanceBlock[] = [];
   let c = 0;
@@ -176,6 +191,28 @@ export function buildPerformanceBlocks(
       position: item.position,
       language: ast.metadata.language,
     });
+
+    // ── Partition 简谱 à la place des paroles si demandé et disponible ──
+    const scoreRaw = content.ast.metadata.jianpuScore;
+    if (useJianpuScore && scoreRaw) {
+      const score = parseJianpu(scoreRaw);
+      const semis = item.keyOverride ? semitonesTo(content.ast.metadata.key, item.keyOverride) : 0;
+      const targetKey = item.keyOverride ?? score.key;
+      for (let si = 0; si < score.sections.length; si++) {
+        blocks.push({
+          kind: "jianpu-section",
+          uid: uid(),
+          raw: scoreRaw,
+          sectionIndex: si,
+          isFirst: si === 0,
+          targetKey,
+          semitones: semis,
+          songTitle: content.ast.metadata.title,
+          songKey: targetKey,
+        });
+      }
+      continue;
+    }
     const occ: Record<string, number> = {};
 
     for (const sec of sections) {
@@ -214,8 +251,11 @@ export function computePageKey(
 ): string {
   const uids = indices
     .map((i) => blocks[i])
-    .filter((b): b is SectionBlock => b.kind === "section")
-    .map((b) => b.section.uid);
+    .flatMap((b) => {
+      if (b.kind === "section") return [b.section.uid];
+      if (b.kind === "jianpu-section") return [`jp:${b.songTitle}:${b.sectionIndex}`];
+      return [];
+    });
   let h = 0;
   const str = uids.join(",");
   for (let i = 0; i < str.length; i++) {

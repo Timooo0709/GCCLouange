@@ -1,6 +1,7 @@
 # CLAUDE.md — GCC Louange
 
 Site de partitions de louange pour l'église GCC. Spec complète dans `cahier-des-charges-site-louange.md`.
+Specs de fonctionnalités en attente : `docs/` (ex. `docs/spec-ajouter-un-chant.md`).
 
 ## Stack
 Next.js 15 (static export) · TypeScript · Tailwind CSS + shadcn/ui · GitHub Pages
@@ -22,7 +23,10 @@ npm run validate     # Lint des fichiers .cho et .json
 ## Formats importants
 - ChordPro : `[accord]paroles` dans les lignes, `{directive: valeur}` en en-tête
 - Chinois : `[C]caractères   pinyin` (3 espaces min entre chars et pinyin)
-- Jianpu : `{jianpu: 3 3 5 6 5}` sur la ligne juste au-dessus des paroles
+- Jianpu simple : `{jianpu: 3 3 5 6 5}` sur la ligne juste au-dessus des paroles
+- Partition 简谱 complète : bloc `{start_of_jianpu}…{end_of_jianpu}` (syntaxe
+  détaillée dans `../Guidelines Chordpro/03-syntaxe-jianpu.md`), rendue en SVG
+  par `src/components/jianpu/JianpuScore.tsx`
 
 ## Couleurs spec
 - Accords : `#2563EB` (bleu)

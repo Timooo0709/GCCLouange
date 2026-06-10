@@ -42,6 +42,8 @@ export type ChordProAST = {
     youtubeUrl: string | null;
     spotifyUrl: string | null;
     appleMusicUrl: string | null;
+    /** Bloc {start_of_jianpu}…{end_of_jianpu} brut (partition 简谱 complète) */
+    jianpuScore: string | null;
   };
   sections: ChordProSection[];
 };

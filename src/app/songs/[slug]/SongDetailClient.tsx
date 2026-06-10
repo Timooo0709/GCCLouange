@@ -3,7 +3,9 @@
 import { useState, useMemo, useEffect, useRef } from "react";
 import Link from "next/link";
 import { MoreHorizontal, Download, Play, Music, Music2, Settings } from "lucide-react";
-import { SongView } from "@/components/song/SongView";
+import { SongView, SongHeaderCard } from "@/components/song/SongView";
+import { JianpuScore } from "@/components/jianpu/JianpuScore";
+import { parseJianpu } from "@/lib/jianpu/parseJianpu";
 import { CustomizePanel, type CustomizeState } from "@/components/customPanel/CustomizePanel";
 import type { Song } from "@/types/song";
 import { useTranslation } from "react-i18next";
@@ -32,6 +34,12 @@ interface SongDetailClientProps {
     const scrollVisible = useScrollDirection();
     const [showVideo, setShowVideo] = useState(false);
     const [showPanel, setShowPanel] = useState(false);
+    const [showScore, setShowScore] = useState(false);
+    const hasJianpuScore = !!ast.metadata.jianpuScore;
+    const jianpuTime = useMemo(
+      () => (ast.metadata.jianpuScore ? parseJianpu(ast.metadata.jianpuScore).time ?? null : null),
+      [ast.metadata.jianpuScore]
+    );
     const [downloading, setDownloading] = useState(false);
     const [backPath, setBackPath] = useState("/songs");
     const [backLabel, setBackLabel] = useState("");
@@ -230,6 +238,21 @@ interface SongDetailClientProps {
                     <span className="hidden sm:inline">{t("songs.detail.chords") || "Accords"}</span>
               </button>
 
+              {/* Partition 简谱 */}
+              {hasJianpuScore && (
+                <button
+                  onClick={() => setShowScore((v) => !v)}
+                  className={`h-8 px-2.5 rounded-[8px] border text-[12.5px] font-semibold flex items-center gap-1.5 transition-all duration-150 ${
+                    showScore
+                      ? "border-transparent bg-primary/10 text-primary"
+                      : "border-border bg-card text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <span className="font-bold">谱</span>
+                  <span className="hidden sm:inline">简谱</span>
+                </button>
+              )}
+
               {/* Pinyin (chants zh) */}
               {isZh && (
                     <button
@@ -319,14 +342,39 @@ interface SongDetailClientProps {
         </div>
         {/* Contenu */}
         <main className="px-4 py-6 print:px-0 print:py-2 print:max-w-none max-w-2xl mx-auto overflow-x-auto mt-[48px]">
-          <SongView
-            ast={displayedAST}
-            showChords={customize.showChords}
-            showPinyin={customize.showPinyin}
-            useJianpu={customize.useJianpu}
-            structureOverride={structureOverride}
-            sectionNotes={sectionsNote}
-          />
+          {showScore && hasJianpuScore ? (
+            <div className="max-w-2xl print:max-w-none">
+              {/* Même en-tête que la vue chant */}
+              <SongHeaderCard
+                title={song.title}
+                titlePinyin={ast.metadata.titlePinyin}
+                artist={ast.metadata.artist}
+                isZh={isZh}
+                keyLabel={`1=${customize.currentKey}`}
+                tempo={ast.metadata.tempo}
+                timeSignature={jianpuTime}
+              />
+              <div className="pt-4">
+                <JianpuScore
+                  raw={ast.metadata.jianpuScore!}
+                  hideHeader
+                  targetKey={customize.currentKey}
+                  semitones={customize.semitones}
+                  showChords={customize.showChords}
+                  showPinyin={customize.showPinyin}
+                />
+              </div>
+            </div>
+          ) : (
+            <SongView
+              ast={displayedAST}
+              showChords={customize.showChords}
+              showPinyin={customize.showPinyin}
+              useJianpu={customize.useJianpu}
+              structureOverride={structureOverride}
+              sectionNotes={sectionsNote}
+            />
+          )}
         </main>
 
         {/* Panneau de personnalisation */}
