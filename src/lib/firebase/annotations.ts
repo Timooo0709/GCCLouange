@@ -13,6 +13,10 @@ function docId(userId: string, setlistId: string, pageKey: string) {
   return `${userId}__${setlistId}__${pageKey}`;
 }
 
+/**
+ * Charge les traits vectoriels (champ `strokes`, JSON sérialisé).
+ * Les anciennes annotations PNG (champ `data`) sont ignorées.
+ */
 export async function loadAnnotation(
   userId: string,
   setlistId: string,
@@ -24,7 +28,7 @@ export async function loadAnnotation(
     const res = await fetch(`${FS_BASE}/annotations/${encodeURIComponent(id)}`, { headers });
     if (!res.ok) return null;
     const raw = await res.json();
-    return (raw.fields?.data?.stringValue as string) ?? null;
+    return (raw.fields?.strokes?.stringValue as string) ?? null;
   } catch {
     return null;
   }
@@ -34,7 +38,7 @@ export async function saveAnnotation(
   userId: string,
   setlistId: string,
   pageKey: string,
-  data: string,
+  strokesJson: string,
 ): Promise<void> {
   try {
     const headers = await authHeader();
@@ -42,14 +46,14 @@ export async function saveAnnotation(
     const encodedId = encodeURIComponent(id);
     const docName = `projects/gcclouange/databases/(default)/documents/annotations/${id}`;
     await fetch(
-      `${FS_BASE}/annotations/${encodedId}?updateMask.fieldPaths=data&updateMask.fieldPaths=updatedAt`,
+      `${FS_BASE}/annotations/${encodedId}?updateMask.fieldPaths=strokes&updateMask.fieldPaths=updatedAt`,
       {
         method: "PATCH",
         headers: { "Content-Type": "application/json", ...headers },
         body: JSON.stringify({
           name: docName,
           fields: {
-            data: { stringValue: data },
+            strokes: { stringValue: strokesJson },
             updatedAt: { timestampValue: new Date().toISOString() },
           },
         }),
