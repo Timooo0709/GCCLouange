@@ -24,6 +24,7 @@ export function PlanningTable({ cols, rows, color, dateBadge, minWidth = 480 }: 
   const sun = currentSundayStr()
   const [name, setName] = useState("")
   const [onlyMine, setOnlyMine] = useState(false)
+  const [mobileMonth, setMobileMonth] = useState<number | null>(null)
 
   useEffect(() => {
     try {
@@ -44,7 +45,7 @@ export function PlanningTable({ cols, rows, color, dateBadge, minWidth = 480 }: 
 
   const displayed = onlyMine && hasName ? rows.filter(matchRow) : rows
 
-  // Séparateurs de mois calculés une fois (utilisés par la table et les cartes)
+  // Séparateurs de mois (table desktop)
   const withSep: { row: string[]; sep: string | null }[] = []
   let lm = ""
   for (const row of displayed) {
@@ -52,6 +53,13 @@ export function PlanningTable({ cols, rows, color, dateBadge, minWidth = 480 }: 
     withSep.push({ row, sep: month !== lm ? month : null })
     lm = month
   }
+
+  // ── Mobile : affichage par mois (puces, comme les trimestres) ──
+  const monthsInRows = [...new Set(rows.map((r) => getMois(r[0])))]
+  const currentMonth = new Date().getMonth() + 1
+  const defaultMonth = monthsInRows.includes(currentMonth) ? currentMonth : monthsInRows[0]
+  const activeMonth = mobileMonth !== null && monthsInRows.includes(mobileMonth) ? mobileMonth : defaultMonth
+  const mobileRows = displayed.filter((r) => getMois(r[0]) === activeMonth)
 
   return (
     <div className="space-y-3">
@@ -145,23 +153,34 @@ export function PlanningTable({ cols, rows, color, dateBadge, minWidth = 480 }: 
         </table>
       </div>
 
-      {/* ── Cartes par date (téléphone) ── */}
+      {/* ── Cartes par date (téléphone) — un mois à la fois ── */}
       <div className="sm:hidden space-y-2.5">
-        {displayed.length === 0 && (
+        {monthsInRows.length > 1 && (
+          <div className="flex gap-2 overflow-x-auto pb-1" style={{ scrollbarWidth: "none" }}>
+            {monthsInRows.map((m) => (
+              <button
+                key={m}
+                onClick={() => setMobileMonth(m)}
+                className={`flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-semibold border transition-all duration-150 cursor-pointer ${
+                  m === activeMonth ? "text-white border-transparent" : "bg-card border-border text-muted-foreground"
+                }`}
+                style={m === activeMonth ? { background: color, borderColor: color } : undefined}
+              >
+                {MOIS[m - 1]}
+              </button>
+            ))}
+          </div>
+        )}
+        {mobileRows.length === 0 && (
           <p className="px-4 py-8 text-center text-sm text-muted-foreground border border-dashed border-border rounded-xl">
             Aucune donnée
           </p>
         )}
-        {withSep.map(({ row, sep }) => {
+        {mobileRows.map((row) => {
           const isThis = row[0] === sun
           const mine = matchRow(row)
           return (
             <Fragment key={row[0]}>
-              {sep && (
-                <p className="text-[10px] font-bold uppercase tracking-wider pt-2" style={{ color }}>
-                  {sep}
-                </p>
-              )}
               <div
                 className="rounded-xl border border-border bg-card overflow-hidden"
                 style={{
