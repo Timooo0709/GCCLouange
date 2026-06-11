@@ -39,9 +39,6 @@
       "counterFiltered_one": "{{filteredCount}} résultat sur {{totalCount}}",
       "counterFiltered_other": "{{filteredCount}} résultats sur {{totalCount}}",
       "allLanguages": "Tous",
-      "sortTitle": "Tri : titre",
-      "sortArtist": "Tri : artiste",
-      "sortKey": "Tri : tonalité",
       "recent": "Récemment consultés"
     },
     "detail": {
