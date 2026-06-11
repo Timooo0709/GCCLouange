@@ -39,9 +39,6 @@
       "counterFiltered_one": "找到 {{filteredCount}} 首诗歌（共 {{totalCount}} 首）",
       "counterFiltered_other": "找到 {{filteredCount}} 首诗歌（共 {{totalCount}} 首）",
       "allLanguages": "全部",
-      "sortTitle": "排序：标题",
-      "sortArtist": "排序：歌手",
-      "sortKey": "排序：调性",
       "recent": "最近查看"
     },
     "detail": {
