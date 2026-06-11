@@ -48,11 +48,13 @@ interface ChordLineProps {
   tokens: Token[];
   showChords?: boolean;
   fontSize?: number;
+  /** Taille des accords relative aux paroles (em) — 0.9 web, 1.13 typo PDF */
+  chordEm?: number;
   chord_font?: ReturnType<typeof localFont>;
   fr_lyric_font?: ReturnType<typeof localFont>;
 }
 
-export function ChordLine({ tokens, showChords = true, fontSize = 0.88, chord_font, fr_lyric_font }: ChordLineProps) {
+export function ChordLine({ tokens, showChords = true, fontSize = 0.88, chordEm = 0.9, chord_font, fr_lyric_font }: ChordLineProps) {
   const segments = toSegments(tokens);
   const hasAnyChord = showChords && segments.some((s) => s.chord !== null);
   return (
@@ -79,11 +81,14 @@ export function ChordLine({ tokens, showChords = true, fontSize = 0.88, chord_fo
             style={{ minWidth }}
           >
             {showChords && seg.chord ? (
-              <span className={`text-[0.9em] font-bold font-chord whitespace-nowrap leading-[0.7] ${chord_font?.className}`}>
+              <span
+                className={`font-bold font-chord whitespace-nowrap leading-[0.7] ${chord_font?.className}`}
+                style={{ fontSize: `${chordEm}em` }}
+              >
                 {seg.chord}
               </span>
             ) : (
-              hasAnyChord && <span className="text-[0.9em] leading-[0.7]">&nbsp;</span>
+              hasAnyChord && <span className="leading-[0.7]" style={{ fontSize: `${chordEm}em` }}>&nbsp;</span>
             )}
             <span className={`text-foreground whitespace-pre ${fr_lyric_font?.className}`}>
               {(showChords ? seg.lyric : seg.lyric?.trimStart()) || (seg.chord && showChords ? " " : "")}
