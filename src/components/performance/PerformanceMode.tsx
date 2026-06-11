@@ -5,7 +5,8 @@ import { X, ChevronLeft, ChevronRight, Link2, MessageSquare, ListMusic, Settings
 import type { PerformanceBlock, SectionBlock, SongHeaderBlock } from "@/lib/performance/blocks";
 import { buildPerformanceBlocks, computePageKey } from "@/lib/performance/blocks";
 import { SectionView, TransitionNote } from "@/components/song/SongView";
-import { AnnotationCanvas, type AnnotationCanvasHandle } from "./AnnotationCanvas";
+import { AnnotationCanvas, StrokesLayer } from "./AnnotationCanvas";
+import { type AnnotationData, serializeAnnotations, deserializeAnnotations } from "@/lib/annotations/strokes";
 import { loadAnnotation, saveAnnotation } from "@/lib/firebase/annotations";
 import { useAuth } from "@/lib/firebase/auth";
 import type { SetlistItem } from "@/types/setList";
@@ -67,6 +68,7 @@ function BlockRenderer({
       useJianpu={false}
       note={block.note}
       songSourceLabel={block.songSourceLabel}
+      typography="pdf"
     />
   );
 }
@@ -222,8 +224,11 @@ export function PerformanceMode({
   const blockRefs = useRef<(HTMLDivElement | null)[]>([]);
   const chromeTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const tapStart = useRef<{ x: number; y: number; time: number } | null>(null);
-  const canvasRef = useRef<AnnotationCanvasHandle | null>(null);
-  const prevPageKey = useRef<string>("");
+
+  // Annotations vectorielles de la page courante (toujours chargées, pas
+  // seulement en mode annotation) + visibilité (œil dans les réglages)
+  const [pageAnnotations, setPageAnnotations] = useState<AnnotationData | null>(null);
+  const [showAnnotations, setShowAnnotations] = useState(true);
 
   // Build flat block list (memoised — only changes when content changes)
   const blocks = useMemo(
@@ -333,36 +338,38 @@ export function PerformanceMode({
   const layoutSig = `c${showChords ? 1 : 0}t${showTransitions ? 1 : 0}z${Math.round(fontScale * 100)}`;
   const currentPageKey = computePageKey(blocks, currentPageIndices, layoutSig);
 
-  const saveAnnotations = useCallback(async (pgKey: string) => {
-    if (!user || !pgKey || !canvasRef.current) return;
-    const data = canvasRef.current.getDataURL();
-    await saveAnnotation(user.uid, setlistId, pgKey, data);
-  }, [user, setlistId]);
-
-  // Load annotations when entering annotate mode or changing page
+  // Charger les traits de la page courante (toujours — affichage permanent)
   useEffect(() => {
-    if (!annotateMode || !user || !currentPageKey) return;
-    // Small timeout ensures canvas is mounted and ref is set
-    const t = setTimeout(async () => {
-      const data = await loadAnnotation(user.uid, setlistId, currentPageKey);
-      canvasRef.current?.loadDataURL(data ?? "");
-    }, 50);
-    return () => clearTimeout(t);
-  }, [annotateMode, user, setlistId, currentPageKey]);
+    if (!user || !currentPageKey) { setPageAnnotations(null); return; }
+    let stale = false;
+    setPageAnnotations(null);
+    loadAnnotation(user.uid, setlistId, currentPageKey).then((raw) => {
+      if (stale) return;
+      const parsed = raw ? deserializeAnnotations(raw) : null;
+      setPageAnnotations(
+        parsed ?? { w: window.innerWidth, h: window.innerHeight, strokes: [] },
+      );
+    });
+    return () => { stale = true; };
+  }, [user, setlistId, currentPageKey]);
+
+  // Chaque modification (trait fini, gomme, annuler) est sauvegardée aussitôt
+  const handleAnnotationsChange = useCallback(
+    (data: AnnotationData) => {
+      setPageAnnotations(data);
+      if (user && currentPageKey) {
+        saveAnnotation(user.uid, setlistId, currentPageKey, serializeAnnotations(data));
+      }
+    },
+    [user, setlistId, currentPageKey],
+  );
 
   // ── Navigation ──────────────────────────────────────────────────────────────
 
-  const goToPage = useCallback(async (p: number, pgCount: number) => {
+  const goToPage = useCallback((p: number, pgCount: number) => {
     if (p < 0 || p >= pgCount) return;
-    // Save annotations for current page before leaving
-    const key = prevPageKey.current;
-    if (key) saveAnnotations(key);
     setCurrentPage(p);
-  }, [saveAnnotations]);
-
-  useEffect(() => {
-    prevPageKey.current = currentPageKey;
-  });
+  }, []);
 
   // Keyboard navigation (flèches, PageUp/Down — pédales Bluetooth, Échap pour quitter)
   useEffect(() => {
@@ -497,11 +504,14 @@ export function PerformanceMode({
         </div>
       )}
 
-      {/* ── Annotation canvas (above content, below chrome) ── */}
-      {annotateMode && (
+      {/* ── Annotations : calque de lecture permanent + canvas d'édition ── */}
+      {showAnnotations && !annotateMode && pageAnnotations && pageAnnotations.strokes.length > 0 && (
+        <StrokesLayer data={pageAnnotations} />
+      )}
+      {annotateMode && pageAnnotations && (
         <AnnotationCanvas
-          ref={canvasRef}
-          onSave={() => saveAnnotations(currentPageKey)}
+          data={pageAnnotations}
+          onChange={handleAnnotationsChange}
         />
       )}
 
@@ -621,6 +631,11 @@ export function PerformanceMode({
                 <SettingRow label="Transitions">
                   <SwitchBtn on={showTransitions} onToggle={() => setShowTransitions((v) => !v)} />
                 </SettingRow>
+                {user && (
+                  <SettingRow label="Annotations">
+                    <SwitchBtn on={showAnnotations} onToggle={() => setShowAnnotations((v) => !v)} />
+                  </SettingRow>
+                )}
                 <SettingRow label="Texte">
                   <div className="flex items-center gap-1.5">
                     <button
