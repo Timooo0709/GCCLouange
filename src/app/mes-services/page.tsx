@@ -1,0 +1,275 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
+import { CalendarDays, ListMusic, Lock, UserPen } from "lucide-react";
+import { useProfile } from "@/lib/firebase/users";
+import { getSetlists, type FSSetlist } from "@/lib/firebase/setlists";
+import {
+  loadPlanningData,
+  findMyServices,
+  type PlanningData,
+  type ServiceEntry,
+} from "@/lib/planning/names";
+import { MOIS, JOURC } from "@/lib/planning/utils";
+import { serviceColor } from "@/lib/serviceColors";
+
+type Tab = "upcoming" | "past";
+
+/** Catégorie de setlist correspondant à un service (null si pas de setlists pour ce service). */
+function serviceCategory(service: string): string | null {
+  if (service === "Culte Franco") return "Culte Francophone";
+  if (service.startsWith("Groupe ")) return service;
+  if (service.startsWith("EDD ")) return service.slice(4);
+  if (service.startsWith("Campus")) return "Campus";
+  return null;
+}
+
+function fdJour(dateStr: string): string {
+  const [y, m, d] = dateStr.split("-").map(Number);
+  const date = new Date(y, m - 1, d);
+  return `${JOURC[date.getDay()]} ${d} ${MOIS[m - 1].toLowerCase()}`;
+}
+
+function daysUntil(dateStr: string, todayStr: string): number {
+  const [y1, m1, d1] = todayStr.split("-").map(Number);
+  const [y2, m2, d2] = dateStr.split("-").map(Number);
+  return Math.round(
+    (new Date(y2, m2 - 1, d2).getTime() - new Date(y1, m1 - 1, d1).getTime()) / 86_400_000
+  );
+}
+
+type GroupedEntry = { date: string; service: string; roles: string[] };
+
+/** Regroupe les entrées par date+service en fusionnant les rôles. */
+function groupEntries(entries: ServiceEntry[]): GroupedEntry[] {
+  const map = new Map<string, GroupedEntry>();
+  for (const e of entries) {
+    const key = `${e.date}|${e.service}`;
+    const g = map.get(key);
+    if (g) {
+      if (!g.roles.includes(e.role)) g.roles.push(e.role);
+    } else {
+      map.set(key, { date: e.date, service: e.service, roles: [e.role] });
+    }
+  }
+  return [...map.values()];
+}
+
+/** Regroupe par mois ("Juin 2026") en conservant l'ordre. */
+function groupByMonth(entries: GroupedEntry[]): { label: string; items: GroupedEntry[] }[] {
+  const out: { label: string; items: GroupedEntry[] }[] = [];
+  for (const e of entries) {
+    const [y, m] = e.date.split("-").map(Number);
+    const label = `${MOIS[m - 1]} ${y}`;
+    const last = out[out.length - 1];
+    if (last && last.label === label) last.items.push(e);
+    else out.push({ label, items: [e] });
+  }
+  return out;
+}
+
+export default function MesServicesPage() {
+  const { user, profile, loading: authLoading } = useProfile();
+  const [data, setData] = useState<PlanningData | null>(null);
+  const [setlists, setSetlists] = useState<FSSetlist[]>([]);
+  const [tab, setTab] = useState<Tab>("upcoming");
+
+  useEffect(() => {
+    loadPlanningData().then(setData);
+  }, []);
+
+  useEffect(() => {
+    if (!user) { setSetlists([]); return; }
+    getSetlists().then(setSetlists);
+  }, [user]);
+
+  // Setlist correspondant à chaque date+catégorie
+  const setlistByKey = useMemo(() => {
+    const map = new Map<string, string>();
+    for (const s of setlists) {
+      const key = `${s.date}|${s.category}`;
+      if (!map.has(key)) map.set(key, s.id);
+    }
+    return map;
+  }, [setlists]);
+
+  const todayStr = useMemo(() => new Date().toISOString().split("T")[0], []);
+
+  const entries = useMemo(() => {
+    if (!data || !profile?.planningName) return [];
+    return groupEntries(findMyServices(data, profile.planningName));
+  }, [data, profile]);
+
+  const shown = useMemo(
+    () =>
+      tab === "upcoming"
+        ? entries.filter((e) => e.date >= todayStr)
+        : entries.filter((e) => e.date < todayStr).reverse(),
+    [entries, tab, todayStr]
+  );
+
+  const months = useMemo(() => groupByMonth(shown), [shown]);
+  const upcomingCount = useMemo(
+    () => entries.filter((e) => e.date >= todayStr).length,
+    [entries, todayStr]
+  );
+
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <p className="text-sm text-muted-foreground">Chargement…</p>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return (
+      <div className="min-h-screen bg-background flex flex-col items-center justify-center gap-3 px-4 text-center">
+        <Lock className="h-8 w-8 text-muted-foreground" />
+        <p className="text-sm text-muted-foreground">
+          Connecte-toi pour voir tes prochains services.
+        </p>
+        <Link href="/login?from=/mes-services" className="text-sm text-primary hover:underline">
+          Se connecter
+        </Link>
+      </div>
+    );
+  }
+
+  if (!profile || !profile.planningName) {
+    return (
+      <div className="min-h-screen bg-background flex flex-col items-center justify-center gap-3 px-4 text-center">
+        <UserPen className="h-8 w-8 text-muted-foreground" />
+        <p className="text-sm text-muted-foreground max-w-sm">
+          {profile
+            ? "Choisis ton nom de planning dans ton profil pour voir tes services ici."
+            : "Complète ton profil pour voir tes services ici."}
+        </p>
+        <Link href="/profil" className="text-sm text-primary hover:underline">
+          Mon profil
+        </Link>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-background">
+      <div className="max-w-2xl mx-auto px-4 pt-6 pb-10 space-y-4">
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
+            <CalendarDays className="h-5 w-5 text-primary" />
+            <h1 className="text-lg font-bold text-foreground">Mes Services</h1>
+          </div>
+          {upcomingCount > 0 && (
+            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-primary/10 text-primary">
+              {upcomingCount} à venir
+            </span>
+          )}
+        </div>
+        <p className="text-sm text-muted-foreground">
+          Les dates où <span className="font-semibold text-foreground">{profile.planningName}</span>{" "}
+          apparaît dans les plannings.
+        </p>
+
+        {/* Onglets À venir / Passés */}
+        <div className="flex rounded-xl border border-border overflow-hidden text-sm">
+          {(["upcoming", "past"] as Tab[]).map((tb, i) => (
+            <button
+              key={tb}
+              onClick={() => setTab(tb)}
+              className={`flex-1 px-3 py-2.5 font-medium transition-colors ${i === 1 ? "border-l border-border" : ""} ${
+                tab === tb
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-background text-muted-foreground hover:bg-muted/50"
+              }`}
+            >
+              {tb === "upcoming" ? "À venir" : "Passés"}
+            </button>
+          ))}
+        </div>
+
+        {!data ? (
+          <p className="text-sm text-muted-foreground text-center py-16">Chargement…</p>
+        ) : shown.length === 0 ? (
+          <div className="text-center py-16 border border-dashed border-border rounded-xl space-y-1">
+            <p className="text-sm text-muted-foreground">
+              {tab === "upcoming"
+                ? "Aucun service à venir — profite du repos 🙂"
+                : "Aucun service passé trouvé."}
+            </p>
+          </div>
+        ) : (
+          <div className="space-y-5">
+            {months.map((month) => (
+              <div key={month.label}>
+                <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2 px-1">
+                  {month.label}
+                </p>
+                <div className="space-y-2">
+                  {month.items.map((e) => {
+                    const color = serviceColor(e.service);
+                    const cat = serviceCategory(e.service);
+                    const setlistId = cat ? setlistByKey.get(`${e.date}|${cat}`) : undefined;
+                    const dUntil = tab === "upcoming" ? daysUntil(e.date, todayStr) : -1;
+                    const thisWeek = dUntil >= 0 && dUntil <= 6;
+                    return (
+                      <div
+                        key={`${e.date}|${e.service}`}
+                        className={`flex items-center gap-3 rounded-xl border bg-card px-4 py-3 border-l-4 ${
+                          thisWeek ? "border-border ring-1 ring-primary/20" : "border-border"
+                        }`}
+                        style={{ borderLeftColor: color }}
+                      >
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <p className="text-sm font-semibold text-foreground capitalize">
+                              {fdJour(e.date)}
+                            </p>
+                            {dUntil === 0 && (
+                              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-primary text-primary-foreground uppercase">
+                                Aujourd&apos;hui
+                              </span>
+                            )}
+                            {dUntil > 0 && dUntil <= 14 && (
+                              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-primary/10 text-primary">
+                                dans {dUntil} j
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-xs font-medium mt-0.5" style={{ color }}>
+                            {e.service}
+                          </p>
+                        </div>
+                        <div className="flex flex-wrap gap-1.5 justify-end items-center">
+                          {e.roles.map((r) => (
+                            <span
+                              key={r}
+                              className="text-[11px] font-semibold px-2 py-0.5 rounded-full"
+                              style={{ background: `${color}15`, color, border: `1px solid ${color}4d` }}
+                            >
+                              {r}
+                            </span>
+                          ))}
+                          {setlistId && (
+                            <Link
+                              href={`/setlists/${setlistId}`}
+                              className="flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 transition-colors"
+                            >
+                              <ListMusic className="h-3 w-3" />
+                              Setlist
+                            </Link>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
