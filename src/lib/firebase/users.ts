@@ -113,10 +113,6 @@ export async function setRegistrationOpen(open: boolean): Promise<void> {
 
 const profileCache = new Map<string, UserProfile | null>();
 
-export function invalidateProfile(uid: string): void {
-  profileCache.delete(uid);
-}
-
 export function useProfile() {
   const { user, loading: authLoading } = useAuth();
   const [profile, setProfile] = useState<UserProfile | null>(null);
