@@ -50,13 +50,6 @@ export function transposeChord(chord: string, semitones: number, targetKey: stri
 }
 
 /**
- * Transpose a key name by `semitones`.
- */
-export function transposeKey(key: string, semitones: number): string {
-  return transposeChord(key, semitones, "");
-}
-
-/**
  * Return the target key after transposition, with proper enharmonic.
  */
 export function getTransposedKey(originalKey: string, semitones: number): string {
