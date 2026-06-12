@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, Suspense } from "react";
+import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { signIn } from "@/lib/firebase/auth";
 import { getProfile } from "@/lib/firebase/users";
@@ -94,12 +95,12 @@ function LoginForm() {
           </form>
         </CardContent>
         <CardFooter className="flex-col gap-2">
-          <a href="/signup" className="text-sm text-primary hover:underline block">
+          <Link href="/signup" className="text-sm text-primary hover:underline block">
             {t("login.signupLink")}
-          </a>
-          <a href="/setlists" className="text-sm text-muted-foreground hover:text-foreground block">
+          </Link>
+          <Link href="/setlists" className="text-sm text-muted-foreground hover:text-foreground block">
             {t("login.backToSetlists")}
-          </a>
+          </Link>
         </CardFooter>
       </Card>
     </div>
