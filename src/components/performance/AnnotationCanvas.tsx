@@ -7,6 +7,7 @@
 // - le parent possède les données (AnnotationData) et les persiste
 
 import { useRef, useEffect, useState, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { Pencil, Highlighter, Eraser, Trash2, Undo2 } from "lucide-react";
 import {
   type AnnotationData,
@@ -68,6 +69,7 @@ interface Props {
 }
 
 export function AnnotationCanvas({ data, onChange }: Props) {
+  const { t } = useTranslation();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [tool, setTool] = useState<Tool>("pen");
   const [color, setColor] = useState(COLORS[0]);
@@ -231,19 +233,19 @@ export function AnnotationCanvas({ data, onChange }: Props) {
 
       {/* Panneau d'outils — bord droit, centré */}
       <div
-        className="absolute right-3 top-1/2 -translate-y-1/2 flex flex-col gap-1.5 bg-background/90 backdrop-blur border border-border rounded-xl p-2 shadow-lg max-h-[85vh] overflow-y-auto"
-        style={{ zIndex: 11 }}
+        className="absolute top-1/2 -translate-y-1/2 flex flex-col gap-1.5 bg-background/90 backdrop-blur border border-border rounded-xl p-2 shadow-lg max-h-[85vh] overflow-y-auto"
+        style={{ zIndex: 11, right: "calc(0.75rem + var(--sar, 0px))" }}
         onPointerDown={(e) => e.stopPropagation()}
         onPointerUp={(e) => e.stopPropagation()}
       >
-        <ToolBtn active={tool === "pen"} title="Crayon" onClick={() => setTool("pen")}>
-          <Pencil className="h-4 w-4" />
+        <ToolBtn active={tool === "pen"} title={t("performance.tools.pen")} onClick={() => setTool("pen")}>
+          <Pencil className="h-5 w-5" />
         </ToolBtn>
-        <ToolBtn active={tool === "highlighter"} title="Surligneur" onClick={() => setTool("highlighter")}>
-          <Highlighter className="h-4 w-4" />
+        <ToolBtn active={tool === "highlighter"} title={t("performance.tools.highlighter")} onClick={() => setTool("highlighter")}>
+          <Highlighter className="h-5 w-5" />
         </ToolBtn>
-        <ToolBtn active={tool === "eraser"} title="Gomme (efface un trait)" onClick={() => setTool("eraser")}>
-          <Eraser className="h-4 w-4" />
+        <ToolBtn active={tool === "eraser"} title={t("performance.tools.eraser")} onClick={() => setTool("eraser")}>
+          <Eraser className="h-5 w-5" />
         </ToolBtn>
 
         <div className="w-full h-px bg-border my-0.5" />
@@ -252,9 +254,9 @@ export function AnnotationCanvas({ data, onChange }: Props) {
         {([0, 1, 2] as const).map((i) => (
           <button
             key={i}
-            title={["Petit", "Moyen", "Grand"][i]}
+            title={[t("performance.tools.small"), t("performance.tools.medium"), t("performance.tools.large")][i]}
             onClick={() => setSizeIdx(i)}
-            className={`w-8 h-7 flex items-center justify-center rounded-lg transition-colors ${
+            className={`w-11 h-9 flex items-center justify-center rounded-lg transition-colors ${
               sizeIdx === i ? "bg-primary/15" : "hover:bg-muted"
             }`}
           >
@@ -277,7 +279,7 @@ export function AnnotationCanvas({ data, onChange }: Props) {
                 key={c}
                 title={c}
                 onClick={() => setColor(c)}
-                className="w-7 h-7 rounded-full border-2 transition-transform"
+                className="w-8 h-8 mx-auto rounded-full border-2 transition-transform"
                 style={{
                   backgroundColor: c,
                   borderColor: color === c ? "var(--primary)" : "var(--border)",
@@ -291,11 +293,11 @@ export function AnnotationCanvas({ data, onChange }: Props) {
 
         <div className="w-full h-px bg-border my-0.5" />
 
-        <ToolBtn active={false} title="Annuler" onClick={undo}>
-          <Undo2 className="h-4 w-4" />
+        <ToolBtn active={false} title={t("performance.tools.undo")} onClick={undo}>
+          <Undo2 className="h-5 w-5" />
         </ToolBtn>
-        <ToolBtn active={false} title="Tout effacer" onClick={clearAll}>
-          <Trash2 className="h-4 w-4 text-destructive" />
+        <ToolBtn active={false} title={t("performance.tools.clearAll")} onClick={clearAll}>
+          <Trash2 className="h-5 w-5 text-destructive" />
         </ToolBtn>
       </div>
     </>
@@ -316,8 +318,9 @@ function ToolBtn({
   return (
     <button
       title={title}
+      aria-label={title}
       onClick={onClick}
-      className={`w-8 h-8 flex items-center justify-center rounded-lg transition-colors ${
+      className={`w-11 h-11 flex items-center justify-center rounded-lg transition-colors ${
         active
           ? "bg-primary text-primary-foreground"
           : "text-muted-foreground hover:text-foreground hover:bg-muted"
