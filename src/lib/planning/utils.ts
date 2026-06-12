@@ -1,5 +1,4 @@
 export const MOIS = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"]
-export const MOISC = ["jan","fév","mar","avr","mai","jun","jul","aoû","sep","oct","nov","déc"]
 export const JOURC = ["dim","lun","mar","mer","jeu","ven","sam"]
 
 export const EDD_PERIODES = ["P1_JanFev","P2_MarAvr","P3_MaiJun","P4_JulAou","P5_SepOct","P6_NovDec"] as const
