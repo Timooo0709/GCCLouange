@@ -1,5 +1,3 @@
-import type { Timestamp } from "firebase/firestore";
-
 export const ANNONCE_SECTIONS = [
   "Culte Francophone",
   "Groupe Paix",
@@ -27,5 +25,5 @@ export interface Annonce {
   expiresAt: string | null;
   authorId: string;
   authorName: string;
-  createdAt: Timestamp | null;
+  createdAt: Date | null;
 }

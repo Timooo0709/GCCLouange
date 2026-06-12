@@ -16,7 +16,7 @@ function sectionLabel(s: string): string {
 
 function formatCreatedAt(a: Annonce): string {
   if (!a.createdAt) return "";
-  return new Date(a.createdAt.toMillis()).toLocaleDateString("fr-FR", {
+  return a.createdAt.toLocaleDateString("fr-FR", {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -81,7 +81,7 @@ export default function AnnoncesPage() {
       .filter((a) => filter === "Toutes" || a.section === filter)
       .sort((a, b) => {
         if (a.pinned !== b.pinned) return a.pinned ? -1 : 1;
-        return (b.createdAt?.toMillis() ?? 0) - (a.createdAt?.toMillis() ?? 0);
+        return (b.createdAt?.getTime() ?? 0) - (a.createdAt?.getTime() ?? 0);
       });
   }, [annonces, filter, todayStr]);
 

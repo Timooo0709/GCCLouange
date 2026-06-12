@@ -1,4 +1,3 @@
-import { Timestamp } from "firebase/firestore";
 import { auth } from "@/lib/firebase/config";
 import type { SetlistItem } from "@/types/setList";
 
@@ -22,10 +21,6 @@ export const FREE_CATEGORIES = [
 
 export const ALL_CATEGORIES = [...RESTRICTED_CATEGORIES, ...FREE_CATEGORIES];
 
-export function isRestricted(category: string): boolean {
-  return (RESTRICTED_CATEGORIES as readonly string[]).includes(category);
-}
-
 // ─── Firestore types ──────────────────────────────────────────────────────────
 
 export interface FSSetlist {
@@ -36,8 +31,8 @@ export interface FSSetlist {
   date: string;
   language: "fr" | "zh" | "mixed";
   notes: string;
-  createdAt: Timestamp | null;
-  updatedAt?: Timestamp | null;
+  createdAt: Date | null;
+  updatedAt?: Date | null;
   items: SetlistItem[];
   isDraft?: boolean;
   isPrivate?: boolean;
@@ -93,7 +88,7 @@ export function fromFsValue(v: unknown): unknown {
   if ("doubleValue" in val) return val.doubleValue;
   if ("stringValue" in val) return val.stringValue;
   if ("timestampValue" in val) {
-    return Timestamp.fromDate(new Date(val.timestampValue as string));
+    return new Date(val.timestampValue as string);
   }
   if ("arrayValue" in val) {
     const arr = val.arrayValue as { values?: unknown[] };
@@ -184,8 +179,8 @@ export async function getMySetlists(uid: string): Promise<FSSetlist[]> {
     .map((r) => fromFsDoc(r.document!))
     .filter((s) => s.isPrivate === true && !s.isDraft)
     .sort((a, b) => {
-      const aTs = a.createdAt?.toMillis() ?? 0;
-      const bTs = b.createdAt?.toMillis() ?? 0;
+      const aTs = a.createdAt?.getTime() ?? 0;
+      const bTs = b.createdAt?.getTime() ?? 0;
       return bTs - aTs;
     });
 }

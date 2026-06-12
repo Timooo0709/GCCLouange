@@ -48,7 +48,7 @@ export function useNotifications() {
 
       for (const a of annonces) {
         if (a.authorId === user.uid) continue; // pas de notification pour soi-même
-        const ts = a.createdAt?.toMillis() ?? 0;
+        const ts = a.createdAt?.getTime() ?? 0;
         if (!ts) continue;
         list.push({
           id: `annonce-${a.id}`,
@@ -63,8 +63,8 @@ export function useNotifications() {
       for (const s of setlists) {
         if (s.ownerId === user.uid) continue;
         if (!admin && !cats.includes(s.category)) continue;
-        const created = s.createdAt?.toMillis() ?? 0;
-        const updated = s.updatedAt?.toMillis() ?? 0;
+        const created = s.createdAt?.getTime() ?? 0;
+        const updated = s.updatedAt?.getTime() ?? 0;
         const ts = Math.max(created, updated);
         if (!ts) continue;
         list.push({
