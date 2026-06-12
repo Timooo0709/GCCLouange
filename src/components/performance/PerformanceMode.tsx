@@ -19,7 +19,7 @@ import { type AnnotationData, serializeAnnotations, deserializeAnnotations } fro
 import { loadAnnotation, saveAnnotation } from "@/lib/firebase/annotations";
 import { useAuth } from "@/lib/firebase/auth";
 import type { SetlistItem } from "@/types/setList";
-import type { SongContent } from "@/lib/utils/fetchSongContent";
+import type { SongContent } from "@/lib/api/songs";
 
 // ─── TransitionBanner (local copy — same style as PartitionView) ──────────────
 
