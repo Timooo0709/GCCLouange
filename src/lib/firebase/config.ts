@@ -1,5 +1,4 @@
 import { initializeApp, getApps } from "firebase/app";
-import { initializeFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
@@ -13,6 +12,6 @@ const firebaseConfig = {
 
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 
-// Force long-polling — mobile networks often block WebSocket/gRPC
-export const db = initializeFirestore(app, { experimentalForceLongPolling: true });
+// Firestore est consommé via l'API REST (voir lib/firebase/setlists.ts) —
+// seul le module Auth du SDK est utilisé.
 export const auth = getAuth(app);
