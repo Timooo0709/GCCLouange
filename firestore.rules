@@ -1,0 +1,108 @@
+rules_version = '2';
+
+// Règles de sécurité Firestore — à publier dans la console Firebase :
+// https://console.firebase.google.com/project/gcclouange/firestore/rules
+//
+// Modèle d'accès :
+// - Setlists : lecture réservée aux connectés (le filtrage par service se fait côté client) ;
+//   modification/suppression réservées au créateur (ownerId), aux musiciens du même service
+//   et aux admins.
+// - Profils (users/{uid}) : chacun écrit le sien ; les admins peuvent corriger tous les profils.
+// - config/app : état des inscriptions (registrationOpen), lisible publiquement,
+//   modifiable par les admins depuis la page /admin.
+//
+// La liste des admins doit rester synchronisée avec ADMIN_EMAILS dans src/lib/access.ts.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return signedIn() && request.auth.token.email in [
+        'tc328829@gmail.com',
+        'gcccfranco@gmail.com',
+        'david.code999@gmail.com'
+      ];
+    }
+
+    function profile() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    function hasProfile() {
+      return exists(/databases/$(database)/documents/users/$(request.auth.uid));
+    }
+
+    // Musicien du service correspondant à la catégorie de la setlist
+    function isMusicienOf(category) {
+      let p = profile();
+      return (
+        // Lieux de service (Culte Francophone, Intergroupe, Interfranco, Campus)
+        ("musicien" in p.roles && category in p.lieux)
+        // Classes EDD
+        || (p.edd == true && "musicien" in p.eddRoles
+            && category in ["中班", "大班", "高班"])
+        // Groupe de maison
+        || (p.groupe == category && p.groupeMusicien == true)
+      );
+    }
+
+    match /users/{uid} {
+      // Lecture par tout connecté (les règles setlists et le client lisent les profils)
+      allow read: if signedIn();
+      // Chacun écrit son propre profil ; les admins peuvent corriger tous les profils.
+      // Le champ `annonces` (droit de publication) n'est modifiable que par un admin.
+      allow create: if signedIn() && (
+        isAdmin()
+        || (request.auth.uid == uid && request.resource.data.get('annonces', []) == [])
+      );
+      allow update: if signedIn() && (
+        isAdmin()
+        || (request.auth.uid == uid
+            && request.resource.data.get('annonces', []) == resource.data.get('annonces', []))
+      );
+      allow delete: if isAdmin();
+    }
+
+    match /annonces/{id} {
+      allow read: if signedIn();
+      // Publication : admins + membres dont le profil liste la section dans `annonces`
+      allow create: if signedIn() && (
+        isAdmin()
+        || (hasProfile()
+            && request.resource.data.section in profile().get('annonces', [])
+            && request.resource.data.authorId == request.auth.uid)
+      );
+      // Modification/suppression : auteur + admins
+      allow update, delete: if signedIn() && (
+        isAdmin() || resource.data.authorId == request.auth.uid
+      );
+    }
+
+    match /setlists/{id} {
+      allow read: if signedIn();
+      allow create: if signedIn();
+      allow update, delete: if signedIn() && (
+        resource.data.ownerId == request.auth.uid
+        || isAdmin()
+        || (hasProfile() && isMusicienOf(resource.data.category))
+      );
+    }
+
+    // Annotations dessinées en Mode Louange (personnelles).
+    // L'id du document est préfixé par l'uid du propriétaire :
+    // {uid}__{setlistId}__{pageKey} — voir src/lib/firebase/annotations.ts.
+    match /annotations/{id} {
+      allow read, write: if signedIn() && id.split('__')[0] == request.auth.uid;
+    }
+
+    match /config/app {
+      // La page d'inscription lit registrationOpen sans être connectée
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+  }
+}
