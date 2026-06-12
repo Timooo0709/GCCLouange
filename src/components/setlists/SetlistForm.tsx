@@ -11,11 +11,12 @@ import { Search, X, AlertTriangle, Link2, Lock, Globe, Plus, ChevronDown, Chevro
 import Fuse from "fuse.js";
 import {
   RESTRICTED_CATEGORIES,
-  isRestricted,
+  ALL_CATEGORIES,
   createSetlist,
   updateSetlist,
 } from "@/lib/firebase/setlists";
-import { useAuth } from "@/lib/firebase/auth";
+import { useProfile } from "@/lib/firebase/users";
+import { visibleCategories, isAdminUser } from "@/lib/access";
 import { useTranslation } from "react-i18next";
 import { DndContext, closestCenter, DragEndEvent } from "@dnd-kit/core";
 import {
@@ -59,7 +60,7 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
   const isEdit = mode === "edit";
   const { t } = useTranslation();
   const router = useRouter();
-  const { user, loading: authLoading } = useAuth();
+  const { user, profile, loading: authLoading } = useProfile();
 
   // ── Form state ──────────────────────────────────────────
   const [title, setTitle] = useState(initial?.title ?? "");
@@ -90,6 +91,7 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
 
   useEffect(() => {
     if (isEdit) return;
+    if (!user) return;
     if (!title.trim() || !category) return;
     const timer = setTimeout(async () => {
       setAutoSaving(true);
@@ -107,7 +109,7 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
           // Brouillon invisible dans les listes tant que l'utilisateur n'a pas cliqué « Créer »
           isDraft: true,
           isPrivate,
-          ownerId: isPrivate ? (user?.uid ?? null) : null,
+          ownerId: user?.uid ?? null,
         };
         if (autoSaveIdRef.current) {
           await updateSetlist(autoSaveIdRef.current, payload);
@@ -245,7 +247,7 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
     if (!date) { setError(t("setlists.form.dateRequired")); return; }
     if (!leader.trim()) { setError(t("setlists.form.leaderRequired")); return; }
     if (!category) { setError(t("setlists.form.categoryRequired")); return; }
-    if ((isPrivate || isRestricted(category)) && !user) {
+    if (!user) {
       router.push(`/login?from=${loginFrom}`);
       return;
     }
@@ -257,7 +259,8 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
       const payload = {
         title: title.trim(), leader: leader.trim(), category, date, language,
         notes: notes.trim(), items: setlistItems, isDraft: false,
-        isPrivate, ownerId: isPrivate ? (user?.uid ?? ownerId) : null,
+        // Création : le créateur devient propriétaire. Édition : on conserve le propriétaire.
+        isPrivate, ownerId: isEdit ? ownerId : (user?.uid ?? null),
       };
       if (isEdit && setlistId) {
         await updateSetlist(setlistId, payload);
@@ -283,7 +286,20 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
   }, [title, leader, category, date, notes, isPrivate, items, user, router, t, isEdit, setlistId, ownerId, loginFrom]);
 
   const busy = saving;
-  const needsAuth = !isPrivate && category && isRestricted(category) && !user && !authLoading;
+  const needsAuth = !user && !authLoading;
+
+  // Catégories proposées : celles des services du profil (+ la catégorie actuelle en édition) — admins : toutes
+  const myCats = isAdminUser(user)
+    ? [...ALL_CATEGORIES]
+    : profile
+    ? visibleCategories(profile)
+    : [];
+  const allowedRestricted = RESTRICTED_CATEGORIES.filter(
+    (c) => myCats.includes(c) || c === initial?.category
+  );
+  const allowedFree = FREE_CATEGORIES.filter(
+    (c) => myCats.includes(c) || c === initial?.category
+  );
   const selectableItems = items.filter((i): i is FormItem => !isFormFusion(i) && !isFormTransition(i));
 
   const submitLabel = busy
@@ -294,7 +310,7 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
     <div className="min-h-screen bg-background">
 
       {/* ── Header sticky ── */}
-      <div className="sticky top-[58px] z-10 bg-background/95 backdrop-blur border-b border-border px-4 py-2.5 flex items-center gap-3">
+      <div className="sticky top-[var(--nav-h)] z-10 bg-background/95 backdrop-blur border-b border-border px-4 py-2.5 flex items-center gap-3">
         <a
           href={isEdit ? `/setlists/${setlistId}` : "/setlists"}
           className="text-sm text-muted-foreground hover:text-foreground shrink-0"
@@ -390,12 +406,12 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
               >
                 <option value="">{t("setlists.form.categoryPlaceholder")}</option>
                 <optgroup label={t("setlists.form.categoryGroupRestricted")}>
-                  {RESTRICTED_CATEGORIES.map((c) => (
+                  {allowedRestricted.map((c) => (
                     <option key={c} value={c}>{t("categories." + c, { defaultValue: c })}</option>
                   ))}
                 </optgroup>
                 <optgroup label={t("setlists.form.categoryGroupFree")}>
-                  {FREE_CATEGORIES.map((c) => (
+                  {allowedFree.map((c) => (
                     <option key={c} value={c}>{t("categories." + c, { defaultValue: c })}</option>
                   ))}
                 </optgroup>
