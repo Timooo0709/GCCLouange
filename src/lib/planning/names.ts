@@ -6,7 +6,7 @@ import {
 } from "./data"
 import {
   fetchCulte, fetchDejeuner, fetchPaix, fetchFidelite,
-  fetchFideliteMusic, fetchBonte, fetchEDD, fetchCampus,
+  fetchFideliteMusic, fetchBonte, fetchEDD, fetchCampus, inferYear,
 } from "./sheets"
 
 export interface PlanningData {
@@ -125,7 +125,7 @@ export interface ServiceEntry {
 function campusDate(label: string): string | null {
   const m = label.match(/^(\d{1,2})\/(\d{1,2})/)
   if (!m) return null
-  return `2026-${m[2].padStart(2, "0")}-${m[1].padStart(2, "0")}`
+  return `${inferYear(+m[1], +m[2])}-${m[2].padStart(2, "0")}-${m[1].padStart(2, "0")}`
 }
 
 /** Toutes les dates où `name` apparaît dans les plannings, triées chronologiquement. */
