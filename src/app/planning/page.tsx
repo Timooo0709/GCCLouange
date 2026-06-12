@@ -197,8 +197,8 @@ export default function PlanningAccueil() {
       {/* Verset */}
       <blockquote className="bg-secondary rounded-xl p-5 border border-border">
         <p className="text-sm text-muted-foreground italic leading-relaxed mb-3">
-          "Tout ce que vous faites, faites-le de bon cœur, comme pour le Seigneur et non pour des hommes,
-          sachant que vous recevrez du Seigneur l'héritage pour récompense. Servez Christ, le Seigneur."
+          « Tout ce que vous faites, faites-le de bon cœur, comme pour le Seigneur et non pour des hommes,
+          sachant que vous recevrez du Seigneur l&apos;héritage pour récompense. Servez Christ, le Seigneur. »
         </p>
         <footer className="text-xs font-semibold text-primary text-right">— Colossiens 3 : 23-24</footer>
       </blockquote>
