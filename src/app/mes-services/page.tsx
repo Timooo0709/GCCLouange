@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import { CalendarDays, ListMusic, Lock, UserPen } from "lucide-react";
 import { useProfile } from "@/lib/firebase/users";
 import { getSetlists, type FSSetlist } from "@/lib/firebase/setlists";
@@ -70,6 +71,7 @@ function groupByMonth(entries: GroupedEntry[]): { label: string; items: GroupedE
 }
 
 export default function MesServicesPage() {
+  const { t } = useTranslation();
   const { user, profile, loading: authLoading } = useProfile();
   const [data, setData] = useState<PlanningData | null>(null);
   const [setlists, setSetlists] = useState<FSSetlist[]>([]);
@@ -118,7 +120,7 @@ export default function MesServicesPage() {
   if (authLoading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
-        <p className="text-sm text-muted-foreground">Chargement…</p>
+        <p className="text-sm text-muted-foreground">{t("mesServices.loading")}</p>
       </div>
     );
   }
@@ -128,10 +130,10 @@ export default function MesServicesPage() {
       <div className="min-h-screen bg-background flex flex-col items-center justify-center gap-3 px-4 text-center">
         <Lock className="h-8 w-8 text-muted-foreground" />
         <p className="text-sm text-muted-foreground">
-          Connecte-toi pour voir tes prochains services.
+          {t("mesServices.loginPrompt")}
         </p>
         <Link href="/login?from=/mes-services" className="text-sm text-primary hover:underline">
-          Se connecter
+          {t("mesServices.login")}
         </Link>
       </div>
     );
@@ -142,12 +144,10 @@ export default function MesServicesPage() {
       <div className="min-h-screen bg-background flex flex-col items-center justify-center gap-3 px-4 text-center">
         <UserPen className="h-8 w-8 text-muted-foreground" />
         <p className="text-sm text-muted-foreground max-w-sm">
-          {profile
-            ? "Choisis ton nom de planning dans ton profil pour voir tes services ici."
-            : "Complète ton profil pour voir tes services ici."}
+          {profile ? t("mesServices.chooseName") : t("mesServices.completeProfile")}
         </p>
         <Link href="/profil" className="text-sm text-primary hover:underline">
-          Mon profil
+          {t("mesServices.myProfile")}
         </Link>
       </div>
     );
@@ -159,17 +159,16 @@ export default function MesServicesPage() {
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <CalendarDays className="h-5 w-5 text-primary" />
-            <h1 className="text-lg font-bold text-foreground">Mes Services</h1>
+            <h1 className="text-lg font-bold text-foreground">{t("mesServices.title")}</h1>
           </div>
           {upcomingCount > 0 && (
             <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-primary/10 text-primary">
-              {upcomingCount} à venir
+              {t("mesServices.upcomingCount", { count: upcomingCount })}
             </span>
           )}
         </div>
         <p className="text-sm text-muted-foreground">
-          Les dates où <span className="font-semibold text-foreground">{profile.planningName}</span>{" "}
-          apparaît dans les plannings.
+          {t("mesServices.subtitle", { name: profile.planningName })}
         </p>
 
         {/* Onglets À venir / Passés */}
@@ -184,19 +183,19 @@ export default function MesServicesPage() {
                   : "bg-background text-muted-foreground hover:bg-muted/50"
               }`}
             >
-              {tb === "upcoming" ? "À venir" : "Passés"}
+              {tb === "upcoming" ? t("mesServices.tabUpcoming") : t("mesServices.tabPast")}
             </button>
           ))}
         </div>
 
         {!data ? (
-          <p className="text-sm text-muted-foreground text-center py-16">Chargement…</p>
+          <p className="text-sm text-muted-foreground text-center py-16">{t("mesServices.loading")}</p>
         ) : shown.length === 0 ? (
           <div className="text-center py-16 border border-dashed border-border rounded-xl space-y-1">
             <p className="text-sm text-muted-foreground">
               {tab === "upcoming"
-                ? "Aucun service à venir — profite du repos 🙂"
-                : "Aucun service passé trouvé."}
+                ? t("mesServices.emptyUpcoming")
+                : t("mesServices.emptyPast")}
             </p>
           </div>
         ) : (
@@ -228,12 +227,12 @@ export default function MesServicesPage() {
                             </p>
                             {dUntil === 0 && (
                               <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-primary text-primary-foreground uppercase">
-                                Aujourd&apos;hui
+                                {t("mesServices.today")}
                               </span>
                             )}
                             {dUntil > 0 && dUntil <= 14 && (
                               <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-primary/10 text-primary">
-                                dans {dUntil} j
+                                {t("mesServices.inDays", { count: dUntil })}
                               </span>
                             )}
                           </div>
@@ -257,7 +256,7 @@ export default function MesServicesPage() {
                               className="flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 transition-colors"
                             >
                               <ListMusic className="h-3 w-3" />
-                              Setlist
+                              {t("mesServices.setlist")}
                             </Link>
                           )}
                         </div>

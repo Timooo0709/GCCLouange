@@ -1,10 +1,15 @@
-export const SERVICE_ROLES = ["chanteur", "musicien", "presidence"] as const;
+export const SERVICE_ROLES = ["chanteur", "musicien", "presidence", "regie"] as const;
 export type ServiceRole = (typeof SERVICE_ROLES)[number];
+
+// Rôles « exécutants » : donnent le droit de créer/éditer des setlists du culte
+// où l'on sert. La régie en est exclue (accès en lecture seule aux cultes).
+export const PERFORMER_ROLES: ServiceRole[] = ["chanteur", "musicien", "presidence"];
 
 export const SERVICE_ROLE_LABELS: Record<ServiceRole, string> = {
   chanteur: "Chanteur",
   musicien: "Musicien",
   presidence: "Présidence",
+  regie: "Régie",
 };
 
 export const SERVICE_LIEUX = [

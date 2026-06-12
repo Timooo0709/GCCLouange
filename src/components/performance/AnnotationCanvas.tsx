@@ -217,7 +217,9 @@ export function AnnotationCanvas({ data, onChange }: Props) {
     onChange({ ...data, strokes: [] });
   }
 
-  const sizeDot = (i: number) => 4 + i * 3; // Ø du point de l'UI tailles
+  // Aperçu de taille : barre horizontale à l'épaisseur réelle du trait de
+  // l'outil courant (plafonnée — surligneur/gomme montent jusqu'à 40px)
+  const sizeBar = (i: number) => Math.min(SIZES[tool][i], 14 + i * 4);
 
   return (
     <>
@@ -263,9 +265,14 @@ export function AnnotationCanvas({ data, onChange }: Props) {
             <span
               className="rounded-full"
               style={{
-                width: sizeDot(i),
-                height: sizeDot(i),
-                background: sizeIdx === i ? "var(--primary)" : "var(--muted-foreground)",
+                width: 24,
+                height: sizeBar(i),
+                background: tool === "eraser" ? "var(--muted-foreground)" : color,
+                opacity: tool === "highlighter" ? 0.35 : 1,
+                boxShadow:
+                  tool !== "eraser" && color === "#ffffff"
+                    ? "inset 0 0 0 1px var(--border)"
+                    : undefined,
               }}
             />
           </button>

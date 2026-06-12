@@ -43,7 +43,9 @@ export function loadSong(slug: string): Song {
   );
 
   return {
-    slug,
+    // Toujours la forme décodée : les slugs chinois arrivent URL-encodés
+    // depuis l'URL, mais l'index (songs-index.json) utilise le nom de fichier
+    slug: decoded,
     title: m.title,
     titlePinyin: m.titlePinyin,
     artist: m.artist,

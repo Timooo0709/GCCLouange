@@ -3,7 +3,7 @@
 import { useEffect, useState, useMemo } from "react";
 import { ALL_CATEGORIES, getSetlists, getMySetlists, type FSSetlist } from "@/lib/firebase/setlists";
 import { useProfile } from "@/lib/firebase/users";
-import { visibleCategories, isAdminUser } from "@/lib/access";
+import { visibleCategories, canCreateSetlist, isAdminUser } from "@/lib/access";
 import { useTranslation } from "react-i18next";
 import { Search, X, Plus, Lock, LogIn, UserPen } from "lucide-react";
 import Link from "next/link";
@@ -30,6 +30,8 @@ export default function SetlistsPage() {
     () => (admin ? [...ALL_CATEGORIES] : profile ? visibleCategories(profile) : []),
     [profile, admin]
   );
+  // Bouton « Créer » : caché pour une régie pure (aucune catégorie créable)
+  const canCreate = canCreateSetlist(user, profile);
 
   useEffect(() => {
     if (authLoading) return;
@@ -211,13 +213,15 @@ export default function SetlistsPage() {
                 ))}
               </optgroup>
             </select>
-            <Link
-              href="/setlists/new"
-              className="shrink-0 flex items-center gap-1.5 h-9 px-4 rounded-xl bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
-            >
-              <Plus className="h-4 w-4" />
-              <span className="hidden sm:inline">{t("setlists.list.newButton")}</span>
-            </Link>
+            {canCreate && (
+              <Link
+                href="/setlists/new"
+                className="shrink-0 flex items-center gap-1.5 h-9 px-4 rounded-xl bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
+              >
+                <Plus className="h-4 w-4" />
+                <span className="hidden sm:inline">{t("setlists.list.newButton")}</span>
+              </Link>
+            )}
           </div>
         </div>
 
@@ -229,7 +233,7 @@ export default function SetlistsPage() {
         ) : displayed.length === 0 ? (
           <div className="text-center py-16 border border-dashed border-border rounded-xl space-y-3">
             <p className="text-sm text-muted-foreground">{emptyMessage}</p>
-            {tab === "upcoming" && !query && (
+            {tab === "upcoming" && !query && canCreate && (
               <Link
                 href="/setlists/new"
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"

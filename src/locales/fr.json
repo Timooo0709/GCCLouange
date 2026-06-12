@@ -9,9 +9,11 @@
       "louange": "Louange",
       "planning": "Planning",
       "myServices": "Mes Services",
+      "service": "Service",
       "annonces": "Annonces",
       "profile": "Mon profil",
-      "signup": "Créer un compte"
+      "signup": "Créer un compte",
+      "guide": "Guide d'utilisation"
     },
     "buttons": {
       "reset": "Réinitialiser",
@@ -313,5 +315,54 @@
     "create": "Créer mon compte",
     "creating": "Création du compte…",
     "alreadyAccount": "J'ai déjà un compte — me connecter"
+  },
+  "mesServices": {
+    "title": "Mes Services",
+    "loading": "Chargement…",
+    "loginPrompt": "Connecte-toi pour voir tes prochains services.",
+    "login": "Se connecter",
+    "completeProfile": "Complète ton profil pour voir tes services ici.",
+    "chooseName": "Choisis ton nom de planning dans ton profil pour voir tes services ici.",
+    "myProfile": "Mon profil",
+    "upcomingCount": "{{count}} à venir",
+    "subtitle": "Les dates où {{name}} apparaît dans les plannings.",
+    "tabUpcoming": "À venir",
+    "tabPast": "Passés",
+    "today": "Aujourd'hui",
+    "inDays": "dans {{count}} j",
+    "emptyUpcoming": "Aucun service à venir — profite du repos 🙂",
+    "emptyPast": "Aucun service passé trouvé.",
+    "setlist": "Setlist"
+  },
+  "guide": {
+    "title": "Guide d'utilisation",
+    "subtitle": "Tout ce qu'il faut savoir pour utiliser le site GCC Louange.",
+    "tocTitle": "Sur cette page",
+    "sections": {
+      "songs": {
+        "title": "Trouver et lire un chant",
+        "body": "L'onglet Louange ouvre la liste des chants. Utilise la barre de recherche pour chercher par titre, par pinyin (chants chinois) ou par artiste. Les filtres permettent de n'afficher que les chants français, chinois, ou d'un thème précis. La pastille colorée à gauche indique la langue (bleu = français, rouge = chinois). Les chants que tu as ouverts récemment apparaissent en haut sous « Récemment consultés »."
+      },
+      "customize": {
+        "title": "Transposer et personnaliser",
+        "body": "Sur un chant, le bouton Personnaliser permet de transposer dans une autre tonalité, d'afficher ou masquer les accords, d'afficher le pinyin (chants chinois), de basculer en notation Jianpu quand elle existe, et de réorganiser les sections. Tu peux aussi régler la taille du texte. Ces réglages servent aussi à la génération du PDF et au Mode Louange."
+      },
+      "performance": {
+        "title": "Le Mode Louange",
+        "body": "Le Mode Louange affiche le chant en plein écran, page par page, pour jouer sans distraction. Balaye ou utilise les flèches pour changer de page. L'outil d'annotation (crayon, surligneur, gomme) permet d'écrire directement sur la partition : choisis l'outil, l'épaisseur (les cases montrent l'épaisseur réelle du trait) et la couleur. Les annotations sont enregistrées sur ton compte et réapparaissent à la prochaine ouverture de la même mise en page."
+      },
+      "setlists": {
+        "title": "Les setlists",
+        "body": "Une setlist regroupe les chants d'un culte ou d'une réunion. Tu vois les setlists des services auxquels tu as accès selon ton profil. Ouvre-en une pour parcourir les chants, lancer le Mode Louange, ou télécharger le PDF de l'ensemble. Selon tes droits, tu peux aussi créer et modifier des setlists."
+      },
+      "planning": {
+        "title": "Planning et Mes Services",
+        "body": "L'onglet Planning montre les plannings de service de l'église. L'onglet Mes Services filtre ces plannings pour n'afficher que les dates où tu es prévu — pense à choisir ton nom de planning dans ton profil pour que cela fonctionne. Quand une setlist existe pour un de tes services, un lien direct y mène."
+      },
+      "account": {
+        "title": "Compte, langue et thème",
+        "body": "Complète ton profil (prénom, nom, lieux de service, nom de planning) pour débloquer Mes Services et les setlists de tes services. Le bouton 中文/FR change la langue de toute l'interface. Le bouton lune/soleil bascule entre thème clair et sombre. La cloche affiche les notifications (nouvelles annonces et setlists)."
+      }
+    }
   }
 }

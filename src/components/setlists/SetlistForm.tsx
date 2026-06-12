@@ -16,7 +16,7 @@ import {
   updateSetlist,
 } from "@/lib/firebase/setlists";
 import { useProfile } from "@/lib/firebase/users";
-import { visibleCategories, isAdminUser } from "@/lib/access";
+import { creatableCategories, isAdminUser } from "@/lib/access";
 import { useTranslation } from "react-i18next";
 import { DndContext, closestCenter, DragEndEvent } from "@dnd-kit/core";
 import {
@@ -288,11 +288,12 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
   const busy = saving;
   const needsAuth = !user && !authLoading;
 
-  // Catégories proposées : celles des services du profil (+ la catégorie actuelle en édition) — admins : toutes
+  // Catégories proposées : celles où le profil peut CRÉER (+ la catégorie actuelle en édition) — admins : toutes.
+  // La régie ne peut pas créer de setlist de culte : exclue ici via creatableCategories.
   const myCats = isAdminUser(user)
     ? [...ALL_CATEGORIES]
     : profile
-    ? visibleCategories(profile)
+    ? creatableCategories(profile)
     : [];
   const allowedRestricted = RESTRICTED_CATEGORIES.filter(
     (c) => myCats.includes(c) || c === initial?.category

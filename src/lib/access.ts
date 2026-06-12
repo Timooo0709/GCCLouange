@@ -1,6 +1,6 @@
 import { EDD_CLASSES } from "@/lib/planning/utils";
 import type { FSSetlist } from "@/lib/firebase/setlists";
-import type { UserProfile } from "@/types/user";
+import { PERFORMER_ROLES, type UserProfile } from "@/types/user";
 
 // Comptes administrateurs (doivent aussi figurer dans firestore.rules)
 export const ADMIN_EMAILS = [
@@ -25,12 +25,49 @@ export function canPublishAnnonce(
   return (profile?.annonces ?? []).includes(section);
 }
 
-/** Catégories de setlists visibles selon le profil : lieux de service + classes EDD + groupe. */
+/** Catégories de setlists visibles selon le profil : lieux de service + classes EDD + groupe.
+ *  La régie compte ici : elle voit les setlists des cultes qu'elle sert (lecture seule). */
 export function visibleCategories(profile: UserProfile): string[] {
   const cats: string[] = [...profile.lieux];
   if (profile.edd) cats.push(...EDD_CLASSES);
   if (profile.groupe) cats.push(profile.groupe);
   return cats;
+}
+
+/** La personne sert-elle comme exécutant (chanteur/musicien/présidence) — par opposition à la régie seule ? */
+function hasPerformerRole(profile: UserProfile): boolean {
+  return profile.roles.some((r) => PERFORMER_ROLES.includes(r));
+}
+
+/** Catégories où la personne peut CRÉER une setlist (≠ visibles).
+ *  Cultes : seulement si elle y sert comme exécutant — la régie seule n'y crée rien.
+ *  Groupe / EDD : créables dès qu'on en fait partie. */
+export function creatableCategories(profile: UserProfile): string[] {
+  const cats: string[] = [];
+  if (hasPerformerRole(profile)) cats.push(...profile.lieux);
+  if (profile.edd) cats.push(...EDD_CLASSES);
+  if (profile.groupe) cats.push(profile.groupe);
+  return cats;
+}
+
+/** Peut-on créer au moins une setlist (bouton « Créer ») ? Admins toujours. */
+export function canCreateSetlist(
+  user: { email?: string | null } | null,
+  profile: UserProfile | null
+): boolean {
+  if (isAdminUser(user)) return true;
+  return !!profile && creatableCategories(profile).length > 0;
+}
+
+/** Peut-on dupliquer cette setlist ? Dupliquer crée une copie dans la même catégorie,
+ *  donc réservé à qui peut créer dans cette catégorie (la régie en est exclue). */
+export function canDuplicateSetlist(
+  user: { email?: string | null } | null,
+  profile: UserProfile | null,
+  setlist: FSSetlist
+): boolean {
+  if (isAdminUser(user)) return true;
+  return !!profile && creatableCategories(profile).includes(setlist.category);
 }
 
 export function canSeeSetlist(

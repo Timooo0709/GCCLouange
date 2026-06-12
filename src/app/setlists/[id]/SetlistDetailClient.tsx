@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { getSetlist, deleteSetlist, duplicateSetlist, type FSSetlist } from "@/lib/firebase/setlists";
 import { useProfile } from "@/lib/firebase/users";
-import { canSeeSetlist, canEditSetlist } from "@/lib/access";
+import { canSeeSetlist, canEditSetlist, canDuplicateSetlist } from "@/lib/access";
 import { useTranslation } from "react-i18next";
 import type { SongIndexEntry } from "@/types/song";
 import type { SetlistItem } from "@/types/setList";
@@ -274,6 +274,7 @@ export function SetlistDetailClient() {
 
   // Modification/suppression : créateur + musiciens du même service
   const canEdit = canEditSetlist(user, profile, setlist);
+  const canDuplicate = canDuplicateSetlist(user, profile, setlist);
   return (
     <div className="min-h-screen bg-background">
       {/* Top bar — même style que SongDetailClient */}
@@ -373,10 +374,12 @@ export function SetlistDetailClient() {
                       </Link>
                     </DropdownMenuItem>
                   )}
-                  <DropdownMenuItem disabled={duplicating} onClick={() => handleDuplicate()}>
-                    <Copy className="h-3.5 w-3.5 text-muted-foreground" />
-                    {duplicating ? "…" : t("setlists.detail.duplicate")}
-                  </DropdownMenuItem>
+                  {canDuplicate && (
+                    <DropdownMenuItem disabled={duplicating} onClick={() => handleDuplicate()}>
+                      <Copy className="h-3.5 w-3.5 text-muted-foreground" />
+                      {duplicating ? "…" : t("setlists.detail.duplicate")}
+                    </DropdownMenuItem>
+                  )}
                   <DropdownMenuItem onClick={() => handleShare()}>
                     <Share2 className="h-3.5 w-3.5 text-muted-foreground" />
                     {t("setlists.detail.share")}

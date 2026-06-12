@@ -83,7 +83,10 @@ export function ChordLine({ tokens, showChords = true, fontSize = 0.88, chordEm 
             {showChords && seg.chord ? (
               <span
                 className={`font-bold font-chord whitespace-nowrap leading-[0.7] ${chord_font?.className}`}
-                style={{ fontSize: `${chordEm}em` }}
+                // padding-right : écart minimal quand l'accord est plus large
+                // que la parole (fréquent en chinois : accord long sur 1 caractère),
+                // sinon deux accords consécutifs se touchent
+                style={{ fontSize: `${chordEm}em`, paddingRight: "0.5em" }}
               >
                 {seg.chord}
               </span>
