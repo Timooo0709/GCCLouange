@@ -41,21 +41,11 @@ interface SongDetailClientProps {
     const [showPanel, setShowPanel] = useState(false);
     const [downloading, setDownloading] = useState(false);
     const [backPath, setBackPath] = useState("/songs");
-    const [backLabel, setBackLabel] = useState("");
     const searchParams = useSearchParams();
     useEffect(() => {
       const saved = sessionStorage.getItem("lastListPath");
-      if (saved) {
-        setBackPath(saved);
-        if (saved.startsWith("/setlists/")) {
-          setBackLabel(t("setlists.detail.back"));
-        } else {
-          setBackLabel(t("songs.detail.backToAll"));
-        }
-      } else {
-        setBackLabel(t("songs.detail.backToAll"));
-      }
-    }, [t]);
+      if (saved) setBackPath(saved);
+    }, []);
 
     // Mémoriser le chant dans les « récemment consultés » (affichés sur /songs)
     useEffect(() => {
