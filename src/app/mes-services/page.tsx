@@ -83,8 +83,10 @@ export default function MesServicesPage() {
   }, []);
 
   useEffect(() => {
-    if (!user) { setSetlists([]); return; }
+    if (!user) return;
     getSetlists().then(setSetlists);
+    // Vide à la déconnexion / au changement d'utilisateur (pas de setState synchrone).
+    return () => setSetlists([]);
   }, [user]);
 
   // Setlists groupées par date+catégorie.
