@@ -84,7 +84,7 @@
     "passwordPlaceholder": "••••••••",
     "submit": "登录",
     "submitLoading": "登录中…",
-    "backToSetlists": "← 返回歌单列表",
+    "backToSetlists": "← 返回歌曲列表",
     "errorInvalid": "登录凭证错误。请检查电子邮箱和密码。",
     "signupLink": "还没有账号？注册"
   },
