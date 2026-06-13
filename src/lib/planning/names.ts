@@ -132,6 +132,10 @@ export interface ServiceEntry {
   service: string
   /** Ex. "Piano", "Présidence" */
   role: string
+  /** Heure (répétitions campus uniquement, ex. "17:00") */
+  time?: string
+  /** Lieu (répétitions campus uniquement, ex. "Grande Salle") */
+  location?: string
 }
 
 /** Date d'une séance campus ("12/3 Matin") → ISO, même convention d'année que parseDate. */
@@ -169,9 +173,15 @@ export function findMyServices(data: PlanningData, name: string): ServiceEntry[]
     const dt = campusDate(s.d)
     if (!dt) continue
     const moment = s.d.includes("Soir") ? "Campus (soir)" : "Campus (matin)"
-    if (cellHasName(s.ch, name)) out.push({ date: dt, service: moment, role: "Chant" })
-    if (cellHasName(s.mu, name)) out.push({ date: dt, service: moment, role: "Musicien" })
-    if (cellHasName(s.rg, name)) out.push({ date: dt, service: moment, role: "Régie" })
+    const roles: string[] = []
+    if (cellHasName(s.ch, name)) roles.push("Chant")
+    if (cellHasName(s.mu, name)) roles.push("Musicien")
+    if (cellHasName(s.rg, name)) roles.push("Régie")
+    for (const role of roles) {
+      out.push({ date: dt, service: moment, role })
+      // Répétition associée : date / heure / lieu propres, distincts de la séance
+      if (s.ent) out.push({ date: s.ent, service: "Campus (répét.)", role, time: s.entTime, location: s.entLieu })
+    }
   }
 
   return out.sort((a, b) => a.date.localeCompare(b.date) || a.service.localeCompare(b.service))
