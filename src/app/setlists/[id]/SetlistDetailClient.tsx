@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-import { Trash2, List, Music, Pencil, Play, MoreHorizontal, Download, Copy, Share2 } from "lucide-react";
+import { Trash2, List, Music, Pencil, Play, MoreHorizontal, Download, Copy, Share2, BellRing } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -23,7 +23,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { getSetlist, deleteSetlist, duplicateSetlist, type FSSetlist } from "@/lib/firebase/setlists";
+import { getSetlist, deleteSetlist, duplicateSetlist, authHeader, type FSSetlist } from "@/lib/firebase/setlists";
 import { useProfile } from "@/lib/firebase/users";
 import { canSeeSetlist, canEditSetlist, canDuplicateSetlist } from "@/lib/access";
 import { useTranslation } from "react-i18next";
@@ -62,6 +62,7 @@ export function SetlistDetailClient() {
   const [performanceMode, setPerformanceMode] = useState(false);
   const [duplicating, setDuplicating] = useState(false);
   const [shareFeedback, setShareFeedback] = useState<string | null>(null);
+  const [notifying, setNotifying] = useState(false);
   const [loadError, setLoadError] = useState(false);
   const [retryKey, setRetryKey] = useState(0);
 
@@ -223,6 +224,36 @@ export function SetlistDetailClient() {
     } catch { /* clipboard indisponible */ }
   }
 
+  // Valide la setlist du culte et prévient l'équipe (musiciens, régie, choristes)
+  // de service ce dimanche-là via notification push.
+  async function handleNotifyTeam() {
+    if (!setlist || notifying) return;
+    setNotifying(true);
+    try {
+      const headers = await authHeader();
+      const res = await fetch("/api/push/notify-setlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...headers },
+        body: JSON.stringify({ setlistId: id }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok) {
+        flashFeedback(
+          t("setlists.detail.notifySent", {
+            defaultValue: "Équipe prévenue ({{count}} notifications envoyées).",
+            count: data.sent ?? 0,
+          })
+        );
+      } else {
+        flashFeedback(data.error || t("setlists.detail.notifyError", { defaultValue: "Échec de l'envoi." }));
+      }
+    } catch {
+      flashFeedback(t("setlists.detail.notifyError", { defaultValue: "Échec de l'envoi." }));
+    } finally {
+      setNotifying(false);
+    }
+  }
+
   if (loadingSetlist) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -275,6 +306,10 @@ export function SetlistDetailClient() {
   // Modification/suppression : créateur + musiciens du même service
   const canEdit = canEditSetlist(user, profile, setlist);
   const canDuplicate = canDuplicateSetlist(user, profile, setlist);
+  // Notif « setlist prête » : réservée aux setlists du Culte Franco, modifiables
+  // par l'utilisateur, et contenant au moins 4 vrais chants (hors transitions).
+  const realSongCount = setlist.items.filter((i) => i.type !== "transition").length;
+  const canNotifyTeam = canEdit && setlist.category === "Culte Francophone";
   return (
     <div className="min-h-screen bg-background">
       {/* Top bar — même style que SongDetailClient */}
@@ -352,6 +387,29 @@ export function SetlistDetailClient() {
                 <Play className="h-3.5 w-3.5" />
                 <span className="hidden sm:inline">{t("setlists.detail.performanceMode")}</span>
               </button>
+
+              {/* Prévenir l'équipe — setlist du Culte Franco prête (≥ 4 chants) */}
+              {canNotifyTeam && (
+                <button
+                  onClick={handleNotifyTeam}
+                  disabled={notifying || realSongCount < 4}
+                  title={
+                    realSongCount < 4
+                      ? t("setlists.detail.notifyNeedSongs", {
+                          defaultValue: "Ajoute au moins 4 chants pour prévenir l'équipe.",
+                        })
+                      : undefined
+                  }
+                  className="h-8 px-2.5 rounded-[8px] border border-border bg-card text-[12.5px] font-semibold flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-all duration-150 disabled:opacity-50"
+                >
+                  <BellRing className="h-3.5 w-3.5" />
+                  <span className="hidden sm:inline">
+                    {notifying
+                      ? "…"
+                      : t("setlists.detail.notifyTeam", { defaultValue: "Prévenir l'équipe" })}
+                  </span>
+                </button>
+              )}
 
               {/* Menu ⋯ : Modifier / Dupliquer / Partager / PDF / Supprimer */}
               <DropdownMenu>

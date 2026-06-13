@@ -28,6 +28,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "firebase": "^12.13.0",
+    "firebase-admin": "^13.0.2",
     "fuse.js": "^7.0.0",
     "i18next": "^26.3.0",
     "lucide-react": "^0.511.0",
@@ -38,12 +39,14 @@
     "react-i18next": "^17.0.8",
     "resend": "^6.12.4",
     "tailwind-merge": "^2.6.0",
-    "vaul": "^1.1.2"
+    "vaul": "^1.1.2",
+    "web-push": "^3.6.7"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/web-push": "^3.6.4",
     "autoprefixer": "^10.4.21",
     "eslint": "^9",
     "eslint-config-next": "^16.2.9",

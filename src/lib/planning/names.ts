@@ -52,6 +52,12 @@ function normalize(s: string): string {
   return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim()
 }
 
+/** Normalisation publique d'un nom de planning (accents/casse/espaces) \u2014 sert \u00e0
+ *  apparier `planningName` d'un profil aux noms du Google Sheet c\u00f4t\u00e9 serveur. */
+export function normalizeName(s: string): string {
+  return normalize(s)
+}
+
 /** Découpe une cellule de planning en noms : gère "A, B", "Piano: X, Guitare: Y"… */
 function splitNames(cell: string): string[] {
   return cell
@@ -77,6 +83,13 @@ const CULTE_ROLES: [number, string][] = [
   [5, "Guitare"], [6, "Batterie"], [7, "Sono"], [8, "PPT"],
   [9, "Orateur"], [10, "Traduction"],
 ]
+
+/** Rôles « équipe louange » du culte Franco : musiciens + régie + choristes.
+ *  Cible des notifications « setlist prête » (exclut orateur/traduction et la
+ *  présidence, qui est l'auteur de la setlist). */
+export const LOUANGE_TEAM_ROLES = new Set([
+  "Choriste", "Piano", "Guitare", "Batterie", "Sono", "PPT",
+])
 const GROUPE_ROLES: [number, string][] = [[1, "Présidence"], [2, "Musicien"], [3, "Orateur"]]
 const FIDELITE_ROLES: [number, string][] = [[1, "Présidence"], [2, "Orateur"], [4, "Pianiste"]]
 const FIDELITE_MUSIC_ROLES: [number, string][] = [[1, "Présidence"], [2, "Piano"], [3, "Guitare"], [4, "Batterie"]]
@@ -162,4 +175,28 @@ export function findMyServices(data: PlanningData, name: string): ServiceEntry[]
   }
 
   return out.sort((a, b) => a.date.localeCompare(b.date) || a.service.localeCompare(b.service))
+}
+
+// ─── Service du culte Franco à une date donnée (côté serveur) ──────────────────
+
+export interface CulteServant {
+  /** Graphie du nom telle qu'écrite dans le planning */
+  name: string
+  /** Ex. "Piano", "Présidence", "Sono" */
+  role: string
+}
+
+/** Toutes les personnes de service au culte Franco (`data.culte`) à une date ISO
+ *  donnée, avec leur rôle. Utilisé pour cibler les rappels J-7/J-3 et la notif
+ *  « setlist prête ». Les noms sont en texte libre — l'appariement aux comptes
+ *  se fait ensuite via normalizeName(). */
+export function culteServantsForDate(data: PlanningData, dateISO: string): CulteServant[] {
+  const out: CulteServant[] = []
+  for (const r of data.culte) {
+    if (r[0] !== dateISO) continue
+    for (const [i, role] of CULTE_ROLES) {
+      for (const name of splitNames(r[i] ?? "")) out.push({ name, role })
+    }
+  }
+  return out
 }

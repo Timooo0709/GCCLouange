@@ -111,6 +111,21 @@ service cloud.firestore {
       allow read, write: if signedIn() && id.split('__')[0] == request.auth.uid;
     }
 
+    // Abonnements push (un document par appareil).
+    // L'id est préfixé par l'uid du propriétaire : {uid}__{hashEndpoint}
+    // — voir src/lib/push/client.ts. Chacun ne gère que ses propres appareils ;
+    // le serveur (Firebase Admin) lit tous les abonnements pour envoyer.
+    match /pushSubscriptions/{id} {
+      allow read, write: if signedIn() && id.split('__')[0] == request.auth.uid;
+    }
+
+    // Journal des notifications envoyées (idempotence des rappels + anti-spam
+    // setlist). Écrit/lu uniquement par le serveur via Firebase Admin, qui
+    // contourne ces règles — interdit à tout client.
+    match /notifLog/{id} {
+      allow read, write: if false;
+    }
+
     match /config/app {
       // La page d'inscription lit registrationOpen sans être connectée
       allow read: if true;

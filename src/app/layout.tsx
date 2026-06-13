@@ -41,7 +41,9 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.webmanifest" />
         <link rel="icon" href="/icon.png" type="image/png" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <script dangerouslySetInnerHTML={{ __html: `if('serviceWorker'in navigator){navigator.serviceWorker.getRegistrations().then(function(r){r.forEach(function(s){s.unregister();})})}` }} />
+        {/* Service worker push-only (public/sw.js) — requis pour les notifications
+            Web Push sur PWA iOS/Android. Il ne fait plus de cache hors-ligne. */}
+        <script dangerouslySetInnerHTML={{ __html: `if('serviceWorker'in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){})})}` }} />
       </head>
       <body className={`${inter.variable} font-sans antialiased min-h-screen bg-background`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>

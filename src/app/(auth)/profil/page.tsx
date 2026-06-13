@@ -14,6 +14,7 @@ import {
   EMPTY_PROFILE_FORM,
   type ProfileFormValue,
 } from "@/components/auth/ProfileFields";
+import { PushToggle } from "@/components/push/PushToggle";
 
 export default function ProfilPage() {
   const { t } = useTranslation();
@@ -143,6 +144,13 @@ export default function ProfilPage() {
             </Button>
           )}
         </form>
+
+        {/* Notifications push — disponible une fois le profil créé */}
+        {profile && (
+          <div className="mt-5">
+            <PushToggle />
+          </div>
+        )}
       </div>
     </div>
   );
