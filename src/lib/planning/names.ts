@@ -156,9 +156,13 @@ export function findMyServices(data: PlanningData, name: string): ServiceEntry[]
   if (!name.trim()) return []
   const out: ServiceEntry[] = []
   const scan = (rows: string[][], service: string, roles: [number, string][]) => {
+    // Colonne « Présidence » du planning → président de la séance, qui sert à
+    // retrouver la bonne setlist quand plusieurs existent le même jour.
+    const presCol = roles.find(([, role]) => role === "Présidence")?.[0]
     for (const r of rows) {
+      const leader = presCol != null ? (splitNames(r[presCol] ?? "")[0] ?? "") : ""
       for (const [i, role] of roles) {
-        if (cellHasName(r[i], name)) out.push({ date: r[0], service, role })
+        if (cellHasName(r[i], name)) out.push({ date: r[0], service, role, leader })
       }
     }
   }
