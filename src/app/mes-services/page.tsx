@@ -22,7 +22,6 @@ function serviceCategory(service: string): string | null {
   if (service === "Culte Franco") return "Culte Francophone";
   if (service.startsWith("Groupe ")) return service;
   if (service.startsWith("EDD ")) return service.slice(4);
-  if (service.startsWith("Campus (répét")) return null; // répétition : pas de setlist
   if (service.startsWith("Campus")) return "Campus";
   return null;
 }
@@ -41,7 +40,7 @@ function daysUntil(dateStr: string, todayStr: string): number {
   );
 }
 
-type GroupedEntry = { date: string; service: string; roles: string[]; time?: string; location?: string };
+type GroupedEntry = { date: string; service: string; roles: string[]; time?: string; location?: string; setlistDate?: string };
 
 /** Regroupe les entrées par date+service en fusionnant les rôles. */
 function groupEntries(entries: ServiceEntry[]): GroupedEntry[] {
@@ -52,7 +51,7 @@ function groupEntries(entries: ServiceEntry[]): GroupedEntry[] {
     if (g) {
       if (!g.roles.includes(e.role)) g.roles.push(e.role);
     } else {
-      map.set(key, { date: e.date, service: e.service, roles: [e.role], time: e.time, location: e.location });
+      map.set(key, { date: e.date, service: e.service, roles: [e.role], time: e.time, location: e.location, setlistDate: e.setlistDate });
     }
   }
   return [...map.values()];
@@ -210,7 +209,7 @@ export default function MesServicesPage() {
                   {month.items.map((e) => {
                     const color = serviceColor(e.service);
                     const cat = serviceCategory(e.service);
-                    const setlistId = cat ? setlistByKey.get(`${e.date}|${cat}`) : undefined;
+                    const setlistId = cat ? setlistByKey.get(`${e.setlistDate ?? e.date}|${cat}`) : undefined;
                     const dUntil = tab === "upcoming" ? daysUntil(e.date, todayStr) : -1;
                     const thisWeek = dUntil >= 0 && dUntil <= 6;
                     return (
