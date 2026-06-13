@@ -15,6 +15,16 @@ export function isAdminUser(user: { email?: string | null } | null): boolean {
   return !!user?.email && ADMIN_EMAILS.includes(user.email.toLowerCase());
 }
 
+/** Modification du profil : autorisée tant qu'il n'existe pas encore (première
+ *  complétion par l'intéressé) ; une fois complété, réservé aux admins.
+ *  Miroir serveur dans firestore.rules (users/{uid} : create libre, update admin). */
+export function canEditProfile(
+  user: { email?: string | null } | null,
+  profile: UserProfile | null
+): boolean {
+  return isAdminUser(user) || !profile;
+}
+
 /** Publication d'annonces : droit attribué par les admins (par section) — admins toujours autorisés. */
 export function canPublishAnnonce(
   user: { email?: string | null } | null,

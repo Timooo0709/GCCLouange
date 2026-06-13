@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { useProfile, saveProfile } from "@/lib/firebase/users";
+import { canEditProfile } from "@/lib/access";
 import { loadPlanningData, collectPlanningNames } from "@/lib/planning/names";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -63,7 +64,7 @@ export default function ProfilPage() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!user || !form) return;
+    if (!user || !form || !canEditProfile(user, profile)) return;
     setError("");
     if (!form.firstName.trim() || !form.lastName.trim()) {
       setError(t("profile.errorName"));
@@ -97,6 +98,8 @@ export default function ProfilPage() {
     }
   }
 
+  const canEdit = canEditProfile(user, profile);
+
   return (
     <div className="min-h-screen bg-background px-4 py-10">
       <div className="w-full max-w-lg mx-auto">
@@ -113,10 +116,18 @@ export default function ProfilPage() {
           </Alert>
         )}
 
+        {!canEdit && (
+          <Alert className="mb-5">
+            <AlertDescription>{t("profile.locked")}</AlertDescription>
+          </Alert>
+        )}
+
         <form onSubmit={handleSubmit} className="space-y-5">
           <Card>
             <CardContent className="p-5">
-              <ProfileFields value={form} onChange={setForm} planningNames={planningNames} />
+              <fieldset disabled={!canEdit} className={!canEdit ? "opacity-60" : undefined}>
+                <ProfileFields value={form} onChange={setForm} planningNames={planningNames} />
+              </fieldset>
             </CardContent>
           </Card>
 
@@ -126,9 +137,11 @@ export default function ProfilPage() {
             </Alert>
           )}
 
-          <Button type="submit" disabled={saving} className="w-full h-11">
-            {saving ? t("profile.saving") : t("profile.save")}
-          </Button>
+          {canEdit && (
+            <Button type="submit" disabled={saving} className="w-full h-11">
+              {saving ? t("profile.saving") : t("profile.save")}
+            </Button>
+          )}
         </form>
       </div>
     </div>

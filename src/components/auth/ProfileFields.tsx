@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { ChevronDown, Search } from "lucide-react";
 import {
   SERVICE_ROLES,
   SERVICE_ROLE_LABELS,
@@ -234,7 +235,37 @@ export function GroupeFields({ value, onChange }: SectionProps) {
 
 // ─── Nom de planning ──────────────────────────────────────────────────────────
 
-const CUSTOM_NAME = "__autre__";
+function normalizeName(s: string): string {
+  return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+}
+
+function NameOption({
+  active,
+  label,
+  muted,
+  onClick,
+}: {
+  active: boolean;
+  label: string;
+  muted?: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`w-full text-left px-3 py-2 text-sm transition-colors ${
+        active
+          ? "bg-primary/10 text-primary font-medium"
+          : muted
+          ? "text-muted-foreground hover:bg-muted"
+          : "text-foreground hover:bg-muted"
+      }`}
+    >
+      {label}
+    </button>
+  );
+}
 
 export function PlanningNameField({
   value,
@@ -244,33 +275,100 @@ export function PlanningNameField({
   const { t } = useTranslation();
   const set = (patch: Partial<ProfileFormValue>) => onChange({ ...value, ...patch });
   const [customName, setCustomName] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
+
   // Les noms chargent en asynchrone : un nom enregistré absent de la liste passe en saisie libre
   const isCustom =
     customName || (value.planningName !== "" && !planningNames.includes(value.planningName));
+
+  const q = normalizeName(query);
+  const filtered = q ? planningNames.filter((n) => normalizeName(n).includes(q)) : planningNames;
+
+  const close = () => {
+    setOpen(false);
+    setQuery("");
+  };
+  const selectName = (name: string) => {
+    setCustomName(false);
+    set({ planningName: name });
+    close();
+  };
+
+  const triggerLabel = isCustom
+    ? t("profile.fields.otherName")
+    : value.planningName || t("profile.fields.notInPlannings");
 
   return (
     <div>
       <Label className="mb-1 block">{t("profile.fields.planningName")}</Label>
       <p className="text-xs text-muted-foreground mb-2">{t("profile.fields.planningNameHint")}</p>
-      <select
-        value={isCustom ? CUSTOM_NAME : value.planningName}
-        onChange={(e) => {
-          if (e.target.value === CUSTOM_NAME) {
-            setCustomName(true);
-            set({ planningName: "" });
-          } else {
-            setCustomName(false);
-            set({ planningName: e.target.value });
-          }
-        }}
-        className="w-full h-11 px-3 border border-border rounded-lg bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        className="w-full h-11 px-3 flex items-center justify-between gap-2 border border-border rounded-lg bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
       >
-        <option value="">{t("profile.fields.notInPlannings")}</option>
-        {planningNames.map((n) => (
-          <option key={n} value={n}>{n}</option>
-        ))}
-        <option value={CUSTOM_NAME}>{t("profile.fields.otherName")}</option>
-      </select>
+        <span className={isCustom || value.planningName ? "text-foreground" : "text-muted-foreground"}>
+          {triggerLabel}
+        </span>
+        <ChevronDown
+          className={`h-4 w-4 text-muted-foreground shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+
+      {open && (
+        <div className="mt-1 rounded-lg border border-border bg-background shadow-sm overflow-hidden">
+          <div className="p-2 border-b border-border">
+            <div className="relative">
+              <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+              <Input
+                autoFocus
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Escape") close();
+                }}
+                placeholder={t("profile.fields.searchName")}
+                className="h-10 pl-8"
+              />
+            </div>
+          </div>
+          <div className="max-h-56 overflow-y-auto py-1">
+            <NameOption
+              active={!isCustom && value.planningName === ""}
+              label={t("profile.fields.notInPlannings")}
+              muted
+              onClick={() => selectName("")}
+            />
+            {filtered.map((n) => (
+              <NameOption
+                key={n}
+                active={!isCustom && value.planningName === n}
+                label={n}
+                onClick={() => selectName(n)}
+              />
+            ))}
+            {q && filtered.length === 0 && (
+              <p className="px-3 py-2 text-sm text-muted-foreground">
+                {t("profile.fields.noNameResults")}
+              </p>
+            )}
+            <NameOption
+              active={isCustom}
+              label={t("profile.fields.otherName")}
+              muted
+              onClick={() => {
+                setCustomName(true);
+                set({ planningName: "" });
+                close();
+              }}
+            />
+          </div>
+        </div>
+      )}
+
       {isCustom && (
         <Input
           type="text"

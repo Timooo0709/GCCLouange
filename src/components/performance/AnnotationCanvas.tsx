@@ -78,6 +78,8 @@ export function AnnotationCanvas({ data, onChange }: Props) {
   const activePointer = useRef<number | null>(null);
   const livePoints = useRef<[number, number][]>([]);
   const history = useRef<Stroke[][]>([]);
+  // Cercle de prévisualisation qui suit le pointeur (position pilotée hors React)
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   // Échelle viewport actuel ↔ espace d'origine des données
   const toOrig = useCallback(
@@ -142,6 +144,17 @@ export function AnnotationCanvas({ data, onChange }: Props) {
     [data, onChange, sizeIdx, toOrig],
   );
 
+  // ── Cercle indicateur de taille (suit le pointeur, piloté hors React) ──
+  const showCursorAt = (x: number, y: number) => {
+    const el = cursorRef.current;
+    if (!el) return;
+    el.style.transform = `translate(${x}px, ${y}px)`;
+    el.style.opacity = "1";
+  };
+  const hideCursor = () => {
+    if (cursorRef.current) cursorRef.current.style.opacity = "0";
+  };
+
   // ── Dessin live (segment incrémental, sans re-render React) ──
   const drawLiveSegment = (x: number, y: number) => {
     const ctx = canvasRef.current?.getContext("2d");
@@ -169,6 +182,7 @@ export function AnnotationCanvas({ data, onChange }: Props) {
     e.stopPropagation();
     activePointer.current = e.pointerId;
     (e.target as HTMLElement).setPointerCapture(e.pointerId);
+    showCursorAt(e.clientX, e.clientY);
     if (tool === "eraser") {
       pushHistory();
       eraseAt(e.clientX, e.clientY);
@@ -178,6 +192,7 @@ export function AnnotationCanvas({ data, onChange }: Props) {
   }
 
   function onPointerMove(e: React.PointerEvent) {
+    showCursorAt(e.clientX, e.clientY); // survol + dessin : le cercle suit toujours
     if (e.pointerId !== activePointer.current) return;
     e.preventDefault();
     if (tool === "eraser") {
@@ -192,6 +207,7 @@ export function AnnotationCanvas({ data, onChange }: Props) {
     if (e.pointerId !== activePointer.current) return;
     e.stopPropagation();
     activePointer.current = null;
+    if (e.pointerType === "touch") hideCursor(); // au doigt, pas de survol après le lever
     if (tool === "eraser") return;
     const pts = livePoints.current;
     livePoints.current = [];
@@ -217,9 +233,13 @@ export function AnnotationCanvas({ data, onChange }: Props) {
     onChange({ ...data, strokes: [] });
   }
 
-  // Aperçu de taille : barre horizontale à l'épaisseur réelle du trait de
-  // l'outil courant (plafonnée — surligneur/gomme montent jusqu'à 40px)
+  // Aperçu de taille dans le menu : barre (stylo/surligneur) à l'épaisseur réelle
+  // du trait, ou disque (gomme) à son diamètre — plafonnés pour tenir dans le bouton.
   const sizeBar = (i: number) => Math.min(SIZES[tool][i], 14 + i * 4);
+  const eraserDot = (i: number) => Math.min(SIZES.eraser[i], 30); // 12 / 24 / 30
+  // Diamètre du cercle qui suit le pointeur : épaisseur du trait (stylo/surligneur)
+  // ou empreinte de la gomme (= 2× son rayon d'effacement).
+  const cursorDiameter = tool === "eraser" ? SIZES.eraser[sizeIdx] * 2 : SIZES[tool][sizeIdx];
 
   return (
     <>
@@ -231,6 +251,25 @@ export function AnnotationCanvas({ data, onChange }: Props) {
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerUp}
+        onPointerLeave={hideCursor}
+      />
+
+      {/* Cercle qui suit le pointeur : montre la taille réelle de l'outil.
+          Position/visibilité pilotées hors React (style.transform / opacity). */}
+      <div
+        ref={cursorRef}
+        aria-hidden="true"
+        className="absolute top-0 left-0 rounded-full pointer-events-none opacity-0"
+        style={{
+          zIndex: 10,
+          width: cursorDiameter,
+          height: cursorDiameter,
+          marginLeft: -cursorDiameter / 2,
+          marginTop: -cursorDiameter / 2,
+          border: `1.5px solid ${tool === "eraser" ? "var(--muted-foreground)" : color}`,
+          background: tool === "eraser" ? "rgba(120,120,120,0.15)" : "transparent",
+          boxShadow: "0 0 0 1px rgba(0,0,0,0.25)",
+        }}
       />
 
       {/* Panneau d'outils — bord droit, centré */}
@@ -265,8 +304,8 @@ export function AnnotationCanvas({ data, onChange }: Props) {
             <span
               className="rounded-full"
               style={{
-                width: 24,
-                height: sizeBar(i),
+                width: tool === "eraser" ? eraserDot(i) : 24,
+                height: tool === "eraser" ? eraserDot(i) : sizeBar(i),
                 background: tool === "eraser" ? "var(--muted-foreground)" : color,
                 opacity: tool === "highlighter" ? 0.35 : 1,
                 boxShadow:

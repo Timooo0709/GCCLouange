@@ -259,6 +259,7 @@
   "profile": {
     "title": "我的资料",
     "welcome": "欢迎！完善你的资料即可访问你所服事的歌单以及「我的服事」页面。",
+    "locked": "你的资料已完成。如需修改，请联系管理员。",
     "save": "保存资料",
     "saving": "保存中…",
     "saveError": "保存失败，请重试。",
@@ -284,7 +285,9 @@
       "planningNameHint": "选择排班表中代表你的名字——用于填充「我的服事」页面。",
       "notInPlannings": "——我还不在排班表中——",
       "otherName": "其他（输入我的名字）…",
-      "customNamePlaceholder": "与排班表中完全一致的名字"
+      "customNamePlaceholder": "与排班表中完全一致的名字",
+      "searchName": "搜索名字…",
+      "noNameResults": "未找到名字"
     }
   },
   "signup": {

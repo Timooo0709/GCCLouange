@@ -259,6 +259,7 @@
   "profile": {
     "title": "Mon profil",
     "welcome": "Bienvenue ! Complète ton profil pour accéder aux setlists de tes services et à l'onglet « Mes Services ».",
+    "locked": "Ton profil est complété. Pour le modifier, contacte un administrateur.",
     "save": "Enregistrer mon profil",
     "saving": "Enregistrement…",
     "saveError": "Erreur lors de l'enregistrement. Réessaie.",
@@ -284,7 +285,9 @@
       "planningNameHint": "Choisis le nom qui te désigne dans les plannings — il sert à remplir l'onglet « Mes Services ».",
       "notInPlannings": "— Je ne suis pas encore dans les plannings —",
       "otherName": "Autre (saisir mon nom)…",
-      "customNamePlaceholder": "Nom exact tel qu'écrit dans les plannings"
+      "customNamePlaceholder": "Nom exact tel qu'écrit dans les plannings",
+      "searchName": "Rechercher un prénom…",
+      "noNameResults": "Aucun nom trouvé"
     }
   },
   "signup": {

@@ -8,7 +8,8 @@ rules_version = '2';
 //   création : le créateur doit se déclarer propriétaire (ownerId = uid, figé ensuite) ;
 //   modification/suppression réservées au créateur (ownerId), aux musiciens du même service
 //   et aux admins.
-// - Profils (users/{uid}) : chacun écrit le sien ; les admins peuvent corriger tous les profils.
+// - Profils (users/{uid}) : chacun crée le sien à l'inscription ; une fois créé,
+//   seuls les admins peuvent le modifier.
 // - config/app : état des inscriptions (registrationOpen), lisible publiquement,
 //   modifiable par les admins depuis la page /admin.
 //
@@ -54,17 +55,14 @@ service cloud.firestore {
     match /users/{uid} {
       // Lecture par tout connecté (les règles setlists et le client lisent les profils)
       allow read: if signedIn();
-      // Chacun écrit son propre profil ; les admins peuvent corriger tous les profils.
-      // Le champ `annonces` (droit de publication) n'est modifiable que par un admin.
+      // Création (première complétion) : l'intéressé crée son propre profil sans
+      // s'attribuer de droits d'annonces ; les admins peuvent créer n'importe quel profil.
       allow create: if signedIn() && (
         isAdmin()
         || (request.auth.uid == uid && request.resource.data.get('annonces', []) == [])
       );
-      allow update: if signedIn() && (
-        isAdmin()
-        || (request.auth.uid == uid
-            && request.resource.data.get('annonces', []) == resource.data.get('annonces', []))
-      );
+      // Une fois le profil créé, seuls les admins peuvent le modifier.
+      allow update: if isAdmin();
       allow delete: if isAdmin();
     }
 
