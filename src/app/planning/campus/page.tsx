@@ -81,7 +81,11 @@ export default function CampusPage() {
               <div key={i} className="border-t border-border">
                 {sub === "entrainement" && s.ent && (
                   <div className="px-4 py-2 text-xs font-semibold text-white" style={{ background: COLOR }}>
-                    Répétition : <span className="font-normal">{fdLong(s.ent)}</span>
+                    Répétition : <span className="font-normal">
+                      {fdLong(s.ent)}
+                      {s.entTime ? ` à ${s.entTime}` : ""}
+                      {s.entLieu ? ` — ${s.entLieu}` : ""}
+                    </span>
                   </div>
                 )}
                 <div className={`px-4 py-2 text-[11px] font-semibold uppercase tracking-wide ${isSoir ? "bg-muted/60 text-muted-foreground" : "bg-secondary text-secondary-foreground"}`}>
