@@ -417,7 +417,7 @@ export function SetlistDetailClient() {
                   <Button
                     variant="outline"
                     size="icon-lg"
-                    className="sm:h-8 sm:w-8 rounded-md text-muted-foreground"
+                    className="h-8 w-8 rounded-md text-muted-foreground"
                     aria-label={t("common.moreActions")}
                   >
                     <MoreHorizontal className="h-4 w-4" />
