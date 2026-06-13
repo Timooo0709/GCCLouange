@@ -685,7 +685,7 @@ export function PerformanceMode({
             <button
               onClick={() => goToPage(currentPage - 1, pages.length)}
               disabled={currentPage === 0}
-              className="h-11 w-11 flex items-center justify-center rounded-lg border border-border text-muted-foreground disabled:opacity-30 hover:text-foreground active:bg-muted"
+              className="h-9 w-9 sm:h-11 sm:w-11 flex items-center justify-center rounded-lg border border-border text-muted-foreground disabled:opacity-30 hover:text-foreground active:bg-muted"
               aria-label={t("performance.prevPage")}
             >
               <ChevronLeft className="h-5 w-5" />
@@ -693,7 +693,7 @@ export function PerformanceMode({
             <button
               onClick={() => goToPage(currentPage + 1, pages.length)}
               disabled={currentPage >= pages.length - 1}
-              className="h-11 w-11 flex items-center justify-center rounded-lg border border-border text-muted-foreground disabled:opacity-30 hover:text-foreground active:bg-muted"
+              className="h-9 w-9 sm:h-11 sm:w-11 flex items-center justify-center rounded-lg border border-border text-muted-foreground disabled:opacity-30 hover:text-foreground active:bg-muted"
               aria-label={t("performance.nextPage")}
             >
               <ChevronRight className="h-5 w-5" />
@@ -812,7 +812,7 @@ function IconBtn({
       onClick={onClick}
       aria-label={label}
       title={label}
-      className={`h-11 w-11 flex items-center justify-center rounded-lg border transition-colors active:bg-muted ${
+      className={`h-9 w-9 sm:h-11 sm:w-11 flex items-center justify-center rounded-lg border transition-colors active:bg-muted ${
         active ? activeClass : "border-border text-muted-foreground hover:text-foreground"
       }`}
     >
