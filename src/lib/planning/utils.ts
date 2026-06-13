@@ -62,7 +62,12 @@ export interface CampusSeance {
   ch: string
   mu: string
   rg: string
+  /** Date de répétition (ISO YYYY-MM-DD), "" si pas de répétition */
   ent: string
+  /** Heure de répétition (ex. "17:00"), si renseignée dans le planning */
+  entTime?: string
+  /** Salle de répétition (ex. "Grande Salle", "Salle Bonté"), si renseignée */
+  entLieu?: string
   chants: string[]
 }
 

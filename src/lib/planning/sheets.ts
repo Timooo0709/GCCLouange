@@ -164,9 +164,19 @@ export async function fetchCampus(): Promise<{ louange: CampusSeance[]; entraine
     const ch = [r[2],r[3],r[4]].filter(v => v?.trim()).join(", ")
     const mu = [r[5]?"Piano: "+r[5]:"", r[6]?"Guitare: "+r[6]:"", r[7]?"Batterie: "+r[7]:""].filter(Boolean).join(", ")
     const rg = [r[8]?"Sono: "+r[8]:"", r[9]?"PPT: "+r[9]:""].filter(Boolean).join(", ")
+    // Cellule répétition : "JJ/MM/AAAA[ HH:MM][ Salle…]" → date + heure + lieu
     const rawEnt = (r[14]||"").trim()
-    const ent = rawEnt ? parseDate(rawEnt.split(" ")[0]) || "" : ""
-    const obj: CampusSeance = { d: `${label} ${r[1]}`, ch, mu, rg, ent, chants: [r[10]||"",r[11]||"",r[12]||"",r[13]||""] }
+    let ent = "", entTime = "", entLieu = ""
+    if (rawEnt) {
+      const toks = rawEnt.split(/\s+/)
+      ent = parseDate(toks[0]) || ""
+      const rest = toks.slice(1)
+      if (rest[0] && /^\d{1,2}[:hH]\d{2}$/.test(rest[0])) {
+        entTime = rest.shift()!.replace(/[hH]/, ":")
+      }
+      entLieu = rest.join(" ").trim()
+    }
+    const obj: CampusSeance = { d: `${label} ${r[1]}`, ch, mu, rg, ent, entTime, entLieu, chants: [r[10]||"",r[11]||"",r[12]||"",r[13]||""] }
     louange.push(obj)
     if (ent) entrainement.push(obj)
   }

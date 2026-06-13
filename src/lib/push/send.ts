@@ -56,18 +56,25 @@ async function subscriptionsForUids(uids: string[]): Promise<SubDoc[]> {
   return out;
 }
 
-/** Envoie `payload` à tous les appareils des uid. Renvoie le bilan d'envoi.
- *  Supprime les abonnements rejetés en 404/410 (désinstallés/expirés). */
-export async function sendPushToUids(
-  uids: string[],
-  payload: PushPayload
-): Promise<{ sent: number; failed: number; recipients: number }> {
-  const unique = [...new Set(uids)];
-  if (!unique.length) return { sent: 0, failed: 0, recipients: 0 };
-  configure();
+/** Tous les abonnements push enregistrés (toute la collection). */
+async function allSubscriptions(): Promise<SubDoc[]> {
+  const snap = await adminDb().collection("pushSubscriptions").get();
+  const out: SubDoc[] = [];
+  for (const doc of snap.docs) {
+    const d = doc.data();
+    if (d.endpoint && d.p256dh && d.auth) {
+      out.push({ id: doc.id, endpoint: d.endpoint, p256dh: d.p256dh, auth: d.auth });
+    }
+  }
+  return out;
+}
 
+/** Envoie `payload` à une liste d'abonnements. Supprime ceux rejetés en
+ *  404/410 (désinstallés/expirés). Renvoie le nombre d'envois réussis/échoués. */
+async function dispatch(subs: SubDoc[], payload: PushPayload): Promise<{ sent: number; failed: number }> {
+  if (!subs.length) return { sent: 0, failed: 0 };
+  configure();
   const db = adminDb();
-  const subs = await subscriptionsForUids(unique);
   const body = JSON.stringify(payload);
 
   let sent = 0;
@@ -89,6 +96,26 @@ export async function sendPushToUids(
       }
     })
   );
+  return { sent, failed };
+}
 
+/** Envoie `payload` à tous les appareils des uid donnés. */
+export async function sendPushToUids(
+  uids: string[],
+  payload: PushPayload
+): Promise<{ sent: number; failed: number; recipients: number }> {
+  const unique = [...new Set(uids)];
+  if (!unique.length) return { sent: 0, failed: 0, recipients: 0 };
+  const subs = await subscriptionsForUids(unique);
+  const { sent, failed } = await dispatch(subs, payload);
   return { sent, failed, recipients: unique.length };
+}
+
+/** Diffuse `payload` à TOUS les abonnés (toutes notifications activées). */
+export async function sendPushToAll(
+  payload: PushPayload
+): Promise<{ sent: number; failed: number; devices: number }> {
+  const subs = await allSubscriptions();
+  const { sent, failed } = await dispatch(subs, payload);
+  return { sent, failed, devices: subs.length };
 }
