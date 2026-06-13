@@ -136,6 +136,9 @@ export interface ServiceEntry {
   time?: string
   /** Lieu (répétitions campus uniquement, ex. "Grande Salle") */
   location?: string
+  /** Date à utiliser pour retrouver la setlist quand elle diffère de `date`
+   *  (répétitions campus : pointe vers la setlist de la séance). */
+  setlistDate?: string
 }
 
 /** Date d'une séance campus ("12/3 Matin") → ISO, même convention d'année que parseDate. */
@@ -179,8 +182,9 @@ export function findMyServices(data: PlanningData, name: string): ServiceEntry[]
     if (cellHasName(s.rg, name)) roles.push("Régie")
     for (const role of roles) {
       out.push({ date: dt, service: moment, role })
-      // Répétition associée : date / heure / lieu propres, distincts de la séance
-      if (s.ent) out.push({ date: s.ent, service: "Campus (répét.)", role, time: s.entTime, location: s.entLieu })
+      // Répétition associée : date / heure / lieu propres, distincts de la séance.
+      // setlistDate = date de la séance pour lier la setlist (chants à réviser).
+      if (s.ent) out.push({ date: s.ent, service: "Campus (répét.)", role, time: s.entTime, location: s.entLieu, setlistDate: dt })
     }
   }
 
