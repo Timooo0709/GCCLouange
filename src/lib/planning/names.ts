@@ -139,6 +139,9 @@ export interface ServiceEntry {
   /** Date à utiliser pour retrouver la setlist quand elle diffère de `date`
    *  (répétitions campus : pointe vers la setlist de la séance). */
   setlistDate?: string
+  /** Président de la séance — désambiguïse les setlists campus matin/soir
+   *  d'un même jour (même date + catégorie, présidents différents). */
+  leader?: string
 }
 
 /** Date d'une séance campus ("12/3 Matin") → ISO, même convention d'année que parseDate. */
@@ -176,15 +179,18 @@ export function findMyServices(data: PlanningData, name: string): ServiceEntry[]
     const dt = campusDate(s.d)
     if (!dt) continue
     const moment = s.d.includes("Soir") ? "Campus (soir)" : "Campus (matin)"
+    // Président de la séance (1ʳᵉ personne de `ch`) : matin et soir d'un même
+    // jour ont des présidents différents → sert à retrouver la bonne setlist.
+    const leader = s.ch.split(",")[0]?.trim() || ""
     const roles: string[] = []
     if (cellHasName(s.ch, name)) roles.push("Chant")
     if (cellHasName(s.mu, name)) roles.push("Musicien")
     if (cellHasName(s.rg, name)) roles.push("Régie")
     for (const role of roles) {
-      out.push({ date: dt, service: moment, role })
+      out.push({ date: dt, service: moment, role, leader })
       // Répétition associée : date / heure / lieu propres, distincts de la séance.
       // setlistDate = date de la séance pour lier la setlist (chants à réviser).
-      if (s.ent) out.push({ date: s.ent, service: "Campus (répét.)", role, time: s.entTime, location: s.entLieu, setlistDate: dt })
+      if (s.ent) out.push({ date: s.ent, service: "Campus (répét.)", role, time: s.entTime, location: s.entLieu, setlistDate: dt, leader })
     }
   }
 
