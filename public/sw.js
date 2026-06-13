@@ -1,92 +1,60 @@
 // Service Worker — GCC Louange
-// Cache-first pour les assets statiques, stale-while-revalidate pour les pages.
-// Fix : les réponses redirigées (res.redirected) sont renvoyées via Response.redirect()
-// pour éviter l'erreur "Response served by service worker has redirections" sur Safari/Chrome.
+// Version « push-only » : ce worker ne gère QUE les notifications Web Push.
+// Le cache hors-ligne a été volontairement retiré (il provoquait l'affichage de
+// déploiements périmés). On garde donc le SW minimal — un SW reste indispensable
+// pour recevoir des notifications push sur PWA iOS/Android.
 
-const CACHE = "gcc-louange-v3";
-
-const PRECACHE = [
-  "/songs-index.json",
-];
-
-// ─── Install ──────────────────────────────────────────────────────────────────
-
-self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches
-      .open(CACHE)
-      .then((cache) => cache.addAll(PRECACHE))
-      .then(() => self.skipWaiting())
-  );
+self.addEventListener("install", () => {
+  self.skipWaiting();
 });
-
-// ─── Activate ─────────────────────────────────────────────────────────────────
 
 self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    caches
-      .keys()
-      .then((keys) =>
-        Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)))
-      )
-      .then(() => self.clients.claim())
-  );
+  event.waitUntil(self.clients.claim());
 });
 
-// ─── Fetch ────────────────────────────────────────────────────────────────────
+// ─── Réception d'une notification push ─────────────────────────────────────────
+// Le serveur envoie un JSON : { title, body, url, tag }.
 
-self.addEventListener("fetch", (event) => {
-  const { request } = event;
-  const url = new URL(request.url);
-
-  // Laisser passer : non-GET, cross-origin, Firebase, API routes Next.js
-  if (
-    request.method !== "GET" ||
-    url.origin !== self.location.origin ||
-    url.pathname.startsWith("/api/") ||
-    url.pathname.startsWith("/_next/webpack-hmr")
-  ) {
-    return;
+self.addEventListener("push", (event) => {
+  let data = {};
+  try {
+    data = event.data ? event.data.json() : {};
+  } catch {
+    data = { body: event.data ? event.data.text() : "" };
   }
 
-  // Assets Next.js (_next/static) : cache-first (ils ont des hashes)
-  if (url.pathname.startsWith("/_next/static/")) {
-    event.respondWith(
-      caches.match(request).then(
-        (cached) =>
-          cached ||
-          fetch(request).then((res) => {
-            if (res.ok && res.status === 200 && !res.redirected) {
-              const clone = res.clone();
-              caches.open(CACHE).then((c) => c.put(request, clone));
-            }
-            return res;
-          })
-      )
-    );
-    return;
-  }
+  const title = data.title || "GCC Louange";
+  const options = {
+    body: data.body || "",
+    icon: "/icon.png",
+    badge: "/icon.png",
+    // tag : regroupe/remplace les notifs d'un même sujet (ex. une setlist)
+    tag: data.tag || undefined,
+    data: { url: data.url || "/" },
+  };
 
-  // Pages et autres ressources : stale-while-revalidate
-  event.respondWith(
-    caches.open(CACHE).then((cache) =>
-      cache.match(request).then((cached) => {
-        const fresh = fetch(request)
-          .then((res) => {
-            // Safari et Chrome rejettent les réponses redirigées servies par un SW.
-            // On renvoie une redirection explicite pour que le browser suive lui-même.
-            if (res.redirected) {
-              return Response.redirect(res.url, 302);
-            }
-            if (res.ok && res.status === 200) {
-              cache.put(request, res.clone());
-            }
-            return res;
-          })
-          .catch(() => cached);
+  event.waitUntil(self.registration.showNotification(title, options));
+});
 
-        return cached || fresh;
+// ─── Clic sur la notification ──────────────────────────────────────────────────
+// Focus un onglet existant de l'app si possible, sinon en ouvre un.
+
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close();
+  const target = (event.notification.data && event.notification.data.url) || "/";
+
+  event.waitUntil(
+    self.clients
+      .matchAll({ type: "window", includeUncontrolled: true })
+      .then((clientList) => {
+        for (const client of clientList) {
+          const url = new URL(client.url);
+          if (url.origin === self.location.origin && "focus" in client) {
+            client.navigate(target);
+            return client.focus();
+          }
+        }
+        return self.clients.openWindow(target);
       })
-    )
   );
 });

@@ -1,0 +1,135 @@
+rules_version = '2';
+
+// Règles de sécurité Firestore — à publier dans la console Firebase :
+// https://console.firebase.google.com/project/gcclouange/firestore/rules
+//
+// Modèle d'accès :
+// - Setlists : lecture réservée aux connectés (le filtrage par service se fait côté client) ;
+//   création : le créateur doit se déclarer propriétaire (ownerId = uid, figé ensuite) ;
+//   modification/suppression réservées au créateur (ownerId), aux musiciens du même service
+//   et aux admins.
+// - Profils (users/{uid}) : chacun crée le sien à l'inscription ; une fois créé,
+//   seuls les admins peuvent le modifier.
+// - config/app : état des inscriptions (registrationOpen), lisible publiquement,
+//   modifiable par les admins depuis la page /admin.
+//
+// La liste des admins doit rester synchronisée avec ADMIN_EMAILS dans src/lib/access.ts.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return signedIn() && request.auth.token.email in [
+        'tc328829@gmail.com',
+        'gcccfranco@gmail.com',
+        'david.code999@gmail.com'
+      ];
+    }
+
+    function profile() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    function hasProfile() {
+      return exists(/databases/$(database)/documents/users/$(request.auth.uid));
+    }
+
+    // Musicien du service correspondant à la catégorie de la setlist
+    function isMusicienOf(category) {
+      let p = profile();
+      return (
+        // Lieux de service (Culte Francophone, Intergroupe, Interfranco, Campus)
+        ("musicien" in p.roles && category in p.lieux)
+        // Classes EDD
+        || (p.edd == true && "musicien" in p.eddRoles
+            && category in ["中班", "大班", "高班"])
+        // Groupe de maison
+        || (p.groupe == category && p.groupeMusicien == true)
+      );
+    }
+
+    match /users/{uid} {
+      // Lecture par tout connecté (les règles setlists et le client lisent les profils)
+      allow read: if signedIn();
+      // Création (première complétion) : l'intéressé crée son propre profil sans
+      // s'attribuer de droits d'annonces ; les admins peuvent créer n'importe quel profil.
+      allow create: if signedIn() && (
+        isAdmin()
+        || (request.auth.uid == uid && request.resource.data.get('annonces', []) == [])
+      );
+      // Une fois le profil créé, seuls les admins peuvent le modifier.
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    match /annonces/{id} {
+      allow read: if signedIn();
+      // Publication : admins + membres dont le profil liste la section dans `annonces`
+      allow create: if signedIn() && (
+        isAdmin()
+        || (hasProfile()
+            && request.resource.data.section in profile().get('annonces', [])
+            && request.resource.data.authorId == request.auth.uid)
+      );
+      // Modification/suppression : auteur + admins
+      allow update, delete: if signedIn() && (
+        isAdmin() || resource.data.authorId == request.auth.uid
+      );
+    }
+
+    match /setlists/{id} {
+      allow read: if signedIn();
+      // Création : le créateur doit se déclarer propriétaire (ownerId = uid)
+      allow create: if signedIn()
+        && request.resource.data.get('ownerId', null) == request.auth.uid;
+      // Modification : ownerId ne change jamais ; un musicien du service ne
+      // peut déplacer la setlist que vers une catégorie où il sert aussi.
+      allow update: if signedIn()
+        && request.resource.data.get('ownerId', null) == resource.data.get('ownerId', null)
+        && (
+          resource.data.get('ownerId', '') == request.auth.uid
+          || isAdmin()
+          || (hasProfile() && isMusicienOf(resource.data.category)
+              && (request.resource.data.category == resource.data.category
+                  || isMusicienOf(request.resource.data.category)))
+        );
+      allow delete: if signedIn() && (
+        resource.data.get('ownerId', '') == request.auth.uid
+        || isAdmin()
+        || (hasProfile() && isMusicienOf(resource.data.category))
+      );
+    }
+
+    // Annotations dessinées en Mode Louange (personnelles).
+    // L'id du document est préfixé par l'uid du propriétaire :
+    // {uid}__{setlistId}__{pageKey} — voir src/lib/firebase/annotations.ts.
+    match /annotations/{id} {
+      allow read, write: if signedIn() && id.split('__')[0] == request.auth.uid;
+    }
+
+    // Abonnements push (un document par appareil).
+    // L'id est préfixé par l'uid du propriétaire : {uid}__{hashEndpoint}
+    // — voir src/lib/push/client.ts. Chacun ne gère que ses propres appareils ;
+    // le serveur (Firebase Admin) lit tous les abonnements pour envoyer.
+    match /pushSubscriptions/{id} {
+      allow read, write: if signedIn() && id.split('__')[0] == request.auth.uid;
+    }
+
+    // Journal des notifications envoyées (idempotence des rappels + anti-spam
+    // setlist). Écrit/lu uniquement par le serveur via Firebase Admin, qui
+    // contourne ces règles — interdit à tout client.
+    match /notifLog/{id} {
+      allow read, write: if false;
+    }
+
+    match /config/app {
+      // La page d'inscription lit registrationOpen sans être connectée
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+  }
+}

@@ -31,12 +31,6 @@ export type SongIndexEntry = Omit<Song, "chordProSource"> & {
   sections?: SectionSummary[];
 };
 
-export type SongsIndex = {
-  generatedAt: string;
-  songs: SongIndexEntry[];
-};
-
-
 export type Theme = {
   slug: string;
   name_fr: string;

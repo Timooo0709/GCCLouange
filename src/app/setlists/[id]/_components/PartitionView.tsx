@@ -1,5 +1,5 @@
 import type { SetlistItem } from "@/types/setList";
-import type { SongContent } from "@/lib/utils/fetchSongContent";
+import type { SongContent } from "@/lib/api/songs";
 import { SongView, SectionView, TransitionNote } from "@/components/song/SongView";
 import { useTranslation } from "react-i18next";
 import { transposeAST } from "@/lib/transposeAST";

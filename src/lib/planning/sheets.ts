@@ -31,6 +31,18 @@ function parseCSV(txt: string): string[][] {
   return rows
 }
 
+/** Année pour une date JJ/MM sans année : celle (n-1, n, n+1) qui rend la
+ *  date la plus proche d'aujourd'hui — les feuilles couvrent l'année en cours,
+ *  ce choix reste juste au passage du nouvel an. */
+export function inferYear(day: number, month: number): number {
+  const now = Date.now()
+  const year = new Date().getFullYear()
+  return [year - 1, year, year + 1].reduce((a, b) =>
+    Math.abs(new Date(b, month - 1, day).getTime() - now) <
+    Math.abs(new Date(a, month - 1, day).getTime() - now) ? b : a
+  )
+}
+
 export function parseDate(s: string): string | null {
   if (!s) return null
   s = s.replace(/"+/g, "").trim()
@@ -43,7 +55,7 @@ export function parseDate(s: string): string | null {
   if (m3) return `20${m3[3]}-${m3[2].padStart(2,"0")}-${m3[1].padStart(2,"0")}`
   // DD/MM sans année — format utilisé par la plupart des feuilles (Culte, Groupes, Déjeuner…)
   const m4 = s.match(/^(\d{1,2})\/(\d{1,2})$/)
-  if (m4) return `2026-${m4[2].padStart(2,"0")}-${m4[1].padStart(2,"0")}`
+  if (m4) return `${inferYear(+m4[1], +m4[2])}-${m4[2].padStart(2,"0")}-${m4[1].padStart(2,"0")}`
   return null
 }
 

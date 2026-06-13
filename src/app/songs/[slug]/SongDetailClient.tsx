@@ -1,8 +1,15 @@
 "use client";
 
-import { useState, useMemo, useEffect, useRef } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import { MoreHorizontal, Download, Play, Music, Music2, Settings } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { SongView } from "@/components/song/SongView";
 import { CustomizePanel, type CustomizeState } from "@/components/customPanel/CustomizePanel";
 import type { Song } from "@/types/song";
@@ -34,21 +41,11 @@ interface SongDetailClientProps {
     const [showPanel, setShowPanel] = useState(false);
     const [downloading, setDownloading] = useState(false);
     const [backPath, setBackPath] = useState("/songs");
-    const [backLabel, setBackLabel] = useState("");
     const searchParams = useSearchParams();
     useEffect(() => {
       const saved = sessionStorage.getItem("lastListPath");
-      if (saved) {
-        setBackPath(saved);
-        if (saved.startsWith("/setlists/")) {
-          setBackLabel(t("setlists.detail.back"));
-        } else {
-          setBackLabel(t("songs.detail.backToAll"));
-        }
-      } else {
-        setBackLabel(t("songs.detail.backToAll"));
-      }
-    }, [t]);
+      if (saved) setBackPath(saved);
+    }, []);
 
     // Mémoriser le chant dans les « récemment consultés » (affichés sur /songs)
     useEffect(() => {
@@ -118,23 +115,22 @@ interface SongDetailClientProps {
       [ast, customize.semitones, customize.currentKey]
     );
 
-    // Menu ⋯ (médias, personnaliser, PDF)
-    const [menuOpen, setMenuOpen] = useState(false);
-    const menuRef = useRef<HTMLDivElement>(null);
+    // Taille de texte (zoom, persistée) — chargée après montage pour éviter
+    // un écart d'hydratation (le composant est rendu côté serveur).
+    const [fontScale, setFontScale] = useState(1);
     useEffect(() => {
-      if (!menuOpen) return;
-      const handler = (e: MouseEvent | TouchEvent) => {
-        if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-          setMenuOpen(false);
-        }
-      };
-      document.addEventListener("mousedown", handler);
-      document.addEventListener("touchstart", handler);
-      return () => {
-        document.removeEventListener("mousedown", handler);
-        document.removeEventListener("touchstart", handler);
-      };
-    }, [menuOpen]);
+      try {
+        const v = parseFloat(localStorage.getItem("song-font-scale") ?? "1");
+        if (v >= 0.8 && v <= 1.5) setFontScale(v);
+      } catch { /* stockage indisponible */ }
+    }, []);
+    const changeFontScale = (delta: number) => {
+      setFontScale((s) => {
+        const next = Math.min(1.5, Math.max(0.8, Math.round((s + delta) * 10) / 10));
+        try { localStorage.setItem("song-font-scale", String(next)); } catch { /* privé */ }
+        return next;
+      });
+    };
 
     async function handleDownload() {
       setDownloading(true);
@@ -163,29 +159,35 @@ interface SongDetailClientProps {
     return (
       <div className="min-h-screen print:min-h-0 bg-background">
         {/* Barre de contrôles */}
-        <div className={`print:hidden fixed left-0 right-0 top-[58px] z-10 bg-background/95 backdrop-blur border-b border-border transition-transform duration-300 ${ scrollVisible ? "translate-y-0" : "-translate-y-[calc(100%+58px)]"}`}>
+        <div className={`print:hidden fixed left-0 right-0 top-[var(--nav-h)] z-10 bg-background/95 backdrop-blur border-b border-border transition-transform duration-300 ${ scrollVisible ? "translate-y-0" : "-translate-y-[calc(100%+var(--nav-h))]"}`}>
           <div className = "max-w-3xl mx-auto w-full flex flex-wrap gap-0.5 items-center py-2 px-1">
-            <Link href={backPath} className="text-sm text-muted-foreground hover:text-foreground mr-1">
-              <button className="h-8 px-2.5 rounded-[8px] border border-border bg-card text-muted-foreground hover:text-foreground text-[12.5px] font-semibold flex items-center gap-0.5 transition-all duration-150">
+            <Button
+              asChild
+              variant="outline"
+              className="h-11 sm:h-8 px-2.5 rounded-md text-xs font-semibold text-muted-foreground hover:text-foreground mr-1"
+            >
+              <Link href={backPath}>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M19 12H5m6-7l-7 7 7 7" />
                 </svg>
                 <span className="hidden sm:inline">{t("songs.detail.backToAll")}</span>
-              </button>
-            </Link>
+              </Link>
+            </Button>
             {/* Transposition rapide */}
-            <div className="flex items-center">
-              <button
+            <div className="flex items-center gap-0.5">
+              <Button
+                variant="outline"
+                size="icon-lg"
+                className="sm:h-8 sm:w-8 rounded-md text-xs font-bold"
                 onClick={() =>
                   setCustomize((c) => {
                     const s = c.semitones - 1;
                     return { ...c, semitones: s, currentKey: getTransposedKey(originalKey, s) };
                   })
                 }
-                className="w-8 h-8 rounded border border-border text-xs font-bold hover:bg-muted flex items-center justify-center"
               >
                 −
-              </button>
+              </Button>
                 <select
                   value={customize.currentKey}
                   onChange={(e) => setCustomize((c) => {
@@ -194,7 +196,7 @@ interface SongDetailClientProps {
                     return { ...c, semitones: diff, currentKey: key };
                     })
                   }
-                  className="flex-1 px-2 py-1.5 border border-border rounded bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                  className="flex-1 h-11 sm:h-8 px-2 border border-border rounded-md bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                 >
                   {ALL_KEYS.map((k) => (
                     <option key={k} value={k}>
@@ -203,24 +205,50 @@ interface SongDetailClientProps {
                     </option>
                   ))}
                 </select>
-              <button
+              <Button
+                variant="outline"
+                size="icon-lg"
+                className="sm:h-8 sm:w-8 rounded-md text-xs font-bold"
                 onClick={() =>
                   setCustomize((c) => {
                     const s = c.semitones + 1;
                     return { ...c, semitones: s, currentKey: getTransposedKey(originalKey, s) };
                   })
                 }
-                className="w-8 h-8 rounded border border-border text-xs font-bold hover:bg-muted flex items-center justify-center"
               >
                 +
-              </button>
+              </Button>
             </div>
 
             <div className="ml-auto flex gap-1.5 items-center justify-end">
+              {/* Taille du texte */}
+              <div className="flex items-center">
+                <Button
+                  variant="outline"
+                  size="icon-lg"
+                  className="sm:h-8 sm:w-8 rounded-md rounded-r-none border-r-0 text-[11px] font-bold"
+                  onClick={() => changeFontScale(-0.1)}
+                  disabled={fontScale <= 0.8}
+                  aria-label={t("performance.textSmaller")}
+                >
+                  A−
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon-lg"
+                  className="sm:h-8 sm:w-8 rounded-md rounded-l-none text-[13px] font-bold"
+                  onClick={() => changeFontScale(0.1)}
+                  disabled={fontScale >= 1.5}
+                  aria-label={t("performance.textLarger")}
+                >
+                  A+
+                </Button>
+              </div>
+
               {/* Accords */}
               <button
                 onClick={() => setCustomize((c) => ({ ...c, showChords: !c.showChords }))}
-                className={`h-8 px-2.5 rounded-[8px] border text-[12.5px] font-semibold flex items-center gap-1.5 transition-all duration-150 ${
+                className={`h-11 sm:h-8 px-2.5 rounded-md border text-xs font-semibold flex items-center gap-1.5 transition-all duration-150 ${
                       customize.showChords
                         ? "border-transparent bg-primary/10 text-primary"
                         : "border-border bg-card text-muted-foreground hover:text-foreground"
@@ -234,7 +262,7 @@ interface SongDetailClientProps {
               {isZh && (
                     <button
                       onClick={() => setCustomize((c) => ({ ...c, showPinyin: !c.showPinyin }))}
-                      className={`h-8 px-2.5 rounded-[8px] border text-[12.5px] font-semibold flex items-center gap-1.5 transition-all duration-150 ${
+                      className={`h-11 sm:h-8 px-2.5 rounded-md border text-xs font-semibold flex items-center gap-1.5 transition-all duration-150 ${
                         customize.showPinyin
                           ? "border-transparent bg-primary/10 text-primary"
                           : "border-border bg-card text-muted-foreground hover:text-foreground"
@@ -246,59 +274,50 @@ interface SongDetailClientProps {
                   )}
 
               {/* Menu ⋯ : médias / personnaliser / PDF */}
-              <div className="relative" ref={menuRef}>
-                <button
-                  onClick={() => setMenuOpen((v) => !v)}
-                  aria-label="Plus d'actions"
-                  className="h-8 w-8 rounded-[8px] border border-border bg-card text-muted-foreground hover:text-foreground flex items-center justify-center transition-all duration-150"
-                >
-                  <MoreHorizontal className="h-4 w-4" />
-                </button>
-                {menuOpen && (
-                  <div className="absolute right-0 top-full mt-1 w-52 bg-card border border-border rounded-xl shadow-lg py-1 z-50">
-                    {youtubeId && (
-                      <button
-                        onClick={() => { setShowVideo((v) => !v); setMenuOpen(false); }}
-                        className="w-full flex items-center gap-2.5 px-3 py-2.5 text-[13px] font-medium text-foreground hover:bg-muted/50 transition-colors text-left"
-                      >
-                        <Play className="h-3.5 w-3.5 text-muted-foreground" />
-                        {showVideo ? "✕ " + t("songs.detail.video") : t("songs.detail.video")}
-                      </button>
-                    )}
-                    {song.spotifyUrl && (
-                      <a href={song.spotifyUrl} target="_blank" rel="noopener noreferrer"
-                        className="w-full flex items-center gap-2.5 px-3 py-2.5 text-[13px] font-medium text-foreground hover:bg-muted/50 transition-colors"
-                      >
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="outline"
+                    size="icon-lg"
+                    className="sm:h-8 sm:w-8 rounded-md text-muted-foreground"
+                    aria-label={t("common.moreActions")}
+                  >
+                    <MoreHorizontal className="h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-52">
+                  {youtubeId && (
+                    <DropdownMenuItem onClick={() => setShowVideo((v) => !v)}>
+                      <Play className="h-3.5 w-3.5 text-muted-foreground" />
+                      {showVideo ? "✕ " + t("songs.detail.video") : t("songs.detail.video")}
+                    </DropdownMenuItem>
+                  )}
+                  {song.spotifyUrl && (
+                    <DropdownMenuItem asChild>
+                      <a href={song.spotifyUrl} target="_blank" rel="noopener noreferrer">
                         <Music className="h-3.5 w-3.5 text-muted-foreground" />
                         Spotify
                       </a>
-                    )}
-                    {song.appleMusicUrl && (
-                      <a href={song.appleMusicUrl} target="_blank" rel="noopener noreferrer"
-                        className="w-full flex items-center gap-2.5 px-3 py-2.5 text-[13px] font-medium text-foreground hover:bg-muted/50 transition-colors"
-                      >
+                    </DropdownMenuItem>
+                  )}
+                  {song.appleMusicUrl && (
+                    <DropdownMenuItem asChild>
+                      <a href={song.appleMusicUrl} target="_blank" rel="noopener noreferrer">
                         <Music2 className="h-3.5 w-3.5 text-muted-foreground" />
                         Apple Music
                       </a>
-                    )}
-                    <button
-                      onClick={() => { setShowPanel(true); setMenuOpen(false); }}
-                      className="w-full flex items-center gap-2.5 px-3 py-2.5 text-[13px] font-medium text-foreground hover:bg-muted/50 transition-colors text-left"
-                    >
-                      <Settings className="h-3.5 w-3.5 text-muted-foreground" />
-                      {t("songs.detail.customize")}
-                    </button>
-                    <button
-                      onClick={async () => { setMenuOpen(false); await handleDownload(); }}
-                      disabled={downloading}
-                      className="w-full flex items-center gap-2.5 px-3 py-2.5 text-[13px] font-medium text-foreground hover:bg-muted/50 transition-colors disabled:opacity-50 text-left"
-                    >
-                      <Download className="h-3.5 w-3.5 text-muted-foreground" />
-                      {downloading ? "…" : t("songs.detail.downloadPdf") || "PDF"}
-                    </button>
-                  </div>
-                )}
-              </div>
+                    </DropdownMenuItem>
+                  )}
+                  <DropdownMenuItem onClick={() => setShowPanel(true)}>
+                    <Settings className="h-3.5 w-3.5 text-muted-foreground" />
+                    {t("songs.detail.customize")}
+                  </DropdownMenuItem>
+                  <DropdownMenuItem disabled={downloading} onClick={() => handleDownload()}>
+                    <Download className="h-3.5 w-3.5 text-muted-foreground" />
+                    {downloading ? "…" : t("songs.detail.downloadPdf") || "PDF"}
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
 
@@ -319,7 +338,10 @@ interface SongDetailClientProps {
           </div>
         )}
         {/* Contenu */}
-        <main className="px-4 py-6 print:px-0 print:py-2 print:max-w-none max-w-2xl mx-auto overflow-x-auto mt-[48px]">
+        <main
+          className="song-zoom px-4 py-6 print:px-0 print:py-2 print:max-w-none max-w-2xl mx-auto overflow-x-auto mt-[48px]"
+          style={{ zoom: fontScale }}
+        >
           <SongView
             ast={displayedAST}
             showChords={customize.showChords}

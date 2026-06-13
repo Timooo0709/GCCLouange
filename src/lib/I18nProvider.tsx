@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { initReactI18next } from "react-i18next";
 import i18n from "i18next";
 import frTranslations from "@/locales/fr.json";
@@ -26,8 +26,6 @@ if (!i18n.isInitialized) {
 }
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [mounted, setMounted] = useState(false);
-
   useEffect(() => {
     const savedLanguage = localStorage.getItem("i18nextLng");
     const systemLanguage = navigator.language.startsWith("zh") ? "zh-CN" : "fr";
@@ -35,12 +33,8 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     if (clientLanguage && clientLanguage !== i18n.language) {
       i18n.changeLanguage(clientLanguage);
     }
-    setMounted(true);
   }, []);
 
-  // Avoid hydration mismatch by waiting for client-side mounting
-  // while rendering invisible or raw until ready, or let standard react hydrate.
-  // Standard react hydrate with mounted state is safe:
   return <>{children}</>;
 }
 export default i18n;

@@ -1,6 +1,6 @@
 import type { SetlistItem } from "@/types/setList";
 import type { ChordProSection, ChordProAST } from "@/types/chordPro";
-import type { SongContent } from "@/lib/utils/fetchSongContent";
+import type { SongContent } from "@/lib/api/songs";
 import { transposeAST } from "@/lib/transposeAST";
 import { semitonesTo } from "@/lib/transpose";
 import { resolveStructureOverride } from "@/lib/chordpro/structure";

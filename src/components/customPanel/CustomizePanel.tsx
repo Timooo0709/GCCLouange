@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import {
   DndContext,
   closestCenter,
@@ -15,7 +14,6 @@ import {
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { X, GripVertical, Plus, Trash2, RotateCcw } from "lucide-react";
-import { ALL_KEYS, semitonesTo, getTransposedKey } from "@/lib/transpose";
 import type { ChordProSection } from "@/types/chordPro";
 import { useTranslation } from "react-i18next";
 import { formatSectionName } from "@/lib/chordpro/parser";
@@ -118,7 +116,6 @@ export function CustomizePanel({
   songTitle,
 }: CustomizePanelProps) {
   const { t } = useTranslation();
-  const [instanceCounter, setInstanceCounter] = useState(100);
 
   const sensors = useDefaultSensors();
 

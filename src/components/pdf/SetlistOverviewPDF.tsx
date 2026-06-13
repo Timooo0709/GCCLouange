@@ -62,7 +62,10 @@ export function SetlistOverviewPDF({
 }) {
   const isUiZh = language === "zh-CN";
   const sorted = [...setlist.items].sort((a, b) => a.position - b.position);
-  const locales: Record<string, any> = isUiZh ? zhTranslations : frTranslations;
+  const locales = (isUiZh ? zhTranslations : frTranslations) as {
+    common?: { header?: { songs?: string } };
+    categories?: Record<string, string>;
+  };
   const songsLabel = locales.common?.header?.songs ?? "Chants";
   const labelFont = isUiZh ? "SourceHanSansCN" : "SpaceGrotesk";
 

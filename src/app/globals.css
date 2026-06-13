@@ -9,6 +9,8 @@
 
 @layer base {
   :root {
+    /* Hauteur de la navbar — source unique pour tous les offsets fixed/sticky */
+    --nav-h: 58px;
     /* Warm-neutral light surfaces (design system) */
     --background: 38 26% 98%;        /* #fbfaf8 */
     --foreground: 223 14% 10%;       /* #16181d */
@@ -163,5 +165,10 @@
   body {
     background: white !important;
     font-size: 14px;
+  }
+
+  /* Le réglage de taille de texte (zoom inline) ne doit pas affecter l'impression */
+  .song-zoom {
+    zoom: 1 !important;
   }
 }

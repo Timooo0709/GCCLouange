@@ -257,16 +257,6 @@ function FrLine({ tokens, showChords, theme }: {
 
 // ─── Chinese line (chord / char / pinyin) ────────────────────────────────────
 
-const ZH_CELL_BASE = 16;  // minimum column width
-const ZH_CHAR_W   = 7.5;  // approx pt per root char at CHORD_SIZE
-const ZH_QUAL_W   = 5.8;  // approx pt per quality char
-
-/** Estimated rendered width of a chord in a ZH column (pt). */
-function chordPtWidth(chord: string): number {
-  const [root, qual] = chordParts(chord);
-  return root.length * ZH_CHAR_W + qual.length * ZH_QUAL_W + 2;
-}
-
 function ZhLine({ tokens, pinyin, showChords, showPinyin, theme }: {
   tokens: Token[];
   pinyin: string | null;

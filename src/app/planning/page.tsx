@@ -1,13 +1,16 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { currentSundayStr, fdLong, MOIS, getMois, EDD_PERIODES } from "@/lib/planning/utils"
+import { useEffect, useMemo, useState } from "react"
+import Link from "next/link"
+import { currentSundayStr, fdLong, MOIS, EDD_PERIODES } from "@/lib/planning/utils"
 import {
   CULTE_FALLBACK, FIDELITE_FALLBACK, FIDELITE_MUSIC_FALLBACK,
-  PAIX_FALLBACK, BONTE_FALLBACK, DEJEUNER_FALLBACK, EDD_FALLBACK
+  PAIX_FALLBACK, BONTE_FALLBACK, DEJEUNER_FALLBACK, EDD_FALLBACK, CAMP_LOUANGE_FALLBACK
 } from "@/lib/planning/data"
-import { fetchCulte, fetchDejeuner, fetchPaix, fetchFidelite, fetchFideliteMusic, fetchBonte, fetchEDD } from "@/lib/planning/sheets"
-import type { EddDataStructure } from "@/lib/planning/utils"
+import { fetchCulte, fetchDejeuner, fetchPaix, fetchFidelite, fetchFideliteMusic, fetchBonte, fetchEDD, fetchCampus } from "@/lib/planning/sheets"
+import type { EddDataStructure, CampusSeance } from "@/lib/planning/utils"
+import { useProfile } from "@/lib/firebase/users"
+import { findMyServices, type PlanningData } from "@/lib/planning/names"
 
 function val(v: string) { return v?.trim() || "—" }
 
@@ -41,6 +44,7 @@ function GroupBlock({ badge, children }: { badge: string; children: React.ReactN
 }
 
 export default function PlanningAccueil() {
+  const { user, profile } = useProfile()
   const [culte, setCulte] = useState(CULTE_FALLBACK)
   const [dej, setDej] = useState(DEJEUNER_FALLBACK)
   const [paix, setPaix] = useState(PAIX_FALLBACK)
@@ -48,6 +52,7 @@ export default function PlanningAccueil() {
   const [fidM, setFidM] = useState(FIDELITE_MUSIC_FALLBACK)
   const [bonte, setBonte] = useState(BONTE_FALLBACK)
   const [edd, setEdd] = useState<EddDataStructure>(EDD_FALLBACK)
+  const [campus, setCampus] = useState<CampusSeance[]>(CAMP_LOUANGE_FALLBACK)
 
   useEffect(() => {
     fetchCulte().then(d => { if (d.length) setCulte(d) })
@@ -57,7 +62,18 @@ export default function PlanningAccueil() {
     fetchFideliteMusic().then(d => { if (d.length) setFidM(d) })
     fetchBonte().then(d => { if (d.length) setBonte(d) })
     fetchEDD().then(d => setEdd(d))
+    fetchCampus().then(({ louange }) => { if (louange.length) setCampus(louange) }).catch(() => {})
   }, [])
+
+  // Prochain service de la personne connectée (d'après son nom de planning)
+  const nextServices = useMemo(() => {
+    if (!user || !profile?.planningName) return null
+    const data: PlanningData = { culte, dejeuner: dej, paix, fidelite: fid, fideliteMusic: fidM, bonte, edd, campus }
+    const today = new Date().toISOString().split("T")[0]
+    const upcoming = findMyServices(data, profile.planningName).filter(e => e.date >= today)
+    if (!upcoming.length) return null
+    return upcoming.filter(e => e.date === upcoming[0].date)
+  }, [user, profile, culte, dej, paix, fid, fidM, bonte, edd, campus])
 
   const sun = currentSundayStr()
   const sunParts = sun.split("-")
@@ -88,6 +104,23 @@ export default function PlanningAccueil() {
           Centralisez et consultez en temps réel tous les plannings des services.
         </p>
       </div>
+
+      {/* Prochain service de la personne connectée */}
+      {nextServices && (
+        <Link
+          href="/mes-services"
+          className="block bg-card border border-primary/30 rounded-xl p-4 hover:border-primary/60 transition-colors"
+        >
+          <p className="text-[10px] font-bold text-primary uppercase tracking-wider mb-1">
+            Ton prochain service
+          </p>
+          <p className="text-sm font-semibold text-foreground">
+            {fdLong(nextServices[0].date)} —{" "}
+            {nextServices.map(e => `${e.service} (${e.role})`).join(" · ")}
+          </p>
+          <p className="text-xs text-muted-foreground mt-1">Voir tous mes services →</p>
+        </Link>
+      )}
 
       {/* Ce dimanche */}
       <div>
@@ -164,8 +197,8 @@ export default function PlanningAccueil() {
       {/* Verset */}
       <blockquote className="bg-secondary rounded-xl p-5 border border-border">
         <p className="text-sm text-muted-foreground italic leading-relaxed mb-3">
-          "Tout ce que vous faites, faites-le de bon cœur, comme pour le Seigneur et non pour des hommes,
-          sachant que vous recevrez du Seigneur l'héritage pour récompense. Servez Christ, le Seigneur."
+          « Tout ce que vous faites, faites-le de bon cœur, comme pour le Seigneur et non pour des hommes,
+          sachant que vous recevrez du Seigneur l&apos;héritage pour récompense. Servez Christ, le Seigneur. »
         </p>
         <footer className="text-xs font-semibold text-primary text-right">— Colossiens 3 : 23-24</footer>
       </blockquote>

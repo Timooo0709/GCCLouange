@@ -1,8 +1,32 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import { handleReport, ValidationError, EmailServiceError } from '@/lib/report';
 
+// Rate limit en mémoire : 5 signalements / 10 min par IP. Par instance
+// serverless (remis à zéro à froid) — suffisant pour stopper le spam naïf
+// vers les boîtes des admins sans dépendance externe.
+const WINDOW_MS = 10 * 60 * 1000;
+const MAX_PER_WINDOW = 5;
+const hits = new Map<string, number[]>();
+
+function rateLimited(ip: string): boolean {
+  if (hits.size > 1000) hits.clear();
+  const now = Date.now();
+  const recent = (hits.get(ip) ?? []).filter((t) => now - t < WINDOW_MS);
+  recent.push(now);
+  hits.set(ip, recent);
+  return recent.length > MAX_PER_WINDOW;
+}
+
 export async function POST(req: NextRequest) {
   try {
+    const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+    if (rateLimited(ip)) {
+      return NextResponse.json(
+        { error: 'Too many reports, try again later' },
+        { status: 429 }
+      );
+    }
+
     // Configuration
     const recipientEmails = (process.env.MAIL_TO || '')
       .split(',')

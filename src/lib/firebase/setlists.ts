@@ -1,4 +1,3 @@
-import { Timestamp } from "firebase/firestore";
 import { auth } from "@/lib/firebase/config";
 import type { SetlistItem } from "@/types/setList";
 
@@ -22,10 +21,6 @@ export const FREE_CATEGORIES = [
 
 export const ALL_CATEGORIES = [...RESTRICTED_CATEGORIES, ...FREE_CATEGORIES];
 
-export function isRestricted(category: string): boolean {
-  return (RESTRICTED_CATEGORIES as readonly string[]).includes(category);
-}
-
 // ─── Firestore types ──────────────────────────────────────────────────────────
 
 export interface FSSetlist {
@@ -36,7 +31,8 @@ export interface FSSetlist {
   date: string;
   language: "fr" | "zh" | "mixed";
   notes: string;
-  createdAt: Timestamp | null;
+  createdAt: Date | null;
+  updatedAt?: Date | null;
   items: SetlistItem[];
   isDraft?: boolean;
   isPrivate?: boolean;
@@ -47,9 +43,9 @@ export interface FSSetlist {
 // Using the REST API instead of the Firebase SDK to avoid WebChannel
 // connectivity issues in certain browser environments.
 
-const FS_BASE = "https://firestore.googleapis.com/v1/projects/gcclouange/databases/(default)/documents";
+export const FS_BASE = "https://firestore.googleapis.com/v1/projects/gcclouange/databases/(default)/documents";
 
-async function authHeader(): Promise<Record<string, string>> {
+export async function authHeader(): Promise<Record<string, string>> {
   if (!auth.currentUser) return {};
   const token = await auth.currentUser.getIdToken();
   return { Authorization: `Bearer ${token}` };
@@ -77,13 +73,13 @@ function toFsValue(v: unknown): unknown {
   return { nullValue: null };
 }
 
-function toFsFields(obj: Record<string, unknown>): Record<string, unknown> {
+export function toFsFields(obj: Record<string, unknown>): Record<string, unknown> {
   return Object.fromEntries(Object.entries(obj).map(([k, v]) => [k, toFsValue(v)]));
 }
 
 // ─── Value conversion: Firestore REST → JS ────────────────────────────────────
 
-function fromFsValue(v: unknown): unknown {
+export function fromFsValue(v: unknown): unknown {
   if (typeof v !== "object" || v === null) return null;
   const val = v as Record<string, unknown>;
   if ("nullValue" in val) return null;
@@ -92,7 +88,7 @@ function fromFsValue(v: unknown): unknown {
   if ("doubleValue" in val) return val.doubleValue;
   if ("stringValue" in val) return val.stringValue;
   if ("timestampValue" in val) {
-    return Timestamp.fromDate(new Date(val.timestampValue as string));
+    return new Date(val.timestampValue as string);
   }
   if ("arrayValue" in val) {
     const arr = val.arrayValue as { values?: unknown[] };
@@ -107,7 +103,7 @@ function fromFsValue(v: unknown): unknown {
   return null;
 }
 
-type RawDoc = { name: string; fields: Record<string, unknown> };
+export type RawDoc = { name: string; fields: Record<string, unknown> };
 
 function fromFsDoc(raw: RawDoc): FSSetlist {
   const id = raw.name.split("/").pop()!;
@@ -117,7 +113,7 @@ function fromFsDoc(raw: RawDoc): FSSetlist {
   return { id, ...data } as FSSetlist;
 }
 
-async function checkRest(res: Response): Promise<void> {
+export async function checkRest(res: Response): Promise<void> {
   if (!res.ok) {
     const json = await res.json().catch(() => ({}));
     throw new Error(
@@ -183,8 +179,8 @@ export async function getMySetlists(uid: string): Promise<FSSetlist[]> {
     .map((r) => fromFsDoc(r.document!))
     .filter((s) => s.isPrivate === true && !s.isDraft)
     .sort((a, b) => {
-      const aTs = a.createdAt?.toMillis() ?? 0;
-      const bTs = b.createdAt?.toMillis() ?? 0;
+      const aTs = a.createdAt?.getTime() ?? 0;
+      const bTs = b.createdAt?.getTime() ?? 0;
       return bTs - aTs;
     });
 }
@@ -192,8 +188,11 @@ export async function getMySetlists(uid: string): Promise<FSSetlist[]> {
 export async function getSetlist(id: string): Promise<FSSetlist | null> {
   const headers = await authHeader();
   const res = await fetch(`${FS_BASE}/setlists/${id}`, { headers });
-  if (res.status === 404) return null;
-  if (!res.ok) return null;
+  // 404 = inexistante, 403 = accès refusé par les rules (setlist privée d'un
+  // autre) → null. Toute autre erreur (réseau, 5xx) est levée pour que
+  // l'appelant puisse proposer de réessayer au lieu d'afficher « introuvable ».
+  if (res.status === 404 || res.status === 403) return null;
+  await checkRest(res);
   const raw = await res.json() as RawDoc;
   return fromFsDoc(raw);
 }
@@ -227,9 +226,12 @@ export async function updateSetlist(
   data: Partial<Omit<FSSetlist, "id" | "createdAt">>
 ): Promise<void> {
   const headers = await authHeader();
-  const fields = toFsFields(data as Record<string, unknown>);
+  const fields = {
+    ...toFsFields(data as Record<string, unknown>),
+    updatedAt: { timestampValue: new Date().toISOString() },
+  };
   const docName = `projects/gcclouange/databases/(default)/documents/setlists/${id}`;
-  const mask = Object.keys(data)
+  const mask = [...Object.keys(data), "updatedAt"]
     .map((f) => `updateMask.fieldPaths=${encodeURIComponent(f)}`)
     .join("&");
   const res = await withTimeout(
@@ -248,4 +250,25 @@ export async function updateSetlist(
 export async function deleteSetlist(id: string): Promise<void> {
   const headers = await authHeader();
   await fetch(`${FS_BASE}/setlists/${id}`, { method: "DELETE", headers });
+}
+
+/** Duplique une setlist en copie privée appartenant au duplicateur.
+ *  Il peut ensuite la republier via l'édition (isPrivate → false). */
+export async function duplicateSetlist(
+  source: FSSetlist,
+  uid: string,
+  title: string
+): Promise<string> {
+  return createSetlist({
+    title,
+    leader: source.leader,
+    category: source.category,
+    date: source.date,
+    language: source.language,
+    notes: source.notes,
+    items: source.items,
+    isDraft: false,
+    isPrivate: true,
+    ownerId: uid,
+  });
 }

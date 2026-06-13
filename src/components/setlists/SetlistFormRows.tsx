@@ -723,14 +723,12 @@ export function FusionRow({
     useSortable({ id: item.uid });
 
   const [expanded, setExpanded] = useState(false);
-  const [showMixed, setShowMixed] = useState(item.mixedStructure !== null);
   const fusionTitle = item.songs.map((s) => s.song.title).join(" / ");
 
   function toggleMixed() {
     if (item.mixedStructure !== null) {
       // Désactiver : remettre à null
       onChangeMixed(null);
-      setShowMixed(false);
     } else {
       // Activer : initialiser avec l'ordre par défaut
       const defaultMixed: FusionMixedSectionForm[] = item.songs.flatMap((song) =>
@@ -745,7 +743,6 @@ export function FusionRow({
         }))
       );
       onChangeMixed(defaultMixed);
-      setShowMixed(true);
     }
   }
 

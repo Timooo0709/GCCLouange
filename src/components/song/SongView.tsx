@@ -94,33 +94,6 @@ function isCJK(ch: string) {
   return (cp >= 0x4e00 && cp <= 0x9fff) || (cp >= 0x3400 && cp <= 0x4dbf);
 }
 
-type Column = { char: string; chord: string | null; py: string };
-
-function buildColumns(tokens: Token[], pinyin: string | null): Column[] {
-  const pyWords = pinyin?.split(/\s+/).filter(Boolean) ?? [];
-  let pyIdx = 0;
-  let pendingChord: string | null = null;
-  const cols: Column[] = [];
-
-  for (const tok of tokens) {
-    if (tok.type === "chord") {
-      pendingChord = tok.value;
-    } else {
-      [...tok.value].forEach((ch, ci) => {
-        cols.push({
-          char: ch,
-          chord: ci === 0 ? pendingChord : null,
-          py: isCJK(ch) ? (pyWords[pyIdx++] ?? "") : "",
-        });
-        if (ci === 0) pendingChord = null;
-      });
-    }
-  }
-
-  if (pendingChord) cols.push({ char: " ", chord: pendingChord, py: "" });
-  return cols;
-}
-
 interface ZhLineProps {
   tokens: Token[];
   pinyin: string | null;

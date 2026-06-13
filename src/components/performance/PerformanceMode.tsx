@@ -1,7 +1,16 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { X, ChevronLeft, ChevronRight, Link2, MessageSquare, ListMusic, Settings, PenLine, Sun, Moon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+} from "@/components/ui/drawer";
 import type { PerformanceBlock, SectionBlock, SongHeaderBlock } from "@/lib/performance/blocks";
 import { buildPerformanceBlocks, computePageKey } from "@/lib/performance/blocks";
 import { SectionView, TransitionNote } from "@/components/song/SongView";
@@ -10,7 +19,7 @@ import { type AnnotationData, serializeAnnotations, deserializeAnnotations } fro
 import { loadAnnotation, saveAnnotation } from "@/lib/firebase/annotations";
 import { useAuth } from "@/lib/firebase/auth";
 import type { SetlistItem } from "@/types/setList";
-import type { SongContent } from "@/lib/utils/fetchSongContent";
+import type { SongContent } from "@/lib/api/songs";
 
 // ─── TransitionBanner (local copy — same style as PartitionView) ──────────────
 
@@ -172,7 +181,9 @@ export function PerformanceMode({
   setlistTitle,
   onClose,
 }: PerformanceModeProps) {
+  const { t } = useTranslation();
   const { user } = useAuth();
+  const rootRef = useRef<HTMLDivElement>(null);
   const [showChords, setShowChords] = useState(initialShowChords);
   const [showTransitions, setShowTransitions] = useState(true);
   const [annotateMode, setAnnotateMode] = useState(false);
@@ -257,7 +268,12 @@ export function PerformanceMode({
       // plus une marge de sécurité pour la marge haute du 1er bloc d'une page
       // (comptée dans le delta du bloc précédent lors de la mesure).
       const safety = 24 * fontScale;
-      const viewportH = window.innerHeight - 32 * fontScale - safety;
+      // Safe areas (encoche / home indicator) : lues sur la racine (non zoomée),
+      // valent 0 hors appareil à encoche → pagination inchangée ailleurs.
+      const cs = rootRef.current ? getComputedStyle(rootRef.current) : null;
+      const insetTop = cs ? parseFloat(cs.getPropertyValue("--sat")) || 0 : 0;
+      const insetBottom = cs ? parseFloat(cs.getPropertyValue("--sab")) || 0 : 0;
+      const viewportH = window.innerHeight - insetTop - insetBottom - 32 * fontScale - safety;
       // Hauteur réellement occupée par chaque bloc, marges verticales comprises :
       // delta entre le haut du bloc et le haut du bloc suivant dans le flux.
       const rects = blocks.map((_, i) => blockRefs.current[i]?.getBoundingClientRect() ?? null);
@@ -382,12 +398,17 @@ export function PerformanceMode({
         e.preventDefault();
         goToPage(currentPage + 1, pages.length);
       } else if (e.key === "Escape") {
+        if (settingsOpen || songListOpen) {
+          setSettingsOpen(false);
+          setSongListOpen(false);
+          return;
+        }
         onClose();
       }
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [currentPage, pages.length, goToPage, onClose]);
+  }, [currentPage, pages.length, goToPage, onClose, settingsOpen, songListOpen]);
 
   // Touch/pointer tap handling
   const handlePointerDown = useCallback((e: React.PointerEvent) => {
@@ -444,9 +465,26 @@ export function PerformanceMode({
   const songPageIdx = currentPage - songStartPage;
   const isLastPageOfSong = pages.length > 0 && currentPage === songEndPage;
 
+  // Padding interne des conteneurs zoomés : px-6 py-4 + safe areas.
+  // Les insets sont divisés par le zoom pour rester exacts en pixels physiques
+  // (16px + inset une fois multipliés par fontScale) — 0 hors encoche.
+  const contentPadding: React.CSSProperties = {
+    paddingTop: `calc(1rem + var(--sat, 0px) / ${fontScale})`,
+    paddingBottom: `calc(1rem + var(--sab, 0px) / ${fontScale})`,
+    paddingLeft: `calc(1.5rem + var(--sal, 0px) / ${fontScale})`,
+    paddingRight: `calc(1.5rem + var(--sar, 0px) / ${fontScale})`,
+  };
+
   return (
     <div
+      ref={rootRef}
       className="fixed inset-0 z-[9999] bg-background overflow-hidden select-none"
+      style={{
+        "--sat": "env(safe-area-inset-top, 0px)",
+        "--sab": "env(safe-area-inset-bottom, 0px)",
+        "--sal": "env(safe-area-inset-left, 0px)",
+        "--sar": "env(safe-area-inset-right, 0px)",
+      } as React.CSSProperties}
       onPointerDown={handlePointerDown}
       onPointerUp={handlePointerUp}
     >
@@ -456,7 +494,7 @@ export function PerformanceMode({
         style={{ opacity: 0, zIndex: -1 }}
         aria-hidden="true"
       >
-        <div className="px-6 py-4" style={{ zoom: fontScale }}>
+        <div style={{ zoom: fontScale, ...contentPadding }}>
           {blocks.map((block, i) => (
             <div
               key={block.uid}
@@ -473,10 +511,10 @@ export function PerformanceMode({
       </div>
 
       {/* ── Content area ── */}
-      <div className="absolute inset-0 overflow-hidden px-6 py-4" style={{ zIndex: 1, zoom: fontScale }}>
+      <div className="absolute inset-0 overflow-hidden" style={{ zIndex: 1, zoom: fontScale, ...contentPadding }}>
         {pages.length === 0 ? (
           <div className="h-full flex items-center justify-center">
-            <p className="text-sm text-muted-foreground animate-pulse">Mise en page…</p>
+            <p className="text-sm text-muted-foreground animate-pulse">{t("performance.layout")}</p>
           </div>
         ) : (
           currentPageIndices.map((i) => (
@@ -493,11 +531,11 @@ export function PerformanceMode({
       {/* ── « Suivant : … » sur la dernière page d'un chant ── */}
       {isLastPageOfSong && nextEntry && (
         <div
-          className="absolute bottom-2.5 left-0 right-0 flex justify-center pointer-events-none"
-          style={{ zIndex: 5 }}
+          className="absolute left-0 right-0 flex justify-center pointer-events-none"
+          style={{ zIndex: 5, bottom: "calc(0.625rem + var(--sab, 0px))" }}
         >
           <span className="flex items-center gap-1.5 text-xs text-muted-foreground bg-background/85 backdrop-blur px-3 py-1 rounded-full border border-border/60">
-            → Suivant :
+            → {t("performance.next")}
             <span className="font-semibold text-foreground">{nextEntry.block.title}</span>
             <span className="font-mono">{nextEntry.block.songKey}</span>
           </span>
@@ -524,7 +562,10 @@ export function PerformanceMode({
           onPointerUp={(e) => e.stopPropagation()}
         >
           <div className="absolute inset-0 bg-black/30" onClick={() => setSongListOpen(false)} />
-          <div className="absolute left-0 top-0 bottom-0 w-72 max-w-[80vw] bg-background border-r border-border shadow-xl overflow-y-auto py-3 animate-in slide-in-from-left duration-200">
+          <div
+            className="absolute left-0 top-0 bottom-0 w-72 max-w-[80vw] bg-background border-r border-border shadow-xl overflow-y-auto py-3 animate-in slide-in-from-left duration-200"
+            style={{ paddingTop: "calc(0.75rem + var(--sat, 0px))", paddingLeft: "var(--sal, 0px)" }}
+          >
             <p className="px-4 pb-2 text-xs font-bold uppercase tracking-widest text-muted-foreground truncate">
               {setlistTitle}
             </p>
@@ -568,6 +609,11 @@ export function PerformanceMode({
         {/* Top bar */}
         <div
           className="absolute top-0 left-0 right-0 pointer-events-auto bg-background/90 backdrop-blur-md border-b border-border px-4 py-3 flex items-center gap-3"
+          style={{
+            paddingTop: "calc(0.75rem + var(--sat, 0px))",
+            paddingLeft: "calc(1rem + var(--sal, 0px))",
+            paddingRight: "calc(1rem + var(--sar, 0px))",
+          }}
           onPointerDown={(e) => e.stopPropagation()}
           onPointerUp={(e) => e.stopPropagation()}
         >
@@ -584,7 +630,7 @@ export function PerformanceMode({
           <div className="flex flex-col items-end gap-1 shrink-0">
             {/* Points de progression du chant courant */}
             {songPageCount > 1 && songPageCount <= 8 && (
-              <div className="flex items-center gap-1" aria-label={`Page ${songPageIdx + 1} sur ${songPageCount} du chant`}>
+              <div className="flex items-center gap-1" aria-label={t("performance.pageOfSong", { current: songPageIdx + 1, total: songPageCount })}>
                 {Array.from({ length: songPageCount }).map((_, i) => (
                   <span
                     key={i}
@@ -604,94 +650,33 @@ export function PerformanceMode({
         {/* Bottom bar */}
         <div
           className="absolute bottom-0 left-0 right-0 pointer-events-auto bg-background/90 backdrop-blur-md border-t border-border px-3 py-2.5 flex items-center gap-1.5 flex-wrap"
+          style={{
+            paddingBottom: "calc(0.625rem + var(--sab, 0px))",
+            paddingLeft: "calc(0.75rem + var(--sal, 0px))",
+            paddingRight: "calc(0.75rem + var(--sar, 0px))",
+          }}
           onPointerDown={(e) => e.stopPropagation()}
           onPointerUp={(e) => e.stopPropagation()}
         >
           {/* Sommaire des chants */}
-          <IconBtn label="Liste des chants" onClick={() => { setSettingsOpen(false); setSongListOpen(true); }}>
-            <ListMusic className="h-4 w-4" />
+          <IconBtn label={t("performance.songList")} onClick={() => { setSettingsOpen(false); setSongListOpen(true); }}>
+            <ListMusic className="h-5 w-5" />
           </IconBtn>
 
           {/* Réglages */}
-          <div className="relative">
-            {settingsOpen && (
-              <div
-                className="fixed inset-0"
-                onPointerDown={(e) => { e.stopPropagation(); setSettingsOpen(false); }}
-              />
-            )}
-            <IconBtn label="Réglages" active={settingsOpen} onClick={() => setSettingsOpen((v) => !v)}>
-              <Settings className="h-4 w-4" />
-            </IconBtn>
-            {settingsOpen && (
-              <div className="absolute bottom-full mb-2 left-0 w-64 bg-card border border-border rounded-xl shadow-lg p-3 space-y-3">
-                <SettingRow label="Accords">
-                  <SwitchBtn on={showChords} onToggle={() => setShowChords((v) => !v)} />
-                </SettingRow>
-                <SettingRow label="Transitions">
-                  <SwitchBtn on={showTransitions} onToggle={() => setShowTransitions((v) => !v)} />
-                </SettingRow>
-                {user && (
-                  <SettingRow label="Annotations">
-                    <SwitchBtn on={showAnnotations} onToggle={() => setShowAnnotations((v) => !v)} />
-                  </SettingRow>
-                )}
-                <SettingRow label="Texte">
-                  <div className="flex items-center gap-1.5">
-                    <button
-                      onClick={() => changeFontScale(-0.1)}
-                      disabled={fontScale <= MIN_SCALE}
-                      className="h-7 w-8 flex items-center justify-center rounded-lg border border-border text-muted-foreground disabled:opacity-30 hover:text-foreground text-[11px] font-bold"
-                      aria-label="Réduire le texte"
-                    >
-                      A−
-                    </button>
-                    <span className="text-[11px] text-muted-foreground tabular-nums w-9 text-center">
-                      {Math.round(fontScale * 100)}%
-                    </span>
-                    <button
-                      onClick={() => changeFontScale(0.1)}
-                      disabled={fontScale >= MAX_SCALE}
-                      className="h-7 w-8 flex items-center justify-center rounded-lg border border-border text-muted-foreground disabled:opacity-30 hover:text-foreground text-[13px] font-bold"
-                      aria-label="Agrandir le texte"
-                    >
-                      A+
-                    </button>
-                  </div>
-                </SettingRow>
-                <SettingRow label="Thème">
-                  <div className="flex rounded-lg border border-border overflow-hidden">
-                    <button
-                      onClick={() => setTheme("light")}
-                      className={`h-7 px-2.5 flex items-center gap-1 text-[11px] font-semibold transition-colors ${
-                        stageTheme === "light" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
-                      }`}
-                    >
-                      <Sun className="h-3 w-3" /> Clair
-                    </button>
-                    <button
-                      onClick={() => setTheme("dark")}
-                      className={`h-7 px-2.5 flex items-center gap-1 text-[11px] font-semibold border-l border-border transition-colors ${
-                        stageTheme === "dark" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
-                      }`}
-                    >
-                      <Moon className="h-3 w-3" /> Sombre
-                    </button>
-                  </div>
-                </SettingRow>
-              </div>
-            )}
-          </div>
+          <IconBtn label={t("performance.settings")} active={settingsOpen} onClick={() => setSettingsOpen(true)}>
+            <Settings className="h-5 w-5" />
+          </IconBtn>
 
           {/* Annoter (connecté uniquement) */}
           {user && (
             <IconBtn
-              label="Annoter"
+              label={t("performance.annotate")}
               active={annotateMode}
               accent="amber"
               onClick={() => { setSettingsOpen(false); setAnnotateMode((v) => !v); }}
             >
-              <PenLine className="h-4 w-4" />
+              <PenLine className="h-5 w-5" />
             </IconBtn>
           )}
 
@@ -700,27 +685,104 @@ export function PerformanceMode({
             <button
               onClick={() => goToPage(currentPage - 1, pages.length)}
               disabled={currentPage === 0}
-              className="h-9 w-9 flex items-center justify-center rounded-lg border border-border text-muted-foreground disabled:opacity-30 hover:text-foreground active:bg-muted"
-              aria-label="Page précédente"
+              className="h-11 w-11 flex items-center justify-center rounded-lg border border-border text-muted-foreground disabled:opacity-30 hover:text-foreground active:bg-muted"
+              aria-label={t("performance.prevPage")}
             >
-              <ChevronLeft className="h-4 w-4" />
+              <ChevronLeft className="h-5 w-5" />
             </button>
             <button
               onClick={() => goToPage(currentPage + 1, pages.length)}
               disabled={currentPage >= pages.length - 1}
-              className="h-9 w-9 flex items-center justify-center rounded-lg border border-border text-muted-foreground disabled:opacity-30 hover:text-foreground active:bg-muted"
-              aria-label="Page suivante"
+              className="h-11 w-11 flex items-center justify-center rounded-lg border border-border text-muted-foreground disabled:opacity-30 hover:text-foreground active:bg-muted"
+              aria-label={t("performance.nextPage")}
             >
-              <ChevronRight className="h-4 w-4" />
+              <ChevronRight className="h-5 w-5" />
             </button>
           </div>
 
           {/* Quitter */}
-          <IconBtn label="Quitter" onClick={onClose}>
-            <X className="h-4 w-4" />
+          <IconBtn label={t("performance.exit")} onClick={onClose}>
+            <X className="h-5 w-5" />
           </IconBtn>
         </div>
       </div>
+
+      {/* ── Réglages : bottom-sheet (au-dessus du z-9999 du mode) ── */}
+      <Drawer open={settingsOpen} onOpenChange={setSettingsOpen}>
+        <DrawerContent
+          className="z-[10000]"
+          overlayClassName="z-[10000] bg-black/40"
+          onPointerDown={(e) => e.stopPropagation()}
+          onPointerUp={(e) => e.stopPropagation()}
+        >
+          <DrawerHeader className="pb-1">
+            <DrawerTitle>{t("performance.settings")}</DrawerTitle>
+          </DrawerHeader>
+          <div
+            className="w-full max-w-md mx-auto px-4 pt-1 space-y-4"
+            style={{ paddingBottom: "calc(1.5rem + env(safe-area-inset-bottom, 0px))" }}
+          >
+            <SettingRow label={t("performance.chords")}>
+              <Switch checked={showChords} onCheckedChange={setShowChords} />
+            </SettingRow>
+            <SettingRow label={t("performance.transitions")}>
+              <Switch checked={showTransitions} onCheckedChange={setShowTransitions} />
+            </SettingRow>
+            {user && (
+              <SettingRow label={t("performance.annotations")}>
+                <Switch checked={showAnnotations} onCheckedChange={setShowAnnotations} />
+              </SettingRow>
+            )}
+            <SettingRow label={t("performance.text")}>
+              <div className="flex items-center gap-1.5">
+                <Button
+                  variant="outline"
+                  size="icon-lg"
+                  onClick={() => changeFontScale(-0.1)}
+                  disabled={fontScale <= MIN_SCALE}
+                  aria-label={t("performance.textSmaller")}
+                  className="text-xs font-bold"
+                >
+                  A−
+                </Button>
+                <span className="text-xs text-muted-foreground tabular-nums w-10 text-center">
+                  {Math.round(fontScale * 100)}%
+                </span>
+                <Button
+                  variant="outline"
+                  size="icon-lg"
+                  onClick={() => changeFontScale(0.1)}
+                  disabled={fontScale >= MAX_SCALE}
+                  aria-label={t("performance.textLarger")}
+                  className="text-sm font-bold"
+                >
+                  A+
+                </Button>
+              </div>
+            </SettingRow>
+            <SettingRow label={t("performance.theme")}>
+              <div className="flex rounded-lg border border-border overflow-hidden">
+                <button
+                  onClick={() => setTheme("light")}
+                  className={`h-11 px-4 flex items-center gap-1.5 text-xs font-semibold transition-colors ${
+                    stageTheme === "light" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <Sun className="h-3.5 w-3.5" /> {t("performance.light")}
+                </button>
+                <button
+                  onClick={() => setTheme("dark")}
+                  className={`h-11 px-4 flex items-center gap-1.5 text-xs font-semibold border-l border-border transition-colors ${
+                    stageTheme === "dark" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <Moon className="h-3.5 w-3.5" /> {t("performance.dark")}
+                </button>
+              </div>
+            </SettingRow>
+          </div>
+        </DrawerContent>
+      </Drawer>
     </div>
   );
 }
@@ -750,7 +812,7 @@ function IconBtn({
       onClick={onClick}
       aria-label={label}
       title={label}
-      className={`h-9 w-9 flex items-center justify-center rounded-lg border transition-colors active:bg-muted ${
+      className={`h-11 w-11 flex items-center justify-center rounded-lg border transition-colors active:bg-muted ${
         active ? activeClass : "border-border text-muted-foreground hover:text-foreground"
       }`}
     >
@@ -762,27 +824,8 @@ function IconBtn({
 function SettingRow({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="flex items-center justify-between gap-3">
-      <span className="text-xs font-semibold text-foreground">{label}</span>
+      <span className="text-sm font-medium text-foreground">{label}</span>
       {children}
     </div>
-  );
-}
-
-function SwitchBtn({ on, onToggle }: { on: boolean; onToggle: () => void }) {
-  return (
-    <button
-      role="switch"
-      aria-checked={on}
-      onClick={onToggle}
-      className={`relative w-10 h-6 rounded-full transition-colors ${
-        on ? "bg-primary" : "bg-muted-foreground/25"
-      }`}
-    >
-      <span
-        className={`absolute top-0.5 w-5 h-5 rounded-full bg-white shadow transition-all ${
-          on ? "left-[18px]" : "left-0.5"
-        }`}
-      />
-    </button>
   );
 }

@@ -7,7 +7,13 @@
       "login": "Connexion",
       "logout": "Déconnexion",
       "louange": "Louange",
-      "planning": "Planning"
+      "planning": "Planning",
+      "myServices": "Mes Services",
+      "service": "Service",
+      "annonces": "Annonces",
+      "profile": "Mon profil",
+      "signup": "Créer un compte",
+      "guide": "Guide d'utilisation"
     },
     "buttons": {
       "reset": "Réinitialiser",
@@ -25,7 +31,9 @@
       "fr": "Français",
       "zh": "中文",
       "mixed": "FR / 中文"
-    }
+    },
+    "moreActions": "Plus d'actions",
+    "retry": "Réessayer"
   },
   "songs": {
     "list": {
@@ -76,7 +84,8 @@
     "submit": "Se connecter",
     "submitLoading": "Connexion…",
     "backToSetlists": "← Retour aux setlists",
-    "errorInvalid": "Identifiants incorrects. Vérifie l'email et le mot de passe."
+    "errorInvalid": "Identifiants incorrects. Vérifie l'email et le mot de passe.",
+    "signupLink": "Pas encore de compte ? Créer un compte"
   },
   "setlists": {
     "list": {
@@ -91,7 +100,9 @@
       "mySetlists": "Mes setlists",
       "publicSetlists": "Setlists partagées",
       "songCounter_one": "{{count}} chant",
-      "songCounter_other": "{{count}} chants"
+      "songCounter_other": "{{count}} chants",
+      "loginRequired": "Les setlists sont réservées aux membres — connecte-toi pour voir celles de tes services.",
+      "profileRequired": "Complète ton profil pour voir les setlists de tes services."
     },
     "detail": {
       "backToAll": "←",
@@ -103,9 +114,23 @@
       "deleteYes": "Oui, supprimer",
       "deleteCancel": "Annuler",
       "notFound": "Setlist introuvable.",
+      "loginRequired": "Connecte-toi pour voir cette setlist.",
+      "noAccess": "Tu n'as pas accès à cette setlist — elle ne fait pas partie de tes services.",
+      "noEditAccess": "Seuls le créateur de la setlist et les musiciens de ce service peuvent la modifier.",
       "back": "← Retour",
       "leaderLabel": "Présidence :",
-      "loadingCharts": "Chargement des partitions…"
+      "loadingCharts": "Chargement des partitions…",
+      "performanceMode": "Mode Louange",
+      "duplicate": "Dupliquer",
+      "duplicateCopySuffix": "(copie)",
+      "share": "Partager",
+      "linkCopied": "Lien copié ✓",
+      "sharePrivateWarning": "Setlist privée — visible uniquement par toi",
+      "canEdit": "Vous pouvez modifier",
+      "readOnly": "Lecture seule",
+      "editableBy": "Modifiable par : créateur, musiciens de {{category}} et admins",
+      "editableByOwner": "Privée — visible et modifiable uniquement par son créateur",
+      "loadError": "Impossible de charger la setlist. Vérifie ta connexion."
     },
     "form": {
       "titleNew": "Nouvelle setlist",
@@ -193,5 +218,154 @@
     "中班": "Zhong Ban (中班)",
     "大班": "Da Ban (大班)",
     "高班": "Gao Ban (高班)"
+  },
+  "performance": {
+    "layout": "Mise en page…",
+    "next": "Suivant :",
+    "songList": "Liste des chants",
+    "settings": "Réglages",
+    "chords": "Accords",
+    "transitions": "Transitions",
+    "annotations": "Annotations",
+    "text": "Texte",
+    "textSmaller": "Réduire le texte",
+    "textLarger": "Agrandir le texte",
+    "theme": "Thème",
+    "light": "Clair",
+    "dark": "Sombre",
+    "annotate": "Annoter",
+    "exit": "Quitter",
+    "prevPage": "Page précédente",
+    "nextPage": "Page suivante",
+    "pageOfSong": "Page {{current}} sur {{total}} du chant",
+    "tools": {
+      "pen": "Crayon",
+      "highlighter": "Surligneur",
+      "eraser": "Gomme (efface un trait)",
+      "small": "Petit",
+      "medium": "Moyen",
+      "large": "Grand",
+      "undo": "Annuler",
+      "clearAll": "Tout effacer"
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "empty": "Rien de nouveau",
+    "annonce": "Nouvelle annonce",
+    "setlistCreated": "Setlist créée",
+    "setlistUpdated": "Setlist modifiée"
+  },
+  "profile": {
+    "title": "Mon profil",
+    "welcome": "Bienvenue ! Complète ton profil pour accéder aux setlists de tes services et à l'onglet « Mes Services ».",
+    "locked": "Ton profil est complété. Pour le modifier, contacte un administrateur.",
+    "save": "Enregistrer mon profil",
+    "saving": "Enregistrement…",
+    "saveError": "Erreur lors de l'enregistrement. Réessaie.",
+    "errorName": "Renseigne ton prénom et ton nom.",
+    "errorLieux": "Indique où tu sers (au moins un lieu).",
+    "errorEdd": "Indique ton rôle à l'EDD (musicien ou présidence).",
+    "fields": {
+      "firstName": "Prénom",
+      "firstNamePlaceholder": "ex. Timothée",
+      "lastName": "Nom",
+      "lastNamePlaceholder": "ex. Chen",
+      "serveQuestion": "Sers-tu à l'église ? Si oui, en tant que :",
+      "serveHint": "Laisse vide si tu ne sers pas. Plusieurs choix possibles.",
+      "whereServe": "Où sers-tu ?",
+      "multipleChoices": "Plusieurs choix possibles.",
+      "eddCheckbox": "Je sers à l'EDD (École du Dimanche)",
+      "musicien": "Musicien",
+      "presidence": "Présidence",
+      "groupeQuestion": "Tu fais partie de quel groupe ?",
+      "none": "Aucun",
+      "groupeMusicien": "Je suis musicien dans mon groupe",
+      "planningName": "Ton nom dans les plannings",
+      "planningNameHint": "Choisis le nom qui te désigne dans les plannings — il sert à remplir l'onglet « Mes Services ».",
+      "notInPlannings": "— Je ne suis pas encore dans les plannings —",
+      "otherName": "Autre (saisir mon nom)…",
+      "customNamePlaceholder": "Nom exact tel qu'écrit dans les plannings",
+      "searchName": "Rechercher un prénom…",
+      "noNameResults": "Aucun nom trouvé"
+    }
+  },
+  "signup": {
+    "title": "Créer un compte",
+    "subtitle": "GCC Louange — réservé aux membres de l'église",
+    "steps": {
+      "account": "Compte",
+      "identity": "Identité",
+      "services": "Services",
+      "groupe": "Groupe"
+    },
+    "email": "Email",
+    "emailPlaceholder": "email@example.com",
+    "password": "Mot de passe",
+    "passwordPlaceholder": "6 caractères minimum",
+    "password2": "Confirmer le mot de passe",
+    "errorEmail": "Renseigne ton adresse email.",
+    "errorPasswordLength": "Le mot de passe doit faire au moins 6 caractères.",
+    "errorPasswordMatch": "Les deux mots de passe ne correspondent pas.",
+    "errorEmailInUse": "Un compte existe déjà avec cet email.",
+    "errorEmailInvalid": "Adresse email invalide.",
+    "errorGeneric": "Erreur lors de la création du compte. Réessaie.",
+    "closedTitle": "Inscriptions fermées",
+    "closedText": "Les inscriptions ne sont plus ouvertes. Contacte Timothée si tu as besoin d'un compte.",
+    "loginLink": "Se connecter",
+    "back": "Retour",
+    "next": "Suivant",
+    "create": "Créer mon compte",
+    "creating": "Création du compte…",
+    "alreadyAccount": "J'ai déjà un compte — me connecter"
+  },
+  "mesServices": {
+    "title": "Mes Services",
+    "loading": "Chargement…",
+    "loginPrompt": "Connecte-toi pour voir tes prochains services.",
+    "login": "Se connecter",
+    "completeProfile": "Complète ton profil pour voir tes services ici.",
+    "chooseName": "Choisis ton nom de planning dans ton profil pour voir tes services ici.",
+    "myProfile": "Mon profil",
+    "upcomingCount": "{{count}} à venir",
+    "subtitle": "Les dates où {{name}} apparaît dans les plannings.",
+    "tabUpcoming": "À venir",
+    "tabPast": "Passés",
+    "today": "Aujourd'hui",
+    "inDays": "dans {{count}} j",
+    "emptyUpcoming": "Aucun service à venir — profite du repos 🙂",
+    "emptyPast": "Aucun service passé trouvé.",
+    "setlist": "Setlist"
+  },
+  "guide": {
+    "title": "Guide d'utilisation",
+    "subtitle": "Tout ce qu'il faut savoir pour utiliser le site GCC Louange.",
+    "tocTitle": "Sur cette page",
+    "sections": {
+      "songs": {
+        "title": "Trouver et lire un chant",
+        "body": "L'onglet Louange ouvre la liste des chants. Utilise la barre de recherche pour chercher par titre, par pinyin (chants chinois) ou par artiste. Les filtres permettent de n'afficher que les chants français, chinois, ou d'un thème précis. La pastille colorée à gauche indique la langue (bleu = français, rouge = chinois). Les chants que tu as ouverts récemment apparaissent en haut sous « Récemment consultés »."
+      },
+      "customize": {
+        "title": "Transposer et personnaliser",
+        "body": "Sur un chant, le bouton Personnaliser permet de transposer dans une autre tonalité, d'afficher ou masquer les accords, d'afficher le pinyin (chants chinois), de basculer en notation Jianpu quand elle existe, et de réorganiser les sections. Tu peux aussi régler la taille du texte. Ces réglages servent aussi à la génération du PDF et au Mode Louange."
+      },
+      "performance": {
+        "title": "Le Mode Louange",
+        "body": "Le Mode Louange affiche le chant en plein écran, page par page, pour jouer sans distraction. Balaye ou utilise les flèches pour changer de page. L'outil d'annotation (crayon, surligneur, gomme) permet d'écrire directement sur la partition : choisis l'outil, l'épaisseur (les cases montrent l'épaisseur réelle du trait) et la couleur. Les annotations sont enregistrées sur ton compte et réapparaissent à la prochaine ouverture de la même mise en page."
+      },
+      "setlists": {
+        "title": "Les setlists",
+        "body": "Une setlist regroupe les chants d'un culte ou d'une réunion. Tu vois les setlists des services auxquels tu as accès selon ton profil. Ouvre-en une pour parcourir les chants, lancer le Mode Louange, ou télécharger le PDF de l'ensemble. Selon tes droits, tu peux aussi créer et modifier des setlists."
+      },
+      "planning": {
+        "title": "Planning et Mes Services",
+        "body": "L'onglet Planning montre les plannings de service de l'église. L'onglet Mes Services filtre ces plannings pour n'afficher que les dates où tu es prévu — pense à choisir ton nom de planning dans ton profil pour que cela fonctionne. Quand une setlist existe pour un de tes services, un lien direct y mène."
+      },
+      "account": {
+        "title": "Compte, langue et thème",
+        "body": "Complète ton profil (prénom, nom, lieux de service, nom de planning) pour débloquer Mes Services et les setlists de tes services. Le bouton 中文/FR change la langue de toute l'interface. Le bouton lune/soleil bascule entre thème clair et sombre. La cloche affiche les notifications (nouvelles annonces et setlists)."
+      }
+    }
   }
 }

@@ -36,7 +36,7 @@ export function PlanningTabs() {
   }, [pathname])
 
   return (
-    <div className={`sticky top-[57px] z-40 border-b border-border bg-background/95 backdrop-blur-md print:hidden transition-transform duration-300 ${scrollVisible ? "translate-y-0" : "-translate-y-[calc(100%+58px)]"}`}>
+    <div className={`sticky top-[calc(var(--nav-h)-1px)] z-40 border-b border-border bg-background/95 backdrop-blur-md print:hidden transition-transform duration-300 ${scrollVisible ? "translate-y-0" : "-translate-y-[calc(100%+var(--nav-h))]"}`}>
       <div className="max-w-[1080px] mx-auto px-4">
         <div className="relative">
           <nav ref={navRef} className="flex overflow-x-auto gap-0" style={{ scrollbarWidth: "none" }}>

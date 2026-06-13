@@ -1,11 +1,31 @@
 "use client";
 
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-import { Trash2, List, Music, Pencil, Play, MoreHorizontal, Download } from "lucide-react";
-import { getSetlist, deleteSetlist, isRestricted, type FSSetlist } from "@/lib/firebase/setlists";
-import { useAuth } from "@/lib/firebase/auth";
+import { Trash2, List, Music, Pencil, Play, MoreHorizontal, Download, Copy, Share2, BellRing } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
+import { getSetlist, deleteSetlist, duplicateSetlist, authHeader, type FSSetlist } from "@/lib/firebase/setlists";
+import { useProfile } from "@/lib/firebase/users";
+import { canSeeSetlist, canEditSetlist, canDuplicateSetlist } from "@/lib/access";
 import { useTranslation } from "react-i18next";
 import type { SongIndexEntry } from "@/types/song";
 import type { SetlistItem } from "@/types/setList";
@@ -23,7 +43,7 @@ export function SetlistDetailClient() {
   const { t, i18n } = useTranslation();
   const params = useParams();
   const router = useRouter();
-  const { user, loading: authLoading } = useAuth();
+  const { user, profile, loading: authLoading } = useProfile();
   const id = params.id as string;
 
   const [setlist, setSetlist] = useState<FSSetlist | null>(null);
@@ -40,25 +60,11 @@ export function SetlistDetailClient() {
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [downloading, setDownloading] = useState(false);
   const [performanceMode, setPerformanceMode] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
-
-  // Fermer le menu ⋯ au clic/tap en dehors
-  useEffect(() => {
-    if (!menuOpen) return;
-    const handler = (e: MouseEvent | TouchEvent) => {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        setMenuOpen(false);
-        setConfirmDelete(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    document.addEventListener("touchstart", handler);
-    return () => {
-      document.removeEventListener("mousedown", handler);
-      document.removeEventListener("touchstart", handler);
-    };
-  }, [menuOpen]);
+  const [duplicating, setDuplicating] = useState(false);
+  const [shareFeedback, setShareFeedback] = useState<string | null>(null);
+  const [notifying, setNotifying] = useState(false);
+  const [loadError, setLoadError] = useState(false);
+  const [retryKey, setRetryKey] = useState(0);
 
   useEffect(() => {
     const saved = sessionStorage.getItem("lastListPath");
@@ -70,6 +76,8 @@ export function SetlistDetailClient() {
   // Load setlist + songs index (wait for auth so private setlists get auth headers)
   useEffect(() => {
     if (!id || authLoading) return;
+    setLoadError(false);
+    setLoadingSetlist(true);
     Promise.all([
       getSetlist(id),
       fetch("/songs-index.json").then((r) => r.json()),
@@ -78,8 +86,10 @@ export function SetlistDetailClient() {
       const map: Record<string, SongIndexEntry> = {};
       for (const s of index.songs ?? []) map[s.slug] = s;
       setSongsMap(map);
+    }).catch(() => {
+      setLoadError(true);
     }).finally(() => setLoadingSetlist(false));
-  }, [id, authLoading]);
+  }, [id, authLoading, retryKey]);
 
   // Load full song content when switching to Partitions view
   const loadContents = useCallback(async (items: SetlistItem[]) => {
@@ -174,10 +184,102 @@ export function SetlistDetailClient() {
     }
   }
 
+  async function handleDuplicate() {
+    if (!setlist || !user) return;
+    setDuplicating(true);
+    try {
+      const newId = await duplicateSetlist(
+        setlist,
+        user.uid,
+        `${setlist.title} ${t("setlists.detail.duplicateCopySuffix")}`
+      );
+      router.push(`/setlists/${newId}/edit`);
+    } catch {
+      setDuplicating(false);
+    }
+  }
+
+  function flashFeedback(msg: string) {
+    setShareFeedback(msg);
+    window.setTimeout(() => setShareFeedback(null), 3000);
+  }
+
+  async function handleShare() {
+    if (!setlist) return;
+    const url = `${window.location.origin}/setlists/${id}`;
+    if (setlist.isPrivate) {
+      // Le destinataire n'y aura pas accès tant qu'elle est privée
+      flashFeedback(t("setlists.detail.sharePrivateWarning"));
+      return;
+    }
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: setlist.title, url });
+        return;
+      } catch { return; /* partage annulé */ }
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      flashFeedback(t("setlists.detail.linkCopied"));
+    } catch { /* clipboard indisponible */ }
+  }
+
+  // Valide la setlist du culte et prévient l'équipe (musiciens, régie, choristes)
+  // de service ce dimanche-là via notification push.
+  async function handleNotifyTeam() {
+    if (!setlist || notifying) return;
+    setNotifying(true);
+    try {
+      const headers = await authHeader();
+      const res = await fetch("/api/push/notify-setlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...headers },
+        body: JSON.stringify({ setlistId: id }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok) {
+        flashFeedback(
+          t("setlists.detail.notifySent", {
+            defaultValue: "Équipe prévenue ({{count}} notifications envoyées).",
+            count: data.sent ?? 0,
+          })
+        );
+      } else {
+        flashFeedback(data.error || t("setlists.detail.notifyError", { defaultValue: "Échec de l'envoi." }));
+      }
+    } catch {
+      flashFeedback(t("setlists.detail.notifyError", { defaultValue: "Échec de l'envoi." }));
+    } finally {
+      setNotifying(false);
+    }
+  }
+
   if (loadingSetlist) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <p className="text-sm text-muted-foreground">{t("common.loading")}</p>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return (
+      <div className="min-h-screen bg-background flex flex-col items-center justify-center gap-3 px-4">
+        <p className="text-sm text-muted-foreground">{t("setlists.detail.loginRequired")}</p>
+        <Link href={`/login?from=/setlists/${id}`} className="text-sm text-primary hover:underline">
+          {t("common.header.login")}
+        </Link>
+      </div>
+    );
+  }
+
+  if (loadError) {
+    return (
+      <div className="min-h-screen bg-background flex flex-col items-center justify-center gap-3 px-4">
+        <p className="text-sm text-muted-foreground">{t("setlists.detail.loadError")}</p>
+        <Button variant="outline" onClick={() => setRetryKey((k) => k + 1)}>
+          {t("common.retry")}
+        </Button>
       </div>
     );
   }
@@ -191,11 +293,27 @@ export function SetlistDetailClient() {
     );
   }
 
-  const canDelete = !isRestricted(setlist.category) || !!user;
+  // Accès : uniquement les setlists de ses services/groupe (ou créées par soi)
+  if (!canSeeSetlist(user, profile, setlist)) {
+    return (
+      <div className="min-h-screen bg-background flex flex-col items-center justify-center gap-3 px-4">
+        <p className="text-sm text-muted-foreground">{t("setlists.detail.noAccess")}</p>
+        <Link href="/setlists" className="text-sm text-primary hover:underline">{t("setlists.detail.back")}</Link>
+      </div>
+    );
+  }
+
+  // Modification/suppression : créateur + musiciens du même service
+  const canEdit = canEditSetlist(user, profile, setlist);
+  const canDuplicate = canDuplicateSetlist(user, profile, setlist);
+  // Notif « setlist prête » : réservée aux setlists du Culte Franco, modifiables
+  // par l'utilisateur, et contenant au moins 4 vrais chants (hors transitions).
+  const realSongCount = setlist.items.filter((i) => i.type !== "transition").length;
+  const canNotifyTeam = canEdit && setlist.category === "Culte Francophone";
   return (
     <div className="min-h-screen bg-background">
       {/* Top bar — même style que SongDetailClient */}
-      <div className={`{print:hidden fixed left-0 right-0 top-[58px] z-10 bg-background/95 backdrop-blur border-b border-border transition-transform duration-300 ${ scrollVisible ? "translate-y-0" : "-translate-y-[calc(100%+58px)]"}`}>
+      <div className={`print:hidden fixed left-0 right-0 top-[var(--nav-h)] z-10 bg-background/95 backdrop-blur border-b border-border transition-transform duration-300 ${ scrollVisible ? "translate-y-0" : "-translate-y-[calc(100%+var(--nav-h))]"}`}>
         <div className="max-w-[1080px] mx-auto px-4">
           <div className="flex items-center gap-2 py-[9px] flex-wrap">
 
@@ -253,6 +371,12 @@ export function SetlistDetailClient() {
               {/* Mode Louange — action principale en live */}
               <button
                 onClick={async () => {
+                  // Plein écran natif : à appeler en synchrone dans le geste
+                  // utilisateur (avant tout await), sinon la demande est rejetée.
+                  // iPhone Safari ne supporte pas l'API → échec silencieux.
+                  try {
+                    document.documentElement.requestFullscreen({ navigationUI: "hide" }).catch(() => {});
+                  } catch { /* non supporté */ }
                   if (setlist && Object.keys(contents).length === 0) {
                     await loadContents(setlist.items);
                   }
@@ -261,68 +385,81 @@ export function SetlistDetailClient() {
                 className="h-8 px-3 rounded-[8px] bg-primary text-primary-foreground text-[12.5px] font-semibold flex items-center gap-1.5 hover:bg-primary/90 transition-all duration-150"
               >
                 <Play className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Mode Louange</span>
+                <span className="hidden sm:inline">{t("setlists.detail.performanceMode")}</span>
               </button>
 
-              {/* Menu ⋯ : Modifier / PDF / Supprimer */}
-              <div className="relative" ref={menuRef}>
+              {/* Prévenir l'équipe — setlist du Culte Franco prête (≥ 4 chants) */}
+              {canNotifyTeam && (
                 <button
-                  onClick={() => { setMenuOpen((v) => !v); setConfirmDelete(false); }}
-                  aria-label="Plus d'actions"
-                  className="h-8 w-8 rounded-[8px] border border-border bg-card text-muted-foreground hover:text-foreground flex items-center justify-center transition-all duration-150"
+                  onClick={handleNotifyTeam}
+                  disabled={notifying || realSongCount < 4}
+                  title={
+                    realSongCount < 4
+                      ? t("setlists.detail.notifyNeedSongs", {
+                          defaultValue: "Ajoute au moins 4 chants pour prévenir l'équipe.",
+                        })
+                      : undefined
+                  }
+                  className="h-8 px-2.5 rounded-[8px] border border-border bg-card text-[12.5px] font-semibold flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-all duration-150 disabled:opacity-50"
                 >
-                  <MoreHorizontal className="h-4 w-4" />
+                  <BellRing className="h-3.5 w-3.5" />
+                  <span className="hidden sm:inline">
+                    {notifying
+                      ? "…"
+                      : t("setlists.detail.notifyTeam", { defaultValue: "Prévenir l'équipe" })}
+                  </span>
                 </button>
-                {menuOpen && (
-                  <div className="absolute right-0 top-full mt-1 w-52 bg-card border border-border rounded-xl shadow-lg py-1 z-50">
-                    <Link
-                      href={`/setlists/${id}/edit`}
-                      className="w-full flex items-center gap-2.5 px-3 py-2.5 text-[13px] font-medium text-foreground hover:bg-muted/50 transition-colors"
-                    >
-                      <Pencil className="h-3.5 w-3.5 text-muted-foreground" />
-                      {t("setlists.detail.editButton")}
-                    </Link>
-                    <button
-                      onClick={async () => { setMenuOpen(false); await handleDownload(); }}
-                      disabled={downloading}
-                      className="w-full flex items-center gap-2.5 px-3 py-2.5 text-[13px] font-medium text-foreground hover:bg-muted/50 transition-colors disabled:opacity-50 text-left"
-                    >
-                      <Download className="h-3.5 w-3.5 text-muted-foreground" />
-                      {downloading ? "…" : t("songs.detail.downloadPdf")}
-                    </button>
-                    {canDelete && (
-                      confirmDelete ? (
-                        <div className="px-3 py-2.5 border-t border-border">
-                          <p className="text-xs text-muted-foreground mb-2">{t("setlists.detail.deleteConfirm")}</p>
-                          <div className="flex items-center gap-3">
-                            <button
-                              onClick={handleDelete}
-                              disabled={deleting}
-                              className="text-xs font-semibold text-destructive hover:underline disabled:opacity-50"
-                            >
-                              {deleting ? "…" : t("setlists.detail.deleteYes")}
-                            </button>
-                            <button
-                              onClick={() => setConfirmDelete(false)}
-                              className="text-xs text-muted-foreground hover:text-foreground"
-                            >
-                              {t("setlists.detail.deleteCancel")}
-                            </button>
-                          </div>
-                        </div>
-                      ) : (
-                        <button
-                          onClick={() => setConfirmDelete(true)}
-                          className="w-full flex items-center gap-2.5 px-3 py-2.5 text-[13px] font-medium text-destructive hover:bg-destructive/10 transition-colors text-left"
-                        >
-                          <Trash2 className="h-3.5 w-3.5" />
-                          {t("setlists.detail.deleteButton")}
-                        </button>
-                      )
-                    )}
-                  </div>
-                )}
-              </div>
+              )}
+
+              {/* Menu ⋯ : Modifier / Dupliquer / Partager / PDF / Supprimer */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="outline"
+                    size="icon-lg"
+                    className="sm:h-8 sm:w-8 rounded-md text-muted-foreground"
+                    aria-label={t("common.moreActions")}
+                  >
+                    <MoreHorizontal className="h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-56">
+                  {canEdit && (
+                    <DropdownMenuItem asChild>
+                      <Link href={`/setlists/${id}/edit`}>
+                        <Pencil className="h-3.5 w-3.5 text-muted-foreground" />
+                        {t("setlists.detail.editButton")}
+                      </Link>
+                    </DropdownMenuItem>
+                  )}
+                  {canDuplicate && (
+                    <DropdownMenuItem disabled={duplicating} onClick={() => handleDuplicate()}>
+                      <Copy className="h-3.5 w-3.5 text-muted-foreground" />
+                      {duplicating ? "…" : t("setlists.detail.duplicate")}
+                    </DropdownMenuItem>
+                  )}
+                  <DropdownMenuItem onClick={() => handleShare()}>
+                    <Share2 className="h-3.5 w-3.5 text-muted-foreground" />
+                    {t("setlists.detail.share")}
+                  </DropdownMenuItem>
+                  <DropdownMenuItem disabled={downloading} onClick={() => handleDownload()}>
+                    <Download className="h-3.5 w-3.5 text-muted-foreground" />
+                    {downloading ? "…" : t("songs.detail.downloadPdf")}
+                  </DropdownMenuItem>
+                  {canEdit && (
+                    <>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuItem
+                        className="text-destructive focus:text-destructive"
+                        onClick={() => setConfirmDelete(true)}
+                      >
+                        <Trash2 className="h-3.5 w-3.5" />
+                        {t("setlists.detail.deleteButton")}
+                      </DropdownMenuItem>
+                    </>
+                  )}
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
         </div>
@@ -352,6 +489,19 @@ export function SetlistDetailClient() {
               <span>{t("setlists.detail.leaderLabel")} <span className="text-foreground">{setlist.leader}</span></span>
             )}
           </div>
+          {/* Qui peut modifier — rend visible la logique de access.ts */}
+          <div className="mt-3 flex items-center gap-2 flex-wrap">
+            <Badge variant={canEdit ? "default" : "secondary"}>
+              {canEdit ? t("setlists.detail.canEdit") : t("setlists.detail.readOnly")}
+            </Badge>
+            <span className="text-xs text-muted-foreground">
+              {setlist.isPrivate
+                ? t("setlists.detail.editableByOwner")
+                : t("setlists.detail.editableBy", {
+                    category: t("categories." + setlist.category, { defaultValue: setlist.category }),
+                  })}
+            </span>
+          </div>
           {setlist.notes && (
             <p className="mt-3 text-sm text-muted-foreground italic">{setlist.notes}</p>
           )}
@@ -370,6 +520,33 @@ export function SetlistDetailClient() {
         )}
       </div>
 
+      {/* Confirmation de suppression */}
+      <AlertDialog open={confirmDelete} onOpenChange={setConfirmDelete}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>{t("setlists.detail.deleteButton")}</AlertDialogTitle>
+            <AlertDialogDescription>{t("setlists.detail.deleteConfirm")}</AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>{t("setlists.detail.deleteCancel")}</AlertDialogCancel>
+            <AlertDialogAction
+              disabled={deleting}
+              onClick={handleDelete}
+              className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+            >
+              {deleting ? "…" : t("setlists.detail.deleteYes")}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      {/* Retour visuel du partage (lien copié / setlist privée) */}
+      {shareFeedback && (
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-full bg-foreground text-background text-sm shadow-lg">
+          {shareFeedback}
+        </div>
+      )}
+
       {/* Mode Louange */}
       {performanceMode && (
         <PerformanceMode
@@ -378,7 +555,10 @@ export function SetlistDetailClient() {
           initialShowChords={showChords}
           setlistId={id}
           setlistTitle={setlist.title}
-          onClose={() => setPerformanceMode(false)}
+          onClose={() => {
+            if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+            setPerformanceMode(false);
+          }}
         />
       )}
     </div>

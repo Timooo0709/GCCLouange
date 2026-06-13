@@ -25,3 +25,9 @@ jobs:
 
       - name: Vérification TypeScript
         run: npx tsc --noEmit
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Validation des chants
+        run: npm run validate

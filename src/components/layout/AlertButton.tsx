@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AlertCircle, X, Send } from "lucide-react";
+import { REPORT_LIMITS } from "@/lib/report/reportValidator";
 
 export function BugReportButton({ song }: { song: string }) {
   const [open, setOpen] = useState(false)
@@ -71,6 +72,8 @@ export function BugReportButton({ song }: { song: string }) {
                   name="title"
                   defaultValue={`Problème avec : ${song}`}
                   required
+                  minLength={3}
+                  maxLength={REPORT_LIMITS.title}
                   className="w-full px-3 py-1.5 text-sm border border-border rounded bg-muted/50 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/30"
                 />
               </div>
@@ -83,6 +86,7 @@ export function BugReportButton({ song }: { song: string }) {
                   name="description"
                   placeholder="Décris le problème..."
                   rows={3}
+                  maxLength={REPORT_LIMITS.description}
                   className="w-full px-3 py-1.5 text-sm border border-border rounded bg-muted/50 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/30 resize-none"
                 />
               </div>
@@ -95,6 +99,7 @@ export function BugReportButton({ song }: { song: string }) {
                   name="userEmail"
                   type="email"
                   placeholder="pour te répondre"
+                  maxLength={REPORT_LIMITS.email}
                   className="w-full px-3 py-1.5 text-sm border border-border rounded bg-muted/50 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/30"
                 />
               </div>

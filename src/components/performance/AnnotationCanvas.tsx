@@ -7,6 +7,7 @@
 // - le parent possède les données (AnnotationData) et les persiste
 
 import { useRef, useEffect, useState, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { Pencil, Highlighter, Eraser, Trash2, Undo2 } from "lucide-react";
 import {
   type AnnotationData,
@@ -68,6 +69,7 @@ interface Props {
 }
 
 export function AnnotationCanvas({ data, onChange }: Props) {
+  const { t } = useTranslation();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [tool, setTool] = useState<Tool>("pen");
   const [color, setColor] = useState(COLORS[0]);
@@ -76,6 +78,8 @@ export function AnnotationCanvas({ data, onChange }: Props) {
   const activePointer = useRef<number | null>(null);
   const livePoints = useRef<[number, number][]>([]);
   const history = useRef<Stroke[][]>([]);
+  // Cercle de prévisualisation qui suit le pointeur (position pilotée hors React)
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   // Échelle viewport actuel ↔ espace d'origine des données
   const toOrig = useCallback(
@@ -140,6 +144,17 @@ export function AnnotationCanvas({ data, onChange }: Props) {
     [data, onChange, sizeIdx, toOrig],
   );
 
+  // ── Cercle indicateur de taille (suit le pointeur, piloté hors React) ──
+  const showCursorAt = (x: number, y: number) => {
+    const el = cursorRef.current;
+    if (!el) return;
+    el.style.transform = `translate(${x}px, ${y}px)`;
+    el.style.opacity = "1";
+  };
+  const hideCursor = () => {
+    if (cursorRef.current) cursorRef.current.style.opacity = "0";
+  };
+
   // ── Dessin live (segment incrémental, sans re-render React) ──
   const drawLiveSegment = (x: number, y: number) => {
     const ctx = canvasRef.current?.getContext("2d");
@@ -167,6 +182,7 @@ export function AnnotationCanvas({ data, onChange }: Props) {
     e.stopPropagation();
     activePointer.current = e.pointerId;
     (e.target as HTMLElement).setPointerCapture(e.pointerId);
+    showCursorAt(e.clientX, e.clientY);
     if (tool === "eraser") {
       pushHistory();
       eraseAt(e.clientX, e.clientY);
@@ -176,6 +192,7 @@ export function AnnotationCanvas({ data, onChange }: Props) {
   }
 
   function onPointerMove(e: React.PointerEvent) {
+    showCursorAt(e.clientX, e.clientY); // survol + dessin : le cercle suit toujours
     if (e.pointerId !== activePointer.current) return;
     e.preventDefault();
     if (tool === "eraser") {
@@ -190,6 +207,7 @@ export function AnnotationCanvas({ data, onChange }: Props) {
     if (e.pointerId !== activePointer.current) return;
     e.stopPropagation();
     activePointer.current = null;
+    if (e.pointerType === "touch") hideCursor(); // au doigt, pas de survol après le lever
     if (tool === "eraser") return;
     const pts = livePoints.current;
     livePoints.current = [];
@@ -215,7 +233,13 @@ export function AnnotationCanvas({ data, onChange }: Props) {
     onChange({ ...data, strokes: [] });
   }
 
-  const sizeDot = (i: number) => 4 + i * 3; // Ø du point de l'UI tailles
+  // Aperçu de taille dans le menu : barre (stylo/surligneur) à l'épaisseur réelle
+  // du trait, ou disque (gomme) à son diamètre — plafonnés pour tenir dans le bouton.
+  const sizeBar = (i: number) => Math.min(SIZES[tool][i], 14 + i * 4);
+  const eraserDot = (i: number) => Math.min(SIZES.eraser[i], 30); // 12 / 24 / 30
+  // Diamètre du cercle qui suit le pointeur : épaisseur du trait (stylo/surligneur)
+  // ou empreinte de la gomme (= 2× son rayon d'effacement).
+  const cursorDiameter = tool === "eraser" ? SIZES.eraser[sizeIdx] * 2 : SIZES[tool][sizeIdx];
 
   return (
     <>
@@ -227,23 +251,42 @@ export function AnnotationCanvas({ data, onChange }: Props) {
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerUp}
+        onPointerLeave={hideCursor}
+      />
+
+      {/* Cercle qui suit le pointeur : montre la taille réelle de l'outil.
+          Position/visibilité pilotées hors React (style.transform / opacity). */}
+      <div
+        ref={cursorRef}
+        aria-hidden="true"
+        className="absolute top-0 left-0 rounded-full pointer-events-none opacity-0"
+        style={{
+          zIndex: 10,
+          width: cursorDiameter,
+          height: cursorDiameter,
+          marginLeft: -cursorDiameter / 2,
+          marginTop: -cursorDiameter / 2,
+          border: `1.5px solid ${tool === "eraser" ? "var(--muted-foreground)" : color}`,
+          background: tool === "eraser" ? "rgba(120,120,120,0.15)" : "transparent",
+          boxShadow: "0 0 0 1px rgba(0,0,0,0.25)",
+        }}
       />
 
       {/* Panneau d'outils — bord droit, centré */}
       <div
-        className="absolute right-3 top-1/2 -translate-y-1/2 flex flex-col gap-1.5 bg-background/90 backdrop-blur border border-border rounded-xl p-2 shadow-lg max-h-[85vh] overflow-y-auto"
-        style={{ zIndex: 11 }}
+        className="absolute top-1/2 -translate-y-1/2 flex flex-col gap-1.5 bg-background/90 backdrop-blur border border-border rounded-xl p-2 shadow-lg max-h-[85vh] overflow-y-auto"
+        style={{ zIndex: 11, right: "calc(0.75rem + var(--sar, 0px))" }}
         onPointerDown={(e) => e.stopPropagation()}
         onPointerUp={(e) => e.stopPropagation()}
       >
-        <ToolBtn active={tool === "pen"} title="Crayon" onClick={() => setTool("pen")}>
-          <Pencil className="h-4 w-4" />
+        <ToolBtn active={tool === "pen"} title={t("performance.tools.pen")} onClick={() => setTool("pen")}>
+          <Pencil className="h-5 w-5" />
         </ToolBtn>
-        <ToolBtn active={tool === "highlighter"} title="Surligneur" onClick={() => setTool("highlighter")}>
-          <Highlighter className="h-4 w-4" />
+        <ToolBtn active={tool === "highlighter"} title={t("performance.tools.highlighter")} onClick={() => setTool("highlighter")}>
+          <Highlighter className="h-5 w-5" />
         </ToolBtn>
-        <ToolBtn active={tool === "eraser"} title="Gomme (efface un trait)" onClick={() => setTool("eraser")}>
-          <Eraser className="h-4 w-4" />
+        <ToolBtn active={tool === "eraser"} title={t("performance.tools.eraser")} onClick={() => setTool("eraser")}>
+          <Eraser className="h-5 w-5" />
         </ToolBtn>
 
         <div className="w-full h-px bg-border my-0.5" />
@@ -252,18 +295,23 @@ export function AnnotationCanvas({ data, onChange }: Props) {
         {([0, 1, 2] as const).map((i) => (
           <button
             key={i}
-            title={["Petit", "Moyen", "Grand"][i]}
+            title={[t("performance.tools.small"), t("performance.tools.medium"), t("performance.tools.large")][i]}
             onClick={() => setSizeIdx(i)}
-            className={`w-8 h-7 flex items-center justify-center rounded-lg transition-colors ${
+            className={`w-11 h-9 flex items-center justify-center rounded-lg transition-colors ${
               sizeIdx === i ? "bg-primary/15" : "hover:bg-muted"
             }`}
           >
             <span
               className="rounded-full"
               style={{
-                width: sizeDot(i),
-                height: sizeDot(i),
-                background: sizeIdx === i ? "var(--primary)" : "var(--muted-foreground)",
+                width: tool === "eraser" ? eraserDot(i) : 24,
+                height: tool === "eraser" ? eraserDot(i) : sizeBar(i),
+                background: tool === "eraser" ? "var(--muted-foreground)" : color,
+                opacity: tool === "highlighter" ? 0.35 : 1,
+                boxShadow:
+                  tool !== "eraser" && color === "#ffffff"
+                    ? "inset 0 0 0 1px var(--border)"
+                    : undefined,
               }}
             />
           </button>
@@ -277,7 +325,7 @@ export function AnnotationCanvas({ data, onChange }: Props) {
                 key={c}
                 title={c}
                 onClick={() => setColor(c)}
-                className="w-7 h-7 rounded-full border-2 transition-transform"
+                className="w-8 h-8 mx-auto rounded-full border-2 transition-transform"
                 style={{
                   backgroundColor: c,
                   borderColor: color === c ? "var(--primary)" : "var(--border)",
@@ -291,11 +339,11 @@ export function AnnotationCanvas({ data, onChange }: Props) {
 
         <div className="w-full h-px bg-border my-0.5" />
 
-        <ToolBtn active={false} title="Annuler" onClick={undo}>
-          <Undo2 className="h-4 w-4" />
+        <ToolBtn active={false} title={t("performance.tools.undo")} onClick={undo}>
+          <Undo2 className="h-5 w-5" />
         </ToolBtn>
-        <ToolBtn active={false} title="Tout effacer" onClick={clearAll}>
-          <Trash2 className="h-4 w-4 text-destructive" />
+        <ToolBtn active={false} title={t("performance.tools.clearAll")} onClick={clearAll}>
+          <Trash2 className="h-5 w-5 text-destructive" />
         </ToolBtn>
       </div>
     </>
@@ -316,8 +364,9 @@ function ToolBtn({
   return (
     <button
       title={title}
+      aria-label={title}
       onClick={onClick}
-      className={`w-8 h-8 flex items-center justify-center rounded-lg transition-colors ${
+      className={`w-11 h-11 flex items-center justify-center rounded-lg transition-colors ${
         active
           ? "bg-primary text-primary-foreground"
           : "text-muted-foreground hover:text-foreground hover:bg-muted"

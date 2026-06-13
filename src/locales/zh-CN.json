@@ -7,7 +7,13 @@
       "login": "登录",
       "logout": "登出",
       "planning": "排班表",
-      "louange": "敬拜"
+      "louange": "敬拜",
+      "myServices": "我的服事",
+      "service": "服事",
+      "annonces": "公告",
+      "profile": "我的资料",
+      "signup": "注册账号",
+      "guide": "使用指南"
     },
     "buttons": {
       "reset": "重置",
@@ -25,7 +31,9 @@
       "fr": "法语",
       "zh": "中文",
       "mixed": "法语 / 中文"
-    }
+    },
+    "moreActions": "更多操作",
+    "retry": "重试"
   },
   "songs": {
     "list": {
@@ -76,7 +84,8 @@
     "submit": "登录",
     "submitLoading": "登录中…",
     "backToSetlists": "← 返回歌单列表",
-    "errorInvalid": "登录凭证错误。请检查电子邮箱和密码。"
+    "errorInvalid": "登录凭证错误。请检查电子邮箱和密码。",
+    "signupLink": "还没有账号？注册"
   },
   "setlists": {
     "list": {
@@ -91,7 +100,9 @@
       "mySetlists": "我的歌单",
       "publicSetlists": "共享歌单",
       "songCounter_one": "{{count}} 首诗歌",
-      "songCounter_other": "{{count}} 首诗歌"
+      "songCounter_other": "{{count}} 首诗歌",
+      "loginRequired": "歌单仅向教会成员开放——请登录查看你服事的歌单。",
+      "profileRequired": "请完善个人资料以查看你服事的歌单。"
     },
     "detail": {
       "backToAll": "←",
@@ -103,9 +114,23 @@
       "deleteYes": "确认删除",
       "deleteCancel": "取消",
       "notFound": "未找到该歌单。",
+      "loginRequired": "请登录查看此歌单。",
+      "noAccess": "你无法访问此歌单——它不属于你的服事范围。",
+      "noEditAccess": "只有歌单创建者和该服事的乐手才能修改此歌单。",
       "back": "← 返回",
       "leaderLabel": "主席：",
-      "loadingCharts": "正在加载歌谱…"
+      "loadingCharts": "正在加载歌谱…",
+      "performanceMode": "敬拜模式",
+      "duplicate": "复制",
+      "duplicateCopySuffix": "（副本）",
+      "share": "分享",
+      "linkCopied": "链接已复制 ✓",
+      "sharePrivateWarning": "私人歌单——仅你自己可见",
+      "canEdit": "可编辑",
+      "readOnly": "只读",
+      "editableBy": "可编辑者：创建者、{{category}}的乐手和管理员",
+      "editableByOwner": "私人——仅创建者可见和编辑",
+      "loadError": "无法加载歌单，请检查网络连接。"
     },
     "form": {
       "titleNew": "新建歌单",
@@ -193,5 +218,154 @@
     "中班": "中班",
     "大班": "大班",
     "高班": "高班"
+  },
+  "performance": {
+    "layout": "排版中…",
+    "next": "下一首：",
+    "songList": "歌曲列表",
+    "settings": "设置",
+    "chords": "和弦",
+    "transitions": "过渡提示",
+    "annotations": "批注",
+    "text": "文字",
+    "textSmaller": "缩小文字",
+    "textLarger": "放大文字",
+    "theme": "主题",
+    "light": "浅色",
+    "dark": "深色",
+    "annotate": "批注",
+    "exit": "退出",
+    "prevPage": "上一页",
+    "nextPage": "下一页",
+    "pageOfSong": "本首第 {{current}} / {{total}} 页",
+    "tools": {
+      "pen": "画笔",
+      "highlighter": "荧光笔",
+      "eraser": "橡皮擦（按笔画擦除）",
+      "small": "小",
+      "medium": "中",
+      "large": "大",
+      "undo": "撤销",
+      "clearAll": "全部清除"
+    }
+  },
+  "notifications": {
+    "title": "通知",
+    "empty": "暂无新内容",
+    "annonce": "新公告",
+    "setlistCreated": "新建歌单",
+    "setlistUpdated": "歌单已更新"
+  },
+  "profile": {
+    "title": "我的资料",
+    "welcome": "欢迎！完善你的资料即可访问你所服事的歌单以及「我的服事」页面。",
+    "locked": "你的资料已完成。如需修改，请联系管理员。",
+    "save": "保存资料",
+    "saving": "保存中…",
+    "saveError": "保存失败，请重试。",
+    "errorName": "请填写你的名字和姓氏。",
+    "errorLieux": "请注明你服事的地点（至少一个）。",
+    "errorEdd": "请注明你在主日学的角色（乐手或主领）。",
+    "fields": {
+      "firstName": "名字",
+      "firstNamePlaceholder": "例如 Timothée",
+      "lastName": "姓氏",
+      "lastNamePlaceholder": "例如 Chen",
+      "serveQuestion": "你在教会服事吗？如果是，担任：",
+      "serveHint": "不服事则留空。可多选。",
+      "whereServe": "你在哪里服事？",
+      "multipleChoices": "可多选。",
+      "eddCheckbox": "我在主日学（EDD）服事",
+      "musicien": "乐手",
+      "presidence": "主领",
+      "groupeQuestion": "你属于哪个小组？",
+      "none": "无",
+      "groupeMusicien": "我是小组里的乐手",
+      "planningName": "你在排班表中的名字",
+      "planningNameHint": "选择排班表中代表你的名字——用于填充「我的服事」页面。",
+      "notInPlannings": "——我还不在排班表中——",
+      "otherName": "其他（输入我的名字）…",
+      "customNamePlaceholder": "与排班表中完全一致的名字",
+      "searchName": "搜索名字…",
+      "noNameResults": "未找到名字"
+    }
+  },
+  "signup": {
+    "title": "创建账号",
+    "subtitle": "GCC敬拜——仅限教会成员",
+    "steps": {
+      "account": "账号",
+      "identity": "身份",
+      "services": "服事",
+      "groupe": "小组"
+    },
+    "email": "邮箱",
+    "emailPlaceholder": "email@example.com",
+    "password": "密码",
+    "passwordPlaceholder": "至少 6 个字符",
+    "password2": "确认密码",
+    "errorEmail": "请填写邮箱地址。",
+    "errorPasswordLength": "密码至少需要 6 个字符。",
+    "errorPasswordMatch": "两次输入的密码不一致。",
+    "errorEmailInUse": "该邮箱已注册账号。",
+    "errorEmailInvalid": "邮箱地址无效。",
+    "errorGeneric": "创建账号时出错，请重试。",
+    "closedTitle": "注册已关闭",
+    "closedText": "注册已关闭。如需账号请联系 Timothée。",
+    "loginLink": "登录",
+    "back": "返回",
+    "next": "下一步",
+    "create": "创建账号",
+    "creating": "创建中…",
+    "alreadyAccount": "已有账号——去登录"
+  },
+  "mesServices": {
+    "title": "我的服事",
+    "loading": "加载中…",
+    "loginPrompt": "登录后查看你即将到来的服事。",
+    "login": "登录",
+    "completeProfile": "完善你的资料以在此查看你的服事。",
+    "chooseName": "在个人资料中选择你在排班表中的名字，以在此查看你的服事。",
+    "myProfile": "我的资料",
+    "upcomingCount": "{{count}} 个即将到来",
+    "subtitle": "{{name}} 出现在排班表中的日期。",
+    "tabUpcoming": "即将到来",
+    "tabPast": "已过去",
+    "today": "今天",
+    "inDays": "{{count}} 天后",
+    "emptyUpcoming": "暂无即将到来的服事——好好休息 🙂",
+    "emptyPast": "未找到过去的服事。",
+    "setlist": "歌单"
+  },
+  "guide": {
+    "title": "使用指南",
+    "subtitle": "使用 GCC 敬拜网站所需了解的一切。",
+    "tocTitle": "本页内容",
+    "sections": {
+      "songs": {
+        "title": "查找与阅读诗歌",
+        "body": "「敬拜」标签会打开诗歌列表。使用搜索栏可按标题、拼音（中文诗歌）或歌手搜索。筛选器可只显示法语诗歌、中文诗歌或某个主题的诗歌。左侧的彩色标记表示语言（蓝色＝法语，红色＝中文）。你最近打开过的诗歌会显示在顶部的「最近查看」中。"
+      },
+      "customize": {
+        "title": "移调与个性化",
+        "body": "在某首诗歌页面，「个性化」按钮可让你移调到其他调、显示或隐藏和弦、显示拼音（中文诗歌）、在有简谱时切换为简谱记号，以及重新排列段落。你还可以调整文字大小。这些设置同样用于生成 PDF 和敬拜模式。"
+      },
+      "performance": {
+        "title": "敬拜模式",
+        "body": "敬拜模式以全屏逐页显示诗歌，便于专注演奏。滑动或使用箭头翻页。标注工具（铅笔、荧光笔、橡皮擦）可直接在乐谱上书写：选择工具、粗细（方格会显示笔画的实际粗细）和颜色。标注会保存到你的账号，下次打开相同排版时会重新出现。"
+      },
+      "setlists": {
+        "title": "歌单",
+        "body": "歌单汇集某次聚会或崇拜的诗歌。你会看到你的资料有权访问的服事的歌单。打开一个歌单可浏览诗歌、进入敬拜模式，或下载整套 PDF。根据你的权限，你也可以创建和修改歌单。"
+      },
+      "planning": {
+        "title": "排班表与我的服事",
+        "body": "「排班表」标签显示教会的服事排班。「我的服事」标签会筛选这些排班，只显示安排了你的日期——请记得在个人资料中选择你在排班表中的名字，否则无法生效。当你的某次服事已有歌单时，会有直接链接指向它。"
+      },
+      "account": {
+        "title": "账号、语言与主题",
+        "body": "完善你的资料（名字、姓氏、服事地点、排班表名字）以解锁「我的服事」和你服事的歌单。中文/FR 按钮可切换整个界面的语言。月亮/太阳按钮可在浅色和深色主题之间切换。铃铛会显示通知（新公告和歌单）。"
+      }
+    }
   }
 }

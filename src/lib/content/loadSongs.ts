@@ -28,6 +28,11 @@ export function getSongSlugs(): string[] {
 
 export function loadSong(slug: string): Song {
   const decoded = decodeURIComponent(slug);
+  // Un slug est un nom de fichier simple : tout séparateur ou ".." est une
+  // tentative de sortie de content/songs/ (path traversal)
+  if (decoded.includes("/") || decoded.includes("\\") || decoded.includes("..")) {
+    throw new Error(`Invalid slug: ${slug}`);
+  }
   const filePath = path.join(SONGS_DIR, `${decoded}.cho`);
   const source = fs.readFileSync(filePath, "utf-8");
   const ast = parseChordPro(source);
@@ -38,7 +43,9 @@ export function loadSong(slug: string): Song {
   );
 
   return {
-    slug,
+    // Toujours la forme décodée : les slugs chinois arrivent URL-encodés
+    // depuis l'URL, mais l'index (songs-index.json) utilise le nom de fichier
+    slug: decoded,
     title: m.title,
     titlePinyin: m.titlePinyin,
     artist: m.artist,

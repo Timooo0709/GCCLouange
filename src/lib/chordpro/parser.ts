@@ -140,17 +140,17 @@ export function parseSectionHeader(typeKey: string, value: string) {
 
 export function formatSectionName(
   section: { type: string; name?: string; number?: string; suffix?: string },
-  tOrTranslations: ((key: string, options?: any) => string) | Record<string, any>
+  tOrTranslations: ((key: string, options?: { defaultValue?: string }) => string) | Record<string, unknown>
 ): string {
   const getTranslation = (key: string, fallback: string): string => {
     if (typeof tOrTranslations === "function") {
       return tOrTranslations(key, { defaultValue: fallback });
     }
     const parts = key.split(".");
-    let current: any = tOrTranslations;
+    let current: unknown = tOrTranslations;
     for (const part of parts) {
       if (current && typeof current === "object" && part in current) {
-        current = current[part];
+        current = (current as Record<string, unknown>)[part];
       } else {
         return fallback;
       }

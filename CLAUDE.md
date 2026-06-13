@@ -3,24 +3,31 @@
 Site de partitions de louange pour l'église GCC. Spec complète dans `cahier-des-charges-site-louange.md`.
 
 ## Stack
-Next.js 15 (static export) · TypeScript · Tailwind CSS + shadcn/ui · GitHub Pages
+Next.js 16 (App Router) · TypeScript · Tailwind CSS + shadcn/ui · Firebase Auth + Firestore · Resend (emails) · Vercel
 
 ## Commandes
 ```bash
 npm run dev          # Serveur de développement
-npm run build        # build:index + next build (export statique)
+npm run build        # build:index + next build
 npm run build:index  # Parse content/songs/*.cho → public/songs-index.json
-npm run validate     # Lint des fichiers .cho et .json
+npm run validate     # Valide les fichiers .cho (métadonnées, parsing)
+npm run lint         # ESLint (flat config, eslint.config.mjs)
+npx tsc --noEmit     # Vérification TypeScript (c'est ce que fait la CI)
 ```
 
 ## Architecture clé
-- **Contenu** : fichiers `.cho` (ChordPro) dans `content/songs/`, setlists JSON dans `content/setlists/`
-- **Index** : `scripts/build-index.ts` → `public/songs-index.json` (généré au build, utilisé côté client)
-- **Pas de backend** : tout tourne dans le navigateur (transposition, PDF, recherche)
-- **Hébergement** : GitHub Pages via GitHub Actions (`.github/workflows/deploy.yml`)
+- **Chants** : fichiers `.cho` (ChordPro) dans `content/songs/`, parsés au build → `public/songs-index.json` (utilisé côté client pour liste/recherche)
+- **Setlists, profils, annonces** : Firestore — voir `src/lib/firebase/`
+- **Firestore = API REST uniquement** (`fetch` + token Firebase Auth). Jamais le SDK WebChannel côté navigateur (bloqué sur certains réseaux). Seul `firebase/auth` est utilisé du SDK.
+- **Comptes & rôles** : profils dans `users/{uid}` (rôles, lieux de service, EDD, groupe). Permissions client dans `src/lib/access.ts`, miroir serveur dans `firestore.rules`.
+- **`firestore.rules`** : versionné ici mais doit être **publié manuellement dans la console Firebase** pour prendre effet. La liste des admins doit rester synchronisée avec `ADMIN_EMAILS` dans `src/lib/access.ts`.
+- **Routes API** : `/api/song/[slug]` (contenu d'un chant), `/api/report` (signalement par email via Resend — env `RESEND_API_KEY`, `MAIL_TO`, `EMAIL_FROM` sur Vercel)
+- **Planning** : Google Sheet public lu en CSV (`src/lib/planning/sheets.ts`) + données statiques (`data.ts`)
+- **PWA** : service worker `public/sw.js` (cache-first assets, stale-while-revalidate pages, API exclue)
+- **Hébergement** : Vercel. La CI GitHub (`.github/workflows/deploy.yml`) fait typecheck + validate.
 
 ## Formats importants
-- ChordPro : `[accord]paroles` dans les lignes, `{directive: valeur}` en en-tête
+- ChordPro : `[accord]paroles` dans les lignes, `{directive: valeur}` en en-tête — guidelines détaillées dans `CHORDPRO_GUIDELINES.md`
 - Chinois : `[C]caractères   pinyin` (3 espaces min entre chars et pinyin)
 - Jianpu : `{jianpu: 3 3 5 6 5}` sur la ligne juste au-dessus des paroles
 
@@ -29,13 +36,10 @@ npm run validate     # Lint des fichiers .cho et .json
 - Sections : `#EA580C` (orange)
 - Jianpu : `#B91C1C` (rouge foncé)
 
-## Setlists
-Tout le monde peut créer des setlists (pas seulement les responsables) en éditant les JSON dans `content/setlists/`.
-
 ## Règles
 - Commits séparés par fichier (best practice de ce projet)
 - Tester sur au moins 1 chant FR + 1 chant ZH avant de valider une étape
-- Pas de mini-éditeur web en v1 (content-as-code uniquement)
+- Toute modif des permissions doit être faite en double : `src/lib/access.ts` (client) **et** `firestore.rules` (serveur)
 
 ## Comportement (guidelines Karpathy)
 
