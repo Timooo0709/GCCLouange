@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { CalendarDays, ListMusic, Lock, UserPen } from "lucide-react";
+import { CalendarDays, Clock, ListMusic, Lock, MapPin, UserPen } from "lucide-react";
 import { useProfile } from "@/lib/firebase/users";
 import { getSetlists, type FSSetlist } from "@/lib/firebase/setlists";
 import {
@@ -22,6 +22,7 @@ function serviceCategory(service: string): string | null {
   if (service === "Culte Franco") return "Culte Francophone";
   if (service.startsWith("Groupe ")) return service;
   if (service.startsWith("EDD ")) return service.slice(4);
+  if (service.startsWith("Campus (répét")) return null; // répétition : pas de setlist
   if (service.startsWith("Campus")) return "Campus";
   return null;
 }
@@ -40,7 +41,7 @@ function daysUntil(dateStr: string, todayStr: string): number {
   );
 }
 
-type GroupedEntry = { date: string; service: string; roles: string[] };
+type GroupedEntry = { date: string; service: string; roles: string[]; time?: string; location?: string };
 
 /** Regroupe les entrées par date+service en fusionnant les rôles. */
 function groupEntries(entries: ServiceEntry[]): GroupedEntry[] {
@@ -51,7 +52,7 @@ function groupEntries(entries: ServiceEntry[]): GroupedEntry[] {
     if (g) {
       if (!g.roles.includes(e.role)) g.roles.push(e.role);
     } else {
-      map.set(key, { date: e.date, service: e.service, roles: [e.role] });
+      map.set(key, { date: e.date, service: e.service, roles: [e.role], time: e.time, location: e.location });
     }
   }
   return [...map.values()];
@@ -239,6 +240,22 @@ export default function MesServicesPage() {
                           <p className="text-xs font-medium mt-0.5" style={{ color }}>
                             {e.service}
                           </p>
+                          {(e.time || e.location) && (
+                            <p className="text-[11px] text-muted-foreground mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5">
+                              {e.time && (
+                                <span className="inline-flex items-center gap-1">
+                                  <Clock className="h-3 w-3" />
+                                  {e.time}
+                                </span>
+                              )}
+                              {e.location && (
+                                <span className="inline-flex items-center gap-1">
+                                  <MapPin className="h-3 w-3" />
+                                  {e.location}
+                                </span>
+                              )}
+                            </p>
+                          )}
                         </div>
                         <div className="flex flex-wrap gap-1.5 justify-end items-center">
                           {e.roles.map((r) => (
