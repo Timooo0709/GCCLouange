@@ -240,10 +240,6 @@ export function CustomizePanel({
             )}
           </section>
 
-          {/* --- Signalement --- */}
-          <section>
-            <BugReportButton song={songTitle} />
-          </section>
         </div>
 
         {/* Footer */}

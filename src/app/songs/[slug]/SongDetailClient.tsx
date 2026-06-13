@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
-import { MoreHorizontal, Download, Play, Music, Music2, Settings } from "lucide-react";
+import { MoreHorizontal, Download, Play, Music, Music2, Settings, AlertCircle, X, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -24,6 +24,8 @@ import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { ALL_KEYS, semitonesTo, getTransposedKey } from "@/lib/transpose";
 import { useSearchParams } from "next/navigation";
 import type { SectionItem } from "@/types/song";
+import { REPORT_LIMITS } from "@/lib/report/reportValidator";
+
 interface SongDetailClientProps {
   song: Song;
 }
@@ -41,6 +43,8 @@ interface SongDetailClientProps {
     const [showPanel, setShowPanel] = useState(false);
     const [downloading, setDownloading] = useState(false);
     const [backPath, setBackPath] = useState("/songs");
+    const [showReport, setShowReport] = useState(false);
+    const [status, setStatus] = useState<'idle' | 'loading' | 'done'>('idle')
     const searchParams = useSearchParams();
     useEffect(() => {
       const saved = sessionStorage.getItem("lastListPath");
@@ -155,6 +159,19 @@ interface SongDetailClientProps {
       } finally {
         setDownloading(false);
       }
+    }
+
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+      e.preventDefault()
+      setStatus('loading')
+      const data = Object.fromEntries(new FormData(e.currentTarget))
+      await fetch('/api/report', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      setStatus('done')
+      setShowReport(false)
     }
     return (
       <div className="min-h-screen print:min-h-0 bg-background">
@@ -316,6 +333,10 @@ interface SongDetailClientProps {
                     <Download className="h-3.5 w-3.5 text-muted-foreground" />
                     {downloading ? "…" : t("songs.detail.downloadPdf") || "PDF"}
                   </DropdownMenuItem>
+                  <DropdownMenuItem onClick= {() => setShowReport(true)}>
+                    <AlertCircle className='h-3.5 w-3.5 text-muted-foreground'/>
+                    {t('songs.detail.report')}
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
@@ -365,6 +386,98 @@ interface SongDetailClientProps {
             songTitle={song.title}
           />
         )}
+        
+        {/* Report Card */}
+        {showReport && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-black/40"
+            onClick={() => setShowReport(false)}
+          />
+
+          {/* Fenêtre */}
+          <div className="relative w-full max-w-sm bg-background border border-border rounded-lg shadow-xl flex flex-col">
+            {/* Header */}
+            <div className="flex items-center justify-between px-4 py-3 border-b border-border">
+              <div className="flex items-center gap-2">
+                <AlertCircle className="h-4 w-4 text-muted-foreground" />
+                <h3 className="text-sm font-semibold text-foreground">
+                  Signaler un problème
+                </h3>
+              </div>
+              <button
+                onClick={() => setShowReport(false)}
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+
+            {/* Formulaire */}
+            <form onSubmit={handleSubmit} className="px-4 py-4 space-y-3">
+              <div className="space-y-1">
+                <label className="text-xs font-medium text-muted-foreground">
+                  Résumé
+                </label>
+                <input
+                  name="title"
+                  defaultValue={`Problème avec : ${song.title}`}
+                  required
+                  minLength={3}
+                  maxLength={REPORT_LIMITS.title}
+                  className="w-full px-3 py-1.5 text-sm border border-border rounded bg-muted/50 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/30"
+                />
+              </div>
+
+              <div className="space-y-1">
+                <label className="text-xs font-medium text-muted-foreground">
+                  Détails <span className="font-normal">(optionnel)</span>
+                </label>
+                <textarea
+                  name="description"
+                  placeholder="Décris le problème..."
+                  rows={3}
+                  maxLength={REPORT_LIMITS.description}
+                  className="w-full px-3 py-1.5 text-sm border border-border rounded bg-muted/50 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/30 resize-none"
+                />
+              </div>
+
+              <div className="space-y-1">
+                <label className="text-xs font-medium text-muted-foreground">
+                  Ton email <span className="font-normal">(optionnel)</span>
+                </label>
+                <input
+                  name="userEmail"
+                  type="email"
+                  placeholder="pour te répondre"
+                  maxLength={REPORT_LIMITS.email}
+                  className="w-full px-3 py-1.5 text-sm border border-border rounded bg-muted/50 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/30"
+                />
+              </div>
+
+              {/* Footer */}
+              <div className="flex items-center justify-end gap-2 pt-1">
+                <button
+                  type="button"
+                  onClick={() => setShowReport(false)}
+                  className="px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Annuler
+                </button>
+                <button
+                  type="submit"
+                  disabled={status === 'loading'}
+                  className="flex items-center gap-1.5 px-4 py-1.5 text-sm font-medium rounded bg-primary text-primary-foreground hover:bg-primary/90 transition-colors disabled:opacity-50"
+                >
+                  <Send className="h-3.5 w-3.5" />
+                  {status === 'loading' ? 'Envoi...' : 'Envoyer'}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
 
     </div>
     );

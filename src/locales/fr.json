@@ -55,7 +55,8 @@
       "pinyin": "Pinyin",
       "video": "Vidéo",
       "customize": "Personnaliser",
-      "downloadPdf": "PDF"
+      "downloadPdf": "PDF",
+      "report": "Signalement"
     },
     "view": {
       "jianpuWarning": "La structure n'est pas modifiable en mode 简谱 (chant affiché dans son intégralité)."

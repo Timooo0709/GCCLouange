@@ -55,7 +55,8 @@
       "pinyin": "拼音",
       "video": "视频",
       "customize": "个性化设置",
-      "downloadPdf": "PDF"
+      "downloadPdf": "PDF",
+      "report": "报告"
     },
     "view": {
       "jianpuWarning": "简谱模式下无法修改歌谱结构（诗歌将完整显示）。"
