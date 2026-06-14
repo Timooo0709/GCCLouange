@@ -110,7 +110,7 @@ export function Navbar() {
       {/* Backdrop derrière le menu mobile */}
       {(isOpen || isClosing) && (
         <div
-          className={`fixed top-[var(--nav-h)] inset-x-0 bottom-0 z-40 bg-black/20 sm:hidden ${isClosing ? "animate-out fade-out duration-150" : "animate-in fade-in duration-200"}`}
+          className={`fixed top-[var(--nav-h)] inset-x-0 bottom-0 z-40 bg-black/20 lg:hidden ${isClosing ? "animate-out fade-out duration-150" : "animate-in fade-in duration-200"}`}
           onClick={closeMenu}
         />
       )}
@@ -141,7 +141,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop nav links */}
-          <nav className="hidden sm:flex items-center gap-1 ml-2">
+          <nav className="hidden lg:flex items-center gap-1 ml-2">
             {!authLoading && user && (
               <Link
                 href="/planning"
@@ -332,7 +332,7 @@ export function Navbar() {
                 href="/guide"
                 title={t("common.header.guide")}
                 aria-label={t("common.header.guide")}
-                className={`hidden sm:flex h-[34px] w-[34px] rounded-[9px] border transition-all duration-150 active:scale-[.96] items-center justify-center ${
+                className={`hidden lg:flex h-[34px] w-[34px] rounded-[9px] border transition-all duration-150 active:scale-[.96] items-center justify-center ${
                   pathname.startsWith("/guide")
                     ? "border-primary/40 bg-primary/10 text-primary"
                     : "border-border bg-card text-muted-foreground hover:text-foreground hover:border-muted-foreground/50"
@@ -347,7 +347,7 @@ export function Navbar() {
               <Link
                 href="/profil"
                 title={t("common.header.profile")}
-                className={`hidden sm:flex h-[34px] w-[34px] rounded-[9px] border transition-all duration-150 active:scale-[.96] items-center justify-center ${
+                className={`hidden lg:flex h-[34px] w-[34px] rounded-[9px] border transition-all duration-150 active:scale-[.96] items-center justify-center ${
                   pathname.startsWith("/profil")
                     ? "border-primary/40 bg-primary/10 text-primary"
                     : "border-border bg-card text-muted-foreground hover:text-foreground hover:border-muted-foreground/50"
@@ -360,7 +360,7 @@ export function Navbar() {
               user ? (
                 <button
                   onClick={() => logOut()}
-                  className="hidden sm:flex h-[34px] min-w-[34px] px-2 rounded-[9px] border border-border bg-card text-muted-foreground hover:text-foreground hover:border-muted-foreground/50 transition-all duration-150 active:scale-[.96] items-center justify-center gap-1.5 text-[12.5px] font-semibold cursor-pointer"
+                  className="hidden lg:flex h-[34px] min-w-[34px] px-2 rounded-[9px] border border-border bg-card text-muted-foreground hover:text-foreground hover:border-muted-foreground/50 transition-all duration-150 active:scale-[.96] items-center justify-center gap-1.5 text-[12.5px] font-semibold cursor-pointer"
                   title={user.email ?? undefined}
                 >
                   <LogOut className="h-3.5 w-3.5" />
@@ -369,7 +369,7 @@ export function Navbar() {
               ) : (
                 <Link
                   href="/login"
-                  className="hidden sm:flex h-[34px] min-w-[34px] px-2 rounded-[9px] border border-border bg-card text-muted-foreground hover:text-foreground hover:border-muted-foreground/50 transition-all duration-150 active:scale-[.96] items-center justify-center gap-1.5 text-[12.5px] font-semibold"
+                  className="hidden lg:flex h-[34px] min-w-[34px] px-2 rounded-[9px] border border-border bg-card text-muted-foreground hover:text-foreground hover:border-muted-foreground/50 transition-all duration-150 active:scale-[.96] items-center justify-center gap-1.5 text-[12.5px] font-semibold"
                 >
                   <LogIn className="h-3.5 w-3.5" />
                   <span className="hidden md:inline">{t("common.header.login")}</span>
@@ -381,7 +381,7 @@ export function Navbar() {
             <button
               onClick={() => (isOpen ? closeMenu() : setIsOpen(true))}
               aria-label="Toggle menu"
-              className="sm:hidden h-[34px] w-[34px] rounded-[9px] border border-border bg-card text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors duration-150 flex items-center justify-center cursor-pointer"
+              className="lg:hidden h-[34px] w-[34px] rounded-[9px] border border-border bg-card text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors duration-150 flex items-center justify-center cursor-pointer"
             >
               {isOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             </button>
@@ -391,7 +391,7 @@ export function Navbar() {
         {/* Mobile Menu Panel */}
         {(isOpen || isClosing) && (
           <div
-            className={`absolute top-14 left-0 right-0 border-b border-border bg-background/95 backdrop-blur-md px-4 py-4 space-y-4 flex flex-col sm:hidden z-50 ${
+            className={`absolute top-14 left-0 right-0 border-b border-border bg-background/95 backdrop-blur-md px-4 py-4 space-y-4 flex flex-col lg:hidden z-50 ${
               isClosing
                 ? "animate-out slide-out-to-top-2 duration-150"
                 : "animate-in slide-in-from-top-2 duration-200"
