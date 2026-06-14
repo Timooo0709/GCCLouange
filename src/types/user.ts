@@ -43,11 +43,16 @@ export interface UserProfile {
   serviceRoles: Record<string, ServiceRole[]>;
   /** Sections où la personne peut publier des annonces — attribué par les admins uniquement */
   annonces: string[];
+  /** Audiences vers lesquelles la personne peut envoyer une notification manuelle
+   *  (catégories culte/groupe/EDD, ou "*" pour tout le monde) — attribué par les
+   *  admins uniquement. Cf. src/lib/push/audiences.ts. */
+  notify: string[];
 }
 
 /** Ancien format de profil (champs roles/lieux/edd/eddRoles/groupe/groupeMusicien,
  *  avant le 14 juin 2026). Encore lu pour les documents pas réécrits — converti à la
- *  volée en `serviceRoles` via legacyServiceRoles() (src/lib/access.ts). */
+ *  volée en `serviceRoles` via legacyServiceRoles() (src/lib/access.ts).
+ *  N.B. `notify` n'existe pas dans l'ancien format → simplement absent (= []). */
 export interface LegacyServiceProfile {
   roles?: string[];
   lieux?: string[];

@@ -2,23 +2,34 @@ import { NextResponse, type NextRequest } from "next/server";
 import { adminDb } from "@/lib/push/admin";
 import { sendPushToUids } from "@/lib/push/send";
 import { loadPlanningNameIndex, resolveNamesToUids } from "@/lib/push/recipients";
-import { loadPlanningData, culteServantsForDate } from "@/lib/planning/names";
+import {
+  loadPlanningData,
+  servantsForDate,
+  rehearsalsForDate,
+  normalizeName,
+} from "@/lib/planning/names";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
-// Rappels de service — exécuté chaque jour par Vercel Cron (cf. vercel.json).
-// Prévient toute personne de service au Culte Franco à J-7 puis J-3.
+// Rappels — exécuté chaque jour par Vercel Cron (cf. vercel.json).
+// - Service (tous services) : rappel à J-7, J-3 puis J-1.
+// - Répétition Campus : mêmes échéances, message avec heure + lieu.
 // Idempotent : un document notifLog par (échéance, date, uid) évite tout doublon.
 
-const REMINDERS: { tag: "J7" | "J3"; days: number }[] = [
+const REMINDERS: { tag: "J7" | "J3" | "J1"; days: number }[] = [
   { tag: "J7", days: 7 },
   { tag: "J3", days: 3 },
+  { tag: "J1", days: 1 },
 ];
 
 function isoInDays(days: number): string {
   return new Date(Date.now() + days * 86_400_000).toISOString().slice(0, 10);
+}
+
+function whenLabel(tag: "J7" | "J3" | "J1"): string {
+  return tag === "J7" ? "dans 1 semaine" : tag === "J3" ? "dans 3 jours" : "demain";
 }
 
 function formatFr(dateISO: string): string {
@@ -31,6 +42,35 @@ function formatFr(dateISO: string): string {
   }).format(d);
 }
 
+/** Retient les uid pas encore notifiés pour cette clé notifLog `${prefix}-${uid}`. */
+async function freshUids(
+  db: FirebaseFirestore.Firestore,
+  uids: string[],
+  prefix: string
+): Promise<string[]> {
+  const fresh: string[] = [];
+  await Promise.all(
+    uids.map(async (u) => {
+      if (!(await db.collection("notifLog").doc(`${prefix}-${u}`).get()).exists) fresh.push(u);
+    })
+  );
+  return fresh;
+}
+
+/** Marque ces uid comme notifiés (clé `${prefix}-${uid}`). */
+async function markNotified(
+  db: FirebaseFirestore.Firestore,
+  uids: string[],
+  prefix: string,
+  meta: Record<string, unknown>
+): Promise<void> {
+  const batch = db.batch();
+  for (const u of uids) {
+    batch.set(db.collection("notifLog").doc(`${prefix}-${u}`), { ...meta, uid: u, at: Date.now() });
+  }
+  await batch.commit();
+}
+
 export async function GET(req: NextRequest) {
   const secret = process.env.CRON_SECRET;
   const authz = req.headers.get("authorization");
@@ -41,49 +81,51 @@ export async function GET(req: NextRequest) {
   const db = adminDb();
   const [planning, index] = await Promise.all([loadPlanningData(), loadPlanningNameIndex()]);
 
-  const summary: Record<string, { date: string; sent: number; recipients: number }> = {};
+  const summary: Record<string, { date: string; service: number; repet: number }> = {};
 
   for (const { tag, days } of REMINDERS) {
     const date = isoInDays(days);
-    const servants = culteServantsForDate(planning, date); // tous rôles : toute personne de service
-    const names = [...new Set(servants.map((s) => s.name))];
+    const when = whenLabel(tag);
+
+    // ── Rappels de service (tous services) ──
+    const names = [...new Set(servantsForDate(planning, date).map((s) => s.name))];
     const { uids } = resolveNamesToUids(names, index);
-
-    // Filtre les uid déjà notifiés pour cette (échéance, date)
-    const fresh: string[] = [];
-    await Promise.all(
-      uids.map(async (u) => {
-        const ref = db.collection("notifLog").doc(`rappel-${tag}-${date}-${u}`);
-        if (!(await ref.get()).exists) fresh.push(u);
-      })
-    );
-
-    if (!fresh.length) {
-      summary[tag] = { date, sent: 0, recipients: 0 };
-      continue;
-    }
-
-    const when = tag === "J7" ? "dans 1 semaine" : "dans 3 jours";
-    const result = await sendPushToUids(fresh, {
-      title: "Rappel de service",
-      body: `Tu sers au culte ${when} (${formatFr(date)}).`,
-      url: "/mes-services",
-      tag: `rappel-${tag}-${date}`,
-    });
-
-    // Marque ces uid comme notifiés (idempotence)
-    const batch = db.batch();
-    for (const u of fresh) {
-      batch.set(db.collection("notifLog").doc(`rappel-${tag}-${date}-${u}`), {
-        tag,
-        date,
-        uid: u,
-        at: Date.now(),
+    const fresh = await freshUids(db, uids, `rappel-${tag}-${date}`);
+    if (fresh.length) {
+      await sendPushToUids(fresh, {
+        title: "Rappel de service",
+        body: `Tu sers ${when} (${formatFr(date)}).`,
+        url: "/mes-services",
+        tag: `rappel-${tag}-${date}`,
       });
+      await markNotified(db, fresh, `rappel-${tag}-${date}`, { tag, date, kind: "service" });
     }
-    await batch.commit();
 
-    summary[tag] = { date, sent: result.sent, recipients: fresh.length };
+    // ── Rappels de répétition Campus (heure + lieu, message par personne) ──
+    const rehByUid = new Map<string, { time: string; location: string }>();
+    for (const r of rehearsalsForDate(planning, date)) {
+      for (const u of index.get(normalizeName(r.name)) ?? []) {
+        if (!rehByUid.has(u)) rehByUid.set(u, { time: r.time, location: r.location });
+      }
+    }
+    const rehFresh = await freshUids(db, [...rehByUid.keys()], `repet-${tag}-${date}`);
+    if (rehFresh.length) {
+      await Promise.all(
+        rehFresh.map((u) => {
+          const m = rehByUid.get(u)!;
+          const extra = `${m.time ? ` à ${m.time}` : ""}${m.location ? `, ${m.location}` : ""}`;
+          return sendPushToUids([u], {
+            title: "Répétition Campus",
+            body: `Répétition ${when} (${formatFr(date)})${extra}.`,
+            url: "/mes-services",
+            tag: `repet-${tag}-${date}`,
+          });
+        })
+      );
+      await markNotified(db, rehFresh, `repet-${tag}-${date}`, { tag, date, kind: "repet" });
+    }
+
+    summary[tag] = { date, service: fresh.length, repet: rehFresh.length };
   }
 
   return NextResponse.json({ ok: true, summary });

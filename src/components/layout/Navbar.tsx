@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import { Menu, X, Sun, Moon, Globe, LogIn, LogOut, ChevronDown, UserRound, Bell, BookOpen } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useAuth, logOut } from "@/lib/firebase/auth";
+import { useProfile } from "@/lib/firebase/users";
 import { isAdminUser } from "@/lib/access";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { useNotifications, type NotificationItem } from "@/hooks/useNotifications";
@@ -31,6 +32,7 @@ export function Navbar() {
   const pathname = usePathname() || "";
   const { resolvedTheme, setTheme } = useTheme();
   const { user, loading: authLoading } = useAuth();
+  const { profile } = useProfile();
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
   const dark = mounted && resolvedTheme === "dark";
@@ -96,7 +98,9 @@ export function Navbar() {
   const isActiveMesServices = pathname.startsWith("/mes-services");
   const isActiveAnnonces = pathname.startsWith("/annonces");
   const isActiveAdmin = pathname.startsWith("/admin");
+  const isActiveNotifier = pathname.startsWith("/notifier");
   const admin = isAdminUser(user);
+  const canNotify = admin || (profile?.notify?.length ?? 0) > 0;
   const headerLabel = isActivePlanning
     ? t("common.header.planning")
     : isActiveMesServices
@@ -238,6 +242,19 @@ export function Navbar() {
                 }`}
               >
                 {t("common.header.annonces")}
+              </Link>
+            )}
+
+            {!authLoading && canNotify && (
+              <Link
+                href="/notifier"
+                className={`px-3 py-[7px] rounded-[9px] text-[13.5px] font-semibold transition-all duration-150 whitespace-nowrap ${
+                  isActiveNotifier
+                    ? "bg-primary/10 text-primary"
+                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                }`}
+              >
+                Notifier
               </Link>
             )}
 
@@ -431,6 +448,16 @@ export function Navbar() {
                   }`}
                 >
                   {t("common.header.annonces")}
+                </Link>
+              )}
+              {!authLoading && canNotify && (
+                <Link
+                  href="/notifier"
+                  className={`pl-5 pr-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
+                    isActiveNotifier ? "bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  }`}
+                >
+                  Notifier
                 </Link>
               )}
               {!authLoading && admin && (

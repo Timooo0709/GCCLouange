@@ -2,22 +2,24 @@ import { NextResponse, type NextRequest } from "next/server";
 import { adminDb, verifyIdToken } from "@/lib/push/admin";
 import { sendPushToUids } from "@/lib/push/send";
 import { loadPlanningNameIndex, resolveNamesToUids } from "@/lib/push/recipients";
-import { loadPlanningData, culteServantsForDate, LOUANGE_TEAM_ROLES } from "@/lib/planning/names";
+import { loadPlanningData, servantsForDate, normalizeName } from "@/lib/planning/names";
 import { ADMIN_EMAILS, categoryLevel, legacyServiceRoles } from "@/lib/access";
 import type { LegacyServiceProfile, ServiceRole } from "@/types/user";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-// Notif « setlist prête » : déclenchée par le bouton Valider du président de
-// séance, sur une setlist du Culte Franco contenant ≥ 4 chants. Prévient les
-// musiciens, la régie et les choristes de service ce dimanche-là.
+// Notif « setlist prête » : déclenchée par le bouton « Prévenir l'équipe », sur
+// une setlist (toute catégorie) contenant ≥ 4 chants. Prévient les musiciens, la
+// régie et les choristes de service à cette date (hors présidence et orateur).
 //
-// Cible : Culte Franco uniquement. Anti-spam : une notif par setlist, ré-envoi
-// possible au plus une fois toutes les 24 h.
+// Anti-spam : une notif par setlist, ré-envoi possible au plus une fois / 24 h.
 
 const MIN_SONGS = 4;
 const RESEND_COOLDOWN_MS = 24 * 60 * 60 * 1000;
+// Rôles destinataires : exécutants hors présidence (auteur/leader) et hors
+// orateur/traduction (serviceRole null dans servantsForDate).
+const TEAM_ROLES: ServiceRole[] = ["chanteur", "musicien", "regie"];
 
 export async function POST(req: NextRequest) {
   // 1. Authentification de l'appelant
@@ -52,11 +54,8 @@ export async function POST(req: NextRequest) {
     items?: { type?: string }[];
   };
 
-  if (sl.category !== "Culte Francophone") {
-    return NextResponse.json(
-      { error: "Notification réservée aux setlists du Culte Franco" },
-      { status: 400 }
-    );
+  if (!sl.category) {
+    return NextResponse.json({ error: "Catégorie de setlist manquante" }, { status: 400 });
   }
 
   // 3. Au moins 4 vrais chants (les transitions ne comptent pas)
@@ -77,9 +76,9 @@ export async function POST(req: NextRequest) {
       | (LegacyServiceProfile & { serviceRoles?: Record<string, ServiceRole[]> })
       | undefined;
     const serviceRoles = me?.serviceRoles ?? (me ? legacyServiceRoles(me) : {});
-    const rolesAtCulte = serviceRoles["Culte Francophone"];
-    // Exécutant = niveau create/edit sur le Culte Franco (la régie seule en lecture est exclue).
-    isPerformer = !!rolesAtCulte && categoryLevel("Culte Francophone", rolesAtCulte) !== "view";
+    const rolesAtCat = serviceRoles[sl.category];
+    // Exécutant = niveau create/edit sur la catégorie (la régie seule en lecture est exclue).
+    isPerformer = !!rolesAtCat && categoryLevel(sl.category, rolesAtCat) !== "view";
   }
   if (!isAdmin && !isOwner && !isPerformer) {
     return NextResponse.json({ error: "Action non autorisée" }, { status: 403 });
@@ -96,13 +95,19 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // 6. Destinataires : équipe louange du culte de cette date
+  // 6. Destinataires : équipe (musiciens, régie, choristes) de service à cette date
+  //    dans la catégorie de la setlist. Campus : départage matin/soir par président.
   const dateISO = (sl.date ?? "").slice(0, 10);
   const planning = await loadPlanningData();
-  const servants = culteServantsForDate(planning, dateISO).filter((s) =>
-    LOUANGE_TEAM_ROLES.has(s.role)
+  const wantLeader = normalizeName(sl.leader ?? "");
+  const team = servantsForDate(planning, dateISO).filter(
+    (s) =>
+      s.category === sl.category &&
+      !!s.serviceRole &&
+      TEAM_ROLES.includes(s.serviceRole) &&
+      (sl.category !== "Campus" || normalizeName(s.leader) === wantLeader)
   );
-  const names = [...new Set(servants.map((s) => s.name))];
+  const names = [...new Set(team.map((s) => s.name))];
   const index = await loadPlanningNameIndex();
   const { uids, unresolved } = resolveNamesToUids(names, index);
   if (unresolved.length) {
@@ -111,8 +116,8 @@ export async function POST(req: NextRequest) {
 
   // 7. Envoi
   const result = await sendPushToUids(uids, {
-    title: `Setlist prête — ${sl.title ?? "Culte"}`,
-    body: `${sl.leader || "Le président"} a préparé la setlist du culte (${songCount} chants).`,
+    title: `Setlist prête — ${sl.title || sl.category}`,
+    body: `${sl.leader || "Le responsable"} a préparé la setlist (${songCount} chants).`,
     url: `/setlists/${setlistId}`,
     tag: `setlist-${setlistId}`,
   });

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Lock, Megaphone, Pencil, Pin, Plus, Trash2, X } from "lucide-react";
 import { useProfile } from "@/lib/firebase/users";
 import { getAnnonces, createAnnonce, updateAnnonce, deleteAnnonce, ANNONCES_LAST_SEEN_KEY } from "@/lib/firebase/annonces";
+import { authHeader } from "@/lib/firebase/setlists";
 import { canPublishAnnonce, isAdminUser } from "@/lib/access";
 import { ANNONCE_SECTIONS, type Annonce, type AnnonceSection } from "@/types/annonce";
 import { categoryColor } from "@/lib/serviceColors";
@@ -92,13 +93,24 @@ export default function AnnoncesPage() {
 
   async function handleCreate(value: AnnonceFormValue) {
     if (!user) return;
-    await createAnnonce({
+    const id = await createAnnonce({
       ...value,
       authorId: user.uid,
       authorName: profile ? `${profile.firstName} ${profile.lastName}`.trim() : (user.email ?? ""),
     });
     setCreating(false);
     await refresh();
+    // Notif push aux personnes de la section (échec silencieux — ne bloque pas la création).
+    try {
+      const headers = await authHeader();
+      await fetch("/api/push/notify-annonce", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...headers },
+        body: JSON.stringify({ annonceId: id }),
+      });
+    } catch {
+      /* réseau indisponible */
+    }
   }
 
   async function handleUpdate(id: string, value: AnnonceFormValue) {

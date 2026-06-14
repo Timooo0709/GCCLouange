@@ -4,6 +4,12 @@ import { useEffect, useState, useMemo } from "react";
 import { ALL_CATEGORIES, getSetlists, getMySetlists, type FSSetlist } from "@/lib/firebase/setlists";
 import { useProfile } from "@/lib/firebase/users";
 import { visibleCategories, canCreateSetlist, isAdminUser } from "@/lib/access";
+import {
+  loadPlanningData,
+  findMyServices,
+  serviceCategory,
+  type PlanningData,
+} from "@/lib/planning/names";
 import { useTranslation } from "react-i18next";
 import { Search, X, Plus, Lock, LogIn, UserPen } from "lucide-react";
 import Link from "next/link";
@@ -20,9 +26,26 @@ export default function SetlistsPage() {
   const [loading, setLoading] = useState(true);
   const [tab, setTab] = useState<Tab>("upcoming");
   const [query, setQuery] = useState("");
+  const [onlyMine, setOnlyMine] = useState(true);
+  const [planning, setPlanning] = useState<PlanningData | null>(null);
   const { categoryFilter, setCategoryFilter } = useSetlistsNavState();
 
   const todayStr = useMemo(() => new Date().toISOString().split("T")[0], []);
+
+  useEffect(() => {
+    loadPlanningData().then(setPlanning);
+  }, []);
+
+  // Clés `${date}|${catégorie}` des services réels de l'utilisateur (filtre « Mes services »).
+  const myServiceKeys = useMemo(() => {
+    const set = new Set<string>();
+    if (!planning || !profile?.planningName) return set;
+    for (const e of findMyServices(planning, profile.planningName)) {
+      const cat = serviceCategory(e.service);
+      if (cat) set.add(`${e.setlistDate ?? e.date}|${cat}`);
+    }
+    return set;
+  }, [planning, profile]);
 
   // Catégories accessibles selon le profil (services + EDD + groupe) — admins : toutes
   const admin = isAdminUser(user);
@@ -60,14 +83,19 @@ export default function SetlistsPage() {
 
   const displayed = useMemo(() => {
     if (tab === "mine") return mySetlists.filter(matches);
-    // Visibilité : uniquement les setlists de ses services/groupe (+ celles qu'on a créées)
+    const useMine = onlyMine && !!profile?.planningName;
+    // Visibilité : setlists de ses services/groupe (+ celles qu'on a créées). Le filtre
+    // « Mes services » restreint en plus aux dates où l'on sert réellement (accès conservé).
     const list = setlists.filter(
-      (s) => (myCategories.includes(s.category) || s.ownerId === user?.uid) && matches(s)
+      (s) =>
+        (myCategories.includes(s.category) || s.ownerId === user?.uid) &&
+        matches(s) &&
+        (!useMine || myServiceKeys.has(`${s.date}|${s.category}`) || s.ownerId === user?.uid)
     );
     return tab === "upcoming"
       ? list.filter((s) => s.date >= todayStr).sort((a, b) => a.date.localeCompare(b.date))
       : list.filter((s) => s.date < todayStr).sort((a, b) => b.date.localeCompare(a.date));
-  }, [tab, setlists, mySetlists, matches, todayStr, myCategories, user]);
+  }, [tab, setlists, mySetlists, matches, todayStr, myCategories, user, onlyMine, profile, myServiceKeys]);
 
   const emptyMessage = query
     ? "Aucun résultat pour cette recherche."
@@ -190,6 +218,20 @@ export default function SetlistsPage() {
               </button>
             )}
           </div>
+
+          {profile?.planningName && tab !== "mine" && (
+            <button
+              type="button"
+              onClick={() => setOnlyMine((v) => !v)}
+              className={`inline-flex items-center gap-1.5 h-8 px-3 rounded-full text-xs font-semibold border transition-colors ${
+                onlyMine
+                  ? "bg-primary/10 border-primary text-primary"
+                  : "bg-background border-border text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {onlyMine ? "✓ Mes services" : "Mes services"}
+            </button>
+          )}
 
           <div className="flex items-center gap-2">
             <select

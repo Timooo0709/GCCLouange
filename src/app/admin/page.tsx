@@ -15,6 +15,7 @@ import { ProfileFields, type ProfileFormValue } from "@/components/auth/ProfileF
 import { SERVICE_ROLE_LABELS, SERVICE_LIEUX, GROUPES, type ServiceRole, type UserProfile } from "@/types/user";
 import { EDD_CLASSES } from "@/lib/planning/utils";
 import { ANNONCE_SECTIONS } from "@/types/annonce";
+import { NOTIFY_ALL, NOTIFY_GROUPS, audienceLabel } from "@/lib/push/audiences";
 import { categoryColor } from "@/lib/serviceColors";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -66,6 +67,7 @@ export default function AdminPage() {
   const [editingUid, setEditingUid] = useState<string | null>(null);
   const [form, setForm] = useState<ProfileFormValue | null>(null);
   const [annonceRights, setAnnonceRights] = useState<string[]>([]);
+  const [notifyRights, setNotifyRights] = useState<string[]>([]);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const [query, setQuery] = useState("");
@@ -148,6 +150,7 @@ export default function AdminPage() {
     setEditingUid(p.uid);
     setForm(profileToForm(p));
     setAnnonceRights(p.annonces ?? []);
+    setNotifyRights(p.notify ?? []);
     setError("");
   }
 
@@ -156,7 +159,7 @@ export default function AdminPage() {
     setSaving(true);
     setError("");
     try {
-      const updated: UserProfile = { ...p, ...form, annonces: annonceRights };
+      const updated: UserProfile = { ...p, ...form, annonces: annonceRights, notify: notifyRights };
       await saveProfile(updated);
       setProfiles((prev) => prev.map((x) => (x.uid === p.uid ? updated : x)));
       setEditingUid(null);
@@ -353,6 +356,40 @@ export default function AdminPage() {
                                   style={checked ? { background: `${color}15`, borderColor: color, color } : undefined}
                                 >
                                   {checked ? "✓ " : ""}{s === "Culte Francophone" ? "Culte Franco" : s}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        </div>
+
+                        {/* Droits d'envoi de notifications manuelles — réservé aux admins */}
+                        <div className="rounded-lg border border-dashed border-border p-3">
+                          <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-2">
+                            Peut envoyer des notifications à :
+                          </p>
+                          <div className="flex flex-wrap gap-2">
+                            {[NOTIFY_ALL, ...NOTIFY_GROUPS.flatMap((g) => g.audiences)].map((a) => {
+                              const checked = notifyRights.includes(a);
+                              const color = a === NOTIFY_ALL ? undefined : categoryColor(a);
+                              return (
+                                <button
+                                  key={a}
+                                  type="button"
+                                  onClick={() =>
+                                    setNotifyRights((prev) =>
+                                      checked ? prev.filter((x) => x !== a) : [...prev, a]
+                                    )
+                                  }
+                                  className={`px-3 py-1.5 rounded-lg border text-xs font-semibold transition-colors ${
+                                    !checked
+                                      ? "bg-background border-border text-muted-foreground hover:text-foreground"
+                                      : color
+                                      ? ""
+                                      : "bg-primary/10 border-primary text-primary"
+                                  }`}
+                                  style={checked && color ? { background: `${color}15`, borderColor: color, color } : undefined}
+                                >
+                                  {checked ? "✓ " : ""}{audienceLabel(a)}
                                 </button>
                               );
                             })}

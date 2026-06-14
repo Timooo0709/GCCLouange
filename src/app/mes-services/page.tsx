@@ -10,22 +10,15 @@ import {
   loadPlanningData,
   findMyServices,
   normalizeName,
+  serviceCategory,
   type PlanningData,
   type ServiceEntry,
 } from "@/lib/planning/names";
 import { MOIS, JOURC } from "@/lib/planning/utils";
 import { serviceColor } from "@/lib/serviceColors";
+import { PushPrompt } from "@/components/push/PushPrompt";
 
 type Tab = "upcoming" | "past";
-
-/** Catégorie de setlist correspondant à un service (null si pas de setlists pour ce service). */
-function serviceCategory(service: string): string | null {
-  if (service === "Culte Franco") return "Culte Francophone";
-  if (service.startsWith("Groupe ")) return service;
-  if (service.startsWith("EDD ")) return service.slice(4);
-  if (service.startsWith("Campus")) return "Campus";
-  return null;
-}
 
 function fdJour(dateStr: string): string {
   const [y, m, d] = dateStr.split("-").map(Number);
@@ -193,6 +186,8 @@ export default function MesServicesPage() {
         <p className="text-sm text-muted-foreground">
           {t("mesServices.subtitle", { name: profile.planningName })}
         </p>
+
+        <PushPrompt />
 
         {/* Onglets À venir / Passés */}
         <div className="flex rounded-xl border border-border overflow-hidden text-sm">

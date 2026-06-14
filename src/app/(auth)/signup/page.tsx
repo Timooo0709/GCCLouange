@@ -116,6 +116,7 @@ export default function SignupPage() {
         lastName: form.lastName.trim(),
         planningName: form.planningName.trim(),
         annonces: [],
+        notify: [],
       });
       router.push("/setlists");
     } catch (e) {

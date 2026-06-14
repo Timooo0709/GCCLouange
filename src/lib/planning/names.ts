@@ -85,12 +85,6 @@ const CULTE_ROLES: [number, string][] = [
   [9, "Orateur"], [10, "Traduction"],
 ]
 
-/** Rôles « équipe louange » du culte Franco : musiciens + régie + choristes.
- *  Cible des notifications « setlist prête » (exclut orateur/traduction et la
- *  présidence, qui est l'auteur de la setlist). */
-export const LOUANGE_TEAM_ROLES = new Set([
-  "Choriste", "Piano", "Guitare", "Batterie", "Sono", "PPT",
-])
 const GROUPE_ROLES: [number, string][] = [[1, "Présidence"], [2, "Musicien"], [3, "Orateur"]]
 const FIDELITE_ROLES: [number, string][] = [[1, "Présidence"], [2, "Orateur"], [4, "Piano"]]
 const FIDELITE_MUSIC_ROLES: [number, string][] = [[1, "Présidence"], [2, "Piano"], [3, "Guitare"], [4, "Batterie"]]
@@ -253,25 +247,98 @@ export function findMyServices(data: PlanningData, name: string): ServiceEntry[]
   return out.sort((a, b) => a.date.localeCompare(b.date) || a.service.localeCompare(b.service))
 }
 
-// ─── Service du culte Franco à une date donnée (côté serveur) ──────────────────
-
-export interface CulteServant {
-  /** Graphie du nom telle qu'écrite dans le planning */
-  name: string
-  /** Ex. "Piano", "Présidence", "Sono" */
-  role: string
+/** Catégorie de setlist correspondant à un libellé de service de findMyServices
+ *  (null si pas de setlists pour ce service, ex. Prépa. Table). */
+export function serviceCategory(service: string): string | null {
+  if (service === "Culte Franco") return "Culte Francophone"
+  if (service.startsWith("Groupe ")) return service
+  if (service.startsWith("EDD ")) return service.slice(4)
+  if (service.startsWith("Campus")) return "Campus"
+  return null
 }
 
-/** Toutes les personnes de service au culte Franco (`data.culte`) à une date ISO
- *  donnée, avec leur rôle. Utilisé pour cibler les rappels J-7/J-3 et la notif
- *  « setlist prête ». Les noms sont en texte libre — l'appariement aux comptes
- *  se fait ensuite via normalizeName(). */
-export function culteServantsForDate(data: PlanningData, dateISO: string): CulteServant[] {
-  const out: CulteServant[] = []
-  for (const r of data.culte) {
+// ─── Personnes de service à une date — tous services (côté serveur) ────────────
+
+// Colonnes culte pour le ciblage notifications : CULTE_ROLE_MAP + Orateur/Traduction
+// (inclus pour les rappels « tu sers » ; serviceRole null → exclus de « setlist prête »).
+const CULTE_NOTIFY_MAP: [number, ServiceRole | null][] = [...CULTE_ROLE_MAP, [9, null], [10, null]]
+
+export interface Servant {
+  /** Graphie du nom telle qu'écrite dans le planning */
+  name: string
+  /** Catégorie de setlist (Culte Francophone, Groupe Paix, 中班, Campus…) ;
+   *  null = Prépa. Table (présence sans catégorie de setlist) */
+  category: string | null
+  /** Rôle de service ; null = présence sans rôle exécutant (orateur, suppléant…) */
+  serviceRole: ServiceRole | null
+  /** Président de séance (1ʳᵉ personne de la colonne Présidence / du chant campus) —
+   *  désambiguïse les séances Campus matin/soir d'un même jour */
+  leader: string
+}
+
+/** Toutes les personnes de service à une date ISO donnée, tous services confondus,
+ *  avec catégorie et rôle. Inverse de findMyServices restreint à une date. Cible des
+ *  rappels (tous services, via `name`) et de « setlist prête » (filtré par catégorie
+ *  + niveau d'accès). Noms en texte libre → appariement aux comptes via normalizeName(). */
+export function servantsForDate(data: PlanningData, dateISO: string): Servant[] {
+  const out: Servant[] = []
+  const scan = (rows: string[][], category: string, cols: [number, ServiceRole | null][]) => {
+    const presCol = cols.find(([, role]) => role === "presidence")?.[0]
+    for (const r of rows) {
+      if (r[0] !== dateISO) continue
+      const leader = presCol != null ? (splitNames(r[presCol] ?? "")[0] ?? "") : ""
+      for (const [i, role] of cols) {
+        for (const name of splitNames(r[i] ?? "")) out.push({ name, category, serviceRole: role, leader })
+      }
+    }
+  }
+
+  scan(data.culte, "Culte Francophone", CULTE_NOTIFY_MAP)
+  scan(data.paix, "Groupe Paix", GROUPE_ROLE_MAP)
+  scan(data.bonte, "Groupe Bonté", GROUPE_ROLE_MAP)
+  scan(data.fidelite, "Groupe Fidélité", FIDELITE_ROLE_MAP)
+  scan(data.fideliteMusic, "Groupe Fidélité", FIDELITE_MUSIC_ROLE_MAP)
+  for (const pk of EDD_PERIODES) {
+    const classes = data.edd[pk]?.classes ?? {}
+    for (const cls of EDD_CLASSES) scan(classes[cls] ?? [], cls, EDD_ROLE_MAP)
+  }
+  // Prépa. Table : présence simple, sans catégorie de setlist ni rôle.
+  for (const r of data.dejeuner) {
     if (r[0] !== dateISO) continue
-    for (const [i, role] of CULTE_ROLES) {
-      for (const name of splitNames(r[i] ?? "")) out.push({ name, role })
+    for (const name of splitNames(r[1] ?? "")) out.push({ name, category: null, serviceRole: null, leader: "" })
+  }
+  // Campus : date via le label ; matin/soir distingués par le leader.
+  for (const s of data.campus) {
+    if (campusDate(s.d) !== dateISO) continue
+    const leader = s.ch.split(",")[0]?.trim() || ""
+    for (const name of splitNames(s.ch)) out.push({ name, category: "Campus", serviceRole: "chanteur", leader })
+    for (const name of splitNames(s.mu)) out.push({ name, category: "Campus", serviceRole: "musicien", leader })
+    for (const name of splitNames(s.rg)) out.push({ name, category: "Campus", serviceRole: "regie", leader })
+  }
+
+  return out
+}
+
+export interface Rehearsal {
+  /** Graphie du nom telle qu'écrite dans le planning */
+  name: string
+  /** Heure de la répétition (ex. "17:00"), "" si non renseignée */
+  time: string
+  /** Lieu de la répétition (ex. "Grande Salle"), "" si non renseigné */
+  location: string
+}
+
+/** Participants d'une répétition Campus dont la date (`s.ent`, déjà ISO) == dateISO,
+ *  avec heure et lieu. Les participants = ceux de la séance (chant + musiciens + régie).
+ *  Cible des rappels de répétition. */
+export function rehearsalsForDate(data: PlanningData, dateISO: string): Rehearsal[] {
+  const out: Rehearsal[] = []
+  for (const s of data.campus) {
+    if (s.ent !== dateISO) continue
+    const time = s.entTime ?? ""
+    const location = s.entLieu ?? ""
+    for (const name of [...splitNames(s.ch), ...splitNames(s.mu), ...splitNames(s.rg)]) {
+      out.push({ name, time, location })
     }
   }
   return out

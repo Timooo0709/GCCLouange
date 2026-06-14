@@ -58,10 +58,13 @@ service cloud.firestore {
       // Lecture par tout connecté (les règles setlists et le client lisent les profils)
       allow read: if signedIn();
       // Création (première complétion) : l'intéressé crée son propre profil sans
-      // s'attribuer de droits d'annonces ; les admins peuvent créer n'importe quel profil.
+      // s'attribuer de droits d'annonces ni de notifications ; les admins peuvent
+      // créer n'importe quel profil.
       allow create: if signedIn() && (
         isAdmin()
-        || (request.auth.uid == uid && request.resource.data.get('annonces', []) == [])
+        || (request.auth.uid == uid
+            && request.resource.data.get('annonces', []) == []
+            && request.resource.data.get('notify', []) == [])
       );
       // Une fois le profil créé, seuls les admins peuvent le modifier.
       allow update: if isAdmin();
@@ -122,7 +125,7 @@ service cloud.firestore {
     }
 
     // Journal des notifications envoyées (idempotence des rappels + anti-spam
-    // setlist). Écrit/lu uniquement par le serveur via Firebase Admin, qui
+    // setlist/annonce). Écrit/lu uniquement par le serveur via Firebase Admin, qui
     // contourne ces règles — interdit à tout client.
     match /notifLog/{id} {
       allow read, write: if false;

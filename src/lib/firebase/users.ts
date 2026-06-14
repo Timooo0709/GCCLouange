@@ -40,6 +40,7 @@ function fromFsProfile(raw: RawDoc): UserProfile {
       (data.serviceRoles as Record<string, ServiceRole[]>) ??
       legacyServiceRoles(data as LegacyServiceProfile),
     annonces: (data.annonces as string[]) ?? [],
+    notify: (data.notify as string[]) ?? [],
   };
 }
 

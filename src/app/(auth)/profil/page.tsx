@@ -87,6 +87,8 @@ export default function ProfilPage() {
         planningName: form.planningName.trim(),
         // Droits de publication d'annonces : attribués par les admins, on les conserve tels quels
         annonces: profile?.annonces ?? [],
+        // Droits d'envoi de notifications : idem, attribués par les admins
+        notify: profile?.notify ?? [],
       });
       router.push("/setlists");
     } catch {

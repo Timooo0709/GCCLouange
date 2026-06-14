@@ -306,10 +306,10 @@ export function SetlistDetailClient() {
   // Modification/suppression : créateur + musiciens du même service
   const canEdit = canEditSetlist(user, profile, setlist);
   const canDuplicate = canDuplicateSetlist(user, profile, setlist);
-  // Notif « setlist prête » : réservée aux setlists du Culte Franco, modifiables
-  // par l'utilisateur, et contenant au moins 4 vrais chants (hors transitions).
+  // Notif « setlist prête » : pour toute setlist modifiable par l'utilisateur,
+  // contenant au moins 4 vrais chants (hors transitions). Toutes catégories.
   const realSongCount = setlist.items.filter((i) => i.type !== "transition").length;
-  const canNotifyTeam = canEdit && setlist.category === "Culte Francophone";
+  const canNotifyTeam = canEdit;
   return (
     <div className="min-h-screen bg-background">
       {/* Top bar — même style que SongDetailClient */}
@@ -388,7 +388,7 @@ export function SetlistDetailClient() {
                 <span className="hidden sm:inline">{t("setlists.detail.performanceMode")}</span>
               </button>
 
-              {/* Prévenir l'équipe — setlist du Culte Franco prête (≥ 4 chants) */}
+              {/* Prévenir l'équipe — setlist prête (≥ 4 chants) */}
               {canNotifyTeam && (
                 <button
                   onClick={handleNotifyTeam}
