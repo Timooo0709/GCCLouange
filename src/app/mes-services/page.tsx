@@ -106,7 +106,11 @@ export default function MesServicesPage() {
   const findSetlistId = (date: string, category: string, leader?: string): string | undefined => {
     const arr = setlistsByDateCat.get(`${date}|${category}`);
     if (!arr || arr.length === 0) return undefined;
-    if (arr.length === 1) return arr[0].id;
+    // Campus : matin et soir d'un même jour partagent date + catégorie "Campus" et
+    // ne se distinguent que par le président → toujours départager par président,
+    // même s'il n'existe qu'une seule setlist ce jour-là (sinon la séance dont la
+    // setlist n'existe pas encore pointerait par erreur vers celle de l'autre séance).
+    if (category !== "Campus" && arr.length === 1) return arr[0].id;
     if (leader) {
       const want = normalizeName(leader);
       const match = arr.find((s) => normalizeName(s.leader) === want);
