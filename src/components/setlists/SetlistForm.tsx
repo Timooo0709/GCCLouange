@@ -12,6 +12,7 @@ import Fuse from "fuse.js";
 import {
   RESTRICTED_CATEGORIES,
   ALL_CATEGORIES,
+  authHeader,
   createSetlist,
   updateSetlist,
 } from "@/lib/firebase/setlists";
@@ -54,6 +55,22 @@ export interface SetlistFormProps {
   songs: SongIndexEntry[];
   /** État initial (mode edit) — lu une seule fois au montage */
   initial?: SetlistFormInitial;
+}
+
+/** Déclenche la notif « setlist prête » en mode auto après une sauvegarde.
+ *  Le serveur n'envoie que si la setlist a ≥ 4 chants et n'a pas déjà prévenu
+ *  l'équipe. Fire-and-forget : tout échec (réseau, droits) est silencieux. */
+async function notifySetlistReady(setlistId: string): Promise<void> {
+  try {
+    const headers = await authHeader();
+    await fetch("/api/push/notify-setlist", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", ...headers },
+      body: JSON.stringify({ setlistId, auto: true }),
+    });
+  } catch {
+    /* réseau indisponible */
+  }
 }
 
 export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProps) {
@@ -262,19 +279,23 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
         // Création : le créateur devient propriétaire. Édition : on conserve le propriétaire.
         isPrivate, ownerId: isEdit ? ownerId : (user?.uid ?? null),
       };
+      let savedId: string;
       if (isEdit && setlistId) {
         await updateSetlist(setlistId, payload);
-        router.push(`/setlists/${setlistId}`);
+        savedId = setlistId;
       } else {
         const targetId = autoSaveIdRef.current;
         if (targetId) {
           await updateSetlist(targetId, payload);
-          router.push(`/setlists/${targetId}`);
+          savedId = targetId;
         } else {
-          const id = await createSetlist(payload);
-          router.push(`/setlists/${id}`);
+          savedId = await createSetlist(payload);
         }
       }
+      // Prévient automatiquement l'équipe si la setlist est prête (≥ 4 chants),
+      // une seule fois. Ne bloque pas la navigation.
+      void notifySetlistReady(savedId);
+      router.push(`/setlists/${savedId}`);
     } catch (err) {
       setError(
         err instanceof Error

@@ -9,11 +9,13 @@ import type { LegacyServiceProfile, ServiceRole } from "@/types/user";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-// Notif « setlist prête » : déclenchée par le bouton « Prévenir l'équipe », sur
-// une setlist (toute catégorie) contenant ≥ 4 chants. Prévient les musiciens, la
-// régie et les choristes de service à cette date (hors présidence et orateur).
-//
-// Anti-spam : une notif par setlist, ré-envoi possible au plus une fois / 24 h.
+// Notif « setlist prête » : sur une setlist (toute catégorie) contenant ≥ 4
+// chants. Prévient les musiciens, la régie et les choristes de service à cette
+// date (hors présidence et orateur). Deux déclencheurs :
+//   - Manuel (bouton « Prévenir l'équipe ») : ré-envoi possible 1 fois / 24 h.
+//   - Auto (`auto: true`, à la sauvegarde de la setlist) : envoi UNE seule fois,
+//     dès que l'équipe a été touchée. Tant que personne n'est joignable (noms du
+//     planning non encore appariés à un compte), la prochaine sauvegarde réessaie.
 
 const MIN_SONGS = 4;
 const RESEND_COOLDOWN_MS = 24 * 60 * 60 * 1000;
@@ -37,7 +39,10 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Token invalide" }, { status: 401 });
   }
 
-  const { setlistId } = (await req.json().catch(() => ({}))) as { setlistId?: string };
+  const { setlistId, auto } = (await req.json().catch(() => ({}))) as {
+    setlistId?: string;
+    auto?: boolean;
+  };
   if (!setlistId) return NextResponse.json({ error: "setlistId manquant" }, { status: 400 });
 
   const db = adminDb();
@@ -61,6 +66,8 @@ export async function POST(req: NextRequest) {
   // 3. Au moins 4 vrais chants (les transitions ne comptent pas)
   const songCount = (sl.items ?? []).filter((i) => i?.type !== "transition").length;
   if (songCount < MIN_SONGS) {
+    // En auto, une setlist pas encore prête n'est pas une erreur : on l'ignore.
+    if (auto) return NextResponse.json({ ok: true, skipped: "below-min" });
     return NextResponse.json(
       { error: `La setlist doit contenir au moins ${MIN_SONGS} chants` },
       { status: 400 }
@@ -84,11 +91,18 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Action non autorisée" }, { status: 403 });
   }
 
-  // 5. Anti-spam (1 envoi / 24 h pour cette setlist)
+  // 5. Anti-spam selon le déclencheur.
   const logRef = db.collection("notifLog").doc(`setlist-${setlistId}`);
   const logSnap = await logRef.get();
   const lastSentAt = logSnap.exists ? (logSnap.data()?.lastSentAt as number | undefined) : undefined;
-  if (lastSentAt && Date.now() - lastSentAt < RESEND_COOLDOWN_MS) {
+  const lastRecipients = logSnap.exists ? (logSnap.data()?.recipients as number | undefined) : undefined;
+  if (auto) {
+    // Auto : une seule fois, dès lors que l'équipe a déjà été touchée.
+    if (lastSentAt && (lastRecipients ?? 0) > 0) {
+      return NextResponse.json({ ok: true, skipped: "already-sent" });
+    }
+  } else if (lastSentAt && Date.now() - lastSentAt < RESEND_COOLDOWN_MS) {
+    // Manuel : 1 envoi / 24 h.
     return NextResponse.json(
       { error: "Une notification a déjà été envoyée pour cette setlist aujourd'hui." },
       { status: 429 }
@@ -122,10 +136,14 @@ export async function POST(req: NextRequest) {
     tag: `setlist-${setlistId}`,
   });
 
-  await logRef.set(
-    { lastSentAt: Date.now(), setlistId, recipients: result.recipients },
-    { merge: true }
-  );
+  // En auto sans destinataire joignable, on ne mémorise rien : la prochaine
+  // sauvegarde réessaiera et le bouton manuel reste utilisable.
+  if (!auto || result.recipients > 0) {
+    await logRef.set(
+      { lastSentAt: Date.now(), setlistId, recipients: result.recipients },
+      { merge: true }
+    );
+  }
 
   return NextResponse.json({ ok: true, ...result });
 }
