@@ -11,6 +11,7 @@ import {
   isStandalone,
   isIOS,
   isSubscribed,
+  permissionState,
   subscribeToPush,
   unsubscribeFromPush,
 } from "@/lib/push/client";
@@ -23,6 +24,9 @@ export function PushToggle() {
 
   const [supported, setSupported] = useState(true);
   const [needsInstall, setNeedsInstall] = useState(false);
+  // Le navigateur a bloqué les notifs pour ce site (permission « denied ») :
+  // requestPermission() ne redemandera plus, il faut réautoriser à la main.
+  const [denied, setDenied] = useState(false);
   const [enabled, setEnabled] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -32,7 +36,10 @@ export function PushToggle() {
     setSupported(ok);
     // Sur iOS, le push n'existe qu'en PWA installée sur l'écran d'accueil.
     setNeedsInstall(isIOS() && !isStandalone());
-    if (ok) isSubscribed().then(setEnabled).catch(() => {});
+    if (ok) {
+      setDenied(permissionState() === "denied");
+      isSubscribed().then(setEnabled).catch(() => {});
+    }
   }, []);
 
   if (!user) return null;
@@ -46,7 +53,13 @@ export function PushToggle() {
       else await unsubscribeFromPush(user.uid);
       setEnabled(next);
     } catch (e) {
-      setError(e instanceof Error ? e.message : t("push.error", { defaultValue: "Une erreur est survenue" }));
+      // Si l'utilisateur vient de bloquer la pop-up, on bascule sur le message
+      // « réautoriser » plutôt que l'erreur brute « Permission refusée ».
+      const isDenied = permissionState() === "denied";
+      setDenied(isDenied);
+      if (!isDenied) {
+        setError(e instanceof Error ? e.message : t("push.error", { defaultValue: "Une erreur est survenue" }));
+      }
     } finally {
       setBusy(false);
     }
@@ -68,7 +81,7 @@ export function PushToggle() {
               })}
             </p>
           </div>
-          {supported && !needsInstall && (
+          {supported && !needsInstall && !denied && (
             <Switch
               checked={enabled}
               disabled={busy}
@@ -91,6 +104,15 @@ export function PushToggle() {
             {t("push.iosInstall", {
               defaultValue:
                 "Sur iPhone/iPad : ajoute d'abord le site à l'écran d'accueil (Partager → « Sur l'écran d'accueil »), puis ouvre-le depuis l'icône pour activer les notifications.",
+            })}
+          </p>
+        )}
+
+        {supported && !needsInstall && denied && (
+          <p className="text-xs text-amber-600 dark:text-amber-400 mt-3">
+            {t("push.blocked", {
+              defaultValue:
+                "Les notifications sont bloquées pour ce site dans ton navigateur. Pour les réactiver : clique sur l'icône à gauche de l'adresse (🔒) → Notifications → Autoriser, puis recharge la page.",
             })}
           </p>
         )}
