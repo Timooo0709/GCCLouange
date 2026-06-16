@@ -47,6 +47,8 @@ function toSegments(tokens: Token[]): Segment[] {
 interface ChordLineProps {
   tokens: Token[];
   showChords?: boolean;
+  /** Masque le texte des paroles tout en gardant la largeur (accords positionnés). */
+  hideLyrics?: boolean;
   fontSize?: number;
   /** Taille des accords relative aux paroles (em) — 0.9 web, 1.13 typo PDF */
   chordEm?: number;
@@ -54,7 +56,7 @@ interface ChordLineProps {
   fr_lyric_font?: ReturnType<typeof localFont>;
 }
 
-export function ChordLine({ tokens, showChords = true, fontSize = 0.88, chordEm = 0.9, chord_font, fr_lyric_font }: ChordLineProps) {
+export function ChordLine({ tokens, showChords = true, hideLyrics = false, fontSize = 0.88, chordEm = 0.9, chord_font, fr_lyric_font }: ChordLineProps) {
   const segments = toSegments(tokens);
   const hasAnyChord = showChords && segments.some((s) => s.chord !== null);
   return (
@@ -93,7 +95,10 @@ export function ChordLine({ tokens, showChords = true, fontSize = 0.88, chordEm 
             ) : (
               hasAnyChord && <span className="leading-[0.7]" style={{ fontSize: `${chordEm}em` }}>&nbsp;</span>
             )}
-            <span className={`text-foreground whitespace-pre ${fr_lyric_font?.className}`}>
+            <span
+              className={`text-foreground whitespace-pre ${fr_lyric_font?.className}`}
+              style={hideLyrics ? { visibility: "hidden" } : undefined}
+            >
               {(showChords ? seg.lyric : seg.lyric?.trimStart()) || (seg.chord && showChords ? " " : "")}
             </span>
           </span>
