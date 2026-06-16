@@ -52,10 +52,12 @@ function BlockRenderer({
   block,
   showChordsGlobal,
   showTransitions,
+  hideLyrics,
 }: {
   block: PerformanceBlock;
   showChordsGlobal: boolean;
   showTransitions: boolean;
+  hideLyrics: boolean;
 }) {
   if (block.kind === "song-header") {
     return <SongHeader block={block} />;
@@ -75,6 +77,7 @@ function BlockRenderer({
       showChords={block.chordsEnabled && showChordsGlobal}
       showPinyin={block.showPinyin}
       useJianpu={false}
+      hideLyrics={hideLyrics}
       note={block.note}
       songSourceLabel={block.songSourceLabel}
       typography="pdf"
@@ -138,24 +141,44 @@ function SongHeader({ block }: { block: SongHeaderBlock }) {
 
 // ─── Greedy pagination ────────────────────────────────────────────────────────
 
-// Chaque chant commence sur une nouvelle page (breakBefore = indices des
-// en-têtes de chant) ; à l'intérieur d'un chant, remplissage glouton.
-function paginateBlocks(heights: number[], viewportH: number, breakBefore: Set<number>): number[][] {
-  const pages: number[][] = [];
-  let current: number[] = [];
+// Remplissage glouton en `numCols` colonnes : on remplit une colonne jusqu'à
+// `viewportH`, puis la suivante, puis on passe de page. `breakBefore` force une
+// nouvelle page (en-têtes de chant en mode 1 colonne ; vide en mode ossature où
+// l'on cherche la densité maximale). Renvoie pages → colonnes → indices de blocs.
+function paginateBlocks(
+  heights: number[],
+  viewportH: number,
+  breakBefore: Set<number>,
+  numCols: number,
+): number[][][] {
+  const pages: number[][][] = [];
+  let cols: number[][] = [[]];
+  let col = 0;
   let used = 0;
+  const flush = () => {
+    if (cols.some((c) => c.length > 0)) pages.push(cols);
+    cols = [[]];
+    col = 0;
+    used = 0;
+  };
   for (let i = 0; i < heights.length; i++) {
     const h = heights[i];
-    const mustBreak = breakBefore.has(i) && current.length > 0;
-    if (mustBreak || (current.length > 0 && used + h > viewportH)) {
-      pages.push(current);
-      current = [];
-      used = 0;
+    const anyOnPage = cols.some((c) => c.length > 0);
+    if (breakBefore.has(i) && anyOnPage) {
+      flush();
+    } else if (cols[col].length > 0 && used + h > viewportH) {
+      if (col < numCols - 1) {
+        col++;
+        cols.push([]);
+        used = 0;
+      } else {
+        flush();
+      }
     }
-    current.push(i);
+    cols[col].push(i);
     used += h;
   }
-  if (current.length > 0) pages.push(current);
+  flush();
   return pages.length > 0 ? pages : [[]];
 }
 
@@ -186,11 +209,18 @@ export function PerformanceMode({
   const rootRef = useRef<HTMLDivElement>(null);
   const [showChords, setShowChords] = useState(initialShowChords);
   const [showTransitions, setShowTransitions] = useState(true);
+  const [hideLyrics, setHideLyrics] = useState(() => {
+    try {
+      return localStorage.getItem("perf-hide-lyrics") === "1";
+    } catch {
+      return false;
+    }
+  });
   const [annotateMode, setAnnotateMode] = useState(false);
   const [showChrome, setShowChrome] = useState(true);
   const [songListOpen, setSongListOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [pages, setPages] = useState<number[][]>([]);
+  const [pageCols, setPageCols] = useState<number[][][]>([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [remeasureKey, setRemeasureKey] = useState(0);
   const [fontScale, setFontScale] = useState(() => {
@@ -232,6 +262,16 @@ export function PerformanceMode({
     try { localStorage.setItem("perf-theme", t); } catch { /* ignore */ }
   }, []);
 
+  const toggleHideLyrics = useCallback((v: boolean) => {
+    setHideLyrics(v);
+    try { localStorage.setItem("perf-hide-lyrics", v ? "1" : "0"); } catch { /* ignore */ }
+  }, []);
+
+  // Vue ossature (paroles ET accords masqués) : libellés de sections seuls →
+  // mise en page sur deux colonnes pour caser un maximum de sections par écran.
+  const twoCol = hideLyrics && !showChords;
+  const pages = useMemo(() => pageCols.map((cols) => cols.flat()), [pageCols]);
+
   const blockRefs = useRef<(HTMLDivElement | null)[]>([]);
   const chromeTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const tapStart = useRef<{ x: number; y: number; time: number } | null>(null);
@@ -251,7 +291,7 @@ export function PerformanceMode({
   // Re-measure when a setting affecting heights changes
   useEffect(() => {
     setRemeasureKey((k) => k + 1);
-  }, [showChords, showTransitions, fontScale]);
+  }, [showChords, showTransitions, hideLyrics, fontScale]);
 
   // Re-measure on viewport resize / orientation change
   useEffect(() => {
@@ -282,15 +322,16 @@ export function PerformanceMode({
         const next = rects[i + 1];
         return next ? Math.max(0, next.top - r.top) : r.height;
       });
-      const breakBefore = new Set(
-        blocks.flatMap((b, i) => (b.kind === "song-header" ? [i] : [])),
-      );
-      const computed = paginateBlocks(heights, viewportH, breakBefore);
-      setPages(computed);
+      // Mode ossature : flux continu (densité max) ; sinon un chant par page.
+      const breakBefore = twoCol
+        ? new Set<number>()
+        : new Set(blocks.flatMap((b, i) => (b.kind === "song-header" ? [i] : [])));
+      const computed = paginateBlocks(heights, viewportH, breakBefore, twoCol ? 2 : 1);
+      setPageCols(computed);
       setCurrentPage((prev) => Math.min(prev, Math.max(0, computed.length - 1)));
     };
     run();
-  }, [blocks, remeasureKey, fontScale]);
+  }, [blocks, remeasureKey, fontScale, twoCol]);
 
   const changeFontScale = useCallback((delta: number) => {
     setFontScale((s) => {
@@ -351,7 +392,7 @@ export function PerformanceMode({
   const currentPageIndices = pages[currentPage] ?? [];
   // Les annotations sont liées à la mise en page : accords, transitions et
   // taille de texte font partie de la clé.
-  const layoutSig = `c${showChords ? 1 : 0}t${showTransitions ? 1 : 0}z${Math.round(fontScale * 100)}`;
+  const layoutSig = `c${showChords ? 1 : 0}t${showTransitions ? 1 : 0}l${hideLyrics ? 1 : 0}z${Math.round(fontScale * 100)}`;
   const currentPageKey = computePageKey(blocks, currentPageIndices, layoutSig);
 
   // Charger les traits de la page courante (toujours — affichage permanent)
@@ -499,11 +540,13 @@ export function PerformanceMode({
             <div
               key={block.uid}
               ref={(el) => { blockRefs.current[i] = el; }}
+              style={twoCol ? { width: "calc(50% - 0.5rem)" } : undefined}
             >
               <BlockRenderer
                 block={block}
                 showChordsGlobal={showChords}
                 showTransitions={showTransitions}
+                hideLyrics={hideLyrics}
               />
             </div>
           ))}
@@ -517,14 +560,21 @@ export function PerformanceMode({
             <p className="text-sm text-muted-foreground animate-pulse">{t("performance.layout")}</p>
           </div>
         ) : (
-          currentPageIndices.map((i) => (
-            <BlockRenderer
-              key={blocks[i].uid}
-              block={blocks[i]}
-              showChordsGlobal={showChords}
-              showTransitions={showTransitions}
-            />
-          ))
+          <div className={twoCol ? "flex items-start gap-x-4" : undefined}>
+            {(pageCols[currentPage] ?? [currentPageIndices]).map((colIdxs, ci) => (
+              <div key={ci} className={twoCol ? "flex-1 min-w-0" : undefined}>
+                {colIdxs.map((i) => (
+                  <BlockRenderer
+                    key={blocks[i].uid}
+                    block={blocks[i]}
+                    showChordsGlobal={showChords}
+                    showTransitions={showTransitions}
+                    hideLyrics={hideLyrics}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
         )}
       </div>
 
@@ -727,6 +777,9 @@ export function PerformanceMode({
             </SettingRow>
             <SettingRow label={t("performance.transitions")}>
               <Switch checked={showTransitions} onCheckedChange={setShowTransitions} />
+            </SettingRow>
+            <SettingRow label={t("performance.hideLyrics")}>
+              <Switch checked={hideLyrics} onCheckedChange={toggleHideLyrics} />
             </SettingRow>
             {user && (
               <SettingRow label={t("performance.annotations")}>
