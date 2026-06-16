@@ -141,45 +141,72 @@ function SongHeader({ block }: { block: SongHeaderBlock }) {
 
 // ─── Greedy pagination ────────────────────────────────────────────────────────
 
-// Remplissage glouton en `numCols` colonnes : on remplit une colonne jusqu'à
-// `viewportH`, puis la suivante, puis on passe de page. `breakBefore` force une
-// nouvelle page (en-têtes de chant en mode 1 colonne ; vide en mode ossature où
-// l'on cherche la densité maximale). Renvoie pages → colonnes → indices de blocs.
-function paginateBlocks(
-  heights: number[],
-  viewportH: number,
-  breakBefore: Set<number>,
-  numCols: number,
-): number[][][] {
+// Mode normal : une colonne par page. Chaque chant commence sur une nouvelle page
+// (breakBefore = en-têtes de chant) ; à l'intérieur d'un chant, remplissage glouton.
+// Renvoie pages → colonnes → indices, avec une seule colonne par page.
+function paginateBlocks(heights: number[], viewportH: number, breakBefore: Set<number>): number[][][] {
   const pages: number[][][] = [];
-  let cols: number[][] = [[]];
-  let col = 0;
+  let current: number[] = [];
   let used = 0;
   const flush = () => {
-    if (cols.some((c) => c.length > 0)) pages.push(cols);
-    cols = [[]];
-    col = 0;
+    if (current.length > 0) pages.push([current]);
+    current = [];
     used = 0;
   };
   for (let i = 0; i < heights.length; i++) {
     const h = heights[i];
-    const anyOnPage = cols.some((c) => c.length > 0);
-    if (breakBefore.has(i) && anyOnPage) {
+    if ((breakBefore.has(i) && current.length > 0) || (current.length > 0 && used + h > viewportH)) {
       flush();
-    } else if (cols[col].length > 0 && used + h > viewportH) {
-      if (col < numCols - 1) {
-        col++;
-        cols.push([]);
-        used = 0;
-      } else {
-        flush();
-      }
     }
-    cols[col].push(i);
+    current.push(i);
     used += h;
   }
   flush();
-  return pages.length > 0 ? pages : [[]];
+  return pages.length > 0 ? pages : [[[]]];
+}
+
+// Mode ossature (deux colonnes) : on empile des CHANTS ENTIERS (en-tête + sections)
+// dans les colonnes pour garder chaque chant groupé — un chant ne passe à la colonne
+// (ou page) suivante que s'il ne tient pas dans l'espace restant. Un chant plus haut
+// qu'une colonne est, en dernier recours, scindé bloc par bloc.
+// `groups` = listes d'indices de blocs, un groupe par chant.
+function paginateGroups(
+  groups: number[][],
+  heights: number[],
+  viewportH: number,
+  numCols: number,
+): number[][][] {
+  const pages: number[][][] = [];
+  let cols: number[][] = Array.from({ length: numCols }, () => []);
+  let col = 0;
+  let used = 0;
+  const newPage = () => {
+    pages.push(cols);
+    cols = Array.from({ length: numCols }, () => []);
+    col = 0;
+    used = 0;
+  };
+  const advance = () => {
+    if (col < numCols - 1) { col++; used = 0; }
+    else newPage();
+  };
+  for (const group of groups) {
+    const gh = group.reduce((s, i) => s + heights[i], 0);
+    if (gh <= viewportH) {
+      if (used > 0 && used + gh > viewportH) advance();
+      for (const i of group) cols[col].push(i);
+      used += gh;
+    } else {
+      for (const i of group) {
+        const h = heights[i];
+        if (cols[col].length > 0 && used + h > viewportH) advance();
+        cols[col].push(i);
+        used += h;
+      }
+    }
+  }
+  if (cols.some((c) => c.length > 0)) pages.push(cols);
+  return pages.length > 0 ? pages : [[[]]];
 }
 
 // ─── Main component ───────────────────────────────────────────────────────────
@@ -322,11 +349,19 @@ export function PerformanceMode({
         const next = rects[i + 1];
         return next ? Math.max(0, next.top - r.top) : r.height;
       });
-      // Mode ossature : flux continu (densité max) ; sinon un chant par page.
-      const breakBefore = twoCol
-        ? new Set<number>()
-        : new Set(blocks.flatMap((b, i) => (b.kind === "song-header" ? [i] : [])));
-      const computed = paginateBlocks(heights, viewportH, breakBefore, twoCol ? 2 : 1);
+      let computed: number[][][];
+      if (twoCol) {
+        // Ossature : un groupe par chant (en-tête + ses sections), empilés en 2 colonnes.
+        const groups: number[][] = [];
+        blocks.forEach((b, i) => {
+          if (b.kind === "song-header" || groups.length === 0) groups.push([]);
+          groups[groups.length - 1].push(i);
+        });
+        computed = paginateGroups(groups, heights, viewportH, 2);
+      } else {
+        const breakBefore = new Set(blocks.flatMap((b, i) => (b.kind === "song-header" ? [i] : [])));
+        computed = paginateBlocks(heights, viewportH, breakBefore);
+      }
       setPageCols(computed);
       setCurrentPage((prev) => Math.min(prev, Math.max(0, computed.length - 1)));
     };
