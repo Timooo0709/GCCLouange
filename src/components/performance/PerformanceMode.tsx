@@ -139,74 +139,61 @@ function SongHeader({ block }: { block: SongHeaderBlock }) {
   );
 }
 
-// ─── Greedy pagination ────────────────────────────────────────────────────────
+// ─── Pagination ───────────────────────────────────────────────────────────────
+
+// Une page de rendu : en-tête de chant éventuel (pleine largeur), une ou deux
+// colonnes de blocs, et un facteur d'échelle ≤ 1 (ajustement automatique pour
+// faire tenir toute la structure d'un chant sur sa page en mode ossature).
+type PerfPage = { header: number | null; cols: number[][]; scale: number };
 
 // Mode normal : une colonne par page. Chaque chant commence sur une nouvelle page
 // (breakBefore = en-têtes de chant) ; à l'intérieur d'un chant, remplissage glouton.
-// Renvoie pages → colonnes → indices, avec une seule colonne par page.
-function paginateBlocks(heights: number[], viewportH: number, breakBefore: Set<number>): number[][][] {
-  const pages: number[][][] = [];
+function paginateBlocks(heights: number[], viewportH: number, breakBefore: Set<number>): number[][] {
+  const pages: number[][] = [];
   let current: number[] = [];
   let used = 0;
-  const flush = () => {
-    if (current.length > 0) pages.push([current]);
-    current = [];
-    used = 0;
-  };
   for (let i = 0; i < heights.length; i++) {
     const h = heights[i];
     if ((breakBefore.has(i) && current.length > 0) || (current.length > 0 && used + h > viewportH)) {
-      flush();
+      pages.push(current);
+      current = [];
+      used = 0;
     }
     current.push(i);
     used += h;
   }
-  flush();
-  return pages.length > 0 ? pages : [[[]]];
+  if (current.length > 0) pages.push(current);
+  return pages.length > 0 ? pages : [[]];
 }
 
-// Mode ossature (deux colonnes) : on empile des CHANTS ENTIERS (en-tête + sections)
-// dans les colonnes pour garder chaque chant groupé — un chant ne passe à la colonne
-// (ou page) suivante que s'il ne tient pas dans l'espace restant. Un chant plus haut
-// qu'une colonne est, en dernier recours, scindé bloc par bloc.
-// `groups` = listes d'indices de blocs, un groupe par chant.
-function paginateGroups(
-  groups: number[][],
-  heights: number[],
-  viewportH: number,
-  numCols: number,
-): number[][][] {
-  const pages: number[][][] = [];
-  let cols: number[][] = Array.from({ length: numCols }, () => []);
-  let col = 0;
-  let used = 0;
-  const newPage = () => {
-    pages.push(cols);
-    cols = Array.from({ length: numCols }, () => []);
-    col = 0;
-    used = 0;
-  };
-  const advance = () => {
-    if (col < numCols - 1) { col++; used = 0; }
-    else newPage();
-  };
-  for (const group of groups) {
-    const gh = group.reduce((s, i) => s + heights[i], 0);
-    if (gh <= viewportH) {
-      if (used > 0 && used + gh > viewportH) advance();
-      for (const i of group) cols[col].push(i);
-      used += gh;
-    } else {
-      for (const i of group) {
-        const h = heights[i];
-        if (cols[col].length > 0 && used + h > viewportH) advance();
-        cols[col].push(i);
-        used += h;
-      }
-    }
+// Mode ossature : UN CHANT PAR PAGE. L'en-tête occupe la pleine largeur ; les
+// sections (libellés + notes/transitions) sont disposées en 1 colonne si elles
+// tiennent, sinon en 2 colonnes équilibrées lues colonne par colonne (↓ gauche
+// puis ↓ droite). Si même 2 colonnes débordent, on réduit le texte (scale < 1)
+// pour que toute la structure tienne sur la page.
+function layoutSong(headerIdx: number | null, body: number[], heights: number[], viewportH: number): PerfPage {
+  const sum = (arr: number[]) => arr.reduce((s, i) => s + heights[i], 0);
+  const headerH = headerIdx != null ? heights[headerIdx] : 0;
+  const bodyTotal = sum(body);
+  const fit = (contentH: number) => Math.min(1, viewportH / Math.max(1, headerH + contentH));
+
+  // 1 colonne si peu de sections ou si tout tient en hauteur.
+  if (body.length <= 1 || bodyTotal <= viewportH - headerH) {
+    return { header: headerIdx, cols: [body], scale: fit(bodyTotal) };
   }
-  if (cols.some((c) => c.length > 0)) pages.push(cols);
-  return pages.length > 0 ? pages : [[[]]];
+
+  // 2 colonnes : coupure équilibrée minimisant la hauteur de la plus haute colonne.
+  let best = { k: 1, maxH: Infinity };
+  for (let k = 1; k < body.length; k++) {
+    const left = sum(body.slice(0, k));
+    const maxH = Math.max(left, bodyTotal - left);
+    if (maxH < best.maxH) best = { k, maxH };
+  }
+  return {
+    header: headerIdx,
+    cols: [body.slice(0, best.k), body.slice(best.k)],
+    scale: fit(best.maxH),
+  };
 }
 
 // ─── Main component ───────────────────────────────────────────────────────────
@@ -247,7 +234,7 @@ export function PerformanceMode({
   const [showChrome, setShowChrome] = useState(true);
   const [songListOpen, setSongListOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [pageCols, setPageCols] = useState<number[][][]>([]);
+  const [layout, setLayout] = useState<PerfPage[]>([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [remeasureKey, setRemeasureKey] = useState(0);
   const [fontScale, setFontScale] = useState(() => {
@@ -294,10 +281,14 @@ export function PerformanceMode({
     try { localStorage.setItem("perf-hide-lyrics", v ? "1" : "0"); } catch { /* ignore */ }
   }, []);
 
-  // Vue ossature (paroles ET accords masqués) : libellés de sections seuls →
-  // mise en page sur deux colonnes pour caser un maximum de sections par écran.
-  const twoCol = hideLyrics && !showChords;
-  const pages = useMemo(() => pageCols.map((cols) => cols.flat()), [pageCols]);
+  // Vue ossature (paroles ET accords masqués) : un chant par page, structure en
+  // colonnes adaptatives, texte réduit au besoin pour tout faire tenir.
+  const structureMode = hideLyrics && !showChords;
+  // Indices à plat par page (navigation, sommaire, clé d'annotations).
+  const pages = useMemo(
+    () => layout.map((p) => (p.header != null ? [p.header, ...p.cols.flat()] : p.cols.flat())),
+    [layout],
+  );
 
   const blockRefs = useRef<(HTMLDivElement | null)[]>([]);
   const chromeTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
@@ -349,24 +340,32 @@ export function PerformanceMode({
         const next = rects[i + 1];
         return next ? Math.max(0, next.top - r.top) : r.height;
       });
-      let computed: number[][][];
-      if (twoCol) {
-        // Ossature : un groupe par chant (en-tête + ses sections), empilés en 2 colonnes.
+      let computed: PerfPage[];
+      if (structureMode) {
+        // Un chant par page : on regroupe l'en-tête et ses sections, puis layoutSong.
         const groups: number[][] = [];
         blocks.forEach((b, i) => {
           if (b.kind === "song-header" || groups.length === 0) groups.push([]);
           groups[groups.length - 1].push(i);
         });
-        computed = paginateGroups(groups, heights, viewportH, 2);
+        computed = groups.map((group) => {
+          const headerIdx = blocks[group[0]].kind === "song-header" ? group[0] : null;
+          const body = headerIdx != null ? group.slice(1) : group;
+          return layoutSong(headerIdx, body, heights, viewportH);
+        });
       } else {
         const breakBefore = new Set(blocks.flatMap((b, i) => (b.kind === "song-header" ? [i] : [])));
-        computed = paginateBlocks(heights, viewportH, breakBefore);
+        computed = paginateBlocks(heights, viewportH, breakBefore).map((idxs) => ({
+          header: null,
+          cols: [idxs],
+          scale: 1,
+        }));
       }
-      setPageCols(computed);
+      setLayout(computed);
       setCurrentPage((prev) => Math.min(prev, Math.max(0, computed.length - 1)));
     };
     run();
-  }, [blocks, remeasureKey, fontScale, twoCol]);
+  }, [blocks, remeasureKey, fontScale, structureMode]);
 
   const changeFontScale = useCallback((delta: number) => {
     setFontScale((s) => {
@@ -575,7 +574,10 @@ export function PerformanceMode({
             <div
               key={block.uid}
               ref={(el) => { blockRefs.current[i] = el; }}
-              style={twoCol ? { width: "calc(50% - 0.5rem)" } : undefined}
+              // En ossature, les sections sont mesurées à la largeur d'une colonne
+              // (hauteur exacte si elles passent en 2 colonnes) ; l'en-tête, lui,
+              // occupe toujours la pleine largeur.
+              style={structureMode && block.kind !== "song-header" ? { width: "calc(50% - 0.5rem)" } : undefined}
             >
               <BlockRenderer
                 block={block}
@@ -590,27 +592,35 @@ export function PerformanceMode({
 
       {/* ── Content area ── */}
       <div className="absolute inset-0 overflow-hidden" style={{ zIndex: 1, zoom: fontScale, ...contentPadding }}>
-        {pages.length === 0 ? (
+        {pages.length === 0 || !layout[currentPage] ? (
           <div className="h-full flex items-center justify-center">
             <p className="text-sm text-muted-foreground animate-pulse">{t("performance.layout")}</p>
           </div>
-        ) : (
-          <div className={twoCol ? "flex items-start gap-x-4" : undefined}>
-            {(pageCols[currentPage] ?? [currentPageIndices]).map((colIdxs, ci) => (
-              <div key={ci} className={twoCol ? "flex-1 min-w-0" : undefined}>
-                {colIdxs.map((i) => (
-                  <BlockRenderer
-                    key={blocks[i].uid}
-                    block={blocks[i]}
-                    showChordsGlobal={showChords}
-                    showTransitions={showTransitions}
-                    hideLyrics={hideLyrics}
-                  />
+        ) : (() => {
+          const page = layout[currentPage];
+          const multiCol = page.cols.length > 1;
+          const renderBlock = (i: number) => (
+            <BlockRenderer
+              key={blocks[i].uid}
+              block={blocks[i]}
+              showChordsGlobal={showChords}
+              showTransitions={showTransitions}
+              hideLyrics={hideLyrics}
+            />
+          );
+          return (
+            <div style={page.scale < 1 ? { zoom: page.scale } : undefined}>
+              {page.header != null && renderBlock(page.header)}
+              <div className={multiCol ? "flex items-start gap-x-4" : undefined}>
+                {page.cols.map((colIdxs, ci) => (
+                  <div key={ci} className={multiCol ? "flex-1 min-w-0" : undefined}>
+                    {colIdxs.map(renderBlock)}
+                  </div>
                 ))}
               </div>
-            ))}
-          </div>
-        )}
+            </div>
+          );
+        })()}
       </div>
 
       {/* ── « Suivant : … » sur la dernière page d'un chant ── */}
