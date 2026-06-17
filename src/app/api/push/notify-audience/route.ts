@@ -4,6 +4,7 @@ import { sendPushToUids, sendPushToAll } from "@/lib/push/send";
 import { uidsForCategory, uidsForCategories } from "@/lib/push/recipients";
 import { ADMIN_EMAILS } from "@/lib/access";
 import { NOTIFY_ALL, isValidAudience } from "@/lib/push/audiences";
+import { createHash } from "node:crypto";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -51,6 +52,21 @@ export async function POST(req: NextRequest) {
     tag: `manual-${Date.now()}`,
   };
 
+  // Anti-doublon : rejette un envoi identique (même expéditeur + titre + message)
+  // répété dans la minute — évite double-clics et boucles. Marqué après succès.
+  const dupKey = createHash("sha1")
+    .update(`${uid}:${title.trim()}:${body.trim()}`)
+    .digest("hex")
+    .slice(0, 24);
+  const dupRef = adminDb().collection("notifLog").doc(`audience-${dupKey}`);
+  const dupSnap = await dupRef.get();
+  if (dupSnap.exists && Date.now() - ((dupSnap.data()?.at as number) ?? 0) < 60_000) {
+    return NextResponse.json(
+      { error: "Notification identique déjà envoyée il y a moins d'une minute." },
+      { status: 429 }
+    );
+  }
+
   // 3. Droits de l'expéditeur
   const isAdmin = !!email && ADMIN_EMAILS.includes(email);
   let rights: string[] = [];
@@ -73,6 +89,7 @@ export async function POST(req: NextRequest) {
       }
     }
     const result = await sendPushToUids(wanted, payload);
+    await dupRef.set({ at: Date.now(), uid });
     return NextResponse.json({ ok: true, ...result });
   }
 
@@ -87,5 +104,6 @@ export async function POST(req: NextRequest) {
     audience === NOTIFY_ALL
       ? await sendPushToAll(payload)
       : await sendPushToUids(await uidsForCategory(audience), payload);
+  await dupRef.set({ at: Date.now(), uid });
   return NextResponse.json({ ok: true, ...result });
 }

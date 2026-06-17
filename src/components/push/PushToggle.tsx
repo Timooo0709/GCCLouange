@@ -15,6 +15,14 @@ import {
   subscribeToPush,
   unsubscribeFromPush,
 } from "@/lib/push/client";
+import { getNotifPrefs, saveNotifPrefs } from "@/lib/firebase/notifPrefs";
+import {
+  NOTIF_TYPES,
+  NOTIF_TYPE_LABELS,
+  DEFAULT_NOTIF_PREFS,
+  type NotifPrefs,
+  type NotifType,
+} from "@/types/user";
 
 /** Réglage d'abonnement aux notifications push (rappels de service + setlist prête).
  *  Affiché sur la page profil. Gère la contrainte iOS (PWA installée requise). */
@@ -30,6 +38,9 @@ export function PushToggle() {
   const [enabled, setEnabled] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  // Préférences par type (chargées quand les notifs sont activées).
+  const [prefs, setPrefs] = useState<NotifPrefs | null>(null);
+  const [prefBusy, setPrefBusy] = useState<NotifType | null>(null);
 
   useEffect(() => {
     const ok = isPushSupported();
@@ -41,6 +52,15 @@ export function PushToggle() {
       isSubscribed().then(setEnabled).catch(() => {});
     }
   }, []);
+
+  // Charge les préférences par type une fois les notifs activées.
+  useEffect(() => {
+    if (enabled && user && prefs === null) {
+      getNotifPrefs(user.uid)
+        .then(setPrefs)
+        .catch(() => setPrefs({ ...DEFAULT_NOTIF_PREFS }));
+    }
+  }, [enabled, user, prefs]);
 
   if (!user) return null;
 
@@ -62,6 +82,20 @@ export function PushToggle() {
       }
     } finally {
       setBusy(false);
+    }
+  }
+
+  async function togglePref(type: NotifType, next: boolean) {
+    if (!user || !prefs) return;
+    const updated = { ...prefs, [type]: next };
+    setPrefs(updated); // optimiste
+    setPrefBusy(type);
+    try {
+      await saveNotifPrefs(user.uid, updated);
+    } catch {
+      setPrefs((p) => (p ? { ...p, [type]: !next } : p)); // rollback
+    } finally {
+      setPrefBusy(null);
     }
   }
 
@@ -90,6 +124,25 @@ export function PushToggle() {
             />
           )}
         </div>
+
+        {supported && !needsInstall && !denied && enabled && prefs && (
+          <div className="mt-4 pt-4 border-t border-border space-y-3">
+            <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+              Recevoir
+            </p>
+            {NOTIF_TYPES.map((type) => (
+              <div key={type} className="flex items-center justify-between gap-3">
+                <span className="text-sm text-foreground">{NOTIF_TYPE_LABELS[type]}</span>
+                <Switch
+                  checked={prefs[type]}
+                  disabled={prefBusy === type}
+                  onCheckedChange={(v) => togglePref(type, v)}
+                  aria-label={NOTIF_TYPE_LABELS[type]}
+                />
+              </div>
+            ))}
+          </div>
+        )}
 
         {!supported && (
           <p className="text-xs text-muted-foreground mt-3">

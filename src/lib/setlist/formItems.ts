@@ -138,7 +138,6 @@ export function buildFormItems(
       }
 
       const song = songsMap[item.songSlug];
-      console.log("items",items)
       if (!song) return [];
       return [toFormItem(song, item.keyOverride, item.notes, item.structureOverride, item.sectionNotes, item.sectionTransitions)];
     });

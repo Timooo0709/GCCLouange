@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ImagePlus, Link2, Pin, Trash2, X } from "lucide-react";
 import { ANNONCE_SECTIONS, type Annonce, type AnnonceLink, type AnnonceSection } from "@/types/annonce";
 import { compressImage } from "@/lib/utils/compressImage";
-import { categoryColor } from "@/lib/serviceColors";
+import { categoryColor, categoryLabel } from "@/lib/serviceColors";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -140,7 +140,7 @@ export function AnnonceForm({
             style={{ borderLeftWidth: 4, borderLeftColor: categoryColor(value.section) }}
           >
             {ANNONCE_SECTIONS.filter((s) => allowedSections.includes(s)).map((s) => (
-              <option key={s} value={s}>{s === "Culte Francophone" ? "Culte Franco" : s}</option>
+              <option key={s} value={s}>{categoryLabel(s)}</option>
             ))}
           </select>
         </div>

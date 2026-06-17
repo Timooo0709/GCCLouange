@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { adminDb, verifyIdToken } from "@/lib/push/admin";
 import { sendPushToUids } from "@/lib/push/send";
-import { uidsForCategory } from "@/lib/push/recipients";
+import { uidsForCategory, filterUidsByNotifPref } from "@/lib/push/recipients";
 import { ADMIN_EMAILS } from "@/lib/access";
 
 export const runtime = "nodejs";
@@ -59,8 +59,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Annonce déjà notifiée" }, { status: 429 });
   }
 
-  // 5. Destinataires : comptes servant dans la section, puis envoi
-  const uids = await uidsForCategory(section);
+  // 5. Destinataires : comptes servant dans la section (qui n'ont pas désactivé
+  //    les annonces), puis envoi
+  const uids = await filterUidsByNotifPref(await uidsForCategory(section), "annonces");
   const result = await sendPushToUids(uids, {
     title: `Annonce — ${section}`,
     body: a.title || "Nouvelle annonce",

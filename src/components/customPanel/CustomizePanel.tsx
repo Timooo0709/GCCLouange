@@ -17,7 +17,6 @@ import { X, GripVertical, Plus, Trash2, RotateCcw } from "lucide-react";
 import type { ChordProSection } from "@/types/chordPro";
 import { useTranslation } from "react-i18next";
 import { formatSectionName } from "@/lib/chordpro/parser";
-import { BugReportButton } from "@/components/layout/AlertButton";
 import type { SectionItem } from "@/types/song";
 
 // --- Types ---
@@ -35,12 +34,10 @@ export interface CustomizeState {
 interface CustomizePanelProps {
   originalKey: string;
   isZh: boolean;
-  hasJianpu: boolean;
   sections: ChordProSection[];
   state: CustomizeState;
   onChange: (s: CustomizeState) => void;
   onClose: () => void;
-  songTitle: string;
 }
 
 // --- Sortable row ---
@@ -113,7 +110,6 @@ export function CustomizePanel({
   state,
   onChange,
   onClose,
-  songTitle,
 }: CustomizePanelProps) {
   const { t } = useTranslation();
 

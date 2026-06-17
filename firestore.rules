@@ -39,19 +39,9 @@ service cloud.firestore {
     }
 
     // Musicien du service correspondant à la catégorie de la setlist.
-    // Format actuel : serviceRoles est une map catégorie → liste de rôles.
-    // Format hérité (avant le 14 juin 2026, profils pas encore réécrits) :
-    // roles/lieux/edd/eddRoles/groupe/groupeMusicien — lu en repli.
+    // serviceRoles : map catégorie → liste de rôles ({} par défaut si absent).
     function isMusicienOf(category) {
-      let p = profile();
-      return ('serviceRoles' in p)
-        ? ("musicien" in p.serviceRoles.get(category, []))
-        : (
-            ("musicien" in p.get('roles', []) && category in p.get('lieux', []))
-            || (p.get('edd', false) == true && "musicien" in p.get('eddRoles', [])
-                && category in ["中班", "大班", "高班"])
-            || (p.get('groupe', null) == category && p.get('groupeMusicien', false) == true)
-          );
+      return "musicien" in profile().get('serviceRoles', {}).get(category, []);
     }
 
     match /users/{uid} {
@@ -129,6 +119,13 @@ service cloud.firestore {
     // contourne ces règles — interdit à tout client.
     match /notifLog/{id} {
       allow read, write: if false;
+    }
+
+    // Préférences de notification par type (un doc par membre, id = uid) : chacun
+    // gère les siennes ; le serveur (Admin) les lit pour filtrer les envois auto.
+    match /notifPrefs/{uid} {
+      allow read: if signedIn();
+      allow write: if signedIn() && request.auth.uid == uid;
     }
 
     match /config/app {

@@ -8,11 +8,13 @@ import { getAnnonces, createAnnonce, updateAnnonce, deleteAnnonce, ANNONCES_LAST
 import { authHeader } from "@/lib/firebase/setlists";
 import { canPublishAnnonce, isAdminUser } from "@/lib/access";
 import { ANNONCE_SECTIONS, type Annonce, type AnnonceSection } from "@/types/annonce";
-import { categoryColor } from "@/lib/serviceColors";
+import { categoryColor, categoryLabel } from "@/lib/serviceColors";
 import { AnnonceForm, annonceToForm, type AnnonceFormValue } from "@/components/annonces/AnnonceForm";
 
+// Libellé de section pour les annonces : abréviation commune + on retire le
+// préfixe « Groupe » (contexte annonces où la catégorie suffit).
 function sectionLabel(s: string): string {
-  return s === "Culte Francophone" ? "Culte Franco" : s.replace("Groupe ", "");
+  return categoryLabel(s).replace("Groupe ", "");
 }
 
 function formatCreatedAt(a: Annonce): string {

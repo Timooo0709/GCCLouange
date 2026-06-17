@@ -15,6 +15,7 @@ import {
   authHeader,
   createSetlist,
   updateSetlist,
+  deleteSetlist,
 } from "@/lib/firebase/setlists";
 import { useProfile } from "@/lib/firebase/users";
 import { creatableCategories, isAdminUser } from "@/lib/access";
@@ -111,6 +112,20 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
   const [lastSaved, setLastSaved] = useState<Date | null>(null);
   const autoSaveIdRef = useRef<string | null>(null);
   autoSaveIdRef.current = autoSaveId;
+  // Id réellement validé (clic « Créer ») — distingue un brouillon publié d'un abandonné.
+  const committedIdRef = useRef<string | null>(null);
+
+  // Nettoyage au démontage : supprime le brouillon d'autosave s'il a été abandonné
+  // (l'utilisateur quitte sans valider) ou si « Créer » a publié un autre document
+  // (course). Évite l'accumulation de drafts orphelins invisibles en base.
+  useEffect(() => {
+    return () => {
+      const draftId = autoSaveIdRef.current;
+      if (!isEdit && draftId && draftId !== committedIdRef.current) {
+        void deleteSetlist(draftId);
+      }
+    };
+  }, [isEdit]);
 
   const loginFrom = isEdit ? `/setlists/${setlistId}/edit` : "/setlists/new";
 
@@ -350,9 +365,11 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
           savedId = await createSetlist(payload);
         }
       }
+      committedIdRef.current = savedId;
       // Prévient automatiquement l'équipe si la setlist est prête (≥ 4 chants),
-      // une seule fois. Ne bloque pas la navigation.
-      void notifySetlistReady(savedId);
+      // une seule fois. Ne bloque pas la navigation. Jamais pour une setlist
+      // privée (brouillon personnel → ne doit pas notifier l'équipe planifiée).
+      if (!isPrivate) void notifySetlistReady(savedId);
       router.push(`/setlists/${savedId}`);
     } catch (err) {
       setError(

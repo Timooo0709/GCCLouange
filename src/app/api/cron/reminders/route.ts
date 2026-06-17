@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { adminDb } from "@/lib/push/admin";
 import { sendPushToUids } from "@/lib/push/send";
-import { loadPlanningNameIndex, resolveNamesToUids } from "@/lib/push/recipients";
+import { loadPlanningNameIndex, resolveNamesToUids, filterUidsByNotifPref } from "@/lib/push/recipients";
 import {
   loadPlanningData,
   servantsForDate,
@@ -24,6 +24,8 @@ const REMINDERS: { tag: "J7" | "J3" | "J1"; days: number }[] = [
   { tag: "J1", days: 1 },
 ];
 
+// Date ISO à J+`days`. Calculée en UTC : sûr car le cron tourne à 08:00 UTC
+// (≥ 09:00 à Paris), heure à laquelle la date UTC est déjà la date du jour à Paris.
 function isoInDays(days: number): string {
   return new Date(Date.now() + days * 86_400_000).toISOString().slice(0, 10);
 }
@@ -90,7 +92,8 @@ export async function GET(req: NextRequest) {
     // ── Rappels de service (tous services) ──
     const names = [...new Set(servantsForDate(planning, date).map((s) => s.name))];
     const { uids } = resolveNamesToUids(names, index);
-    const fresh = await freshUids(db, uids, `rappel-${tag}-${date}`);
+    const prefUids = await filterUidsByNotifPref(uids, "reminders");
+    const fresh = await freshUids(db, prefUids, `rappel-${tag}-${date}`);
     if (fresh.length) {
       await sendPushToUids(fresh, {
         title: "Rappel de service",
@@ -108,7 +111,8 @@ export async function GET(req: NextRequest) {
         if (!rehByUid.has(u)) rehByUid.set(u, { time: r.time, location: r.location });
       }
     }
-    const rehFresh = await freshUids(db, [...rehByUid.keys()], `repet-${tag}-${date}`);
+    const rehPrefUids = await filterUidsByNotifPref([...rehByUid.keys()], "reminders");
+    const rehFresh = await freshUids(db, rehPrefUids, `repet-${tag}-${date}`);
     if (rehFresh.length) {
       await Promise.all(
         rehFresh.map((u) => {

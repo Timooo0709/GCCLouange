@@ -1,14 +1,11 @@
 import { auth } from "@/lib/firebase/config";
+import { SERVICE_LIEUX } from "@/types/user";
 import type { SetlistItem } from "@/types/setList";
 
 // ─── Categories ───────────────────────────────────────────────────────────────
 
-export const RESTRICTED_CATEGORIES = [
-  "Culte Francophone",
-  "Intergroupe",
-  "Interfranco",
-  "Campus",
-] as const;
+// Catégories à accès restreint = les lieux de service (source unique : SERVICE_LIEUX).
+export const RESTRICTED_CATEGORIES = SERVICE_LIEUX;
 
 export const FREE_CATEGORIES = [
   "Groupe Paix",

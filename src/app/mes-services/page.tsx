@@ -122,7 +122,13 @@ export default function MesServicesPage() {
     return undefined;
   };
 
-  const todayStr = useMemo(() => new Date().toISOString().split("T")[0], []);
+  // Date du jour en heure LOCALE (pas UTC) — sinon le partage à-venir/passés et le
+  // badge « Aujourd'hui » sont décalés d'un jour quelques heures autour de minuit.
+  const todayStr = useMemo(() => {
+    const d = new Date();
+    const p = (n: number) => String(n).padStart(2, "0");
+    return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+  }, []);
 
   const entries = useMemo(() => {
     if (!data || !profile?.planningName) return [];

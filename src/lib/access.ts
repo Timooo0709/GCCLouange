@@ -3,7 +3,6 @@ import type { FSSetlist } from "@/lib/firebase/setlists";
 import {
   GROUPES,
   type AccessLevel,
-  type LegacyServiceProfile,
   type ServiceRole,
   type UserProfile,
 } from "@/types/user";
@@ -57,19 +56,6 @@ export function categoryLevel(category: string, roles: ServiceRole[]): AccessLev
   if (roles.includes("musicien")) return "edit";
   if (roles.includes("chanteur") || roles.includes("presidence")) return "create";
   return isGroupeOrEdd(category) ? "create" : "view";
-}
-
-/** Migration : ancien profil (roles/lieux/edd/eddRoles/groupe/groupeMusicien) →
- *  `serviceRoles` (rôles par catégorie). Utilisé en lecture pour les documents pas
- *  encore réécrits (cf. fromFsProfile, notify-setlist). Les anciens `roles` étaient
- *  globaux → reportés sur chaque lieu de service. */
-export function legacyServiceRoles(p: LegacyServiceProfile): Record<string, ServiceRole[]> {
-  const sr: Record<string, ServiceRole[]> = {};
-  const roles = (p.roles ?? []) as ServiceRole[];
-  for (const lieu of p.lieux ?? []) sr[lieu] = [...roles];
-  if (p.edd) for (const cls of EDD_CLASSES) sr[cls] = [...((p.eddRoles ?? []) as ServiceRole[])];
-  if (p.groupe) sr[p.groupe] = p.groupeMusicien ? ["musicien"] : [];
-  return sr;
 }
 
 /** Catégories visibles (la personne y sert, tout niveau) : la régie voit ses cultes en lecture seule. */

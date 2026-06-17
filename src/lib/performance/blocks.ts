@@ -80,8 +80,8 @@ export function buildPerformanceBlocks(
     if (item.type === "fusion" && item.fusionSongs) {
       const asts: Record<string, ChordProAST> = {};
       for (const fs of item.fusionSongs) {
-        const c = contents[fs.songSlug];
-        if (c) asts[fs.songSlug] = getTransposed(c, fs.keyOverride);
+        const content = contents[fs.songSlug];
+        if (content) asts[fs.songSlug] = getTransposed(content, fs.keyOverride);
       }
 
       if (item.mixedStructure?.length) {
@@ -217,7 +217,9 @@ export function computePageKey(
     .filter((b): b is SectionBlock => b.kind === "section")
     .map((b) => b.section.uid);
   let h = 0;
-  const str = uids.join(",");
+  // Repli sur les indices quand la page n'a aucune section (page 100 % transitions) :
+  // évite que toutes ces pages partagent la clé "0" (annotations mélangées).
+  const str = uids.length ? uids.join(",") : `idx:${indices.join(",")}`;
   for (let i = 0; i < str.length; i++) {
     h = (Math.imul(31, h) + str.charCodeAt(i)) | 0;
   }

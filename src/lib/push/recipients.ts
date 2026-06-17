@@ -3,8 +3,7 @@
 
 import { adminDb } from "./admin";
 import { normalizeName } from "@/lib/planning/names";
-import { legacyServiceRoles } from "@/lib/access";
-import type { LegacyServiceProfile, ServiceRole } from "@/types/user";
+import type { ServiceRole, NotifType } from "@/types/user";
 
 /** Index normalize(planningName) → uid(s). Plusieurs comptes peuvent partager
  *  une même graphie (rare) : on garde une liste. Lit tous les profils (Admin). */
@@ -39,17 +38,13 @@ export function resolveNamesToUids(
   return { uids: [...uids], unresolved };
 }
 
-/** uid des comptes qui servent dans `category` (clé de serviceRoles, avec repli
- *  legacy pour les profils pas encore réécrits). Cible des annonces poussées par
- *  section. Serveur uniquement (Admin, lit tous les profils). */
+/** uid des comptes qui servent dans `category` (clé de serviceRoles). Cible des
+ *  annonces poussées par section. Serveur uniquement (Admin, lit tous les profils). */
 export async function uidsForCategory(category: string): Promise<string[]> {
   const snap = await adminDb().collection("users").get();
   const out: string[] = [];
   for (const doc of snap.docs) {
-    const d = doc.data() as LegacyServiceProfile & {
-      serviceRoles?: Record<string, ServiceRole[]>;
-    };
-    const sr = d.serviceRoles ?? legacyServiceRoles(d);
+    const sr = (doc.data().serviceRoles ?? {}) as Record<string, ServiceRole[]>;
     if (category in sr) out.push(doc.id);
   }
   return out;
@@ -65,11 +60,20 @@ export async function uidsForCategories(categories: string[]): Promise<Set<strin
   if (!wanted.size) return out;
   const snap = await adminDb().collection("users").get();
   for (const doc of snap.docs) {
-    const d = doc.data() as LegacyServiceProfile & {
-      serviceRoles?: Record<string, ServiceRole[]>;
-    };
-    const sr = d.serviceRoles ?? legacyServiceRoles(d);
+    const sr = (doc.data().serviceRoles ?? {}) as Record<string, ServiceRole[]>;
     if (Object.keys(sr).some((c) => wanted.has(c))) out.add(doc.id);
   }
   return out;
+}
+
+/** Retire les uid ayant désactivé ce type de notification (doc notifPrefs/{uid}).
+ *  Absence de doc ou de champ = activé (défaut). Sert à respecter les préférences
+ *  sur les envois AUTOMATIQUES (rappels, setlist prête, annonce) — pas les envois
+ *  manuels. Serveur uniquement (Admin). */
+export async function filterUidsByNotifPref(uids: string[], type: NotifType): Promise<string[]> {
+  if (!uids.length) return [];
+  const db = adminDb();
+  const snaps = await db.getAll(...uids.map((u) => db.collection("notifPrefs").doc(u)));
+  // On garde tout uid qui n'a pas EXPLICITEMENT mis ce type à false.
+  return snaps.filter((s) => !(s.exists && s.data()?.[type] === false)).map((s) => s.id);
 }

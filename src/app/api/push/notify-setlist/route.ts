@@ -1,10 +1,10 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { adminDb, verifyIdToken } from "@/lib/push/admin";
 import { sendPushToUids } from "@/lib/push/send";
-import { loadPlanningNameIndex, resolveNamesToUids } from "@/lib/push/recipients";
+import { loadPlanningNameIndex, resolveNamesToUids, filterUidsByNotifPref } from "@/lib/push/recipients";
 import { loadPlanningData, servantsForDate, normalizeName } from "@/lib/planning/names";
-import { ADMIN_EMAILS, categoryLevel, legacyServiceRoles } from "@/lib/access";
-import type { LegacyServiceProfile, ServiceRole } from "@/types/user";
+import { ADMIN_EMAILS, categoryLevel } from "@/lib/access";
+import type { ServiceRole } from "@/types/user";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -57,11 +57,18 @@ export async function POST(req: NextRequest) {
     date?: string;
     moment?: "matin" | "soir";
     ownerId?: string;
+    isPrivate?: boolean;
     items?: { type?: string }[];
   };
 
   if (!sl.category) {
     return NextResponse.json({ error: "Catégorie de setlist manquante" }, { status: 400 });
+  }
+
+  // Une setlist privée (brouillon personnel) ne notifie jamais l'équipe planifiée.
+  if (sl.isPrivate) {
+    if (auto) return NextResponse.json({ ok: true, skipped: "private" });
+    return NextResponse.json({ error: "Cette setlist est privée." }, { status: 400 });
   }
 
   // 3. Au moins 4 vrais chants (les transitions ne comptent pas)
@@ -81,9 +88,9 @@ export async function POST(req: NextRequest) {
   let isPerformer = false;
   if (!isAdmin && !isOwner) {
     const me = (await db.collection("users").doc(uid).get()).data() as
-      | (LegacyServiceProfile & { serviceRoles?: Record<string, ServiceRole[]> })
+      | { serviceRoles?: Record<string, ServiceRole[]> }
       | undefined;
-    const serviceRoles = me?.serviceRoles ?? (me ? legacyServiceRoles(me) : {});
+    const serviceRoles = me?.serviceRoles ?? {};
     const rolesAtCat = serviceRoles[sl.category];
     // Exécutant = niveau create/edit sur la catégorie (la régie seule en lecture est exclue).
     isPerformer = !!rolesAtCat && categoryLevel(sl.category, rolesAtCat) !== "view";
@@ -130,9 +137,10 @@ export async function POST(req: NextRequest) {
   if (unresolved.length) {
     console.warn(`[notify-setlist] noms non appariés (${dateISO}):`, unresolved);
   }
+  const prefUids = await filterUidsByNotifPref(uids, "setlists");
 
   // 7. Envoi
-  const result = await sendPushToUids(uids, {
+  const result = await sendPushToUids(prefUids, {
     title: `Setlist prête — ${sl.title || sl.category}`,
     body: `${sl.leader || "Le responsable"} a préparé la setlist (${songCount} chants).`,
     url: `/setlists/${setlistId}`,

@@ -59,12 +59,24 @@ export function parseDate(s: string): string | null {
   return null
 }
 
+// Cache mémoire court des CSV récupérés. Les pages planning sont des composants
+// client : sans ça, chaque montage / navigation entre onglets re-télécharge les
+// ~10 feuilles. Vidé au rechargement complet de la page (et par instance serveur).
+const SHEET_TTL_MS = 5 * 60_000
+const sheetCache = new Map<string, { at: number; rows: string[][] }>()
+
 async function fetchSheet(sheet: string): Promise<string[][]> {
+  const hit = sheetCache.get(sheet)
+  if (hit && Date.now() - hit.at < SHEET_TTL_MS) return hit.rows
   try {
     const res = await fetch(csvUrl(sheet), { cache: "no-store" })
-    return parseCSV(await res.text())
+    const rows = parseCSV(await res.text())
+    sheetCache.set(sheet, { at: Date.now(), rows })
+    return rows
   } catch {
-    return []
+    // Échec réseau : on réutilise le dernier cache si on en a un, sinon vide
+    // (loadPlanningData basculera alors sur les données de secours statiques).
+    return hit?.rows ?? []
   }
 }
 
@@ -174,8 +186,7 @@ export async function fetchEDD(): Promise<EddDataStructure> {
 
 export async function fetchCampus(): Promise<{ louange: CampusSeance[]; entrainement: CampusSeance[] }> {
   const rows = await fetchSheet("Campus_Louange")
-  const louange: CampusSeance[] = []
-  const entrainement: CampusSeance[] = []
+  const seances: { key: string; obj: CampusSeance }[] = []
   for (const r of rows) {
     if (!r[0] || !r[1]) continue
     if (r[1] !== "Matin" && r[1] !== "Soir") continue
@@ -198,10 +209,14 @@ export async function fetchCampus(): Promise<{ louange: CampusSeance[]; entraine
       entLieu = rest.join(" ").trim()
     }
     const obj: CampusSeance = { d: `${label} ${r[1]}`, pres, ch, mu, rg, ent, entTime, entLieu, chants: [r[10]||"",r[11]||"",r[12]||"",r[13]||""] }
-    louange.push(obj)
-    if (ent) entrainement.push(obj)
+    // Tri chronologique : date ISO de la séance + matin avant soir. La chaîne
+    // d'affichage "JJ/MM" ne se trie pas correctement (ex. "10/6" avant "2/6").
+    const key = `${parseDate(r[0]) ?? ""} ${r[1] === "Soir" ? "1" : "0"}`
+    seances.push({ key, obj })
   }
-  louange.sort((a,b) => a.d < b.d ? -1 : 1)
-  entrainement.sort((a,b) => a.d < b.d ? -1 : 1)
-  return { louange, entrainement }
+  seances.sort((a, b) => (a.key < b.key ? -1 : a.key > b.key ? 1 : 0))
+  return {
+    louange: seances.map((s) => s.obj),
+    entrainement: seances.filter((s) => s.obj.ent).map((s) => s.obj),
+  }
 }

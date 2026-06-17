@@ -61,7 +61,6 @@ interface SongDetailClientProps {
       } catch { /* stockage indisponible */ }
     }, [song.slug]);
 
-    const hasJianpu = song.hasJianpu;
     const [customize, setCustomize] = useState<CustomizeState>({
       semitones: 0,
       currentKey: originalKey,
@@ -378,12 +377,10 @@ interface SongDetailClientProps {
           <CustomizePanel
             originalKey={originalKey}
             isZh={isZh}
-            hasJianpu={hasJianpu}
             sections={ast.sections}
             state={customize}
             onChange={setCustomize}
             onClose={() => setShowPanel(false)}
-            songTitle={song.title}
           />
         )}
         

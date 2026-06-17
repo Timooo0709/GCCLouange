@@ -16,7 +16,7 @@ import { SERVICE_ROLE_LABELS, SERVICE_LIEUX, GROUPES, type ServiceRole, type Use
 import { EDD_CLASSES } from "@/lib/planning/utils";
 import { ANNONCE_SECTIONS } from "@/types/annonce";
 import { NOTIFY_ALL, NOTIFY_GROUPS, audienceLabel } from "@/lib/push/audiences";
-import { categoryColor } from "@/lib/serviceColors";
+import { categoryColor, categoryLabel } from "@/lib/serviceColors";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -28,11 +28,6 @@ function profileToForm(p: UserProfile): ProfileFormValue {
     planningName: p.planningName,
     serviceRoles: p.serviceRoles,
   };
-}
-
-/** Libellé court d'une catégorie pour les pastilles. */
-function catLabel(cat: string): string {
-  return cat === "Culte Francophone" ? "Culte Franco" : cat === "Interfranco" ? "Intergroupe fr." : cat;
 }
 
 function normalize(s: string): string {
@@ -109,6 +104,16 @@ export default function AdminPage() {
     const presidences = profiles.filter((p) => allRoles(p).includes("presidence")).length;
     return { musiciens, chanteurs, presidences };
   }, [profiles]);
+
+  // Noms présents dans les plannings mais liés à aucun compte (planningName) :
+  // ces personnes échappent aux rappels et aux notifs « setlist prête » (ciblage
+  // par nom de planning, cf. src/lib/push/recipients.ts). Visibilité pour l'admin.
+  const unlinkedNames = useMemo(() => {
+    const linked = new Set(
+      profiles.map((p) => normalize(p.planningName.trim())).filter(Boolean)
+    );
+    return planningNames.filter((n) => !linked.has(normalize(n.trim())));
+  }, [planningNames, profiles]);
 
   if (loading) {
     return (
@@ -307,7 +312,7 @@ export default function AdminPage() {
                           {Object.entries(p.serviceRoles).map(([cat, roles]) => (
                             <Pill
                               key={cat}
-                              label={`${catLabel(cat)}${
+                              label={`${categoryLabel(cat)}${
                                 roles.length ? " · " + roles.map((r) => SERVICE_ROLE_LABELS[r]).join("/") : ""
                               }`}
                               color={categoryColor(cat)}
@@ -355,7 +360,7 @@ export default function AdminPage() {
                                   }`}
                                   style={checked ? { background: `${color}15`, borderColor: color, color } : undefined}
                                 >
-                                  {checked ? "✓ " : ""}{s === "Culte Francophone" ? "Culte Franco" : s}
+                                  {checked ? "✓ " : ""}{categoryLabel(s)}
                                 </button>
                               );
                             })}
@@ -413,6 +418,35 @@ export default function AdminPage() {
                   </div>
                 );
               })}
+            </div>
+          )}
+        </div>
+
+        {/* ── Noms du planning sans compte ── */}
+        <div className="rounded-xl border border-border bg-card p-5 space-y-3">
+          <h2 className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+            Planning sans compte ({unlinkedNames.length})
+          </h2>
+          <p className="text-xs text-muted-foreground">
+            Ces noms apparaissent dans les plannings mais ne sont liés à aucun compte —
+            ces personnes ne reçoivent ni rappels ni notification « setlist prête ».
+          </p>
+          {planningData == null ? (
+            <p className="text-sm text-muted-foreground">Chargement…</p>
+          ) : unlinkedNames.length === 0 ? (
+            <p className="text-sm text-foreground">
+              ✅ Tous les noms du planning sont liés à un compte.
+            </p>
+          ) : (
+            <div className="flex flex-wrap gap-1.5">
+              {unlinkedNames.map((n) => (
+                <span
+                  key={n}
+                  className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300"
+                >
+                  {n}
+                </span>
+              ))}
             </div>
           )}
         </div>

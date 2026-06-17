@@ -7,6 +7,11 @@ import { visibleCategories, isAdminUser } from "@/lib/access";
 // Notifications in-app par polling REST (jamais de listener WebChannel).
 // Sources : annonces + setlists des catégories du profil. Le « vu » est
 // par appareil (localStorage), comme le badge annonces historique.
+//
+// N.B. ciblage volontairement différent du push : la cloche montre tout ce que
+// le membre PEUT voir (catégories de son profil), tandis que le push « setlist
+// prête » ne vise QUE l'équipe planifiée ce jour-là (résolue par nom de
+// planning, cf. notify-setlist). Deux populations distinctes, par conception.
 
 export const NOTIFICATIONS_LAST_SEEN_KEY = "notificationsLastSeen";
 
@@ -48,6 +53,8 @@ export function useNotifications() {
 
       for (const a of annonces) {
         if (a.authorId === user.uid) continue; // pas de notification pour soi-même
+        // Comme les setlists : seulement les sections où le membre sert (admins : tout).
+        if (!admin && !cats.includes(a.section)) continue;
         const ts = a.createdAt?.getTime() ?? 0;
         if (!ts) continue;
         list.push({

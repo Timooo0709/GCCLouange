@@ -69,7 +69,7 @@ export const ALL_KEYS = [
 ];
 
 /**
- * Compute semitone offset to go from `fromKey` to `toKey` (shortest path, -6..+5).
+ * Compute semitone offset to go from `fromKey` to `toKey` (shortest path, -5..+6).
  */
 export function semitonesTo(fromKey: string, toKey: string): number {
   const from = noteToIndex(fromKey);

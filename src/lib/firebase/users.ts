@@ -12,8 +12,7 @@ import {
   type RawDoc,
 } from "./setlists";
 import { useAuth } from "./auth";
-import { legacyServiceRoles } from "@/lib/access";
-import type { LegacyServiceProfile, ServiceRole, UserProfile } from "@/types/user";
+import type { ServiceRole, UserProfile } from "@/types/user";
 
 export async function signUp(email: string, password: string): Promise<User> {
   const cred = await createUserWithEmailAndPassword(auth, email, password);
@@ -33,12 +32,7 @@ function fromFsProfile(raw: RawDoc): UserProfile {
     firstName: (data.firstName as string) ?? "",
     lastName: (data.lastName as string) ?? "",
     planningName: (data.planningName as string) ?? "",
-    // Migration douce : on lit `serviceRoles` s'il existe, sinon on le dérive des
-    // anciens champs (roles/lieux/edd/…) — les profils se réécrivent au format
-    // `serviceRoles` à la prochaine sauvegarde (PATCH sans updateMask = remplacement).
-    serviceRoles:
-      (data.serviceRoles as Record<string, ServiceRole[]>) ??
-      legacyServiceRoles(data as LegacyServiceProfile),
+    serviceRoles: (data.serviceRoles as Record<string, ServiceRole[]>) ?? {},
     annonces: (data.annonces as string[]) ?? [],
     notify: (data.notify as string[]) ?? [],
   };

@@ -49,15 +49,23 @@ export interface UserProfile {
   notify: string[];
 }
 
-/** Ancien format de profil (champs roles/lieux/edd/eddRoles/groupe/groupeMusicien,
- *  avant le 14 juin 2026). Encore lu pour les documents pas réécrits — converti à la
- *  volée en `serviceRoles` via legacyServiceRoles() (src/lib/access.ts).
- *  N.B. `notify` n'existe pas dans l'ancien format → simplement absent (= []). */
-export interface LegacyServiceProfile {
-  roles?: string[];
-  lieux?: string[];
-  edd?: boolean;
-  eddRoles?: string[];
-  groupe?: string | null;
-  groupeMusicien?: boolean;
-}
+// ─── Préférences de notification push (par type) ─────────────────────────────
+// Stockées dans un doc auto-géré notifPrefs/{uid} (le profil est verrouillé en
+// édition). Le serveur filtre les envois automatiques selon ces préférences ;
+// absence de doc/champ = activé. Les envois manuels (notifier/broadcast) ne sont
+// PAS filtrés. Cf. src/lib/firebase/notifPrefs.ts + src/lib/push/recipients.ts.
+export const NOTIF_TYPES = ["reminders", "setlists", "annonces"] as const;
+export type NotifType = (typeof NOTIF_TYPES)[number];
+export type NotifPrefs = Record<NotifType, boolean>;
+
+export const DEFAULT_NOTIF_PREFS: NotifPrefs = {
+  reminders: true,
+  setlists: true,
+  annonces: true,
+};
+
+export const NOTIF_TYPE_LABELS: Record<NotifType, string> = {
+  reminders: "Rappels de service",
+  setlists: "Setlist prête",
+  annonces: "Annonces",
+};

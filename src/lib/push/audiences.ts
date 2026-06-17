@@ -4,6 +4,7 @@
 
 import { SERVICE_LIEUX, GROUPES } from "@/types/user";
 import { EDD_CLASSES } from "@/lib/planning/utils";
+import { categoryLabel } from "@/lib/serviceColors";
 
 /** Sentinelle « tout le monde » (tous les abonnés). */
 export const NOTIFY_ALL = "*";
@@ -23,10 +24,7 @@ export function isValidAudience(a: string): boolean {
   return a === NOTIFY_ALL || NOTIFY_CATEGORIES.includes(a);
 }
 
-/** Libellé lisible d'une audience. */
+/** Libellé lisible d'une audience (« tout le monde » ou une catégorie). */
 export function audienceLabel(a: string): string {
-  if (a === NOTIFY_ALL) return "Tout le monde";
-  if (a === "Culte Francophone") return "Culte Franco";
-  if (a === "Interfranco") return "Intergroupe fr.";
-  return a;
+  return a === NOTIFY_ALL ? "Tout le monde" : categoryLabel(a);
 }
