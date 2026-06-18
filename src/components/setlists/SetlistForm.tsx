@@ -19,7 +19,7 @@ import {
 } from "@/lib/firebase/setlists";
 import { useProfile } from "@/lib/firebase/users";
 import { creatableCategories, isAdminUser } from "@/lib/access";
-import { loadPlanningData, setlistSeances, type PlanningData, type SetlistSeance } from "@/lib/planning/names";
+import { loadPlanningData, setlistSeances, categoryMembers, type PlanningData, type SetlistSeance } from "@/lib/planning/names";
 import { useTranslation } from "react-i18next";
 import { DndContext, closestCenter, DragEndEvent } from "@dnd-kit/core";
 import {
@@ -93,10 +93,11 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
   const [moment, setMoment] = useState<"matin" | "soir" | undefined>(initial?.moment);
   const ownerId = initial?.ownerId ?? null;
 
-  // ── Sélecteur de séance (planning) ──────────────────────
+  // ── Sélecteurs planning : responsable (membres) + date (séances) ─────────
   const [planning, setPlanning] = useState<PlanningData | null>(null);
-  const [seanceKey, setSeanceKey] = useState("");
-  const [manual, setManual] = useState(false);
+  const [dateKey, setDateKey] = useState("");            // "date|moment" de la séance choisie
+  const [dateOther, setDateOther] = useState(false);      // date hors planning (saisie libre)
+  const [leaderOther, setLeaderOther] = useState(false);  // responsable hors liste (saisie libre)
 
   // ── UI state ────────────────────────────────────────────
   const [query, setQuery] = useState("");
@@ -140,35 +141,57 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
       .map((s) => ({ ...s, key: `${s.date}|${s.moment ?? ""}` }));
   }, [planning, category]);
 
-  // Édition : retrouve la séance liée à la setlist ; sinon mode « hors planning ».
+  // Membres de la catégorie (noms seuls) — alimente le champ Responsable.
+  const categoryMemberList = useMemo<string[]>(
+    () => (planning && category ? categoryMembers(planning, category) : []),
+    [planning, category]
+  );
+
+  // Libellé date seule d'une séance (sans nom) : "12/04" ou "28/07 · Soir" (Campus).
+  const seanceDateLabel = (s: SetlistSeance & { key: string }) => {
+    const [, mm, dd] = s.date.split("-");
+    const mom = s.moment ? (s.moment === "soir" ? " · Soir" : " · Matin") : "";
+    return `${dd}/${mm}${mom}`;
+  };
+
+  // Édition : pré-sélectionne la date liée (sinon « autre date ») et marque le
+  // responsable comme « autre » s'il n'est pas dans la liste des membres.
   const initApplied = useRef(false);
   useEffect(() => {
     if (!isEdit || !planning || initApplied.current) return;
     initApplied.current = true;
     const wantKey = `${initial?.date ?? ""}|${initial?.moment ?? ""}`;
-    if (categorySeances.some((s) => s.key === wantKey)) setSeanceKey(wantKey);
-    else setManual(true);
-  }, [isEdit, planning, categorySeances, initial]);
+    if (categorySeances.some((s) => s.key === wantKey)) setDateKey(wantKey);
+    else setDateOther(true);
+    if (initial?.leader && !categoryMemberList.includes(initial.leader)) setLeaderOther(true);
+  }, [isEdit, planning, categorySeances, categoryMemberList, initial]);
 
   const onCategoryChange = (c: string) => {
     setCategory(c);
-    setSeanceKey("");
-    setManual(false);
+    setDateKey("");
+    setDateOther(false);
+    setLeaderOther(false);
     setMoment(undefined);
     setLeader("");
   };
 
-  const onSeanceChange = (v: string) => {
-    if (v === "__manual__") { setManual(true); setSeanceKey(""); setMoment(undefined); return; }
-    if (v === "") { setManual(false); setSeanceKey(""); setLeader(""); setMoment(undefined); return; }
+  // Responsable : choix d'un membre (nom) ou « Autre » (saisie libre).
+  const onLeaderSelect = (v: string) => {
+    if (v === "__other__") { setLeaderOther(true); setLeader(""); return; }
+    setLeaderOther(false);
+    setLeader(v);
+  };
+
+  // Date : choix d'une séance (remplit date + moment + titre auto) ou « Autre date ».
+  const onDateSelect = (v: string) => {
+    if (v === "__other__") { setDateOther(true); setDateKey(""); setMoment(undefined); return; }
+    if (v === "") { setDateOther(false); setDateKey(""); setMoment(undefined); return; }
     const s = categorySeances.find((x) => x.key === v);
     if (!s) return;
-    setManual(false);
-    setSeanceKey(v);
+    setDateOther(false);
+    setDateKey(v);
     setDate(s.date);
-    setLeader(s.leader);
     setMoment(s.moment);
-    // Titre auto (éditable) si vide
     if (!title.trim()) {
       const catLabel = t("categories." + s.category, { defaultValue: s.category });
       const [, mm, dd] = s.date.split("-");
@@ -336,7 +359,7 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
     if (!date) { setError(t("setlists.form.dateRequired")); return; }
     if (!leader.trim()) { setError(t("setlists.form.leaderRequired")); return; }
     if (!category) { setError(t("setlists.form.categoryRequired")); return; }
-    if (!manual && !seanceKey) { setError(t("setlists.form.seanceRequired")); return; }
+    if (!dateKey && !dateOther) { setError(t("setlists.form.dateRequired")); return; }
     if (!user) {
       router.push(`/login?from=${loginFrom}`);
       return;
@@ -379,7 +402,7 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
       );
       setSaving(false);
     }
-  }, [title, leader, category, date, moment, notes, isPrivate, items, user, router, t, isEdit, setlistId, ownerId, loginFrom, manual, seanceKey]);
+  }, [title, leader, category, date, moment, notes, isPrivate, items, user, router, t, isEdit, setlistId, ownerId, loginFrom, dateKey, dateOther]);
 
   const busy = saving;
   const needsAuth = !user && !authLoading;
@@ -500,51 +523,76 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
             </div>
           </div>
 
-          {/* Séance (dépend de la catégorie) — remplit date + président + moment */}
+          {/* Responsable (membres du groupe) + Date de la séance. La date reste
+              enregistrée (notifs « setlist prête », Mes Services) mais le menu
+              n'affiche que des noms — pas de date mêlée aux noms. */}
           {category && (
-            <div>
-              <label className="block text-xs font-medium text-muted-foreground mb-1.5">
-                {t("setlists.form.seanceLabel")} <span className="text-destructive">*</span>
-              </label>
-              <select
-                value={manual ? "__manual__" : seanceKey}
-                onChange={(e) => onSeanceChange(e.target.value)}
-                className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"
-              >
-                <option value="">{t("setlists.form.seancePlaceholder")}</option>
-                {categorySeances.map((s) => (
-                  <option key={s.key} value={s.key}>{s.label}</option>
-                ))}
-                <option value="__manual__">{t("setlists.form.seanceManual")}</option>
-              </select>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {/* Responsable : liste de membres (noms seuls) */}
+              <div>
+                <label className="block text-xs font-medium text-muted-foreground mb-1.5">
+                  {t("setlists.form.responsableLabel")} <span className="text-destructive">*</span>
+                </label>
+                <select
+                  value={leaderOther ? "__other__" : leader}
+                  onChange={(e) => onLeaderSelect(e.target.value)}
+                  className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"
+                >
+                  <option value="">{t("setlists.form.responsablePlaceholder")}</option>
+                  {categoryMemberList.map((m) => (
+                    <option key={m} value={m}>{m}</option>
+                  ))}
+                  <option value="__other__">{t("setlists.form.responsableOther")}</option>
+                </select>
+                {leaderOther && (
+                  <input
+                    type="text"
+                    value={leader}
+                    onChange={(e) => setLeader(e.target.value)}
+                    placeholder={t("setlists.form.leaderPlaceholder")}
+                    className="mt-2 w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"
+                  />
+                )}
+              </div>
 
-              {manual && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
-                  <div>
-                    <label className="block text-xs font-medium text-muted-foreground mb-1.5">
-                      {t("setlists.form.dateLabel")} <span className="text-destructive">*</span>
-                    </label>
+              {/* Date : séances du planning (date seule) ou date libre */}
+              <div>
+                <label className="block text-xs font-medium text-muted-foreground mb-1.5">
+                  {t("setlists.form.dateLabel")} <span className="text-destructive">*</span>
+                </label>
+                <select
+                  value={dateOther ? "__other__" : dateKey}
+                  onChange={(e) => onDateSelect(e.target.value)}
+                  className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"
+                >
+                  <option value="">{t("setlists.form.datePlaceholder")}</option>
+                  {categorySeances.map((s) => (
+                    <option key={s.key} value={s.key}>{seanceDateLabel(s)}</option>
+                  ))}
+                  <option value="__other__">{t("setlists.form.dateOther")}</option>
+                </select>
+                {dateOther && (
+                  <div className="mt-2 space-y-2">
                     <input
                       type="date"
                       value={date}
                       onChange={(e) => setDate(e.target.value)}
                       className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"
                     />
+                    {category === "Campus" && (
+                      <select
+                        value={moment ?? ""}
+                        onChange={(e) => setMoment((e.target.value || undefined) as "matin" | "soir" | undefined)}
+                        className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"
+                      >
+                        <option value="">—</option>
+                        <option value="matin">Matin</option>
+                        <option value="soir">Soir</option>
+                      </select>
+                    )}
                   </div>
-                  <div>
-                    <label className="block text-xs font-medium text-muted-foreground mb-1.5">
-                      {t("setlists.form.leaderLabel")} <span className="text-destructive">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      value={leader}
-                      onChange={(e) => setLeader(e.target.value)}
-                      placeholder={t("setlists.form.leaderPlaceholder")}
-                      className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"
-                    />
-                  </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
           )}
 

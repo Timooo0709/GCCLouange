@@ -144,6 +144,40 @@ export function collectPlanningNames(data: PlanningData): string[] {
   return [...seen.values()].sort((a, b) => a.localeCompare(b, "fr"))
 }
 
+/** Noms distincts des personnes du planning pour une catégorie de setlist — alimente
+ *  le sélecteur « Responsable » du formulaire (noms seuls, sans date). Tri FR. */
+export function categoryMembers(data: PlanningData, category: string): string[] {
+  const seen = new Map<string, string>() // normalisé → première graphie rencontrée
+  const add = (cell: string | undefined) => {
+    if (!cell) return
+    for (const name of splitNames(cell)) {
+      const key = normalize(name)
+      if (!seen.has(key)) seen.set(key, name)
+    }
+  }
+  const scan = (rows: string[][], cols: [number, string][]) => {
+    for (const r of rows) for (const [i] of cols) add(r[i])
+  }
+
+  if (category === "Culte Francophone") scan(data.culte, CULTE_ROLES)
+  else if (category === "Groupe Paix") scan(data.paix, GROUPE_ROLES)
+  else if (category === "Groupe Bonté") scan(data.bonte, GROUPE_ROLES)
+  else if (category === "Groupe Fidélité") { scan(data.fidelite, FIDELITE_ROLES); scan(data.fideliteMusic, FIDELITE_MUSIC_ROLES) }
+  else if (category === "Intergroupe") scan(data.intergroupe, INTERGROUPE_ROLES)
+  else if (category === "Interfranco") scan(data.interfranco, INTERFRANCO_ROLES)
+  else if (category === "Campus") {
+    for (const s of data.campus) { add(s.pres); add(s.ch); add(s.mu); add(s.rg) }
+  } else if ((EDD_CLASSES as readonly string[]).includes(category)) {
+    const cls = category as (typeof EDD_CLASSES)[number]
+    for (const pk of EDD_PERIODES) {
+      const classes = data.edd[pk]?.classes ?? {}
+      scan(classes[cls] ?? [], EDD_ROLES_COLS)
+    }
+  }
+
+  return [...seen.values()].sort((a, b) => a.localeCompare(b, "fr"))
+}
+
 // ─── Dérivation des rôles de service depuis le planning (pré-remplissage profil) ──
 
 // Colonnes « personnes » → ServiceRole (null = présence sans rôle setlist : orateur
