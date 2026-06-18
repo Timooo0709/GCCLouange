@@ -240,9 +240,7 @@ function FrLine({ tokens, showChords, theme }: {
             {/* Lyric row */}
             <View style={{ flexDirection: "row", alignItems: "flex-start"}}>
               {indices.map(i => {
-                // console.log("SEG",segs[i])
                 const lyric = (showChords ? segs[i].lyric : segs[i].lyric?.trimStart()) || "\u00A0";
-                console.log('lyric', lyric)
                 return (
                   <View key={i} style={showChords?{ minWidth: cellWidths[i]}:{}}>
                     <Text style={{ fontSize: LYRIC_FR, color: C.lyric, fontFamily: "Inter", fontWeight: 400, lineHeight: 1.25 }}>
@@ -277,7 +275,7 @@ function ZhLine({ tokens, pinyin, showChords, showPinyin, theme }: {
   for (const seg of toSegments(tokens)) {
     const chars = [...(showChords ? seg.lyric : (seg.lyric?.trimStart() ?? ""))];
     if (chars.length === 0) {
-      if (seg.chord) cols.push({ char: " ", chord: seg.chord, py: "" });
+      if (seg.chord && showChords) cols.push({ char: " ", chord: seg.chord, py: "" });
     } else {
       chars.forEach((ch, ci) => {
         cols.push({ char: ch, chord: ci === 0 ? seg.chord : null, py: isCJK(ch) ? (pyWords[pIdx++] ?? "") : "" });
@@ -291,10 +289,11 @@ function ZhLine({ tokens, pinyin, showChords, showPinyin, theme }: {
     const fromChar = charIsCJK ? 16 : 8;
     return Math.max(fromChar, fromChord, 16);
   };
-
+  console.log('cols',cols)
   return (
     <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "flex-end", marginBottom: 2 }}>
       {cols.map((col, i) => (
+        
         <View key={i} style={{ minWidth: cellWidth(col.chord, isCJK(col.char)), flexDirection: "column", alignItems: "center" }}>
           <ChordSmall chord={showChords ? col.chord : null} theme={theme} />
           <Text style={{ fontSize: LYRIC_ZH, color: C.lyric, fontFamily: "SourceHanSansCN", fontWeight: 300, textAlign: "center" }}>
