@@ -56,7 +56,15 @@ const NON_NAMES = new Set([
 ])
 
 function normalize(s: string): string {
-  return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim()
+  // Plie accents + casse, et neutralise les variations de ponctuation/espaces
+  // ("Chlo\u00e9 W." vs "Chlo\u00e9 W", "Oriane H" vs "Oriane H.") qui font rater des
+  // services \u00e0 l'appariement planning \u2194 profil (formulaire, Mes Services, rappels).
+  return s
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[.,]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
 }
 
 /** Normalisation publique d'un nom de planning (accents/casse/espaces) \u2014 sert \u00e0
