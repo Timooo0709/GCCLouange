@@ -19,7 +19,7 @@ import {
 } from "@/lib/firebase/setlists";
 import { useProfile } from "@/lib/firebase/users";
 import { creatableCategories, isAdminUser } from "@/lib/access";
-import { loadPlanningData, setlistSeances, categoryMembers, type PlanningData, type SetlistSeance } from "@/lib/planning/names";
+import { loadPlanningData, setlistSeances, normalizeName, type PlanningData, type SetlistSeance } from "@/lib/planning/names";
 import { useTranslation } from "react-i18next";
 import { DndContext, closestCenter, DragEndEvent } from "@dnd-kit/core";
 import {
@@ -93,11 +93,9 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
   const [moment, setMoment] = useState<"matin" | "soir" | undefined>(initial?.moment);
   const ownerId = initial?.ownerId ?? null;
 
-  // ── Sélecteurs planning : responsable (membres) + date (séances) ─────────
+  // ── Sélecteurs planning : présidence (liste) + date (manuelle) ───────────
   const [planning, setPlanning] = useState<PlanningData | null>(null);
-  const [dateKey, setDateKey] = useState("");            // "date|moment" de la séance choisie
-  const [dateOther, setDateOther] = useState(false);      // date hors planning (saisie libre)
-  const [leaderOther, setLeaderOther] = useState(false);  // responsable hors liste (saisie libre)
+  const [leaderOther, setLeaderOther] = useState(false);  // présidence hors liste (saisie libre)
 
   // ── UI state ────────────────────────────────────────────
   const [query, setQuery] = useState("");
@@ -141,63 +139,66 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
       .map((s) => ({ ...s, key: `${s.date}|${s.moment ?? ""}` }));
   }, [planning, category]);
 
-  // Membres de la catégorie (noms seuls) — alimente le champ Responsable.
-  const categoryMemberList = useMemo<string[]>(
-    () => (planning && category ? categoryMembers(planning, category) : []),
-    [planning, category]
-  );
+  // Présidents distincts des séances de la catégorie — alimente le champ Présidence.
+  // Dédup par nom normalisé (accents/casse/ponctuation) → pas de "Paul W." ET "Paul W".
+  const categoryLeaders = useMemo<string[]>(() => {
+    const seen = new Map<string, string>(); // clé normalisée → première graphie
+    for (const s of categorySeances) {
+      const lead = s.leader.trim();
+      if (!lead) continue;
+      const k = normalizeName(lead);
+      if (!seen.has(k)) seen.set(k, lead);
+    }
+    return [...seen.values()].sort((a, b) => a.localeCompare(b, "fr"));
+  }, [categorySeances]);
 
-  // Libellé date seule d'une séance (sans nom) : "12/04" ou "28/07 · Soir" (Campus).
-  const seanceDateLabel = (s: SetlistSeance & { key: string }) => {
-    const [, mm, dd] = s.date.split("-");
-    const mom = s.moment ? (s.moment === "soir" ? " · Soir" : " · Matin") : "";
-    return `${dd}/${mm}${mom}`;
-  };
-
-  // Édition : pré-sélectionne la date liée (sinon « autre date ») et marque le
-  // responsable comme « autre » s'il n'est pas dans la liste des membres.
+  // Édition : si la présidence enregistrée n'est pas dans la liste, saisie libre.
   const initApplied = useRef(false);
   useEffect(() => {
     if (!isEdit || !planning || initApplied.current) return;
     initApplied.current = true;
-    const wantKey = `${initial?.date ?? ""}|${initial?.moment ?? ""}`;
-    if (categorySeances.some((s) => s.key === wantKey)) setDateKey(wantKey);
-    else setDateOther(true);
-    if (initial?.leader && !categoryMemberList.includes(initial.leader)) setLeaderOther(true);
-  }, [isEdit, planning, categorySeances, categoryMemberList, initial]);
+    if (initial?.leader && !categoryLeaders.includes(initial.leader)) setLeaderOther(true);
+  }, [isEdit, planning, categoryLeaders, initial]);
 
   const onCategoryChange = (c: string) => {
     setCategory(c);
-    setDateKey("");
-    setDateOther(false);
     setLeaderOther(false);
     setMoment(undefined);
     setLeader("");
   };
 
-  // Responsable : choix d'un membre (nom) ou « Autre » (saisie libre).
+  // Titre auto (éditable) tant qu'il est vide : "Catégorie JJ/MM [Soir]".
+  const fillTitleIfEmpty = (dateISO: string, mom: "matin" | "soir" | undefined) => {
+    if (!dateISO || title.trim() || !category) return;
+    const catLabel = t("categories." + category, { defaultValue: category });
+    const [, mm, dd] = dateISO.split("-");
+    const m = mom ? (mom === "soir" ? " Soir" : " Matin") : "";
+    setTitle(`${catLabel} ${dd}/${mm}${m}`);
+  };
+
+  // Présidence : un président de séance (pré-remplit la date avec sa prochaine
+  // séance, modifiable), ou « Autre » (saisie libre).
   const onLeaderSelect = (v: string) => {
     if (v === "__other__") { setLeaderOther(true); setLeader(""); return; }
     setLeaderOther(false);
     setLeader(v);
+    const key = normalizeName(v);
+    const mine = categorySeances.filter((s) => normalizeName(s.leader) === key);
+    if (!mine.length) return;
+    const today = new Date().toISOString().slice(0, 10);
+    const upcoming = mine.filter((s) => s.date >= today).sort((a, b) => a.date.localeCompare(b.date));
+    const past = mine.filter((s) => s.date < today).sort((a, b) => b.date.localeCompare(a.date));
+    const pick = upcoming[0] ?? past[0];
+    if (!pick) return;
+    setDate(pick.date);
+    setMoment(pick.moment);
+    fillTitleIfEmpty(pick.date, pick.moment);
   };
 
-  // Date : choix d'une séance (remplit date + moment + titre auto) ou « Autre date ».
-  const onDateSelect = (v: string) => {
-    if (v === "__other__") { setDateOther(true); setDateKey(""); setMoment(undefined); return; }
-    if (v === "") { setDateOther(false); setDateKey(""); setMoment(undefined); return; }
-    const s = categorySeances.find((x) => x.key === v);
-    if (!s) return;
-    setDateOther(false);
-    setDateKey(v);
-    setDate(s.date);
-    setMoment(s.moment);
-    if (!title.trim()) {
-      const catLabel = t("categories." + s.category, { defaultValue: s.category });
-      const [, mm, dd] = s.date.split("-");
-      const mom = s.moment ? (s.moment === "soir" ? " Soir" : " Matin") : "";
-      setTitle(`${catLabel} ${dd}/${mm}${mom}`);
-    }
+  // Date manuelle : titre auto si encore vide.
+  const onDateChange = (v: string) => {
+    setDate(v);
+    fillTitleIfEmpty(v, moment);
   };
 
   useEffect(() => {
@@ -359,7 +360,6 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
     if (!date) { setError(t("setlists.form.dateRequired")); return; }
     if (!leader.trim()) { setError(t("setlists.form.leaderRequired")); return; }
     if (!category) { setError(t("setlists.form.categoryRequired")); return; }
-    if (!dateKey && !dateOther) { setError(t("setlists.form.dateRequired")); return; }
     if (!user) {
       router.push(`/login?from=${loginFrom}`);
       return;
@@ -402,7 +402,7 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
       );
       setSaving(false);
     }
-  }, [title, leader, category, date, moment, notes, isPrivate, items, user, router, t, isEdit, setlistId, ownerId, loginFrom, dateKey, dateOther]);
+  }, [title, leader, category, date, moment, notes, isPrivate, items, user, router, t, isEdit, setlistId, ownerId, loginFrom]);
 
   const busy = saving;
   const needsAuth = !user && !authLoading;
@@ -523,26 +523,25 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
             </div>
           </div>
 
-          {/* Responsable (membres du groupe) + Date de la séance. La date reste
-              enregistrée (notifs « setlist prête », Mes Services) mais le menu
-              n'affiche que des noms — pas de date mêlée aux noms. */}
+          {/* Présidence (présidents de séances) + Date (saisie manuelle). La date
+              reste enregistrée → notifs « setlist prête » + Mes Services OK. */}
           {category && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {/* Responsable : liste de membres (noms seuls) */}
+              {/* Présidence : présidents de séances (noms seuls) */}
               <div>
                 <label className="block text-xs font-medium text-muted-foreground mb-1.5">
-                  {t("setlists.form.responsableLabel")} <span className="text-destructive">*</span>
+                  {t("setlists.form.leaderLabel")} <span className="text-destructive">*</span>
                 </label>
                 <select
                   value={leaderOther ? "__other__" : leader}
                   onChange={(e) => onLeaderSelect(e.target.value)}
                   className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"
                 >
-                  <option value="">{t("setlists.form.responsablePlaceholder")}</option>
-                  {categoryMemberList.map((m) => (
+                  <option value="">{t("setlists.form.presidencePlaceholder")}</option>
+                  {categoryLeaders.map((m) => (
                     <option key={m} value={m}>{m}</option>
                   ))}
-                  <option value="__other__">{t("setlists.form.responsableOther")}</option>
+                  <option value="__other__">{t("setlists.form.presidenceOther")}</option>
                 </select>
                 {leaderOther && (
                   <input
@@ -555,42 +554,27 @@ export function SetlistForm({ mode, setlistId, songs, initial }: SetlistFormProp
                 )}
               </div>
 
-              {/* Date : séances du planning (date seule) ou date libre */}
+              {/* Date : saisie manuelle (+ matin/soir pour Campus) */}
               <div>
                 <label className="block text-xs font-medium text-muted-foreground mb-1.5">
                   {t("setlists.form.dateLabel")} <span className="text-destructive">*</span>
                 </label>
-                <select
-                  value={dateOther ? "__other__" : dateKey}
-                  onChange={(e) => onDateSelect(e.target.value)}
+                <input
+                  type="date"
+                  value={date}
+                  onChange={(e) => onDateChange(e.target.value)}
                   className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"
-                >
-                  <option value="">{t("setlists.form.datePlaceholder")}</option>
-                  {categorySeances.map((s) => (
-                    <option key={s.key} value={s.key}>{seanceDateLabel(s)}</option>
-                  ))}
-                  <option value="__other__">{t("setlists.form.dateOther")}</option>
-                </select>
-                {dateOther && (
-                  <div className="mt-2 space-y-2">
-                    <input
-                      type="date"
-                      value={date}
-                      onChange={(e) => setDate(e.target.value)}
-                      className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"
-                    />
-                    {category === "Campus" && (
-                      <select
-                        value={moment ?? ""}
-                        onChange={(e) => setMoment((e.target.value || undefined) as "matin" | "soir" | undefined)}
-                        className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"
-                      >
-                        <option value="">—</option>
-                        <option value="matin">Matin</option>
-                        <option value="soir">Soir</option>
-                      </select>
-                    )}
-                  </div>
+                />
+                {category === "Campus" && (
+                  <select
+                    value={moment ?? ""}
+                    onChange={(e) => setMoment((e.target.value || undefined) as "matin" | "soir" | undefined)}
+                    className="mt-2 w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"
+                  >
+                    <option value="">—</option>
+                    <option value="matin">Matin</option>
+                    <option value="soir">Soir</option>
+                  </select>
                 )}
               </div>
             </div>
