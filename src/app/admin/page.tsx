@@ -2,8 +2,10 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { ChevronDown, ChevronUp, Search, ShieldCheck, UserRound, X } from "lucide-react";
+import { CheckCircle2, ChevronDown, ChevronUp, ExternalLink, FileText, Search, ShieldCheck, Trash2, UserRound, X, Youtube } from "lucide-react";
 import { useProfile, listProfiles, saveProfile, getRegistrationOpen, setRegistrationOpen } from "@/lib/firebase/users";
+import { getSongProposals, setProposalStatus, deleteSongProposal } from "@/lib/firebase/songProposals";
+import type { SongProposal } from "@/types/songProposal";
 import { isAdminUser } from "@/lib/access";
 import {
   loadPlanningData,
@@ -57,6 +59,9 @@ export default function AdminPage() {
   const [togglingReg, setTogglingReg] = useState(false);
   const [profiles, setProfiles] = useState<UserProfile[]>([]);
   const [loadingProfiles, setLoadingProfiles] = useState(true);
+  const [proposals, setProposals] = useState<SongProposal[]>([]);
+  const [loadingProposals, setLoadingProposals] = useState(true);
+  const [proposalBusy, setProposalBusy] = useState<string | null>(null);
   const [planningNames, setPlanningNames] = useState<string[]>([]);
   const [planningData, setPlanningData] = useState<PlanningData | null>(null);
   const [editingUid, setEditingUid] = useState<string | null>(null);
@@ -72,6 +77,7 @@ export default function AdminPage() {
     if (!admin) return;
     getRegistrationOpen().then(setRegOpen);
     listProfiles().then(setProfiles).finally(() => setLoadingProfiles(false));
+    getSongProposals().then(setProposals).finally(() => setLoadingProposals(false));
     loadPlanningData().then((d) => {
       setPlanningData(d);
       setPlanningNames(collectPlanningNames(d));
@@ -176,6 +182,34 @@ export default function AdminPage() {
     }
   }
 
+  async function handleProposalStatus(p: SongProposal, status: SongProposal["status"]) {
+    setProposalBusy(p.id);
+    setError("");
+    try {
+      await setProposalStatus(p.id, status);
+      setProposals((prev) => prev.map((x) => (x.id === p.id ? { ...x, status } : x)));
+    } catch {
+      setError("Impossible de mettre à jour la proposition. Règles Firestore publiées ?");
+    } finally {
+      setProposalBusy(null);
+    }
+  }
+
+  async function handleProposalDelete(p: SongProposal) {
+    setProposalBusy(p.id);
+    setError("");
+    try {
+      await deleteSongProposal(p.id);
+      setProposals((prev) => prev.filter((x) => x.id !== p.id));
+    } catch {
+      setError("Impossible de supprimer la proposition. Règles Firestore publiées ?");
+    } finally {
+      setProposalBusy(null);
+    }
+  }
+
+  const pendingProposals = proposals.filter((p) => p.status === "pending");
+
   return (
     <div className="min-h-screen bg-background">
       <div className="max-w-2xl mx-auto px-4 pt-6 pb-10 space-y-5">
@@ -219,6 +253,116 @@ export default function AdminPage() {
               {togglingReg ? "…" : regOpen ? "Fermer les inscriptions" : "Ouvrir les inscriptions"}
             </Button>
           </div>
+        </div>
+
+        {/* ── Propositions de chants ── */}
+        <div className="rounded-xl border border-border bg-card p-5 space-y-3">
+          <div className="flex items-center justify-between">
+            <h2 className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+              Propositions de chants
+            </h2>
+            {pendingProposals.length > 0 && (
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/10 text-primary">
+                {pendingProposals.length} en attente
+              </span>
+            )}
+          </div>
+          <p className="text-xs text-muted-foreground">
+            Chants proposés par les membres. Après ajout au répertoire, marque la
+            proposition comme traitée.
+          </p>
+
+          {loadingProposals ? (
+            <p className="text-sm text-muted-foreground py-4 text-center">Chargement…</p>
+          ) : proposals.length === 0 ? (
+            <p className="text-sm text-muted-foreground py-4 text-center border border-dashed border-border rounded-xl">
+              Aucune proposition pour l&apos;instant.
+            </p>
+          ) : (
+            <div className="space-y-2">
+              {proposals.map((p) => {
+                const busy = proposalBusy === p.id;
+                return (
+                  <div
+                    key={p.id}
+                    className={`rounded-xl border border-border bg-background p-4 space-y-2 ${
+                      p.status !== "pending" ? "opacity-60" : ""
+                    }`}
+                  >
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="min-w-0">
+                        <p className="text-sm font-semibold text-foreground truncate">{p.title}</p>
+                        <p className="text-xs text-muted-foreground truncate">
+                          Proposé par {p.authorName}
+                          {p.createdAt ? ` · ${p.createdAt.toLocaleDateString("fr-FR")}` : ""}
+                        </p>
+                      </div>
+                      {p.status === "accepted" && <Pill label="Traité" color="#16a34a" />}
+                      {p.status === "rejected" && <Pill label="Refusé" color="#dc2626" />}
+                    </div>
+
+                    <div className="flex flex-wrap gap-2">
+                      <a
+                        href={p.youtubeUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+                      >
+                        <Youtube className="h-3.5 w-3.5" />
+                        YouTube
+                        <ExternalLink className="h-3 w-3" />
+                      </a>
+                      {p.pdfUrl && (
+                        <a
+                          href={p.pdfUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+                        >
+                          <FileText className="h-3.5 w-3.5" />
+                          Partition PDF
+                          <ExternalLink className="h-3 w-3" />
+                        </a>
+                      )}
+                    </div>
+
+                    <div className="flex items-center justify-end gap-2 pt-1">
+                      {p.status !== "accepted" && (
+                        <Button
+                          variant="outline"
+                          onClick={() => handleProposalStatus(p, "accepted")}
+                          disabled={busy}
+                          className="h-9 text-xs"
+                        >
+                          <CheckCircle2 className="h-3.5 w-3.5 mr-1.5" />
+                          Marquer traité
+                        </Button>
+                      )}
+                      {p.status === "pending" && (
+                        <Button
+                          variant="outline"
+                          onClick={() => handleProposalStatus(p, "rejected")}
+                          disabled={busy}
+                          className="h-9 text-xs"
+                        >
+                          Refuser
+                        </Button>
+                      )}
+                      <button
+                        type="button"
+                        onClick={() => handleProposalDelete(p)}
+                        disabled={busy}
+                        className="h-9 w-9 rounded-lg border border-border text-muted-foreground hover:text-destructive flex items-center justify-center disabled:opacity-50"
+                        aria-label="Supprimer la proposition"
+                      >
+                        <Trash2 className="h-3.5 w-3.5" />
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
 
         {/* ── Membres ── */}

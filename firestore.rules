@@ -76,6 +76,18 @@ service cloud.firestore {
       );
     }
 
+    // Propositions de chants envoyées par les membres (inbox de modération /admin).
+    match /songProposals/{id} {
+      // Lecture réservée aux admins.
+      allow read: if isAdmin();
+      // Tout membre connecté peut proposer ; il se déclare auteur, statut « pending ».
+      allow create: if signedIn()
+        && request.resource.data.authorId == request.auth.uid
+        && request.resource.data.status == 'pending';
+      // Tri / suppression réservés aux admins.
+      allow update, delete: if isAdmin();
+    }
+
     match /setlists/{id} {
       allow read: if signedIn();
       // Création : le créateur doit se déclarer propriétaire (ownerId = uid)

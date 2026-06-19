@@ -6,6 +6,7 @@ import Fuse from "fuse.js";
 import { Search, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import type { SongIndexEntry, Theme } from "@/types/song";
+import { SongProposalDrawer } from "@/components/songs/SongProposalDrawer";
 
 interface SongListClientProps {
   songs: SongIndexEntry[];
@@ -250,12 +251,15 @@ export function SongListClient({ songs, themes }: SongListClientProps) {
         </div>
       )}
 
-      {/* Compteur */}
-      <p className="text-[12.5px] text-muted-foreground mb-3">
-        {filtered.length === songs.length
-          ? t("songs.list.counter", { count: songs.length })
-          : t("songs.list.counterFiltered", { count: filtered.length, filteredCount: filtered.length, totalCount: songs.length })}
-      </p>
+      {/* Compteur + proposition de chant */}
+      <div className="flex items-center justify-between gap-3 mb-3">
+        <p className="text-[12.5px] text-muted-foreground">
+          {filtered.length === songs.length
+            ? t("songs.list.counter", { count: songs.length })
+            : t("songs.list.counterFiltered", { count: filtered.length, filteredCount: filtered.length, totalCount: songs.length })}
+        </p>
+        <SongProposalDrawer />
+      </div>
 
       {/* Liste */}
       {filtered.length === 0 ? (
