@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { CheckCircle2, ChevronDown, ChevronUp, ExternalLink, FileText, Search, ShieldCheck, Trash2, UserRound, X, Youtube } from "lucide-react";
+import { CheckCircle2, ChevronDown, ChevronUp, ExternalLink, FileText, Play, Search, ShieldCheck, Trash2, UserRound, X } from "lucide-react";
 import { useProfile, listProfiles, saveProfile, getRegistrationOpen, setRegistrationOpen } from "@/lib/firebase/users";
 import { getSongProposals, setProposalStatus, deleteSongProposal } from "@/lib/firebase/songProposals";
 import type { SongProposal } from "@/types/songProposal";
@@ -308,7 +308,7 @@ export default function AdminPage() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
                       >
-                        <Youtube className="h-3.5 w-3.5" />
+                        <Play className="h-3.5 w-3.5" />
                         YouTube
                         <ExternalLink className="h-3 w-3" />
                       </a>
