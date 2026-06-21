@@ -22,7 +22,7 @@ export default function InterfrancoPage() {
         {loading && <span className="text-xs text-muted-foreground">Chargement…</span>}
       </div>
 
-      <PlanningTable cols={COLS} rows={rows} color={COLOR} minWidth={700} />
+      <PlanningTable cols={COLS} rows={rows} color={COLOR} minWidth={700} groupBy="year" />
     </div>
   )
 }

@@ -3,7 +3,21 @@
 
 import { adminDb } from "./admin";
 import { normalizeName } from "@/lib/planning/names";
+import { ADMIN_EMAILS } from "@/lib/access";
 import type { ServiceRole, NotifType } from "@/types/user";
+
+/** uid des comptes administrateurs (ADMIN_EMAILS). Cible des notifications de
+ *  signalement. Serveur uniquement (Admin, lit tous les profils). */
+export async function adminUids(): Promise<string[]> {
+  const wanted = new Set(ADMIN_EMAILS.map((e) => e.toLowerCase()));
+  const snap = await adminDb().collection("users").get();
+  const out: string[] = [];
+  for (const doc of snap.docs) {
+    const email = (doc.data().email as string | undefined)?.toLowerCase();
+    if (email && wanted.has(email)) out.push(doc.id);
+  }
+  return out;
+}
 
 /** Index normalize(planningName) → uid(s). Plusieurs comptes peuvent partager
  *  une même graphie (rare) : on garde une liste. Lit tous les profils (Admin). */

@@ -5,13 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
-import { Menu, X, Sun, Moon, Globe, LogIn, LogOut, ChevronDown, UserRound, Bell, BookOpen } from "lucide-react";
+import { Menu, X, Sun, Moon, Globe, LogIn, LogOut, ChevronDown, UserRound, Bell, BookOpen, TriangleAlert } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useAuth, logOut } from "@/lib/firebase/auth";
 import { useProfile } from "@/lib/firebase/users";
 import { isAdminUser } from "@/lib/access";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { useNotifications, type NotificationItem } from "@/hooks/useNotifications";
+import { ReportDialog } from "@/components/report/ReportDialog";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -41,6 +42,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [reportOpen, setReportOpen] = useState(false);
   const { items: notifItems, unreadCount, markAllSeen } = useNotifications();
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -343,6 +345,18 @@ export function Navbar() {
               {dark ? <Sun className="h-[15px] w-[15px]" /> : <Moon className="h-[15px] w-[15px]" />}
             </button>
 
+            {/* Signaler un problème — accès discret */}
+            {!authLoading && user && (
+              <button
+                onClick={() => setReportOpen(true)}
+                title="Signaler un problème"
+                aria-label="Signaler un problème"
+                className="hidden lg:flex h-[34px] w-[34px] rounded-[9px] border border-border bg-card text-muted-foreground hover:text-foreground hover:border-muted-foreground/50 transition-all duration-150 active:scale-[.96] items-center justify-center cursor-pointer"
+              >
+                <TriangleAlert className="h-[15px] w-[15px]" />
+              </button>
+            )}
+
             {/* Guide d'utilisation — accès discret */}
             {!authLoading && user && (
               <Link
@@ -522,6 +536,13 @@ export function Navbar() {
               {!authLoading && (
                 user ? (
                   <>
+                    <button
+                      onClick={() => { closeMenu(); setReportOpen(true); }}
+                      className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg border border-border bg-background hover:bg-muted text-foreground text-sm font-semibold transition-all duration-200 cursor-pointer"
+                    >
+                      <TriangleAlert className="h-4 w-4" />
+                      Signaler un problème
+                    </button>
                     <Link
                       href="/guide"
                       className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg border border-border bg-background hover:bg-muted text-foreground text-sm font-semibold transition-all duration-200"
@@ -566,6 +587,8 @@ export function Navbar() {
           </div>
         )}
       </header>
+
+      <ReportDialog open={reportOpen} onClose={() => setReportOpen(false)} kind="site" />
     </>
   );
 }

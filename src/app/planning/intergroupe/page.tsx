@@ -22,7 +22,7 @@ export default function IntergroupePage() {
         {loading && <span className="text-xs text-muted-foreground">Chargement…</span>}
       </div>
 
-      <PlanningTable cols={COLS} rows={rows} color={COLOR} minWidth={760} />
+      <PlanningTable cols={COLS} rows={rows} color={COLOR} minWidth={760} groupBy="year" />
     </div>
   )
 }

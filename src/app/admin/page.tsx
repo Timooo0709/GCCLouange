@@ -6,6 +6,8 @@ import { CheckCircle2, ChevronDown, ChevronUp, ExternalLink, FileText, Play, Sea
 import { useProfile, listProfiles, saveProfile, getRegistrationOpen, setRegistrationOpen } from "@/lib/firebase/users";
 import { getSongProposals, setProposalStatus, deleteSongProposal } from "@/lib/firebase/songProposals";
 import type { SongProposal } from "@/types/songProposal";
+import { getReports, setReportStatus, deleteReport } from "@/lib/firebase/reports";
+import type { Report } from "@/types/report";
 import { isAdminUser } from "@/lib/access";
 import {
   loadPlanningData,
@@ -62,6 +64,9 @@ export default function AdminPage() {
   const [proposals, setProposals] = useState<SongProposal[]>([]);
   const [loadingProposals, setLoadingProposals] = useState(true);
   const [proposalBusy, setProposalBusy] = useState<string | null>(null);
+  const [reports, setReports] = useState<Report[]>([]);
+  const [loadingReports, setLoadingReports] = useState(true);
+  const [reportBusy, setReportBusy] = useState<string | null>(null);
   const [planningNames, setPlanningNames] = useState<string[]>([]);
   const [planningData, setPlanningData] = useState<PlanningData | null>(null);
   const [editingUid, setEditingUid] = useState<string | null>(null);
@@ -78,6 +83,7 @@ export default function AdminPage() {
     getRegistrationOpen().then(setRegOpen);
     listProfiles().then(setProfiles).finally(() => setLoadingProfiles(false));
     getSongProposals().then(setProposals).finally(() => setLoadingProposals(false));
+    getReports().then(setReports).finally(() => setLoadingReports(false));
     loadPlanningData().then((d) => {
       setPlanningData(d);
       setPlanningNames(collectPlanningNames(d));
@@ -208,7 +214,34 @@ export default function AdminPage() {
     }
   }
 
+  async function handleReportStatus(r: Report, status: Report["status"]) {
+    setReportBusy(r.id);
+    setError("");
+    try {
+      await setReportStatus(r.id, status);
+      setReports((prev) => prev.map((x) => (x.id === r.id ? { ...x, status } : x)));
+    } catch {
+      setError("Impossible de mettre à jour le signalement. Règles Firestore publiées ?");
+    } finally {
+      setReportBusy(null);
+    }
+  }
+
+  async function handleReportDelete(r: Report) {
+    setReportBusy(r.id);
+    setError("");
+    try {
+      await deleteReport(r.id);
+      setReports((prev) => prev.filter((x) => x.id !== r.id));
+    } catch {
+      setError("Impossible de supprimer le signalement. Règles Firestore publiées ?");
+    } finally {
+      setReportBusy(null);
+    }
+  }
+
   const pendingProposals = proposals.filter((p) => p.status === "pending");
+  const pendingReports = reports.filter((r) => r.status === "pending");
 
   return (
     <div className="min-h-screen bg-background">
@@ -224,35 +257,122 @@ export default function AdminPage() {
           </Alert>
         )}
 
-        {/* ── Inscriptions ── */}
+        {/* ── Signalements ── */}
         <div className="rounded-xl border border-border bg-card p-5 space-y-3">
-          <h2 className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
-            Inscriptions
-          </h2>
-          <div className="flex items-center justify-between gap-3">
-            <div className="flex items-center gap-2">
-              <span
-                className={`h-2.5 w-2.5 rounded-full ${
-                  regOpen === null ? "bg-muted" : regOpen ? "bg-green-500" : "bg-red-500"
-                }`}
-              />
-              <p className="text-sm text-foreground">
-                {regOpen === null
-                  ? "Chargement…"
-                  : regOpen
-                  ? "Les inscriptions sont ouvertes."
-                  : "Les inscriptions sont fermées."}
-              </p>
-            </div>
-            <Button
-              onClick={toggleRegistration}
-              disabled={regOpen === null || togglingReg}
-              variant={regOpen ? "outline" : "default"}
-              className={`shrink-0 h-11 ${regOpen ? "border-destructive/30 bg-destructive/5 text-destructive hover:bg-destructive/10 hover:text-destructive" : ""}`}
-            >
-              {togglingReg ? "…" : regOpen ? "Fermer les inscriptions" : "Ouvrir les inscriptions"}
-            </Button>
+          <div className="flex items-center justify-between">
+            <h2 className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+              Signalements
+            </h2>
+            {pendingReports.length > 0 && (
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/10 text-primary">
+                {pendingReports.length} en attente
+              </span>
+            )}
           </div>
+          <p className="text-xs text-muted-foreground">
+            Problèmes signalés par les membres (chant ou site). Marque comme traité
+            une fois résolu.
+          </p>
+
+          {loadingReports ? (
+            <p className="text-sm text-muted-foreground py-4 text-center">Chargement…</p>
+          ) : reports.length === 0 ? (
+            <p className="text-sm text-muted-foreground py-4 text-center border border-dashed border-border rounded-xl">
+              Aucun signalement pour l&apos;instant.
+            </p>
+          ) : (
+            <div className="space-y-2">
+              {reports.map((r) => {
+                const busy = reportBusy === r.id;
+                return (
+                  <div
+                    key={r.id}
+                    className={`rounded-xl border border-border bg-background p-4 space-y-2 ${
+                      r.status !== "pending" ? "opacity-60" : ""
+                    }`}
+                  >
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="min-w-0">
+                        <p className="text-sm font-semibold text-foreground">{r.title}</p>
+                        <p className="text-xs text-muted-foreground truncate">
+                          {r.authorName}
+                          {r.createdAt ? ` · ${r.createdAt.toLocaleDateString("fr-FR")}` : ""}
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-1.5 shrink-0">
+                        <Pill
+                          label={r.kind === "song" ? "Chant" : "Site"}
+                          color={r.kind === "song" ? "#2563eb" : "#9333ea"}
+                        />
+                        {r.status === "resolved" && <Pill label="Traité" color="#16a34a" />}
+                      </div>
+                    </div>
+
+                    {r.description && (
+                      <p className="text-xs text-foreground whitespace-pre-wrap">{r.description}</p>
+                    )}
+
+                    {((r.kind === "song" && r.songSlug) || r.pageUrl) && (
+                      <div className="flex flex-wrap gap-3">
+                        {r.kind === "song" && r.songSlug && (
+                          <Link
+                            href={`/songs/${r.songSlug}`}
+                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+                          >
+                            <ExternalLink className="h-3 w-3" />
+                            {r.songTitle || "Voir le chant"}
+                          </Link>
+                        )}
+                        {r.pageUrl && (
+                          <a
+                            href={r.pageUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground"
+                          >
+                            <ExternalLink className="h-3 w-3" />
+                            Page
+                          </a>
+                        )}
+                      </div>
+                    )}
+
+                    <div className="flex items-center justify-end gap-2 pt-1">
+                      {r.status === "pending" ? (
+                        <Button
+                          variant="outline"
+                          onClick={() => handleReportStatus(r, "resolved")}
+                          disabled={busy}
+                          className="h-9 text-xs"
+                        >
+                          <CheckCircle2 className="h-3.5 w-3.5 mr-1.5" />
+                          Marquer traité
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="outline"
+                          onClick={() => handleReportStatus(r, "pending")}
+                          disabled={busy}
+                          className="h-9 text-xs"
+                        >
+                          Rouvrir
+                        </Button>
+                      )}
+                      <button
+                        type="button"
+                        onClick={() => handleReportDelete(r)}
+                        disabled={busy}
+                        className="h-9 w-9 rounded-lg border border-border text-muted-foreground hover:text-destructive flex items-center justify-center disabled:opacity-50"
+                        aria-label="Supprimer le signalement"
+                      >
+                        <Trash2 className="h-3.5 w-3.5" />
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
 
         {/* ── Propositions de chants ── */}
@@ -363,6 +483,37 @@ export default function AdminPage() {
               })}
             </div>
           )}
+        </div>
+
+        {/* ── Inscriptions ── */}
+        <div className="rounded-xl border border-border bg-card p-5 space-y-3">
+          <h2 className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+            Inscriptions
+          </h2>
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex items-center gap-2">
+              <span
+                className={`h-2.5 w-2.5 rounded-full ${
+                  regOpen === null ? "bg-muted" : regOpen ? "bg-green-500" : "bg-red-500"
+                }`}
+              />
+              <p className="text-sm text-foreground">
+                {regOpen === null
+                  ? "Chargement…"
+                  : regOpen
+                  ? "Les inscriptions sont ouvertes."
+                  : "Les inscriptions sont fermées."}
+              </p>
+            </div>
+            <Button
+              onClick={toggleRegistration}
+              disabled={regOpen === null || togglingReg}
+              variant={regOpen ? "outline" : "default"}
+              className={`shrink-0 h-11 ${regOpen ? "border-destructive/30 bg-destructive/5 text-destructive hover:bg-destructive/10 hover:text-destructive" : ""}`}
+            >
+              {togglingReg ? "…" : regOpen ? "Fermer les inscriptions" : "Ouvrir les inscriptions"}
+            </Button>
+          </div>
         </div>
 
         {/* ── Membres ── */}

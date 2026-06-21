@@ -4,8 +4,8 @@ export interface ReportInput {
   userEmail?: string;
 }
 
-// Limites partagées avec le formulaire (AlertButton) — le contenu part tel
-// quel vers les boîtes des admins, on borne donc strictement ce qui y entre.
+// Limites partagées avec le formulaire (ReportDialog) — le contenu est stocké
+// puis affiché aux admins, on borne donc strictement ce qui y entre.
 export const REPORT_LIMITS = {
   title: 200,
   description: 5000,

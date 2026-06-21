@@ -2,7 +2,7 @@
 
 import { Fragment, useEffect, useState, type ReactNode } from "react"
 import { User, X } from "lucide-react"
-import { currentSundayStr, fdShort, getMois, MOIS } from "@/lib/planning/utils"
+import { currentSundayStr, fdShort, getAnnee, getMois, MOIS } from "@/lib/planning/utils"
 
 export interface PlanningTableProps {
   /** cols[0] est la colonne date */
@@ -13,6 +13,8 @@ export interface PlanningTableProps {
   /** Badge optionnel à côté de la date (ex. Sainte Cène) */
   dateBadge?: (row: string[], allRows: string[][]) => ReactNode
   minWidth?: number
+  /** Regroupement (séparateurs desktop + puces mobile). Défaut : par mois */
+  groupBy?: "month" | "year"
 }
 
 /**
@@ -20,11 +22,15 @@ export interface PlanningTableProps {
  * mobile. Champ « mon prénom » (mémorisé sur l'appareil) qui surligne les
  * cellules correspondantes, avec filtre « Mes dates ».
  */
-export function PlanningTable({ cols, rows, color, dateBadge, minWidth = 480 }: PlanningTableProps) {
+export function PlanningTable({ cols, rows, color, dateBadge, minWidth = 480, groupBy = "month" }: PlanningTableProps) {
   const sun = currentSundayStr()
   const [name, setName] = useState("")
   const [onlyMine, setOnlyMine] = useState(false)
-  const [mobileMonth, setMobileMonth] = useState<number | null>(null)
+  const [mobileGroup, setMobileGroup] = useState<number | null>(null)
+
+  // Clé de regroupement (mois ou année) + libellé associé
+  const groupKey = (dateStr: string) => (groupBy === "year" ? getAnnee(dateStr) : getMois(dateStr))
+  const groupLabel = (key: number) => (groupBy === "year" ? String(key) : MOIS[key - 1])
 
   useEffect(() => {
     try {
@@ -45,21 +51,21 @@ export function PlanningTable({ cols, rows, color, dateBadge, minWidth = 480 }: 
 
   const displayed = onlyMine && hasName ? rows.filter(matchRow) : rows
 
-  // Séparateurs de mois (table desktop)
+  // Séparateurs (table desktop) : par mois ou par année
   const withSep: { row: string[]; sep: string | null }[] = []
-  let lm = ""
+  let lk: number | null = null
   for (const row of displayed) {
-    const month = MOIS[getMois(row[0]) - 1]
-    withSep.push({ row, sep: month !== lm ? month : null })
-    lm = month
+    const key = groupKey(row[0])
+    withSep.push({ row, sep: key !== lk ? groupLabel(key) : null })
+    lk = key
   }
 
-  // ── Mobile : affichage par mois (puces, comme les trimestres) ──
-  const monthsInRows = [...new Set(rows.map((r) => getMois(r[0])))]
-  const currentMonth = new Date().getMonth() + 1
-  const defaultMonth = monthsInRows.includes(currentMonth) ? currentMonth : monthsInRows[0]
-  const activeMonth = mobileMonth !== null && monthsInRows.includes(mobileMonth) ? mobileMonth : defaultMonth
-  const mobileRows = displayed.filter((r) => getMois(r[0]) === activeMonth)
+  // ── Mobile : affichage par groupe (puces, comme les trimestres) ──
+  const groupsInRows = [...new Set(rows.map((r) => groupKey(r[0])))]
+  const currentKey = groupBy === "year" ? new Date().getFullYear() : new Date().getMonth() + 1
+  const defaultGroup = groupsInRows.includes(currentKey) ? currentKey : groupsInRows[0]
+  const activeGroup = mobileGroup !== null && groupsInRows.includes(mobileGroup) ? mobileGroup : defaultGroup
+  const mobileRows = displayed.filter((r) => groupKey(r[0]) === activeGroup)
 
   return (
     <div className="space-y-3">
@@ -155,18 +161,18 @@ export function PlanningTable({ cols, rows, color, dateBadge, minWidth = 480 }: 
 
       {/* ── Cartes par date (téléphone) — un mois à la fois ── */}
       <div className="sm:hidden space-y-2.5">
-        {monthsInRows.length > 1 && (
+        {groupsInRows.length > 1 && (
           <div className="flex gap-2 overflow-x-auto pb-1" style={{ scrollbarWidth: "none" }}>
-            {monthsInRows.map((m) => (
+            {groupsInRows.map((g) => (
               <button
-                key={m}
-                onClick={() => setMobileMonth(m)}
+                key={g}
+                onClick={() => setMobileGroup(g)}
                 className={`flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-semibold border transition-all duration-150 cursor-pointer ${
-                  m === activeMonth ? "text-white border-transparent" : "bg-card border-border text-muted-foreground"
+                  g === activeGroup ? "text-white border-transparent" : "bg-card border-border text-muted-foreground"
                 }`}
-                style={m === activeMonth ? { background: color, borderColor: color } : undefined}
+                style={g === activeGroup ? { background: color, borderColor: color } : undefined}
               >
-                {MOIS[m - 1]}
+                {groupLabel(g)}
               </button>
             ))}
           </div>

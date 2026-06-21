@@ -88,6 +88,14 @@ service cloud.firestore {
       allow update, delete: if isAdmin();
     }
 
+    // Signalements (problèmes chant / site) envoyés par les membres connectés.
+    // Écriture côté serveur uniquement (Admin SDK, /api/report) afin de notifier
+    // les admins dans la foulée → création client interdite.
+    match /reports/{id} {
+      allow read, update, delete: if isAdmin();
+      allow create: if false;
+    }
+
     match /setlists/{id} {
       allow read: if signedIn();
       // Création : le créateur doit se déclarer propriétaire (ownerId = uid)

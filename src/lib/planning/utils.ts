@@ -12,6 +12,8 @@ function pad(n: number) { return String(n).padStart(2, "0") }
 
 export function getMois(dateStr: string) { return parseInt(dateStr.split("-")[1]) }
 
+export function getAnnee(dateStr: string) { return parseInt(dateStr.split("-")[0]) }
+
 export function getTri(dateStr: string) {
   const m = getMois(dateStr)
   return m <= 3 ? "T1" : m <= 6 ? "T2" : m <= 9 ? "T3" : "T4"
