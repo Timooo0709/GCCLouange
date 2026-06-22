@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { AlertCircle, CalendarDays, CheckCircle2, ChevronDown, ChevronUp, DoorOpen, ExternalLink, FileText, Music4, Play, Search, ShieldCheck, Trash2, UserRound, Users, X, type LucideIcon } from "lucide-react";
+import { CalendarDays, CheckCircle2, ChevronDown, ChevronUp, DoorOpen, ExternalLink, FileText, Inbox, Play, Search, ShieldCheck, Trash2, UserRound, Users, X, type LucideIcon } from "lucide-react";
 import { useProfile, listProfiles, saveProfile, getRegistrationOpen, setRegistrationOpen } from "@/lib/firebase/users";
 import { getSongProposals, setProposalStatus, deleteSongProposal } from "@/lib/firebase/songProposals";
 import type { SongProposal } from "@/types/songProposal";
@@ -53,7 +53,7 @@ function Pill({ label, color }: { label: string; color?: string }) {
 
 const FILTERS = ["Tous", ...SERVICE_LIEUX, "EDD", ...GROUPES, "Ne sert pas"] as const;
 
-type AdminTab = "signalements" | "propositions" | "membres" | "inscriptions" | "planning";
+type AdminTab = "reception" | "membres" | "inscriptions" | "planning";
 
 export default function AdminPage() {
   const { user, loading } = useProfile();
@@ -255,8 +255,7 @@ export default function AdminPage() {
   const visibleReports = showResolvedReports ? reports : pendingReports;
 
   const TABS: { key: AdminTab; label: string; Icon: LucideIcon; count?: number; always?: boolean }[] = [
-    { key: "signalements", label: "Signalements", Icon: AlertCircle, count: pendingReports.length },
-    { key: "propositions", label: "Propositions", Icon: Music4, count: pendingProposals.length },
+    { key: "reception", label: "Réception", Icon: Inbox, count: pendingReports.length + pendingProposals.length },
     { key: "membres", label: "Membres", Icon: Users, count: profiles.length, always: true },
     { key: "inscriptions", label: "Inscriptions", Icon: DoorOpen },
     { key: "planning", label: "Planning", Icon: CalendarDays, count: unlinkedNames.length },
@@ -311,9 +310,19 @@ export default function AdminPage() {
           })}
         </div>
 
-        {/* ── Signalements ── */}
-        {tab === "signalements" && (
+        {/* ── Réception : signalements ── */}
+        {tab === "reception" && (
         <div className="rounded-xl border border-border bg-card p-5 space-y-3">
+          <div className="flex items-center justify-between">
+            <h2 className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+              Signalements
+            </h2>
+            {pendingReports.length > 0 && (
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/10 text-primary">
+                {pendingReports.length} en attente
+              </span>
+            )}
+          </div>
           <p className="text-xs text-muted-foreground">
             Problèmes signalés par les membres (chant ou site). Déplie un signalement
             pour le détailler, et marque-le comme traité une fois résolu.
@@ -447,9 +456,19 @@ export default function AdminPage() {
         </div>
         )}
 
-        {/* ── Propositions de chants ── */}
-        {tab === "propositions" && (
+        {/* ── Réception : propositions de chants ── */}
+        {tab === "reception" && (
         <div className="rounded-xl border border-border bg-card p-5 space-y-3">
+          <div className="flex items-center justify-between">
+            <h2 className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+              Propositions de chants
+            </h2>
+            {pendingProposals.length > 0 && (
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/10 text-primary">
+                {pendingProposals.length} en attente
+              </span>
+            )}
+          </div>
           <p className="text-xs text-muted-foreground">
             Chants proposés par les membres. Déplie une proposition pour ses liens,
             et marque-la comme traitée après ajout au répertoire.
