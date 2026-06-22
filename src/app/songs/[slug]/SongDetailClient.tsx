@@ -160,7 +160,7 @@ interface SongDetailClientProps {
     }
 
     return (
-      <div className="min-h-screen print:min-h-0 bg-background">
+      <div className="min-h-screen print:min-h-0 bg-background" style={{ width: `${100 / fontScale}%` }}>
         {/* Barre de contrôles */}
         <div className={`print:hidden fixed left-0 right-0 top-[var(--nav-h)] z-10 bg-background/95 backdrop-blur border-b border-border transition-transform duration-300 ${ scrollVisible ? "translate-y-0" : "-translate-y-[calc(100%+var(--nav-h))]"}`}>
           <div className = "max-w-3xl mx-auto w-full flex flex-nowrap gap-0.5 items-center py-2 px-1">
@@ -349,7 +349,7 @@ interface SongDetailClientProps {
           className="song-zoom px-4 py-6 print:px-0 print:py-2 print:max-w-none max-w-2xl mx-auto overflow-x-auto mt-[48px]"
           style={{ 
             transform: `scale(${fontScale})`,
-            transformOrigin: 'top', 
+            transformOrigin: 'top left  ', 
           }}
         >
           <SongView
