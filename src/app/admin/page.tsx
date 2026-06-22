@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { CheckCircle2, ChevronDown, ChevronUp, ExternalLink, FileText, Play, Search, ShieldCheck, Trash2, UserRound, X } from "lucide-react";
+import { AlertCircle, CalendarDays, CheckCircle2, ChevronDown, ChevronUp, DoorOpen, ExternalLink, FileText, Music4, Play, Search, ShieldCheck, Trash2, UserRound, Users, X, type LucideIcon } from "lucide-react";
 import { useProfile, listProfiles, saveProfile, getRegistrationOpen, setRegistrationOpen } from "@/lib/firebase/users";
 import { getSongProposals, setProposalStatus, deleteSongProposal } from "@/lib/firebase/songProposals";
 import type { SongProposal } from "@/types/songProposal";
@@ -53,6 +53,8 @@ function Pill({ label, color }: { label: string; color?: string }) {
 
 const FILTERS = ["Tous", ...SERVICE_LIEUX, "EDD", ...GROUPES, "Ne sert pas"] as const;
 
+type AdminTab = "signalements" | "propositions" | "membres" | "inscriptions" | "planning";
+
 export default function AdminPage() {
   const { user, loading } = useProfile();
   const admin = isAdminUser(user);
@@ -77,6 +79,11 @@ export default function AdminPage() {
   const [error, setError] = useState("");
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<(typeof FILTERS)[number]>("Tous");
+  const [tab, setTab] = useState<AdminTab>("membres");
+  const [showResolvedReports, setShowResolvedReports] = useState(false);
+  const [showResolvedProposals, setShowResolvedProposals] = useState(false);
+  const [expandedReport, setExpandedReport] = useState<string | null>(null);
+  const [expandedProposal, setExpandedProposal] = useState<string | null>(null);
 
   useEffect(() => {
     if (!admin) return;
@@ -242,6 +249,18 @@ export default function AdminPage() {
 
   const pendingProposals = proposals.filter((p) => p.status === "pending");
   const pendingReports = reports.filter((r) => r.status === "pending");
+  const resolvedProposals = proposals.filter((p) => p.status !== "pending");
+  const resolvedReports = reports.filter((r) => r.status !== "pending");
+  const visibleProposals = showResolvedProposals ? proposals : pendingProposals;
+  const visibleReports = showResolvedReports ? reports : pendingReports;
+
+  const TABS: { key: AdminTab; label: string; Icon: LucideIcon; count?: number; always?: boolean }[] = [
+    { key: "signalements", label: "Signalements", Icon: AlertCircle, count: pendingReports.length },
+    { key: "propositions", label: "Propositions", Icon: Music4, count: pendingProposals.length },
+    { key: "membres", label: "Membres", Icon: Users, count: profiles.length, always: true },
+    { key: "inscriptions", label: "Inscriptions", Icon: DoorOpen },
+    { key: "planning", label: "Planning", Icon: CalendarDays, count: unlinkedNames.length },
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -257,21 +276,47 @@ export default function AdminPage() {
           </Alert>
         )}
 
+        {/* ── Onglets ── */}
+        <div className="flex gap-1.5 overflow-x-auto pb-1 -mx-1 px-1 scrollbar-none">
+          {TABS.map(({ key, label, Icon, count, always }) => {
+            const active = tab === key;
+            const showCount = count !== undefined && (always || count > 0);
+            return (
+              <button
+                key={key}
+                onClick={() => setTab(key)}
+                className={`shrink-0 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-[13px] font-semibold transition-colors ${
+                  active
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-card border border-border text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                <Icon className="h-3.5 w-3.5" />
+                {label}
+                {showCount && (
+                  <span
+                    className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${
+                      active
+                        ? "bg-white/20 text-white"
+                        : always
+                        ? "bg-muted text-muted-foreground"
+                        : "bg-primary/10 text-primary"
+                    }`}
+                  >
+                    {count}
+                  </span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+
         {/* ── Signalements ── */}
+        {tab === "signalements" && (
         <div className="rounded-xl border border-border bg-card p-5 space-y-3">
-          <div className="flex items-center justify-between">
-            <h2 className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
-              Signalements
-            </h2>
-            {pendingReports.length > 0 && (
-              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-                {pendingReports.length} en attente
-              </span>
-            )}
-          </div>
           <p className="text-xs text-muted-foreground">
-            Problèmes signalés par les membres (chant ou site). Marque comme traité
-            une fois résolu.
+            Problèmes signalés par les membres (chant ou site). Déplie un signalement
+            pour le détailler, et marque-le comme traité une fois résolu.
           </p>
 
           {loadingReports ? (
@@ -282,18 +327,23 @@ export default function AdminPage() {
             </p>
           ) : (
             <div className="space-y-2">
-              {reports.map((r) => {
+              {visibleReports.map((r) => {
                 const busy = reportBusy === r.id;
+                const expanded = expandedReport === r.id;
                 return (
                   <div
                     key={r.id}
-                    className={`rounded-xl border border-border bg-background p-4 space-y-2 ${
+                    className={`rounded-xl border border-border bg-background ${
                       r.status !== "pending" ? "opacity-60" : ""
                     }`}
                   >
-                    <div className="flex items-start justify-between gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setExpandedReport(expanded ? null : r.id)}
+                      className="w-full flex items-start justify-between gap-2 px-4 py-3 text-left"
+                    >
                       <div className="min-w-0">
-                        <p className="text-sm font-semibold text-foreground">{r.title}</p>
+                        <p className="text-sm font-semibold text-foreground truncate">{r.title}</p>
                         <p className="text-xs text-muted-foreground truncate">
                           {r.authorName}
                           {r.createdAt ? ` · ${r.createdAt.toLocaleDateString("fr-FR")}` : ""}
@@ -305,91 +355,104 @@ export default function AdminPage() {
                           color={r.kind === "song" ? "#2563eb" : "#9333ea"}
                         />
                         {r.status === "resolved" && <Pill label="Traité" color="#16a34a" />}
-                      </div>
-                    </div>
-
-                    {r.description && (
-                      <p className="text-xs text-foreground whitespace-pre-wrap">{r.description}</p>
-                    )}
-
-                    {((r.kind === "song" && r.songSlug) || r.pageUrl) && (
-                      <div className="flex flex-wrap gap-3">
-                        {r.kind === "song" && r.songSlug && (
-                          <Link
-                            href={`/songs/${r.songSlug}`}
-                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
-                          >
-                            <ExternalLink className="h-3 w-3" />
-                            {r.songTitle || "Voir le chant"}
-                          </Link>
-                        )}
-                        {r.pageUrl && (
-                          <a
-                            href={r.pageUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground"
-                          >
-                            <ExternalLink className="h-3 w-3" />
-                            Page
-                          </a>
+                        {expanded ? (
+                          <ChevronUp className="h-4 w-4 text-muted-foreground" />
+                        ) : (
+                          <ChevronDown className="h-4 w-4 text-muted-foreground" />
                         )}
                       </div>
-                    )}
+                    </button>
 
-                    <div className="flex items-center justify-end gap-2 pt-1">
-                      {r.status === "pending" ? (
-                        <Button
-                          variant="outline"
-                          onClick={() => handleReportStatus(r, "resolved")}
-                          disabled={busy}
-                          className="h-9 text-xs"
-                        >
-                          <CheckCircle2 className="h-3.5 w-3.5 mr-1.5" />
-                          Marquer traité
-                        </Button>
-                      ) : (
-                        <Button
-                          variant="outline"
-                          onClick={() => handleReportStatus(r, "pending")}
-                          disabled={busy}
-                          className="h-9 text-xs"
-                        >
-                          Rouvrir
-                        </Button>
-                      )}
-                      <button
-                        type="button"
-                        onClick={() => handleReportDelete(r)}
-                        disabled={busy}
-                        className="h-9 w-9 rounded-lg border border-border text-muted-foreground hover:text-destructive flex items-center justify-center disabled:opacity-50"
-                        aria-label="Supprimer le signalement"
-                      >
-                        <Trash2 className="h-3.5 w-3.5" />
-                      </button>
-                    </div>
+                    {expanded && (
+                      <div className="border-t border-border px-4 py-3 space-y-2">
+                        {r.description && (
+                          <p className="text-xs text-foreground whitespace-pre-wrap">{r.description}</p>
+                        )}
+
+                        {((r.kind === "song" && r.songSlug) || r.pageUrl) && (
+                          <div className="flex flex-wrap gap-3">
+                            {r.kind === "song" && r.songSlug && (
+                              <Link
+                                href={`/songs/${r.songSlug}`}
+                                className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+                              >
+                                <ExternalLink className="h-3 w-3" />
+                                {r.songTitle || "Voir le chant"}
+                              </Link>
+                            )}
+                            {r.pageUrl && (
+                              <a
+                                href={r.pageUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground"
+                              >
+                                <ExternalLink className="h-3 w-3" />
+                                Page
+                              </a>
+                            )}
+                          </div>
+                        )}
+
+                        <div className="flex items-center justify-end gap-2 pt-1">
+                          {r.status === "pending" ? (
+                            <Button
+                              variant="outline"
+                              onClick={() => handleReportStatus(r, "resolved")}
+                              disabled={busy}
+                              className="h-9 text-xs"
+                            >
+                              <CheckCircle2 className="h-3.5 w-3.5 mr-1.5" />
+                              Marquer traité
+                            </Button>
+                          ) : (
+                            <Button
+                              variant="outline"
+                              onClick={() => handleReportStatus(r, "pending")}
+                              disabled={busy}
+                              className="h-9 text-xs"
+                            >
+                              Rouvrir
+                            </Button>
+                          )}
+                          <button
+                            type="button"
+                            onClick={() => handleReportDelete(r)}
+                            disabled={busy}
+                            className="h-9 w-9 rounded-lg border border-border text-muted-foreground hover:text-destructive flex items-center justify-center disabled:opacity-50"
+                            aria-label="Supprimer le signalement"
+                          >
+                            <Trash2 className="h-3.5 w-3.5" />
+                          </button>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 );
               })}
+
+              {resolvedReports.length > 0 && (
+                <button
+                  type="button"
+                  onClick={() => setShowResolvedReports((v) => !v)}
+                  className="w-full text-xs font-semibold text-muted-foreground hover:text-foreground py-1.5"
+                >
+                  {showResolvedReports
+                    ? "Masquer les traités"
+                    : `Voir les traités (${resolvedReports.length})`}
+                </button>
+              )}
             </div>
           )}
         </div>
+        )}
 
         {/* ── Propositions de chants ── */}
+        {tab === "propositions" && (
         <div className="rounded-xl border border-border bg-card p-5 space-y-3">
-          <div className="flex items-center justify-between">
-            <h2 className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
-              Propositions de chants
-            </h2>
-            {pendingProposals.length > 0 && (
-              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-                {pendingProposals.length} en attente
-              </span>
-            )}
-          </div>
           <p className="text-xs text-muted-foreground">
-            Chants proposés par les membres. Après ajout au répertoire, marque la
-            proposition comme traitée.
+            Chants proposés par les membres. Déplie une proposition pour ses liens,
+            et marque-la comme traitée après ajout au répertoire.
           </p>
 
           {loadingProposals ? (
@@ -400,16 +463,21 @@ export default function AdminPage() {
             </p>
           ) : (
             <div className="space-y-2">
-              {proposals.map((p) => {
+              {visibleProposals.map((p) => {
                 const busy = proposalBusy === p.id;
+                const expanded = expandedProposal === p.id;
                 return (
                   <div
                     key={p.id}
-                    className={`rounded-xl border border-border bg-background p-4 space-y-2 ${
+                    className={`rounded-xl border border-border bg-background ${
                       p.status !== "pending" ? "opacity-60" : ""
                     }`}
                   >
-                    <div className="flex items-start justify-between gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setExpandedProposal(expanded ? null : p.id)}
+                      className="w-full flex items-start justify-between gap-2 px-4 py-3 text-left"
+                    >
                       <div className="min-w-0">
                         <p className="text-sm font-semibold text-foreground truncate">{p.title}</p>
                         <p className="text-xs text-muted-foreground truncate">
@@ -417,75 +485,100 @@ export default function AdminPage() {
                           {p.createdAt ? ` · ${p.createdAt.toLocaleDateString("fr-FR")}` : ""}
                         </p>
                       </div>
-                      {p.status === "accepted" && <Pill label="Traité" color="#16a34a" />}
-                      {p.status === "rejected" && <Pill label="Refusé" color="#dc2626" />}
-                    </div>
+                      <div className="flex items-center gap-1.5 shrink-0">
+                        {p.status === "accepted" && <Pill label="Traité" color="#16a34a" />}
+                        {p.status === "rejected" && <Pill label="Refusé" color="#dc2626" />}
+                        {expanded ? (
+                          <ChevronUp className="h-4 w-4 text-muted-foreground" />
+                        ) : (
+                          <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                        )}
+                      </div>
+                    </button>
 
-                    <div className="flex flex-wrap gap-2">
-                      <a
-                        href={p.youtubeUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
-                      >
-                        <Play className="h-3.5 w-3.5" />
-                        YouTube
-                        <ExternalLink className="h-3 w-3" />
-                      </a>
-                      {p.pdfUrl && (
-                        <a
-                          href={p.pdfUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
-                        >
-                          <FileText className="h-3.5 w-3.5" />
-                          Partition PDF
-                          <ExternalLink className="h-3 w-3" />
-                        </a>
-                      )}
-                    </div>
+                    {expanded && (
+                      <div className="border-t border-border px-4 py-3 space-y-2">
+                        <div className="flex flex-wrap gap-2">
+                          <a
+                            href={p.youtubeUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+                          >
+                            <Play className="h-3.5 w-3.5" />
+                            YouTube
+                            <ExternalLink className="h-3 w-3" />
+                          </a>
+                          {p.pdfUrl && (
+                            <a
+                              href={p.pdfUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+                            >
+                              <FileText className="h-3.5 w-3.5" />
+                              Partition PDF
+                              <ExternalLink className="h-3 w-3" />
+                            </a>
+                          )}
+                        </div>
 
-                    <div className="flex items-center justify-end gap-2 pt-1">
-                      {p.status !== "accepted" && (
-                        <Button
-                          variant="outline"
-                          onClick={() => handleProposalStatus(p, "accepted")}
-                          disabled={busy}
-                          className="h-9 text-xs"
-                        >
-                          <CheckCircle2 className="h-3.5 w-3.5 mr-1.5" />
-                          Marquer traité
-                        </Button>
-                      )}
-                      {p.status === "pending" && (
-                        <Button
-                          variant="outline"
-                          onClick={() => handleProposalStatus(p, "rejected")}
-                          disabled={busy}
-                          className="h-9 text-xs"
-                        >
-                          Refuser
-                        </Button>
-                      )}
-                      <button
-                        type="button"
-                        onClick={() => handleProposalDelete(p)}
-                        disabled={busy}
-                        className="h-9 w-9 rounded-lg border border-border text-muted-foreground hover:text-destructive flex items-center justify-center disabled:opacity-50"
-                        aria-label="Supprimer la proposition"
-                      >
-                        <Trash2 className="h-3.5 w-3.5" />
-                      </button>
-                    </div>
+                        <div className="flex items-center justify-end gap-2 pt-1">
+                          {p.status !== "accepted" && (
+                            <Button
+                              variant="outline"
+                              onClick={() => handleProposalStatus(p, "accepted")}
+                              disabled={busy}
+                              className="h-9 text-xs"
+                            >
+                              <CheckCircle2 className="h-3.5 w-3.5 mr-1.5" />
+                              Marquer traité
+                            </Button>
+                          )}
+                          {p.status === "pending" && (
+                            <Button
+                              variant="outline"
+                              onClick={() => handleProposalStatus(p, "rejected")}
+                              disabled={busy}
+                              className="h-9 text-xs"
+                            >
+                              Refuser
+                            </Button>
+                          )}
+                          <button
+                            type="button"
+                            onClick={() => handleProposalDelete(p)}
+                            disabled={busy}
+                            className="h-9 w-9 rounded-lg border border-border text-muted-foreground hover:text-destructive flex items-center justify-center disabled:opacity-50"
+                            aria-label="Supprimer la proposition"
+                          >
+                            <Trash2 className="h-3.5 w-3.5" />
+                          </button>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 );
               })}
+
+              {resolvedProposals.length > 0 && (
+                <button
+                  type="button"
+                  onClick={() => setShowResolvedProposals((v) => !v)}
+                  className="w-full text-xs font-semibold text-muted-foreground hover:text-foreground py-1.5"
+                >
+                  {showResolvedProposals
+                    ? "Masquer les traités"
+                    : `Voir les traités (${resolvedProposals.length})`}
+                </button>
+              )}
             </div>
           )}
         </div>
+        )}
 
         {/* ── Inscriptions ── */}
+        {tab === "inscriptions" && (
         <div className="rounded-xl border border-border bg-card p-5 space-y-3">
           <h2 className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
             Inscriptions
@@ -515,8 +608,10 @@ export default function AdminPage() {
             </Button>
           </div>
         </div>
+        )}
 
         {/* ── Membres ── */}
+        {tab === "membres" && (
         <div className="rounded-xl border border-border bg-card p-5 space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
@@ -716,8 +811,10 @@ export default function AdminPage() {
             </div>
           )}
         </div>
+        )}
 
         {/* ── Noms du planning sans compte ── */}
+        {tab === "planning" && (
         <div className="rounded-xl border border-border bg-card p-5 space-y-3">
           <h2 className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
             Planning sans compte ({unlinkedNames.length})
@@ -745,6 +842,7 @@ export default function AdminPage() {
             </div>
           )}
         </div>
+        )}
       </div>
     </div>
   );

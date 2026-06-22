@@ -358,27 +358,108 @@
     "sections": {
       "songs": {
         "title": "Trouver et lire un chant",
-        "body": "L'onglet Louange ouvre la liste des chants. Utilise la barre de recherche pour chercher par titre, par pinyin (chants chinois) ou par artiste. Les filtres permettent de n'afficher que les chants français, chinois, ou d'un thème précis. La pastille colorée à gauche indique la langue (bleu = français, rouge = chinois). Les chants que tu as ouverts récemment apparaissent en haut sous « Récemment consultés »."
+        "body": "L'onglet **Louange** ouvre la liste des chants. Cherche par titre, par pinyin (chants chinois) ou par artiste, puis ouvre un chant pour voir la partition, ses liens (YouTube, Spotify…) et les outils.",
+        "points": [
+          "Les filtres limitent l'affichage à une langue ou à un thème précis.",
+          "La pastille de couleur à gauche indique la langue : bleu = français, rouge = chinois.",
+          "Tes derniers chants ouverts apparaissent en haut, sous « Récemment consultés ».",
+          "Un chant manque ? Le bouton **Proposer un nouveau chant** l'envoie aux responsables."
+        ]
       },
       "customize": {
         "title": "Transposer et personnaliser",
-        "body": "Sur un chant, le bouton Personnaliser permet de transposer dans une autre tonalité, d'afficher ou masquer les accords, d'afficher le pinyin (chants chinois), de basculer en notation Jianpu quand elle existe, et de réorganiser les sections. Tu peux aussi régler la taille du texte. Ces réglages servent aussi à la génération du PDF et au Mode Louange."
+        "body": "Sur un chant, le bouton **Personnaliser** adapte la partition à tes besoins. Tes réglages servent aussi au PDF et au Mode Louange.",
+        "points": [
+          "Transpose dans une autre tonalité (boutons − / + ou choix direct).",
+          "Affiche ou masque les accords, et le pinyin pour les chants chinois.",
+          "Bascule en notation Jianpu (简谱) quand elle existe.",
+          "Réorganise, ajoute ou masque des sections, et règle la taille du texte.",
+          "**Réinitialiser** revient à la version d'origine."
+        ],
+        "tip": "En mode Jianpu, la structure n'est pas modifiable : le chant s'exporte tel quel, dans l'ordre original."
       },
       "performance": {
         "title": "Le Mode Louange",
-        "body": "Le Mode Louange affiche le chant en plein écran, page par page, pour jouer sans distraction. Balaye ou utilise les flèches pour changer de page. L'outil d'annotation (crayon, surligneur, gomme) permet d'écrire directement sur la partition : choisis l'outil, l'épaisseur (les cases montrent l'épaisseur réelle du trait) et la couleur. Les annotations sont enregistrées sur ton compte et réapparaissent à la prochaine ouverture de la même mise en page."
+        "body": "Le **Mode Louange** affiche le chant en plein écran, page par page, pour jouer sans distraction.",
+        "points": [
+          "Balaye ou utilise les flèches pour changer de page.",
+          "L'outil d'annotation (crayon, surligneur, gomme) écrit directement sur la partition.",
+          "Choisis l'outil, l'épaisseur (les cases montrent l'épaisseur réelle du trait) et la couleur.",
+          "Tes annotations sont enregistrées sur ton compte et réapparaissent à la même mise en page."
+        ]
       },
       "setlists": {
         "title": "Les setlists",
-        "body": "Une setlist regroupe les chants d'un culte ou d'une réunion. Tu vois les setlists des services auxquels tu as accès selon ton profil. Ouvre-en une pour parcourir les chants, lancer le Mode Louange, ou télécharger le PDF de l'ensemble. Selon tes droits, tu peux aussi créer et modifier des setlists."
+        "for": "Lecture pour tous · création selon tes droits",
+        "body": "Une setlist regroupe les chants d'un culte ou d'une réunion. Tu vois celles des services auxquels ton profil donne accès.",
+        "points": [
+          "Ouvre une setlist pour parcourir les chants, lancer le Mode Louange ou télécharger un PDF unique (page de garde + tous les chants).",
+          "Chaque chant peut avoir sa propre tonalité, son mode (standard / Jianpu) et des notes pour le culte.",
+          "Avec le rôle **musicien** (créer et modifier) ou **choriste / présidence** (créer), tu composes et réordonnes les setlists de tes services."
+        ],
+        "tip": "Une setlist privée n'est visible que de son auteur et des responsables."
       },
       "planning": {
         "title": "Planning et Mes Services",
-        "body": "L'onglet Planning montre les plannings de service de l'église. L'onglet Mes Services filtre ces plannings pour n'afficher que les dates où tu es prévu — pense à choisir ton nom de planning dans ton profil pour que cela fonctionne. Quand une setlist existe pour un de tes services, un lien direct y mène."
+        "body": "L'onglet **Planning** montre les plannings de service de l'église (cultes, Campus, Intergroupe, Interfranco). L'onglet **Mes Services** ne garde que les dates où tu es prévu.",
+        "points": [
+          "Pour que Mes Services fonctionne, choisis ton **nom de planning** dans ton profil.",
+          "Quand une setlist existe pour un de tes services, un lien direct y mène.",
+          "Les couleurs distinguent les types de service."
+        ]
+      },
+      "annonces": {
+        "title": "Annonces",
+        "for": "Lecture pour tous · publication selon tes droits",
+        "body": "L'onglet **Annonces** rassemble les infos de l'équipe : répétitions, consignes, infos de groupe ou de classe EDD.",
+        "points": [
+          "Les annonces épinglées restent en haut ; les liens sont cliquables.",
+          "Elles sont classées par section (culte, groupe, EDD).",
+          "Si un responsable t'a donné le droit sur une section, tu peux y publier, modifier ou supprimer une annonce."
+        ],
+        "tip": "Une nouvelle annonce peut aussi déclencher une notification (voir ci-dessous)."
+      },
+      "notifications": {
+        "title": "Notifications et rappels",
+        "body": "La **cloche** en haut affiche les nouveautés. Sur mobile, tu peux aussi recevoir des **notifications push**, même site fermé.",
+        "points": [
+          "Active-les depuis ton **profil**, avec l'interrupteur Notifications.",
+          "Trois types, activables séparément : **Rappels de service** (à J-7, J-3 et J-1, plus les répétitions Campus), **Setlist prête** et **Annonces**.",
+          "Sur iPhone, installe d'abord le site sur l'écran d'accueil (PWA) pour activer le push."
+        ],
+        "tip": "Les responsables peuvent aussi t'envoyer une notification ciblée (voir Rôles et responsables)."
+      },
+      "report": {
+        "title": "Signaler un problème",
+        "body": "Une erreur dans un chant (parole, accord, tonalité…) ou un souci sur le site ? Signale-le : ça part directement aux responsables.",
+        "points": [
+          "Sur un chant : le bouton **Signaler** ouvre un court formulaire (résumé + détails).",
+          "Pour le site en général : l'icône de signalement dans la barre du haut.",
+          "Donne un résumé clair et, si possible, ce qu'il faudrait corriger."
+        ]
+      },
+      "roles": {
+        "title": "Rôles et responsables",
+        "for": "Selon ton profil",
+        "body": "Tes droits dépendent des rôles que les responsables t'attribuent, service par service. Plus de droits débloquent plus d'actions.",
+        "points": [
+          "**Choriste / Présidence** : créer des setlists dans leurs services.",
+          "**Musicien** : créer et modifier les setlists de leurs services.",
+          "**Régie** : voir en lecture seule les setlists de ses cultes.",
+          "**Droit d'annonce ou de notification** : publier des annonces ou envoyer des notifications à une audience, attribué au cas par cas.",
+          "**Admins** : espace **Admin** (valider les comptes et les rôles, ouvrir/fermer les inscriptions, traiter les propositions de chants et les signalements) et page **Notifier** (notification manuelle à tout le monde, un culte, un groupe ou une classe)."
+        ],
+        "tip": "Tu ne vois ces outils que si tu en as les droits."
       },
       "account": {
         "title": "Compte, langue et thème",
-        "body": "Complète ton profil (prénom, nom, lieux de service, nom de planning) pour débloquer Mes Services et les setlists de tes services. Le bouton 中文/FR change la langue de toute l'interface. Le bouton lune/soleil bascule entre thème clair et sombre. La cloche affiche les notifications (nouvelles annonces et setlists)."
+        "body": "Complète ton **profil** pour débloquer Mes Services et les setlists de tes services.",
+        "points": [
+          "Renseigne prénom, nom, lieux et rôles de service, et ton nom de planning.",
+          "Le bouton **中文 / FR** change la langue de toute l'interface.",
+          "Le bouton **lune / soleil** bascule entre thème clair et sombre.",
+          "Une fois complété, le profil n'est modifiable que par un responsable : signale-lui toute erreur."
+        ]
       }
     }
   }
