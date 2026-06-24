@@ -103,7 +103,7 @@ export function fromFsValue(v: unknown): unknown {
   return null;
 }
 
-export type RawDoc = { name: string; fields: Record<string, unknown> };
+export type RawDoc = { name: string; fields: Record<string, unknown>; createTime?: string };
 
 function fromFsDoc(raw: RawDoc): FSSetlist {
   const id = raw.name.split("/").pop()!;
