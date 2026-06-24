@@ -117,7 +117,6 @@ export default function SignupPage() {
         planningName: form.planningName.trim(),
         annonces: [],
         notify: [],
-        createdAt: new Date(),
       });
       router.push("/setlists");
     } catch (e) {
