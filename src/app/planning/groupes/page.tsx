@@ -6,6 +6,15 @@ import { PlanningTable } from "@/components/planning/PlanningTable"
 import { filterByTri, getCurrentTri } from "@/lib/planning/utils"
 import { PAIX_FALLBACK, FIDELITE_FALLBACK, FIDELITE_MUSIC_FALLBACK, BONTE_FALLBACK } from "@/lib/planning/data"
 import { fetchPaix, fetchFidelite, fetchFideliteMusic, fetchBonte } from "@/lib/planning/sheets"
+import { useProfile } from "@/lib/firebase/users"
+import { isAdminUser } from "@/lib/access"
+import {
+  PUBLISHABLE_PLANNINGS,
+  canPublishPlanning,
+  getPublishedQuarters,
+  triVisibilities,
+  TRI_ORDER,
+} from "@/lib/planning/releases"
 
 type Groupe = "paix" | "fidelite" | "bonte"
 type FidSub = "groupe" | "musiciens"
@@ -19,6 +28,7 @@ const GRP_COLORS: Record<Groupe, string> = {
 const GRP_INACTIVE = "bg-card text-muted-foreground border-border hover:text-foreground"
 
 export default function GroupesPage() {
+  const { user, profile } = useProfile()
   const [paix, setPaix] = useState(PAIX_FALLBACK)
   const [fid, setFid] = useState(FIDELITE_FALLBACK)
   const [fidM, setFidM] = useState(FIDELITE_MUSIC_FALLBACK)
@@ -27,6 +37,7 @@ export default function GroupesPage() {
   const [grp, setGrp] = useState<Groupe>("paix")
   const [fidSub, setFidSub] = useState<FidSub>("groupe")
   const [tri, setTri] = useState(getCurrentTri())
+  const [pubByGrp, setPubByGrp] = useState<Record<string, string[]>>({})
 
   useEffect(() => {
     Promise.all([
@@ -37,13 +48,30 @@ export default function GroupesPage() {
     ]).finally(() => setLoading(false))
   }, [])
 
+  useEffect(() => {
+    const year = new Date().getFullYear()
+    Promise.all(
+      (["paix", "fidelite", "bonte"] as Groupe[]).map(k =>
+        getPublishedQuarters(k, year).then(q => [k, q] as const)
+      )
+    ).then(entries => setPubByGrp(Object.fromEntries(entries)))
+  }, [])
+
   const color = GRP_COLORS[grp]
 
+  // Trimestres futurs non publiés du groupe actif : masqués aux membres, marqués aux publieurs.
+  const planning = PUBLISHABLE_PLANNINGS.find(p => p.key === grp)!
+  const canPublish = canPublishPlanning(planning, isAdminUser(user), profile?.notify ?? [])
+  const vis = triVisibilities(TRI_ORDER, pubByGrp[grp] ?? [], getCurrentTri(), canPublish)
+  const visibleTris = vis.filter(v => v.visible).map(v => v.tri)
+  const unpublishedTris = vis.filter(v => v.unpublished).map(v => v.tri)
+  const effTri = visibleTris.includes(tri) ? tri : getCurrentTri()
+
   const data = (() => {
-    if (grp === "fidelite" && fidSub === "musiciens") return filterByTri(fidM, tri)
-    if (grp === "paix") return filterByTri(paix, tri)
-    if (grp === "fidelite") return filterByTri(fid, tri)
-    return filterByTri(bonte, tri)
+    if (grp === "fidelite" && fidSub === "musiciens") return filterByTri(fidM, effTri)
+    if (grp === "paix") return filterByTri(paix, effTri)
+    if (grp === "fidelite") return filterByTri(fid, effTri)
+    return filterByTri(bonte, effTri)
   })()
 
   const cols = (() => {
@@ -91,7 +119,7 @@ export default function GroupesPage() {
         </div>
       )}
 
-      <FilterButtons options={["T1","T2","T3","T4"]} active={tri} onChange={setTri} color={color} />
+      <FilterButtons options={visibleTris} active={effTri} onChange={setTri} color={color} unpublished={unpublishedTris} />
 
       <div className="flex items-center gap-2 text-xs text-muted-foreground">
         <div className="w-3 h-3 rounded-sm" style={{ background: `${color}26`, border: `1px solid ${color}4d` }} />

@@ -8,6 +8,8 @@ import { isAdminUser } from "@/lib/access";
 import { authHeader } from "@/lib/firebase/setlists";
 import type { UserProfile } from "@/types/user";
 import { NOTIFY_ALL, NOTIFY_GROUPS, audienceLabel } from "@/lib/push/audiences";
+import { PUBLISHABLE_PLANNINGS, canPublishPlanning } from "@/lib/planning/releases";
+import { PublishPlanningPanel } from "@/components/planning/PublishPlanningPanel";
 
 function normalize(s: string): string {
   return s.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
@@ -43,6 +45,12 @@ export default function NotifierPage() {
     [rights, admin] // eslint-disable-line react-hooks/exhaustive-deps
   );
 
+  const canPublishAny = useMemo(
+    () => PUBLISHABLE_PLANNINGS.some((p) => canPublishPlanning(p, admin, rights)),
+    [admin, rights]
+  );
+
+  const [mode, setMode] = useState<"notif" | "publish">("notif");
   const [audience, setAudience] = useState("");
   const [profiles, setProfiles] = useState<UserProfile[] | null>(null);
   const [selected, setSelected] = useState<Set<string>>(new Set());
@@ -178,6 +186,32 @@ export default function NotifierPage() {
           planning du trimestre.
         </p>
 
+        {canPublishAny && (
+          <div className="flex gap-2">
+            {(
+              [
+                ["notif", "Notification"],
+                ["publish", "Publier un planning"],
+              ] as const
+            ).map(([m, label]) => (
+              <button
+                key={m}
+                onClick={() => setMode(m)}
+                className={`flex-1 h-10 rounded-xl border text-sm font-semibold transition-colors ${
+                  mode === m
+                    ? "bg-primary text-primary-foreground border-primary"
+                    : "bg-card border-border text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {mode === "publish" ? (
+          <PublishPlanningPanel isAdmin={admin} notifyRights={rights} />
+        ) : (
         <div className="rounded-xl border border-border bg-card p-5 space-y-4">
           <div className="space-y-1.5">
             <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
@@ -364,6 +398,7 @@ export default function NotifierPage() {
             </div>
           )}
         </div>
+        )}
       </div>
     </div>
   );

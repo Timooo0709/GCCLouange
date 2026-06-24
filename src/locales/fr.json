@@ -388,7 +388,8 @@
           "Balaye ou utilise les flèches pour changer de page.",
           "L'outil d'annotation (crayon, surligneur, gomme) écrit directement sur la partition.",
           "Choisis l'outil, l'épaisseur (les cases montrent l'épaisseur réelle du trait) et la couleur.",
-          "Tes annotations sont enregistrées sur ton compte et réapparaissent à la même mise en page."
+          "Tes annotations sont enregistrées sur ton compte et réapparaissent à la même mise en page.",
+          "Ajuste la **taille du texte** et **affiche/masque les accords** directement depuis le mode."
         ]
       },
       "setlists": {
@@ -396,11 +397,27 @@
         "for": "Lecture pour tous · création selon tes droits",
         "body": "Une setlist regroupe les chants d'un culte ou d'une réunion. Tu vois celles des services auxquels ton profil donne accès.",
         "points": [
-          "Ouvre une setlist pour parcourir les chants, lancer le Mode Louange ou télécharger un PDF unique (page de garde + tous les chants).",
-          "Chaque chant peut avoir sa propre tonalité, son mode (standard / Jianpu) et des notes pour le culte.",
-          "Avec le rôle **musicien** (créer et modifier) ou **choriste / présidence** (créer), tu composes et réordonnes les setlists de tes services."
+          "Ouvre une setlist pour parcourir les chants, lancer le **Mode Louange** ou télécharger un **PDF unique** (page de garde + tous les chants à la suite).",
+          "Chaque chant garde sa tonalité, son mode (standard / Jianpu) et ses notes propres au culte.",
+          "**Dupliquer** crée ta propre copie d'une setlist ; **Partager** copie son lien.",
+          "Avec le rôle **musicien** (créer et modifier) ou **choriste / présidence** (créer), tu composes les setlists de tes services — voir « Composer une setlist » ci-dessous."
         ],
-        "tip": "Une setlist privée n'est visible que de son auteur et des responsables."
+        "tip": "Une setlist **privée** n'est visible que de son auteur et des responsables ; un **brouillon** reste caché tant qu'il n'est pas publié."
+      },
+      "compose": {
+        "title": "Composer une setlist",
+        "for": "Selon tes droits (musicien / présidence)",
+        "body": "Si tu peux créer ou modifier une setlist, l'éditeur va bien plus loin qu'une simple liste de chants.",
+        "points": [
+          "**Informations** : titre, **séance** (choisie dans le planning ou saisie à la main), **présidence**, et des **notes** générales (thème, contexte).",
+          "**Ajoute des chants** via la recherche, puis **réordonne-les** par glisser-déposer.",
+          "**Réglages par chant** : tonalité, accords, pinyin, mode standard / Jianpu, et structure (sections jouées et leur ordre).",
+          "**Notes à trois niveaux** : note de la setlist, note d'un chant, et note d'une section précise.",
+          "**Transitions** : ajoute un texte « transition après cette section » pour noter une modulation, un enchaînement, un silence…",
+          "**Fusion de chants (medley)** : sélectionne plusieurs chants puis **Fusionner** pour les enchaîner d'un bloc ; **Mélanger les sections** entrelace leurs couplets/refrains, et **Défusionner** les sépare à nouveau.",
+          "**Brouillon** : enregistre en brouillon pour finir plus tard — invisible des autres tant qu'il n'est pas publié."
+        ],
+        "tip": "Tous ces réglages (tonalité, structure, notes, transitions, fusion) se retrouvent à l'identique dans le PDF de la setlist et dans le Mode Louange."
       },
       "planning": {
         "title": "Planning et Mes Services",

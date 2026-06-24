@@ -163,5 +163,15 @@ service cloud.firestore {
       allow read: if true;
       allow write: if isAdmin();
     }
+
+    // Publication des plannings par trimestre : un doc par planning+année
+    // (planningReleases/{key}_{year}, champ published[]). Lisible publiquement —
+    // les pages planning, consultées sans compte, masquent les trimestres non
+    // publiés. Écriture réservée au serveur (Admin SDK, /api/planning/release),
+    // qui vérifie les droits de publication → interdite à tout client.
+    match /planningReleases/{id} {
+      allow read: if true;
+      allow write: if false;
+    }
   }
 }
