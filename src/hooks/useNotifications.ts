@@ -1,12 +1,15 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { getAnnoncesSince } from "@/lib/firebase/annonces";
 import { getSetlistsSince } from "@/lib/firebase/setlists";
+import { getNotifsSince } from "@/lib/firebase/notifications";
 import { useProfile } from "@/lib/firebase/users";
 import { visibleCategories, isAdminUser } from "@/lib/access";
 
 // Notifications in-app par polling REST (jamais de listener WebChannel).
-// Sources : annonces + setlists des catégories du profil. Le « vu » est
-// par appareil (localStorage), comme le badge annonces historique.
+// Sources : annonces + setlists des catégories du profil, ET les notifications
+// push ponctuelles persistées (collection `notifications` : manuelles, rappels,
+// diffusions — cf. src/lib/push/notifications.ts), filtrées sur le destinataire.
+// Le « vu » est par appareil (localStorage), comme le badge annonces historique.
 //
 // Coût Firestore : chaque rafraîchissement est INCRÉMENTAL — il ne lit que ce
 // qui est apparu depuis la dernière fois (`latestTs`), via getAnnoncesSince /
@@ -29,8 +32,9 @@ const MAX_ITEMS = 20;
 
 export interface NotificationItem {
   id: string;
-  kind: "annonce" | "setlist-created" | "setlist-updated";
+  kind: "annonce" | "setlist-created" | "setlist-updated" | "manual" | "reminder" | "broadcast";
   title: string;
+  /** Catégorie d'origine (annonce/setlist) ; vide pour les push ponctuels. */
   category: string;
   date: number; // millis
   href: string;
@@ -57,9 +61,10 @@ export function useNotifications() {
     if (!user || document.visibilityState !== "visible") return;
     try {
       const since = latestTsRef.current;
-      const [annonces, setlists] = await Promise.all([
+      const [annonces, setlists, notifs] = await Promise.all([
         getAnnoncesSince(since, MAX_ITEMS),
         getSetlistsSince(since, MAX_ITEMS),
+        getNotifsSince(since, MAX_ITEMS),
       ]);
 
       const admin = isAdminUser(user);
@@ -98,6 +103,22 @@ export function useNotifications() {
           category: s.category,
           date: ts,
           href: `/setlists/${s.id}`,
+        });
+      }
+
+      // Push ponctuels (manuels / rappels / diffusions). Ciblage côté client :
+      // on ne garde que ceux qui me visent (destinataire exact) ou diffusés à tous.
+      for (const n of notifs) {
+        if (!n.everyone && !n.recipients.includes(user.uid)) continue;
+        const ts = n.createdAt?.getTime() ?? 0;
+        if (!ts) continue;
+        fresh.push({
+          id: `push-${n.id}`,
+          kind: n.kind,
+          title: n.title,
+          category: "",
+          date: ts,
+          href: n.url,
         });
       }
 
