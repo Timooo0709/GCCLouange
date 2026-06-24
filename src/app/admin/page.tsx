@@ -53,6 +53,12 @@ function Pill({ label, color }: { label: string; color?: string }) {
 
 const FILTERS = ["Tous", ...SERVICE_LIEUX, "EDD", ...GROUPES, "Ne sert pas"] as const;
 
+// Une inscription est « nouvelle » pendant ses 7 premiers jours.
+const NEW_DAYS = 7;
+function isRecent(d?: Date): boolean {
+  return !!d && Date.now() - d.getTime() < NEW_DAYS * 86_400_000;
+}
+
 type AdminTab = "reception" | "membres" | "inscriptions" | "planning";
 
 export default function AdminPage() {
@@ -79,6 +85,7 @@ export default function AdminPage() {
   const [error, setError] = useState("");
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<(typeof FILTERS)[number]>("Tous");
+  const [sort, setSort] = useState<"recent" | "name">("recent");
   const [tab, setTab] = useState<AdminTab>("membres");
   const [showResolvedReports, setShowResolvedReports] = useState(false);
   const [showResolvedProposals, setShowResolvedProposals] = useState(false);
@@ -103,18 +110,29 @@ export default function AdminPage() {
 
   const displayed = useMemo(() => {
     const q = normalize(query.trim());
-    return profiles.filter((p) => {
-      if (q) {
-        const hay = normalize(`${p.firstName} ${p.lastName} ${p.email} ${p.planningName}`);
-        if (!hay.includes(q)) return false;
-      }
-      if (filter === "Tous") return true;
-      if (filter === "EDD") return (EDD_CLASSES as readonly string[]).some((c) => c in p.serviceRoles);
-      if (filter === "Ne sert pas") return Object.keys(p.serviceRoles).length === 0;
-      // Lieux + groupes : la catégorie est une clé de serviceRoles
-      return filter in p.serviceRoles;
-    });
-  }, [profiles, query, filter]);
+    const byName = (a: UserProfile, b: UserProfile) =>
+      a.lastName.localeCompare(b.lastName, "fr") || a.firstName.localeCompare(b.firstName, "fr");
+    return profiles
+      .filter((p) => {
+        if (q) {
+          const hay = normalize(`${p.firstName} ${p.lastName} ${p.email} ${p.planningName}`);
+          if (!hay.includes(q)) return false;
+        }
+        if (filter === "Tous") return true;
+        if (filter === "EDD") return (EDD_CLASSES as readonly string[]).some((c) => c in p.serviceRoles);
+        if (filter === "Ne sert pas") return Object.keys(p.serviceRoles).length === 0;
+        // Lieux + groupes : la catégorie est une clé de serviceRoles
+        return filter in p.serviceRoles;
+      })
+      .sort((a, b) => {
+        if (sort === "name") return byName(a, b);
+        // Récents d'abord ; les comptes sans date (anciens) en dernier, par nom
+        if (a.createdAt && b.createdAt) return b.createdAt.getTime() - a.createdAt.getTime();
+        if (a.createdAt) return -1;
+        if (b.createdAt) return 1;
+        return byName(a, b);
+      });
+  }, [profiles, query, filter, sort]);
 
   const stats = useMemo(() => {
     const allRoles = (p: UserProfile): ServiceRole[] => Object.values(p.serviceRoles).flat();
@@ -685,6 +703,22 @@ export default function AdminPage() {
                 );
               })}
             </div>
+            <div className="flex items-center gap-1.5 text-[11px]">
+              <span className="font-semibold text-muted-foreground">Trier :</span>
+              {(["recent", "name"] as const).map((s) => (
+                <button
+                  key={s}
+                  onClick={() => setSort(s)}
+                  className={`px-2.5 py-1 rounded-full font-semibold border transition-colors ${
+                    sort === s
+                      ? "bg-primary text-primary-foreground border-transparent"
+                      : "bg-background border-border text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {s === "recent" ? "Récents" : "A–Z"}
+                </button>
+              ))}
+            </div>
           </div>
 
           {loadingProfiles ? (
@@ -716,8 +750,10 @@ export default function AdminPage() {
                         <p className="text-xs text-muted-foreground truncate">
                           {p.email}
                           {p.planningName ? ` · planning : ${p.planningName}` : ""}
+                          {p.createdAt ? ` · inscrit le ${p.createdAt.toLocaleDateString("fr-FR")}` : ""}
                         </p>
                         <div className="flex flex-wrap gap-1">
+                          {isRecent(p.createdAt) && <Pill label="Nouveau" color="#16a34a" />}
                           {Object.entries(p.serviceRoles).map(([cat, roles]) => (
                             <Pill
                               key={cat}
