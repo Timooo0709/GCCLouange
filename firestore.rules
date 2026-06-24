@@ -141,6 +141,16 @@ service cloud.firestore {
       allow read, write: if false;
     }
 
+    // Notifications « cloche » : une entrée par push ponctuel (manuel, rappel,
+    // diffusion), générée côté serveur (Admin SDK). Lecture par tout membre
+    // connecté — le ciblage par destinataire (champ `recipients` / `everyone`)
+    // est appliqué côté client (cf. useNotifications), cohérent avec le modèle de
+    // confidentialité assumé du projet. Écriture réservée au serveur.
+    match /notifications/{id} {
+      allow read: if signedIn();
+      allow write: if false;
+    }
+
     // Préférences de notification par type (un doc par membre, id = uid) : chacun
     // gère les siennes ; le serveur (Admin) les lit pour filtrer les envois auto.
     match /notifPrefs/{uid} {
