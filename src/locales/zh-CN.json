@@ -262,7 +262,10 @@
     "empty": "暂无新内容",
     "annonce": "新公告",
     "setlistCreated": "新建歌单",
-    "setlistUpdated": "歌单已更新"
+    "setlistUpdated": "歌单已更新",
+    "manual": "通知",
+    "reminder": "提醒",
+    "broadcast": "群发通知"
   },
   "profile": {
     "title": "我的资料",
