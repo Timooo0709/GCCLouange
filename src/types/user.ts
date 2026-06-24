@@ -47,6 +47,9 @@ export interface UserProfile {
    *  (catégories culte/groupe/EDD, ou "*" pour tout le monde) — attribué par les
    *  admins uniquement. Cf. src/lib/push/audiences.ts. */
   notify: string[];
+  /** Date d'inscription, écrite à la création du compte. Absent pour les comptes
+   *  créés avant l'ajout de ce champ (juin 2026). */
+  createdAt?: Date;
 }
 
 // ─── Préférences de notification push (par type) ─────────────────────────────
