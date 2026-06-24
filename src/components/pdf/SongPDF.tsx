@@ -6,6 +6,7 @@ import { formatSectionName } from "@/lib/chordpro/parser";
 import { resolveStructureOverride } from "@/lib/chordpro/structure";
 import frTranslations from "@/locales/fr.json";
 import zhTranslations from "@/locales/zh-CN.json";
+import { measureLyric, measureChord } from "@/lib/chordpro/measureText";
 
 // ─── Fonts ────────────────────────────────────────────────────────────────────
 
@@ -84,9 +85,6 @@ const PINYIN_SIZE  = 8;
 const JIANPU_SIZE  = 11;
 const CHORD_H      = 16;    // reserved height for chord row
 
-// Approximate character widths for line-break pre-computation (no flexWrap)
-const LYRIC_CHAR_W = 5.5;   // NotoSans 11pt average glyph advance
-const CHORD_CHAR_W = 7.5;   // NotoSans Bold 13pt average glyph advance
 const PAGE_CONTENT_W = 495; // A4 - 2×50pt margins
 
 // ─── Section box type ─────────────────────────────────────────────────────────
@@ -123,6 +121,17 @@ function chordParts(chord: string): [string, string] {
   if (!m) return [chord, ""];
   return [m[1], m[2]];
 }
+
+/** Largeur rendue (pt) d'un accord : racine @CHORD_SIZE + qualité @CHORD_Q_SIZE,
+ *  exactement comme <ChordLabel> le dessine. */
+function chordWidthPt(chord: string): number {
+  const [root, qual] = chordParts(chord);
+  return measureChord(root, CHORD_SIZE) + measureChord(qual, CHORD_Q_SIZE);
+}
+
+// Écart minimal après un accord (≈ le padding-right 0.5em du rendu web) pour que
+// deux accords successifs ne se touchent jamais.
+const CHORD_GAP = measureChord(" ", CHORD_SIZE);
 
 function sectionName(section: ChordProSection, uiLang: string): string {
   return formatSectionName(section, uiLang === "zh-CN" ? zhTranslations : frTranslations);
@@ -166,12 +175,12 @@ function ChordLabel({ chord, theme }: { chord: string; theme: Theme }) {
   const [root, qual] = chordParts(chord);
   return (
     <View style={{ height: CHORD_H, flexDirection: "row", alignItems: "flex-end" }}>
-      <Text style={{ fontFamily: "LiberationSans", fontWeight: 700, color: theme.accent,
+      <Text style={{ fontFamily: "SpaceGrotesk", fontWeight: 700, color: theme.accent,
                      fontSize: CHORD_SIZE, lineHeight: 1 }}>
         {root}
       </Text>
       
-      <Text style={{ fontFamily: "LiberationSans", fontWeight: 700, color: theme.accent,
+      <Text style={{ fontFamily: "SpaceGrotesk", fontWeight: 700, color: theme.accent,
                       fontSize: CHORD_Q_SIZE, lineHeight: 1 }}>
         {qual ? qual : '\u00A0'}
       </Text>
@@ -195,10 +204,11 @@ function FrLine({ tokens, showChords, theme }: {
   const allEmpty = segs.every(s => !s.lyric?.trim() && !s.chord);
   if (allEmpty) return <View style={{ height: 2 }} />;
 
-  // Per-segment cell width = max(chord width, lyric width)
+  // Largeur de cellule = max(largeur accord, largeur parole), MESURÉES (mêmes
+  // métriques que le rendu réel) — plus de devinette nbChars × constante.
   const cellWidths = segs.map(seg => {
-    const cw = showChords && seg.chord ? (seg.chord.length + 0.5) * CHORD_CHAR_W : 0;
-    const lw = [...seg.lyric].length * LYRIC_CHAR_W;
+    const cw = showChords && seg.chord ? chordWidthPt(seg.chord) + CHORD_GAP : 0;
+    const lw = measureLyric(seg.lyric, LYRIC_FR);
     return Math.max(cw, lw, 4);
   });
 
@@ -283,13 +293,20 @@ function ZhLine({ tokens, pinyin, showChords, showPinyin, theme }: {
     }
   }
 
-  // Largeur de cellule basée sur le chord et le type de caractère
+  // Largeur de cellule. Pour une colonne SANS caractère chinois (accord seul, p.ex.
+  // suite « F#dim9 Dm7 Dm7(b5)/G »), on reproduit la réserve aérée du web
+  // ((longueur·0.75 + 1)em ; ZH_CHORD_EM calé sur CJK 1.6em ↔ 16pt) pour ne pas
+  // tasser les accords. Sous un caractère chinois : plancher 16, on s'élargit à
+  // l'accord mesuré s'il est plus large.
+  const ZH_CHORD_EM = 10;
   const cellWidth = (chord: string | null, charIsCJK: boolean): number => {
-    const fromChord = chord ? (chord.length + 1.5) * 6 : 0;
+    const measured = chord ? chordWidthPt(chord) + CHORD_GAP : 0;
+    const fromChord = !charIsCJK && chord
+      ? Math.max((chord.length * 0.75 + 1) * ZH_CHORD_EM, measured)
+      : measured;
     const fromChar = charIsCJK ? 16 : 8;
     return Math.max(fromChar, fromChord, 16);
   };
-  console.log('cols',cols)
   return (
     <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "flex-end", marginBottom: 2 }}>
       {cols.map((col, i) => (
@@ -316,12 +333,12 @@ function ChordSmall({ chord, theme }: { chord: string | null; theme: Theme }) {
   const [root, qual] = chordParts(chord);
   return (
     <View style={{ height: 16, flexDirection: "row", alignItems: "flex-end", justifyContent: "center" }}>
-      <Text style={{ fontFamily: "LiberationSans", fontWeight: 700, color: theme.accent,
+      <Text style={{ fontFamily: "SpaceGrotesk", fontWeight: 700, color: theme.accent,
                      fontSize: 13, lineHeight: 1 }}>
         {root}
       </Text>
       {qual ? (
-        <Text style={{ fontFamily: "LiberationSans", fontWeight: 700, color: theme.accent,
+        <Text style={{ fontFamily: "SpaceGrotesk", fontWeight: 700, color: theme.accent,
                        fontSize: 10, lineHeight: 1 }}>
           {qual}
         </Text>
@@ -575,6 +592,8 @@ export function SongPDFPage({
   const titleFont = isZh ? "KaiTi" : "SpaceGrotesk";
   const metaFont = isZh ? "SourceHanSansCN" : "SpaceGrotesk";
   const centerLabel = footerCenter ?? title;
+  // LiberationSans n'a pas de glyphes CJK → police CJK si le libellé en contient.
+  const centerLabelFont = /[一-鿿㐀-䶿]/.test(centerLabel) ? "SourceHanSansCN" : "LiberationSans";
   return (
     <Page size="A4" style={styles.page}>
 
@@ -659,7 +678,7 @@ export function SongPDFPage({
                        color: theme.accent, letterSpacing: 1 }]}>
           GCC LOUANGE
         </Text>
-        <Text style={[styles.footerText, { fontFamily: "LiberationSans", fontWeight: 400 }]}>
+        <Text style={[styles.footerText, { fontFamily: centerLabelFont, fontWeight: 400 }]}>
           {centerLabel}
         </Text>
         <Text
