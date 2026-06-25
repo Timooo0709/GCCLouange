@@ -254,7 +254,10 @@
       "medium": "Moyen",
       "large": "Grand",
       "undo": "Annuler",
-      "clearAll": "Tout effacer"
+      "clearAll": "Tout effacer",
+      "zoomIn": "Zoomer",
+      "zoomOut": "Dézoomer",
+      "resetZoom": "Revenir à 100 %"
     }
   },
   "notifications": {
