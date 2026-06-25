@@ -230,6 +230,10 @@ export function PerformanceMode({
     }
   });
   const [annotateMode, setAnnotateMode] = useState(false);
+  // Loupe du mode annotation : grossissement (≠ taille du texte, ne re-pagine pas)
+  // + déplacement. Possédée ici car elle agrandit aussi le texte (transform CSS).
+  const [annotZoom, setAnnotZoom] = useState(1);
+  const [annotPan, setAnnotPan] = useState({ x: 0, y: 0 });
   const [showChrome, setShowChrome] = useState(true);
   const [songListOpen, setSongListOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -420,6 +424,13 @@ export function PerformanceMode({
     }
   }, [annotateMode, showChromeWithTimer]);
 
+  // Loupe : retour à 100 % à chaque changement de page et à l'entrée/sortie du
+  // mode annotation (vue prévisible, on ne reste pas zoomé sur la page suivante).
+  useEffect(() => {
+    setAnnotZoom(1);
+    setAnnotPan({ x: 0, y: 0 });
+  }, [currentPage, annotateMode]);
+
   // ── Annotation persistence ──────────────────────────────────────────────────
 
   const currentPageIndices = pages[currentPage] ?? [];
@@ -590,7 +601,21 @@ export function PerformanceMode({
       </div>
 
       {/* ── Content area ── */}
-      <div className="absolute inset-0 overflow-hidden" style={{ zIndex: 1, zoom: fontScale, ...contentPadding }}>
+      {/* La loupe (transform: scale + translate) agrandit le texte SANS re-paginer,
+          en miroir exact du canvas d'annotation. Origine haut-gauche = (0,0) du
+          viewport, comme le calcul du canvas. transform plutôt que zoom : iOS gère
+          mal `zoom` (cf. fix fiche chant) et on veut le débordement + déplacement. */}
+      <div
+        className="absolute inset-0 overflow-hidden"
+        style={{
+          zIndex: 1,
+          zoom: fontScale,
+          ...contentPadding,
+          ...(annotateMode && annotZoom !== 1
+            ? { transform: `translate(${annotPan.x}px, ${annotPan.y}px) scale(${annotZoom})`, transformOrigin: "top left" }
+            : null),
+        }}
+      >
         {pages.length === 0 || !layout[currentPage] ? (
           <div className="h-full flex items-center justify-center">
             <p className="text-sm text-muted-foreground animate-pulse">{t("performance.layout")}</p>
@@ -644,6 +669,9 @@ export function PerformanceMode({
         <AnnotationCanvas
           data={pageAnnotations}
           onChange={handleAnnotationsChange}
+          zoom={annotZoom}
+          pan={annotPan}
+          onZoomPanChange={(z, p) => { setAnnotZoom(z); setAnnotPan(p); }}
         />
       )}
 
