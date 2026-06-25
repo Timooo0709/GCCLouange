@@ -33,10 +33,10 @@ export function transposeChord(chord: string, semitones: number, targetKey: stri
   const useFlatKey = FLAT_KEYS.has(targetKey);
 
   // Parse root (1-2 chars) + quality + optional slash bass "/X"
-  const match = chord.match(/^([A-G][#b]?)(.*?)(?:\/([A-G][#b]?))?$/);
+  const match = chord.match(/^(\(?)([A-G][#b]?)(.*?)(?:\/([A-G][#b]?))?(\)?)$/);
   if (!match) return chord;
 
-  const [, root, quality, bass] = match;
+  const [, leftSlash,root, quality, bass, rightSlash] = match;
 
   const rootIdx = noteToIndex(root);
   if (rootIdx === -1) return chord;
@@ -46,7 +46,7 @@ export function transposeChord(chord: string, semitones: number, targetKey: stri
     ? "/" + indexToNote(noteToIndex(bass) + semitones, useFlatKey)
     : "";
 
-  return newRoot + quality + newBass;
+  return leftSlash + newRoot + quality + newBass + rightSlash;
 }
 
 /**
