@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-25T21:23:04.950Z",
+  "generatedAt": "2026-06-25T21:23:47.871Z",
   "songs": [
     {
       "slug": "abba-pere",
@@ -997,7 +997,7 @@
       "originalKey": "A",
       "tempo": 72,
       "themes": [],
-      "youtubeUrl": null,
+      "youtubeUrl": "https://www.youtube.com/watch?v=0YJZUyVOQVY",
       "spotifyUrl": null,
       "appleMusicUrl": null,
       "hasJianpu": false,
@@ -3263,7 +3263,7 @@
         "foi",
         "esperance"
       ],
-      "youtubeUrl": null,
+      "youtubeUrl": "https://www.youtube.com/watch?v=YaJ5gof0YNQ",
       "spotifyUrl": null,
       "appleMusicUrl": null,
       "hasJianpu": false,
@@ -4635,7 +4635,7 @@
         "adoration",
         "action-de-grace"
       ],
-      "youtubeUrl": null,
+      "youtubeUrl": "https://www.youtube.com/watch?v=8Tw8SZXCx5w",
       "spotifyUrl": null,
       "appleMusicUrl": null,
       "hasJianpu": false,
@@ -6548,9 +6548,8 @@
       "sections": [
         {
           "id": "verse-1",
-          "name": "Couplet 2",
-          "type": "verse",
-          "number": "2"
+          "name": "Couplet",
+          "type": "verse"
         },
         {
           "id": "chorus-2",
@@ -6894,7 +6893,7 @@
         "adoration",
         "engagement"
       ],
-      "youtubeUrl": null,
+      "youtubeUrl": "https://www.youtube.com/watch?v=Ayo0dHL8K5o",
       "spotifyUrl": null,
       "appleMusicUrl": null,
       "hasJianpu": false,
@@ -8185,7 +8184,7 @@
         "adoration",
         "engagement"
       ],
-      "youtubeUrl": null,
+      "youtubeUrl": "https://www.youtube.com/watch?v=m-ek_b1Lbuk",
       "spotifyUrl": null,
       "appleMusicUrl": null,
       "hasJianpu": false,
@@ -8919,7 +8918,7 @@
         "adoration",
         "royaume"
       ],
-      "youtubeUrl": null,
+      "youtubeUrl": "https://www.youtube.com/watch?v=yhTxVyIjV-o",
       "spotifyUrl": null,
       "appleMusicUrl": null,
       "hasJianpu": false,
@@ -14825,7 +14824,7 @@
       "originalKey": "F",
       "tempo": 150,
       "themes": [],
-      "youtubeUrl": null,
+      "youtubeUrl": "https://www.youtube.com/watch?v=nJBLeMrhu9w",
       "spotifyUrl": null,
       "appleMusicUrl": null,
       "hasJianpu": false,
@@ -15243,7 +15242,7 @@
       "originalKey": "D",
       "tempo": 66,
       "themes": [],
-      "youtubeUrl": null,
+      "youtubeUrl": "https://www.youtube.com/watch?v=IKGazOdWmH4",
       "spotifyUrl": null,
       "appleMusicUrl": null,
       "hasJianpu": false,
