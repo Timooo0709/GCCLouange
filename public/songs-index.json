@@ -15201,12 +15201,17 @@
       "jianpuKey": null,
       "sections": [
         {
-          "id": "verse-1",
+          "id": "intro-1",
+          "name": "前奏/Intro",
+          "type": "intro"
+        },
+        {
+          "id": "verse-2",
           "name": "主歌/Couplet",
           "type": "verse"
         },
         {
-          "id": "chorus-2",
+          "id": "chorus-3",
           "name": "副歌/Refrain",
           "type": "chorus"
         }
