@@ -83,17 +83,22 @@ export function strokeHitTest(stroke: Stroke, x: number, y: number, radius: numb
 /**
  * Dessine les traits sur un canvas. Le canvas doit être dimensionné en
  * pixels physiques (width = cssW * dpr) ; `scaleX/scaleY` convertissent les
- * coordonnées d'origine vers le viewport actuel.
+ * coordonnées d'origine vers le viewport actuel. `zoom`/`panX`/`panY` (loupe
+ * d'annotation) agrandissent et déplacent le rendu par-dessus, sans perte de
+ * netteté (le trait est rasterisé à la résolution finale).
  */
 export function drawStrokes(
   ctx: CanvasRenderingContext2D,
   strokes: Stroke[],
-  opts: { dpr: number; scaleX: number; scaleY: number },
+  opts: { dpr: number; scaleX: number; scaleY: number; zoom?: number; panX?: number; panY?: number },
 ): void {
-  const { dpr, scaleX, scaleY } = opts;
+  const { dpr, scaleX, scaleY, zoom = 1, panX = 0, panY = 0 } = opts;
   ctx.save();
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  ctx.clearRect(0, 0, ctx.canvas.width / dpr, ctx.canvas.height / dpr);
+  // Effacer toute la surface (espace pixels physiques), indépendamment du zoom/pan
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+  // Loupe : zoom + déplacement appliqués par-dessus le devicePixelRatio
+  ctx.setTransform(dpr * zoom, 0, 0, dpr * zoom, dpr * panX, dpr * panY);
   ctx.lineCap = "round";
   ctx.lineJoin = "round";
 
